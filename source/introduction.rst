@@ -31,12 +31,12 @@ memory usage and script size. Additionally, we keep Pine `syntax and
 semantics <https://www.tradingview.com/study-script-reference/>`__
 simple so it can handle common tasks efficiently. We will continue to
 improve the documentation and support to ensure that anyone who wants to
-can `learn and use Pine <Pine_Script_Tutorial>`__, which will help the
+can learn and use Pine, which will help the
 development community grow, get more robust and create more helpful
 analysis.
 
-Choosing a licence. Foo Bar
----------------------------
+Choosing a licence
+------------------
 
 Choosing a license or not is entirely up to you. You are under no
 obligation to do so. If you publish scripts with open source code you
@@ -44,7 +44,6 @@ can select a license of your choice. You can include the license in
 the comments section of a script (preferably in the beginning). Our
 position on the matter is very much like that of
 `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
-Bla bla bla.
 
 Versions
 --------
