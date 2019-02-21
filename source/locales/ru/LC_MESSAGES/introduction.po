@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, vitvlkv
-# This file is distributed under the same license as the readthedocs_test
+# This file is distributed under the same license as the pine_script_docs
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: readthedocs_test \n"
+"Project-Id-Version: pine_script_docs \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-21 13:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"

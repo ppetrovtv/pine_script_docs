@@ -24,9 +24,9 @@ source_parsers = {
 
 # -- Project information -----------------------------------------------------
 
-project = u'readthedocs_test'
-copyright = u'2019, vitvlkv'
-author = u'vitvlkv'
+project = u'pine_script_docs'
+copyright = u'2019, TradingView'
+author = u'vvolkov'
 
 # The short X.Y version
 version = u''
@@ -103,11 +103,6 @@ html_static_path = ['_static']
 # html_sidebars = {}
 
 
-# -- Options for HTMLHelp output ---------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'readthedocs_testdoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -133,32 +128,9 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'readthedocs_test.tex', u'readthedocs\\_test Documentation',
-     u'vitvlkv', 'manual'),
+    (master_doc, 'pine_script_docs.tex', u'Pine Script documentation',
+     u'vvolkov', 'manual'),
 ]
-
-
-# -- Options for manual page output ------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'readthedocs_test', u'readthedocs_test Documentation',
-     [author], 1)
-]
-
-
-# -- Options for Texinfo output ----------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'readthedocs_test', u'readthedocs_test Documentation',
-     author, 'readthedocs_test', 'One line description of project.',
-     'Miscellaneous'),
-]
-
 
 # -- Options for Epub output -------------------------------------------------
 
