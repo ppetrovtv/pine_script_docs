@@ -83,7 +83,7 @@ pygments_style = None
 html_theme = 'alabaster'
 html_theme_options = {
     'logo': 'Pine_Script_logo.png',
-    'show_related': True,
+    # 'show_related': True, # shows previous/next page link on the sidebar
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme

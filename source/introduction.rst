@@ -35,15 +35,15 @@ can `learn and use Pine <Pine_Script_Tutorial>`__, which will help the
 development community grow, get more robust and create more helpful
 analysis.
 
+Choosing a licence
+------------------
 
-| **Choosing a licence**
-| Choosing a license or not is entirely up to you. You are under no
-  obligation to do so. If you publish scripts with open source code you
-  can select a license of your choice. You can include the license in
-  the comments section of a script (preferably in the beginning). Our
-  position on the matter is very much like that of
-  `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
-
+Choosing a license or not is entirely up to you. You are under no
+obligation to do so. If you publish scripts with open source code you
+can select a license of your choice. You can include the license in
+the comments section of a script (preferably in the beginning). Our
+position on the matter is very much like that of
+`GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
 Versions
 --------
@@ -80,11 +80,3 @@ Features introduced in version 3:
 See `Version 3 Release
 Notes <Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration
 Guide <Pine_Version_3_Migration_Guide>`__ for details.
-
---------------
-
-Next: `Example of an Indicator in
-Pine <Example_of_an_Indicator_in_Pine>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__
