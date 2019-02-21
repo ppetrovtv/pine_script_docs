@@ -4,7 +4,6 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: pine_script_docs \n"
@@ -92,13 +91,11 @@ msgstr ""
 
 # 87230c84c1ab48a3b7e2390820e38e2c
 #: ../../introduction.rst:39
-#, fuzzy
 msgid "Choosing a licence. Foo Bar"
 msgstr "Выбор лицензии. Фу Бар"
 
 # 9740041282e74dcfaf9ee46488886a92
 #: ../../introduction.rst:41
-#, fuzzy
 msgid ""
 "Choosing a license or not is entirely up to you. You are under no "
 "obligation to do so. If you publish scripts with open source code you can"
