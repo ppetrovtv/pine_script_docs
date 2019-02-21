@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pine_script_docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 13:35+0300\n"
+"POT-Creation-Date: 2019-02-21 17:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
+# a450f5097aab415c8e6c1395dfd33d4b
 #: ../../introduction.rst:2
 msgid "Introduction"
 msgstr "Введение"
 
-#: ../../introduction.rst:8
+# e508b1dcc117489683f9f28f95ca724c
+#: ../../introduction.rst:4
 msgid ""
 "We created our own coding language called `Pine Script "
 "<https://blog.tradingview.com/en/tradingview-s-pine-script-"
@@ -38,8 +40,25 @@ msgid ""
 "cannot be compared to a full-blown programming language, but we are happy"
 " to consider any request to add a feature. Improving it further and "
 "making it more powerful is one of the highest priorities for us."
-msgstr "Мы создали собственный язык кодирования под названием `Pine Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__, который позволяет пользователям создавать индивидуальные исследования и сигналы и запускать их на наших серверах. Обратите внимание, что Pine был разработан как легкий язык, ориентированный на конкретную задачу разработки индикаторов. С момента своего создания все готовые индикаторы были закодированы в Pine. Это наша явная цель - обеспечить ее доступность и простоту понимания самой широкой аудитории. Обратите внимание, что Pine выполняется в облаке и, следовательно, отличается по своей природе от решений на стороне клиента. Также обратите внимание, что наша цель не в том, чтобы иметь язык с превосходными возможностями кодирования для создания очень сложных инструментов. В этом смысле Pine не может сравниться с полномасштабным языком программирования, но мы с удовольствием рассмотрим любой запрос на добавление функции. Дальнейшее его улучшение и повышение его эффективности является одним из самых приоритетных для нас."
+msgstr ""
+"Мы создали собственный язык кодирования под названием `Pine Script "
+"<https://blog.tradingview.com/en/tradingview-s-pine-script-"
+"introduction-203/>`, который позволяет пользователям создавать "
+"индивидуальные исследования и сигналы и запускать их на наших серверах. "
+"Обратите внимание, что Pine был разработан как легкий язык, "
+"ориентированный на конкретную задачу разработки индикаторов. С момента "
+"своего создания все готовые индикаторы были закодированы в Pine. Это наша"
+" явная цель - обеспечить ее доступность и простоту понимания самой "
+"широкой аудитории. Обратите внимание, что Pine выполняется в облаке и, "
+"следовательно, отличается по своей природе от решений на стороне клиента."
+" Также обратите внимание, что наша цель не в том, чтобы иметь язык с "
+"превосходными возможностями кодирования для создания очень сложных "
+"инструментов. В этом смысле Pine не может сравниться с полномасштабным "
+"языком программирования, но мы с удовольствием рассмотрим любой запрос на"
+" добавление функции. Дальнейшее его улучшение и повышение его "
+"эффективности является одним из самых приоритетных для нас."
 
+# cf1b3878c9234b9a997368bb1f6a32bd
 #: ../../introduction.rst:23
 msgid ""
 "Because each study uses computational resources in the cloud, we have put"
@@ -55,13 +74,30 @@ msgid ""
 "documentation and support to ensure that anyone who wants to can `learn "
 "and use Pine <Pine_Script_Tutorial>`__, which will help the development "
 "community grow, get more robust and create more helpful analysis."
-msgstr "Поскольку каждое исследование использует вычислительные ресурсы в облаке, мы поставили ограничения на некоторые аспекты Pine (как можно меньше, но столько, сколько необходимо), чтобы распределить эти ресурсы справедливо среди наших пользователей. Нам нужно обеспечить бесперебойную работу платформы, и на нее не оказывают негативного влияния скрипты, которые в противном случае могли бы потреблять непропорциональное количество энергии. Наложенные ограничения применяются к таким элементам, как объем данных из дополнительных символов, вычисления циклов, использование памяти и размер скрипта. Кроме того, мы сохраняем `синтаксис и семантику <https://www.tradingview.com/study-script-reference/>`__ Pine простым, чтобы эффективно справляться с общими задачами. Мы продолжим улучшать документацию и поддержку, чтобы каждый, кто хочет, изучал и использовал Pine, что поможет сообществу разработчиков расти, стать более надежным и создать более полезный анализ."
+msgstr ""
+"Поскольку каждое исследование использует вычислительные ресурсы в облаке,"
+" мы поставили ограничения на некоторые аспекты Pine (как можно меньше, но"
+" столько, сколько необходимо), чтобы распределить эти ресурсы справедливо"
+" среди наших пользователей. Нам нужно обеспечить бесперебойную работу "
+"платформы, и на нее не оказывают негативного влияния скрипты, которые в "
+"противном случае могли бы потреблять непропорциональное количество "
+"энергии. Наложенные ограничения применяются к таким элементам, как объем "
+"данных из дополнительных символов, вычисления циклов, использование "
+"памяти и размер скрипта. Кроме того, мы сохраняем `синтаксис и семантику "
+"<https://www.tradingview.com/study-script-reference/>`__ Pine простым, "
+"чтобы эффективно справляться с общими задачами. Мы продолжим улучшать "
+"документацию и поддержку, чтобы каждый, кто хочет, изучал и использовал "
+"Pine, что поможет сообществу разработчиков расти, стать более надежным и "
+"создать более полезный анализ."
 
-#: ../../introduction.rst:38
-msgid "**Choosing a licence**"
-msgstr "**Выбор лицензии**"
+# cb52a70bd7f54c01822b7cf5259adfe7
+#: ../../introduction.rst:39
+#, fuzzy
+msgid "Choosing a licence"
+msgstr "Выбор лицензии"
 
-#: ../../introduction.rst:44
+# 606422b2cf9c42f1969d4c7202f46bf3
+#: ../../introduction.rst:41
 msgid ""
 "Choosing a license or not is entirely up to you. You are under no "
 "obligation to do so. If you publish scripts with open source code you can"
@@ -69,104 +105,138 @@ msgid ""
 "comments section of a script (preferably in the beginning). Our position "
 "on the matter is very much like that of `GitHub "
 "<https://help.github.com/articles/licensing-a-repository/>`__."
-msgstr "Решение о том, выбирать лиценцию или нет, целиком и полностью лежит на Вас. Вы не обязаны делать это. Если вы публикуете скипты с открытым исходным кодом, то вы можете выбрать любую лицензию. Включите текст лицензии в комментариях к коду скрипта (желательно в начале). Наша позиция на этот счёт аналогична `GitHub <https://help.github.com/articles/licensing-a-repository/>`__."
+msgstr ""
+"Решение о том, выбирать лиценцию или нет, целиком и полностью лежит на "
+"Вас. Вы не обязаны делать это. Если вы публикуете скипты с открытым "
+"исходным кодом, то вы можете выбрать любую лицензию. Включите текст "
+"лицензии в комментариях к коду скрипта (желательно в начале). Наша "
+"позиция на этот счёт аналогична `GitHub "
+"<https://help.github.com/articles/licensing-a-repository/>`__."
 
-#: ../../introduction.rst:47
+# aee8c6e0809446e088e3ba7ba610ae46
+#: ../../introduction.rst:49
 msgid "Versions"
 msgstr "Версии"
 
-#: ../../introduction.rst:49
+# 8f034497f9bc4305ad3b0e7c4ee616fb
+#: ../../introduction.rst:51
 msgid ""
 "Currently there are three versions of Pine Script Language. A special "
 "attribute must be used in the first line of a code to switch between "
 "versions ``//@version=N`` where ``N`` is number. Note, that Pine Script "
 "Language versions are incompatible with each other."
-msgstr "В настоящее время (на момент редактирования русскоязычной версии англ. статьи) существует три версии языка Pine Script. В первой строке кода должен использоваться специальный атрибут для переключения между версиями ``//@version=N`` где ``N`` - номер версии. Обратите внимание, что версии языка Pine Script несовместимы друг с другом."
+msgstr ""
+"В настоящее время (на момент редактирования русскоязычной версии англ. "
+"статьи) существует три версии языка Pine Script. В первой строке кода "
+"должен использоваться специальный атрибут для переключения между версиями"
+" ``//@version=N`` где ``N`` - номер версии. Обратите внимание, что версии"
+" языка Pine Script несовместимы друг с другом."
 
-#: ../../introduction.rst:55
+# f1d21e5aea374e5d944a99e818ed86af
+#: ../../introduction.rst:57
 msgid "Features introduced in version 2:"
 msgstr "Особенности, представленные в версии 2:"
 
-#: ../../introduction.rst:57
+# 7e99698699ab4eadbd9acab5d5a4d5e2
+#: ../../introduction.rst:59
 msgid ""
 "`mutable variables "
 "<Expressions,_Declarations_and_Statements#Variable_Assignment>`__,"
-msgstr "`изменяемые переменные "
+msgstr ""
+"`изменяемые переменные "
 "<Expressions,_Declarations_and_Statements#Variable_Assignment>`__,"
 
-#: ../../introduction.rst:59
+# e26006333ee345f29addc039cea95c71
+#: ../../introduction.rst:61
 msgid ""
 "`if statement "
 "<Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,"
-msgstr "`оператор if "
+msgstr ""
+"`оператор if "
 "<Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,"
 
-#: ../../introduction.rst:61
+# 011b1b8409a544f6a30202b4d8b6e87b
+#: ../../introduction.rst:63
 msgid ""
 "`for statement "
 "<Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__."
-msgstr "`оператор for "
+msgstr ""
+"`оператор for "
 "<Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__."
 
-#: ../../introduction.rst:65
+# d7932bf08c224e1f8fc79aae16586d93
+#: ../../introduction.rst:67
 msgid "Features introduced in version 3:"
 msgstr "Особенности, представленные в версии 3:"
 
-#: ../../introduction.rst:67
+# 31f4448a8451467d8580729da3508825
+#: ../../introduction.rst:69
 msgid ""
 "new security behavour, controlled by parameter: `lookahead "
 "<Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,"
-msgstr "Новое поведение функции ``security``, контролируемое параметром: `lookahead "
+msgstr ""
+"Новое поведение функции ``security``, контролируемое параметром: "
+"`lookahead "
 "<Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,"
 
-#: ../../introduction.rst:69
+# e46357a9a44b4b0da63703bcfd63e099
+#: ../../introduction.rst:71
 msgid "self-referenced and forward-referenced variables removed,"
 msgstr "self-referenced и forward-referenced переменные удалены из языка,"
 
-#: ../../introduction.rst:70
+# 61d02c1bfd7043c0b23642bfa808691a
+#: ../../introduction.rst:72
 msgid "changes in type system: forbid math operations on booleans,"
-msgstr "изменения в системе типов: запрет на математические операции с логическими значениями,"
+msgstr ""
+"изменения в системе типов: запрет на математические операции с "
+"логическими значениями,"
 
-#: ../../introduction.rst:71
+# df6bf92257c54a34ae9713245aeb4381
+#: ../../introduction.rst:73
 msgid ""
 "`input with options <https://blog.tradingview.com/en/several-new-"
 "features-added-pine-scripting-language-3933/>`__,"
-msgstr "строковый input с вариантами <https://blog.tradingview.com/en/several-new-"
-"features-added-pine-scripting-language-3933/>`__,"
+msgstr ""
+"строковый input с вариантами <https://blog.tradingview.com/en/several-"
+"new-features-added-pine-scripting-language-3933/>`__,"
 
-#: ../../introduction.rst:73
+# 4784f66f1f2e4ca384923a3120404c35
+#: ../../introduction.rst:75
 msgid ""
 "`keyword arguments supported in all built-in functions "
 "<https://blog.tradingview.com/en/kwargs-syntax-now-covers-built-"
 "functions-3914/>`__,"
-msgstr "`keyword аргументы поддерживаются всеми built-in функциями "
+msgstr ""
+"`keyword аргументы поддерживаются всеми built-in функциями "
 "<https://blog.tradingview.com/en/kwargs-syntax-now-covers-built-"
 "functions-3914/>`__,"
 
-#: ../../introduction.rst:75
+# ab7427aacb4549799de8f2c936736793
+#: ../../introduction.rst:77
 msgid ""
 "`compile time constants <https://blog.tradingview.com/en/possibilities-"
 "compile-time-constants-4127/>`__."
-msgstr "`константы времени компиляции <https://blog.tradingview.com/en/possibilities-"
-"compile-time-constants-4127/>`__."
+msgstr ""
+"`константы времени компиляции <https://blog.tradingview.com/en"
+"/possibilities-compile-time-constants-4127/>`__."
 
-#: ../../introduction.rst:78
+# b68c07afd1ba48d9a34fb5e92b0de36a
+#: ../../introduction.rst:80
 msgid ""
 "See `Version 3 Release Notes "
 "<Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration Guide "
 "<Pine_Version_3_Migration_Guide>`__ for details."
-msgstr "Подробнее смотри в `Version 3 Release Notes "
+msgstr ""
+"Подробнее смотри в `Version 3 Release Notes "
 "<Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration Guide "
 "<Pine_Version_3_Migration_Guide>`__."
 
-#: ../../introduction.rst:84
-msgid ""
-"Next: `Example of an Indicator in Pine "
-"<Example_of_an_Indicator_in_Pine>`__, Up: `Pine Script Tutorial "
-"<Pine_Script_Tutorial>`__"
-msgstr ""
+#~ msgid ""
+#~ "Next: `Example of an Indicator in "
+#~ "Pine <Example_of_an_Indicator_in_Pine>`__, Up: `Pine"
+#~ " Script Tutorial <Pine_Script_Tutorial>`__"
+#~ msgstr ""
 
-#: ../../introduction.rst:88
-msgid "`Category:Pine Script <Category:Pine_Script>`__"
-msgstr ""
+#~ msgid "`Category:Pine Script <Category:Pine_Script>`__"
+#~ msgstr ""
 

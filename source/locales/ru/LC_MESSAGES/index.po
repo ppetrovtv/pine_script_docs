@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pine_script_docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 13:35+0300\n"
+"POT-Creation-Date: 2019-02-21 17:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
+# 5a7fe563b06d47a88b2a27cfe258a181
 #: ../../index.rst:7
-msgid "Pine Script Tutorial"
+msgid "Pine Script documentation"
 msgstr ""
 
-#: ../../index.rst:9
-msgid "Contents:"
-msgstr ""
+#~ msgid "Pine Script Tutorial"
+#~ msgstr ""
 
-#: ../../index.rst:17
-msgid "Indices and tables"
-msgstr ""
+#~ msgid "Contents:"
+#~ msgstr ""
 
-#: ../../index.rst:19
-msgid ":ref:`genindex`"
-msgstr ""
+#~ msgid "Indices and tables"
+#~ msgstr ""
 
-#: ../../index.rst:20
-msgid ":ref:`modindex`"
-msgstr ""
+#~ msgid ":ref:`genindex`"
+#~ msgstr ""
 
-#: ../../index.rst:21
-msgid ":ref:`search`"
-msgstr ""
+#~ msgid ":ref:`modindex`"
+#~ msgstr ""
+
+#~ msgid ":ref:`search`"
+#~ msgstr ""
 
