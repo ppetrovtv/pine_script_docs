@@ -197,7 +197,7 @@ msgid ""
 "`input with options <https://blog.tradingview.com/en/several-new-"
 "features-added-pine-scripting-language-3933/>`__,"
 msgstr ""
-"строковый input с вариантами <https://blog.tradingview.com/en/several-"
+"`строковый input с вариантами <https://blog.tradingview.com/en/several-"
 "new-features-added-pine-scripting-language-3933/>`__,"
 
 # 4784f66f1f2e4ca384923a3120404c35
