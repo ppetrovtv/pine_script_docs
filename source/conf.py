@@ -24,7 +24,7 @@ source_parsers = {
 
 # -- Project information -----------------------------------------------------
 
-project = u'pine_script_docs'
+project = u'Pine Script documentation'
 copyright = u'2019, TradingView'
 author = u'vvolkov'
 
@@ -79,7 +79,12 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+# Read more https://alabaster.readthedocs.io/en/latest/
 html_theme = 'alabaster'
+html_theme_options = {
+    'logo': 'Pine_Script_logo.png',
+    'show_related': True,
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
