@@ -179,3 +179,10 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+
+# readthedocs recommends configuring Sphinx to use gettext_uuid as True 
+gettext_uuid = True
+
+# readthedocs recommends configuring Sphinx to use gettext_compact as False to generate .pot files.
+gettext_compact = False
+
