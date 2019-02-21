@@ -48,20 +48,21 @@ position on the matter is very much like that of
 Versions
 --------
 
-Currently there are three versions of Pine Script Language. A special
+Currently there are four versions of Pine Script Language. A special
 attribute must be used in the first line of a code to switch between
 versions ``//@version=N`` where ``N`` is number. Note, that Pine Script
 Language versions are incompatible with each other.
 
-Features introduced in version 2:
+Features introduced in version 4:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `mutable
-   variables <Expressions,_Declarations_and_Statements#Variable_Assignment>`__,
--  `if
-   statement <Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,
--  `for
-   statement <Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__.
+- drawing ``line`` - a trend line
+- drawing ``label`` - a label with a (optionaly) dynamic text
+- ``var`` variables
+- syntax for explicit variable type declaration
+- improvements in type system ('everything is a series' concept)
+- series string datatype
+- ``max_bars_back`` function
 
 Features introduced in version 3:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,3 +81,14 @@ Features introduced in version 3:
 See `Version 3 Release
 Notes <Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration
 Guide <Pine_Version_3_Migration_Guide>`__ for details.
+
+Features introduced in version 2:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  `mutable
+   variables <Expressions,_Declarations_and_Statements#Variable_Assignment>`__,
+-  `if
+   statement <Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,
+-  `for
+   statement <Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__.
+   

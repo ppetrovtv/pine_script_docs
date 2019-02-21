@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pine_script_docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 17:37+0300\n"
+"POT-Creation-Date: 2019-02-21 18:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,56 +119,63 @@ msgstr "Версии"
 # f89f00d73fc44cd8a80a4985e54a08d0
 #: ../../introduction.rst:51
 msgid ""
-"Currently there are three versions of Pine Script Language. A special "
+"Currently there are four versions of Pine Script Language. A special "
 "attribute must be used in the first line of a code to switch between "
 "versions ``//@version=N`` where ``N`` is number. Note, that Pine Script "
 "Language versions are incompatible with each other."
 msgstr ""
-"В настоящее время (на момент редактирования русскоязычной версии англ. "
-"статьи) существует три версии языка Pine Script. В первой строке кода "
+"В настоящее время существует четыре версии языка Pine Script. В первой строке кода "
 "должен использоваться специальный атрибут для переключения между версиями"
 " ``//@version=N`` где ``N`` - номер версии. Обратите внимание, что версии"
 " языка Pine Script несовместимы друг с другом."
 
 # 5cefedc54c4e4821b0e802ba197a3eed
 #: ../../introduction.rst:57
-msgid "Features introduced in version 2:"
-msgstr "Особенности, представленные в версии 2:"
+msgid "Features introduced in version 4:"
+msgstr "Особенности, представленные в версии 4:"
 
-# 06ce99d6582440b3bc9b9eff200b1438
+# b8340d17f30d4406aa1f2c8f14068a4a
 #: ../../introduction.rst:59
-msgid ""
-"`mutable variables "
-"<Expressions,_Declarations_and_Statements#Variable_Assignment>`__,"
-msgstr ""
-"`изменяемые переменные "
-"<Expressions,_Declarations_and_Statements#Variable_Assignment>`__,"
+msgid "drawing ``line`` - a trend line"
+msgstr "Дровинг ``line`` - линия тренда"
 
-# 6e6db31081cc466eb2b4b61a88e08146
+# e55b3423b79845e592a32b4ac6085eb0
+#: ../../introduction.rst:60
+msgid "drawing ``label`` - a label with a (optionaly) dynamic text"
+msgstr "Дровинг ``label`` - метка с динамическим текстом (текст опционален)"
+
+# c3815eb084274dbbb848700d129943a4
 #: ../../introduction.rst:61
-msgid ""
-"`if statement "
-"<Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,"
-msgstr ""
-"`оператор if "
-"<Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,"
+msgid "``var`` variables"
+msgstr "``var`` переменные"
 
-# a837749154994ce3bd5f33d927833a61
+# 3f2d3b08bddb4505b876eefbf4af6f45
+#: ../../introduction.rst:62
+msgid "syntax for explicit variable type declaration"
+msgstr "синтаксис для явного указания типа переменной"
+
+# 54029e2719554311b773ac51e194adcf
 #: ../../introduction.rst:63
-msgid ""
-"`for statement "
-"<Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__."
-msgstr ""
-"`оператор for "
-"<Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__."
+msgid "improvements in type system ('everything is a series' concept)"
+msgstr "улучшения в системе типов (концепция 'все есть серия')"
+
+# 03f09c42225e468492bbc1226a3ace4b
+#: ../../introduction.rst:64
+msgid "series string datatype"
+msgstr "тип данных series string"
+
+# e112440617a846d0b3e4967cfeacd67d
+#: ../../introduction.rst:65
+msgid "``max_bars_back`` function"
+msgstr "функция ``max_bars_back``"
 
 # fee42b1596ae462c86f4e3d3c94d22c6
-#: ../../introduction.rst:67
+#: ../../introduction.rst:68
 msgid "Features introduced in version 3:"
 msgstr "Особенности, представленные в версии 3:"
 
 # 995507b361204b6cbfe91c4241db577d
-#: ../../introduction.rst:69
+#: ../../introduction.rst:70
 msgid ""
 "new security behavour, controlled by parameter: `lookahead "
 "<Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,"
@@ -178,19 +185,19 @@ msgstr ""
 "<Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,"
 
 # f1f397a416ae4278a91f4dd7be6aeaff
-#: ../../introduction.rst:71
+#: ../../introduction.rst:72
 msgid "self-referenced and forward-referenced variables removed,"
 msgstr "self-referenced и forward-referenced переменные удалены из языка,"
 
 # c358c55ab05342b2896c6a69b4fd1f70
-#: ../../introduction.rst:72
+#: ../../introduction.rst:73
 msgid "changes in type system: forbid math operations on booleans,"
 msgstr ""
 "изменения в системе типов: запрет на математические операции с "
 "логическими значениями,"
 
 # da77a19b72c54b4da9733fa7d1cf53d5
-#: ../../introduction.rst:73
+#: ../../introduction.rst:74
 msgid ""
 "`input with options <https://blog.tradingview.com/en/several-new-"
 "features-added-pine-scripting-language-3933/>`__,"
@@ -199,7 +206,7 @@ msgstr ""
 "new-features-added-pine-scripting-language-3933/>`__,"
 
 # ddf1a30114d547f8837b2eed2c967195
-#: ../../introduction.rst:75
+#: ../../introduction.rst:76
 msgid ""
 "`keyword arguments supported in all built-in functions "
 "<https://blog.tradingview.com/en/kwargs-syntax-now-covers-built-"
@@ -210,7 +217,7 @@ msgstr ""
 "functions-3914/>`__,"
 
 # b751eb108a764954ac1aace8c4d160c5
-#: ../../introduction.rst:77
+#: ../../introduction.rst:78
 msgid ""
 "`compile time constants <https://blog.tradingview.com/en/possibilities-"
 "compile-time-constants-4127/>`__."
@@ -219,7 +226,7 @@ msgstr ""
 "/possibilities-compile-time-constants-4127/>`__."
 
 # d593d000066e4c12b558c3b65296469d
-#: ../../introduction.rst:80
+#: ../../introduction.rst:81
 msgid ""
 "See `Version 3 Release Notes "
 "<Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration Guide "
@@ -228,6 +235,38 @@ msgstr ""
 "Подробнее смотри в `Version 3 Release Notes "
 "<Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration Guide "
 "<Pine_Version_3_Migration_Guide>`__."
+
+# 5cefedc54c4e4821b0e802ba197a3eed
+#: ../../introduction.rst:86
+msgid "Features introduced in version 2:"
+msgstr "Особенности, представленные в версии 2:"
+
+# 06ce99d6582440b3bc9b9eff200b1438
+#: ../../introduction.rst:88
+msgid ""
+"`mutable variables "
+"<Expressions,_Declarations_and_Statements#Variable_Assignment>`__,"
+msgstr ""
+"`изменяемые переменные "
+"<Expressions,_Declarations_and_Statements#Variable_Assignment>`__,"
+
+# 6e6db31081cc466eb2b4b61a88e08146
+#: ../../introduction.rst:90
+msgid ""
+"`if statement "
+"<Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,"
+msgstr ""
+"`оператор if "
+"<Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,"
+
+# a837749154994ce3bd5f33d927833a61
+#: ../../introduction.rst:92
+msgid ""
+"`for statement "
+"<Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__."
+msgstr ""
+"`оператор for "
+"<Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__."
 
 #~ msgid ""
 #~ "Next: `Example of an Indicator in "
