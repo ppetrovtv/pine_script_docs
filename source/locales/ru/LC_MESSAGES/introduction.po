@@ -59,7 +59,6 @@ msgstr ""
 
 # 0a81f657671b49d48078d34e4808bd49
 #: ../../introduction.rst:23
-#, fuzzy
 msgid ""
 "Because each study uses computational resources in the cloud, we have put"
 " limits on certain aspects of Pine (as few as possible but as many as "
