@@ -1,6 +1,11 @@
 Introduction
 ============
 
+.. figure:: Pine_Script_logo_text.png
+   :alt: Pine_Script_logo_text.png
+   :align: right
+
+
 We created our own coding language called `Pine
 Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
 which allows users to create customized studies and signals and run them
@@ -15,10 +20,6 @@ building very complex tools. In this sense Pine cannot be compared to a
 full-blown programming language, but we are happy to consider any
 request to add a feature. Improving it further and making it more
 powerful is one of the highest priorities for us.
-
-.. figure:: Pine_Script_logo_text.png
-   :alt: Pine_Script_logo_text.png
-   :align: right
 
 Because each study uses computational resources in the cloud, we have
 put limits on certain aspects of Pine (as few as possible but as many as
