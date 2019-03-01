@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pine Script documentation \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 17:29+0300\n"
+"POT-Creation-Date: 2019-03-01 12:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../index.rst:7
-# 88cdd9cd30b448a998a64a24db55f7e2
 msgid "Pine Script documentation"
 msgstr ""
 

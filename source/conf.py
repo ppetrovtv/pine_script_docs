@@ -153,7 +153,8 @@ epub_exclude_files = ['search.html']
 # -- Extension configuration -------------------------------------------------
 
 # readthedocs recommends configuring Sphinx to use gettext_uuid as True 
-gettext_uuid = True
+# If True, then RTD creates '# 9f7272de60e648aca7445e7c0cbd450c' these lines in *.pot files
+gettext_uuid = False
 
 # readthedocs recommends configuring Sphinx to use gettext_compact as False to generate .pot files.
 gettext_compact = False
