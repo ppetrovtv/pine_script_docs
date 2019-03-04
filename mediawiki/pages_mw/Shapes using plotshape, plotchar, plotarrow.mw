@@ -171,5 +171,4 @@ Additionally, the function ‘plotarrow’ allows:
 
 It’s important to note that ‘colorup’ and ‘colordown’ should receive a constant value of the type ‘color’. Using expressions for determining color (as is done in plot, plotshape, plotchar) is not allowed.
 
-----
-Previous: [[Annotation Functions Overview]], Next: [[Custom OHLC bars and candles]], Up: [[Pine Script Tutorial]]
+

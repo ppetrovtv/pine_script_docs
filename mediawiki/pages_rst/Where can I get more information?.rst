@@ -32,10 +32,3 @@ More Links
 
 -  `TradingView integrates Quandl – Best Web Charting Meets 9 Million
    Datasets! <http://blog.tradingview.com/?p=452>`__
-
---------------
-
-Previous: `Pine Compilation Errors <Pine_Compilation_Errors>`__, Next:
-`Appendix A. Pine Script v2
-preprocessor <Appendix_A._Pine_Script_v2_preprocessor>`__, Up: `Pine
-Script Tutorial <Pine_Script_Tutorial>`__

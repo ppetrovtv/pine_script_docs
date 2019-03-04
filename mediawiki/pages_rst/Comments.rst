@@ -16,9 +16,3 @@ one can highlight the large code fragment in Script Editor and press
 
 Also, comments could not be placed in the middle of a statement wrapped
 to several lines, read more here: `Lines Wrapping <Lines_Wrapping>`__.
-
---------------
-
-Previous: `Structure of the Script <Structure_of_the_Script>`__, Next:
-`Identifiers <Identifiers>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

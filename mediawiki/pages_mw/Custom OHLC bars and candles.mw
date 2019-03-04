@@ -65,5 +65,4 @@ plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? lime : red)
 [[File:Custom ohlc bars and candles 5.png]]
 Functions plotbar and plotcandle also have ‘title’ argument, so user can distinguish them in Styles tab of Format dialog.
 
-----
-Previous: [[Shapes using plotshape, plotchar, plotarrow]], Next: [[Strategies]], Up: [[Pine Script Tutorial]]
+

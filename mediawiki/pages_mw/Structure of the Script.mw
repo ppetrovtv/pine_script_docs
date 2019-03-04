@@ -6,5 +6,4 @@ A script in Pine syntactically consists of a series of statements. Each statemen
 * [[Functions vs Annotation Functions|annotation function calls]]
 Long statements that don’t fit within in the width of the screen can be split to a few lines, further information about this can be found [[Lines Wrapping|here]].
 
-----
-Previous: [[Example of an Indicator in Pine]], Next: [[Comments]], Up: [[Pine Script Tutorial]]
+

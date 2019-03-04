@@ -53,9 +53,3 @@ v3 <http://www.antlr3.org/>`__ syntax. Start rule is ``tvscript``.
     id returns [text] : ID ->;
     synpred1_TVScriptParserMain_v2 : IF_COND ternary_expr LEND stmts_block PLEND LBEG IF_COND_ELSE ;
     synpred2_TVScriptParserMain_v2 : FOR_STMT var_def FOR_STMT_TO ternary_expr FOR_STMT_BY ;
-
---------------
-
-Previous: `Appendix B. Pine Script v2 lexer
-grammar <Appendix_B._Pine_Script_v2_lexer_grammar>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

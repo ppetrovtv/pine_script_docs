@@ -24,6 +24,3 @@ Currently there are three versions of Pine Script Language. A special attribute 
 * [https://blog.tradingview.com/en/kwargs-syntax-now-covers-built-functions-3914/ keyword arguments supported in all built-in functions],
 * [https://blog.tradingview.com/en/possibilities-compile-time-constants-4127/ compile time constants].
 See [[Pine Script: Release Notes#Pine Version 3|Version 3 Release Notes]] and [[Pine Version 3 Migration Guide|Migration Guide]] for details.
-
-----
-Next: [[Example of an Indicator in Pine]], Up: [[Pine Script Tutorial]]

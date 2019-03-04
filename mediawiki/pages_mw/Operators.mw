@@ -178,5 +178,4 @@ If in one expression there are several operators with the same priority, then th
 
 If it’s necessary to change the order of calculations to calculate the expression, then parts of the expression should be grouped together with parentheses.
 
-----
-Previous: [[Literals]], Next: [[Functions vs Annotation Functions]], Up: [[Pine Script Tutorial]]
+

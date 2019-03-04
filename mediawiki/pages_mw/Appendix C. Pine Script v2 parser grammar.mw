@@ -54,5 +54,4 @@ synpred1_TVScriptParserMain_v2 : IF_COND ternary_expr LEND stmts_block PLEND LBE
 synpred2_TVScriptParserMain_v2 : FOR_STMT var_def FOR_STMT_TO ternary_expr FOR_STMT_BY ;
 </syntaxhighlight>
 
-----
-Previous: [[Appendix B. Pine Script v2 lexer grammar]], Up: [[Pine Script Tutorial]]
+

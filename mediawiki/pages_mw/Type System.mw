@@ -30,5 +30,4 @@ In the following picture arrow means ability to cast one type to another. For ex
 ''Note: Pine type system was changed in version 3. See [[Pine Script: Release Notes]]''.
 ''See also [https://www.tradingview.com/wiki/File:Pine_Types_v2.jpg type casts graph for version 2]''.
 
-----
-Previous: [[Identifiers]], Next: [[Literals]], Up: [[Pine Script Tutorial]]
+

@@ -28,8 +28,6 @@
 
 [[Context Switching, The ‘security’ Function]]
 
-[[Fundamentals Data]]
-
 [[Bar states. Built-in variables ‘barstate’]]
 
 [[Sessions and Time Functions]]
@@ -61,4 +59,3 @@
 [https://www.tradingview.com/study-script-reference/ Pine Script Reference]
 
 See also [[Pine Script: Release Notes|Pine Script Release Notes]].
-

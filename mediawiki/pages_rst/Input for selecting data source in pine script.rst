@@ -25,5 +25,3 @@ Example 2. Extended
     study("My Script")
     src = input(title="Source", type=source, defval=close)
     plot(src)
-
---------------

@@ -172,9 +172,3 @@ can be сonverted into
 ::
 
     var3 = expr1 + expr2
-
---------------
-
-Previous: `Indicator repainting <Indicator_repainting>`__, Next: `Where
-can I get more information? <Where_can_I_get_more_information?>`__, Up:
-`Pine Script Tutorial <Pine_Script_Tutorial>`__

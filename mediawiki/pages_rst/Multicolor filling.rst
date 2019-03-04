@@ -14,5 +14,3 @@ Usage example:
    :alt: Colored_filling.png
 
    Colored\_filling.png
-
---------------

@@ -288,10 +288,3 @@ Additionally, the function ‘plotarrow’ allows:
 It’s important to note that ‘colorup’ and ‘colordown’ should receive a
 constant value of the type ‘color’. Using expressions for determining
 color (as is done in plot, plotshape, plotchar) is not allowed.
-
---------------
-
-Previous: `Annotation Functions
-Overview <Annotation_Functions_Overview>`__, Next: `Custom OHLC bars and
-candles <Custom_OHLC_bars_and_candles>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

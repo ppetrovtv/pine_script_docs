@@ -11,4 +11,3 @@ fill(p1, p2, color = close>open ? green : red)
 </source>
 
 [[File:Colored filling.png]]
-----

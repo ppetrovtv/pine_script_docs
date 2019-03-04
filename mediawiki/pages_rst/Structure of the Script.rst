@@ -14,10 +14,3 @@ of three kinds:
 Long statements that don’t fit within in the width of the screen can be
 split to a few lines, further information about this can be found
 `here <Lines_Wrapping>`__.
-
---------------
-
-Previous: `Example of an Indicator in
-Pine <Example_of_an_Indicator_in_Pine>`__, Next:
-`Comments <Comments>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

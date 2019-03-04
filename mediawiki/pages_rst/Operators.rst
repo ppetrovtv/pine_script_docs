@@ -255,9 +255,3 @@ then they are calculated left to right.
 If it’s necessary to change the order of calculations to calculate the
 expression, then parts of the expression should be grouped together with
 parentheses.
-
---------------
-
-Previous: `Literals <Literals>`__, Next: `Functions vs Annotation
-Functions <Functions_vs_Annotation_Functions>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

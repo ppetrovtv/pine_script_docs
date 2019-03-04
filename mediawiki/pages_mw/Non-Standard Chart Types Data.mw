@@ -105,5 +105,4 @@ plot(pnf_close, color=red, style=linebr, linewidth=4)</source>
 
 For detailed reference on all <code>pointfigure</code> arguments go [https://www.tradingview.com/study-script-reference/#fun_pointfigure here].
 
-----
-Previous: [[Extended and Regular Sessions]], Next: [[Annotation_Functions_Overview]], Up: [[Pine Script Tutorial]]
+

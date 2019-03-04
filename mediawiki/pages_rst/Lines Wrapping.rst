@@ -65,9 +65,3 @@ Compiler fails with error:
 To make this pine work, simply remove the '// a comment' comment. This
 limitation is inconvenient... We hope it could be removed in future Pine
 releases.
-
---------------
-
-Previous: `Declaring Functions <Declaring_Functions>`__, Next:
-`Context\_Switching,\_The\_‘security’\_Function <Context_Switching,_The_‘security’_Function>`__,
-Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__

@@ -232,11 +232,5 @@ You can use the script below to avoid gaps in a series.
     plot(series, style=linebr, color=red) // series has na values 
     plot(vw) // all na values are replaced with the last non-empty value
 
---------------
-
-Previous: `Strategies <Strategies>`__, Next: `Indicator
-repainting <Indicator_repainting>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__
-
 .. |Mark the highest bar within a 5 day lookback window range| image:: Wiki_howto_range_analysis.png
 

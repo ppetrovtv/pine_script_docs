@@ -12,7 +12,6 @@ Example of an Indicator in Pine.mw
 Expressions, Declarations and Statements.mw
 Extended and Regular Sessions.mw
 Functions vs Annotation Functions.mw
-Fundamentals Data.mw
 HOWTOs.mw
 Identifiers.mw
 Indicator repainting.mw

@@ -101,5 +101,4 @@ a0 = security(tickerid, 'D', close[indexHighTF], lookahead=barmerge.lookahead_of
 a = a0[indexCurrTF]</source>
 When an indicator is based on historical data (i.e. <code>barstate.isrealtime</code> equals <code>false</code>), we take the current Close of the daily resolution and shift the result of <code>security</code> one bar to the right in the current resolution. When an indicator is calculated on real-time data, we take the Close of the previous day without shifting <code>security</code>.
 
-----
-Previous: [[Lines Wrapping]], Next: [[Bar_states._Built-in_variables_‘barstate’]], Up: [[Pine Script Tutorial]]
+

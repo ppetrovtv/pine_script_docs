@@ -363,12 +363,5 @@ Also note that we recommend to use a built-in function
 `sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__
 for `Moving Average <Moving_Average>`__ as it calculates faster.
 
---------------
-
-Previous: `Functions vs Annotation
-Functions <Functions_vs_Annotation_Functions>`__, Next: `Declaring
-Functions <Declaring_Functions>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__
-
 .. |Fib.png| image:: Fib.png
 

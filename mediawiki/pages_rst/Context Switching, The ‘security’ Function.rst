@@ -212,9 +212,3 @@ the daily resolution and shift the result of ``security`` one bar to the
 right in the current resolution. When an indicator is calculated on
 real-time data, we take the Close of the previous day without shifting
 ``security``.
-
---------------
-
-Previous: `Lines Wrapping <Lines_Wrapping>`__, Next:
-`Bar\_states.\_Built-in\_variables\_‘barstate’ <Bar_states._Built-in_variables_‘barstate’>`__,
-Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__

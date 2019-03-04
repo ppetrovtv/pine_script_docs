@@ -45,5 +45,4 @@ bgcolor(c)
 Compiler fails with error: <code>Add to Chart operation failed, reason: line 3: no viable alternative at input '|E|'</code>.
 To make this pine work, simply remove the '// a comment' comment. This limitation is inconvenient... We hope it could be removed in future Pine releases.
 
-----
-Previous: [[Declaring Functions]], Next: [[Context_Switching,_The_‘security’_Function]], Up: [[Pine Script Tutorial]]
+

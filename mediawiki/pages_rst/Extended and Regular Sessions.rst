@@ -66,10 +66,3 @@ built-in variable as third parameter to ``tickerid`` function. Variable
 
 Writing code similar to “Example 4” whatever session type you set in
 Chart Properties, your Pine Script would use the same type.
-
---------------
-
-Previous: `Sessions and Time Functions <Sessions_and_Time_Functions>`__,
-Next:
-`Non-Standard\_Chart\_Types\_Data <Non-Standard_Chart_Types_Data>`__,
-Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__

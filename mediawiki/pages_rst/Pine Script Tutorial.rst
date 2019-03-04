@@ -32,8 +32,6 @@ Statements <Expressions,_Declarations_and_Statements>`__
 `Context Switching, The ‘security’
 Function <Context_Switching,_The_‘security’_Function>`__
 
-`Fundamentals Data <Fundamentals_Data>`__
-
 `Bar states. Built-in variables
 ‘barstate’ <Bar_states._Built-in_variables_‘barstate’>`__
 

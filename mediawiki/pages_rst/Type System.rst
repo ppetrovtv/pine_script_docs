@@ -63,8 +63,3 @@ cast to any **color**, **integer**, **float** or **series** types. But
 Release Notes <Pine_Script:_Release_Notes>`__*. *See also `type casts
 graph for version
 2 <https://www.tradingview.com/wiki/File:Pine_Types_v2.jpg>`__*.
-
---------------
-
-Previous: `Identifiers <Identifiers>`__, Next: `Literals <Literals>`__,
-Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__

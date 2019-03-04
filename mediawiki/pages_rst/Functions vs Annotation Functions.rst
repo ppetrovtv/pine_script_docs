@@ -68,9 +68,3 @@ following call is not valid:
 ::
 
     study(precision=3, ‘Example’)
-
---------------
-
-Previous: `Operators <Operators>`__, Next: `Expressions, Declarations
-and Statements <Expressions,_Declarations_and_Statements>`__, Up: `Pine
-Script Tutorial <Pine_Script_Tutorial>`__

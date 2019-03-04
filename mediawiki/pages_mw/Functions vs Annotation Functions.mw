@@ -29,5 +29,4 @@ It’s possible to mix positional and keyword arguments. Positional arguments mu
 study(precision=3, ‘Example’)
 </source>
 
-----
-Previous: [[Operators]], Next: [[Expressions, Declarations and Statements]], Up: [[Pine Script Tutorial]]
+

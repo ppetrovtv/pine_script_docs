@@ -95,12 +95,5 @@ chart:
 plotcandle also have ‘title’ argument, so user can distinguish them in
 Styles tab of Format dialog.
 
---------------
-
-Previous: `Shapes using plotshape, plotchar,
-plotarrow <Shapes_using_plotshape,_plotchar,_plotarrow>`__, Next:
-`Strategies <Strategies>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__
-
 .. |Custom\_ohlc\_bars\_and\_candles\_5.png| image:: Custom_ohlc_bars_and_candles_5.png
 

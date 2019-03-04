@@ -41,10 +41,3 @@ The script draws red and blue symbols under the first and the last bars
 accordingly and puts ‘h’ on the top of the historical bars; background
 of the new bars will be highlighted green, and the real-time bars will
 be colored black.
-
---------------
-
-Previous: `Context Switching, The ‘security’
-Function <Context_Switching,_The_‘security’_Function>`__, Next:
-`Sessions\_and\_Time\_Functions <Sessions_and_Time_Functions>`__, Up:
-`Pine Script Tutorial <Pine_Script_Tutorial>`__

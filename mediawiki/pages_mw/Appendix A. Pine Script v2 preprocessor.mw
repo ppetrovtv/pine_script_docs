@@ -144,5 +144,4 @@ ELSE (FUN_BODY (FUN_RET (- x y))))))))
 (FUN_CALL alertcondition (FUN_ARGS (> c 100)))
 "</source>
 
-----
-Previous: [[Where can I get more information?]], Next: [[Appendix B. Pine Script v2 lexer grammar]], Up: [[Pine Script Tutorial]]
+

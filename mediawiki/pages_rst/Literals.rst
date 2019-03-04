@@ -111,9 +111,3 @@ function
 
 Footnote: When using hexadecimal figures it’s possible to use them in
 either upper or lowercase.
-
---------------
-
-Previous: `Type System <Type_System>`__, Next:
-`Operators <Operators>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

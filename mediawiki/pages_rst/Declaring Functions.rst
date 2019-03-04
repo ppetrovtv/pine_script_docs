@@ -178,10 +178,3 @@ There is a special syntax for calling such functions:
     [res0, res1] = fun(open, close)
     plot(res0)
     plot(res1)
-
---------------
-
-Previous: `Expressions, Declarations and
-Statements <Expressions,_Declarations_and_Statements>`__, Next:
-`Lines\_Wrapping <Lines_Wrapping>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

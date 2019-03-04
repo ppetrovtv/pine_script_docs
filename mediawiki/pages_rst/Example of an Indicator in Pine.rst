@@ -66,9 +66,3 @@ description of all available built-in functions
 `here <https://www.tradingview.com/study-script-reference/>`__. In the
 following sections the document will describe in full all the Pine
 Script capabilities.
-
---------------
-
-Previous: `Introduction <Introduction>`__, Next: `Structure of the
-Script <Structure_of_the_Script>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

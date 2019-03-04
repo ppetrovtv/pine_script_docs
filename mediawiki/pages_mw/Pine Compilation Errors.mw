@@ -113,5 +113,4 @@ var3 = var1 + var2</source>
 can be сonverted into
 <source>var3 = expr1 + expr2</source>
 
-----
-Previous: [[Indicator repainting]], Next: [[Where can I get more information?]], Up: [[Pine Script Tutorial]]
+

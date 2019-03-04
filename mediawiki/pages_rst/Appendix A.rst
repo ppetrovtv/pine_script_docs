@@ -160,11 +160,3 @@ After the lexer/parser processing, we’d have an AST:
     (FUN_CALL plot (FUN_ARGS c (KW_ARG title 'Out') (KW_ARG color (? (> c (SQBR c 1)) lime red)) (KW_ARG style linebr) (KW_ARG trackprice true)))
     (FUN_CALL alertcondition (FUN_ARGS (> c 100)))
     "
-
---------------
-
-Previous: `Where can I get more
-information? <Where_can_I_get_more_information?>`__, Next: `Appendix B.
-Pine Script v2 lexer
-grammar <Appendix_B._Pine_Script_v2_lexer_grammar>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

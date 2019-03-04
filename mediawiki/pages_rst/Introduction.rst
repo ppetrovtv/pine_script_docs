@@ -76,9 +76,3 @@ Features introduced in version 3:
 See `Version 3 Release
 Notes <Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration
 Guide <Pine_Version_3_Migration_Guide>`__ for details.
-
---------------
-
-Next: `Example of an Indicator in
-Pine <Example_of_an_Indicator_in_Pine>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

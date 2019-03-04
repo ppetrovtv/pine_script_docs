@@ -50,5 +50,3 @@ choose the specific alert condition (implemented in the code itself).
    :alt: Pine_alertcondition_.png
 
    Pine\_alertcondition\_.png
-
---------------

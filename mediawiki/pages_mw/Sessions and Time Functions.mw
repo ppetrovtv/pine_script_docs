@@ -96,5 +96,4 @@ The following are also built-in functions:
 
 All these variables and functions return '''time in exchange time zone''', except for the <code>time</code> variable which returns time in UTC timezone.
 
-----
-Previous: [[Bar states. Built-in variables ‘barstate’]], Next: [[Extended_and_Regular_Sessions]], Up: [[Pine Script Tutorial]]
+

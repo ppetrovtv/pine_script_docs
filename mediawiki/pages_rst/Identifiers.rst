@@ -11,8 +11,3 @@ case-sensitive). Here are some examples of valid identifiers:
     my123Var
     MAX_LEN
     max_len
-
---------------
-
-Previous: `Comments <Comments>`__, Next: `Type System <Type_System>`__,
-Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__

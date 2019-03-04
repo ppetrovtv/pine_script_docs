@@ -61,11 +61,3 @@ v3 <http://www.antlr3.org/>`__ syntax.
     fragment HEX_DIGIT : ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) ;
     fragment EXP : ( 'e' | 'E' ) ( '+' | '-' )? DIGITS ;
     Tokens : ( COND | COND_ELSE | OR | AND | NOT | EQ | NEQ | GT | GE | LT | LE | PLUS | MINUS | MUL | DIV | MOD | COMMA | ARROW | LPAR | RPAR | LSQBR | RSQBR | DEFINE | IF_COND | IF_COND_ELSE | BEGIN | END | ASSIGN | FOR_STMT | FOR_STMT_TO | FOR_STMT_BY | BREAK | CONTINUE | LBEG | LEND | PLEND | INT_LITERAL | FLOAT_LITERAL | STR_LITERAL | BOOL_LITERAL | COLOR_LITERAL | ID | ID_EX | INDENT | LINE_CONTINUATION | EMPTY_LINE_V1 | EMPTY_LINE | WHITESPACE );
-
---------------
-
-Previous: `Appendix A. Pine Script v2
-preprocessor <Appendix_A._Pine_Script_v2_preprocessor>`__, Next:
-`Appendix C. Pine Script v2 parser
-grammar <Appendix_C._Pine_Script_v2_parser_grammar>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

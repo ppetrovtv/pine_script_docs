@@ -86,9 +86,3 @@ processing the data:
    barstate.islast, barstate.isnew, barstate.isrealtime
 -  timenow
 -  n
-
---------------
-
-Previous: `HOWTOs <HOWTOs>`__, Next: `Pine Compilation
-Errors <Pine_Compilation_Errors>`__, Up: `Pine Script
-Tutorial <Pine_Script_Tutorial>`__

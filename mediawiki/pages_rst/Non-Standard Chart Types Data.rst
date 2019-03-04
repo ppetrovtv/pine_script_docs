@@ -183,10 +183,3 @@ request and get those numbers and plot them on chart.
 
 For detailed reference on all ``pointfigure`` arguments go
 `here <https://www.tradingview.com/study-script-reference/#fun_pointfigure>`__.
-
---------------
-
-Previous: `Extended and Regular
-Sessions <Extended_and_Regular_Sessions>`__, Next:
-`Annotation\_Functions\_Overview <Annotation_Functions_Overview>`__, Up:
-`Pine Script Tutorial <Pine_Script_Tutorial>`__
