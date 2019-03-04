@@ -1,37 +1,37 @@
-Alerts in pine.mw
-Annotation Functions Overview.mw
-Appendix A. Pine Script v2 preprocessor.mw
-Appendix B. Pine Script v2 lexer grammar.mw
-Appendix C. Pine Script v2 parser grammar.mw
-Bar states. Built-in variables ‘barstate’.mw
+Alerts_in_pine.mw
+Annotation_Functions_Overview.mw
+Appendix_A._Pine_Script_v2_preprocessor.mw
+Appendix_B._Pine_Script_v2_lexer_grammar.mw
+Appendix_C._Pine_Script_v2_parser_grammar.mw
+Bar_states._Built-in_variables_‘barstate’.mw
 Comments.mw
-Context Switching, The ‘security’ Function.mw
-Custom OHLC bars and candles.mw
-Declaring Functions.mw
-Example of an Indicator in Pine.mw
-Expressions, Declarations and Statements.mw
-Extended and Regular Sessions.mw
-Functions vs Annotation Functions.mw
+Context_Switching,_The_‘security’_Function.mw
+Custom_OHLC_bars_and_candles.mw
+Declaring_Functions.mw
+Example_of_an_Indicator_in_Pine.mw
+Expressions,_Declarations_and_Statements.mw
+Extended_and_Regular_Sessions.mw
+Functions_vs_Annotation_Functions.mw
 HOWTOs.mw
 Identifiers.mw
-Indicator repainting.mw
-Input for selecting data source in pine script.mw
+Indicator_repainting.mw
+Input_for_selecting_data_source_in_pine_script.mw
 Introduction.mw
-Lines Wrapping.mw
+Lines_Wrapping.mw
 Literals.mw
-Multicolor filling.mw
-Non-Standard Chart Types Data.mw
+Multicolor_filling.mw
+Non-Standard_Chart_Types_Data.mw
 Operators.mw
-Pine Compilation Errors.mw
-Pine Script: Release Notes.mw
-Pine Script Tutorial.mw
-Pine Version 3 Migration Guide.mw
-Public Library.mw
-Publishing Scripts.mw
-Sessions and Time Functions.mw
-Shapes using plotshape, plotchar, plotarrow.mw
+Pine_Compilation_Errors.mw
+Pine_Script:_Release_Notes.mw
+Pine_Script_Tutorial.mw
+Pine_Version_3_Migration_Guide.mw
+Public_Library.mw
+Publishing_Scripts.mw
+Sessions_and_Time_Functions.mw
+Shapes_using_plotshape,_plotchar,_plotarrow.mw
 Strategies.mw
-Structure of the Script.mw
-Transparency in pine scripts.mw
-Type System.mw
-Where can I get more information?.mw
+Structure_of_the_Script.mw
+Transparency_in_pine_scripts.mw
+Type_System.mw
+Where_can_I_get_more_information?.mw
