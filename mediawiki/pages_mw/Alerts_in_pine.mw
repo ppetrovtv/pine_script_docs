@@ -31,4 +31,4 @@ One script may include more than one alertcondition.
 
 To create an alert based on alertcondition, one should apply a Pine code (study) with alertcondition to current chart, open the Create Alert dialog, select the applied Pine code as main condition for the alert and choose the specific alert condition (implemented in the code itself).
 
-[[File:Pine alertcondition .png|none]]
+[[File:images/Pine alertcondition .png|none]]

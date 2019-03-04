@@ -46,7 +46,7 @@ To create an alert based on alertcondition, one should apply a Pine code
 dialog, select the applied Pine code as main condition for the alert and
 choose the specific alert condition (implemented in the code itself).
 
-.. figure:: Pine_alertcondition_.png
-   :alt: Pine_alertcondition_.png
+.. figure:: images/Pine_alertcondition_.png
+   :alt: images/Pine_alertcondition_.png
 
-   Pine\_alertcondition\_.png
+   images/Pine\_alertcondition\_.png

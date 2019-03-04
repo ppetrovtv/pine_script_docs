@@ -23,7 +23,7 @@ plotchar(close, color = hist ? gray : na, char='h')
 bgcolor(color = new ? green : na)
 barcolor(color = rt ? black: na)</source>
 
-[[File:Chart barstate 1.jpg|none]]
+[[File:images/Chart barstate 1.jpg|none]]
 
 The script draws red and blue symbols under the first and the last bars accordingly and puts ‘h’ on the top of the historical bars; background of the new bars will be highlighted green, and the real-time bars will be colored black.
 

@@ -4,11 +4,11 @@ On TradingView it's possible to write custom indicators using [[Pine Script Tuto
 =Publishing Scripts=
 To publish a script:
 <br>1. Open Pine Script Editor:
-<br><br>[[File:Pine_editor.png]]
+<br><br>[[File:images/Pine_editor.png]]
 <br><br>2. Open/write the script;
 <br>3. Apply the script to the current chart;
 <br>4. Click the "Publish Script" button:
-<br>[[File:Publish_script_button.png]]<br>[[File:Publish script new.png|thumb]]
+<br>[[File:images/Publish_script_button.png]]<br>[[File:images/Publish script new.png|thumb]]
 <br>5. Enter Script Title, Tags (optional), Description;
 <br>6. Click the "Publish Script" button.
 
@@ -18,16 +18,16 @@ The published script will be displayed in [[Public Library]], which is available
 =Protected source code for Pine indicators=
 Now you can publish indicators with protected source code. This is a high-demand feature that lets you share knowledge and protect intellectual property at the same time. These indicators are available in the public Script Library, and any user can use it, but only the author can see the source code. Each user can view, comment and favorite the script’s page with its description, screenshot and author’s comments. It’s  will available in the Public Library section in the Indicators dialog, and any user can add this script to a chart. Only the author can open the source code of Protected scripts. This is a great option for those who want to share the script, but protect its calculation methods. 
 
-To make the indicator Protected simply check "Protected Script" in the script publication window.[[File:Protected script new.png|thumb]]
+To make the indicator Protected simply check "Protected Script" in the script publication window.[[File:images/Protected script new.png|thumb]]
 
 Source code on charts is hidden from other users, so that only you will see it until you decide to publish an open source version. Publish ideas, send links to charts in chat - your intellectual property remains protected and no one will have access to your source code without your decision.
 
 =Pine Indicators with Managed Access=
 Authors can manage who can access their indicators. This is great for commercial vendors, or authors who want to protect their IP, or share with only a few select people - the reasons could be many. If someone wishes to sell indicators, the author may charge off-site for them, and then provide access to the paying customers. 
 
-Simply choose the "Invite-only script" option when publishing, and only users who you specifically add will be able to use it. [[File:Invite only script new.png|thumb]]
+Simply choose the "Invite-only script" option when publishing, and only users who you specifically add will be able to use it. [[File:images/Invite only script new.png|thumb]]
 On the published script’s page authors will see a Manage Access button, where you can add/remove users, and manage access rights. 
-<br>[[File:Manage_access_button.png]]
+<br>[[File:images/Manage_access_button.png]]
 
 The invite-only indicators are visible in the [[Public Library]], but nobody can add it to a chart without explicit permission from the author, and only the author can see the source code. Each user can view, comment and favorite the script’s page with its description, screenshot and author’s comments, and it’s available in the Public Library section in the Indicators dialog. Only users with explicit permission from the author can add the script to a chart. Nobody except the author can view the source code of these scripts. This is a great option for commercial script vendors, or authors who want to share the script only with a few select users. If the author wishes to charge for access to these scripts, they may do so off-site and then provide access to their customers. TradingView does not require a percentage of the sales from such transactions. All of your published scripts with limited access are shown in a new section. 
-<br>[[File:Invite_only_tab.png]]
+<br>[[File:images/Invite_only_tab.png]]

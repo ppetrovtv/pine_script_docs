@@ -10,7 +10,7 @@ Usage example:
     p2 = plot(low)
     fill(p1, p2, color = close>open ? green : red)
 
-.. figure:: Colored_filling.png
-   :alt: Colored_filling.png
+.. figure:: images/Colored_filling.png
+   :alt: images/Colored_filling.png
 
-   Colored\_filling.png
+   images/Colored\_filling.png

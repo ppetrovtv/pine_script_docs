@@ -17,7 +17,7 @@ resolution.
     ibm_15 = security("NYSE:IBM", "15", close)
     plot(ibm_15)
 
-.. figure:: Chart_security_1.png
+.. figure:: images/Chart_security_1.png
    :alt: Example security 1
 
    Example security 1
@@ -125,7 +125,7 @@ merged continiously (without gaps). If barmerge.gaps\_on then data will
 be merged possibly with gaps (na values).
 
 Second one was added in `version
-3 <Pine_Script:_Release_Notes#Pine_Version_3>`__. Parameter lookahead
+3 <Pine_Script_Release_Notes#Pine_Version_3>`__. Parameter lookahead
 have two possible values:
 `barmerge.lookahead\_off <https://www.tradingview.com/study-script-reference/#var_barmerge.lookahead_off>`__
 and
@@ -148,10 +148,10 @@ chart:
     b = security(tickerid, '60', low, lookahead=barmerge.lookahead_on)
     plot(b, color=lime)
 
-.. figure:: V3.png
-   :alt: V3.png
+.. figure:: images/V3.png
+   :alt: images/V3.png
 
-   V3.png
+   images/V3.png
 
 The green line on the chart is the Low price of an hourly bar that is
 requested with lookahead on. It’s the old behavior of the security

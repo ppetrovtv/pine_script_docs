@@ -24,7 +24,7 @@ Multicolor_filling
 Non-Standard_Chart_Types_Data
 Operators
 Pine_Compilation_Errors
-Pine_Script:_Release_Notes
+Pine_Script_Release_Notes
 Pine_Script_Tutorial
 Pine_Version_3_Migration_Guide
 Public_Library

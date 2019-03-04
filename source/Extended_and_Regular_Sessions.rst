@@ -15,10 +15,10 @@ data with regular session type will be requested. For example:
     cc = security("BATS:AAPL", period, close, true)
     plot(cc, style=linebr)
 
-.. figure:: Pine_Extended_Session_Data.png
-   :alt: Pine_Extended_Session_Data.png
+.. figure:: images/Pine_Extended_Session_Data.png
+   :alt: images/Pine_Extended_Session_Data.png
 
-   Pine\_Extended\_Session\_Data.png
+   images/Pine\_Extended\_Session\_Data.png
 
 If you want to request the same data but with extended session type, you
 should use ``tickerid`` function (don't confuse it with variable
@@ -31,10 +31,10 @@ should use ``tickerid`` function (don't confuse it with variable
     cc = security(t, period, close, true)
     plot(cc, style=linebr)
 
-.. figure:: Pine-_Regular_Session_Data.png
-   :alt: Pine-_Regular_Session_Data.png
+.. figure:: images/Pine-_Regular_Session_Data.png
+   :alt: images/Pine-_Regular_Session_Data.png
 
-   Pine-\_Regular\_Session\_Data.png
+   images/Pine-\_Regular\_Session\_Data.png
 
 Now you should see the difference — the gaps are filled with data.
 

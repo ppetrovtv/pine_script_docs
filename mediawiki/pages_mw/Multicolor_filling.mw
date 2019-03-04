@@ -10,4 +10,4 @@ p2 = plot(low)
 fill(p1, p2, color = close>open ? green : red)
 </source>
 
-[[File:Colored filling.png]]
+[[File:images/Colored filling.png]]

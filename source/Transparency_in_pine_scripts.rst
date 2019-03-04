@@ -35,5 +35,5 @@ Example:
 You can control transparency in properties of a study on Style tab.
 |Transparency settings|
 
-.. |Transparency settings| image:: Transparency_settings.png
+.. |Transparency settings| image:: images/Transparency_settings.png
 

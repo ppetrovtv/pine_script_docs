@@ -76,7 +76,7 @@ Self Referencing Variables in version 2
 ---------------------------------------
 
 *Note: self referencing variables and forward referencing variables was
-removed in `version 3 <Pine_Script:_Release_Notes>`__.*
+removed in `version 3 <Pine_Script_Release_Notes>`__.*
 
 The ability to reference the previous values of declared variables in
 expressions where they are declared (using the operator **[]**) is a
@@ -118,7 +118,7 @@ its argument has still not been determined (is **NaN**). In the example
 produced below, the values fib[1] and fib[2] have not been determined on
 the first bar, while on the second bar fib[2] has not been determined.
 Finally, on the third bar both of them are defined and can be added.
-|Fib.png|
+|images/Fib.png|
 
 Footnote: Since the sequence of Fibonacci numbers grows rather fast, the
 variable ‘fib’ very quickly overflows. As such, the user should apply
@@ -363,5 +363,5 @@ Also note that we recommend to use a built-in function
 `sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__
 for `Moving Average <Moving_Average>`__ as it calculates faster.
 
-.. |Fib.png| image:: Fib.png
+.. |images/Fib.png| image:: images/Fib.png
 

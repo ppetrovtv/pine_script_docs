@@ -54,12 +54,12 @@ another. For example **NotAvailable** type, an ``na`` variable, can be
 cast to any **color**, **integer**, **float** or **series** types. But
 **color** can only be casted to **color series** type.
 
-.. figure:: Pine_Types_v3.jpg
+.. figure:: images/Pine_Types_v3.jpg
    :alt: Pine Types v3
 
    Pine Types v3
 
 *Note: Pine type system was changed in version 3. See `Pine Script:
-Release Notes <Pine_Script:_Release_Notes>`__*. *See also `type casts
+Release Notes <Pine_Script_Release_Notes>`__*. *See also `type casts
 graph for version
-2 <https://www.tradingview.com/wiki/File:Pine_Types_v2.jpg>`__*.
+2 <https://www.tradingview.com/wiki/File:images/Pine_Types_v2.jpg>`__*.

@@ -32,10 +32,10 @@ Here’s the example of the script with new variables:
     bgcolor(color = new ? green : na)
     barcolor(color = rt ? black: na)
 
-.. figure:: Chart_barstate_1.jpg
-   :alt: Chart_barstate_1.jpg
+.. figure:: images/Chart_barstate_1.jpg
+   :alt: images/Chart_barstate_1.jpg
 
-   Chart\_barstate\_1.jpg
+   images/Chart\_barstate\_1.jpg
 
 The script draws red and blue symbols under the first and the last bars
 accordingly and puts ‘h’ on the top of the historical bars; background

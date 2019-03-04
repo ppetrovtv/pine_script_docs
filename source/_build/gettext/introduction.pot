@@ -105,7 +105,7 @@ msgid "`compile time constants <https://blog.tradingview.com/en/possibilities-co
 msgstr ""
 
 #: ../../introduction.rst:82
-msgid "See `Version 3 Release Notes <Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration Guide <Pine_Version_3_Migration_Guide>`__ for details."
+msgid "See `Version 3 Release Notes <Pine_Script_Release_Notes#Pine_Version_3>`__ and `Migration Guide <Pine_Version_3_Migration_Guide>`__ for details."
 msgstr ""
 
 #: ../../introduction.rst:87

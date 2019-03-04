@@ -20,7 +20,7 @@ The first line '''strategy(“test”)''' states the code belongs to strategy ty
 == How to apply a strategy to the chart ==
 To test your strategy, apply it to the chart. Use the symbol and time intervals that you want to test. You can use a built-in strategy from the “Indicators & Strategies” dialog box, or write your own in Pine Editor.
 
-[[File:Strategy tester.png]]
+[[File:images/Strategy tester.png]]
 
 '''Note:''' When using non-standard ([[Renko Charts|Renko]], [[Kagi Charts|Kagi]], [[Line Break Charts|Line Break]], [[Point and Figure (PnF) Charts|Point and Figure]], Heikin Ashi, [[Spread Charts|Spread Charts]]) types of chart as a basis for strategy, you need to realize that the result will be different. The orders will be executed at the prices of this chart (e.g.for Heikin Ashi it’ll take Heikin Ashi prices (the average ones) not the real market prices). Therefore we highly recommend you to use standard chart type for strategies.
 
@@ -42,7 +42,7 @@ As stated above, in backtesting strategy is calculated on bar’s close. The fol
 # Broker emulator assumes that there were no gaps inside bar, meaning all intrabar prices are available for order execution.
 # If the option “Recalculate On Every Tick” in strategy properties is enabled (or strategy(..., calc_on_every_tick=true, ...) is specified in script), code is still calculated only on bar’s close, following the above logic.
 
-[[File:Filled stategy.png]]
+[[File:images/Filled stategy.png]]
 
 Here is the strategy demonstrating how orders are filled by the broker emulator:
 
@@ -112,7 +112,7 @@ strategy.exit("bracket2", "buy",  profit=20, stop=20)
 
 This code generates 2 levels of brackets (2 take profit orders and 2 stop loss orders). Both levels are activated at the same time: first level to exit 2 contracts and the second one to exit all the rest.
 
-[[File:Levels brackets.png]]
+[[File:images/Levels brackets.png]]
 
 The first take profit and stop loss orders (level 1) are in one OCA group. The other orders (level 2) are in another OCA group. It means that as soon as an order from level 1 is filled, the orders from level 2 are not cancelled, they stay active. 
 

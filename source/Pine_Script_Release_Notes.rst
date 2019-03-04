@@ -1,3 +1,5 @@
+.. _pine_script_release_notes:
+
 This page contains release notes of notable changes in Pine Script.
 
 2017-05-17: compile-time constants

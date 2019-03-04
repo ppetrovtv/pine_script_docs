@@ -4,30 +4,30 @@ On TradingView it's possible to use pre-built indicators and write custom ones u
 
 '''Public Library''' is the storage of all user-published scripts.
 All published scripts can be viewed on [https://www.tradingview.com/script/ this page], or in the Indicators window -> Public Library tab:
-<br>[[File:Public_Library_tab.png]]
+<br>[[File:images/Public_Library_tab.png]]
 
 =Copying a Script from Public to Personal Library=
 To copy a script choose one of two methods: 
 <br>1. Click the star next to the needed script in the Indicators window:
-<br>[[File:Add_to_Personal_Library.png]]
+<br>[[File:images/Add_to_Personal_Library.png]]
 <br><br>2. Or open the needed script on [https://www.tradingview.com/script/ this page] and click the "Add to Favorite Scripts" button: 
-<br>[[File:Add_to_Personal_Library_2.png]]
+<br>[[File:images/Add_to_Personal_Library_2.png]]
 
 <br>The script will be added to your Favorites section in the Indicators window, where you can easily find it when needed.
-<br>[[File:Favorites_section.png]]
+<br>[[File:images/Favorites_section.png]]
 
 <br>Scripts in the Indicators window are sorted by popularity: the more users have favorited the script, the higher it will be displayed in the Indicators window.
-<br>[[File:Sorted_by_popularity.png]]
+<br>[[File:images/Sorted_by_popularity.png]]
 
 =Editing a Script from the Public Library=
 To edit a script:
 <br>1. Open the script (the script will be unavailable for editing and will be colored lighter than normal):
-<br>[[File:Open_the_script.png]]
+<br>[[File:images/Open_the_script.png]]
 <br><br>2. Click "Save as", enter the desired name and save a copy to your personal library:
-<br>[[File:Save_as.png]]
+<br>[[File:images/Save_as.png]]
 
 <br>A saved copy of the script will appear in the list of your scripts in the Indicators window, "My Scripts" tab:
-<br>[[File:My_Scripts.png]]
+<br>[[File:images/My_Scripts.png]]
 <br><br>Now you can open and edit the script.
 
 If the same script is published more than once, a notification on older versions will appear that a new version is available. 
@@ -36,9 +36,9 @@ If the same script is published more than once, a notification on older versions
 To search for a script:
 
 In the Indicators dialog use the Search field:
-<br>[[File:Search_field.png]]
+<br>[[File:images/Search_field.png]]
 <br><br>This will search your Personal and Public Library at the same time:
-<br>[[File:Search.png]]
+<br>[[File:images/Search.png]]
 
 =Educational Videos=
 

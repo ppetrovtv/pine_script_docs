@@ -6,7 +6,7 @@ Usually you pass to <code>security</code> function first argument symbol name in
 <source>study("Example 1: Regular Session Data")
 cc = security("BATS:AAPL", period, close, true)
 plot(cc, style=linebr)</source>
-[[File:Pine Extended Session Data.png]]
+[[File:images/Pine Extended Session Data.png]]
 
 If you want to request the same data but with extended session type, you should use <code>tickerid</code> function (don't confuse it with variable <code>tickerid</code>). Example:
 
@@ -14,7 +14,7 @@ If you want to request the same data but with extended session type, you should 
 t = tickerid("BATS", "AAPL", session.extended)
 cc = security(t, period, close, true)
 plot(cc, style=linebr)</source>
-[[File:Pine- Regular Session Data.png]]
+[[File:images/Pine- Regular Session Data.png]]
 
 Now you should see the difference — the gaps are filled with data.
 

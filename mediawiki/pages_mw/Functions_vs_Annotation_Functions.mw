@@ -14,7 +14,7 @@ Name, color and each graph’s display style are determined in annotations. Exam
 A few annotations have not only side effects (in the form of determining meta information) but also return a result. ‘Plot’ and ‘hline’ are such annotations. However this result can be used only in other annotations and can’t take part in the indicator’s calculations (see [https://www.tradingview.com/study-script-reference/#fun_fill annotation ‘fill’]).
 
 Syntactically, user-defined functions, built-in functions and annotation functions are similar in use within the script: to use either function or annotation one should specify its name as well as the list of actual arguments in parentheses. The main difference is in usage semantic. 
-Also, there is a difference in passing arguments - annotations and built-in functions accept keyword arguments while user-defined functions does not (see [[Pine_Script:_Release_Notes#2017-04-17:_kwargs_syntax_for_all_builtin_functions|release note on kwargs in built-in functions]]).
+Also, there is a difference in passing arguments - annotations and built-in functions accept keyword arguments while user-defined functions does not (see [[Pine_Script_Release_Notes#2017-04-17:_kwargs_syntax_for_all_builtin_functions|release note on kwargs in built-in functions]]).
 
 Function calls allows to pass arguments only by position. For most of programming languages it's the only available method of arguments passing. Function annotation calls also accepts keyword arguments. This allows to specify only part of arguments leaving others by default. Compare the following:
 <source>

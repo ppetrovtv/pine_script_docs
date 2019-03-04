@@ -43,7 +43,7 @@ arguments in parentheses. The main difference is in usage semantic.
 Also, there is a difference in passing arguments - annotations and
 built-in functions accept keyword arguments while user-defined functions
 does not (see `release note on kwargs in built-in
-functions <Pine_Script:_Release_Notes#2017-04-17:_kwargs_syntax_for_all_builtin_functions>`__).
+functions <Pine_Script_Release_Notes#2017-04-17:_kwargs_syntax_for_all_builtin_functions>`__).
 
 Function calls allows to pass arguments only by position. For most of
 programming languages it's the only available method of arguments

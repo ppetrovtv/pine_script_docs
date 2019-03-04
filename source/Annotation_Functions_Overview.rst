@@ -66,10 +66,10 @@ example red, then the whole chart will be plotted with a red color:
 
     plot(close, color=red)
 
-.. figure:: Output_of_charts_plot_1.png
-   :alt: Output_of_charts_plot_1.png
+.. figure:: images/Output_of_charts_plot_1.png
+   :alt: images/Output_of_charts_plot_1.png
 
-   Output\_of\_charts\_plot\_1.png
+   images/Output\_of\_charts\_plot\_1.png
 
 However, the argument ``color`` can receive an expression of a series
 type of colored values as values. This series of colors will be used to
@@ -80,10 +80,10 @@ color the chart when rendered. For example:
     c = close >= open ? lime : red
     plot(close, color = c)
 
-.. figure:: Output_of_charts_plot_2.png
-   :alt: Output_of_charts_plot_2.png
+.. figure:: images/Output_of_charts_plot_2.png
+   :alt: images/Output_of_charts_plot_2.png
 
-   Output\_of\_charts\_plot\_2.png
+   images/Output\_of\_charts\_plot\_2.png
 
 Interest also represents the argument ``offset`` of the function
 ``plot``. It specifies the shift used when the chart is plotted
@@ -96,10 +96,10 @@ the right) For example:
     plot(close, color=red, offset=-5)
     plot(close, color=lime, offset=5)
 
-.. figure:: Output_of_charts_plot_3.png
-   :alt: Output_of_charts_plot_3.png
+.. figure:: images/Output_of_charts_plot_3.png
+   :alt: images/Output_of_charts_plot_3.png
 
-   Output\_of\_charts\_plot\_3.png
+   images/Output\_of\_charts\_plot\_3.png
 
 As can be seen in the screenshot, the red series has been shifted to the
 left (since the argument's value ‘offset’ is negative), while the green
@@ -131,10 +131,10 @@ example script renders the inside and outside bars in different colors:
     isInside() => high < high[1] and low > low[1]
     barcolor(isInside() ? yellow : isOutsideUp() ? aqua : isOutsideDown() ? purple : na)
 
-.. figure:: Barcoloring_a_series_barcolor_1.png
-   :alt: Barcoloring_a_series_barcolor_1.png
+.. figure:: images/Barcoloring_a_series_barcolor_1.png
+   :alt: images/Barcoloring_a_series_barcolor_1.png
 
-   Barcoloring\_a\_series\_barcolor\_1.png
+   images/Barcoloring\_a\_series\_barcolor\_1.png
 
 As you can see, when passing the na value, the colors stay the default
 chart color.
@@ -161,10 +161,10 @@ EURUSD, 30 min resolution):
     sessioncolor = timeinrange("30", "0400-0930") ? premarket : timeinrange("30", "0930-1600") ? regular : timeinrange("30", "1600-2000") ? postmarket : notrading
     bgcolor(sessioncolor, transp=75)
 
-.. figure:: Background_coloring_bgcolor_1.png
-   :alt: Background_coloring_bgcolor_1.png
+.. figure:: images/Background_coloring_bgcolor_1.png
+   :alt: images/Background_coloring_bgcolor_1.png
 
-   Background\_coloring\_bgcolor\_1.png
+   images/Background\_coloring\_bgcolor\_1.png
 
 Inputs of the Indicator
 -----------------------
@@ -198,10 +198,10 @@ its widgets look like.
     b = input(title="On/Off", type=bool, defval=true)
     plot(b ? open : na)
 
-.. figure:: Inputs_of_indicator_1.png
-   :alt: Inputs_of_indicator_1.png
+.. figure:: images/Inputs_of_indicator_1.png
+   :alt: images/Inputs_of_indicator_1.png
 
-   Inputs\_of\_indicator\_1.png
+   images/Inputs\_of\_indicator\_1.png
 
 --------------
 
@@ -210,10 +210,10 @@ its widgets look like.
     i = input(title="Offset", type=integer, defval=7, minval=-10, maxval=10)
     plot(offset(close, i))
 
-.. figure:: Inputs_of_indicator_2.png
-   :alt: Inputs_of_indicator_2.png
+.. figure:: images/Inputs_of_indicator_2.png
+   :alt: images/Inputs_of_indicator_2.png
 
-   Inputs\_of\_indicator\_2.png
+   images/Inputs\_of\_indicator\_2.png
 
 --------------
 
@@ -222,10 +222,10 @@ its widgets look like.
     f = input(title="Angle", type=float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
     plot(sin(f) > 0 ? close : open)
 
-.. figure:: Inputs_of_indicator_3.png
-   :alt: Inputs_of_indicator_3.png
+.. figure:: images/Inputs_of_indicator_3.png
+   :alt: images/Inputs_of_indicator_3.png
 
-   Inputs\_of\_indicator\_3.png
+   images/Inputs\_of\_indicator\_3.png
 
 --------------
 
@@ -236,9 +236,13 @@ its widgets look like.
     plot(close, color=red)
     plot(security(sym, res, close), color=green)
 
-|Inputs\_of\_indicator\_4.png| The input widget ‘symbol’ has a built-in
-symbol ‘search’ which is turned on automatically when the ticker’s first
-symbols are entered.
+.. figure:: images/Inputs_of_indicator_4.png
+   :alt: images/Inputs_of_indicator_4.png
+
+   images/Inputs\_of\_indicator\_4.png
+
+The input widget ‘symbol’ has a built-in symbol ‘search’ which is turned
+on automatically when the ticker’s first symbols are entered.
 
 --------------
 
@@ -247,10 +251,10 @@ symbols are entered.
     s = input(title="Session", type=session, defval="24x7")
     plot(time(period, s))
 
-.. figure:: Inputs_of_indicator_5.png
-   :alt: Inputs_of_indicator_5.png
+.. figure:: images/Inputs_of_indicator_5.png
+   :alt: images/Inputs_of_indicator_5.png
 
-   Inputs\_of\_indicator\_5.png
+   images/Inputs\_of\_indicator\_5.png
 
 --------------
 
@@ -260,10 +264,10 @@ symbols are entered.
     ma = sma(src, 9)
     plot(ma)
 
-.. figure:: Inputs_of_indicator_6.png
-   :alt: Inputs_of_indicator_6.png
+.. figure:: images/Inputs_of_indicator_6.png
+   :alt: images/Inputs_of_indicator_6.png
 
-   Inputs\_of\_indicator\_6.png
+   images/Inputs\_of\_indicator\_6.png
 
 --------------
 
@@ -284,10 +288,10 @@ fixed price level. For example:
     plot(osc, color=red)
     hline(0, title="Zero", color=gray, linestyle=dashed)
 
-.. figure:: Price_levels_hline_1.png
-   :alt: Price_levels_hline_1.png
+.. figure:: images/Price_levels_hline_1.png
+   :alt: images/Price_levels_hline_1.png
 
-   Price\_levels\_hline\_1.png
+   images/Price\_levels\_hline\_1.png
 
 A number must be the first argument of ‘hline’. Values of a type series
 are forbidden. It’s possible to create a few horizontal lines with the
@@ -316,10 +320,10 @@ example illustrates how it works:
     fill(h1, h2, color=yellow)
     fill(h3, h4, color=lime)
 
-.. figure:: Filling_in_the_background_between_objects_with_fill_1.png
-   :alt: Filling_in_the_background_between_objects_with_fill_1.png
+.. figure:: images/Filling_in_the_background_between_objects_with_fill_1.png
+   :alt: images/Filling_in_the_background_between_objects_with_fill_1.png
 
-   Filling\_in\_the\_background\_between\_objects\_with\_fill\_1.png
+   images/Filling\_in\_the\_background\_between\_objects\_with\_fill\_1.png
 
 Footnote: Never execute a fill between ‘plot’ and ‘hline’. However it’s
 possible to display, with the help of ‘plot’, a series of the identical
@@ -336,10 +340,10 @@ execute a fill between it and another plot. For example:
     // NOTE: fill(p, hline(0)) wouldn't work, instead use this:
     fill(p, plot(0))
 
-.. figure:: Filling_in_the_background_between_objects_with_fill_2.png
-   :alt: Filling_in_the_background_between_objects_with_fill_2.png
+.. figure:: images/Filling_in_the_background_between_objects_with_fill_2.png
+   :alt: images/Filling_in_the_background_between_objects_with_fill_2.png
 
-   Filling\_in\_the\_background\_between\_objects\_with\_fill\_2.png
+   images/Filling\_in\_the\_background\_between\_objects\_with\_fill\_2.png
 
 You can set filling color by using constants like 'color=red' or
 'color=#ff001a' as well as complex expressions like 'color = close >=
@@ -355,10 +359,10 @@ open ? green : red'. Example:
     p2 = plot(line2)
     fill(p1, p2, color = line1>line2 ? green : red)
 
-.. figure:: Filling_in_the_background_between_objects_with_fill_3.png
-   :alt: Filling_in_the_background_between_objects_with_fill_3.png
+.. figure:: images/Filling_in_the_background_between_objects_with_fill_3.png
+   :alt: images/Filling_in_the_background_between_objects_with_fill_3.png
 
-   Filling\_in\_the\_background\_between\_objects\_with\_fill\_3.png
+   images/Filling\_in\_the\_background\_between\_objects\_with\_fill\_3.png
 
 Alert conditions
 ----------------
@@ -412,17 +416,14 @@ To create an alert based on alertcondition, one should apply a Pine code
 dialog, select the applied Pine code as main condition for the alert and
 choose the specific alert condition (implemented in the code itself).
 
-.. figure:: Alertcondition_1.png
-   :alt: Alertcondition_1.png
+.. figure:: images/Alertcondition_1.png
+   :alt: images/Alertcondition_1.png
 
-   Alertcondition\_1.png
+   images/Alertcondition\_1.png
 
 When alert fires, you’ll see the message:
 
-.. figure:: Alertcondition_2.png
-   :alt: Alertcondition_2.png
+.. figure:: images/Alertcondition_2.png
+   :alt: images/Alertcondition_2.png
 
-   Alertcondition\_2.png
-
-.. |Inputs\_of\_indicator\_4.png| image:: Inputs_of_indicator_4.png
-
+   images/Alertcondition\_2.png

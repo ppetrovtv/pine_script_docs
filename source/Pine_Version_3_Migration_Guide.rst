@@ -22,7 +22,7 @@ analysis, but doesn’t work for backtesting strategies.
 
 We worked on this and made changes in Pine v3. If this indicator is
 compiled with ``//@version=3`` directive, we get a completely different
-picture. |V3.png|
+picture. |images/V3.png|
 
 The old behaviour is still available though. We added a parameter to the
 ``security`` function (the fifth one) called ``lookahead``.
@@ -167,5 +167,5 @@ To make this example work in Pine v3 you can do the following:
 Function ``bton`` (abbreviation of 'boolean-to-number') explicitly
 “converts” any boolean value to a number if you really need this.
 
-.. |V3.png| image:: V3.png
+.. |images/V3.png| image:: images/V3.png
 

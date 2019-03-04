@@ -44,10 +44,10 @@ You may use plotshape with style **shape.arrowup** and
     plotshape(data, color=lime, style=shape.arrowup, text="Buy")
     plotshape(not data, color=red, style=shape.arrowdown, text="Sell")
 
-.. figure:: Buy_sell_chart1.png
-   :alt: Buy_sell_chart1.png
+.. figure:: images/Buy_sell_chart1.png
+   :alt: images/Buy_sell_chart1.png
 
-   Buy\_sell\_chart1.png
+   images/Buy\_sell\_chart1.png
 
 You may use plotchar function with any unicode character:
 
@@ -58,10 +58,10 @@ You may use plotchar function with any unicode character:
     plotchar(data, char='↓', color=lime, text="Buy")
     plotchar(data, char='↑', location=location.belowbar, color=red, text="Sell")
 
-.. figure:: Buy_sell_chart2.png
-   :alt: Buy_sell_chart2.png
+.. figure:: images/Buy_sell_chart2.png
+   :alt: images/Buy_sell_chart2.png
 
-   Buy\_sell\_chart2.png
+   images/Buy\_sell\_chart2.png
 
 Plot horizontal line (moving)
 -----------------------------
@@ -232,5 +232,5 @@ You can use the script below to avoid gaps in a series.
     plot(series, style=linebr, color=red) // series has na values 
     plot(vw) // all na values are replaced with the last non-empty value
 
-.. |Mark the highest bar within a 5 day lookback window range| image:: Wiki_howto_range_analysis.png
+.. |Mark the highest bar within a 5 day lookback window range| image:: images/Wiki_howto_range_analysis.png
 

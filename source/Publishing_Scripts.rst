@@ -12,12 +12,12 @@ Publishing Scripts
 
 | To publish a script:
 | 1. Open Pine Script Editor:
-| |Pine\_editor.png|
+| |images/Pine\_editor.png|
 | 2. Open/write the script;
 | 3. Apply the script to the current chart;
 | 4. Click the “Publish Script” button:
-| |Publish\_script\_button.png|
-| |Publish\_script\_new.png|
+| |images/Publish\_script\_button.png|
+| |images/Publish\_script\_new.png|
 | 5. Enter Script Title, Tags (optional), Description;
 | 6. Click the “Publish Script” button.
 
@@ -42,7 +42,7 @@ option for those who want to share the script, but protect its
 calculation methods.
 
 To make the indicator Protected simply check “Protected Script” in the
-script publication window.\ |Protected\_script\_new.png|
+script publication window.\ |images/Protected\_script\_new.png|
 
 Source code on charts is hidden from other users, so that only you will
 see it until you decide to publish an open source version. Publish
@@ -61,10 +61,10 @@ then provide access to the paying customers.
 
 | Simply choose the “Invite-only script” option when publishing, and
   only users who you specifically add will be able to use it.
-  |Invite\_only\_script\_new.png| On the published script’s page authors
-  will see a Manage Access button, where you can add/remove users, and
-  manage access rights.
-| |Manage\_access\_button.png|
+  |images/Invite\_only\_script\_new.png| On the published script’s page
+  authors will see a Manage Access button, where you can add/remove
+  users, and manage access rights.
+| |images/Manage\_access\_button.png|
 
 | The invite-only indicators are visible in the `Public
   Library <Public_Library>`__, but nobody can add it to a chart without
@@ -81,13 +81,13 @@ then provide access to the paying customers.
   does not require a percentage of the sales from such transactions. All
   of your published scripts with limited access are shown in a new
   section.
-| |Invite\_only\_tab.png|
+| |images/Invite\_only\_tab.png|
 
-.. |Pine\_editor.png| image:: Pine_editor.png
-.. |Publish\_script\_button.png| image:: Publish_script_button.png
-.. |Publish\_script\_new.png| image:: Publish_script_new.png
-.. |Protected\_script\_new.png| image:: Protected_script_new.png
-.. |Invite\_only\_script\_new.png| image:: Invite_only_script_new.png
-.. |Manage\_access\_button.png| image:: Manage_access_button.png
-.. |Invite\_only\_tab.png| image:: Invite_only_tab.png
+.. |images/Pine\_editor.png| image:: images/Pine_editor.png
+.. |images/Publish\_script\_button.png| image:: images/Publish_script_button.png
+.. |images/Publish\_script\_new.png| image:: images/Publish_script_new.png
+.. |images/Protected\_script\_new.png| image:: images/Protected_script_new.png
+.. |images/Invite\_only\_script\_new.png| image:: images/Invite_only_script_new.png
+.. |images/Manage\_access\_button.png| image:: images/Manage_access_button.png
+.. |images/Invite\_only\_tab.png| image:: images/Invite_only_tab.png
 

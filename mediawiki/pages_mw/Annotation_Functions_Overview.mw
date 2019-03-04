@@ -33,7 +33,7 @@ The parameter <code>color</code> can have a different effect depending on the tr
 plot(close, color=red)
 </source>
 
-[[File:Output of charts plot 1.png]]
+[[File:images/Output of charts plot 1.png]]
 
 However, the argument <code>color</code> can receive an expression of a series type of colored values as values. This series of colors will be used to color the chart when rendered. For example:
 <source>
@@ -41,7 +41,7 @@ c = close >= open ? lime : red
 plot(close, color = c)
 </source>
 
-[[File:Output of charts plot 2.png]]
+[[File:images/Output of charts plot 2.png]]
 
 Interest also represents the argument <code>offset</code> of the function <code>plot</code>. It specifies the shift used when the chart is plotted (negative values shift the chart to the left, while positive values — to the right) For example:
 <source>
@@ -50,7 +50,7 @@ plot(close, color=red, offset=-5)
 plot(close, color=lime, offset=5)
 </source>
 
-[[File:Output of charts plot 3.png]]
+[[File:images/Output of charts plot 3.png]]
 
 As can be seen in the screenshot, the red series has been shifted to the left (since the argument's value ‘offset’ is negative), while the green series has been shifted to the right (its value ‘offset’ is positive).
 
@@ -70,7 +70,7 @@ isInside() => high < high[1] and low > low[1]
 barcolor(isInside() ? yellow : isOutsideUp() ? aqua : isOutsideDown() ? purple : na)
 </source>
 
-[[File:Barcoloring a series barcolor 1.png]]
+[[File:images/Barcoloring a series barcolor 1.png]]
 
 As you can see, when passing the na value, the colors stay the default chart color.
 
@@ -91,7 +91,7 @@ sessioncolor = timeinrange("30", "0400-0930") ? premarket : timeinrange("30", "0
 bgcolor(sessioncolor, transp=75)
 </source>
 
-[[File:Background coloring bgcolor 1.png]]
+[[File:images/Background coloring bgcolor 1.png]]
 
 == Inputs of the Indicator ==
 ‘input’ annotations make it possible to indicate which variables in the indicator’s code are incoming. Widgets will be generated for the variables on the indicator’s (properties/attributes) page in order to change the values via a more convenient way than modifying the script’s source code. You can also specify the title of the input in the form of a short text string. The title is meant to explain the purpose of the input, and you can specify lowest and highest possible values for numerical inputs.
@@ -111,21 +111,21 @@ The following examples show how to create, in code, each input and what its widg
 b = input(title="On/Off", type=bool, defval=true)
 plot(b ? open : na)
 </source>
-[[File:Inputs of indicator 1.png]]
+[[File:images/Inputs of indicator 1.png]]
 ----
 
 <source>
 i = input(title="Offset", type=integer, defval=7, minval=-10, maxval=10)
 plot(offset(close, i))
 </source>
-[[File:Inputs of indicator 2.png]]
+[[File:images/Inputs of indicator 2.png]]
 ----
 
 <source>
 f = input(title="Angle", type=float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
 plot(sin(f) > 0 ? close : open)
 </source>
-[[File:Inputs of indicator 3.png]]
+[[File:images/Inputs of indicator 3.png]]
 ----
 
 <source>
@@ -134,7 +134,8 @@ res = input(title="Resolution", type=resolution, defval="60")
 plot(close, color=red)
 plot(security(sym, res, close), color=green)
 </source>
-[[File:Inputs of indicator 4.png]]
+[[File:images/Inputs of indicator 4.png]]
+
 The input widget ‘symbol’ has a built-in symbol ‘search’ which is turned on automatically when the ticker’s first symbols are entered.
 ----
 
@@ -142,7 +143,7 @@ The input widget ‘symbol’ has a built-in symbol ‘search’ which is turned
 s = input(title="Session", type=session, defval="24x7")
 plot(time(period, s))
 </source>
-[[File:Inputs of indicator 5.png]]
+[[File:images/Inputs of indicator 5.png]]
 ----
 
 <source>
@@ -150,7 +151,7 @@ src = input(title="Source", type=source, defval=close)
 ma = sma(src, 9)
 plot(ma)
 </source>
-[[File:Inputs of indicator 6.png]]
+[[File:images/Inputs of indicator 6.png]]
 ----
 
 Find more information about indicator inputs in [http://www.tradingview.com/study-script-reference/#fun_input Pine Reference].
@@ -167,7 +168,7 @@ plot(osc, color=red)
 hline(0, title="Zero", color=gray, linestyle=dashed)
 </source>
 
-[[File:Price levels hline 1.png]]
+[[File:images/Price levels hline 1.png]]
 
 A number must be the first argument of ‘hline’. Values of a type series are forbidden.
 It’s possible to create a few horizontal lines with the help of ‘hline’ and fill in the background between them with a translucent light using the function ‘fill’.
@@ -190,7 +191,7 @@ fill(h1, h2, color=yellow)
 fill(h3, h4, color=lime)
 </source>
 
-[[File:Filling in the background between objects with fill 1.png]]
+[[File:images/Filling in the background between objects with fill 1.png]]
 
 Footnote: Never execute a fill between ‘plot’ and ‘hline’. However it’s possible to display, with the help of ‘plot’, a series of the identical values (which will look like a horizontal line, similar to ‘hline’) and execute a fill between it and another plot. For example:
 
@@ -204,7 +205,7 @@ p = plot(osc)
 fill(p, plot(0))
 </source>
 
-[[File:Filling in the background between objects with fill 2.png]]
+[[File:images/Filling in the background between objects with fill 2.png]]
 
 You can set filling color by using constants like 'color=red' or 'color=#ff001a' as well as complex expressions like 'color = close >= open ? green : red'. Example:
 <source>
@@ -217,7 +218,7 @@ p2 = plot(line2)
 fill(p1, p2, color = line1>line2 ? green : red)
 </source>
 
-[[File:Filling in the background between objects with fill 3.png]]
+[[File:images/Filling in the background between objects with fill 3.png]]
 
 == Alert conditions ==
 
@@ -255,10 +256,10 @@ One script may include more than one alertcondition.
 
 To create an alert based on alertcondition, one should apply a Pine code (study) with alertcontidion to current chart, open the Create Alert dialog, select the applied Pine code as main condition for the alert and choose the specific alert condition (implemented in the code itself).
 
-[[File:Alertcondition 1.png]]
+[[File:images/Alertcondition 1.png]]
 
 When alert fires, you’ll see the message:
 
-[[File:Alertcondition 2.png]]
+[[File:images/Alertcondition 2.png]]
 
 

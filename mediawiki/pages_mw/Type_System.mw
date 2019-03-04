@@ -25,9 +25,9 @@ A few function annotations (in particular '''plot''' and '''hline''') return val
 
 In the following picture arrow means ability to cast one type to another. For example '''NotAvailable''' type, an <code>na</code> variable, can be cast to any '''color''', '''integer''', '''float''' or '''series''' types. But '''color''' can only be casted to '''color series''' type.
 
-[[File:Pine Types v3.jpg|center|Pine Types v3]]
+[[File:images/Pine Types v3.jpg|center|Pine Types v3]]
 
 ''Note: Pine type system was changed in version 3. See [[Pine Script: Release Notes]]''.
-''See also [https://www.tradingview.com/wiki/File:Pine_Types_v2.jpg type casts graph for version 2]''.
+''See also [https://www.tradingview.com/wiki/File:images/Pine_Types_v2.jpg type casts graph for version 2]''.
 
 

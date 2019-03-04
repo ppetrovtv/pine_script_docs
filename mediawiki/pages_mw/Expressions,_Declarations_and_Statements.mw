@@ -74,7 +74,7 @@ plot(fib)
 
 
 The variable '''fib''' is a series of Fibonacci numbers : 1, 1, 2, 3, 5, 8, 13, 21, … Where the first two numbers are equal to 1 and 1 and each subsequent number is the sum of the last two. In the given example, the built-in function '''na''' is used and returns '''true''' if the value of its argument has still not been determined (is '''NaN'''). In the example produced below, the values fib[1] and fib[2] have not been determined on the first bar, while on the second bar fib[2] has not been determined. Finally, on the third bar both of them are defined and can be added.
-[[File:Fib.png]]
+[[File:images/Fib.png]]
 
 Footnote: Since the sequence of Fibonacci numbers grows rather fast, the variable ‘fib’ very quickly overflows. As such, the user should apply the given indicator on the monthly ‘M’ or yearly ‘Y’ resolution, otherwise the value ‘n/a’ will be on the chart instead of Fibonacci numbers.
 

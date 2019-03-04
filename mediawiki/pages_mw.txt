@@ -12,6 +12,7 @@ Example_of_an_Indicator_in_Pine.mw
 Expressions,_Declarations_and_Statements.mw
 Extended_and_Regular_Sessions.mw
 Functions_vs_Annotation_Functions.mw
+Fundamentals_Data.mw
 HOWTOs.mw
 Identifiers.mw
 Indicator_repainting.mw
@@ -23,7 +24,7 @@ Multicolor_filling.mw
 Non-Standard_Chart_Types_Data.mw
 Operators.mw
 Pine_Compilation_Errors.mw
-Pine_Script:_Release_Notes.mw
+Pine_Script_Release_Notes.mw
 Pine_Script_Tutorial.mw
 Pine_Version_3_Migration_Guide.mw
 Public_Library.mw

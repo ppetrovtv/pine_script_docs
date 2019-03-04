@@ -31,7 +31,7 @@ data = close >= open
 plotshape(data, color=lime, style=shape.arrowup, text="Buy")
 plotshape(not data, color=red, style=shape.arrowdown, text="Sell")
 </source>
-[[File:Buy sell chart1.png]]
+[[File:images/Buy sell chart1.png]]
 
 You may use plotchar function with any unicode character:
 <source>
@@ -40,7 +40,7 @@ data = close >= open
 plotchar(data, char='↓', color=lime, text="Buy")
 plotchar(data, char='↑', location=location.belowbar, color=red, text="Sell")
 </source>
-[[File:Buy sell chart2.png]]
+[[File:images/Buy sell chart2.png]]
 
 == Plot horizontal line (moving) ==
 There is function <code>hline</code> in pine. But it is now limited to only plot constant value. Here is a Pine Script with workaround to plot changing hline.
@@ -79,7 +79,7 @@ if (condition)
 
 == Get 5-day high ==
 Lookback 5 days from the current bar, find the highest bar, plot a star character at that price level above the current bar
-[[File:Wiki howto range analysis.png|thumb|Mark the highest bar within a 5 day lookback window range]]
+[[File:images/Wiki howto range analysis.png|thumb|Mark the highest bar within a 5 day lookback window range]]
 
 <source>
 //@version=3

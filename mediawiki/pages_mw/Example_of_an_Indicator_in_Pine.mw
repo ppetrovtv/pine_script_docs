@@ -35,7 +35,7 @@ plot(signal, color=orange)
 
 After adding the indicator “MACD” to the chart we would see the following:
 
-[[File:Macd pine.png]]
+[[File:images/Macd pine.png]]
 
 Pine contains a variety of built-in functions for the most popular algorithms ([[Moving Average#Simple Moving Average (SMA)|sma]], [[Moving Average#Exponential Moving Average (EMA)|ema]], [[Moving Average#Weighted Moving Average (WMA)|wma]], etc.) as well as making it possible to create your custom functions. You can find a description of all available built-in functions [https://www.tradingview.com/study-script-reference/ here].
 In the following sections the document will describe in full all the Pine Script capabilities.

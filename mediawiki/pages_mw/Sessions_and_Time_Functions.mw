@@ -4,7 +4,7 @@ __FORCETOC__
 == Functions and the Variable <code>time</code> ==
 In Pine there are special means for working with trade sessions, time and date. We will review a simple chart, IBM,30 on which has been applied 2 scripts: “Bar date/time” and “Session bars”.
 
-[[File:Chart time 1.png]]
+[[File:images/Chart time 1.png]]
 
 Here is the initial code of the first script "Bar date/time":
  <source>study("Bar date/time")
@@ -36,7 +36,7 @@ is_newbar(res) =>
     change(t) != 0 ? 1 : 0
 plot(is_newbar("30"))</source>
 
-[[File:Chart time 2.png]]
+[[File:images/Chart time 2.png]]
 
 The function <code>is_newbar</code> similar to the previous example can be used in many situations. For example, it’s essential to display on an intraday chart the highs and lows which began at the market’s opening:
 
@@ -60,7 +60,7 @@ plot(s1, style=circles, linewidth=3, color=red)
 plot(s2, style=circles, linewidth=3, color=lime)</source>
 
 
-[[File:Chart time 3.png]]
+[[File:images/Chart time 3.png]]
 
 Pay attention to the variables <code>highTimeFrame</code> and <code>sessSpec</code>. They have been declared in a special way with the variable of the functions <code>input</code>. Further information about indicator's inputs can be found here: [http:////www.tradingview.com/study-script-reference/#fun_input input variables].
 

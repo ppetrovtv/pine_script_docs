@@ -7,10 +7,10 @@ In Pine there are special means for working with trade sessions, time
 and date. We will review a simple chart, IBM,30 on which has been
 applied 2 scripts: “Bar date/time” and “Session bars”.
 
-.. figure:: Chart_time_1.png
-   :alt: Chart_time_1.png
+.. figure:: images/Chart_time_1.png
+   :alt: images/Chart_time_1.png
 
-   Chart\_time\_1.png
+   images/Chart\_time\_1.png
 
 Here is the initial code of the first script “Bar date/time”:
 
@@ -82,10 +82,10 @@ the following way:
         change(t) != 0 ? 1 : 0
     plot(is_newbar("30"))
 
-.. figure:: Chart_time_2.png
-   :alt: Chart_time_2.png
+.. figure:: images/Chart_time_2.png
+   :alt: images/Chart_time_2.png
 
-   Chart\_time\_2.png
+   images/Chart\_time\_2.png
 
 The function ``is_newbar`` similar to the previous example can be used
 in many situations. For example, it’s essential to display on an
@@ -112,10 +112,10 @@ intraday chart the highs and lows which began at the market’s opening:
     plot(s1, style=circles, linewidth=3, color=red)
     plot(s2, style=circles, linewidth=3, color=lime)
 
-.. figure:: Chart_time_3.png
-   :alt: Chart_time_3.png
+.. figure:: images/Chart_time_3.png
+   :alt: images/Chart_time_3.png
 
-   Chart\_time\_3.png
+   images/Chart\_time\_3.png
 
 Pay attention to the variables ``highTimeFrame`` and ``sessSpec``. They
 have been declared in a special way with the variable of the functions

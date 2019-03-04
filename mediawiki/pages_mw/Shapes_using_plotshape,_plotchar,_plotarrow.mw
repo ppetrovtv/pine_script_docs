@@ -13,7 +13,7 @@ data = close >= open
 plotshape(data, style=shape.xcross)
 </source>
 
-[[File:Plotshape 1.png]]
+[[File:images/Plotshape 1.png]]
 
 The first parameter, ‘data’, is considered as a series of logical values. The crosses are drawn on each true value and not on false values or ‘na’ values. It’s possible to transfer a series of logical values in ‘plotshape’ to any series of numbers. It’s possible to transfer any series of numbers to ‘plotshape’. A ‘0’ or ‘na’ is considered a false value, any other value is considered true.
 
@@ -23,29 +23,29 @@ By changing the value of the parameter ‘style’ is possible to change the for
 |-
 ! Shape Name !! Shape !! Shape with text
 |-
-| <code>shape.xcross</code> || [[File:Plotshape xcross.png]] || [[File:Xcross_with_text.png]]
+| <code>shape.xcross</code> || [[File:images/Plotshape xcross.png]] || [[File:images/Xcross_with_text.png]]
 |-
-| <code>shape.cross</code> || [[File:Plotshape cross.png]] || [[File:Cross_with_text.png]]
+| <code>shape.cross</code> || [[File:images/Plotshape cross.png]] || [[File:images/Cross_with_text.png]]
 |-
-| <code>shape.circle</code> || [[File:Plotshape circle.png]] || [[File:Circle_with_text.png]]
+| <code>shape.circle</code> || [[File:images/Plotshape circle.png]] || [[File:images/Circle_with_text.png]]
 |-
-| <code>shape.triangleup</code> || [[File:Plotshape triangleup.png]] || [[File:Triangleup_with_text.png]]
+| <code>shape.triangleup</code> || [[File:images/Plotshape triangleup.png]] || [[File:images/Triangleup_with_text.png]]
 |-
-| <code>shape.triangledown</code> || [[File:Plotshape triangledown.png]] || [[File:Triangledown_with_text.png]]
+| <code>shape.triangledown</code> || [[File:images/Plotshape triangledown.png]] || [[File:images/Triangledown_with_text.png]]
 |-
-| <code>shape.flag</code> || [[File:Plotshape flag.png]] || [[File:Flag_with_text.png]]
+| <code>shape.flag</code> || [[File:images/Plotshape flag.png]] || [[File:images/Flag_with_text.png]]
 |-
-| <code>shape.arrowup</code> || [[File:Plotshape arrowup.png]] || [[File:Arrowup_with_text.png]]
+| <code>shape.arrowup</code> || [[File:images/Plotshape arrowup.png]] || [[File:images/Arrowup_with_text.png]]
 |-
-| <code>shape.arrowdown</code> || [[File:Plotshape arrowdown.png]] || [[File:Arrowdown_with_text.png]]
+| <code>shape.arrowdown</code> || [[File:images/Plotshape arrowdown.png]] || [[File:images/Arrowdown_with_text.png]]
 |-
-| <code>shape.square</code> || [[File:Plotshape square.png]] || [[File:Square_with_text.png]]
+| <code>shape.square</code> || [[File:images/Plotshape square.png]] || [[File:images/Square_with_text.png]]
 |-
-| <code>shape.diamond</code> || [[File:Plotshape diamond.png]] || [[File:Diamond_with_text.png]]
+| <code>shape.diamond</code> || [[File:images/Plotshape diamond.png]] || [[File:images/Diamond_with_text.png]]
 |-
-| <code>shape.labelup</code> || [[File:Plotshape labelup.png]] || [[File:Labelup_with_text.png]]
+| <code>shape.labelup</code> || [[File:images/Plotshape labelup.png]] || [[File:images/Labelup_with_text.png]]
 |-
-| <code>shape.labeldown</code> || [[File:Plotshape labeldown.png]] || [[File:Labeldown_with_text.png]]
+| <code>shape.labeldown</code> || [[File:images/Plotshape labeldown.png]] || [[File:images/Labeldown_with_text.png]]
 |}
 
 The function ‘plotshape’ draws, by default, icons/shapes above bars.To set another position for the shapes, it’s possible with the parameter ‘location’. For example, the following script draws a green arrow ‘shape.triangleup’ above green bars and a red arrow ‘shape.triangledown’ above red bars:
@@ -59,7 +59,7 @@ plotshape(not data, style=shape.triangledown,
           location=location.belowbar, color=red)
 </source>
 
-[[File:Plotshape example 2.png]]
+[[File:images/Plotshape example 2.png]]
 
 Possible values for the parameter ‘location’:
 * location.abovebar — above a bar
@@ -80,7 +80,7 @@ data = close >= open
 plotshape(true, style=shape.flag, color=data ? green : red)
 </source>
 
-[[File:Plotshape example 3.png]]
+[[File:images/Plotshape example 3.png]]
 
 In the given example, the first parameter of the function ‘plotshape’ is equal to ‘true’ which means that the shape will be displayed on each bar. The color will be set by the condition:
 <code>color=data ? green : red</code>
@@ -102,7 +102,7 @@ data = close >= open
 plotchar(data, char='a')
 </source>
 
-[[File:Plotchar example 1.png]]
+[[File:images/Plotchar example 1.png]]
 
 By default, the parameter char accepts the value ★ ('BLACK STAR', U+2605). It’s possible to use any letters, digits or various symbols, for example: ❤, ☀, €, ⚑, ❄, ◆, ⬆, ⬇.
 
@@ -113,7 +113,7 @@ data = close >= open
 plotchar(data, char='❄')
 </source>
 
-[[File:Plotchar example 2.png]]
+[[File:images/Plotchar example 2.png]]
 
 Like ‘plotshape’, the function ‘plotchar’ allows:
 
@@ -142,7 +142,7 @@ codiff = close - open
 plotarrow(codiff, colorup=teal, colordown=orange, transp=40)
 </source>
 
-[[File:Plotarrow example 1.png]]
+[[File:images/Plotarrow example 1.png]]
 
 As you can see, the more absolute value of the difference ‘close - open’ the longer the arrow. If ‘close - open’ is greater than zero, then an up arrow is rendered, otherwise (when ‘close - open’ is less than zero) we have a down arrow.
 
@@ -155,7 +155,7 @@ osc = ema(accdist, short) - ema(accdist, long)
 plotarrow(osc)
 </source>
 
-[[File:Plotarrow example 2.png]]
+[[File:images/Plotarrow example 2.png]]
 
 This screenshot shows the original “Chaikin Oscillator” alongside the script for better understanding.
 

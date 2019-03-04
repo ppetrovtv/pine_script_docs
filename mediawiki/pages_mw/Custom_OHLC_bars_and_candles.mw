@@ -5,7 +5,7 @@ study("Example 1")
 plotbar(open, high, low, close)
 </source>
 
-[[File:Custom ohlc bars and candles 1.png]]
+[[File:images/Custom ohlc bars and candles 1.png]]
 
 The script "Example 1" simply replicates bars of the current symbol. Nothing outstanding. We can paint them with green and red colors:
 
@@ -15,7 +15,7 @@ palette = close >= open ? lime : red
 plotbar(open, high, low, close, color=palette)
 </source>
 
-[[File:Custom ohlc bars and candles 2.png]]
+[[File:images/Custom ohlc bars and candles 2.png]]
 
 The "Example 2" illustrates ‘color’ argument, which could be given constant values as red, lime, "#FF9090", as well as expressions that calculate color (‘palette’ variable) in runtime.
 
@@ -29,7 +29,7 @@ c = close > open ? na : close
 plotcandle(open, high, low, c)
 </source>
 
-[[File:Custom ohlc bars and candles 3.png]]
+[[File:images/Custom ohlc bars and candles 3.png]]
 
 Of course you may calculate OHLC values without using available ‘open’, ‘high’, ‘low’ and ‘close’ values. For example you can plot “smoothed” candles:
 
@@ -45,7 +45,7 @@ c = smooth(close)
 plotcandle(o, h, l, c)
 </source>
 
-[[File:Custom ohlc bars and candles 4.png]]
+[[File:images/Custom ohlc bars and candles 4.png]]
 
 You may get an interesting effect, if you plot OHLC values taken from higher timeframe. Let's say you want to plot daily bars on 60 minute chart:
 <source>
@@ -62,7 +62,7 @@ c = security(tickerid, higherRes, close)
 plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? lime : red)
 </source>
 
-[[File:Custom ohlc bars and candles 5.png]]
+[[File:images/Custom ohlc bars and candles 5.png]]
 Functions plotbar and plotcandle also have ‘title’ argument, so user can distinguish them in Styles tab of Format dialog.
 
 

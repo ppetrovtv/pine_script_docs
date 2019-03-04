@@ -16,7 +16,7 @@ Currently there are three versions of Pine Script Language. A special attribute 
 * [[Expressions, Declarations and Statements#.E2.80.98for.E2.80.99_statement|for statement]].
 
 === Features introduced in version 3: ===
-[[File:Pine Script logo text.png|frameless|right]]
+[[File:images/Pine Script logo text.png|frameless|right]]
 * new security behavour, controlled by parameter: [[Context Switching, The ‘security’ Function#Barmerge:_gaps_and_lookahead|lookahead]],
 * self-referenced and forward-referenced variables removed,
 * changes in type system: forbid math operations on booleans,

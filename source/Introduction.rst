@@ -1,11 +1,3 @@
-Introduction
-============
-
-.. figure:: Pine_Script_logo_text.png
-   :alt: Pine_Script_logo_text.png
-   :align: right
-
-
 We created our own coding language called `Pine
 Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
 which allows users to create customized studies and signals and run them
@@ -32,41 +24,43 @@ memory usage and script size. Additionally, we keep Pine `syntax and
 semantics <https://www.tradingview.com/study-script-reference/>`__
 simple so it can handle common tasks efficiently. We will continue to
 improve the documentation and support to ensure that anyone who wants to
-can learn and use Pine, which will help the
+can `learn and use Pine <Pine_Script_Tutorial>`__, which will help the
 development community grow, get more robust and create more helpful
 analysis.
 
-Choosing a licence
-------------------
-
-Choosing a license or not is entirely up to you. You are under no
-obligation to do so. If you publish scripts with open source code you
-can select a license of your choice. You can include the license in
-the comments section of a script (preferably in the beginning). Our
-position on the matter is very much like that of
-`GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
+| **Choosing a licence**
+| Choosing a license or not is entirely up to you. You are under no
+  obligation to do so. If you publish scripts with open source code you
+  can select a license of your choice. You can include the license in
+  the comments section of a script (preferably in the beginning). Our
+  position on the matter is very much like that of
+  `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
 Versions
 --------
 
-Currently there are four versions of Pine Script Language. A special
+Currently there are three versions of Pine Script Language. A special
 attribute must be used in the first line of a code to switch between
 versions ``//@version=N`` where ``N`` is number. Note, that Pine Script
 Language versions are incompatible with each other.
 
-Features introduced in version 4:
+Features introduced in version 2:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- drawing ``line`` - a trend line
-- drawing ``label`` - a label with a (optionaly) dynamic text
-- ``var`` variables
-- syntax for explicit variable type declaration
-- improvements in type system ('everything is a series' concept)
-- series string datatype
-- ``max_bars_back`` function
+-  `mutable
+   variables <Expressions,_Declarations_and_Statements#Variable_Assignment>`__,
+-  `if
+   statement <Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,
+-  `for
+   statement <Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__.
 
 Features introduced in version 3:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/Pine_Script_logo_text.png
+   :alt: images/Pine_Script_logo_text.png
+
+   images/Pine\_Script\_logo\_text.png
 
 -  new security behavour, controlled by parameter:
    `lookahead <Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,
@@ -80,16 +74,5 @@ Features introduced in version 3:
    constants <https://blog.tradingview.com/en/possibilities-compile-time-constants-4127/>`__.
 
 See `Version 3 Release
-Notes <Pine_Script:_Release_Notes#Pine_Version_3>`__ and `Migration
+Notes <Pine_Script_Release_Notes#Pine_Version_3>`__ and `Migration
 Guide <Pine_Version_3_Migration_Guide>`__ for details.
-
-Features introduced in version 2:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  `mutable
-   variables <Expressions,_Declarations_and_Statements#Variable_Assignment>`__,
--  `if
-   statement <Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,
--  `for
-   statement <Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__.
-   

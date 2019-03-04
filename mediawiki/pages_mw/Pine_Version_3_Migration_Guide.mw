@@ -14,7 +14,7 @@ plot(s)</source>
 This indicator is calculated based on historical data and looks somewhat into the future. At the first bar of every session an indicator plots the high price of the entire day. This could be useful in some cases for analysis, but doesn’t work for backtesting strategies.
 
 We worked on this and made changes in Pine v3. If this indicator is compiled with <code>//@version=3</code> directive, we get a completely different picture.
-[[File:V3.png|none]]
+[[File:images/V3.png|none]]
 
 The old behaviour is still available though. We added a parameter to the <code>security</code> function (the fifth one) called <code>lookahead</code>.
 
