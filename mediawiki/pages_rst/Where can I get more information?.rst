@@ -1,0 +1,47 @@
+.. raw:: mediawiki
+
+   {{Languages}}
+
+First, additional descriptions of all built-in operators, variables,
+functions and annotation functions can be found in `Pine Script
+Reference <https://www.tradingview.com/study-script-reference/>`__.
+
+Second, write your own scripts by an example. Open new chart, push the
+*‘Pine Script Editor’* button on the toolbar. In the opened editor
+window click the ‘\ *New*\ ’ button. You’ll find lots of examples of
+TradingView standard indicators in the dropdown list.
+
+Third, there is a public chat dedicated to `Pine script
+editors <https://www.tradingview.com/chat/#BfmVowG1TZkKO235>`__ where
+active developers of our community help each other out.
+
+Finally, information about large releases and modifications to Pine
+Script (as well as other features) is regularly published on
+`TradingView’s blog <http://blog.tradingview.com>`__.
+
+More Links
+----------
+
+-  `Getting Started with Pine
+   Script <https://backtest-rookies.com/getting-started/#tv>`__
+
+-  `TradingView programming
+   articles <https://www.tradingcode.net/tradingview-programming-articles/>`__
+
+-  `3 Best Places To Find PineScript Reference Material
+   (Video) <http://blog.tradingview.com/?p=510>`__
+
+-  `The Commitments of Traders (COT) on
+   TradingView <http://blog.tradingview.com/?p=472>`__
+
+-  `TradingView integrates Quandl – Best Web Charting Meets 9 Million
+   Datasets! <http://blog.tradingview.com/?p=452>`__
+
+--------------
+
+Previous: `Pine Compilation Errors <Pine_Compilation_Errors>`__, Next:
+`Appendix A. Pine Script v2
+preprocessor <Appendix_A._Pine_Script_v2_preprocessor>`__, Up: `Pine
+Script Tutorial <Pine_Script_Tutorial>`__
+
+`Category:Pine Script <Category:Pine_Script>`__
