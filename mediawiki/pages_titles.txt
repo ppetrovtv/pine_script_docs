@@ -1,38 +1,38 @@
-Alerts in pine
-Annotation Functions Overview
-Appendix A. Pine Script v2 preprocessor
-Appendix B. Pine Script v2 lexer grammar
-Appendix C. Pine Script v2 parser grammar
-Bar states. Built-in variables ‘barstate’
+Alerts_in_pine
+Annotation_Functions_Overview
+Appendix_A._Pine_Script_v2_preprocessor
+Appendix_B._Pine_Script_v2_lexer_grammar
+Appendix_C._Pine_Script_v2_parser_grammar
+Bar_states._Built-in_variables_‘barstate’
 Comments
-Context Switching, The ‘security’ Function
-Custom OHLC bars and candles
-Declaring Functions
-Example of an Indicator in Pine
-Expressions, Declarations and Statements
-Extended and Regular Sessions
-Functions vs Annotation Functions
-Fundamentals Data
+Context_Switching,_The_‘security’_Function
+Custom_OHLC_bars_and_candles
+Declaring_Functions
+Example_of_an_Indicator_in_Pine
+Expressions,_Declarations_and_Statements
+Extended_and_Regular_Sessions
+Functions_vs_Annotation_Functions
+Fundamentals_Data
 HOWTOs
 Identifiers
-Indicator repainting
-Input for selecting data source in pine script
+Indicator_repainting
+Input_for_selecting_data_source_in_pine_script
 Introduction
-Lines Wrapping
+Lines_Wrapping
 Literals
-Multicolor filling
-Non-Standard Chart Types Data
+Multicolor_filling
+Non-Standard_Chart_Types_Data
 Operators
-Pine Compilation Errors
-Pine Script: Release Notes
-Pine Script Tutorial
-Pine Version 3 Migration Guide
-Public Library
-Publishing Scripts
-Sessions and Time Functions
-Shapes using plotshape, plotchar, plotarrow
+Pine_Compilation_Errors
+Pine_Script:_Release_Notes
+Pine_Script_Tutorial
+Pine_Version_3_Migration_Guide
+Public_Library
+Publishing_Scripts
+Sessions_and_Time_Functions
+Shapes_using_plotshape,_plotchar,_plotarrow
 Strategies
-Structure of the Script
-Transparency in pine scripts
-Type System
-Where can I get more information?
+Structure_of_the_Script
+Transparency_in_pine_scripts
+Type_System
+Where_can_I_get_more_information?
