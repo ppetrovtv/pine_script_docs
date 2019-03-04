@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Fixed values assigned with immediate values (e.g., 10, 2, “value”),
 which may not be altered by the script, are called literals. Literals
 can only be a type of integer, float, bool and string.

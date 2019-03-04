@@ -1,4 +1,4 @@
-{{Languages}}
+
 On TradingView it's possible to write custom indicators using [[Pine Script Tutorial|Pine Script]]. Users who write their own scripts can publish them to the [[Public Library]] to share their scripts with other users. Each published script gets a page with its description, screenshot and source code, so users can see what the script is about before applying it. If you want to protect your indicator, you can use Protected and Invite-Only scripts, which hides the source code from other users.   
 
 =Publishing Scripts=

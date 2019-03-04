@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 This document helps to migrate PineScript code from ``@version=2`` to
 ``@version=3``.
 

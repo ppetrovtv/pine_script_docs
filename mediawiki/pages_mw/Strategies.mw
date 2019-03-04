@@ -1,4 +1,4 @@
-{{Languages}}
+
 A strategy is a study that can send, modify and cancel orders (to buy/sell). Strategies allow you to perform '''backtesting''' (emulation of strategy trading on historical data) and '''forwardtesting''' (emulation of strategy trading on real-time data) according to your precoded algorithms.
 
 A strategy written in Pine Script language has all the same capabilities as a Pine indicator. When you write a strategy code, it should start with the keyword “''strategy''”, not “''study''”. Strategies not only plot something, but also place, modify and cancel orders. They have access to essential strategy performance information through specific keywords. The same information is available for you on the “Strategy Tester” tab. Once a strategy is calculated on historical data, you can see hypothetical order fills. 

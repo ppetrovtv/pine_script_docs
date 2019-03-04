@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 \_\_FORCETOC\_\_
 
 Get real OHLC price on a Heikin Ashi chart

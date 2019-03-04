@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Pine, besides operators, also has functions and annotation functions.
 Occasionally, for brevity’s sake, this manual will refer to annotation
 functions as simply annotations. Syntactically they are similar (however

@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 A program written in Pine is composed of functions and variables.
 Functions contain instructions that describe required calculations and
 variables that save the values used in the process of those

@@ -1,4 +1,4 @@
-{{Languages}}
+
 You may define your own custom bars and candles in Pine scripts. There are functions [https://www.tradingview.com/study-script-reference/#fun_plotbar plotbar] and [https://www.tradingview.com/study-script-reference/#fun_plotcandle plotcandle] for that purpose. Here is a small example:
 <source>
 study("Example 1")

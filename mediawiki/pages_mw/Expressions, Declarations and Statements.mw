@@ -1,4 +1,4 @@
-{{Languages}}
+
 == Expressions ==
 
 An expression is a sequence of applying both operators and function calls to operands (variables, values), which determines the calculations and actions done by the script. Expressions in Pine almost always produce a result (only annotation functions are an exception, such as '''study''' or '''fill'''. They produce side effects and will be covered later).

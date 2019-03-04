@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 You may define your own custom bars and candles in Pine scripts. There
 are functions
 `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__

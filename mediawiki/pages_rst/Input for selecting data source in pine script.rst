@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 | If you want to choose the data source in the inputs pass it as a
   parameter of the function ``input``.
 | You can choose any of the following as the default source:

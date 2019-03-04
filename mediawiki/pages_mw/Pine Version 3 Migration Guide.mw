@@ -1,4 +1,4 @@
-{{Languages}}
+
 
 This document helps to migrate PineScript code from <code>@version=2</code> to <code>@version=3</code>.
 

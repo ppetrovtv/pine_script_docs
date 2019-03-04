@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 \_\_TOC\_\_
 
 The function ``security`` lets the user to request data from additional

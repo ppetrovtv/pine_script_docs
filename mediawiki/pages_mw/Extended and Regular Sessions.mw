@@ -1,4 +1,4 @@
-{{Languages}}
+
 In TradingView there is an option (Right Click on Chart, Properties ⇨ Timezone/Sessions ⇨ Extended Hours) that controls type of current chart session. There are two types of session: '''regular''' (without extended hours data) and '''extended''' (with them). In Pine scripts it is possible to specify session type for additional data, that is requested with <code>security</code> function.
 
 Usually you pass to <code>security</code> function first argument symbol name in form of '''EXCHANGE_PREFIX:TICKER''', e.g. "BATS:AAPL". In such a case, data with regular session type will be requested. For example:

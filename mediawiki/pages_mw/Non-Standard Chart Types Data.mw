@@ -1,4 +1,4 @@
-{{Languages}}
+
 There are additional functions that you may apply to <code>tickerid</code> function return value. They are <code>heikinashi</code>, <code>renko</code>, <code>linebreak</code>, <code>kagi</code> and <code>pointfigure</code>. All of them work in the same manner, they just create a special ticker identifier that could be passed later as <code>security</code> function first argument.
 
 == <code>heikinashi</code> function ==

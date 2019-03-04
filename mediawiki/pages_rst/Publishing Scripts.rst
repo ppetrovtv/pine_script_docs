@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 On TradingView it's possible to write custom indicators using `Pine
 Script <Pine_Script_Tutorial>`__. Users who write their own scripts can
 publish them to the `Public Library <Public_Library>`__ to share their

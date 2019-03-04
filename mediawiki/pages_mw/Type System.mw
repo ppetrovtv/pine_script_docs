@@ -1,4 +1,4 @@
-{{Languages}}
+
 
 The basic type of data in Pine is a list of values, named '''series'''. Examples of built-in series variables are: '''open''', '''high''', '''low''', '''close''', '''volume'''. The size of these vectors are equal to the quantity of available bars based on the current ticker and timeframe (resolution). The series may contain numbers or a special value '''NaN''' (meaning ‘absence of value’). (Further information about '''NaN''' values can be found  [[Operators#History Referencing Operator .28Square Brackets .5B.5D.29|here]]). Any expression that contains a series variable will be treated as a series itself.  For example:
 <source>

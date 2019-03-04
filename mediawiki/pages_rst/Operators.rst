@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Arithmetic Operators (+, -, \*, /, %)
 -------------------------------------
 

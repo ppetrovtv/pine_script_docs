@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 You can set a different fill color on each bar with the fill() function.
 
 Usage example:

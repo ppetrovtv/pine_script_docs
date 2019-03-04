@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Identifiers are simply names for user-defined variables and functions.
 Identifiers can be composed from lower and upper-case letters (from the
 English alphabet), underscore ‘\_’ and numbers, however an identifier

@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Algorithm of *@version=2* Pine Script preprocessor in pseudo-code:
 
 #. Remove comments

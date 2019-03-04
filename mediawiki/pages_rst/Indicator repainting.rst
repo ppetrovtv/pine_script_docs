@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Historical data doesn’t include records of intra-bar movements of price.
 This leads to a script working differently in historical data and in
 real-time. We can see this difference, if we add a script on a chart,

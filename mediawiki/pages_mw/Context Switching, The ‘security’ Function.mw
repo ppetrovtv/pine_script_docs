@@ -1,4 +1,4 @@
-{{Languages}}
+
 __TOC__
 
 The function <code>security</code> lets the user to request data from additional symbols and resolutions, other than the ones to which the indicator is applied.

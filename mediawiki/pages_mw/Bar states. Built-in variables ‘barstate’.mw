@@ -1,4 +1,4 @@
-{{Languages}}
+
 A set of build-in <code>barstate</code> variables allows users to define a state of the bar which calculations are being made for. 
 * <code>barstate.isfirst</code>  – <code>true</code> if a current bar is the first in the range of bars, otherwise - <code>false</code>,
 * <code>barstate.islast</code> – <code>true</code> if a current bar is the last in the range of bars, otherwise - <code>false</code>,

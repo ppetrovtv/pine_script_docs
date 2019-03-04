@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Pine Script has single-line comments only. Any text from the symbol
 **//** until the end of the line is considered as comment. An example:
 

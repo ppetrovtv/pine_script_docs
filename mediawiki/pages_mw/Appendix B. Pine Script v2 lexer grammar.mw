@@ -1,4 +1,4 @@
-{{Languages}}
+
 Pine Script ''@version=2'' lexer grammar in [http://www.antlr3.org/ ANTLR v3] syntax.
 
 <syntaxhighlight lang="antlr">

@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 \_\_FORCETOC\_\_
 
 In situations when you need to mark, highlight bars on a chart and not

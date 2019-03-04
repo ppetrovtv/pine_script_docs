@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 This page contains release notes of notable changes in Pine Script.
 
 2017-05-17: compile-time constants

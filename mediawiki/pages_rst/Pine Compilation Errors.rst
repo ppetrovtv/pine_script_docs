@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Script requesting too many securities
 -------------------------------------
 

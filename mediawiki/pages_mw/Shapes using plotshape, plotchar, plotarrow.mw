@@ -1,4 +1,4 @@
-{{Languages}}
+
 __FORCETOC__
 
 In situations when you need to mark, highlight bars on a chart and not draw a usual plot in the form of a line, the function ‘plot’ may not be enough. Although it’s possible to execute this kind of task by applying ‘plot’ in combination with the styles ‘style=circles’ or ‘style=cross’, it’s recommended to use the functions ‘plotshape’, ‘plotchar’, ‘plotarrow’.

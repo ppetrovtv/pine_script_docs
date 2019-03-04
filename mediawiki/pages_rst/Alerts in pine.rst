@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 Annotation function ``alertcondition`` allows you to create custom alert
 conditions in Pine studies.
 

@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 \_\_FORCETOC\_\_
 
 Functions and the Variable ``time``

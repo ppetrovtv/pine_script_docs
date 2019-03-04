@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 In TradingView there is an option (Right Click on Chart, Properties ⇨
 Timezone/Sessions ⇨ Extended Hours) that controls type of current chart
 session. There are two types of session: **regular** (without extended

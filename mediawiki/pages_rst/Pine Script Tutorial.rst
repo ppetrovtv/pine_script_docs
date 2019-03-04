@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 .. figure:: Pine_Script_logo_small.png
    :alt: Pine_Script_logo_small.png
 

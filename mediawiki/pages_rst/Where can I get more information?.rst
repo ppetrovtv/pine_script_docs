@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 First, additional descriptions of all built-in operators, variables,
 functions and annotation functions can be found in `Pine Script
 Reference <https://www.tradingview.com/study-script-reference/>`__.

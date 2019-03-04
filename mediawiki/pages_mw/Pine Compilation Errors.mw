@@ -1,4 +1,4 @@
-{{Languages}}
+
 == Script requesting too many securities ==
 The maximum number of securities in script is limited to 40.
 If you declare a variable as a security call and then use that variable as input for other variables and calculations, it will not result in multiple security calls.

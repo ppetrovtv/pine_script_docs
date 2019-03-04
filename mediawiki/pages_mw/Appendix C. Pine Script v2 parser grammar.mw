@@ -1,4 +1,4 @@
-{{Languages}}
+
 Pine Script ''@version=2'' parser grammar in [http://www.antlr3.org/ ANTLR v3] syntax. Start rule is <tt>tvscript</tt>.
 
 <syntaxhighlight lang="antlr">

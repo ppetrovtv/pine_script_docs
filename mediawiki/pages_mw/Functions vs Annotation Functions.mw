@@ -1,4 +1,4 @@
-{{Languages}}
+
 
 Pine, besides operators, also has functions and annotation functions. Occasionally, for brevity’s sake, this manual will refer to annotation functions as simply annotations. Syntactically they are similar (however there are some differences which will now be discussed), but they have different purposes and usage effects.
 

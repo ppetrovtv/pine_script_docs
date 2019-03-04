@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 A set of build-in ``barstate`` variables allows users to define a state
 of the bar which calculations are being made for.
 

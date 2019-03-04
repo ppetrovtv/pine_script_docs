@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Languages}}
-
 We created our own coding language called `Pine
 Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
 which allows users to create customized studies and signals and run them
