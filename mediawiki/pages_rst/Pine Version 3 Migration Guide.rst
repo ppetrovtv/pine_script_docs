@@ -11,13 +11,18 @@ Default behaviour of ``security`` function has changed
 Let's look at the simple 'security' function use case. Add this
 indicator on an intraday chart:
 
-// Add this indicator on an intraday (e.g. '30' minutes) chart
-//@version=2 study(“My Script”, overlay=true) s = security(tickerid,
-'D', high, false) plot(s) This indicator is calculated based on
-historical data and looks somewhat into the future. At the first bar of
-every session an indicator plots the high price of the entire day. This
-could be useful in some cases for analysis, but doesn’t work for
-backtesting strategies.
+::
+
+    // Add this indicator on an intraday (e.g. '30' minutes) chart
+    //@version=2
+    study("My Script", overlay=true)
+    s = security(tickerid, 'D', high, false)
+    plot(s)
+
+This indicator is calculated based on historical data and looks somewhat
+into the future. At the first bar of every session an indicator plots
+the high price of the entire day. This could be useful in some cases for
+analysis, but doesn’t work for backtesting strategies.
 
 We worked on this and made changes in Pine v3. If this indicator is
 compiled with ``//@version=3`` directive, we get a completely different
@@ -35,14 +40,25 @@ Self-referenced variables are removed
 
 Pine version = 2 pieces of code, containing a self-referenced variable:
 
-//@version=2 //... s = nz(s[1]) + close Compiling this piece of code
-with Pine v3 will give you ``Undeclared identifier 's'`` error. It
-should be rewritten as:
+::
 
-//@version=3 //... s = 0.0 s := nz(s[1]) + close ``s`` is now a mutable
-variable that is initialized at line 3. At line 3 the initial value
-gives the Pine translator the information about the variable type. It's
-a float in this example.
+    //@version=2
+    //...
+    s = nz(s[1]) + close
+
+Compiling this piece of code with Pine v3 will give you
+``Undeclared identifier 's'`` error. It should be rewritten as:
+
+::
+
+    //@version=3
+    //...
+    s = 0.0
+    s := nz(s[1]) + close
+
+``s`` is now a mutable variable that is initialized at line 3. At line 3
+the initial value gives the Pine translator the information about the
+variable type. It's a float in this example.
 
 In some cases you may initialize that mutable variable (like ``s``) with
 a ``na`` value. But in complex cases that won’t work.
@@ -50,13 +66,27 @@ a ``na`` value. But in complex cases that won’t work.
 Forward-referenced variables are removed
 ----------------------------------------
 
-//@version=2 //... d = nz(f[1]) e = d + 1 f = e + close In this example
-``f`` is a forward-referenced variable, because it's referenced at line
-3 before it was declared and initialized. In Pine v3 this will give you
-an error ``Undeclared identifier 'f'``. This example should be rewritten
-in Pine v3 as follows:
+::
 
-//@version=3 //... f = 0.0 d = nz(f[1]) e = d + 1 f := e + close
+    //@version=2
+    //...
+    d = nz(f[1])
+    e = d + 1
+    f = e + close
+
+In this example ``f`` is a forward-referenced variable, because it's
+referenced at line 3 before it was declared and initialized. In Pine v3
+this will give you an error ``Undeclared identifier 'f'``. This example
+should be rewritten in Pine v3 as follows:
+
+::
+
+    //@version=3
+    //...
+    f = 0.0
+    d = nz(f[1])
+    e = d + 1
+    f := e + close
 
 Resolving a problem with a mutable variable in the ``security`` expression
 --------------------------------------------------------------------------
@@ -65,20 +95,28 @@ When you migrate script to v3 it’s possible that after removing
 self-referenced and forward-referenced variables the Pine translator
 will give you an error:
 
-//@version=3 //... s = 0.0 s := nz(s[1]) + close t = security(tickerid,
-period, s)
+::
+
+    //@version=3
+    //...
+    s = 0.0
+    s := nz(s[1]) + close
+    t = security(tickerid, period, s)
+
 ``Cannot use mutable variable as an argument for security function!``
 
 This limitation exists since mutable variables were introduced in Pine,
 i.e in v2. It can resolved as before: wrap the code with a mutable
 variable in a function.
 
-//@version=3 //... calcS() =>
+::
 
-| ``   s = 0.0``
-| ``   s := nz(s[1]) + close``
-
-t = security(tickerid, period, calcS())
+    //@version=3
+    //...
+    calcS() =>
+        s = 0.0
+        s := nz(s[1]) + close
+    t = security(tickerid, period, calcS())
 
 No more math operations with booleans
 -------------------------------------
@@ -90,13 +128,22 @@ the other numbers are true). Example:
 
 In v2 this code compiled fine:
 
-//@version=2 study(“My Script”) s = close >= open s1 = close[1] >=
-open[1] s2 = close[2] >= open[2] sum = s + s1 + s2 col = sum == 1 ?
-white : sum == 2 ? blue : sum == 3 ? red : na bgcolor(col) Variables
-``s``, ``s1`` and ``s2`` are boolean type. But at line 6 we add three of
-them and store the result in a variable ``sum``. ``Sum`` is a number,
-since we cannot add booleans. Booleans were implicitly converted to
-numbers (true values to 1.0 and false to 0.0) and then they were added.
+::
+
+    //@version=2
+    study("My Script")
+    s = close >= open
+    s1 = close[1] >= open[1]
+    s2 = close[2] >= open[2]
+    sum = s + s1 + s2
+    col = sum == 1 ? white : sum == 2 ? blue : sum == 3 ? red : na
+    bgcolor(col)
+
+Variables ``s``, ``s1`` and ``s2`` are boolean type. But at line 6 we
+add three of them and store the result in a variable ``sum``. ``Sum`` is
+a number, since we cannot add booleans. Booleans were implicitly
+converted to numbers (true values to 1.0 and false to 0.0) and then they
+were added.
 
 This approach leads to unintentional errors in more complicated scripts.
 That's why we no longer allow implicit conversion of booleans to
@@ -108,15 +155,21 @@ error:
 It means that you cannot use the addition operator with boolean values.
 To make this example work in Pine v3 you can do the following:
 
-//@version=3 study(“My Script”) bton(b) =>
+::
 
-``   b ? 1 : 0``
+    //@version=3
+    study("My Script")
+    bton(b) =>
+        b ? 1 : 0
+    s = close >= open
+    s1 = close[1] >= open[1]
+    s2 = close[2] >= open[2]
+    sum = bton(s) + bton(s1) + bton(s2)
+    col = sum == 1 ? white : sum == 2 ? blue : sum == 3 ? red : na
+    bgcolor(col)
 
-s = close >= open s1 = close[1] >= open[1] s2 = close[2] >= open[2] sum
-= bton(s) + bton(s1) + bton(s2) col = sum == 1 ? white : sum == 2 ? blue
-: sum == 3 ? red : na bgcolor(col) Function ``bton`` (abbreviation of
-'boolean-to-number') explicitly “converts” any boolean value to a number
-if you really need this.
+Function ``bton`` (abbreviation of 'boolean-to-number') explicitly
+“converts” any boolean value to a number if you really need this.
 
 `Category:Pine Script <Category:Pine_Script>`__
 

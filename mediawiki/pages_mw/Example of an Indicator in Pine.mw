@@ -5,7 +5,7 @@ A program written in Pine is composed of functions and variables. Functions cont
 A script should contain a '''study''' function which specifies the script name and some other script properties. Script body contains functions and variables necessary to calculate the result which will be rendered as a chart with a '''plot''' function call.
 
 As a first example, we’ll examine the implementation of the [[MACD]] indicator:
-<pine>
+<source>
 study("MACD")
 fast = 12, slow = 26
 fastMA = ema(close, fast)
@@ -14,7 +14,7 @@ macd = fastMA - slowMA
 signal = sma(macd, 9)
 plot(macd, color=blue)
 plot(signal, color=orange)
-</pine>
+</source>
 
 ; study("MACD")
 : Sets the name of the indicator — “MACD”

@@ -17,17 +17,17 @@ Syntactically, user-defined functions, built-in functions and annotation functio
 Also, there is a difference in passing arguments - annotations and built-in functions accept keyword arguments while user-defined functions does not (see [[Pine_Script:_Release_Notes#2017-04-17:_kwargs_syntax_for_all_builtin_functions|release note on kwargs in built-in functions]]).
 
 Function calls allows to pass arguments only by position. For most of programming languages it's the only available method of arguments passing. Function annotation calls also accepts keyword arguments. This allows to specify only part of arguments leaving others by default. Compare the following:
-<pine>
+<source>
 study('Example', 'Ex', true)
-</pine>
+</source>
 and
-<pine>
+<source>
 study(title=‘Example’, shorttitle=’Ex’, overlay=true)
-</pine>
+</source>
 It’s possible to mix positional and keyword arguments. Positional arguments must go first and keyword arguments should follow them. So the following call is not valid:
-<pine>
+<source>
 study(precision=3, ‘Example’)
-</pine>
+</source>
 
 ----
 Previous: [[Operators]], Next: [[Expressions, Declarations and Statements]], Up: [[Pine Script Tutorial]]

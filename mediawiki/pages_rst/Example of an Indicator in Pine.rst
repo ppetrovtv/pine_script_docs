@@ -15,9 +15,18 @@ and variables necessary to calculate the result which will be rendered
 as a chart with a **plot** function call.
 
 As a first example, we’ll examine the implementation of the
-`MACD <MACD>`__ indicator: study(“MACD”) fast = 12, slow = 26 fastMA =
-ema(close, fast) slowMA = ema(close, slow) macd = fastMA - slowMA signal
-= sma(macd, 9) plot(macd, color=blue) plot(signal, color=orange)
+`MACD <MACD>`__ indicator:
+
+::
+
+    study("MACD")
+    fast = 12, slow = 26
+    fastMA = ema(close, fast)
+    slowMA = ema(close, slow)
+    macd = fastMA - slowMA
+    signal = sma(macd, 9)
+    plot(macd, color=blue)
+    plot(signal, color=orange)
 
 study(“MACD”)
     Sets the name of the indicator — “MACD”

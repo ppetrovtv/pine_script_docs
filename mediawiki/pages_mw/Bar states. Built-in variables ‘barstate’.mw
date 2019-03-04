@@ -10,7 +10,7 @@ All historical bars are new bars. For bars updating in real-time a bar is consid
 
 Here’s the example of the script with new variables:
 
- <pine>study("Example barstate", overlay = true)
+ <source>study("Example barstate", overlay = true)
 first = barstate.isfirst
 last = barstate.islast
 hist = barstate.ishistory
@@ -21,7 +21,7 @@ plotchar(close, color = first ? red : na, location = location.belowbar)
 plotchar(close, color = last ? blue : na, location = location.belowbar)
 plotchar(close, color = hist ? gray : na, char='h')
 bgcolor(color = new ? green : na)
-barcolor(color = rt ? black: na)</pine>
+barcolor(color = rt ? black: na)</source>
 
 [[File:Chart barstate 1.jpg|none]]
 

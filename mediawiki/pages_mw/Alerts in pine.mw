@@ -4,7 +4,7 @@ Annotation function <code>alertcondition</code> allows you to create custom aler
 
 The function has the following signature:
 
-<pine>alertcondition(condition, title, message)</pine>
+<source>alertcondition(condition, title, message)</source>
 <code>condition</code> is a series of boolean values that is used for alert. Available values: true, false. True means alert condition is met, alert should trigger. False means alert condition is not met, alert should not trigger. It is a required argument.
 
 <code>title</code> is an optional argument that sets the name of the alert condition.
@@ -13,7 +13,7 @@ The function has the following signature:
 
 
 Here is example of creating an alert condition:
-<pine>
+<source>
 //@version=2
 study("Example of alertcondition")
 src = input(close)
@@ -23,7 +23,7 @@ c = cross(ma_1, ma_2)
 alertcondition(c, title='Red crosses blue', message='Red and blue have crossed!')
 plot(ma_1, color=red)
 plot(ma_2, color=blue)
-</pine>
+</source>
 The function creates alert condition that is available in Create Alert dialog. 
 '''Note''', that alertcondition does NOT fire alerts from code automatically, it only gives you opportunity to create a custom condition for Create Alert dialog. Alerts must be still set manually. Also, an alert triggered based on a custom condition you created in Pine code is not displayed on a chart.
 

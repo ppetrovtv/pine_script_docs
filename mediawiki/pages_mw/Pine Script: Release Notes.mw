@@ -16,7 +16,7 @@ Pinescript had different calls for annotation functions (study, plot,…) and bu
 
 You are now able to call all built-in functions using keyword arguments. This will be especially useful for the security function to specify the lookahead argument but skip the gaps argument:
 
-<pine>security('TSLA', 'D', close, lookahead=barmerge.lookahead_off)</pine>
+<source>security('TSLA', 'D', close, lookahead=barmerge.lookahead_off)</source>
 
 == 2017-03-20: Pine Version 3 ==
 [https://getsatisfaction.com/tradingview/topics/strategies-and-indicators-are-repainting Repainting] and [https://getsatisfaction.com/tradingview/topics/backtesting-using-higher-time-frames-is-a-complete-lie backtesting] issues have been reported for some time. These issues are not identical, but they are interrelated. Version 3 aims to solve the backtesting issue. Here’s a more detailed explanation.
@@ -35,10 +35,10 @@ The “repainting” issue usually occurs when using tools above - since an indi
 In this case, the “repainting” effect is not a bug - it’s a result of applying certain language tools with different calculation methods. This needs to be understood and taken into consideration while using PineScript.
 
 Here is a basic example that describes this case:
-<pine>//@version=2
+<source>//@version=2
 study("My Script")
 a = barstate.isrealtime or barstate.islast ? close : na
-plot(a)</pine>
+plot(a)</source>
 
 The above script is based on historical data and always returns na. It can be plotted only on the last bar of both historical and real-time data. After each chart reload (after pressing F5) the border that divides historical data and real-time will be shifted, in accordance with the current time period.
 
@@ -46,7 +46,7 @@ The above script is based on historical data and always returns na. It can be pl
 
 The second issue is a security function that allows you to get “future” data while doing calculations using historical data. For example: <code>security(tickerid, “D”, high)</code> on historical data will show the daily high price on the first hourly bar of the day. This can be used to create an incorrect backtesting strategy:
 
-<pine>//@version=2
+<source>//@version=2
 strategy("Fake strategy", overlay=true)
 
 r = input("D", type=resolution)
@@ -59,7 +59,7 @@ if (longCondition)
 
 shortCondition = high == h
 if (shortCondition)
-    strategy.entry("My Short Entry Id", strategy.short)</pine>
+    strategy.entry("My Short Entry Id", strategy.short)</source>
 
 However, we believe that this type of behavior of the security function could be useful when it’s being used in indicators. For instance, [https://www.tradingview.com/u/ChrisMoody/ ChrisMoody] uses this effect in a popular indicator called [https://www.tradingview.com/script/kqKEuQpn-CM-Pivot-Points-M-W-D-4H-1H-Filtered/ CM_Pivot Points_M-W-D-4H-1H_Filtered] (over 3000 likes) that is used to create pivot lines.
 Some other examples - [https://www.tradingview.com/script/qDvoNB8f-Open-Close-Daily-Line/ Open Close Daily Line], [https://www.tradingview.com/script/QCvh8Cyx-Time-Frame-Superimpose/ Time Frame Superimpose], as well as the [https://getsatisfaction.com/tradingview/topics/strategies-and-indicators-are-repainting#reply_18341804 GetSatisfaction comment]. We decided that the old behavior will remain available only when it’s expressly indicated.

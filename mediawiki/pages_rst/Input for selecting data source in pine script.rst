@@ -14,10 +14,21 @@
 -  hlc3;
 -  ohlc4.
 
-Example 1. Simple study(“My Script”) src = input(close) plot(src)
+Example 1. Simple
 
-Example 2. Extended study(“My Script”) src = input(title=“Source”,
-type=source, defval=close) plot(src)
+::
+
+    study("My Script")
+    src = input(close)
+    plot(src)
+
+Example 2. Extended
+
+::
+
+    study("My Script")
+    src = input(title="Source", type=source, defval=close)
+    plot(src)
 
 --------------
 

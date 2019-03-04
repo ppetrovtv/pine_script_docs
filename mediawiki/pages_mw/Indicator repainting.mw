@@ -6,25 +6,25 @@ We can see repainting in the following cases:
 1. Strategies with parameter '''calc_on_every_tick''', set as '''true'''. A strategy with parameter '''calc_on_every_tick = false''' will be prone to repainting too, (though to a lesser degree) as any strategy depends on a starting point, which shifts to the future (once a week on a minute resolution).
 
 2. Using '''security''' for requesting data with greater resolution than that of a chart:
-<pine>
+<source>
 // Add this study on 1 minute chart
 //@version=3
 study("My Script")
 c = security(tickerid, "5", close, lookahead=false) // 'lookahead=true' also causes the 'repainting problem'
 plot(close)
 plot(c, color=red)
-</pine>
+</source>
 Such a study will be calculated differently in real-time and in historical data, regardless of using the parameter lookahead (see [[Context Switching, The ‘security’ Function#Understanding_lookahead|Understanding lookahead]]).
 
 3. Using '''security''' for requesting data with resolution smaller than on chart:
-<pine>
+<source>
 // Add this study on 5 minute chart
 //@version=3
 study("My Script")
 c = security(tickerid, "1", close, lookahead=false)
 plot(close)
 plot(c, color=red)
-</pine>
+</source>
 * in this scenario, a part of a minute-data will be inevitably lost, as it’s impossible to display it on a 5-minute chart and not to amplify the time axis
 * if lookahead=false - there will be repainting. When lookahead=true, no repainting would happen (there is an exception to this - when 1- and 5-minute updates outrun each other, a script can get repainted)
 (Lookahead is the parameter which determines which 5-minute bar is shown - the first or the last. See more [[Context Switching, The ‘security’ Function#Understanding_lookahead|Understanding lookahead]])

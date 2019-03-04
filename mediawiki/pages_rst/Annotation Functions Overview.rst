@@ -8,8 +8,11 @@ The annotation ’study’
 As was noted in the section ‘Program Structure’, each script must
 contain one call of the annotation function
 ```study`` <https://www.tradingview.com/study-script-reference/#fun_study>`__.
-Functions have the following signatures: study(title, shorttitle,
-overlay, precision)
+Functions have the following signatures:
+
+::
+
+    study(title, shorttitle, overlay, precision)
 
 The given function determines the characteristics of all indicators as a
 whole. Only ``title`` is a necessary argument which sets the name of the
@@ -36,11 +39,18 @@ The annotation
 ```plot`` <https://www.tradingview.com/study-script-reference/#fun_plot>`__
 accepts one mandatory argument: the value of a series type and displays
 it on the chart as a line. A very basic call looks like this:
-plot(close)
+
+::
+
+    plot(close)
 
 However, because there are automatic type conversions in Pine, instead
 of a series type value, any numerical value can be transmitted. For
-example: plot(125.2)
+example:
+
+::
+
+    plot(125.2)
 
 In this case, the value 125.2 will be automatically converted to a
 series type value which will be the same number on every bar. The plot
@@ -55,7 +65,10 @@ Additional descriptions of these arguments can be found
 The parameter ``color`` can have a different effect depending on the
 transmitted value. If it is set equal to a color type’s constant, for
 example red, then the whole chart will be plotted with a red color:
-plot(close, color=red)
+
+::
+
+    plot(close, color=red)
 
 .. figure:: Output_of_charts_plot_1.png
    :alt: Output_of_charts_plot_1.png
@@ -64,8 +77,12 @@ plot(close, color=red)
 
 However, the argument ``color`` can receive an expression of a series
 type of colored values as values. This series of colors will be used to
-color the chart when rendered. For example: c = close >= open ? lime :
-red plot(close, color = c)
+color the chart when rendered. For example:
+
+::
+
+    c = close >= open ? lime : red
+    plot(close, color = c)
 
 .. figure:: Output_of_charts_plot_2.png
    :alt: Output_of_charts_plot_2.png
@@ -75,8 +92,13 @@ red plot(close, color = c)
 Interest also represents the argument ``offset`` of the function
 ``plot``. It specifies the shift used when the chart is plotted
 (negative values shift the chart to the left, while positive values — to
-the right) For example: study(“My Script 12”, overlay=true) plot(close,
-color=red, offset=-5) plot(close, color=lime, offset=5)
+the right) For example:
+
+::
+
+    study("My Script 12", overlay=true)
+    plot(close, color=red, offset=-5)
+    plot(close, color=lime, offset=5)
 
 .. figure:: Output_of_charts_plot_3.png
    :alt: Output_of_charts_plot_3.png
@@ -102,11 +124,16 @@ Barcoloring a series — ‘barcolor’
 The annotation function ‘barcolor’ lets you specify a color for a bar
 dependent on the fulfillment of a certain condition. The following
 example script renders the inside and outside bars in different colors:
-study(“barcolor example”, overlay=true) isUp() => close > open isDown()
-=> close <= open isOutsideUp() => high > high[1] and low < low[1] and
-isUp() isOutsideDown() => high > high[1] and low < low[1] and isDown()
-isInside() => high < high[1] and low > low[1] barcolor(isInside() ?
-yellow : isOutsideUp() ? aqua : isOutsideDown() ? purple : na)
+
+::
+
+    study("barcolor example", overlay=true)
+    isUp() => close > open
+    isDown() => close <= open
+    isOutsideUp() => high > high[1] and low < low[1] and isUp()
+    isOutsideDown() => high > high[1] and low < low[1] and isDown()
+    isInside() => high < high[1] and low > low[1]
+    barcolor(isInside() ? yellow : isOutsideUp() ? aqua : isOutsideDown() ? purple : na)
 
 .. figure:: Barcoloring_a_series_barcolor_1.png
    :alt: Barcoloring_a_series_barcolor_1.png
@@ -127,11 +154,16 @@ an expression, and an optional parameter transp – transparency from
 As an example, here’s a script for coloring trading sessions (use it on
 EURUSD, 30 min resolution):
 
- study(“bgcolor example”, overlay=true) timeinrange(res, sess) =>
-time(res, sess) != 0 premarket = #0050FF regular = #0000FF postmarket =
-#5000FF notrading = na sessioncolor = timeinrange(“30”, “0400-0930”) ?
-premarket : timeinrange(“30”, “0930-1600”) ? regular : timeinrange(“30”,
-“1600-2000”) ? postmarket : notrading bgcolor(sessioncolor, transp=75)
+::
+
+    study("bgcolor example", overlay=true)
+    timeinrange(res, sess) => time(res, sess) != 0
+    premarket = #0050FF
+    regular = #0000FF
+    postmarket = #5000FF
+    notrading = na
+    sessioncolor = timeinrange("30", "0400-0930") ? premarket : timeinrange("30", "0930-1600") ? regular : timeinrange("30", "1600-2000") ? postmarket : notrading
+    bgcolor(sessioncolor, transp=75)
 
 .. figure:: Background_coloring_bgcolor_1.png
    :alt: Background_coloring_bgcolor_1.png
@@ -163,38 +195,79 @@ inputs:
 -  source.
 
 The following examples show how to create, in code, each input and what
-its widgets look like. b = input(title=“On/Off”, type=bool, defval=true)
-plot(b ? open : na) |Inputs\_of\_indicator\_1.png|
+its widgets look like.
+
+::
+
+    b = input(title="On/Off", type=bool, defval=true)
+    plot(b ? open : na)
+
+.. figure:: Inputs_of_indicator_1.png
+   :alt: Inputs_of_indicator_1.png
+
+   Inputs\_of\_indicator\_1.png
 
 --------------
 
- i = input(title=“Offset”, type=integer, defval=7, minval=-10,
-maxval=10) plot(offset(close, i)) |Inputs\_of\_indicator\_2.png|
+::
+
+    i = input(title="Offset", type=integer, defval=7, minval=-10, maxval=10)
+    plot(offset(close, i))
+
+.. figure:: Inputs_of_indicator_2.png
+   :alt: Inputs_of_indicator_2.png
+
+   Inputs\_of\_indicator\_2.png
 
 --------------
 
- f = input(title=“Angle”, type=float, defval=-0.5, minval=-3.14,
-maxval=3.14, step=0.2) plot(sin(f) > 0 ? close : open)
-|Inputs\_of\_indicator\_3.png|
+::
+
+    f = input(title="Angle", type=float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
+    plot(sin(f) > 0 ? close : open)
+
+.. figure:: Inputs_of_indicator_3.png
+   :alt: Inputs_of_indicator_3.png
+
+   Inputs\_of\_indicator\_3.png
 
 --------------
 
- sym = input(title=“Symbol”, type=symbol, defval=“SPY”) res =
-input(title=“Resolution”, type=resolution, defval=“60”) plot(close,
-color=red) plot(security(sym, res, close), color=green)
+::
+
+    sym = input(title="Symbol", type=symbol, defval="SPY")
+    res = input(title="Resolution", type=resolution, defval="60")
+    plot(close, color=red)
+    plot(security(sym, res, close), color=green)
+
 |Inputs\_of\_indicator\_4.png| The input widget ‘symbol’ has a built-in
 symbol ‘search’ which is turned on automatically when the ticker’s first
 symbols are entered.
 
 --------------
 
- s = input(title=“Session”, type=session, defval=“24x7”)
-plot(time(period, s)) |Inputs\_of\_indicator\_5.png|
+::
+
+    s = input(title="Session", type=session, defval="24x7")
+    plot(time(period, s))
+
+.. figure:: Inputs_of_indicator_5.png
+   :alt: Inputs_of_indicator_5.png
+
+   Inputs\_of\_indicator\_5.png
 
 --------------
 
- src = input(title=“Source”, type=source, defval=close) ma = sma(src, 9)
-plot(ma) |Inputs\_of\_indicator\_6.png|
+::
+
+    src = input(title="Source", type=source, defval=close)
+    ma = sma(src, 9)
+    plot(ma)
+
+.. figure:: Inputs_of_indicator_6.png
+   :alt: Inputs_of_indicator_6.png
+
+   Inputs\_of\_indicator\_6.png
 
 --------------
 
@@ -207,10 +280,13 @@ Price levels ‘hline’
 The annotation function ‘hline’ renders a horizontal line at a given
 fixed price level. For example:
 
- study(title=“Chaikin Oscillator”, shorttitle=“Chaikin Osc”) short =
-input(3,minval=1), long = input(10,minval=1) osc = ema(accdist, short) -
-ema(accdist, long) plot(osc, color=red) hline(0, title=“Zero”,
-color=gray, linestyle=dashed)
+::
+
+    study(title="Chaikin Oscillator", shorttitle="Chaikin Osc")
+    short = input(3,minval=1), long = input(10,minval=1)
+    osc = ema(accdist, short) - ema(accdist, long)
+    plot(osc, color=red)
+    hline(0, title="Zero", color=gray, linestyle=dashed)
 
 .. figure:: Price_levels_hline_1.png
    :alt: Price_levels_hline_1.png
@@ -227,11 +303,22 @@ Filling in the background between objects with ‘fill'
 
 The ‘fill’ annotation function lets you color the background between two
 series, or two horizontal lines (created with hline). The following
-example illustrates how it works: study(“fill Example”) p1 =
-plot(sin(high)) p2 = plot(cos(low)) p3 = plot(sin(close)) fill(p1, p3,
-color=red) fill(p2, p3, color=blue) h1 = hline(0) h2 = hline(1.0) h3 =
-hline(0.5) h4 = hline(1.5) fill(h1, h2, color=yellow) fill(h3, h4,
-color=lime)
+example illustrates how it works:
+
+::
+
+    study("fill Example")
+    p1 = plot(sin(high))
+    p2 = plot(cos(low))
+    p3 = plot(sin(close))
+    fill(p1, p3, color=red)
+    fill(p2, p3, color=blue)
+    h1 = hline(0)
+    h2 = hline(1.0)
+    h3 = hline(0.5)
+    h4 = hline(1.5)
+    fill(h1, h2, color=yellow)
+    fill(h3, h4, color=lime)
 
 .. figure:: Filling_in_the_background_between_objects_with_fill_1.png
    :alt: Filling_in_the_background_between_objects_with_fill_1.png
@@ -243,9 +330,15 @@ possible to display, with the help of ‘plot’, a series of the identical
 values (which will look like a horizontal line, similar to ‘hline’) and
 execute a fill between it and another plot. For example:
 
- study(“Fill example 2”) src = close, len = 10 ma = sma(src, len) osc =
-100 \* (ma - src) / ma p = plot(osc) // NOTE: fill(p, hline(0)) wouldn't
-work, instead use this: fill(p, plot(0))
+::
+
+    study("Fill example 2")
+    src = close, len = 10
+    ma = sma(src, len)
+    osc = 100 * (ma - src) / ma
+    p = plot(osc)
+    // NOTE: fill(p, hline(0)) wouldn't work, instead use this:
+    fill(p, plot(0))
 
 .. figure:: Filling_in_the_background_between_objects_with_fill_2.png
    :alt: Filling_in_the_background_between_objects_with_fill_2.png
@@ -254,9 +347,17 @@ work, instead use this: fill(p, plot(0))
 
 You can set filling color by using constants like 'color=red' or
 'color=#ff001a' as well as complex expressions like 'color = close >=
-open ? green : red'. Example: //@version=2 study(title=“Colored fill”)
-line1=sma(close,5) line2=sma(close,20) p1 = plot(line1) p2 = plot(line2)
-fill(p1, p2, color = line1>line2 ? green : red)
+open ? green : red'. Example:
+
+::
+
+    //@version=2
+    study(title="Colored fill")
+    line1=sma(close,5)
+    line2=sma(close,20)
+    p1 = plot(line1)
+    p2 = plot(line2)
+    fill(p1, p2, color = line1>line2 ? green : red)
 
 .. figure:: Filling_in_the_background_between_objects_with_fill_3.png
    :alt: Filling_in_the_background_between_objects_with_fill_3.png
@@ -272,7 +373,9 @@ allows you to create custom alert conditions in Pine studies.
 
 The function has the following signature:
 
- alertcondition(condition, title, message)
+::
+
+    alertcondition(condition, title, message)
 
 ‘condition’ is a series of boolean values that is used for alert.
 Available values: true, false. True means alert condition is met, alert
@@ -287,10 +390,17 @@ when the alert fires.
 
 Here is example of creating an alert condition:
 
- //@version=2 study(“Example of alertcondition”) src = input(close)
-ma\_1 = sma(src, 20) ma\_2 = sma(src, 10) c = cross(ma\_1, ma\_2)
-alertcondition(c, title='Red crosses blue', message='Red and blue have
-crossed!') plot(ma\_1, color=red) plot(ma\_2, color=blue)
+::
+
+    //@version=2
+    study("Example of alertcondition")
+    src = input(close)
+    ma_1 = sma(src, 20)
+    ma_2 = sma(src, 10)
+    c = cross(ma_1, ma_2)
+    alertcondition(c, title='Red crosses blue', message='Red and blue have crossed!')
+    plot(ma_1, color=red)
+    plot(ma_2, color=blue)
 
 The function creates alert condition that is available in Create Alert
 dialog. Please note, that alertcondition does NOT fire alerts from code
@@ -327,10 +437,5 @@ Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
 
 `Category:Pine Script <Category:Pine_Script>`__
 
-.. |Inputs\_of\_indicator\_1.png| image:: Inputs_of_indicator_1.png
-.. |Inputs\_of\_indicator\_2.png| image:: Inputs_of_indicator_2.png
-.. |Inputs\_of\_indicator\_3.png| image:: Inputs_of_indicator_3.png
 .. |Inputs\_of\_indicator\_4.png| image:: Inputs_of_indicator_4.png
-.. |Inputs\_of\_indicator\_5.png| image:: Inputs_of_indicator_5.png
-.. |Inputs\_of\_indicator\_6.png| image:: Inputs_of_indicator_6.png
 

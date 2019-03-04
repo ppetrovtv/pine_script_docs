@@ -11,19 +11,19 @@ You can choose any of the following as the default source:
 
 
 Example 1. Simple
-<pine>
+<source>
 study("My Script")
 src = input(close)
 plot(src)
-</pine>
+</source>
 
 
 Example 2. Extended
-<pine>
+<source>
 study("My Script")
 src = input(title="Source", type=source, defval=close)
 plot(src)
-</pine>
+</source>
 
 ----
 [[Category:Pine Script]]

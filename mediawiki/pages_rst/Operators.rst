@@ -100,19 +100,29 @@ Conditional Operator ? and the Function iff
 Operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
 calculates the first expression (condition) and returns a value either
 of the second operand (if the condition is **true**) or of the third
-operand (if the condition is **false**). Syntax: condition ? result1 :
-result2
+operand (if the condition is **false**). Syntax:
+
+::
+
+    condition ? result1 : result2
 
 If ‘condition’ will be calculated to **true**, then result1 will be the
 result of all ternary operator, otherwise, result2 will be the result.
 
 The combination of a few conditional operators helps to build
 constructions similar to ‘switch’ statements in other languages. For
-example: isintraday ? red : isdaily ? green : ismonthly ? blue : na
+example:
+
+::
+
+    isintraday ? red : isdaily ? green : ismonthly ? blue : na
 
 The given example will be calculated in the following order (brackets
-show the processing order of the given expression): isintraday ? red :
-(isdaily ? green : (ismonthly ? blue : na))
+show the processing order of the given expression):
+
+::
+
+    isintraday ? red : (isdaily ? green : (ismonthly ? blue : na))
 
 First the condition ‘isintraday’ is calculated; if it is **true** then
 red will be the result. If it is **false** then ‘isdaily’ is calculated,
@@ -121,15 +131,20 @@ if this is **true**, then green will be the result. If this is
 will be the result, otherwise it will be **na**. For those who find
 using the operator syntax **?:** inconvenient, in Pine there is an
 alternative (with equivalent functionality) — the built-in function
-**iff**. The function has the following signature: iff(condition,
-result1, result2)
+**iff**. The function has the following signature:
+
+::
+
+    iff(condition, result1, result2)
 
 The function acts identically to the operator **?:**, i.e., if the
 condition is **true** then it returns result1, otherwise — result2. The
-previous example using **iff** will look like: iff(isintraday, red,
-iff(isdaily, green,
+previous example using **iff** will look like:
 
-``                    iff(ismonthly, blue, na)))``
+::
+
+    iff(isintraday, red, iff(isdaily, green,
+                         iff(ismonthly, blue, na)))
 
 History Referencing Operator (Square Brackets [])
 -------------------------------------------------
@@ -177,13 +192,20 @@ operator.
 Footnote 1. Almost all built-in functions in Pine’s standard library
 return a series result, for example the function ‘sma’. Therefore it’s
 possible to apply the operator **[]** directly to the function calls:
-sma(close, 10)[1]
+
+::
+
+    sma(close, 10)[1]
 
 Footnote 2. Despite the fact that the operator **[]** returns the result
 of the series type, it’s prohibited to apply this operator to the same
 operand over and over again. Here is an example of incorrect use:
-close[1][2] // Error: incorrect use of operator [] A compilation error
-message will appear.
+
+::
+
+    close[1][2]        // Error: incorrect use of operator []
+
+A compilation error message will appear.
 
 In some situations, the user may want to shift the series to the left.
 Negative arguments for the operator **[]** are prohibited. This can be

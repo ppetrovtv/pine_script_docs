@@ -18,18 +18,33 @@ depends on a starting point, which shifts to the future (once a week on
 a minute resolution).
 
 2. Using **security** for requesting data with greater resolution than
-that of a chart: // Add this study on 1 minute chart //@version=3
-study(“My Script”) c = security(tickerid, “5”, close, lookahead=false)
-// 'lookahead=true' also causes the 'repainting problem' plot(close)
-plot(c, color=red) Such a study will be calculated differently in
-real-time and in historical data, regardless of using the parameter
-lookahead (see `Understanding
+that of a chart:
+
+::
+
+    // Add this study on 1 minute chart
+    //@version=3
+    study("My Script")
+    c = security(tickerid, "5", close, lookahead=false) // 'lookahead=true' also causes the 'repainting problem'
+    plot(close)
+    plot(c, color=red)
+
+Such a study will be calculated differently in real-time and in
+historical data, regardless of using the parameter lookahead (see
+`Understanding
 lookahead <Context_Switching,_The_‘security’_Function#Understanding_lookahead>`__).
 
 3. Using **security** for requesting data with resolution smaller than
-on chart: // Add this study on 5 minute chart //@version=3 study(“My
-Script”) c = security(tickerid, “1”, close, lookahead=false) plot(close)
-plot(c, color=red)
+on chart:
+
+::
+
+    // Add this study on 5 minute chart
+    //@version=3
+    study("My Script")
+    c = security(tickerid, "1", close, lookahead=false)
+    plot(close)
+    plot(c, color=red)
 
 -  in this scenario, a part of a minute-data will be inevitably lost, as
    it’s impossible to display it on a 5-minute chart and not to amplify

@@ -3,58 +3,58 @@ __FORCETOC__
 
 == Get real OHLC price on a Heikin Ashi chart ==
 Suppose, we have a Heikin Ashi chart (or Renko, Kagi, PriceBreak etc) and we’ve added a pine script on it:
-<pine>
+<source>
 //@version=2
 study("Visible OHLC", overlay=true)
 c = close
 plot(c)
-</pine>
+</source>
 
 You may see that variable ‘c’ is a Heikin Ashi close price which is not the same as real OHLC price. Because ‘close’ built-in variable is always a value that corresponds to a visible bar (or candle) on the chart.
 
 So, how do we get the real OHLC prices in Pine Script code, if current chart type is non-standard? We should use ‘security’ function in combination with ‘tickerid’ function. Here is an example:
-<pine>
+<source>
 //@version=2
 study("Real OHLC", overlay=true)
 t = tickerid(syminfo.prefix, ticker)
 realC = security(t, period, close)
 plot(realC)
-</pine>
+</source>
 
 In a similar way we may get other OHLC prices: open, high and low.
 
 == Plot buy/sell arrows on the chart ==
 You may use plotshape with style '''shape.arrowup''' and '''shape.arrowdown''':
-<pine>
+<source>
 study('Ex 1', overlay=true)
 data = close >= open
 plotshape(data, color=lime, style=shape.arrowup, text="Buy")
 plotshape(not data, color=red, style=shape.arrowdown, text="Sell")
-</pine>
+</source>
 [[File:Buy sell chart1.png]]
 
 You may use plotchar function with any unicode character:
-<pine>
+<source>
 study('buy/sell arrows', overlay=true)
 data = close >= open
 plotchar(data, char='↓', color=lime, text="Buy")
 plotchar(data, char='↑', location=location.belowbar, color=red, text="Sell")
-</pine>
+</source>
 [[File:Buy sell chart2.png]]
 
 == Plot horizontal line (moving) ==
 There is function <code>hline</code> in pine. But it is now limited to only plot constant value. Here is a Pine Script with workaround to plot changing hline.
-<pine>
+<source>
 //@version=2
 study("Horizontal line", overlay=true)
 plot(close[10], trackprice=true, offset=-9999)
 // trackprice=true plots horizontal line on close[10]
 // offset=-9999 hides the plot
 plot(close, color=#FFFFFFFF) // forces to show study
-</pine>
+</source>
 
 == Plot vertical line on condition ==
-<pine>
+<source>
 //@version=2
 study("Vertical line", overlay=true, scale=scale.none)
 // scale.none means do not resize the chart to fit this plot
@@ -65,23 +65,23 @@ cond = barstate.islast
 // when cond is false, plot no numeric value (nothing is plotted)
 // use the style of histogram, a vertical bar
 plot(cond ? 10e20 : na, style = histogram)
-</pine>
+</source>
 
 == Access previous value ==
-<pine>
+<source>
 //@version=3
 //...
 s = 0.0
 s := nz(s[1]) // Accessing previous values
 if (condition)
     s := s + 1
-</pine>
+</source>
 
 == Get 5-day high ==
 Lookback 5 days from the current bar, find the highest bar, plot a star character at that price level above the current bar
 [[File:Wiki howto range analysis.png|thumb|Mark the highest bar within a 5 day lookback window range]]
 
-<pine>
+<source>
 //@version=3
 study("Range Analysis", overlay=true)
 
@@ -132,18 +132,18 @@ plotchar(val, size=size.normal, location=location.absolute)
 
 // fill the background of the 5 day lookback window range with aqua color
 bgcolor(leftborder and not rightborder ? aqua : na, transp=70)
-</pine>
+</source>
 
 == Get count of bars in barset ==
 Get a count of all the bars in the loaded barset. Might be useful for calculating flexible lookback periods based on number of bars.
-<pine>
+<source>
 //@version=3
 study("Bar Count", overlay=true, scale=scale.none)
 plot(n + 1, style=histogram)
-</pine>
+</source>
 
 == Enumerate bars in day ==
-<pine>
+<source>
 //@version=3
 study("My Script", overlay=true, scale=scale.none)
 
@@ -152,10 +152,10 @@ is_new_day() =>
     na(d[1]) or d != d[1]
 
 plot(barssince(is_new_day()), style=cross)
-</pine>
+</source>
 
 == Find the highest and lowest values for the entire dataset ==
-<pine>
+<source>
 //@version=3
 study("My Script")
 
@@ -175,18 +175,18 @@ smallest(series) =>
 
 plot(biggest(close), color=green)
 plot(smallest(close), color=red)
-</pine>
+</source>
 
 == Query the last non-empty value ==
 You can use the script below to avoid gaps in a series.
-<pine>
+<source>
 //@version=3
 study("My Script")
 series = close >= open ? close : na
 vw = valuewhen(not na(series), series, 0)
 plot(series, style=linebr, color=red) // series has na values 
 plot(vw) // all na values are replaced with the last non-empty value
-</pine>
+</source>
 ----
 Previous: [[Strategies]], Next: [[Indicator repainting]], Up: [[Pine Script Tutorial]]
 [[Category:Pine Script]]

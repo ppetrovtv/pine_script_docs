@@ -18,9 +18,10 @@ applied 2 scripts: “Bar date/time” and “Session bars”.
 
 Here is the initial code of the first script “Bar date/time”:
 
-\ ``study(``\ “``Bar``\ `` ``\ ``date/time``”\ ``)``
+::
 
-plot(time)
+    study("Bar date/time")
+    plot(time)
 
 This illustrates the meaning of the variable time. The variable
 ```time`` <https://www.tradingview.com/study-script-reference/#var_time>`__
@@ -37,9 +38,11 @@ between this time and UTC is 4 hours).
 
 The second script, “Session bars”:
 
-\ ``study(``\ “``Session``\ `` ``\ ``bars``”\ ``)``
+::
 
-t = time(period, “0930-1600”) plot(na(t) ? 0 : 1)
+    study("Session bars")
+    t = time(period, "0930-1600")
+    plot(na(t) ? 0 : 1)
 
 This shows how the user can distinguish between session bars and bars
 that get into extended hours by using the built-in function ``time`` and
@@ -75,14 +78,13 @@ regular session specification of a symbol. For example, it’s possible to
 highlight the beginning of each half-hour bar on a minute-based chart in
 the following way:
 
-\ ``study(``\ “``new``\ `` ``\ ``30``\ `` ``\ ``min``\ `` ``\ ``bar``”\ ``)``
+::
 
-is\_newbar(res) =>
-
-| ``   t = time(res)``
-| ``   change(t) != 0 ? 1 : 0``
-
-plot(is\_newbar(“30”))
+    study("new 30 min bar")
+    is_newbar(res) =>
+        t = time(res)
+        change(t) != 0 ? 1 : 0
+    plot(is_newbar("30"))
 
 .. figure:: Chart_time_2.png
    :alt: Chart_time_2.png
@@ -93,21 +95,26 @@ The function ``is_newbar`` similar to the previous example can be used
 in many situations. For example, it’s essential to display on an
 intraday chart the highs and lows which began at the market’s opening:
 
-//@version=3 study(“Opening high/low”, overlay=true)
+::
 
-highTimeFrame = input(“D”, type=resolution) sessSpec =
-input(“0930-1600”, type=session)
+    //@version=3
+    study("Opening high/low", overlay=true)
 
-is\_newbar(res, sess) =>
+    highTimeFrame = input("D", type=resolution)
+    sessSpec = input("0930-1600", type=session)
 
-| ``   t = time(res, sess)``
-| ``   na(t[1]) and not na(t) or t[1] < t``
+    is_newbar(res, sess) =>
+        t = time(res, sess)
+        na(t[1]) and not na(t) or t[1] < t
 
-newbar = is\_newbar(“1440”, sessSpec) s1 = na s1 := newbar ? low :
-nz(s1[1]) s2 = na s2 := newbar ? high : nz(s2[1])
+    newbar = is_newbar("1440", sessSpec)
+    s1 = na
+    s1 := newbar ? low : nz(s1[1])
+    s2 = na
+    s2 := newbar ? high : nz(s2[1])
 
-plot(s1, style=circles, linewidth=3, color=red) plot(s2, style=circles,
-linewidth=3, color=lime)
+    plot(s1, style=circles, linewidth=3, color=red)
+    plot(s2, style=circles, linewidth=3, color=lime)
 
 .. figure:: Chart_time_3.png
    :alt: Chart_time_3.png

@@ -7,9 +7,9 @@ The function <code>security</code> lets the user to request data from additional
 
 We will assume that we are applying a script to the chart IBM,1. The following script will display the ‘close’ of the IBM symbol but on a 15 resolution.
 
- <pine>study("Example security 1", overlay=true)
+ <source>study("Example security 1", overlay=true)
 ibm_15 = security("NYSE:IBM", "15", close)
-plot(ibm_15)</pine>
+plot(ibm_15)</source>
 
 [[File:Chart security 1.png|none|Example security 1]]
 
@@ -22,28 +22,28 @@ The third parameter of the security function can be any arithmetic expression or
 
 For example, with the <code>security</code> the user can view a minute chart and display an SMA (or any other indicator) based on any other resolution (i.e. daily, weekly, monthly).
 
- <pine>study(title="High Time Frame MA", overlay=true)
+ <source>study(title="High Time Frame MA", overlay=true)
 src = close, len = 9
 out = sma(src, len)
 out1 = security(tickerid, 'D', out)
-plot(out1)</pine>
+plot(out1)</source>
 
 Or one can declare the variable
- <pine>spread = high - low</pine>
+ <source>spread = high - low</source>
 
 and calculate it in 1, 15 and 60 minutes:
- <pine>spread_1 = security(tickerid, '1', spread)
+ <source>spread_1 = security(tickerid, '1', spread)
 spread_15 = security(tickerid, '15', spread)
-spread_60 = security(tickerid, '60', spread)</pine>
+spread_60 = security(tickerid, '60', spread)</source>
 
 
 The function <code>security</code>, as should be understood from the examples, returns a series which is adapted correspondingly to the time scale of the current chart's symbol. This result can be either shown directly on the chart (i.e., with <code>plot</code>), or be used in further calculations of the indicator’s code. The indicator ‘Advance Decline Line’ of the function <code>security</code> is a more difficult example:
 
- <pine>study(title = "Advance Decline Line", shorttitle="ADL")
+ <source>study(title = "Advance Decline Line", shorttitle="ADL")
 sym(s) => security(s, period, close)
 difference = (sym("INDEX:ADVN") - sym("INDEX:DECN"))/(sym("INDEX:UNCN") + 1)
 adline = cum(difference > 0 ? sqrt(difference) : -sqrt(-difference))
-plot(adline)</pine>
+plot(adline)</source>
 
 
 The script requests three securities at the same time. Results of the requests are then added to an arithmetic formula. As a result, we have a stock market indicator used by investors to measure the number of individual stocks participating in an upward or downward trend ([http://en.wikipedia.org/wiki/Advance%E2%80%93decline_line read more]).
@@ -61,12 +61,12 @@ Second one was added in [[Pine_Script:_Release_Notes#Pine_Version_3|version 3]].
 
 Here is an [https://www.tradingview.com/x/l0mYFmyD/ example] that shows the behavioral difference of the security function on a 5 min chart:
 
-<pine>//@version=3
+<source>//@version=3
 study("My Script", overlay=true)
 a = security(tickerid, '60', low, lookahead=barmerge.lookahead_off)
 plot(a, color=red)
 b = security(tickerid, '60', low, lookahead=barmerge.lookahead_on)
-plot(b, color=lime)</pine>
+plot(b, color=lime)</source>
 
 [[File:V3.png|none]]
 
@@ -78,27 +78,27 @@ The fuchsia dotted line represents the beginning of real-time data. You can see 
 === Understanding lookahead ===
 There are many published scripts with the following lines:
 
-<pine>//@version=2
+<source>//@version=2
 //...
-a = security(tickerid, 'D', close[1]) // It's barmerge.lookahead_on, because version=2</pine>
+a = security(tickerid, 'D', close[1]) // It's barmerge.lookahead_on, because version=2</source>
 The expression in security (<code>close[1]</code>) is a value of <code>close</code> of the previous day, which is why the construction '''doesn’t use future data'''.
 
 In v3 we can rewrite this in two ways.
 
 <code>barmerge.lookahead_on</code> OR <code>barmerge.lookahead_off</code>. If you use <code>barmerge.lookahead_on</code>, then it’s quite simple:
 
-<pine>//@version=3
+<source>//@version=3
 //...
-a = security(tickerid, 'D', close[1], lookahead=barmerge.lookahead_on)</pine>
+a = security(tickerid, 'D', close[1], lookahead=barmerge.lookahead_on)</source>
 
 Because original construction doesn't use data from future it is possible to rewrite it using <code>barmerge.lookahead_off</code>. If you use <code>barmerge.lookahead_off</code>, the script becomes more complex, but gives you an understanding of how the lookahead parameter works:
 
-<pine>//@version=3
+<source>//@version=3
 //...
 indexHighTF = barstate.isrealtime ? 1 : 0
 indexCurrTF = barstate.isrealtime ? 0 : 1
 a0 = security(tickerid, 'D', close[indexHighTF], lookahead=barmerge.lookahead_off)
-a = a0[indexCurrTF]</pine>
+a = a0[indexCurrTF]</source>
 When an indicator is based on historical data (i.e. <code>barstate.isrealtime</code> equals <code>false</code>), we take the current Close of the daily resolution and shift the result of <code>security</code> one bar to the right in the current resolution. When an indicator is calculated on real-time data, we take the Close of the previous day without shifting <code>security</code>.
 
 ----

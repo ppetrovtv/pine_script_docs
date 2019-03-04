@@ -10,15 +10,29 @@ Single-line Functions
 ---------------------
 
 Simple short functions are convenient to write on one line. The
-following is the syntax of single-line functions: () => The name of the
-function is located before the parentheses. Then, located in parenthesis
-is , which is simply a list of function arguments separated by a comma.
-in the example is the function’s body.
+following is the syntax of single-line functions:
 
-Here is an example of a single-line function: f(x, y) => x + y
+::
 
-After the function ‘f’ has been determined, it’s possible to call it: a
-= f(open, close) b = f(2, 2) c = f(open, 2)
+    <identifier>(<list of arguments>) => <expression>
+
+The name of the function is located before the parentheses. Then,
+located in parenthesis is , which is simply a list of function arguments
+separated by a comma. in the example is the function’s body.
+
+Here is an example of a single-line function:
+
+::
+
+    f(x, y) => x + y
+
+After the function ‘f’ has been determined, it’s possible to call it:
+
+::
+
+    a = f(open, close)
+    b = f(2, 2)
+    c = f(open, 2)
 
 Pay attention to the fact that the type of result which is being
 returned by the function ‘f’ can be different. In the example above, the
@@ -39,14 +53,17 @@ Multi-line Functions
 Of course it’s difficult to do any sort of advanced calculations with
 only one-line functions. So we decided to expand the syntax of declaring
 functions by making them multiline. Here’s a syntax of a multiline
-function: () =>
+function:
 
-| ``   ``\ 
-| ``   ...``
-| ``   ``\ 
-| ``   ``\ \ `` or ``\ 
+::
 
- The body of a multi-line function consists of a few statements. Each
+    <identifier>(<list of arguments>) =>
+        <Variable Declaration>
+        ...
+        <Variable Declaration>
+        <expression> or <Variable Declaration>
+
+The body of a multi-line function consists of a few statements. Each
 statement is placed on a separate line and must be preceded by 1
 indentation (four spaces or 1 tab). The indentation before the statement
 indicates that it is part of the body of the function and not in the
@@ -58,11 +75,14 @@ Either an expression or a declared variable should be the last statement
 of the function’s body. The result of this expression (or variable) will
 be a result of the entire function’s call.
 
-For example: geom\_average(x, y) =>
+For example:
 
-| ``   a = x*x``
-| ``   b = y*y``
-| ``   sqrt(a + b)``
+::
+
+    geom_average(x, y) =>
+        a = x*x
+        b = y*y
+        sqrt(a + b)
 
 The function ‘geom\_average’ has two arguments and creates two variables
 in the body: ‘a’ and ‘b’. The last statement calls the function ‘sqrt’
@@ -101,12 +121,13 @@ variable declarations. Any variable that is being declared in the body
 of a function can be a self referencing one. An example of the function
 ``my_sma`` which is equivalent to the built-in function ``sma``:
 
-study(“Custom Simple MA”, overlay=true) my\_sma(src, len) =>
+::
 
-| ``   sum = nz(sum[1]) - nz(src[len]) + src``
-| ``   sum/len   ``
-
-plot(my\_sma(close, 9))
+    study("Custom Simple MA", overlay=true)
+    my_sma(src, len) =>
+        sum = nz(sum[1]) - nz(src[len]) + src
+        sum/len   
+    plot(my_sma(close, 9))
 
 Pay attention to the use of function ``nz`` to prevent NaN values; they
 appear from the left side of the series as a result of shifting it to
@@ -115,15 +136,16 @@ the right.
 A slightly more difficult example, the function ``my_ema`` is identical
 to the built-in function ``ema``:
 
-study(“Custom Exp MA”, overlay=true) my\_ema(src, len) =>
+::
 
-| ``   weight = 2.0 / (len + 1)``
-| ``   sum = nz(sum[1]) - nz(src[len]) + src``
-| ``   ma = na(src[len]) ? na : sum/len``
-| ``   out = na(out[1]) ? ma : (src - out[1]) * weight + out[1]``
-| ``   out``
-
-plot(my\_ema(close, 9))
+    study("Custom Exp MA", overlay=true)
+    my_ema(src, len) =>
+        weight = 2.0 / (len + 1)
+        sum = nz(sum[1]) - nz(src[len]) + src
+        ma = na(src[len]) ? na : sum/len
+        out = na(out[1]) ? ma : (src - out[1]) * weight + out[1]
+        out
+    plot(my_ema(close, 9))
 
 Pay attention to the fact ``out`` is the last statement of the function
 ``my_ema``. It is a simple expression consisting of one of the variable
@@ -132,27 +154,34 @@ being returned by the whole function ``my_ema``. If the last expression
 is a variable declaration then its value will be the function's result.
 So the following two functions are completely the same:
 
-f1(x) =>
+::
 
-| ``   a = x + a[1]``
-| ``   a``
-
-f2(x) =>
-
-``   a = x + a[1]``\ 
+    f1(x) =>
+        a = x + a[1]
+        a
+    f2(x) =>
+        a = x + a[1]
 
 Functions that return multiple result
 -------------------------------------
 
 In most cases a function returns one result. But it is possible to
-return a list of results: fun(x, y) =>
+return a list of results:
 
-| ``   a = x+y``
-| ``   b = x-y``
-| ``   [a, b]``\ 
+::
 
-There is a special syntax for calling such functions: [res0, res1] =
-fun(open, close) plot(res0) plot(res1)
+    fun(x, y) =>
+        a = x+y
+        b = x-y
+        [a, b]
+
+There is a special syntax for calling such functions:
+
+::
+
+    [res0, res1] = fun(open, close)
+    plot(res0)
+    plot(res1)
 
 --------------
 

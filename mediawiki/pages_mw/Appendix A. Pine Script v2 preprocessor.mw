@@ -11,7 +11,7 @@ Algorithm of ''@version=2'' Pine Script preprocessor in pseudo-code:
 
 This is illustrated by example. Initial Pine Script text. Note there is a comment ''//@version=2'' on the first line, it’s a directive that helps to choose correct Pine Script preprocessor/parser version.
 
-<pine>
+<source>
 "//@version=2
 study('Preprocessor example')
 fun(x, y) =>
@@ -27,10 +27,10 @@ c = security(tickerid, period, b)
 plot(c, title='Out', color=c > c[1] ? lime : red, // This statement will be continued on the next line
      style=linebr, trackprice=true) // It's prefixed with 5 spaces, so it won't be considered as an indent
 alertcondition(c > 100)"
-</pine>
+</source>
 
 After steps 1), 2), 3) and 4).
-<pine>
+<source>
 "
 study('Preprocessor example')
 fun(x, y) =>
@@ -47,11 +47,11 @@ plot(c, title='Out', color=c > c[1] ? lime : red,
      style=linebr, trackprice=true) 
 alertcondition(c > 100)
 "
-</pine>
+</source>
 
 After step 5). Every 4 spaces has been replaced with <code>|INDENT|</code> token. Note that 8 spaces replaced with two <code>|INDENT|</code> tokens and so on.
 
-<pine>
+<source>
 "
 study('Preprocessor example')
 fun(x, y) =>
@@ -68,10 +68,10 @@ plot(c, title='Out', color=c > c[1] ? lime : red,
 |INDENT| style=linebr, trackprice=true) 
 alertcondition(c > 100)
 "
-</pine>
+</source>
 
 After step 6).
-<pine>
+<source>
 "|EMPTY|
 |B|study('Preprocessor example')|E|
 |B|fun(x, y) =>|E|
@@ -88,9 +88,9 @@ After step 6).
 |B||INDENT| style=linebr, trackprice=true) |E|
 |B|alertcondition(c > 100)|E|
 |EMPTY|"
-</pine>
+</source>
 After step 7). Note that line with <code>plot(c, title=</code> has been joined with the next line.
-<pine>
+<source>
 "|EMPTY|
 |B|study('Preprocessor example')|E|
 |B|fun(x, y) =>|E|
@@ -107,10 +107,10 @@ After step 7). Note that line with <code>plot(c, title=</code> has been joined w
 |EMPTY|
 |B|alertcondition(c > 100)|E|
 |EMPTY|"
-</pine>
+</source>
 
 After step 8).
-<pine>
+<source>
 "|EMPTY|
 |B|study('Preprocessor example')|E|
 |B|fun(x, y) =>|E|
@@ -127,12 +127,12 @@ After step 8).
 |EMPTY|
 |B|alertcondition(c > 100)|E|
 |EMPTY|"
-</pine>
+</source>
 
 Done. This text is ready to be processed by Pine Script lexer and parser. There are lexer and parser grammars for your reference.
 
 After the lexer/parser processing, we’d have an AST:
-<pine>"
+<source>"
 (FUN_CALL study (FUN_ARGS 'Preprocessor example'))
 (FUN_DEF fun (FUN_DEF_EXPR (FUN_HEAD x y) (FUN_BODY (FUN_RET (IF_THEN_ELSE (> close open) 
 THEN (FUN_BODY (FUN_RET (+ x y))) 
@@ -142,7 +142,7 @@ ELSE (FUN_BODY (FUN_RET (- x y))))))))
 (VAR_DEF c (FUN_CALL security (FUN_ARGS tickerid period b)))
 (FUN_CALL plot (FUN_ARGS c (KW_ARG title 'Out') (KW_ARG color (? (> c (SQBR c 1)) lime red)) (KW_ARG style linebr) (KW_ARG trackprice true)))
 (FUN_CALL alertcondition (FUN_ARGS (> c 100)))
-"</pine>
+"</source>
 
 ----
 Previous: [[Where can I get more information?]], Next: [[Appendix B. Pine Script v2 lexer grammar]], Up: [[Pine Script Tutorial]]

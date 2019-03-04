@@ -7,8 +7,12 @@ are functions
 `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__
 and
 `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__
-for that purpose. Here is a small example: study(“Example 1”)
-plotbar(open, high, low, close)
+for that purpose. Here is a small example:
+
+::
+
+    study("Example 1")
+    plotbar(open, high, low, close)
 
 .. figure:: Custom_ohlc_bars_and_candles_1.png
    :alt: Custom_ohlc_bars_and_candles_1.png
@@ -18,8 +22,11 @@ plotbar(open, high, low, close)
 The script “Example 1” simply replicates bars of the current symbol.
 Nothing outstanding. We can paint them with green and red colors:
 
- study(“Example 2”) palette = close >= open ? lime : red plotbar(open,
-high, low, close, color=palette)
+::
+
+    study("Example 2")
+    palette = close >= open ? lime : red
+    plotbar(open, high, low, close, color=palette)
 
 .. figure:: Custom_ohlc_bars_and_candles_2.png
    :alt: Custom_ohlc_bars_and_candles_2.png
@@ -38,8 +45,11 @@ used as bar/candle OHLC prices correspondingly. If for example one of
 the OHLC variables at some bar have NaN value, then the whole bar is not
 plotted. Example:
 
- study(“Example 3”) c = close > open ? na : close plotcandle(open, high,
-low, c)
+::
+
+    study("Example 3")
+    c = close > open ? na : close
+    plotcandle(open, high, low, c)
 
 .. figure:: Custom_ohlc_bars_and_candles_3.png
    :alt: Custom_ohlc_bars_and_candles_3.png
@@ -50,12 +60,17 @@ Of course you may calculate OHLC values without using available ‘open’,
 ‘high’, ‘low’ and ‘close’ values. For example you can plot “smoothed”
 candles:
 
- study(“Example 4”) len = input(9) smooth(x) =>
+::
 
-``   sma(x, len)``
-
-o = smooth(open) h = smooth(high) l = smooth(low) c = smooth(close)
-plotcandle(o, h, l, c)
+    study("Example 4")
+    len = input(9)
+    smooth(x) =>
+        sma(x, len)
+    o = smooth(open)
+    h = smooth(high)
+    l = smooth(low)
+    c = smooth(close)
+    plotcandle(o, h, l, c)
 
 .. figure:: Custom_ohlc_bars_and_candles_4.png
    :alt: Custom_ohlc_bars_and_candles_4.png
@@ -64,16 +79,21 @@ plotcandle(o, h, l, c)
 
 You may get an interesting effect, if you plot OHLC values taken from
 higher timeframe. Let's say you want to plot daily bars on 60 minute
-chart: // NOTE: add this script on intraday chart study(“Example 5”)
-higherRes = input(“D”, type=resolution) is\_newbar(res) =>
+chart:
 
-| ``   t = time(res)``
-| ``   change(t) != 0 ? 1 : 0``
+::
 
-o = security(tickerid, higherRes, open) h = security(tickerid,
-higherRes, high) l = security(tickerid, higherRes, low) c =
-security(tickerid, higherRes, close) plotbar(is\_newbar(higherRes) ? o :
-na, h, l, c, color=c >= o ? lime : red)
+    // NOTE: add this script on intraday chart
+    study("Example 5")
+    higherRes = input("D", type=resolution)
+    is_newbar(res) =>
+        t = time(res)
+        change(t) != 0 ? 1 : 0
+    o = security(tickerid, higherRes, open)
+    h = security(tickerid, higherRes, high)
+    l = security(tickerid, higherRes, low)
+    c = security(tickerid, higherRes, close)
+    plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? lime : red)
 
 |Custom\_ohlc\_bars\_and\_candles\_5.png| Functions plotbar and
 plotcandle also have ‘title’ argument, so user can distinguish them in

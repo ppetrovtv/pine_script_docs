@@ -7,16 +7,16 @@ In Pine there are special means for working with trade sessions, time and date. 
 [[File:Chart time 1.png]]
 
 Here is the initial code of the first script "Bar date/time":
- <pine>study("Bar date/time")
-plot(time)</pine>
+ <source>study("Bar date/time")
+plot(time)</source>
 
 This illustrates the meaning of the variable time. The variable [https://www.tradingview.com/study-script-reference/#var_time <code>time</code>] returns the date/time (timestamp) of each bar on the chart in UNIX format. As can be seen from the screenshot, the value <code>time</code> on the last bar is equal to 1397593800000. This value is the number of milliseconds that have passed since 00:00:00 UTC, 1 January, 1970 and corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC. (There are a lot of online convertors, for example [http://www.onlineconversion.com/unix_time.htm OnlineConversion.com]). The chart’s time gauge in the screenshot shows the time of the last bar as 2014-04-15 16:30 (in the exchange timezone, from here the difference between this time and UTC is 4 hours).
 
 The second script, "Session bars":
 
- <pine>study("Session bars")
+ <source>study("Session bars")
 t = time(period, "0930-1600")
-plot(na(t) ? 0 : 1)</pine>
+plot(na(t) ? 0 : 1)</source>
 
 
 This shows how the user can distinguish between session bars and bars that get into extended hours by using the built-in function <code>time</code> and not the variable <code>time</code> (the background behind these bars has been colored over with grey). The function <code>time</code> returns the time of the bar in milliseconds UNIX time or NaN value if the bar is located outside the given trade session (09:30-16:00 in our example). <code>time</code> accepts two arguments, the first is ‘resolution’, the bars of which are needed to determine their timestamp, and the second — ‘session specification’, which is a string that specifies the beginning and end of the trade session (in the exchange timezone). The string “0930-1600” corresponds to the trade session symbol IBM. Examples of trade session configurations:
@@ -30,17 +30,17 @@ Session specification, which is being passed to the function <code>time</code>, 
 
 There is an overloaded function <code>time</code> that allows the user to skip custom session specification. In this case, internally, it will use a regular session specification of a symbol. For example, it’s possible to highlight the beginning of each half-hour bar on a minute-based chart in the following way:
 
- <pine>study("new 30 min bar")
+ <source>study("new 30 min bar")
 is_newbar(res) =>
     t = time(res)
     change(t) != 0 ? 1 : 0
-plot(is_newbar("30"))</pine>
+plot(is_newbar("30"))</source>
 
 [[File:Chart time 2.png]]
 
 The function <code>is_newbar</code> similar to the previous example can be used in many situations. For example, it’s essential to display on an intraday chart the highs and lows which began at the market’s opening:
 
-<pine>//@version=3
+<source>//@version=3
 study("Opening high/low", overlay=true)
 
 highTimeFrame = input("D", type=resolution)
@@ -57,7 +57,7 @@ s2 = na
 s2 := newbar ? high : nz(s2[1])
 
 plot(s1, style=circles, linewidth=3, color=red)
-plot(s2, style=circles, linewidth=3, color=lime)</pine>
+plot(s2, style=circles, linewidth=3, color=lime)</source>
 
 
 [[File:Chart time 3.png]]

@@ -18,8 +18,11 @@ The function ‘plotshape’ is designed for displaying, under or above
 bars, a few icon-shapes. For example, the script below will draw an ‘X’
 above all green bars:
 
- study('plotshape example 1', overlay=true) data = close >= open
-plotshape(data, style=shape.xcross)
+::
+
+    study('plotshape example 1', overlay=true)
+    data = close >= open
+    plotshape(data, style=shape.xcross)
 
 .. figure:: Plotshape_1.png
    :alt: Plotshape_1.png
@@ -106,14 +109,14 @@ set another position for the shapes, it’s possible with the parameter
 ‘shape.triangleup’ above green bars and a red arrow ‘shape.triangledown’
 above red bars:
 
- study('plotshape example 2', overlay=true) data = close >= open
-plotshape(data, style=shape.triangleup,
+::
 
-``         location=location.abovebar, color=green)``
-
-plotshape(not data, style=shape.triangledown,
-
-``         location=location.belowbar, color=red)``
+    study('plotshape example 2', overlay=true)
+    data = close >= open
+    plotshape(data, style=shape.triangleup,
+              location=location.abovebar, color=green)
+    plotshape(not data, style=shape.triangledown,
+              location=location.belowbar, color=red)
 
 .. figure:: Plotshape_example_2.png
    :alt: Plotshape_example_2.png
@@ -142,8 +145,11 @@ Similar to the parameter ‘color’ of the function ‘plot’, it’s possible
 to transfer expressions which will calculate the icon-shapes’ color
 depending on conditions. For example:
 
- study('plotshape example 3', overlay=true) data = close >= open
-plotshape(true, style=shape.flag, color=data ? green : red)
+::
+
+    study('plotshape example 3', overlay=true)
+    data = close >= open
+    plotshape(true, style=shape.flag, color=data ? green : red)
 
 .. figure:: Plotshape_example_3.png
    :alt: Plotshape_example_3.png
@@ -173,8 +179,11 @@ icon-shapes. In plotchar, it is set through the inline parameter ‘char’,
 allowing any encoding unicode symbol to be used (which are supported by
 the in-use font). For example:
 
- study('plotchar example', overlay=true) data = close >= open
-plotchar(data, char='a')
+::
+
+    study('plotchar example', overlay=true)
+    data = close >= open
+    plotchar(data, char='a')
 
 .. figure:: Plotchar_example_1.png
    :alt: Plotchar_example_1.png
@@ -185,8 +194,13 @@ By default, the parameter char accepts the value ★ ('BLACK STAR',
 U+2605). It’s possible to use any letters, digits or various symbols,
 for example: ❤, ☀, €, ⚑, ❄, ◆, ⬆, ⬇.
 
-Example of ‘snowflakes’ ❄: study('plotchar example', overlay=true) data
-= close >= open plotchar(data, char='❄')
+Example of ‘snowflakes’ ❄:
+
+::
+
+    study('plotchar example', overlay=true)
+    data = close >= open
+    plotchar(data, char='❄')
 
 .. figure:: Plotchar_example_2.png
    :alt: Plotchar_example_2.png
@@ -225,8 +239,11 @@ arrows on the chart, using the following logic:
 
 Here is a simple script that illustrates how ‘plotarrow’ function works:
 
- study(“plotarrow example”, overlay=true) codiff = close - open
-plotarrow(codiff, colorup=teal, colordown=orange, transp=40)
+::
+
+    study("plotarrow example", overlay=true)
+    codiff = close - open
+    plotarrow(codiff, colorup=teal, colordown=orange, transp=40)
 
 .. figure:: Plotarrow_example_1.png
    :alt: Plotarrow_example_1.png
@@ -242,9 +259,12 @@ For another example, it’s possible to take the indicator “Chaikin
 Oscillator” from the standard scripts and display it as an overlay above
 a series in the form of arrows using ‘plotarrow’ :
 
- study(“Chaikin Oscillator Arrows”, overlay=true) short =
-input(3,minval=1), long = input(10,minval=1) osc = ema(accdist, short) -
-ema(accdist, long) plotarrow(osc)
+::
+
+    study("Chaikin Oscillator Arrows", overlay=true)
+    short = input(3,minval=1), long = input(10,minval=1)
+    osc = ema(accdist, short) - ema(accdist, long)
+    plotarrow(osc)
 
 .. figure:: Plotarrow_example_2.png
    :alt: Plotarrow_example_2.png

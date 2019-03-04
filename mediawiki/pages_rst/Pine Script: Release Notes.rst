@@ -39,7 +39,9 @@ You are now able to call all built-in functions using keyword arguments.
 This will be especially useful for the security function to specify the
 lookahead argument but skip the gaps argument:
 
-security('TSLA', 'D', close, lookahead=barmerge.lookahead\_off)
+::
+
+    security('TSLA', 'D', close, lookahead=barmerge.lookahead_off)
 
 2017-03-20: Pine Version 3
 --------------------------
@@ -80,8 +82,14 @@ applying certain language tools with different calculation methods. This
 needs to be understood and taken into consideration while using
 PineScript.
 
-Here is a basic example that describes this case: //@version=2 study(“My
-Script”) a = barstate.isrealtime or barstate.islast ? close : na plot(a)
+Here is a basic example that describes this case:
+
+::
+
+    //@version=2
+    study("My Script")
+    a = barstate.isrealtime or barstate.islast ? close : na
+    plot(a)
 
 The above script is based on historical data and always returns na. It
 can be plotted only on the last bar of both historical and real-time
@@ -98,18 +106,22 @@ data while doing calculations using historical data. For example:
 high price on the first hourly bar of the day. This can be used to
 create an incorrect backtesting strategy:
 
-//@version=2 strategy(“Fake strategy”, overlay=true)
+::
 
-r = input(“D”, type=resolution) l = security(tickerid, r, low) h =
-security(tickerid, r, high)
+    //@version=2
+    strategy("Fake strategy", overlay=true)
 
-longCondition = low == l if (longCondition)
+    r = input("D", type=resolution)
+    l = security(tickerid, r, low)
+    h = security(tickerid, r, high)
 
-``   strategy.entry(``\ “``My``\ `` ``\ ``Long``\ `` ``\ ``Entry``\ `` ``\ ``Id``”\ ``, strategy.long)``
+    longCondition = low == l
+    if (longCondition)
+        strategy.entry("My Long Entry Id", strategy.long)
 
-shortCondition = high == h if (shortCondition)
-
-``   strategy.entry(``\ “``My``\ `` ``\ ``Short``\ `` ``\ ``Entry``\ `` ``\ ``Id``”\ ``, strategy.short)``\ 
+    shortCondition = high == h
+    if (shortCondition)
+        strategy.entry("My Short Entry Id", strategy.short)
 
 However, we believe that this type of behavior of the security function
 could be useful when it’s being used in indicators. For instance,

@@ -11,10 +11,15 @@ quantity of available bars based on the current ticker and timeframe
 can be found
 `here <Operators#History_Referencing_Operator_.28Square_Brackets_.5B.5D.29>`__).
 Any expression that contains a series variable will be treated as a
-series itself. For example: a = open + close // addition of two series b
-= high / 2 // division of a series variable // to the integer literal
-constant (b will be a // series) c = close[1] // Referring to the
-previous ‘close’ value
+series itself. For example:
+
+::
+
+    a = open + close // addition of two series
+    b = high / 2         // division of a series variable
+    // to the integer literal constant (b will be a
+    // series)
+    c = close[1]         // Referring to the previous ‘close’ value
 
 Footnote: The operator **[]** also returns a value of a series type.
 

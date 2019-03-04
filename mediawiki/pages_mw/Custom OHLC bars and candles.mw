@@ -1,19 +1,19 @@
 {{Languages}}
 You may define your own custom bars and candles in Pine scripts. There are functions [https://www.tradingview.com/study-script-reference/#fun_plotbar plotbar] and [https://www.tradingview.com/study-script-reference/#fun_plotcandle plotcandle] for that purpose. Here is a small example:
-<pine>
+<source>
 study("Example 1")
 plotbar(open, high, low, close)
-</pine>
+</source>
 
 [[File:Custom ohlc bars and candles 1.png]]
 
 The script "Example 1" simply replicates bars of the current symbol. Nothing outstanding. We can paint them with green and red colors:
 
-<pine>
+<source>
 study("Example 2")
 palette = close >= open ? lime : red
 plotbar(open, high, low, close, color=palette)
-</pine>
+</source>
 
 [[File:Custom ohlc bars and candles 2.png]]
 
@@ -23,17 +23,17 @@ Function ‘plotcandle’ is similar to ‘plotbar’, it just plots candles ins
 
 Both ‘plotbar’ and ‘plotcandle’ need four series arguments that will be used as bar/candle OHLC prices correspondingly. If for example one of the OHLC variables at some bar have NaN value, then the whole bar is not plotted. Example:
 
-<pine>
+<source>
 study("Example 3")
 c = close > open ? na : close
 plotcandle(open, high, low, c)
-</pine>
+</source>
 
 [[File:Custom ohlc bars and candles 3.png]]
 
 Of course you may calculate OHLC values without using available ‘open’, ‘high’, ‘low’ and ‘close’ values. For example you can plot “smoothed” candles:
 
-<pine>
+<source>
 study("Example 4")
 len = input(9)
 smooth(x) =>
@@ -43,12 +43,12 @@ h = smooth(high)
 l = smooth(low)
 c = smooth(close)
 plotcandle(o, h, l, c)
-</pine>
+</source>
 
 [[File:Custom ohlc bars and candles 4.png]]
 
 You may get an interesting effect, if you plot OHLC values taken from higher timeframe. Let's say you want to plot daily bars on 60 minute chart:
-<pine>
+<source>
 // NOTE: add this script on intraday chart
 study("Example 5")
 higherRes = input("D", type=resolution)
@@ -60,7 +60,7 @@ h = security(tickerid, higherRes, high)
 l = security(tickerid, higherRes, low)
 c = security(tickerid, higherRes, close)
 plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? lime : red)
-</pine>
+</source>
 
 [[File:Custom ohlc bars and candles 5.png]]
 Functions plotbar and plotcandle also have ‘title’ argument, so user can distinguish them in Styles tab of Format dialog.

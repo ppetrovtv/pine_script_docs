@@ -7,11 +7,11 @@ In situations when you need to mark, highlight bars on a chart and not draw a us
 
 The function ‘plotshape’ is designed for displaying, under or above bars, a few icon-shapes. For example, the script below will draw an ‘X’ above all green bars:
 
-<pine>
+<source>
 study('plotshape example 1', overlay=true)
 data = close >= open
 plotshape(data, style=shape.xcross)
-</pine>
+</source>
 
 [[File:Plotshape 1.png]]
 
@@ -50,14 +50,14 @@ By changing the value of the parameter ‘style’ is possible to change the for
 
 The function ‘plotshape’ draws, by default, icons/shapes above bars.To set another position for the shapes, it’s possible with the parameter ‘location’. For example, the following script draws a green arrow ‘shape.triangleup’ above green bars and a red arrow ‘shape.triangledown’ above red bars:
 
-<pine>
+<source>
 study('plotshape example 2', overlay=true)
 data = close >= open
 plotshape(data, style=shape.triangleup,
           location=location.abovebar, color=green)
 plotshape(not data, style=shape.triangledown,
           location=location.belowbar, color=red)
-</pine>
+</source>
 
 [[File:Plotshape example 2.png]]
 
@@ -74,11 +74,11 @@ The example ‘plotshape example 2’ also illustrates that the shapes’ color 
 
 Similar to the parameter ‘color’ of the function ‘plot’, it’s possible to transfer expressions which will calculate the icon-shapes’ color depending on conditions. For example:
 
-<pine>
+<source>
 study('plotshape example 3', overlay=true)
 data = close >= open
 plotshape(true, style=shape.flag, color=data ? green : red)
-</pine>
+</source>
 
 [[File:Plotshape example 3.png]]
 
@@ -96,22 +96,22 @@ The function ‘plotshape’ has other possibilities:
 
 Plotchar’s primary difference from ‘plotshape’ is in the way it assigns icon-shapes. In plotchar, it is set through the inline parameter ‘char’, allowing any encoding unicode symbol to be used (which are supported by the in-use font). For example:
 
-<pine>
+<source>
 study('plotchar example', overlay=true)
 data = close >= open
 plotchar(data, char='a')
-</pine>
+</source>
 
 [[File:Plotchar example 1.png]]
 
 By default, the parameter char accepts the value ★ ('BLACK STAR', U+2605). It’s possible to use any letters, digits or various symbols, for example: ❤, ☀, €, ⚑, ❄, ◆, ⬆, ⬇.
 
 Example of ‘snowflakes’ ❄:
-<pine>
+<source>
 study('plotchar example', overlay=true)
 data = close >= open
 plotchar(data, char='❄')
-</pine>
+</source>
 
 [[File:Plotchar example 2.png]]
 
@@ -136,11 +136,11 @@ The first series parameter of the function ‘plotarrow’ is used to place arro
 
 Here is a simple script that illustrates how ‘plotarrow’ function works:
 
-<pine>
+<source>
 study("plotarrow example", overlay=true)
 codiff = close - open
 plotarrow(codiff, colorup=teal, colordown=orange, transp=40)
-</pine>
+</source>
 
 [[File:Plotarrow example 1.png]]
 
@@ -148,12 +148,12 @@ As you can see, the more absolute value of the difference ‘close - open’ the
 
 For another example, it’s possible to take the indicator “Chaikin Oscillator” from the standard scripts and display it as an overlay above a series in the form of arrows using ‘plotarrow’ :
 
-<pine>
+<source>
 study("Chaikin Oscillator Arrows", overlay=true)
 short = input(3,minval=1), long = input(10,minval=1)
 osc = ema(accdist, short) - ema(accdist, long)
 plotarrow(osc)
-</pine>
+</source>
 
 [[File:Plotarrow example 2.png]]
 

@@ -53,11 +53,25 @@ Function calls allows to pass arguments only by position. For most of
 programming languages it's the only available method of arguments
 passing. Function annotation calls also accepts keyword arguments. This
 allows to specify only part of arguments leaving others by default.
-Compare the following: study('Example', 'Ex', true) and
-study(title=‘Example’, shorttitle=’Ex’, overlay=true) It’s possible to
-mix positional and keyword arguments. Positional arguments must go first
-and keyword arguments should follow them. So the following call is not
-valid: study(precision=3, ‘Example’)
+Compare the following:
+
+::
+
+    study('Example', 'Ex', true)
+
+and
+
+::
+
+    study(title=‘Example’, shorttitle=’Ex’, overlay=true)
+
+It’s possible to mix positional and keyword arguments. Positional
+arguments must go first and keyword arguments should follow them. So the
+following call is not valid:
+
+::
+
+    study(precision=3, ‘Example’)
 
 --------------
 

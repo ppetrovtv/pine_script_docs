@@ -15,9 +15,11 @@ We will assume that we are applying a script to the chart IBM,1. The
 following script will display the ‘close’ of the IBM symbol but on a 15
 resolution.
 
-\ ``study(``\ “``Example``\ `` ``\ ``security``\ `` ``\ ``1``”\ ``, overlay=true)``
+::
 
-ibm\_15 = security(“NYSE:IBM”, “15”, close) plot(ibm\_15)
+    study("Example security 1", overlay=true)
+    ibm_15 = security("NYSE:IBM", "15", close)
+    plot(ibm_15)
 
 .. figure:: Chart_security_1.png
    :alt: Example security 1
@@ -63,21 +65,27 @@ For example, with the ``security`` the user can view a minute chart and
 display an SMA (or any other indicator) based on any other resolution
 (i.e. daily, weekly, monthly).
 
-\ ``study(title=``\ “``High``\ `` ``\ ``Time``\ `` ``\ ``Frame``\ `` ``\ ``MA``”\ ``, overlay=true)``
+::
 
-src = close, len = 9 out = sma(src, len) out1 = security(tickerid, 'D',
-out) plot(out1)
+    study(title="High Time Frame MA", overlay=true)
+    src = close, len = 9
+    out = sma(src, len)
+    out1 = security(tickerid, 'D', out)
+    plot(out1)
 
 Or one can declare the variable
 
-\ ``spread = high - low``\ 
+::
+
+    spread = high - low
 
 and calculate it in 1, 15 and 60 minutes:
 
-\ ``spread_1 = security(tickerid, '1', spread)``
+::
 
-spread\_15 = security(tickerid, '15', spread) spread\_60 =
-security(tickerid, '60', spread)
+    spread_1 = security(tickerid, '1', spread)
+    spread_15 = security(tickerid, '15', spread)
+    spread_60 = security(tickerid, '60', spread)
 
 The function ``security``, as should be understood from the examples,
 returns a series which is adapted correspondingly to the time scale of
@@ -86,11 +94,13 @@ the chart (i.e., with ``plot``), or be used in further calculations of
 the indicator’s code. The indicator ‘Advance Decline Line’ of the
 function ``security`` is a more difficult example:
 
-\ ``study(title = ``\ “``Advance``\ `` ``\ ``Decline``\ `` ``\ ``Line``”\ ``, shorttitle=``\ “``ADL``”\ ``)``
+::
 
-sym(s) => security(s, period, close) difference = (sym(“INDEX:ADVN”) -
-sym(“INDEX:DECN”))/(sym(“INDEX:UNCN”) + 1) adline = cum(difference > 0 ?
-sqrt(difference) : -sqrt(-difference)) plot(adline)
+    study(title = "Advance Decline Line", shorttitle="ADL")
+    sym(s) => security(s, period, close)
+    difference = (sym("INDEX:ADVN") - sym("INDEX:DECN"))/(sym("INDEX:UNCN") + 1)
+    adline = cum(difference > 0 ? sqrt(difference) : -sqrt(-difference))
+    plot(adline)
 
 The script requests three securities at the same time. Results of the
 requests are then added to an arithmetic formula. As a result, we have a
@@ -133,10 +143,14 @@ Here is an `example <https://www.tradingview.com/x/l0mYFmyD/>`__ that
 shows the behavioral difference of the security function on a 5 min
 chart:
 
-//@version=3 study(“My Script”, overlay=true) a = security(tickerid,
-'60', low, lookahead=barmerge.lookahead\_off) plot(a, color=red) b =
-security(tickerid, '60', low, lookahead=barmerge.lookahead\_on) plot(b,
-color=lime)
+::
+
+    //@version=3
+    study("My Script", overlay=true)
+    a = security(tickerid, '60', low, lookahead=barmerge.lookahead_off)
+    plot(a, color=red)
+    b = security(tickerid, '60', low, lookahead=barmerge.lookahead_on)
+    plot(b, color=lime)
 
 .. figure:: V3.png
    :alt: V3.png
@@ -162,28 +176,41 @@ Understanding lookahead
 
 There are many published scripts with the following lines:
 
-//@version=2 //... a = security(tickerid, 'D', close[1]) // It's
-barmerge.lookahead\_on, because version=2 The expression in security
-(``close[1]``) is a value of ``close`` of the previous day, which is why
-the construction **doesn’t use future data**.
+::
+
+    //@version=2
+    //...
+    a = security(tickerid, 'D', close[1]) // It's barmerge.lookahead_on, because version=2
+
+The expression in security (``close[1]``) is a value of ``close`` of the
+previous day, which is why the construction **doesn’t use future data**.
 
 In v3 we can rewrite this in two ways.
 
 ``barmerge.lookahead_on`` OR ``barmerge.lookahead_off``. If you use
 ``barmerge.lookahead_on``, then it’s quite simple:
 
-//@version=3 //... a = security(tickerid, 'D', close[1],
-lookahead=barmerge.lookahead\_on)
+::
+
+    //@version=3
+    //...
+    a = security(tickerid, 'D', close[1], lookahead=barmerge.lookahead_on)
 
 Because original construction doesn't use data from future it is
 possible to rewrite it using ``barmerge.lookahead_off``. If you use
 ``barmerge.lookahead_off``, the script becomes more complex, but gives
 you an understanding of how the lookahead parameter works:
 
-//@version=3 //... indexHighTF = barstate.isrealtime ? 1 : 0 indexCurrTF
-= barstate.isrealtime ? 0 : 1 a0 = security(tickerid, 'D',
-close[indexHighTF], lookahead=barmerge.lookahead\_off) a =
-a0[indexCurrTF] When an indicator is based on historical data (i.e.
+::
+
+    //@version=3
+    //...
+    indexHighTF = barstate.isrealtime ? 1 : 0
+    indexCurrTF = barstate.isrealtime ? 0 : 1
+    a0 = security(tickerid, 'D', close[indexHighTF], lookahead=barmerge.lookahead_off)
+    a = a0[indexCurrTF]
+
+When an indicator is based on historical data (i.e.
 ``barstate.isrealtime`` equals ``false``), we take the current Close of
 the daily resolution and shift the result of ``security`` one bar to the
 right in the current resolution. When an indicator is calculated on

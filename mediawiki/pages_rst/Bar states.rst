@@ -21,15 +21,20 @@ is considered as a new bar only at opening tick of this bar.
 
 Here’s the example of the script with new variables:
 
-\ ``study(``\ “``Example``\ `` ``\ ``barstate``”\ ``, overlay = true)``
+::
 
-first = barstate.isfirst last = barstate.islast hist =
-barstate.ishistory rt = barstate.isrealtime new = barstate.isnew
+    study("Example barstate", overlay = true)
+    first = barstate.isfirst
+    last = barstate.islast
+    hist = barstate.ishistory
+    rt = barstate.isrealtime
+    new = barstate.isnew
 
-plotchar(close, color = first ? red : na, location = location.belowbar)
-plotchar(close, color = last ? blue : na, location = location.belowbar)
-plotchar(close, color = hist ? gray : na, char='h') bgcolor(color = new
-? green : na) barcolor(color = rt ? black: na)
+    plotchar(close, color = first ? red : na, location = location.belowbar)
+    plotchar(close, color = last ? blue : na, location = location.belowbar)
+    plotchar(close, color = hist ? gray : na, char='h')
+    bgcolor(color = new ? green : na)
+    barcolor(color = rt ? black: na)
 
 .. figure:: Chart_barstate_1.jpg
    :alt: Chart_barstate_1.jpg
