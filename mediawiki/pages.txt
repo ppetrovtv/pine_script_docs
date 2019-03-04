@@ -1,0 +1,38 @@
+Alerts in pine
+Annotation Functions Overview
+Appendix A. Pine Script v2 preprocessor
+Appendix B. Pine Script v2 lexer grammar
+Appendix C. Pine Script v2 parser grammar
+Bar states. Built-in variables ‘barstate’
+Comments
+Context Switching, The ‘security’ Function
+Custom OHLC bars and candles
+Declaring Functions
+Example of an Indicator in Pine
+Expressions, Declarations and Statements
+Extended and Regular Sessions
+Functions vs Annotation Functions
+Fundamentals Data
+HOWTOs
+Identifiers
+Indicator repainting
+Input for selecting data source in pine script
+Introduction
+Lines Wrapping
+Literals
+Multicolor filling
+Non-Standard Chart Types Data
+Operators
+Pine Compilation Errors
+Pine Script: Release Notes
+Pine Script Tutorial
+Pine Version 3 Migration Guide
+Public Library
+Publishing Scripts
+Sessions and Time Functions
+Shapes using plotshape, plotchar, plotarrow
+Strategies
+Structure of the Script
+Transparency in pine scripts
+Type System
+Where can I get more information?

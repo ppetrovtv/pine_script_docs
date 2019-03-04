@@ -1,0 +1,15 @@
+{{Languages}}
+You can set a different fill color on each bar with the fill() function.
+
+Usage example:
+<pine>
+//@version=2
+study(title="Colored fill", overlay=true)
+p1 = plot(high)
+p2 = plot(low)
+fill(p1, p2, color = close>open ? green : red)
+</pine>
+
+[[File:Colored filling.png]]
+----
+[[Category:Pine Script]]

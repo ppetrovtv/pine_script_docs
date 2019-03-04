@@ -1,0 +1,29 @@
+{{Languages}}
+If you want to choose the data source in the inputs pass it as a parameter of the function <code>input</code>.<br />
+You can choose any of the following as the default source:
+* open;
+* high;
+* low;
+* close;
+* hl2;
+* hlc3;
+* ohlc4.
+
+
+Example 1. Simple
+<pine>
+study("My Script")
+src = input(close)
+plot(src)
+</pine>
+
+
+Example 2. Extended
+<pine>
+study("My Script")
+src = input(title="Source", type=source, defval=close)
+plot(src)
+</pine>
+
+----
+[[Category:Pine Script]]

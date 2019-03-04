@@ -1,0 +1,65 @@
+{{Languages}}
+
+[[File:Pine Script logo small.png|none|left]]
+
+[[Introduction]]
+
+[[Example of an Indicator in Pine]]
+
+[[Structure of the Script]]
+
+[[Comments]]
+
+[[Identifiers]]
+
+[[Type System]]
+
+[[Literals]]
+
+[[Operators]]
+
+[[Functions vs Annotation Functions]]
+
+[[Expressions, Declarations and Statements]]
+
+[[Declaring Functions]]
+
+[[Lines Wrapping]]
+
+[[Context Switching, The ‘security’ Function]]
+
+[[Fundamentals Data]]
+
+[[Bar states. Built-in variables ‘barstate’]]
+
+[[Sessions and Time Functions]]
+
+[[Extended and Regular Sessions]]
+
+[[Non-Standard Chart Types Data]]
+
+[[Annotation Functions Overview]]
+
+[[Shapes using plotshape, plotchar, plotarrow]]
+
+[[Custom OHLC bars and candles]]
+
+[[Strategies]]
+
+[[HOWTOs]]
+
+[[Pine Compilation Errors]]
+
+[[Where can I get more information?]]
+
+[[Appendix A. Pine Script v2 preprocessor]]
+
+[[Appendix B. Pine Script v2 lexer grammar]]
+
+[[Appendix C. Pine Script v2 parser grammar]]
+
+[https://www.tradingview.com/study-script-reference/ Pine Script Reference]
+
+See also [[Pine Script: Release Notes|Pine Script Release Notes]].
+
+[[Category:Pine Script]]
