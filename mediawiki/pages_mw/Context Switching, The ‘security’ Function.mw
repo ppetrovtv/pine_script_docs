@@ -103,4 +103,3 @@ When an indicator is based on historical data (i.e. <code>barstate.isrealtime</c
 
 ----
 Previous: [[Lines Wrapping]], Next: [[Bar_states._Built-in_variables_‘barstate’]], Up: [[Pine Script Tutorial]]
-[[Category:Pine Script]]

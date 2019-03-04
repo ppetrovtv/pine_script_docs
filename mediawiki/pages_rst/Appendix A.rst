@@ -168,5 +168,3 @@ information? <Where_can_I_get_more_information?>`__, Next: `Appendix B.
 Pine Script v2 lexer
 grammar <Appendix_B._Pine_Script_v2_lexer_grammar>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

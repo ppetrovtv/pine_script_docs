@@ -39,5 +39,3 @@ Previous: `Pine Compilation Errors <Pine_Compilation_Errors>`__, Next:
 `Appendix A. Pine Script v2
 preprocessor <Appendix_A._Pine_Script_v2_preprocessor>`__, Up: `Pine
 Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

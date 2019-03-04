@@ -52,5 +52,3 @@ choose the specific alert condition (implemented in the code itself).
    Pine\_alertcondition\_.png
 
 --------------
-
-`Category:Pine Script <Category:Pine_Script>`__

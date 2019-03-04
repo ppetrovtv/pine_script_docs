@@ -22,5 +22,3 @@ to several lines, read more here: `Lines Wrapping <Lines_Wrapping>`__.
 Previous: `Structure of the Script <Structure_of_the_Script>`__, Next:
 `Identifiers <Identifiers>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

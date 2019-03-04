@@ -92,5 +92,3 @@ processing the data:
 Previous: `HOWTOs <HOWTOs>`__, Next: `Pine Compilation
 Errors <Pine_Compilation_Errors>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

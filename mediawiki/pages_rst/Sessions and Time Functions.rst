@@ -183,5 +183,3 @@ Previous: `Bar states. Built-in variables
 ‘barstate’ <Bar_states._Built-in_variables_‘barstate’>`__, Next:
 `Extended\_and\_Regular\_Sessions <Extended_and_Regular_Sessions>`__,
 Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

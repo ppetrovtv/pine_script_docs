@@ -178,5 +178,3 @@ can be сonverted into
 Previous: `Indicator repainting <Indicator_repainting>`__, Next: `Where
 can I get more information? <Where_can_I_get_more_information?>`__, Up:
 `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

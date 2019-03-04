@@ -69,5 +69,3 @@ preprocessor <Appendix_A._Pine_Script_v2_preprocessor>`__, Next:
 `Appendix C. Pine Script v2 parser
 grammar <Appendix_C._Pine_Script_v2_parser_grammar>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

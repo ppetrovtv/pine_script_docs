@@ -156,5 +156,3 @@ Changes of type system
 
 See `Migration Guide <Pine_Version_3_Migration_Guide>`__ for more
 details.
-
-`Category:Pine Script <Category:Pine_Script>`__

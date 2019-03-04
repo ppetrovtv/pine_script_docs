@@ -370,7 +370,5 @@ Functions <Functions_vs_Annotation_Functions>`__, Next: `Declaring
 Functions <Declaring_Functions>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
 
-`Category:Pine Script <Category:Pine_Script>`__
-
 .. |Fib.png| image:: Fib.png
 

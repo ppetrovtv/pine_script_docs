@@ -72,5 +72,3 @@ grammar <Appendix_C._Pine_Script_v2_parser_grammar>`__
 Reference <https://www.tradingview.com/study-script-reference/>`__
 
 See also `Pine Script Release Notes <Pine_Script:_Release_Notes>`__.
-
-`Category:Pine Script <Category:Pine_Script>`__

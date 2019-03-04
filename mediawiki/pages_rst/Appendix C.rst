@@ -59,5 +59,3 @@ v3 <http://www.antlr3.org/>`__ syntax. Start rule is ``tvscript``.
 Previous: `Appendix B. Pine Script v2 lexer
 grammar <Appendix_B._Pine_Script_v2_lexer_grammar>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

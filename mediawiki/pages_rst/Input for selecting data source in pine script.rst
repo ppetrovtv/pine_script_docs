@@ -27,5 +27,3 @@ Example 2. Extended
     plot(src)
 
 --------------
-
-`Category:Pine Script <Category:Pine_Script>`__

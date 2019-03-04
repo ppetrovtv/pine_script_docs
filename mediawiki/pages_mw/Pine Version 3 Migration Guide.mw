@@ -104,4 +104,3 @@ col = sum == 1 ? white : sum == 2 ? blue : sum == 3 ? red : na
 bgcolor(col)</source>
 Function <code>bton</code> (abbreviation of 'boolean-to-number') explicitly "converts" any boolean value to a number if you really need this.
 
-[[Category:Pine Script]]

@@ -117,5 +117,3 @@ either upper or lowercase.
 Previous: `Type System <Type_System>`__, Next:
 `Operators <Operators>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

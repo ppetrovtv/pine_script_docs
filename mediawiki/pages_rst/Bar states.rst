@@ -48,5 +48,3 @@ Previous: `Context Switching, The ‘security’
 Function <Context_Switching,_The_‘security’_Function>`__, Next:
 `Sessions\_and\_Time\_Functions <Sessions_and_Time_Functions>`__, Up:
 `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

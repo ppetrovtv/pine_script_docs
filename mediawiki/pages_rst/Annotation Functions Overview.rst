@@ -431,7 +431,5 @@ Data <Non-Standard_Chart_Types_Data>`__, Next: `Shapes using plotshape,
 plotchar, plotarrow <Shapes_using_plotshape,_plotchar,_plotarrow>`__,
 Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
 
-`Category:Pine Script <Category:Pine_Script>`__
-
 .. |Inputs\_of\_indicator\_4.png| image:: Inputs_of_indicator_4.png
 

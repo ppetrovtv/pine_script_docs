@@ -261,5 +261,3 @@ parentheses.
 Previous: `Literals <Literals>`__, Next: `Functions vs Annotation
 Functions <Functions_vs_Annotation_Functions>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

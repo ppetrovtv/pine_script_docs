@@ -12,4 +12,3 @@ fill(p1, p2, color = close>open ? green : red)
 
 [[File:Colored filling.png]]
 ----
-[[Category:Pine Script]]

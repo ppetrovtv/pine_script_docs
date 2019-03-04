@@ -21,5 +21,3 @@ Previous: `Example of an Indicator in
 Pine <Example_of_an_Indicator_in_Pine>`__, Next:
 `Comments <Comments>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

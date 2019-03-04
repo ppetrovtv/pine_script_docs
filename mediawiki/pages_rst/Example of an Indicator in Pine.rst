@@ -72,5 +72,3 @@ Script capabilities.
 Previous: `Introduction <Introduction>`__, Next: `Structure of the
 Script <Structure_of_the_Script>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

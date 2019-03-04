@@ -83,8 +83,7 @@ then provide access to the paying customers.
   section.
 | |Invite\_only\_tab.png|
 
-`Category:Pine Script <Category:Pine_Script>`__ `Category:Social
-Media <Category:Social_Media>`__
+`Category:Social Media <Category:Social_Media>`__
 
 .. |Pine\_editor.png| image:: Pine_editor.png
 .. |Publish\_script\_button.png| image:: Publish_script_button.png

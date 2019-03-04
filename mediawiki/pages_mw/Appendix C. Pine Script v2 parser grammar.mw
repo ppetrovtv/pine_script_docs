@@ -56,4 +56,3 @@ synpred2_TVScriptParserMain_v2 : FOR_STMT var_def FOR_STMT_TO ternary_expr FOR_S
 
 ----
 Previous: [[Appendix B. Pine Script v2 lexer grammar]], Up: [[Pine Script Tutorial]]
-[[Category:Pine Script]]

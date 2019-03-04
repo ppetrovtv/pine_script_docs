@@ -80,8 +80,6 @@ Educational Videos
 | 3.
 | {{#widget:Vimeo \|id=103135482 \|width=500 \|height=281 }}
 
-`Category:Pine Script <Category:Pine_Script>`__
-
 .. |Public\_Library\_tab.png| image:: Public_Library_tab.png
 .. |Add\_to\_Personal\_Library.png| image:: Add_to_Personal_Library.png
 .. |Add\_to\_Personal\_Library\_2.png| image:: Add_to_Personal_Library_2.png

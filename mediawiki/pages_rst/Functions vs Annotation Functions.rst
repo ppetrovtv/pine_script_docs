@@ -74,5 +74,3 @@ following call is not valid:
 Previous: `Operators <Operators>`__, Next: `Expressions, Declarations
 and Statements <Expressions,_Declarations_and_Statements>`__, Up: `Pine
 Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

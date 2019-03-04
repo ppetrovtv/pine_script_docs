@@ -31,5 +31,5 @@ On the published script’s page authors will see a Manage Access button, where 
 
 The invite-only indicators are visible in the [[Public Library]], but nobody can add it to a chart without explicit permission from the author, and only the author can see the source code. Each user can view, comment and favorite the script’s page with its description, screenshot and author’s comments, and it’s available in the Public Library section in the Indicators dialog. Only users with explicit permission from the author can add the script to a chart. Nobody except the author can view the source code of these scripts. This is a great option for commercial script vendors, or authors who want to share the script only with a few select users. If the author wishes to charge for access to these scripts, they may do so off-site and then provide access to their customers. TradingView does not require a percentage of the sales from such transactions. All of your published scripts with limited access are shown in a new section. 
 <br>[[File:Invite_only_tab.png]]
-[[Category:Pine Script]]
+
 [[Category:Social Media]]

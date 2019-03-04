@@ -68,5 +68,3 @@ graph for version
 
 Previous: `Identifiers <Identifiers>`__, Next: `Literals <Literals>`__,
 Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

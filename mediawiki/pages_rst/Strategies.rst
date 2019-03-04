@@ -577,5 +577,3 @@ In real-time the yesterday’s session close rate is used.
 Previous: `Custom OHLC bars and
 candles <Custom_OHLC_bars_and_candles>`__, Next: `HOWTOs <HOWTOs>`__,
 Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

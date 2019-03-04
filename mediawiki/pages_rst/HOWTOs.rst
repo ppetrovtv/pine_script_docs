@@ -238,7 +238,5 @@ Previous: `Strategies <Strategies>`__, Next: `Indicator
 repainting <Indicator_repainting>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
 
-`Category:Pine Script <Category:Pine_Script>`__
-
 .. |Mark the highest bar within a 5 day lookback window range| image:: Wiki_howto_range_analysis.png
 

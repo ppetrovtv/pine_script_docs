@@ -73,5 +73,3 @@ Previous: `Sessions and Time Functions <Sessions_and_Time_Functions>`__,
 Next:
 `Non-Standard\_Chart\_Types\_Data <Non-Standard_Chart_Types_Data>`__,
 Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

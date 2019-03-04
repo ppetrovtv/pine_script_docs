@@ -190,5 +190,3 @@ Previous: `Extended and Regular
 Sessions <Extended_and_Regular_Sessions>`__, Next:
 `Annotation\_Functions\_Overview <Annotation_Functions_Overview>`__, Up:
 `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

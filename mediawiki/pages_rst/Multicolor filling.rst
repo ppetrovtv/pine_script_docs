@@ -16,5 +16,3 @@ Usage example:
    Colored\_filling.png
 
 --------------
-
-`Category:Pine Script <Category:Pine_Script>`__

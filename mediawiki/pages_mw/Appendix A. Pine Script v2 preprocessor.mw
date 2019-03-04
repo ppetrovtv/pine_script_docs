@@ -146,4 +146,3 @@ ELSE (FUN_BODY (FUN_RET (- x y))))))))
 
 ----
 Previous: [[Where can I get more information?]], Next: [[Appendix B. Pine Script v2 lexer grammar]], Up: [[Pine Script Tutorial]]
-[[Category:Pine Script]]

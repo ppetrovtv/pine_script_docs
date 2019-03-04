@@ -295,5 +295,3 @@ Previous: `Annotation Functions
 Overview <Annotation_Functions_Overview>`__, Next: `Custom OHLC bars and
 candles <Custom_OHLC_bars_and_candles>`__, Up: `Pine Script
 Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

@@ -167,7 +167,5 @@ To make this example work in Pine v3 you can do the following:
 Function ``bton`` (abbreviation of 'boolean-to-number') explicitly
 “converts” any boolean value to a number if you really need this.
 
-`Category:Pine Script <Category:Pine_Script>`__
-
 .. |V3.png| image:: V3.png
 

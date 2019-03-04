@@ -37,7 +37,5 @@ You can control transparency in properties of a study on Style tab.
 
 --------------
 
-`Category:Pine Script <Category:Pine_Script>`__
-
 .. |Transparency settings| image:: Transparency_settings.png
 

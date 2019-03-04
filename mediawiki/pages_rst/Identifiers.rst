@@ -16,5 +16,3 @@ case-sensitive). Here are some examples of valid identifiers:
 
 Previous: `Comments <Comments>`__, Next: `Type System <Type_System>`__,
 Up: `Pine Script Tutorial <Pine_Script_Tutorial>`__
-
-`Category:Pine Script <Category:Pine_Script>`__

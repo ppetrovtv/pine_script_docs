@@ -189,4 +189,3 @@ plot(vw) // all na values are replaced with the last non-empty value
 </source>
 ----
 Previous: [[Strategies]], Next: [[Indicator repainting]], Up: [[Pine Script Tutorial]]
-[[Category:Pine Script]]

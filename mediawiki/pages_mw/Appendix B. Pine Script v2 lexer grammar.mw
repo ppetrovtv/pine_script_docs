@@ -64,4 +64,3 @@ Tokens : ( COND | COND_ELSE | OR | AND | NOT | EQ | NEQ | GT | GE | LT | LE | PL
 
 ----
 Previous: [[Appendix A. Pine Script v2 preprocessor]], Next: [[Appendix C. Pine Script v2 parser grammar]], Up: [[Pine Script Tutorial]]
-[[Category:Pine Script]]
