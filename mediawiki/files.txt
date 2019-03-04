@@ -1,0 +1,100 @@
+Pine alertcondition .png
+Output of charts plot 1.png
+Output of charts plot 2.png
+Output of charts plot 3.png
+Barcoloring a series barcolor 1.png
+Background coloring bgcolor 1.png
+Inputs of indicator 1.png
+Inputs of indicator 2.png
+Inputs of indicator 3.png
+Inputs of indicator 4.png
+Inputs of indicator 5.png
+Inputs of indicator 6.png
+Price levels hline 1.png
+Filling in the background between objects with fill 1.png
+Filling in the background between objects with fill 2.png
+Filling in the background between objects with fill 3.png
+Alertcondition 1.png
+Alertcondition 2.png
+Chart barstate 1.jpg
+Chart security 1.png
+V3.png
+Custom ohlc bars and candles 1.png
+Custom ohlc bars and candles 2.png
+Custom ohlc bars and candles 3.png
+Custom ohlc bars and candles 4.png
+Custom ohlc bars and candles 5.png
+Macd pine.png
+Fib.png
+Pine Extended Session Data.png
+Pine- Regular Session Data.png
+Buy sell chart1.png
+Buy sell chart2.png
+Wiki howto range analysis.png
+Pine Script logo text.png
+Colored filling.png
+Pine Heikinashi.png
+Pine Heikinashi 2.png
+Pine Renko.png
+Pine Linebreak.png
+Pine Kagi.png
+Pine Point and Figure.png
+Pine Script logo small.png
+V3.png
+Public_Library_tab.png
+Add_to_Personal_Library.png
+Add_to_Personal_Library_2.png
+Favorites_section.png
+Sorted_by_popularity.png
+Open_the_script.png
+Save_as.png
+My_Scripts.png
+Search_field.png
+Search.png
+Pine_editor.png
+Publish_script_button.png
+Publish script new.png
+Protected script new.png
+Invite only script new.png
+Manage_access_button.png
+Invite_only_tab.png
+Chart time 1.png
+Chart time 2.png
+Chart time 3.png
+Plotshape 1.png
+Plotshape xcross.png
+Xcross_with_text.png
+Plotshape cross.png
+Cross_with_text.png
+Plotshape circle.png
+Circle_with_text.png
+Plotshape triangleup.png
+Triangleup_with_text.png
+Plotshape triangledown.png
+Triangledown_with_text.png
+Plotshape flag.png
+Flag_with_text.png
+Plotshape arrowup.png
+Arrowup_with_text.png
+Plotshape arrowdown.png
+Arrowdown_with_text.png
+Plotshape square.png
+Square_with_text.png
+Plotshape diamond.png
+Diamond_with_text.png
+Plotshape labelup.png
+Labelup_with_text.png
+Plotshape labeldown.png
+Labeldown_with_text.png
+Plotshape example 2.png
+Plotshape example 3.png
+Plotchar example 1.png
+Plotchar example 2.png
+Plotarrow example 1.png
+Plotarrow example 2.png
+Strategy tester.png
+Filled stategy.png
+Levels brackets.png
+Transparency settings.png
+Pine Types v3.jpg
+Pine_Types_v2.jpg
