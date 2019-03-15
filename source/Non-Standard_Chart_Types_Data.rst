@@ -28,10 +28,7 @@ top of usual OHLC bars:
     ha_low = security(ha_t, period, low)
     plot(ha_low)
 
-.. figure:: images/Pine_Heikinashi.png
-   :alt: images/Pine_Heikinashi.png
-
-   images/Pine\_Heikinashi.png
+.. image:: images/Pine_Heikinashi.png
 
 Note that low prices of Heikin-Ashi bars are different from usual bars
 low prices.
@@ -68,10 +65,7 @@ Here is the source code:
     palette = ha_close >= ha_open ? lime : red
     plotcandle(ha_open, ha_high, ha_low, ha_close, color=palette)
 
-.. figure:: images/Pine_Heikinashi_2.png
-   :alt: images/Pine_Heikinashi_2.png
-
-   images/Pine\_Heikinashi\_2.png
+.. image:: images/Pine_Heikinashi_2.png
 
 Read more about ‘plotcandle’ (and ‘plotbar’) functions
 `here <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__.
@@ -91,10 +85,7 @@ passes the top or bottom of previously predefined amount.
     renko_low = security(renko_t, period, low)
     plot(renko_low)
 
-.. figure:: images/Pine_Renko.png
-   :alt: images/Pine_Renko.png
-
-   images/Pine\_Renko.png
+.. image:: images/Pine_Renko.png
 
 Please note that you cannot plot Renko bricks from Pine script exactly
 as they look. You can just get a series of numbers that are somewhat
@@ -116,10 +107,7 @@ price changes.
     lb_close = security(lb_t, period, close)
     plot(lb_close)
 
-.. figure:: images/Pine_Linebreak.png
-   :alt: images/Pine_Linebreak.png
-
-   images/Pine\_Linebreak.png
+.. image:: images/Pine_Linebreak.png
 
 Please note that you cannot plot Line Break boxes from Pine script
 exactly as they look. You can just get a series of numbers that are
@@ -144,10 +132,7 @@ if the last change bypassed the last horizontal line.
     kagi_close = security(kagi_t, period, close)
     plot(kagi_close)
 
-.. figure:: images/Pine_Kagi.png
-   :alt: images/Pine_Kagi.png
-
-   images/Pine\_Kagi.png
+.. image:: images/Pine_Kagi.png
 
 Please note that you cannot plot Kagi lines from Pine script exactly as
 they look. You can just get a series of numbers that are somewhat OHLC
@@ -179,10 +164,7 @@ request and get those numbers and plot them on chart.
     plot(pnf_open, color=lime, style=linebr, linewidth=4)
     plot(pnf_close, color=red, style=linebr, linewidth=4)
 
-.. figure:: images/Pine_Point_and_Figure.png
-   :alt: images/Pine_Point_and_Figure.png
-
-   images/Pine\_Point\_and\_Figure.png
+.. image:: images/Pine_Point_and_Figure.png
 
 For detailed reference on all ``pointfigure`` arguments go
 `here <https://www.tradingview.com/study-script-reference/#fun_pointfigure>`__.

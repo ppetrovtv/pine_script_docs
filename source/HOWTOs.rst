@@ -48,10 +48,7 @@ You may use plotshape with style **shape.arrowup** and
     plotshape(data, color=lime, style=shape.arrowup, text="Buy")
     plotshape(not data, color=red, style=shape.arrowdown, text="Sell")
 
-.. figure:: images/Buy_sell_chart1.png
-   :alt: images/Buy_sell_chart1.png
-
-   images/Buy\_sell\_chart1.png
+.. image:: images/Buy_sell_chart1.png
 
 You may use plotchar function with any unicode character:
 
@@ -62,10 +59,8 @@ You may use plotchar function with any unicode character:
     plotchar(data, char='↓', color=lime, text="Buy")
     plotchar(data, char='↑', location=location.belowbar, color=red, text="Sell")
 
-.. figure:: images/Buy_sell_chart2.png
-   :alt: images/Buy_sell_chart2.png
-
-   images/Buy\_sell\_chart2.png
+.. image:: images/Buy_sell_chart2.png
+   
 
 Plot horizontal line (moving)
 -----------------------------

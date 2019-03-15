@@ -55,10 +55,7 @@ plot(signal, color=orange)
 After adding the indicator “MACD” to the chart we would see the
 following:
 
-.. figure:: images/Macd_pine.png
-   :alt: images/Macd_pine.png
-
-   images/Macd\_pine.png
+.. image:: images/Macd_pine.png
 
 Pine contains a variety of built-in functions for the most popular
 algorithms (`sma <Moving_Average#Simple_Moving_Average_(SMA)>`__,

@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: images/Pine_Script_logo_text.png
-   :alt: images/Pine_Script_logo_text.png
+   :alt: Pine Script logo
    :align: right
 
 We created our own coding language called `Pine

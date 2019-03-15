@@ -13,10 +13,7 @@ for that purpose. Here is a small example:
     study("Example 1")
     plotbar(open, high, low, close)
 
-.. figure:: images/Custom_ohlc_bars_and_candles_1.png
-   :alt: images/Custom_ohlc_bars_and_candles_1.png
-
-   images/Custom\_ohlc\_bars\_and\_candles\_1.png
+.. image:: images/Custom_ohlc_bars_and_candles_1.png
 
 The script “Example 1” simply replicates bars of the current symbol.
 Nothing outstanding. We can paint them with green and red colors:
@@ -27,10 +24,7 @@ Nothing outstanding. We can paint them with green and red colors:
     palette = close >= open ? lime : red
     plotbar(open, high, low, close, color=palette)
 
-.. figure:: images/Custom_ohlc_bars_and_candles_2.png
-   :alt: images/Custom_ohlc_bars_and_candles_2.png
-
-   images/Custom\_ohlc\_bars\_and\_candles\_2.png
+.. image:: images/Custom_ohlc_bars_and_candles_2.png
 
 The “Example 2” illustrates ‘color’ argument, which could be given
 constant values as red, lime, “#FF9090”, as well as expressions that
@@ -50,10 +44,7 @@ plotted. Example:
     c = close > open ? na : close
     plotcandle(open, high, low, c)
 
-.. figure:: images/Custom_ohlc_bars_and_candles_3.png
-   :alt: images/Custom_ohlc_bars_and_candles_3.png
-
-   images/Custom\_ohlc\_bars\_and\_candles\_3.png
+.. image:: images/Custom_ohlc_bars_and_candles_3.png
 
 Of course you may calculate OHLC values without using available ‘open’,
 ‘high’, ‘low’ and ‘close’ values. For example you can plot “smoothed”
@@ -71,10 +62,7 @@ candles:
     c = smooth(close)
     plotcandle(o, h, l, c)
 
-.. figure:: images/Custom_ohlc_bars_and_candles_4.png
-   :alt: images/Custom_ohlc_bars_and_candles_4.png
-
-   images/Custom\_ohlc\_bars\_and\_candles\_4.png
+.. image:: images/Custom_ohlc_bars_and_candles_4.png
 
 You may get an interesting effect, if you plot OHLC values taken from
 higher timeframe. Let's say you want to plot daily bars on 60 minute
@@ -94,9 +82,8 @@ chart:
     c = security(tickerid, higherRes, close)
     plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? lime : red)
 
-|images/Custom\_ohlc\_bars\_and\_candles\_5.png| Functions plotbar and
+.. image:: images/Custom_ohlc_bars_and_candles_5.png
+
+Functions plotbar and
 plotcandle also have ‘title’ argument, so user can distinguish them in
 Styles tab of Format dialog.
-
-.. |images/Custom\_ohlc\_bars\_and\_candles\_5.png| image:: images/Custom_ohlc_bars_and_candles_5.png
-

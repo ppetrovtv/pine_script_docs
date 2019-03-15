@@ -24,10 +24,8 @@ above all green bars:
     data = close >= open
     plotshape(data, style=shape.xcross)
 
-.. figure:: images/Plotshape_1.png
-   :alt: images/Plotshape_1.png
+.. image:: images/Plotshape_1.png
 
-   images/Plotshape\_1.png
 
 The first parameter, ‘data’, is considered as a series of logical
 values. The crosses are drawn on each true value and not on false values
@@ -42,66 +40,55 @@ form of the icon-shape. The available styles are:
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
 | Shape Name               | Shape                                           | Shape with text                                 |
 +==========================+=================================================+=================================================+
-| ``shape.xcross``         | .. figure:: images/Plotshape_xcross.png         | .. figure:: images/Xcross_with_text.png         |
-|                          |    :alt: images/Plotshape_xcross.png            |    :alt: images/Xcross_with_text.png            |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_xcross.png                 |    images/Xcross\_with\_text.png                |
+| ``shape.xcross``         | |Plotshape_xcross|                              | |Xcross_with_text|                              |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.cross``          | .. figure:: images/Plotshape_cross.png          | .. figure:: images/Cross_with_text.png          |
-|                          |    :alt: images/Plotshape_cross.png             |    :alt: images/Cross_with_text.png             |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_cross.png                  |    images/Cross\_with\_text.png                 |
+| ``shape.cross``          | |Plotshape_cross|                               | |Cross_with_text|                               |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.circle``         | .. figure:: images/Plotshape_circle.png         | .. figure:: images/Circle_with_text.png         |
-|                          |    :alt: images/Plotshape_circle.png            |    :alt: images/Circle_with_text.png            |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_circle.png                 |    images/Circle\_with\_text.png                |
+| ``shape.circle``         | |Plotshape_circle|                              | |Circle_with_text|                              |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.triangleup``     | .. figure:: images/Plotshape_triangleup.png     | .. figure:: images/Triangleup_with_text.png     |
-|                          |    :alt: images/Plotshape_triangleup.png        |    :alt: images/Triangleup_with_text.png        |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_triangleup.png             |    images/Triangleup\_with\_text.png            |
+| ``shape.triangleup``     | |Plotshape_triangleup|                          | |Triangleup_with_text|                          |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.triangledown``   | .. figure:: images/Plotshape_triangledown.png   | .. figure:: images/Triangledown_with_text.png   |
-|                          |    :alt: images/Plotshape_triangledown.png      |    :alt: images/Triangledown_with_text.png      |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_triangledown.png           |    images/Triangledown\_with\_text.png          |
+| ``shape.triangledown``   | |Plotshape_triangledown|                        | |Triangledown_with_text|                        |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.flag``           | .. figure:: images/Plotshape_flag.png           | .. figure:: images/Flag_with_text.png           |
-|                          |    :alt: images/Plotshape_flag.png              |    :alt: images/Flag_with_text.png              |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_flag.png                   |    images/Flag\_with\_text.png                  |
+| ``shape.flag``           | |Plotshape_flag|                                | |Flag_with_text|                                |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.arrowup``        | .. figure:: images/Plotshape_arrowup.png        | .. figure:: images/Arrowup_with_text.png        |
-|                          |    :alt: images/Plotshape_arrowup.png           |    :alt: images/Arrowup_with_text.png           |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_arrowup.png                |    images/Arrowup\_with\_text.png               |
+| ``shape.arrowup``        | |Plotshape_arrowup|                             | |Arrowup_with_text|                             |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.arrowdown``      | .. figure:: images/Plotshape_arrowdown.png      | .. figure:: images/Arrowdown_with_text.png      |
-|                          |    :alt: images/Plotshape_arrowdown.png         |    :alt: images/Arrowdown_with_text.png         |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_arrowdown.png              |    images/Arrowdown\_with\_text.png             |
+| ``shape.arrowdown``      | |Plotshape_arrowdown|                           | |Arrowdown_with_text|                           |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.square``         | .. figure:: images/Plotshape_square.png         | .. figure:: images/Square_with_text.png         |
-|                          |    :alt: images/Plotshape_square.png            |    :alt: images/Square_with_text.png            |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_square.png                 |    images/Square\_with\_text.png                |
+| ``shape.square``         | |Plotshape_square|                              | |Square_with_text|                              |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.diamond``        | .. figure:: images/Plotshape_diamond.png        | .. figure:: images/Diamond_with_text.png        |
-|                          |    :alt: images/Plotshape_diamond.png           |    :alt: images/Diamond_with_text.png           |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_diamond.png                |    images/Diamond\_with\_text.png               |
+| ``shape.diamond``        | |Plotshape_diamond|                             | |Diamond_with_text|                             |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.labelup``        | .. figure:: images/Plotshape_labelup.png        | .. figure:: images/Labelup_with_text.png        |
-|                          |    :alt: images/Plotshape_labelup.png           |    :alt: images/Labelup_with_text.png           |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_labelup.png                |    images/Labelup\_with\_text.png               |
+| ``shape.labelup``        | |Plotshape_labelup|                             | |Labelup_with_text|                             |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
-| ``shape.labeldown``      | .. figure:: images/Plotshape_labeldown.png      | .. figure:: images/Labeldown_with_text.png      |
-|                          |    :alt: images/Plotshape_labeldown.png         |    :alt: images/Labeldown_with_text.png         |
-|                          |                                                 |                                                 |
-|                          |    images/Plotshape\_labeldown.png              |    images/Labeldown\_with\_text.png             |
+| ``shape.labeldown``      | |Plotshape_labeldown|                           | |Labeldown_with_text|                           |
 +--------------------------+-------------------------------------------------+-------------------------------------------------+
+
+.. |Plotshape_xcross| image:: images/Plotshape_xcross.png
+.. |Xcross_with_text| image:: images/Xcross_with_text.png
+.. |Plotshape_cross| image:: images/Plotshape_cross.png
+.. |Cross_with_text| image:: images/Cross_with_text.png
+.. |Plotshape_circle| image:: images/Plotshape_circle.png
+.. |Circle_with_text| image:: images/Circle_with_text.png
+.. |Plotshape_triangleup| image:: images/Plotshape_triangleup.png
+.. |Triangleup_with_text| image:: images/Triangleup_with_text.png
+.. |Plotshape_triangledown| image:: images/Plotshape_triangledown.png
+.. |Triangledown_with_text| image:: images/Triangledown_with_text.png
+.. |Plotshape_flag| image:: images/Plotshape_flag.png
+.. |Flag_with_text| image:: images/Flag_with_text.png
+.. |Plotshape_arrowup| image:: images/Plotshape_arrowup.png
+.. |Arrowup_with_text| image:: images/Arrowup_with_text.png
+.. |Plotshape_arrowdown| image:: images/Plotshape_arrowdown.png
+.. |Arrowdown_with_text| image:: images/Arrowdown_with_text.png
+.. |Plotshape_square| image:: images/Plotshape_square.png
+.. |Square_with_text| image:: images/Square_with_text.png
+.. |Plotshape_diamond| image:: images/Plotshape_diamond.png
+.. |Diamond_with_text| image:: images/Diamond_with_text.png
+.. |Plotshape_labelup| image:: images/Plotshape_labelup.png
+.. |Labelup_with_text| image:: images/Labelup_with_text.png
+.. |Plotshape_labeldown| image:: images/Plotshape_labeldown.png
+.. |Labeldown_with_text| image:: images/Labeldown_with_text.png
 
 The function ‘plotshape’ draws, by default, icons/shapes above bars.To
 set another position for the shapes, it’s possible with the parameter
@@ -118,10 +105,8 @@ above red bars:
     plotshape(not data, style=shape.triangledown,
               location=location.belowbar, color=red)
 
-.. figure:: images/Plotshape_example_2.png
-   :alt: images/Plotshape_example_2.png
+.. image:: images/Plotshape_example_2.png
 
-   images/Plotshape\_example\_2.png
 
 Possible values for the parameter ‘location’:
 
@@ -151,10 +136,8 @@ depending on conditions. For example:
     data = close >= open
     plotshape(true, style=shape.flag, color=data ? green : red)
 
-.. figure:: images/Plotshape_example_3.png
-   :alt: images/Plotshape_example_3.png
+.. image:: images/Plotshape_example_3.png
 
-   images/Plotshape\_example\_3.png
 
 In the given example, the first parameter of the function ‘plotshape’ is
 equal to ‘true’ which means that the shape will be displayed on each
@@ -185,10 +168,8 @@ the in-use font). For example:
     data = close >= open
     plotchar(data, char='a')
 
-.. figure:: images/Plotchar_example_1.png
-   :alt: images/Plotchar_example_1.png
+.. image:: images/Plotchar_example_1.png
 
-   images/Plotchar\_example\_1.png
 
 By default, the parameter char accepts the value ★ ('BLACK STAR',
 U+2605). It’s possible to use any letters, digits or various symbols,
@@ -202,10 +183,8 @@ Example of ‘snowflakes’ ❄:
     data = close >= open
     plotchar(data, char='❄')
 
-.. figure:: images/Plotchar_example_2.png
-   :alt: images/Plotchar_example_2.png
+.. image:: images/Plotchar_example_2.png
 
-   images/Plotchar\_example\_2.png
 
 Like ‘plotshape’, the function ‘plotchar’ allows:
 
@@ -245,10 +224,8 @@ Here is a simple script that illustrates how ‘plotarrow’ function works:
     codiff = close - open
     plotarrow(codiff, colorup=teal, colordown=orange, transp=40)
 
-.. figure:: images/Plotarrow_example_1.png
-   :alt: images/Plotarrow_example_1.png
+.. image:: images/Plotarrow_example_1.png
 
-   images/Plotarrow\_example\_1.png
 
 As you can see, the more absolute value of the difference ‘close - open’
 the longer the arrow. If ‘close - open’ is greater than zero, then an up
@@ -266,10 +243,8 @@ a series in the form of arrows using ‘plotarrow’ :
     osc = ema(accdist, short) - ema(accdist, long)
     plotarrow(osc)
 
-.. figure:: images/Plotarrow_example_2.png
-   :alt: images/Plotarrow_example_2.png
+.. image:: images/Plotarrow_example_2.png
 
-   images/Plotarrow\_example\_2.png
 
 This screenshot shows the original “Chaikin Oscillator” alongside the
 script for better understanding.

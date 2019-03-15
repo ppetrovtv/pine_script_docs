@@ -3,6 +3,9 @@
 Public Library
 ==============
 
+.. contents:: :local:
+    :depth: 2
+
 Description
 -----------
 
@@ -19,29 +22,29 @@ TradingView.
   published scripts can be viewed on `this
   page <https://www.tradingview.com/script/>`__, or in the Indicators
   window -> Public Library tab:
-| |images/Public\_Library\_tab.png|
+| |Public_Library_tab|
 
 Copying a Script from Public to Personal Library
 ------------------------------------------------
 
 | To copy a script choose one of two methods:
 | 1. Click the star next to the needed script in the Indicators window:
-| |images/Add\_to\_Personal\_Library.png|
+| |Add_to_Personal_Library|
 | 2. Or open the needed script on `this
   page <https://www.tradingview.com/script/>`__ and click the “Add to
   Favorite Scripts” button:
-| |images/Add\_to\_Personal\_Library\_2.png|
+| |Add_to_Personal_Library_2|
 
 | 
 | The script will be added to your Favorites section in the Indicators
   window, where you can easily find it when needed.
-| |images/Favorites\_section.png|
+| |Favorites_section|
 
 | 
 | Scripts in the Indicators window are sorted by popularity: the more
   users have favorited the script, the higher it will be displayed in
   the Indicators window.
-| |images/Sorted\_by\_popularity.png|
+| |Sorted_by_popularity|
 
 Editing a Script from the Public Library
 ----------------------------------------
@@ -49,15 +52,15 @@ Editing a Script from the Public Library
 | To edit a script:
 | 1. Open the script (the script will be unavailable for editing and
   will be colored lighter than normal):
-| |images/Open\_the\_script.png|
+| |Open_the_script|
 | 2. Click “Save as”, enter the desired name and save a copy to your
   personal library:
-| |images/Save\_as.png|
+| |Save_as|
 
 | 
 | A saved copy of the script will appear in the list of your scripts in
   the Indicators window, “My Scripts” tab:
-| |images/My\_Scripts.png|
+| |My_Scripts|
 | Now you can open and edit the script.
 
 If the same script is published more than once, a notification on older
@@ -69,30 +72,26 @@ Searching for a Script
 To search for a script:
 
 | In the Indicators dialog use the Search field:
-| |images/Search\_field.png|
+| |Search_field|
 | This will search your Personal and Public Library at the same time:
-| |images/Search.png|
+| |Search|
 
 Educational Videos
 ------------------
 
-| 1.
-| {{#widget:Vimeo \|id=86111066 \|width=500 \|height=281 }}
+| 1. `Importing Custom Indicators <https://player.vimeo.com/video/86111066>`__
+| 2. `Publishing Custom Indicators <https://player.vimeo.com/video/103138248>`__ 
+| 3. `Pine Script Reference Material <https://player.vimeo.com/video/103135482>`__  
 
-| 2.
-| {{#widget:Vimeo \|id=103138248 \|width=500 \|height=281 }}
 
-| 3.
-| {{#widget:Vimeo \|id=103135482 \|width=500 \|height=281 }}
-
-.. |images/Public\_Library\_tab.png| image:: images/Public_Library_tab.png
-.. |images/Add\_to\_Personal\_Library.png| image:: images/Add_to_Personal_Library.png
-.. |images/Add\_to\_Personal\_Library\_2.png| image:: images/Add_to_Personal_Library_2.png
-.. |images/Favorites\_section.png| image:: images/Favorites_section.png
-.. |images/Sorted\_by\_popularity.png| image:: images/Sorted_by_popularity.png
-.. |images/Open\_the\_script.png| image:: images/Open_the_script.png
-.. |images/Save\_as.png| image:: images/Save_as.png
-.. |images/My\_Scripts.png| image:: images/My_Scripts.png
-.. |images/Search\_field.png| image:: images/Search_field.png
-.. |images/Search.png| image:: images/Search.png
+.. |Public_Library_tab| image:: images/Public_Library_tab.png
+.. |Add_to_Personal_Library| image:: images/Add_to_Personal_Library.png
+.. |Add_to_Personal_Library_2| image:: images/Add_to_Personal_Library_2.png
+.. |Favorites_section| image:: images/Favorites_section.png
+.. |Sorted_by_popularity| image:: images/Sorted_by_popularity.png
+.. |Open_the_script| image:: images/Open_the_script.png
+.. |Save_as| image:: images/Save_as.png
+.. |My_Scripts| image:: images/My_Scripts.png
+.. |Search_field| image:: images/Search_field.png
+.. |Search| image:: images/Search.png
 

@@ -46,10 +46,7 @@ intervals that you want to test. You can use a built-in strategy from
 the “Indicators & Strategies” dialog box, or write your own in Pine
 Editor.
 
-.. figure:: images/Strategy_tester.png
-   :alt: images/Strategy_tester.png
-
-   images/Strategy\_tester.png
+.. image:: images/Strategy_tester.png
 
 **Note:** When using non-standard (`Renko <Renko_Charts>`__,
 `Kagi <Kagi_Charts>`__, `Line Break <Line_Break_Charts>`__, `Point and
@@ -105,10 +102,7 @@ The following logic is used to emulate order fills:
    specified in script), code is still calculated only on bar’s close,
    following the above logic.
 
-.. figure:: images/Filled_stategy.png
-   :alt: images/Filled_stategy.png
-
-   images/Filled\_stategy.png
+.. image:: images/Filled_stategy.png
 
 Here is the strategy demonstrating how orders are filled by the broker
 emulator:
@@ -233,10 +227,7 @@ This code generates 2 levels of brackets (2 take profit orders and 2
 stop loss orders). Both levels are activated at the same time: first
 level to exit 2 contracts and the second one to exit all the rest.
 
-.. figure:: images/Levels_brackets.png
-   :alt: images/Levels_brackets.png
-
-   images/Levels\_brackets.png
+.. image:: images/Levels_brackets.png
 
 The first take profit and stop loss orders (level 1) are in one OCA
 group. The other orders (level 2) are in another OCA group. It means

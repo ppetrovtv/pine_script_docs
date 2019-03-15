@@ -21,10 +21,7 @@ resolution.
     ibm_15 = security("NYSE:IBM", "15", close)
     plot(ibm_15)
 
-.. figure:: images/Chart_security_1.png
-   :alt: Example security 1
-
-   Example security 1
+.. image:: images/Chart_security_1.png
 
 As seen from the ``security`` arguments
 `description <https://www.tradingview.com/study-script-reference/#fun_security>`__,
@@ -152,10 +149,7 @@ chart:
     b = security(tickerid, '60', low, lookahead=barmerge.lookahead_on)
     plot(b, color=lime)
 
-.. figure:: images/V3.png
-   :alt: images/V3.png
-
-   images/V3.png
+.. image:: images/V3.png
 
 The green line on the chart is the Low price of an hourly bar that is
 requested with lookahead on. It’s the old behavior of the security
