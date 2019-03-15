@@ -1,6 +1,9 @@
 Annotation Functions Overview
 =============================
 
+.. contents:: :local:
+    :depth: 2
+
 The annotation ’study’
 ----------------------
 

@@ -1,6 +1,9 @@
 Pine Compilation Errors
 =======================
 
+.. contents:: :local:
+    :depth: 2
+
 Script requesting too many securities
 -------------------------------------
 

@@ -1,6 +1,9 @@
 Non-Standard Chart Types Data
 =============================
 
+.. contents:: :local:
+    :depth: 2
+
 There are additional functions that you may apply to ``tickerid``
 function return value. They are ``heikinashi``, ``renko``,
 ``linebreak``, ``kagi`` and ``pointfigure``. All of them work in the
