@@ -146,6 +146,8 @@ previous example using **iff** will look like:
     iff(isintraday, red, iff(isdaily, green,
                          iff(ismonthly, blue, na)))
 
+.. _history_referencing_operator:
+
 History Referencing Operator (Square Brackets [])
 -------------------------------------------------
 

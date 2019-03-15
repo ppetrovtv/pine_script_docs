@@ -7,8 +7,7 @@ Examples of built-in series variables are: **open**, **high**, **low**,
 quantity of available bars based on the current ticker and timeframe
 (resolution). The series may contain numbers or a special value **NaN**
 (meaning ‘absence of value’). (Further information about **NaN** values
-can be found
-`here <Operators#History_Referencing_Operator_.28Square_Brackets_.5B.5D.29>`__).
+can be found :ref:`here <history_referencing_operator>`).
 Any expression that contains a series variable will be treated as a
 series itself. For example:
 
@@ -59,7 +58,9 @@ cast to any **color**, **integer**, **float** or **series** types. But
 
 .. image:: images/Pine_Types_v3.jpg
 
-*Note: Pine type system was changed in version 3. See `Pine Script:
-Release Notes <Pine_Script_Release_Notes>`__*. *See also `type casts
-graph for version
-2 <https://www.tradingview.com/wiki/File:images/Pine_Types_v2.jpg>`__*.
+*Note: Pine type system was changed in version 3. See* :ref:`pine_script_release_notes`. *See also type casts
+graph for version 2*:
+
+.. image:: images/Pine_Types_v2.jpg
+    :width: 200px
+    :height: 200px

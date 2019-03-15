@@ -1,6 +1,9 @@
 Strategies
 ==========
 
+.. contents:: :local:
+    :depth: 2
+
 A strategy is a study that can send, modify and cancel orders (to
 buy/sell). Strategies allow you to perform **backtesting** (emulation of
 strategy trading on historical data) and **forwardtesting** (emulation
