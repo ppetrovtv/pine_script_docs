@@ -1,3 +1,8 @@
+.. _pine_v3_migration_guide:
+
+Pine Version 3 Migration Guide
+==============================
+
 This document helps to migrate PineScript code from ``@version=2`` to
 ``@version=3``.
 

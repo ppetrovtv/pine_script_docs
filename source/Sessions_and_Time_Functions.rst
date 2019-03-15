@@ -1,4 +1,8 @@
-\_\_FORCETOC\_\_
+Sessions and Time Functions
+===========================
+
+.. contents:: :local:
+    :depth: 2
 
 Functions and the Variable ``time``
 -----------------------------------

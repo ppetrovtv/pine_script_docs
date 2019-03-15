@@ -4,13 +4,7 @@
    contain the root `toctree` directive.
 
 Pine Script documentation
-=========================
-
-.. figure:: Pine_Script_logo_small.png
-   :alt: Pine_Script_logo_small.png
-
-   Pine\_Script\_logo\_small.png
-
+*************************
 
 .. toctree::
    :maxdepth: 2
@@ -29,7 +23,7 @@ Pine Script documentation
    Declaring Functions <Declaring_Functions>
    Lines Wrapping <Lines_Wrapping>
    Context Switching, The ‘security’ Function <Context_Switching,_The_‘security’_Function>
-   Bar states. Built-in variables ‘barstate’ <Bar_states._Built-in_variables_‘barstate’>
+   Bar states. Built-in variables ‘barstate’ <Bar_states>
    Sessions and Time Functions <Sessions_and_Time_Functions>
    Extended and Regular Sessions <Extended_and_Regular_Sessions>
    Non-Standard Chart Types Data <Non-Standard_Chart_Types_Data>
@@ -37,12 +31,25 @@ Pine Script documentation
    Shapes using plotshape, plotchar, plotarrow <Shapes_using_plotshape,_plotchar,_plotarrow>
    Custom OHLC bars and candles <Custom_OHLC_bars_and_candles>
    Strategies <Strategies>
+   
    HOWTOs <HOWTOs>
    Pine Compilation Errors <Pine_Compilation_Errors>
    Where can I get more information? <Where_can_I_get_more_information>
-   Appendix A. Pine Script v2 preprocessor <Appendix_A._Pine_Script_v2_preprocessor>
-   Appendix B. Pine Script v2 lexer grammar <Appendix_B._Pine_Script_v2_lexer_grammar>
-   Appendix C. Pine Script v2 parser grammar <Appendix_C._Pine_Script_v2_parser_grammar>
+   Appendix A. Pine Script v2 preprocessor <Appendix_A>
+   Appendix B. Pine Script v2 lexer grammar <Appendix_B>
+   Appendix C. Pine Script v2 parser grammar <Appendix_C>
    Pine Script Reference <https://www.tradingview.com/study-script-reference/>
 
-See also :ref:`Pine Script Release Notes <pine_script_release_notes>`.
+See also 
+
+* :ref:`indicator_repainting`
+
+* :ref:`public_library`
+
+* :ref:`publishing_scripts`
+
+* :ref:`alerts_in_pine`
+
+* :ref:`transparency_in_pine_scripts`
+
+* :ref:`pine_script_release_notes`

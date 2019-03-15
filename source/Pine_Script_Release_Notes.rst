@@ -1,7 +1,10 @@
 .. _pine_script_release_notes:
 
-This page contains release notes of notable changes in Pine Script.
+Pine Script Release Notes
+=========================
 
+This page contains release notes of notable changes in Pine Script.
+ 
 2017-05-17: compile-time constants
 ----------------------------------
 
@@ -40,6 +43,8 @@ lookahead argument but skip the gaps argument:
 ::
 
     security('TSLA', 'D', close, lookahead=barmerge.lookahead_off)
+
+.. _pine_script_release_notes_v3:
 
 2017-03-20: Pine Version 3
 --------------------------

@@ -1,3 +1,6 @@
+Appendix A. Pine Script v2 preprocessor
+=======================================
+
 Algorithm of *@version=2* Pine Script preprocessor in pseudo-code:
 
 #. Remove comments

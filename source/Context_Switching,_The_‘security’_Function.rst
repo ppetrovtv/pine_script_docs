@@ -1,4 +1,8 @@
-\_\_TOC\_\_
+Context Switching, The 'security' Function
+==========================================
+
+.. contents:: :local:
+    :depth: 2
 
 The function ``security`` lets the user to request data from additional
 symbols and resolutions, other than the ones to which the indicator is

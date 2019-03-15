@@ -1,4 +1,8 @@
-\_\_FORCETOC\_\_
+Shapes using 'plotshape', 'plotchar', 'plotarrow'
+=================================================
+
+.. contents:: :local:
+    :depth: 2
 
 In situations when you need to mark, highlight bars on a chart and not
 draw a usual plot in the form of a line, the function ‘plot’ may not be

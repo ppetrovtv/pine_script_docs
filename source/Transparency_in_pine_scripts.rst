@@ -1,3 +1,8 @@
+.. _transparency_in_pine_scripts:
+
+Transparency in Pine Scripts
+============================
+
 | Color type variables now have an additional parameter to set default
   transparency. There are 2 ways to configure transparency level:
 | 1. #FFA50040 – the last 2 digits stand for 64% transparency (in

@@ -1,3 +1,6 @@
+Declaring Functions
+===================
+
 In Pine Script there is an extensive library of built-in functions which
 can be used to create indicators. Apart from these functions, the user
 is able to create his or her own personal functions in Pine.

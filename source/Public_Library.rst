@@ -1,5 +1,10 @@
+.. _public_library:
+
+Public Library
+==============
+
 Description
-===========
+-----------
 
 On TradingView it's possible to use pre-built indicators and write
 custom ones using `Pine
@@ -17,7 +22,7 @@ TradingView.
 | |images/Public\_Library\_tab.png|
 
 Copying a Script from Public to Personal Library
-================================================
+------------------------------------------------
 
 | To copy a script choose one of two methods:
 | 1. Click the star next to the needed script in the Indicators window:
@@ -39,7 +44,7 @@ Copying a Script from Public to Personal Library
 | |images/Sorted\_by\_popularity.png|
 
 Editing a Script from the Public Library
-========================================
+----------------------------------------
 
 | To edit a script:
 | 1. Open the script (the script will be unavailable for editing and
@@ -59,7 +64,7 @@ If the same script is published more than once, a notification on older
 versions will appear that a new version is available.
 
 Searching for a Script
-======================
+----------------------
 
 To search for a script:
 
@@ -69,7 +74,7 @@ To search for a script:
 | |images/Search.png|
 
 Educational Videos
-==================
+------------------
 
 | 1.
 | {{#widget:Vimeo \|id=86111066 \|width=500 \|height=281 }}

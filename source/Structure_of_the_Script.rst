@@ -1,3 +1,6 @@
+Structure of the Script
+=======================
+
 A script in Pine syntactically consists of a series of statements. Each
 statement usually is placed on a separate line. It’s possible to place a
 few statements on one line, dividing them with a comma ``,``. The first

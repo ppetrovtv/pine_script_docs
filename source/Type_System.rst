@@ -1,3 +1,6 @@
+Type System
+===========
+
 The basic type of data in Pine is a list of values, named **series**.
 Examples of built-in series variables are: **open**, **high**, **low**,
 **close**, **volume**. The size of these vectors are equal to the

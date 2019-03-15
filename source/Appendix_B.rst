@@ -1,3 +1,6 @@
+Appendix B. Pine Script v2 lexer grammar
+========================================
+
 Pine Script *@version=2* lexer grammar in `ANTLR
 v3 <http://www.antlr3.org/>`__ syntax.
 

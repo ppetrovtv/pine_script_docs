@@ -1,3 +1,8 @@
+.. _publishing_scripts:
+
+Publishing Scripts
+==================
+
 On TradingView it's possible to write custom indicators using `Pine
 Script <Pine_Script_Tutorial>`__. Users who write their own scripts can
 publish them to the `Public Library <Public_Library>`__ to share their
@@ -6,9 +11,6 @@ description, screenshot and source code, so users can see what the
 script is about before applying it. If you want to protect your
 indicator, you can use Protected and Invite-Only scripts, which hides
 the source code from other users.
-
-Publishing Scripts
-==================
 
 | To publish a script:
 | 1. Open Pine Script Editor:
@@ -27,7 +29,7 @@ users. Every registered TradingView user will be able to make a copy of
 your script.
 
 Protected source code for Pine indicators
-=========================================
+-----------------------------------------
 
 Now you can publish indicators with protected source code. This is a
 high-demand feature that lets you share knowledge and protect
@@ -51,7 +53,7 @@ protected and no one will have access to your source code without your
 decision.
 
 Pine Indicators with Managed Access
-===================================
+-----------------------------------
 
 Authors can manage who can access their indicators. This is great for
 commercial vendors, or authors who want to protect their IP, or share

@@ -1,3 +1,10 @@
+Introduction
+============
+
+.. image:: images/Pine_Script_logo_text.png
+   :alt: images/Pine_Script_logo_text.png
+   :align: right
+
 We created our own coding language called `Pine
 Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
 which allows users to create customized studies and signals and run them
@@ -57,11 +64,6 @@ Features introduced in version 2:
 Features introduced in version 3:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: images/Pine_Script_logo_text.png
-   :alt: images/Pine_Script_logo_text.png
-
-   images/Pine\_Script\_logo\_text.png
-
 -  new security behavour, controlled by parameter:
    `lookahead <Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,
 -  self-referenced and forward-referenced variables removed,
@@ -73,6 +75,5 @@ Features introduced in version 3:
 -  `compile time
    constants <https://blog.tradingview.com/en/possibilities-compile-time-constants-4127/>`__.
 
-See `Version 3 Release
-Notes <Pine_Script_Release_Notes#Pine_Version_3>`__ and `Migration
-Guide <Pine_Version_3_Migration_Guide>`__ for details.
+See :ref:`Version 3 Release Notes <pine_script_release_notes_v3>`
+and :ref:`Migration Guide <pine_v3_migration_guide>` for details.

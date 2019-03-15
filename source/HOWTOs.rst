@@ -1,4 +1,8 @@
-\_\_FORCETOC\_\_
+HOWTOs
+======
+
+.. contents:: :local:
+    :depth: 2
 
 Get real OHLC price on a Heikin Ashi chart
 ------------------------------------------

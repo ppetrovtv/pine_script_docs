@@ -1,16 +1,21 @@
-Arithmetic Operators (+, -, \*, /, %)
--------------------------------------
+Operators
+=========
 
-+
-    Addition
--
-    Subtraction
-\*
-    Multiplication
-/
-    Division
-%
-    Take the remainder after dividing
+.. contents:: :local:
+    :depth: 2
+
+Arithmetic Operators (``+``, ``-``, ``*``, ``/``, ``%``)
+--------------------------------------------------------
+
+``+`` Addition
+
+``-`` Subtraction
+
+``*`` Multiplication
+
+``/`` Division
+
+``%`` Take the remainder after dividing
 
 Arithmetic operations above are binary. The type of result depends on
 the type of operands. If at least one of the operands is a series, then
@@ -20,20 +25,22 @@ also have the type **float**. If both operands are integers, then the
 result will also have the type **integer**.
 
 Footnote: if at least one operand is **NaN** then the result is also
-**NaN**. == Comparison Operators (<, <=, !=, ==, >, >=) ==
+**NaN**. 
 
-<
-    Less Than
-<=
-    Less Than or Equal To
-!=
-    Not Equal
-==
-    Equal
->
-    Greater Than
->=
-    Greater Than Or Equal To
+Comparison Operators (``<``, ``<=``, ``!=``, ``==``, ``>``, ``>=``)
+-------------------------------------------------------------------
+
+``<`` Less Than
+
+``<=`` Less Than or Equal To
+
+``!=`` Not Equal
+
+``==`` Equal
+
+``>`` Greater Than
+
+``>=`` Greater Than Or Equal To
 
 Comparison operations are binary. The result is determined by the type
 of operands. If at least one of these operands has a series type, then
@@ -41,15 +48,12 @@ the type of result will also be the **series** (a series of numeric
 values). If both operands have a numerical type, then the result will be
 of the logical type **bool**.
 
-Logical Operators (not, and, or)
---------------------------------
+Logical Operators (``not``, ``and``, ``or``)
+--------------------------------------------
 
-not
-    Negation
-and
-    Logical Conjunction
-or
-    Logical Disjunction
+``not`` Negation
+``and`` Logical Conjunction
+``or`` Logical Disjunction
 
 All logical operators can operate with **bool** operands, numerical
 operands, or series type operands. Similar to arithmetic and comparison
@@ -61,7 +65,7 @@ The operator **not** is unary. If an operator’s operand has a **true**
 value then the result will have a **false** value; if the operand has a
 **false** value then the result will have a **true** value.
 
-**and** Operator truth table:
+``and`` Operator truth table:
 
 +---------+---------+-----------+
 | a       | b       | a and b   |
@@ -89,8 +93,8 @@ value then the result will have a **false** value; if the operand has a
 | false   | false   | false    |
 +---------+---------+----------+
 
-Conditional Operator ? and the Function iff
--------------------------------------------
+Conditional Operator ``?`` and the Function ``iff``
+---------------------------------------------------
 
 `Conditional Ternary
 Operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
@@ -227,27 +231,27 @@ The order of the calculations is determined by the operators’ priority.
 Operators with greater priority are calculated first. Below are a list
 of operators sorted by decreasing priority:
 
-+------------+---------------------------+
-| Priority   | Operation Symbol          |
-+============+===========================+
-| 9          | []                        |
-+------------+---------------------------+
-| 8          | + (unary) - (unary) not   |
-+------------+---------------------------+
-| 7          | \* / %                    |
-+------------+---------------------------+
-| 6          | + -                       |
-+------------+---------------------------+
-| 5          | > < >= <=                 |
-+------------+---------------------------+
-| 4          | == !=                     |
-+------------+---------------------------+
-| 3          | and                       |
-+------------+---------------------------+
-| 2          | or                        |
-+------------+---------------------------+
-| 1          | ?:                        |
-+------------+---------------------------+
++------------+-----------------------------------+
+| Priority   | Operator Symbol                   |
++============+===================================+
+| 9          | ``[]``                            |
++------------+-----------------------------------+
+| 8          | ``+`` (unary) ``-`` (unary) not   |
++------------+-----------------------------------+
+| 7          | ``*`` ``%``                       |
++------------+-----------------------------------+
+| 6          | ``+`` ``-``                       |
++------------+-----------------------------------+
+| 5          | ``>`` ``<`` ``>=`` ``<=``         |
++------------+-----------------------------------+
+| 4          | ``==`` ``!=``                     |
++------------+-----------------------------------+
+| 3          | ``and``                           |
++------------+-----------------------------------+
+| 2          | ``or``                            |
++------------+-----------------------------------+
+| 1          | ``?:``                            |
++------------+-----------------------------------+
 
 If in one expression there are several operators with the same priority,
 then they are calculated left to right.

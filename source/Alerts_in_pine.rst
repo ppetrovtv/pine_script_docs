@@ -1,3 +1,8 @@
+.. _alerts_in_pine:
+
+Alerts in Pine
+==============
+
 Annotation function ``alertcondition`` allows you to create custom alert
 conditions in Pine studies.
 
