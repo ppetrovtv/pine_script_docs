@@ -49,6 +49,8 @@ function body.
 Footnote: in Pine it’s possible to call other functions from functions —
 except the original function, i.e., recursion is not supported.
 
+.. _multi_line_functions:
+
 Multi-line Functions
 --------------------
 
