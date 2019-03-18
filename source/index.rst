@@ -24,7 +24,7 @@ Pine Script documentation
    Expressions, Declarations and Statements <Expressions,_Declarations_and_Statements>
    Declaring Functions <Declaring_Functions>
    Lines Wrapping <Lines_Wrapping>
-   Context Switching, The ‘security’ Function <Context_Switching,_The_‘security’_Function>
+   Context Switching, the ``security`` Function <Context_Switching_the_security_Function>
    Bar States. Built-in Variables ‘barstate’ <Bar_states>
    Sessions and Time Functions <Sessions_and_Time_Functions>
    Extended and Regular Sessions <Extended_and_Regular_Sessions>

@@ -1,5 +1,5 @@
-Context Switching, The 'security' Function
-==========================================
+Context Switching, the ``security`` Function
+============================================
 
 .. contents:: :local:
     :depth: 2
@@ -115,7 +115,9 @@ you can request 4h, 1D, 1W (or any higher timeframe) and plot the
 results. It’s not recommended to request lower timeframe, for example
 15min data from 1h chart.
 
-Barmerge: gaps and lookahead
+.. _barmerge_gaps_and_lookahead:
+
+Barmerge: Gaps and Lookahead
 ----------------------------
 
 There are two switches that define how requested data will be mapped to

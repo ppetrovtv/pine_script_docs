@@ -5,8 +5,8 @@ Introduction
    :alt: Pine Script logo
    :align: right
 
-We created our own coding language called `Pine
-Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
+We created our own coding language called 
+`Pine Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
 which allows users to create customized studies and signals and run them
 on our servers. Please note that Pine was designed as a lightweight
 language, focused on the specific task of developing indicators. Since
@@ -27,21 +27,22 @@ need to ensure the platform keeps running smoothly and no-one is
 negatively affected by scripts that might otherwise consume a
 disproportionate amount of power. The imposed limits apply to elements
 such as the amount of data from additional symbols, loop calculations,
-memory usage and script size. Additionally, we keep Pine `syntax and
-semantics <https://www.tradingview.com/study-script-reference/>`__
-simple so it can handle common tasks efficiently. We will continue to
+memory usage and script size. Additionally, we keep Pine syntax and
+semantics simple so it can handle common tasks efficiently. We will continue to
 improve the documentation and support to ensure that anyone who wants to
-can `learn and use Pine <Pine_Script_Tutorial>`__, which will help the
+can learn and use Pine, which will help the
 development community grow, get more robust and create more helpful
 analysis.
 
-| **Choosing a licence**
-| Choosing a license or not is entirely up to you. You are under no
-  obligation to do so. If you publish scripts with open source code you
-  can select a license of your choice. You can include the license in
-  the comments section of a script (preferably in the beginning). Our
-  position on the matter is very much like that of
-  `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
+Choosing a Licence
+------------------
+
+Choosing a license or not is entirely up to you. You are under no
+obligation to do so. If you publish scripts with open source code you
+can select a license of your choice. You can include the license in
+the comments section of a script (preferably in the beginning). Our
+position on the matter is very much like that of
+`GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
 Versions
 --------
@@ -51,22 +52,18 @@ attribute must be used in the first line of a code to switch between
 versions ``//@version=N`` where ``N`` is number. Note, that Pine Script
 Language versions are incompatible with each other.
 
-Features introduced in version 2:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Features introduced in version 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `mutable
-   variables <Expressions,_Declarations_and_Statements#Variable_Assignment>`__,
--  `if
-   statement <Expressions,_Declarations_and_Statements#.E2.80.98if.E2.80.99_statement>`__,
--  `for
-   statement <Expressions,_Declarations_and_Statements#.E2.80.98for.E2.80.99_statement>`__.
+-  :ref:`Variable assignment<variable_assignment>` (or mutable variables),
+-  :ref:`if_statement`,
+-  :ref:`for_statement`,
 
-Features introduced in version 3:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Features introduced in version 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  new security behavour, controlled by parameter:
-   `lookahead <Context_Switching,_The_‘security’_Function#Barmerge:_gaps_and_lookahead>`__,
--  self-referenced and forward-referenced variables removed,
+-  new ``security`` function behavour, controlled by parameter: :ref:`lookahead <barmerge_gaps_and_lookahead>`,
+-  self-referenced and forward-referenced variables were removed,
 -  changes in type system: forbid math operations on booleans,
 -  `input with
    options <https://blog.tradingview.com/en/several-new-features-added-pine-scripting-language-3933/>`__,

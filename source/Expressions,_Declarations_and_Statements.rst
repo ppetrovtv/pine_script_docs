@@ -45,6 +45,9 @@ Identifiers **close** and **high** are built-in variables. The
 identifier **sma** is a built-in function for calculating Simple `Moving
 Average <Moving_Average>`__.
 
+
+.. _variable_assignment:
+
 Variable Assignment
 -------------------
 
@@ -209,13 +212,15 @@ Simple Moving Average.
 Self referencing variables can also be used in functions written by the
 user. This will be discussed later.
 
-‘if’ statement
---------------
+.. _if_statement:
 
-**If** statement defines what block of statements must be executed when
+``if`` statement
+----------------
+
+``if`` statement defines what block of statements must be executed when
 conditions of the expression are satisfied.
 
-To have access to and use the **if** statement, one should specify the
+To have access to and use the ``if`` statement, one should specify the
 version of Pine Script language in the very first line of code:
 ``//@version=2``
 
@@ -309,8 +314,10 @@ side effect of the expression, for example in strategy trading:
     else
         strategy.cancel(id="BBandLE")
 
-‘for’ statement
----------------
+.. _for_statement:
+
+``for`` statement
+-----------------
 
 **for** statement allows to execute a number of instructions repeatedly.
 To use **for** statements, a special attribute must be used in the first
