@@ -1,5 +1,5 @@
-Appendix C. Pine Script v2 parser grammar
-=========================================
+Pine Script v2 parser grammar
+-----------------------------
 
 Pine Script *@version=2* parser grammar in `ANTLR
 v3 <http://www.antlr3.org/>`__ syntax. Start rule is ``tvscript``.

@@ -40,10 +40,10 @@ Pine Script documentation
    Publishing Scripts <Publishing_Scripts>
    HOWTOs <HOWTOs>
    Pine Compilation Errors <Pine_Compilation_Errors>
-   Where can I get more information? <Where_can_I_get_more_information>
-   Appendix A. Pine Script v2 preprocessor <Appendix_A>
-   Appendix B. Pine Script v2 lexer grammar <Appendix_B>
-   Appendix C. Pine Script v2 parser grammar <Appendix_C>
+   Where can I get more information? <Where_can_I_get_more_information>   
    Pine Script Reference <https://www.tradingview.com/study-script-reference/>
    Pine Script Release Notes <Pine_Script_Release_Notes>
    Pine Version 3 Migration Guide <Pine_Version_3_Migration_Guide>
+   Appendix <appendix/subindex>
+
+
