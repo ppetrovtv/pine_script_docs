@@ -1,5 +1,3 @@
-.. _publishing_scripts:
-
 Publishing Scripts
 ==================
 

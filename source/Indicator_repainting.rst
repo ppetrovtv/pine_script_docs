@@ -1,5 +1,3 @@
-.. _indicator_repainting:
-
 Indicator Repainting
 ====================
 

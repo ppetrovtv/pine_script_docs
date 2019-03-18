@@ -3,11 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. Helpful doc https://devguide.python.org/documenting/#restructuredtext-primer
+
 Pine Script documentation
 *************************
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :name: mastertoc
    
    Introduction <Introduction>
@@ -23,15 +25,19 @@ Pine Script documentation
    Declaring Functions <Declaring_Functions>
    Lines Wrapping <Lines_Wrapping>
    Context Switching, The ‘security’ Function <Context_Switching,_The_‘security’_Function>
-   Bar states. Built-in variables ‘barstate’ <Bar_states>
+   Bar States. Built-in Variables ‘barstate’ <Bar_states>
    Sessions and Time Functions <Sessions_and_Time_Functions>
    Extended and Regular Sessions <Extended_and_Regular_Sessions>
    Non-Standard Chart Types Data <Non-Standard_Chart_Types_Data>
    Annotation Functions Overview <Annotation_Functions_Overview>
-   Shapes using plotshape, plotchar, plotarrow <Shapes_using_plotshape,_plotchar,_plotarrow>
-   Custom OHLC bars and candles <Custom_OHLC_bars_and_candles>
+   Alerts in Pine <Alerts_in_pine>
+   Shapes Using plotshape, plotchar, plotarrow <Shapes_using_plotshape,_plotchar,_plotarrow>
+   Custom OHLC Bars and Candles <Custom_OHLC_bars_and_candles>
    Strategies <Strategies>
-   
+   Indicator Repainting <Indicator_repainting>
+   Transparency in Pine Scripts <Transparency_in_pine_scripts>
+   Public Library <Public_Library>
+   Publishing Scripts <Publishing_Scripts>
    HOWTOs <HOWTOs>
    Pine Compilation Errors <Pine_Compilation_Errors>
    Where can I get more information? <Where_can_I_get_more_information>
@@ -39,17 +45,5 @@ Pine Script documentation
    Appendix B. Pine Script v2 lexer grammar <Appendix_B>
    Appendix C. Pine Script v2 parser grammar <Appendix_C>
    Pine Script Reference <https://www.tradingview.com/study-script-reference/>
-
-See also 
-
-* :ref:`indicator_repainting`
-
-* :ref:`public_library`
-
-* :ref:`publishing_scripts`
-
-* :ref:`alerts_in_pine`
-
-* :ref:`transparency_in_pine_scripts`
-
-* :ref:`pine_script_release_notes`
+   Pine Script Release Notes <Pine_Script_Release_Notes>
+   Pine Version 3 Migration Guide <Pine_Version_3_Migration_Guide>

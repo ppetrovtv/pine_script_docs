@@ -1,5 +1,3 @@
-.. _alerts_in_pine:
-
 Alerts in Pine
 ==============
 

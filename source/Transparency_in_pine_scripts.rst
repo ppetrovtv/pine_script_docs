@@ -1,30 +1,20 @@
-.. _transparency_in_pine_scripts:
-
 Transparency in Pine Scripts
 ============================
 
-| Color type variables now have an additional parameter to set default
-  transparency. There are 2 ways to configure transparency level:
-| 1. #FFA50040 – the last 2 digits stand for 64% transparency (in
-  hexadecimal system) for orange color (in RGBA format)
+Color type variables now have an additional parameter to set default
+transparency. There are 2 ways to configure transparency level:
 
-::
+#. ``#FFA50040`` - the last 2 digits stand for 64% transparency (40 in 
+   hexadecimal system is 64 in decimal) for orange color (in RGBA format)::
 
-    bgcolor (#FFA50040)
+    bgcolor(#FFA50040)
 
-2. You can use the ‘color’ function to change transparency:
-
-::
-
+#. You can use the ``color`` function to change transparency::
+    
     color(red, 70)
-
-::
-
     color(#FFA500, 80)
 
-Example:
-
-::
+Example::
 
     //@version=2
     study(title="Shading the chart's background", overlay=true)
@@ -41,4 +31,3 @@ You can control transparency in properties of a study on Style tab.
 |Transparency settings|
 
 .. |Transparency settings| image:: images/Transparency_settings.png
-
