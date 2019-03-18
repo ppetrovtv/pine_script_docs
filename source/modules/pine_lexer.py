@@ -14,12 +14,11 @@ class PinePygmentsLexer(RegexLexer):
             (r'//.*?$', Comment),
             (r'(for|if)\b', Keyword),
             (r'(open|high|low|close|volume|time|hl2|hlc3|ohlc4)\b', Name.Constant),
-            (r'(study|strategy|plot|plotshape|plotchar|plotarrow|fill|input)\b', Name.Entity),
+            (r'(study|strategy|plot|plotshape|plotchar|plotarrow|fill|hline|input)\b', Name.Entity),
             (r'\w+', Name.Other),
             (r'\+|\-|\*|\/|\%|\=|\[|\]|and|or|not|\?|\:|\<|\>|\!', Operator),
             (r'\(|\)|\,', Punctuation),
             (r'"(\\\\|\\"|[^"])*"', String.Double),
             (r"'(\\\\|\\'|[^'])*'", String.Single),
-            
         ]
     }
