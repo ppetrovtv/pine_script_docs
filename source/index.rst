@@ -21,7 +21,7 @@ Pine Script documentation
    Literals <Literals>
    Operators <Operators>
    Functions vs Annotation Functions <Functions_vs_Annotation_Functions>
-   Expressions, Declarations and Statements <Expressions,_Declarations_and_Statements>
+   Expressions, Declarations and Statements <Expressions_Declarations_and_Statements>
    Declaring Functions <Declaring_Functions>
    Lines Wrapping <Lines_Wrapping>
    Context Switching, the ``security`` Function <Context_Switching_the_security_Function>

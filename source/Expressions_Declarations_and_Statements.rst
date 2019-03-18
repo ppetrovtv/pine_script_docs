@@ -11,23 +11,21 @@ An expression is a sequence of applying both operators and function
 calls to operands (variables, values), which determines the calculations
 and actions done by the script. Expressions in Pine almost always
 produce a result (only annotation functions are an exception, such as
-**study** or **fill**. They produce side effects and will be covered
+``study`` or ``fill``. They produce side effects and will be covered
 later).
 
-Here are some examples of simple expressions:
-
-::
+Here are some examples of simple expressions::
 
     (high + low + close)/3
     sma(high - low, 10) + sma(close, 20)
 
-Variable Declarations
----------------------
+.. _variable_declaration:
 
-Variables in Pine are declared with the help of the special symbol **=**
-in the following way:
+Variable Declaration
+--------------------
 
-::
+Variables in Pine are declared with the help of the special symbol ``=``
+in the following way::
 
     <identifier> = <expression>
 
@@ -53,7 +51,7 @@ Variable Assignment
 
 Mutable variable is such a variable which can be given a new value.
 
-The operator **:=** must be used to give a value to a variable. To use
+The operator ``:=`` must be used to give a new value to a variable. To use
 this operator, a special attribute must be used in the first line of a
 code: ``//@version=2``. This attribute identifies the version of Pine
 Script. Mutable variables were introduced in version 2.

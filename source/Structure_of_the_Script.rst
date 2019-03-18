@@ -9,11 +9,10 @@ that spaces before the statement are not allowed (this has a direct
 relation to the syntax of multiple line functions). Statements are one
 of three kinds:
 
--  `variable
-   definitions <Expressions,_Declarations_and_Statements#Variable_Declarations>`__
--  `function definitions <Declaring_Functions>`__
--  `annotation function calls <Functions_vs_Annotation_Functions>`__
+-  :ref:`variable declarations <variable_declaration>`
+-  :doc:`function declarations <Declaring_Functions>`
+-  :doc:`annotation function calls <Functions_vs_Annotation_Functions>`
 
 Long statements that don’t fit within in the width of the screen can be
 split to a few lines, further information about this can be found
-`here <Lines_Wrapping>`__.
+:doc:`here <Lines_Wrapping>`.
