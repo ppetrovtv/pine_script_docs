@@ -1,6 +1,6 @@
 from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, \
-     Number, Operator, Generic, Whitespace
+     Number, Literal, Operator, Generic, Whitespace
 
 # Many examples are here https://bitbucket.org/birkenfeld/pygments-main/src/default/pygments/styles/default.py
 
@@ -16,9 +16,10 @@ class PineStyle(Style):
 
         Operator:                  "#666666",
 
+        Literal:                   "#ff00ff", # Color literal
         Name:                      "#101010",
-        Name.Constant:             "bold #800000",
-        Name.Entity:               "bold #008000",
+        Name.Constant:             "bold #800000", # Built-in series 'open', 'high', ...
+        Name.Entity:               "bold #008000", # Annotation function
 
         String:                    "#BA2121",
         Number:                    "#6666FF",
