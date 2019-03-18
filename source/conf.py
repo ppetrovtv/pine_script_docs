@@ -78,6 +78,7 @@ lexers['pine'] = pine_lexer.PinePygmentsLexer(startinline=True)
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'pine_style.PineStyle'
 
+highlight_language = 'pine'
 
 # -- Options for HTML output -------------------------------------------------
 
