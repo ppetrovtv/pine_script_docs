@@ -8,7 +8,7 @@ This page contains release notes of notable changes in Pine Script.
 2017-05-17: compile-time constants
 ----------------------------------
 
-Pine Script used to have 3 types of constants – literal, non-literal and
+Pine Script used to have 3 types of constants --- literal, non-literal and
 serial. Now there’s one more, but let’s look at existing ones first.
 
 Some functions (input, color) can only accept literals as certain
