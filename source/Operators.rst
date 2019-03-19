@@ -107,8 +107,10 @@ value then the result will have a ``false`` value; if the operand has a
 | false   | false   | false    |
 +---------+---------+----------+
 
-Conditional Operator ``?`` and the Function ``iff``
----------------------------------------------------
+.. _ternary_operator:
+
+Conditional Operator ``?:`` and the Function ``iff``
+----------------------------------------------------
 
 `Conditional Ternary
 Operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
