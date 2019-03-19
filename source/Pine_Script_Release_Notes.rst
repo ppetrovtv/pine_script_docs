@@ -29,6 +29,8 @@ argument will now accept compilation-time constants as well.
 Some built-in indicators have a setting that lets you choose several
 options. The same is possible in Pine Script now.
 
+.. _kwargs_syntax_for_all_builtin_functions:
+
 2017-04-17: kwargs syntax for all builtin functions
 ---------------------------------------------------
 

@@ -133,8 +133,10 @@ the given indicator on the monthly ‘M’ or yearly ‘Y’ resolution,
 otherwise the value ‘n/a’ will be on the chart instead of Fibonacci
 numbers.
 
-Preventing NaN values, Functions na and nz
-------------------------------------------
+.. _preventing_na_values_functions_na_and_nz:
+
+Preventing ``na`` values, Functions ``na`` and ``nz``
+-----------------------------------------------------
 
 Self referencing variables allow for the accumulation of values during
 the indicator’s calculation on the bars. However there is one point to
