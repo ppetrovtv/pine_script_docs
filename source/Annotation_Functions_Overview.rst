@@ -136,13 +136,13 @@ example script renders the inside and outside bars in different colors:
 As you can see, when passing the na value, the colors stay the default
 chart color.
 
-Background coloring — ‘bgcolor’
--------------------------------
+Background coloring --- ``bgcolor``
+-----------------------------------
 
 Similar to the barcolor function, the bgcolor function changes the color
 of the background. Function will the color of that can be calculated in
-an expression, and an optional parameter transp – transparency from
-0-100, which is 90 by default.
+an expression, and an optional parameter ``transp`` --- transparency from
+0--100 range --- which is 90 by default.
 
 As an example, here’s a script for coloring trading sessions (use it on
 EURUSD, 30 min resolution):
