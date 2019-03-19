@@ -314,7 +314,7 @@ will not be cancelled automatically. To avoid issues we recommend using
 OCA-Cancel groups for entries so when one entry order is filled the
 others are cancelled.
 
-The same is true for price type exits - orders will be placed once their
+The same is true for price type exits --- orders will be placed once their
 conditions are met (i.e. an entry order with the respective id is
 filled).
 
@@ -394,7 +394,7 @@ OCA groups
 
 It is possible to put orders in 2 different OCA groups in Pine Script:
 
--  **strategy.oca.cancel** - as soon as an order from group is filled
+-  **strategy.oca.cancel** --- as soon as an order from group is filled
    (even partially) or cancelled, the other orders from the same group
    get cancelled. One should keep in mind that if order prices are the
    same or they are close, more than 1 order of the same group may be
@@ -426,7 +426,7 @@ At each tick calculation, firstly all orders with the satisfied
 conditions are executed and only then the orders from the group where an
 order was executed are cancelled.
 
--  **strategy.oca.reduce** - this group type allows multiple orders
+-  **strategy.oca.reduce** --- this group type allows multiple orders
    within the group to be filled. As one of the orders within the group
    starts to be filled, the size of other orders is reduced by the
    filled contracts amount. It is very useful for the exit strategies.
@@ -434,7 +434,7 @@ order was executed are cancelled.
    the stop-loss is not cancelled but its amount is reduced by the
    filled contracts amount, thus protecting the rest of the open
    position.
--  **strategy.oca.none** - the order is placed outside of the group
+-  **strategy.oca.none** --- the order is placed outside of the group
    (default value for the **strategy.order** and **strategy.entry**
    commands).
 

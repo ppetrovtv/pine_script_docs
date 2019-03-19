@@ -60,7 +60,7 @@ example::
     "This is a double quoted string literal"
     'This is a single quoted string literal'
 
-Single or double quotation marks are completely the same - you may use
+Single or double quotation marks are completely the same --- you may use
 what you prefer. The line that was written with double quotation marks
 may contain a single quotation mark, just as a line that is written with
 single quotation marks may contain double quotation marks::

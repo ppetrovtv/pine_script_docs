@@ -11,7 +11,7 @@ The maximum number of securities in script is limited to 40. If you
 declare a variable as a security call and then use that variable as
 input for other variables and calculations, it will not result in
 multiple security calls. But if you will declare a function that calls
-security - every call to this function will count as security call.
+security --- every call to this function will count as security call.
 
 It is not easy to say how many securities will be called looking at the
 source code. Following example have exactly **3** calls to security

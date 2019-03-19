@@ -49,16 +49,16 @@ colored over with grey). The function ``time`` returns the time of the
 bar in milliseconds UNIX time or NaN value if the bar is located outside
 the given trade session (09:30-16:00 in our example). ``time`` accepts
 two arguments, the first is ‘resolution’, the bars of which are needed
-to determine their timestamp, and the second — ‘session specification’,
+to determine their timestamp, and the second --- ‘session specification’,
 which is a string that specifies the beginning and end of the trade
 session (in the exchange timezone). The string “0930-1600” corresponds
 to the trade session symbol IBM. Examples of trade session
-configurations: “0000-0000” — a complete 24 hours with the session
-beginning at midnight. “1700-1700” — a complete 24 hours with the
-session beginning at 17:00. “0900-1600,1700-2000” — a session that
+configurations: “0000-0000” --- a complete 24 hours with the session
+beginning at midnight. “1700-1700” --- a complete 24 hours with the
+session beginning at 17:00. “0900-1600,1700-2000” --- a session that
 begins at 9:00 with a break at 16:00 until 17:00 and ending at 20:00
-“2000-1630” — an overnight session that begins at 20:00 and ends at
-16:30 the next day. “0930-1700:146” - a session that begins at 9:30 and
+“2000-1630” --- an overnight session that begins at 20:00 and ends at
+16:30 the next day. "0930-1700:146" --- a session that begins at 9:30 and
 ends at 17:00 on Sundays (1), Wednesdays (4) and Fridays (6) (other days
 of the week are days off).
 
@@ -124,14 +124,14 @@ variables <http:////www.tradingview.com/study-script-reference/#fun_input>`__.
 Session Format by example
 -------------------------
 
--  ``24x7`` - is everyday session 00:00 - 00:00.
--  ``0000-0000:1234567`` - same as ``24x7``.
--  ``0000-0000:23456`` - same as ``0000-0000``, monday to friday session
+-  ``24x7`` --- is everyday session 00:00 -- 00:00.
+-  ``0000-0000:1234567`` --- same as ``24x7``.
+-  ``0000-0000:23456`` --- same as ``0000-0000``, monday to friday session
    that starts every day at 00:00 and ends at 00:00 of the next day.
--  ``1700-1700`` - is an overnight session. Monday session starts at
+-  ``1700-1700`` --- is an overnight session. Monday session starts at
    sunday, 17:00, and ends at monday, 17:00. Also, only on
    monday-friday.
--  ``1000-1001:26`` - is a weird session, that lasts only one minute on
+-  ``1000-1001:26`` --- is a weird session, that lasts only one minute on
    mondays, and one minute on fridays.
 
 Built-in Variables for working with Time
@@ -141,13 +141,13 @@ Pine’s standard library has an assortment of built-in variables which
 allow a bar’s time in the logic of an argument’s algorithm to be used in
 scripts:
 
--  ``time`` — UNIX time of the current bar in milliseconds **(in UTC
+-  ``time`` --- UNIX time of the current bar in milliseconds **(in UTC
    timezone)**.
--  ``year`` — Current bar year.
--  ``month`` — Current bar month.
--  ``weekofyear`` — Week number of current bar time.
--  ``dayofmonth`` — Date of current bar time.
--  ``dayofweek`` — Day of week for current bar time. You can use
+-  ``year`` --- Current bar year.
+-  ``month`` --- Current bar month.
+-  ``weekofyear`` --- Week number of current bar time.
+-  ``dayofmonth`` --- Date of current bar time.
+-  ``dayofweek`` --- Day of week for current bar time. You can use
    `sunday <https://www.tradingview.com/study-script-reference/#var_sunday>`__,
    `monday <https://www.tradingview.com/study-script-reference/#var_monday>`__,
    `tuesday <https://www.tradingview.com/study-script-reference/#var_tuesday>`__,
@@ -157,20 +157,20 @@ scripts:
    and
    `saturday <https://www.tradingview.com/study-script-reference/#var_saturday>`__
    variables for comparisons.
--  ``hour`` — Current bar hour.
--  ``minute`` — Current bar minute.
--  ``second`` — Current bar second.
+-  ``hour`` --- Current bar hour.
+-  ``minute`` --- Current bar minute.
+-  ``second`` --- Current bar second.
 
 The following are also built-in functions:
 
--  ``year(x)`` — Returns year for provided UTC time.
--  ``month(x)`` — Returns month for provided UTC time.
--  ``weekofyear(x)`` — Returns week of year for provided UTC time.
--  ``dayofmonth(x)`` — Returns day of month for provided UTC time.
--  ``dayofweek(x)`` — Returns day of week for provided UTC time.
--  ``hour(x)`` — Returns hour for provided UTC time.
--  ``minute(x)`` — Returns minute for provided UTC time.
--  ``second(x)`` — Returns second for provided time.
+-  ``year(x)`` --- Returns year for provided UTC time.
+-  ``month(x)`` --- Returns month for provided UTC time.
+-  ``weekofyear(x)`` --- Returns week of year for provided UTC time.
+-  ``dayofmonth(x)`` --- Returns day of month for provided UTC time.
+-  ``dayofweek(x)`` --- Returns day of week for provided UTC time.
+-  ``hour(x)`` --- Returns hour for provided UTC time.
+-  ``minute(x)`` --- Returns minute for provided UTC time.
+-  ``second(x)`` --- Returns second for provided time.
 
 All these variables and functions return **time in exchange time zone**,
 except for the ``time`` variable which returns time in UTC timezone.

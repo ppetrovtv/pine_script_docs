@@ -331,31 +331,31 @@ General code form:
     var_declarationX = for counter = from_num to to_num [by step_num]
         var_decl0
         var_decl1
-        …
+        ...
         continue
-        …
+        ...
         break
-        …
+        ...
         var_declN
         return_expression
 
 where:
 
--  counter - a variable, loop counter.
--  from\_num - start value of the counter.
--  to\_num - end value of the counter. When the counter becomes greater
+-  counter --- a variable, loop counter.
+-  from\_num --- start value of the counter.
+-  to\_num --- end value of the counter. When the counter becomes greater
    than to\_num (or less than to\_num in case from\_num > to\_num) the
    loop is broken.
--  step\_num - loop step. Can be omitted (in the case loop step = 1). If
+-  step\_num --- loop step. Can be omitted (in the case loop step = 1). If
    from\_num is greater than to\_num loop step will change direction
    automatically, no need to specify negative numbers.
--  var\_decl0, … var\_declN, return\_expression - body of the loop. It
+-  var\_decl0, … var\_declN, return\_expression --- body of the loop. It
    must be shifted by 4 spaces or 1 tab.
--  return\_expression - returning value. When a loop is finished or
+-  return\_expression --- returning value. When a loop is finished or
    broken, the returning value is given to the var\_declarationX.
--  continue - a keyword. Can be used only in loops. It switches the loop
+-  continue --- a keyword. Can be used only in loops. It switches the loop
    to next iteration.
--  break - a keyword. Can be used only in loops. It breaks the loop.
+-  break --- a keyword. Can be used only in loops. It breaks the loop.
 
 Loop example:
 

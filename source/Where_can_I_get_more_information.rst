@@ -33,5 +33,5 @@ More Links
 -  `The Commitments of Traders (COT) on
    TradingView <http://blog.tradingview.com/?p=472>`__
 
--  `TradingView integrates Quandl – Best Web Charting Meets 9 Million
+-  `TradingView integrates Quandl --- Best Web Charting Meets 9 Million
    Datasets! <http://blog.tradingview.com/?p=452>`__

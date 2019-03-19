@@ -48,8 +48,8 @@ on chart:
 -  in this scenario, a part of a minute-data will be inevitably lost, as
    it’s impossible to display it on a 5-minute chart and not to amplify
    the time axis
--  if lookahead=false - there will be repainting. When lookahead=true,
-   no repainting would happen (there is an exception to this - when 1-
+-  if lookahead=false --- there will be repainting. When lookahead=true,
+   no repainting would happen (there is an exception to this --- when 1-
    and 5-minute updates outrun each other, a script can get repainted)
 
 (Lookahead is the parameter which determines which 5-minute bar is shown
@@ -71,9 +71,9 @@ scripts relying on the starting point:
 There is the following dependency between a point of alignment and
 resolution:
 
--  1-14 minutes - aligns to the beginning of a week
--  15-29 minutes - aligns to the beginning of a month
--  from 30 minutes and higher - to the beginning of a year
+-  1-14 minutes --- aligns to the beginning of a week
+-  15-29 minutes --- aligns to the beginning of a month
+-  from 30 minutes and higher --- to the beginning of a year
 
 The following limitations of history length are taken into account when
 processing the data:

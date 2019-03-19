@@ -4,7 +4,7 @@ Transparency in Pine Scripts
 Color type variables now have an additional parameter to set default
 transparency. There are 2 ways to configure transparency level:
 
-#. ``#FFA50040`` - the last 2 digits stand for 64% transparency (40 in 
+#. ``#FFA50040`` --- the last 2 digits stand for 64% transparency (40 in 
    hexadecimal system is 64 in decimal) for orange color (in RGBA format)::
 
     bgcolor(#FFA50040)

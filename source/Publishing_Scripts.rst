@@ -51,7 +51,7 @@ script publication window.
 
 Source code on charts is hidden from other users, so that only you will
 see it until you decide to publish an open source version. Publish
-ideas, send links to charts in chat - your intellectual property remains
+ideas, send links to charts in chat --- your intellectual property remains
 protected and no one will have access to your source code without your
 decision.
 
@@ -60,7 +60,7 @@ Pine Indicators with Managed Access
 
 Authors can manage who can access their indicators. This is great for
 commercial vendors, or authors who want to protect their IP, or share
-with only a few select people - the reasons could be many. If someone
+with only a few select people --- the reasons could be many. If someone
 wishes to sell indicators, the author may charge off-site for them, and
 then provide access to the paying customers.
 

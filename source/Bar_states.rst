@@ -4,16 +4,16 @@ Bar states. Built-in variables 'barstate'
 A set of build-in ``barstate`` variables allows users to define a state
 of the bar which calculations are being made for.
 
--  ``barstate.isfirst`` – ``true`` if a current bar is the first in the
-   range of bars, otherwise - ``false``,
--  ``barstate.islast`` – ``true`` if a current bar is the last in the
-   range of bars, otherwise - ``false``,
--  ``barstate.ishistory`` – ``true`` if a current bar is a historical
-   one, otherwise - ``false``,
--  ``barstate.isrealtime`` – ``true`` if a current bar is a real-time
-   bar, otherwise - ``false``,
--  ``barstate.isnew`` – ``true`` if a current bar is a new bar,
-   otherwise - ``false``.
+-  ``barstate.isfirst`` --- ``true`` if a current bar is the first in the
+   range of bars, otherwise --- ``false``,
+-  ``barstate.islast`` --- ``true`` if a current bar is the last in the
+   range of bars, otherwise --- ``false``,
+-  ``barstate.ishistory`` --- ``true`` if a current bar is a historical
+   one, otherwise --- ``false``,
+-  ``barstate.isrealtime`` --- ``true`` if a current bar is a real-time
+   bar, otherwise --- ``false``,
+-  ``barstate.isnew`` --- ``true`` if a current bar is a new bar,
+   otherwise --- ``false``.
 
 All historical bars are new bars. For bars updating in real-time a bar
 is considered as a new bar only at opening tick of this bar.

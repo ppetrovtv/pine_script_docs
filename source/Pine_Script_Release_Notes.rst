@@ -62,27 +62,27 @@ Repainting issue
 ~~~~~~~~~~~~~~~~
 
 There’s a substantial difference between historical and real-time data
-that a PineScript indicator or strategy uses. The key difference - a
+that a PineScript indicator or strategy uses. The key difference --- a
 historical bar does NOT contain information about price movements
 between High and Low of a bar. Only a few PineScript language tools are
 sensitive to this difference:
 
--  Security - while requesting data of a larger timeframe than a current
+-  Security --- while requesting data of a larger timeframe than a current
    one .
 -  barstate.isrealtime, barstate.ishistory, barstate.islast,
-   barstate.isnew - while using built-in variables
+   barstate.isnew --- while using built-in variables
 -  While using strategy combined with calc\_on\_every\_tick=true.
--  While using a built-in variable - timenow, n (Doesn’t relate to the
+-  While using a built-in variable --- timenow, n (Doesn’t relate to the
    historical and real-time data difference, but still causes the
    “repainting” issue sometimes).
 
-The “repainting” issue usually occurs when using tools above - since an
+The “repainting” issue usually occurs when using tools above --- since an
 indicator is calculated based on real-time data first. After reloading
 the chart, an indicator is REcalculated based on data that becomes
 historical, while still using the same time period. The appearance of
 the indicator changes.
 
-In this case, the “repainting” effect is not a bug - it’s a result of
+In this case, the “repainting” effect is not a bug --- it’s a result of
 applying certain language tools with different calculation methods. This
 needs to be understood and taken into consideration while using
 PineScript.
@@ -105,9 +105,9 @@ with the current time period.
 Backtesting issue
 ~~~~~~~~~~~~~~~~~
 
-The second issue is a security function that allows you to get “future”
+The second issue is a security function that allows you to get 'future'
 data while doing calculations using historical data. For example:
-``security(tickerid, “D”, high)`` on historical data will show the daily
+``security(tickerid, "D", high)`` on historical data will show the daily
 high price on the first hourly bar of the day. This can be used to
 create an incorrect backtesting strategy:
 
@@ -134,7 +134,7 @@ could be useful when it’s being used in indicators. For instance,
 effect in a popular indicator called `CM\_Pivot
 Points\_M-W-D-4H-1H\_Filtered <https://www.tradingview.com/script/kqKEuQpn-CM-Pivot-Points-M-W-D-4H-1H-Filtered/>`__
 (over 3000 likes) that is used to create pivot lines. Some other
-examples - `Open Close Daily
+examples --- `Open Close Daily
 Line <https://www.tradingview.com/script/qDvoNB8f-Open-Close-Daily-Line/>`__,
 `Time Frame
 Superimpose <https://www.tradingview.com/script/QCvh8Cyx-Time-Frame-Superimpose/>`__,
