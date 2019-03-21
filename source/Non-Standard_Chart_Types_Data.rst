@@ -13,7 +13,7 @@ passed later as ``security`` function first argument.
 ``heikinashi`` function
 -----------------------
 
-Heikin-Ashi means “average bar” in Japanese. Open, High, Low and Close
+Heikin-Ashi means "average bar" in Japanese. Open, High, Low and Close
 prices of HA candlesticks are not actual prices, they are results from
 avergaing values of the previous bar, which helps eliminate random
 volatility.
@@ -36,7 +36,7 @@ top of usual OHLC bars:
 Note that low prices of Heikin-Ashi bars are different from usual bars
 low prices.
 
-You may want to switch off extended hours data in “Example 5”. In this
+You may want to switch off extended hours data in "Example 5". In this
 case we should use ``tickerid`` function instead of ``tickerid``
 variable:
 

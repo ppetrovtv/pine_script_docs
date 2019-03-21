@@ -101,7 +101,7 @@ the global scope. User-declared functions also belong to the global
 scope. All built-in variables and functions also belong to the global
 scope.
 
-Each function has its own “local scope”. All the variables declared
+Each function has its own "local scope". All the variables declared
 inside the function (and this function arguments too) belong to scope of
 that function, meaning that it is impossible to reference them from
 outside — e.g., from the global scope or the local scope of another

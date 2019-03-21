@@ -170,7 +170,7 @@ To make this example work in Pine v3 you can do the following:
     bgcolor(col)
 
 Function ``bton`` (abbreviation of 'boolean-to-number') explicitly
-“converts” any boolean value to a number if you really need this.
+"converts" any boolean value to a number if you really need this.
 
 .. |images/V3.png| image:: images/V3.png
 

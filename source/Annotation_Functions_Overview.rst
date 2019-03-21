@@ -107,7 +107,7 @@ series has been shifted to the right (its value 'offset' is positive).
 Footnote. In Pine there is a built-in function
 ```offset`` <https://www.tradingview.com/study-script-reference/#fun_offset>`__
 which also enables the values of a series to be shifted, but only to the
-right. At the same time the values “out of range” of the current bar are
+right. At the same time the values "out of range" of the current bar are
 discarded. The advantage of 'offset' lies in the fact that its result
 can be used in other expressions to execute complex calculations. In the
 case of the argument 'offset' of the function 'plot', the shift appears

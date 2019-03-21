@@ -31,7 +31,7 @@ which needs to be computed on the requested series.
 
 The name of the symbol can be set using two variants: with a prefix that
 shows the exchange (or data provider) or without it. For example:
-“NYSE:IBM”, “BATS:IBM” or“IBM”. In the case of using the name of a
+"NYSE:IBM", "BATS:IBM" or"IBM". In the case of using the name of a
 symbol without an exchange prefix, the exchange selected by default is
 BATS. Current symbol name is assigned to 'ticker' and 'tickerid'
 built-in variables. The variable 'ticker' contains the value of the
@@ -46,14 +46,14 @@ Data <Fundamentals_Data>`__.
 The resolution (the second argument of the ``security`` function ) is
 also set as a string. Any intraday resolution is set by specifying a
 number of minutes. The lowest resolution is 'minute' which is set by the
-literal “1”. It's possible to request any number of minutes: “5”, “10”,
-“21”, etc. 'Hourly' resolution is also set by minutes. For example, the
+literal "1". It's possible to request any number of minutes: "5", "10",
+"21", etc. 'Hourly' resolution is also set by minutes. For example, the
 following lines signify an hour, two hours and four hours respectively:
-“60”, “120”, “240”. A resolution with a value of 1 day is set by the
-symbols “D” or “1D”. It's possible to request any number of days: “2D”,
-“3D”, etc. Weekly and monthly resolutions are set in a similar way: “W”,
-“1W”, “2W”, …, “M”, “1M”, “2M”. “M” and “1M” are sorts of one month
-resolution value. “W” and “1W” are the same weekly resolution value. The
+"60", "120", "240". A resolution with a value of 1 day is set by the
+symbols "D" or "1D". It's possible to request any number of days: "2D",
+"3D", etc. Weekly and monthly resolutions are set in a similar way: "W",
+"1W", "2W", …, "M", "1M", "2M". "M" and "1M" are sorts of one month
+resolution value. "W" and "1W" are the same weekly resolution value. The
 third parameter of the security function can be any arithmetic
 expression or a function call, which will be calculated in chosen series
 context.
@@ -106,7 +106,7 @@ individual stocks participating in an upward or downward trend (`read
 more <http://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
 
 Pay attention to the fact that, out of convenience, the call
-``security`` is “wrapped up” in the user function ``sym``. (just to
+``security`` is "wrapped up" in the user function ``sym``. (just to
 write a bit less of code).
 
 ``security`` function was designed to request data of a timeframe higher

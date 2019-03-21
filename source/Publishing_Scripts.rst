@@ -18,11 +18,11 @@ the source code from other users.
 | |Pine_editor|
 | 2. Open/write the script;
 | 3. Apply the script to the current chart;
-| 4. Click the “Publish Script” button:
+| 4. Click the "Publish Script" button:
 | |Publish_script_button|
 | |Publish_script_new|
 | 5. Enter Script Title, Tags (optional), Description;
-| 6. Click the “Publish Script” button.
+| 6. Click the "Publish Script" button.
 
 The published script will be displayed in `Public
 Library <Public_Library>`__, which is available to all TradingView
@@ -44,7 +44,7 @@ author can open the source code of Protected scripts. This is a great
 option for those who want to share the script, but protect its
 calculation methods.
 
-To make the indicator Protected simply check “Protected Script” in the
+To make the indicator Protected simply check "Protected Script" in the
 script publication window. 
 
 |Protected_script_new|
@@ -64,7 +64,7 @@ with only a few select people --- the reasons could be many. If someone
 wishes to sell indicators, the author may charge off-site for them, and
 then provide access to the paying customers.
 
-| Simply choose the “Invite-only script” option when publishing, and
+| Simply choose the "Invite-only script" option when publishing, and
   only users who you specifically add will be able to use it.
   |Invite_only_script_new| On the published script's page
   authors will see a Manage Access button, where you can add/remove

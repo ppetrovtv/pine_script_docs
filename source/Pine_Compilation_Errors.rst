@@ -66,7 +66,7 @@ of string with script title.
 Mismatched input <...> expect <???>
 -----------------------------------
 
-Same as “no viable alternative”, but it is known what should be at that
+Same as "no viable alternative", but it is known what should be at that
 place.
 
 Example:
@@ -101,7 +101,7 @@ Example:
     plot(c == '$' ? 1 : 2)
 
 The result of such ternary operator should be series of string. But
-there is no support for “series of string” in Pine Script. So this call
+there is no support for "series of string" in Pine Script. So this call
 is forbidden.
 
 Loop is too long (> 100 ms)
@@ -162,7 +162,7 @@ from this, it is important to note, that auxiliary variables can be
 implicitly created during the process of a script compilation. The limit
 applies to variables created both explicitly and implicitly. The
 limitation of 1000 variables is applied to each function individually.
-In fact, the code placed in a “global” scope of a script also implicitly
+In fact, the code placed in a "global" scope of a script also implicitly
 wrapped up into the main function and the limit of 1000 variables
 becomes applicable to it. There are few refactorings you can try to
 avoid this issue:

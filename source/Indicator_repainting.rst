@@ -5,7 +5,7 @@ Historical data doesn't include records of intra-bar movements of price.
 This leads to a script working differently in historical data and in
 real-time. We can see this difference, if we add a script on a chart,
 wait till it compiles on a number of bars and then refresh the page.
-This peculiarity is called **“Indicator repainting”**. There are a few
+This peculiarity is called **"Indicator repainting"**. There are a few
 reasons for this.
 
 We can see repainting in the following cases:

@@ -15,7 +15,7 @@ for that purpose. Here is a small example:
 
 .. image:: images/Custom_ohlc_bars_and_candles_1.png
 
-The script “Example 1” simply replicates bars of the current symbol.
+The script "Example 1" simply replicates bars of the current symbol.
 Nothing outstanding. We can paint them with green and red colors:
 
 ::
@@ -26,8 +26,8 @@ Nothing outstanding. We can paint them with green and red colors:
 
 .. image:: images/Custom_ohlc_bars_and_candles_2.png
 
-The “Example 2” illustrates 'color' argument, which could be given
-constant values as red, lime, “#FF9090”, as well as expressions that
+The "Example 2" illustrates 'color' argument, which could be given
+constant values as red, lime, "#FF9090", as well as expressions that
 calculate color ('palette' variable) in runtime.
 
 Function 'plotcandle' is similar to 'plotbar', it just plots candles
@@ -47,7 +47,7 @@ plotted. Example:
 .. image:: images/Custom_ohlc_bars_and_candles_3.png
 
 Of course you may calculate OHLC values without using available 'open',
-'high', 'low' and 'close' values. For example you can plot “smoothed”
+'high', 'low' and 'close' values. For example you can plot "smoothed"
 candles:
 
 ::

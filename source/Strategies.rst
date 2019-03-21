@@ -12,11 +12,11 @@ algorithms.
 
 A strategy written in Pine Script language has all the same capabilities
 as a Pine indicator. When you write a strategy code, it should start
-with the keyword “\ *strategy*\ ”, not “\ *study*\ ”. Strategies not
+with the keyword "\ *strategy*\ ", not "\ *study*\ ". Strategies not
 only plot something, but also place, modify and cancel orders. They have
 access to essential strategy performance information through specific
-keywords. The same information is available for you on the “Strategy
-Tester” tab. Once a strategy is calculated on historical data, you can
+keywords. The same information is available for you on the "Strategy
+Tester" tab. Once a strategy is calculated on historical data, you can
 see hypothetical order fills.
 
 A simple strategy example
@@ -36,9 +36,9 @@ filled order marks on it and how your balance was changing during
 backtesting (equity curve). It is a simplest strategy that buys and
 sells on every bar.
 
-The first line **strategy(“test”)** states the code belongs to strategy
-type and its name is “test”. **strategy.entry()** is a command to send
-“buy” and “sell” orders. **plot(strategy.equity)** plots the equity
+The first line **strategy("test")** states the code belongs to strategy
+type and its name is "test". **strategy.entry()** is a command to send
+"buy" and "sell" orders. **plot(strategy.equity)** plots the equity
 curve.
 
 How to apply a strategy to the chart
@@ -46,7 +46,7 @@ How to apply a strategy to the chart
 
 To test your strategy, apply it to the chart. Use the symbol and time
 intervals that you want to test. You can use a built-in strategy from
-the “Indicators & Strategies” dialog box, or write your own in Pine
+the "Indicators & Strategies" dialog box, or write your own in Pine
 Editor.
 
 .. image:: images/Strategy_tester.png
@@ -72,13 +72,13 @@ Both during historical and real-time calculation, code is calculated on
 bar closes by default.
 
 If this is forwardtesting, code calculates on every tick in real-time.
-To enable this, check off the option “Recalculate On Every Tick” in
+To enable this, check off the option "Recalculate On Every Tick" in
 settings or do it in script itself: **strategy(...,
 calc\_on\_every\_tick=true, ...)**.
 
 You can set the strategy to perform additional calculation after an
-order is filled. For this you need to check off “Recalculate After Order
-filled” in settings or do it in script itself: **strategy(…,
+order is filled. For this you need to check off "Recalculate After Order
+filled" in settings or do it in script itself: **strategy(…,
 calc\_on\_order\_fills=true, ...)**.
 
 Broker emulator
@@ -100,7 +100,7 @@ The following logic is used to emulate order fills:
    Open → Low → High → Close.
 #. Broker emulator assumes that there were no gaps inside bar, meaning
    all intrabar prices are available for order execution.
-#. If the option “Recalculate On Every Tick” in strategy properties is
+#. If the option "Recalculate On Every Tick" in strategy properties is
    enabled (or strategy(..., calc\_on\_every\_tick=true, ...) is
    specified in script), code is still calculated only on bar's close,
    following the above logic.
@@ -122,7 +122,7 @@ order on high and 1 order on low. This is backtesting. If it were in
 real-time, orders would be executed on every new tick.
 
 It is also possible to emulate order queue. The setting is called
-“Verify Price For Limit Orders” and can be found in strategy properties
+"Verify Price For Limit Orders" and can be found in strategy properties
 or set in script itself: **strategy(...
 backtest\_fill\_limits\_assumption=X, ...)**. The specified value =
 number of points/pips (minimum price movements), default value = 0. A
@@ -143,7 +143,7 @@ backtest\_fill\_limits\_assumption = 1. To fill the order the price must
 become 0.25\*1 lower. The order is put in queue.*
 
 *Assume that the next tick comes at price 12.00. This price is 2 points
-lower, what means the condition “backtest\_fill\_limits\_assumption = 1”
+lower, what means the condition "backtest\_fill\_limits\_assumption = 1"
 is satisfied, so the order should be filled. The order is filled at
 12.50 (original order price), even if the price is not available
 anymore.*
@@ -152,7 +152,7 @@ Order placement commands
 ------------------------
 
 All keywords that are designed for strategies start with
-“\ **strategy**.” prefix. The following commands are used for placing
+"\ **strategy**." prefix. The following commands are used for placing
 orders: **strategy.entry**, **strategy.order** and **strategy.exit**:
 
 -  **strategy.entry** — this command places only entry orders. It is
@@ -354,12 +354,12 @@ example:
                    when = strategy.position_size == 5)
     strategy.exit("bracket", loss=10, profit=10, when=strategy.position_size == 15)
 
-The code given above places 2 orders sequentially: “Buy1” at market
-price and “Buy2” at 10% higher price (stop order). Exit order is placed
+The code given above places 2 orders sequentially: "Buy1" at market
+price and "Buy2" at 10% higher price (stop order). Exit order is placed
 only after entry orders have been filled. If you apply the code to a
 chart, you will see that each entry order is closed by exit order,
 though we did not specify entry order ID to close in this line:
-``strategy.exit(``\ “``bracket``”\ ``, loss=10, profit=10, when=strategy.position_size == 15)``
+``strategy.exit(``\ "``bracket``"\ ``, loss=10, profit=10, when=strategy.position_size == 15)``
 
 Another example:
 
@@ -375,16 +375,16 @@ Another example:
     strategy.exit("bracket", "Buy1", loss=10, profit=10, when=strategy.position_size == 15)
     plot(strategy.position_avg_price)
 
--  It opens 5 contracts long position with the order “Buy1”.
+-  It opens 5 contracts long position with the order "Buy1".
 -  It extends the long position by purchasing 10 more contracts at 10%
-   higher price with the order “Buy2”.
+   higher price with the order "Buy2".
 -  The exit order (strategy.close) to sell 10 contracts (exit from
-   “Buy2”) is filled.
+   "Buy2") is filled.
 
 If you take a look at the plot, you can see that average entry price =
-“Buy2” execution price and our strategy closed exactly this entry order,
-while on the TradeList tab we can see that it closed the first “Buy1”
-order and half of the second “Buy2”. It means that the no matter what
+"Buy2" execution price and our strategy closed exactly this entry order,
+while on the TradeList tab we can see that it closed the first "Buy1"
+order and half of the second "Buy2". It means that the no matter what
 entry order you specify for your strategy to close, the broker emulator
 will still close the the first one (according to FIFO rule). It works
 the same way when trading with through broker.
@@ -452,9 +452,9 @@ different groups. Example:
         strategy.entry("Sell", strategy.short, oca_name="My oca", oca_type=strategy.oca.cancel)
         strategy.order("Order", strategy.short, oca_name="My oca", oca_type=strategy.oca.none)
 
-“Buy” and “Sell” will be placed in different groups as their type is
-different. “Order” will be outside of any group as its type is set to
-**strategy.oca.none**. Moreover, “Buy” will be placed in the exit group
+"Buy" and "Sell" will be placed in different groups as their type is
+different. "Order" will be outside of any group as its type is set to
+**strategy.oca.none**. Moreover, "Buy" will be placed in the exit group
 as exits are always placed in the **strategy.oca.reduce\_size** type
 group.
 
@@ -485,7 +485,7 @@ the position if it is not flat.
 
 Furthermore, it is worth remembering that when using resolutions higher
 than 1 day, the whole bar is considered to be 1 day for the rules
-starting with prefix “\ **strategy.risk.max\_intraday\_**\ ”
+starting with prefix "\ **strategy.risk.max\_intraday\_**\ "
 
 Example (MSFT 1):
 
@@ -507,7 +507,7 @@ One should remember that the **strategy.risk.allow\_entry\_in** rule is
 applied to entries only so it will be possible to enter in a trade using
 the **strategy.order** command as this command is not an entry command
 per se. Moreover, when the **strategy.risk.allow\_entry\_in** rule is
-active, entries in a “prohibited trade” become exits instead of reverse
+active, entries in a "prohibited trade" become exits instead of reverse
 trades.
 
 Example (MSFT 1D):

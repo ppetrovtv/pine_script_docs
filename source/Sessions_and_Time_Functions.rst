@@ -9,12 +9,12 @@ Functions and the Variable ``time``
 
 In Pine there are special means for working with trade sessions, time
 and date. We will review a simple chart, IBM,30 on which has been
-applied 2 scripts: “Bar date/time” and “Session bars”.
+applied 2 scripts: "Bar date/time" and "Session bars".
 
 .. image:: images/Chart_time_1.png
 
 
-Here is the initial code of the first script “Bar date/time”:
+Here is the initial code of the first script "Bar date/time":
 
 ::
 
@@ -34,7 +34,7 @@ The chart's time gauge in the screenshot shows the time of the last bar
 as 2014-04-15 16:30 (in the exchange timezone, from here the difference
 between this time and UTC is 4 hours).
 
-The second script, “Session bars”:
+The second script, "Session bars":
 
 ::
 
@@ -51,20 +51,20 @@ the given trade session (09:30-16:00 in our example). ``time`` accepts
 two arguments, the first is 'resolution', the bars of which are needed
 to determine their timestamp, and the second --- 'session specification',
 which is a string that specifies the beginning and end of the trade
-session (in the exchange timezone). The string “0930-1600” corresponds
+session (in the exchange timezone). The string "0930-1600" corresponds
 to the trade session symbol IBM. Examples of trade session
-configurations: “0000-0000” --- a complete 24 hours with the session
-beginning at midnight. “1700-1700” --- a complete 24 hours with the
-session beginning at 17:00. “0900-1600,1700-2000” --- a session that
+configurations: "0000-0000" --- a complete 24 hours with the session
+beginning at midnight. "1700-1700" --- a complete 24 hours with the
+session beginning at 17:00. "0900-1600,1700-2000" --- a session that
 begins at 9:00 with a break at 16:00 until 17:00 and ending at 20:00
-“2000-1630” --- an overnight session that begins at 20:00 and ends at
+"2000-1630" --- an overnight session that begins at 20:00 and ends at
 16:30 the next day. "0930-1700:146" --- a session that begins at 9:30 and
 ends at 17:00 on Sundays (1), Wednesdays (4) and Fridays (6) (other days
 of the week are days off).
 
 Session specification, which is being passed to the function ``time``,
 is not required to correspond with the real trade session of the symbol
-on the chart. It's possible to pass different “hypothetical” session
+on the chart. It's possible to pass different "hypothetical" session
 specifications which can be used to highlight those or (other?) bars in
 a data series. It's possible to transfer the different 'hypothetical'
 session specifications which can be used to highlight those or other

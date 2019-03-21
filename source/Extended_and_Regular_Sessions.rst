@@ -9,7 +9,7 @@ to specify session type for additional data, that is requested with
 ``security`` function.
 
 Usually you pass to ``security`` function first argument symbol name in
-form of **EXCHANGE\_PREFIX:TICKER**, e.g. “BATS:AAPL”. In such a case,
+form of **EXCHANGE\_PREFIX:TICKER**, e.g. "BATS:AAPL". In such a case,
 data with regular session type will be requested. For example:
 
 ::
@@ -36,8 +36,8 @@ should use ``tickerid`` function (don't confuse it with variable
 
 Now you should see the difference — the gaps are filled with data.
 
-First argument of ``tickerid`` is an exchange prefix (“BATS”), and the
-second argument is a ticker (“AAPL”). Third argument specifies the type
+First argument of ``tickerid`` is an exchange prefix ("BATS"), and the
+second argument is a ticker ("AAPL"). Third argument specifies the type
 of the session (``session.extended``). There is also a built-in variable
 ``session.regular`` for requesting regular session data. So, Example 1
 could be rewritten as:
@@ -62,5 +62,5 @@ built-in variable as third parameter to ``tickerid`` function. Variable
     cc = security(t, period, close, true)
     plot(cc, style=linebr)
 
-Writing code similar to “Example 4” whatever session type you set in
+Writing code similar to "Example 4" whatever session type you set in
 Chart Properties, your Pine Script would use the same type.

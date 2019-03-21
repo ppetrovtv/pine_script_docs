@@ -232,8 +232,8 @@ the longer the arrow. If 'close - open' is greater than zero, then an up
 arrow is rendered, otherwise (when 'close - open' is less than zero) we
 have a down arrow.
 
-For another example, it's possible to take the indicator “Chaikin
-Oscillator” from the standard scripts and display it as an overlay above
+For another example, it's possible to take the indicator "Chaikin
+Oscillator" from the standard scripts and display it as an overlay above
 a series in the form of arrows using 'plotarrow' :
 
 ::
@@ -246,7 +246,7 @@ a series in the form of arrows using 'plotarrow' :
 .. image:: images/Plotarrow_example_2.png
 
 
-This screenshot shows the original “Chaikin Oscillator” alongside the
+This screenshot shows the original "Chaikin Oscillator" alongside the
 script for better understanding.
 
 As was stated earlier, the high of the arrow is chosen proportionally to

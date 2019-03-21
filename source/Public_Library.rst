@@ -29,8 +29,8 @@ Copying a Script from Public to Personal Library
 | 1. Click the star next to the needed script in the Indicators window:
 | |Add_to_Personal_Library|
 | 2. Or open the needed script on `this
-  page <https://www.tradingview.com/script/>`__ and click the “Add to
-  Favorite Scripts” button:
+  page <https://www.tradingview.com/script/>`__ and click the "Add to
+  Favorite Scripts" button:
 | |Add_to_Personal_Library_2|
 
 | 
@@ -51,13 +51,13 @@ Editing a Script from the Public Library
 | 1. Open the script (the script will be unavailable for editing and
   will be colored lighter than normal):
 | |Open_the_script|
-| 2. Click “Save as”, enter the desired name and save a copy to your
+| 2. Click "Save as", enter the desired name and save a copy to your
   personal library:
 | |Save_as|
 
 | 
 | A saved copy of the script will appear in the list of your scripts in
-  the Indicators window, “My Scripts” tab:
+  the Indicators window, "My Scripts" tab:
 | |My_Scripts|
 | Now you can open and edit the script.
 

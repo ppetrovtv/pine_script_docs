@@ -74,15 +74,15 @@ sensitive to this difference:
 -  While using strategy combined with calc\_on\_every\_tick=true.
 -  While using a built-in variable --- timenow, n (Doesn't relate to the
    historical and real-time data difference, but still causes the
-   “repainting” issue sometimes).
+   "repainting" issue sometimes).
 
-The “repainting” issue usually occurs when using tools above --- since an
+The "repainting" issue usually occurs when using tools above --- since an
 indicator is calculated based on real-time data first. After reloading
 the chart, an indicator is REcalculated based on data that becomes
 historical, while still using the same time period. The appearance of
 the indicator changes.
 
-In this case, the “repainting” effect is not a bug --- it's a result of
+In this case, the "repainting" effect is not a bug --- it's a result of
 applying certain language tools with different calculation methods. This
 needs to be understood and taken into consideration while using
 PineScript.
