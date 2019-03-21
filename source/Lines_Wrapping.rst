@@ -5,9 +5,7 @@ Any statement that is too long in Pine Script can be placed on a few
 lines. Syntactically, **a statement must begin at the beginning of the
 line. If it wraps to the next line then the continuation of the
 statement must begin with one or several (different from multiple of 4)
-spaces**. For example, the expression:
-
-::
+spaces**. For example, the expression::
 
     a = open + high + low + close
 
@@ -38,9 +36,9 @@ example:
 
 ::
 
-    updown(s) =>  
+    updown(s) =>
         isEqual = s == s[1]
-        isGrowing = s > s[1]    
+        isGrowing = s > s[1]
         ud = isEqual ?
                0 :
                isGrowing ?
@@ -51,10 +49,8 @@ example:
                        -1 :
                        nz(ud[1])-1)
 
-Note, that this rule also apply to comments. Don't use comments combined
-with lines wrapping. Following code would NOT compile:
-
-::
+This rule also applies to comments. Don't use comments combined
+with lines wrapping. Following code would NOT compile::
 
     //@version=2
     study("My Script")
@@ -63,8 +59,8 @@ with lines wrapping. Following code would NOT compile:
       low < low[1] ? blue : black
     bgcolor(c)
 
-Compiler fails with error:
+Compiler fails with an error:
 ``Add to Chart operation failed, reason: line 3: no viable alternative at input '|E|'``.
-To make this pine work, simply remove the '// a comment' comment. This
+To make this pine work, simply remove the ``// a comment`` comment. This
 limitation is inconvenient... We hope it could be removed in future Pine
 releases.

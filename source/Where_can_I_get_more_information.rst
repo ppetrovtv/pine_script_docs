@@ -1,4 +1,4 @@
-Where can I get more information?
+Where Can I Get More Information?
 =================================
 
 First, additional descriptions of all built-in operators, variables,
