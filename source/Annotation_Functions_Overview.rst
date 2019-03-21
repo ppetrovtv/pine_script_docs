@@ -29,7 +29,7 @@ will be added as an overlay on top of the main series. If it is false
 then it will be added on a separate chart pane; false is the default
 setting.
 
-``precision`` — number of digits after the floating point for study
+``precision`` --- number of digits after the floating point for study
 values on the price axis. Must be a non negative integer. Precision 0
 has special rules for formatting very large numbers (like volume, e.g.
 '5183' will be formatted as '5K'). Default value is 4.
@@ -88,7 +88,7 @@ color the chart when rendered. For example:
 
 Interest also represents the argument ``offset`` of the function
 ``plot``. It specifies the shift used when the chart is plotted
-(negative values shift the chart to the left, while positive values — to
+(negative values shift the chart to the left, while positive values --- to
 the right) For example:
 
 ::
@@ -113,8 +113,8 @@ can be used in other expressions to execute complex calculations. In the
 case of the argument 'offset' of the function 'plot', the shift appears
 to be merely a visual effect of the plot.
 
-Barcoloring a series — 'barcolor'
----------------------------------
+Barcoloring a series --- 'barcolor'
+-----------------------------------
 
 The annotation function 'barcolor' lets you specify a color for a bar
 dependent on the fulfillment of a certain condition. The following

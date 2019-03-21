@@ -34,7 +34,7 @@ should use ``tickerid`` function (don't confuse it with variable
 .. image:: images/Pine-_Regular_Session_Data.png
 
 
-Now you should see the difference — the gaps are filled with data.
+Now you should see the difference --- the gaps are filled with data.
 
 First argument of ``tickerid`` is an exchange prefix ("BATS"), and the
 second argument is a ticker ("AAPL"). Third argument specifies the type

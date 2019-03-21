@@ -110,11 +110,11 @@ above red bars:
 
 Possible values for the parameter 'location':
 
--  location.abovebar — above a bar
--  location.belowbar — below a bar
--  location.top — top of a chart
--  location.bottom — bottom of a chart
--  location.absolute — any set/specified point on a chart
+-  location.abovebar --- above a bar
+-  location.belowbar --- below a bar
+-  location.top --- top of a chart
+-  location.bottom --- bottom of a chart
+-  location.absolute --- any set/specified point on a chart
 
 The value 'location.absolute' should be applied when the shapes need to
 be applied on the chart without being linked to the chart's bars or

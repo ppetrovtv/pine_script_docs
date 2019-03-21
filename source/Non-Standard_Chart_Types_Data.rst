@@ -52,7 +52,7 @@ Note that we pass additional fourth parameter to security (``true``),
 and it means that points where data is absent, will not be filled up
 with previous values. So we'd get empty areas during the extended hours.
 To be able to see this on chart we also had to specify special plot
-style (``style=linebr`` — Line With Breaks).
+style (``style=linebr`` --- Line With Breaks).
 
 You may plot Heikin-Ashi bars exactly as they look from Pine script.
 Here is the source code:
@@ -149,7 +149,7 @@ For detailed reference on all ``kagi`` arguments go
 
 Point and Figure (PnF) chart type only plots price movements, without
 taking time into consideration. A column of X's is plotted as the price
-rises — and O's as the price drops.
+rises --- and O's as the price drops.
 
 Please note that you cannot plot PnF X's and O's from Pine script
 exactly as they look. You can just get a series of numbers that are

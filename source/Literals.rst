@@ -81,8 +81,8 @@ Color Literals
 
 Color literals have the following format: ``#`` followed by 6 or 8
 hexadecimal digits matching RGB or RGBA value. The first two digits
-determine the value for the **red** color component, the second two — for
-**green**, and the third pair — the value for the **blue** component. Fourth
+determine the value for the **red** color component, the second two --- for
+**green**, and the third pair --- the value for the **blue** component. Fourth
 pair of digits is optional. When set, it specifies the **alpha** (opacity)
 value. Examples::
 

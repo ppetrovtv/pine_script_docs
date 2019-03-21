@@ -75,6 +75,8 @@ Variable assignment example::
 
 We also use an :ref:`'if' statement <if_statement>` in this example.
 
+.. _self_ref_variables:
+
 Self Referencing Variables
 -----------------------------------------
 

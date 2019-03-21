@@ -140,13 +140,13 @@ if this is ``true``, then ``green`` will be the result. If this is
 ``false``, then ``ismonthly`` is calculated. If it is ``true``, then ``blue``
 will be the result, otherwise it will be the ``na`` value. For those who find
 using the operator syntax ``?:`` inconvenient, in Pine there is an
-alternative (with equivalent functionality) — the built-in function
+alternative (with equivalent functionality) --- the built-in function
 ``iff``. The function has the following signature::
 
     iff(condition, result1, result2)
 
 The function acts identically to the operator ``?:``, i.e., if the
-condition is ``true`` then it returns ``result1``, otherwise — ``result2``. The
+condition is ``true`` then it returns ``result1``, otherwise --- ``result2``. The
 previous example using ``iff`` will look like::
 
     iff(isintraday, red, iff(isdaily, green,

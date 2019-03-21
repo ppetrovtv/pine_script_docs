@@ -155,7 +155,7 @@ All keywords that are designed for strategies start with
 "\ **strategy**." prefix. The following commands are used for placing
 orders: **strategy.entry**, **strategy.order** and **strategy.exit**:
 
--  **strategy.entry** — this command places only entry orders. It is
+-  **strategy.entry** --- this command places only entry orders. It is
    affected by pyramiding setting (in strategy properties) and by
    **strategy.risk.allow\_entry\_in** keyword. If there is an open
    market position when an opposite direction order is generated, the
@@ -165,13 +165,13 @@ orders: **strategy.entry**, **strategy.order** and **strategy.exit**:
    of market position to open will be equal to order size, specified in
    the command **strategy.entry**.
 
--  **strategy.order** — this command places both entry and exit orders.
+-  **strategy.order** --- this command places both entry and exit orders.
    It is not affected by pyramiding setting and by
    **strategy.risk.allow\_entry\_in** keyword. It allows you to create
    complex enter and exit order constructions when capabilities of the
    **strategy.entry** and **strategy.exit** are not enough.
 
--  **strategy.exit** — this command allows you to exit a market position
+-  **strategy.exit** --- this command allows you to exit a market position
    by an order or or form multiple exit order strategy (stop loss,
    profit target, trailing stop). All such orders are part of the same
    **strategy.oca.reduce** group. An exit order cannot be placed if
@@ -237,7 +237,7 @@ group. The other orders (level 2) are in another OCA group. It means
 that as soon as an order from level 1 is filled, the orders from level 2
 are not cancelled, they stay active.
 
-Every command placing an order has ID (string value) — unique order
+Every command placing an order has ID (string value) --- unique order
 identifier. If an order with same ID is already placed (but not yet
 filled), current command modifies the existing order. If modification is
 not possible (conversion from buy to sell), the old order is cancelled,

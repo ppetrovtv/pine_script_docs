@@ -34,7 +34,7 @@ As a first example, we'll examine the implementation of the
 Line 1: ``//@version=3``
     It is a comment with a special directive that sets the version of Pine Script language to 3.
 Line 2: ``study("MACD")``
-    Sets the name of the indicator — "MACD".
+    Sets the name of the indicator --- "MACD".
 Line 3: ``fast = 12, slow = 26``
     Defines two integer variables, ``fast`` and ``slow``.
 Line 4: ``fastMA = ema(close, fast)``
