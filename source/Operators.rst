@@ -22,11 +22,11 @@ There are five arithmetic operators in Pine Script:
 +-------+------------------------------------+
 
 Arithmetic operators above are binary. The type of result depends on
-the type of operands. If at least one of the operands is a **series**, then
-the result also will have a **series** type. If both operands are numeric,
-but at least one of these has the type **float**, then the result will
-also have the type **float**. If both operands are **integers**, then the
-result will also have the type **integer**.
+the type of operands. If at least one of the operands is a *series*, then
+the result also will have a *series* type. If both operands are numeric,
+but at least one of these has the type *float*, then the result will
+also have the type *float*. If both operands are *integers*, then the
+result will also have the type *integer*.
 
 Footnote: if at least one operand is ``na`` then the result is also
 ``na``. 
@@ -51,10 +51,10 @@ There are six comparison operators in Pine Script:
 +--------+---------------------------------+
 
 Comparison operations are binary. The result is determined by the type
-of operands. If at least one of these operands has a **series** type, then
-the type of result will also be the **series** (a series of logical
+of operands. If at least one of these operands has a *series* type, then
+the type of result will also be the *series* (a series of logical
 values). If both operands have a numerical type, then the result will be
-of the logical type **bool**.
+of the logical type *bool*.
 
 Logical Operators (``not``, ``and``, ``or``)
 --------------------------------------------
@@ -69,11 +69,11 @@ There are three comparison operators in Pine Script:
 | ``or``  | Logical Disjunction            |
 +--------+---------------------------------+
 
-All logical operators can operate with **bool** operands, numerical
+All logical operators can operate with *bool* operands, numerical
 operands, or series type operands. Similar to arithmetic and comparison
-operators, if at least one of these operands of an operator has a **series**
-type, than the result will also have a **series** type. In all other cases
-the operator's type of result will be the logical type **bool**.
+operators, if at least one of these operands of an operator has a *series*
+type, than the result will also have a *series* type. In all other cases
+the operator's type of result will be the logical type *bool*.
 
 The operator ``not`` is unary. If an operator's operand has a ``true``
 value then the result will have a ``false`` value; if the operand has a
@@ -158,7 +158,7 @@ History Referencing Operator (Square Brackets ``[]``)
 -----------------------------------------------------
 
 It is possible to refer to the historical values of any variable of a
-**series** type (values which the variable had on the previous bars) with
+*series* type (values which the variable had on the previous bars) with
 the ``[]`` operator. For example, we will assume that we have the
 variable ``close``, containing 10 values (that correspond to a chart
 with a certain hypothetical symbol with 10 bars):

@@ -1,13 +1,13 @@
 Type System
 ===========
 
-The basic type of data in Pine is a list of values, named ``series``.
+The basic type of data in Pine is a list of values, named *series*.
 Examples of built-in series variables are: ``open``, ``high``, ``low``,
 ``close``, ``volume``. The size of these vectors are equal to the
 quantity of available bars based on the current ticker and timeframe
 (resolution). The series may contain numbers or a special value ``na``
-(meaning that value is *not available*). (Further information about ``na`` values
-can be found :ref:`here <history_referencing_operator>`).
+(meaning that value is *not available*, further information about ``na`` values
+can be found :ref:`here <history_referencing_operator>`). 
 Any expression that contains a series variable will be treated as a
 series itself. For example::
 
@@ -19,19 +19,19 @@ series itself. For example::
 
 .. note:: The operator ``[]`` also returns a value of a series type.
 
-Pine has two types to represent numbers: ``integer`` and ``float``. The
+Pine has two types to represent numbers: *integer* and *float*. The
 result of an arithmetical expression containing only numbers will be a
 number itself.
 
-There is also ``string`` type which is used for the indicators names,
+There is a *string* type which is used for the indicators names,
 inputs, line graphs, names of tickers, resolutions, trade sessions, etc.
 
-Also Pine has a ``bool`` type. There are two built-in constants: ``true``
+Also Pine has a *bool* type. There are two built-in constants: ``true``
 and ``false``.
 
-And the last basic type is ``color``. Apart from configuring a color
+And the last basic type is *color*. Apart from configuring a color
 value directly with a literal (in hexadecimal format), in the language
-there are more convenient, built-in variables of the type ``color``. For
+there are more convenient, built-in variables of the type *color*. For
 basic colors there are: ``black``, ``silver``, ``gray``, ``white``,
 ``maroon``, ``red``, ``purple``, ``fuchsia``, ``green``, ``lime``,
 ``olive``, ``yellow``, ``navy``, ``blue``, ``teal``, ``aqua``,
@@ -41,18 +41,23 @@ build-in function
 
 A few function annotations (in particular ``plot`` and ``hline``) return
 values which represent objects created on the chart. The function
-``plot`` returns an object of the type ``plot``, represented as a line
+``plot`` returns an object of the type *plot*, represented as a line
 or diagram on the chart. The function ``hline`` returns an object of the
-type ``hline``, represented as a horizontal line. These objects can be
-passed to the ``fill`` function to fill area between them.
+type *hline*, represented as a horizontal line. These objects can be
+passed to the `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__ 
+function to color the area in between them.
+
+Finally, there is also a *void* type in Pine Script. Some functions with *side effect* 
+return void result. For example a 
+`strategy.entry <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}entry>`__.
 
 Cast Rules
 ----------
 
 In the following picture arrow means ability to cast one type to
-another. For example ``NotAvailable`` type, an ``na`` variable, can be
-cast to any ``color``, ``integer``, ``float`` or ``series`` types. But
-``color`` can only be casted to ``color series`` type.
+another. For example *NotAvailable* type (type of the ``na`` variable), can be
+cast to any of *color*, *integer*, *float* or *series* types. But
+*color* can only be casted to *color series* type.
 
 .. image:: images/Pine_Types_v3.jpg
 
