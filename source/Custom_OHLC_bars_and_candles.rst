@@ -1,4 +1,4 @@
-Custom OHLC bars and candles
+Custom OHLC Bars and Candles
 ============================
 
 You may define your own custom bars and candles in Pine scripts. There

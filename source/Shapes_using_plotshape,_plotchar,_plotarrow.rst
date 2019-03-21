@@ -1,5 +1,5 @@
-Shapes using 'plotshape', 'plotchar', 'plotarrow'
-=================================================
+Shapes using ``plotshape``, ``plotchar``, ``plotarrow``
+=======================================================
 
 .. contents:: :local:
     :depth: 2
@@ -11,8 +11,8 @@ enough. Although it's possible to execute this kind of task by applying
 it's recommended to use the functions 'plotshape', 'plotchar',
 'plotarrow'.
 
-The Function 'plotshape'
-------------------------
+The Function ``plotshape``
+--------------------------
 
 The function 'plotshape' is designed for displaying, under or above
 bars, a few icon-shapes. For example, the script below will draw an 'X'
@@ -154,8 +154,8 @@ The function 'plotshape' has other possibilities:
 -  Parameter 'text' to display some short text above/below the shape.
    You may use '\\n' to separate text lines
 
-Function 'plotchar'
--------------------
+Function ``plotchar``
+---------------------
 
 Plotchar's primary difference from 'plotshape' is in the way it assigns
 icon-shapes. In plotchar, it is set through the inline parameter 'char',
@@ -197,8 +197,8 @@ Like 'plotshape', the function 'plotchar' allows:
 -  Parameter 'text' to display some short text above/below the shape.
    You may use '\\n' to separate text lines
 
-The Function 'plotarrow'
-------------------------
+The Function ``plotarrow``
+--------------------------
 
 The function 'plotarrow' allows for up/down arrows to be displayed on
 the chart. The arrows' lengths are not the same on each bar and are
