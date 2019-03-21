@@ -8,7 +8,7 @@ Get real OHLC price on a Heikin Ashi chart
 ------------------------------------------
 
 Suppose, we have a Heikin Ashi chart (or Renko, Kagi, PriceBreak etc)
-and we’ve added a pine script on it:
+and we've added a pine script on it:
 
 ::
 
@@ -17,13 +17,13 @@ and we’ve added a pine script on it:
     c = close
     plot(c)
 
-You may see that variable ‘c’ is a Heikin Ashi close price which is not
-the same as real OHLC price. Because ‘close’ built-in variable is always
+You may see that variable 'c' is a Heikin Ashi close price which is not
+the same as real OHLC price. Because 'close' built-in variable is always
 a value that corresponds to a visible bar (or candle) on the chart.
 
 So, how do we get the real OHLC prices in Pine Script code, if current
-chart type is non-standard? We should use ‘security’ function in
-combination with ‘tickerid’ function. Here is an example:
+chart type is non-standard? We should use 'security' function in
+combination with 'tickerid' function. Here is an example:
 
 ::
 

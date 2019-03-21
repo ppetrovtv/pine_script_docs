@@ -23,7 +23,7 @@ indicator on an intraday chart:
 This indicator is calculated based on historical data and looks somewhat
 into the future. At the first bar of every session an indicator plots
 the high price of the entire day. This could be useful in some cases for
-analysis, but doesn’t work for backtesting strategies.
+analysis, but doesn't work for backtesting strategies.
 
 We worked on this and made changes in Pine v3. If this indicator is
 compiled with ``//@version=3`` directive, we get a completely different
@@ -62,7 +62,7 @@ the initial value gives the Pine translator the information about the
 variable type. It's a float in this example.
 
 In some cases you may initialize that mutable variable (like ``s``) with
-a ``na`` value. But in complex cases that won’t work.
+a ``na`` value. But in complex cases that won't work.
 
 Forward-referenced variables are removed
 ----------------------------------------
@@ -92,7 +92,7 @@ should be rewritten in Pine v3 as follows:
 Resolving a problem with a mutable variable in the ``security`` expression
 --------------------------------------------------------------------------
 
-When you migrate script to v3 it’s possible that after removing
+When you migrate script to v3 it's possible that after removing
 self-referenced and forward-referenced variables the Pine translator
 will give you an error:
 

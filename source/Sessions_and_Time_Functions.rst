@@ -30,7 +30,7 @@ milliseconds that have passed since 00:00:00 UTC, 1 January, 1970 and
 corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC. (There are
 a lot of online convertors, for example
 `OnlineConversion.com <http://www.onlineconversion.com/unix_time.htm>`__).
-The chart’s time gauge in the screenshot shows the time of the last bar
+The chart's time gauge in the screenshot shows the time of the last bar
 as 2014-04-15 16:30 (in the exchange timezone, from here the difference
 between this time and UTC is 4 hours).
 
@@ -48,8 +48,8 @@ not the variable ``time`` (the background behind these bars has been
 colored over with grey). The function ``time`` returns the time of the
 bar in milliseconds UNIX time or NaN value if the bar is located outside
 the given trade session (09:30-16:00 in our example). ``time`` accepts
-two arguments, the first is ‘resolution’, the bars of which are needed
-to determine their timestamp, and the second --- ‘session specification’,
+two arguments, the first is 'resolution', the bars of which are needed
+to determine their timestamp, and the second --- 'session specification',
 which is a string that specifies the beginning and end of the trade
 session (in the exchange timezone). The string “0930-1600” corresponds
 to the trade session symbol IBM. Examples of trade session
@@ -64,15 +64,15 @@ of the week are days off).
 
 Session specification, which is being passed to the function ``time``,
 is not required to correspond with the real trade session of the symbol
-on the chart. It’s possible to pass different “hypothetical” session
+on the chart. It's possible to pass different “hypothetical” session
 specifications which can be used to highlight those or (other?) bars in
-a data series. It’s possible to transfer the different ‘hypothetical’
+a data series. It's possible to transfer the different 'hypothetical'
 session specifications which can be used to highlight those or other
 bars in a data series.
 
 There is an overloaded function ``time`` that allows the user to skip
 custom session specification. In this case, internally, it will use a
-regular session specification of a symbol. For example, it’s possible to
+regular session specification of a symbol. For example, it's possible to
 highlight the beginning of each half-hour bar on a minute-based chart in
 the following way:
 
@@ -88,8 +88,8 @@ the following way:
 
 
 The function ``is_newbar`` similar to the previous example can be used
-in many situations. For example, it’s essential to display on an
-intraday chart the highs and lows which began at the market’s opening:
+in many situations. For example, it's essential to display on an
+intraday chart the highs and lows which began at the market's opening:
 
 ::
 
@@ -137,8 +137,8 @@ Session Format by example
 Built-in Variables for working with Time
 ----------------------------------------
 
-Pine’s standard library has an assortment of built-in variables which
-allow a bar’s time in the logic of an argument’s algorithm to be used in
+Pine's standard library has an assortment of built-in variables which
+allow a bar's time in the logic of an argument's algorithm to be used in
 scripts:
 
 -  ``time`` --- UNIX time of the current bar in milliseconds **(in UTC

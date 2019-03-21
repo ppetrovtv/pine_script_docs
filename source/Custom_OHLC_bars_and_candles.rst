@@ -26,14 +26,14 @@ Nothing outstanding. We can paint them with green and red colors:
 
 .. image:: images/Custom_ohlc_bars_and_candles_2.png
 
-The “Example 2” illustrates ‘color’ argument, which could be given
+The “Example 2” illustrates 'color' argument, which could be given
 constant values as red, lime, “#FF9090”, as well as expressions that
-calculate color (‘palette’ variable) in runtime.
+calculate color ('palette' variable) in runtime.
 
-Function ‘plotcandle’ is similar to ‘plotbar’, it just plots candles
-instead of bars and have optional argument ‘wickcolor’.
+Function 'plotcandle' is similar to 'plotbar', it just plots candles
+instead of bars and have optional argument 'wickcolor'.
 
-Both ‘plotbar’ and ‘plotcandle’ need four series arguments that will be
+Both 'plotbar' and 'plotcandle' need four series arguments that will be
 used as bar/candle OHLC prices correspondingly. If for example one of
 the OHLC variables at some bar have NaN value, then the whole bar is not
 plotted. Example:
@@ -46,8 +46,8 @@ plotted. Example:
 
 .. image:: images/Custom_ohlc_bars_and_candles_3.png
 
-Of course you may calculate OHLC values without using available ‘open’,
-‘high’, ‘low’ and ‘close’ values. For example you can plot “smoothed”
+Of course you may calculate OHLC values without using available 'open',
+'high', 'low' and 'close' values. For example you can plot “smoothed”
 candles:
 
 ::
@@ -85,5 +85,5 @@ chart:
 .. image:: images/Custom_ohlc_bars_and_candles_5.png
 
 Functions plotbar and
-plotcandle also have ‘title’ argument, so user can distinguish them in
+plotcandle also have 'title' argument, so user can distinguish them in
 Styles tab of Format dialog.

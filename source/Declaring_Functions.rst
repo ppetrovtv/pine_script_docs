@@ -20,7 +20,7 @@ following is the syntax of single-line functions:
 
 The name of the function is located before the parentheses. Then,
 located in parenthesis is , which is simply a list of function arguments
-separated by a comma. in the example is the function’s body.
+separated by a comma. in the example is the function's body.
 
 Here is an example of a single-line function:
 
@@ -28,7 +28,7 @@ Here is an example of a single-line function:
 
     f(x, y) => x + y
 
-After the function ‘f’ has been determined, it’s possible to call it:
+After the function 'f' has been determined, it's possible to call it:
 
 ::
 
@@ -37,16 +37,16 @@ After the function ‘f’ has been determined, it’s possible to call it:
     c = f(open, 2)
 
 Pay attention to the fact that the type of result which is being
-returned by the function ‘f’ can be different. In the example above, the
-type of variable ‘a’ will be a series. The type of variable ‘b’ is an
-integer. The type of variable ‘c’ is a series. Pine uses dynamic
+returned by the function 'f' can be different. In the example above, the
+type of variable 'a' will be a series. The type of variable 'b' is an
+integer. The type of variable 'c' is a series. Pine uses dynamic
 arguments typing so you should not assign the type of each argument.
 
 The type of result is deduced automatically. It depends on the type of
 arguments which were passed to the function and the statements of the
 function body.
 
-Footnote: in Pine it’s possible to call other functions from functions —
+Footnote: in Pine it's possible to call other functions from functions —
 except the original function, i.e., recursion is not supported.
 
 .. _multi_line_functions:
@@ -54,9 +54,9 @@ except the original function, i.e., recursion is not supported.
 Multi-line Functions
 --------------------
 
-Of course it’s difficult to do any sort of advanced calculations with
+Of course it's difficult to do any sort of advanced calculations with
 only one-line functions. So we decided to expand the syntax of declaring
-functions by making them multiline. Here’s a syntax of a multiline
+functions by making them multiline. Here's a syntax of a multiline
 function:
 
 ::
@@ -76,8 +76,8 @@ global scope. The first statement met that is placed without an indent
 has finished on the previous statement.
 
 Either an expression or a declared variable should be the last statement
-of the function’s body. The result of this expression (or variable) will
-be a result of the entire function’s call.
+of the function's body. The result of this expression (or variable) will
+be a result of the entire function's call.
 
 For example:
 
@@ -88,9 +88,9 @@ For example:
         b = y*y
         sqrt(a + b)
 
-The function ‘geom\_average’ has two arguments and creates two variables
-in the body: ‘a’ and ‘b’. The last statement calls the function ‘sqrt’
-(an extraction of the square root). The ‘geom\_average’ call will return
+The function 'geom\_average' has two arguments and creates two variables
+in the body: 'a' and 'b'. The last statement calls the function 'sqrt'
+(an extraction of the square root). The 'geom\_average' call will return
 the last expression value ``(sqrt(a+b))``.
 
 Scopes in the Script
@@ -105,7 +105,7 @@ Each function has its own “local scope”. All the variables declared
 inside the function (and this function arguments too) belong to scope of
 that function, meaning that it is impossible to reference them from
 outside — e.g., from the global scope or the local scope of another
-function. At the same time, from the scope of any function, it’s
+function. At the same time, from the scope of any function, it's
 possible to refer to any variable declared in the global scope.
 
 So it's possible to reference any global user variables and functions
@@ -113,11 +113,11 @@ So it's possible to reference any global user variables and functions
 function's body. One can say that the local scope has been embedded the
 the global one.
 
-In Pine, nested functions are not allowed, i.e. one can’t declare
+In Pine, nested functions are not allowed, i.e. one can't declare
 function inside another function. All user functions are declared in the
 global scope. Local scopes do not intersect between one another.
 
-Functions with ‘self ref’ Variables in the Body
+Functions with 'self ref' Variables in the Body
 -----------------------------------------------
 
 The body of a multi-line function is a sequence of expressions and/or

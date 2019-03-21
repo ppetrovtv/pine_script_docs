@@ -9,7 +9,7 @@ This page contains release notes of notable changes in Pine Script.
 ----------------------------------
 
 Pine Script used to have 3 types of constants --- literal, non-literal and
-serial. Now there’s one more, but let’s look at existing ones first.
+serial. Now there's one more, but let's look at existing ones first.
 
 Some functions (input, color) can only accept literals as certain
 arguments. We realized that it could be more convenient, so we added a
@@ -36,7 +36,7 @@ options. The same is possible in Pine Script now.
 
 Pinescript had different calls for annotation functions (study, plot,…)
 and built-in functions (sma, security, …). Annotation functions used to
-accept keyword arguments while built-in functions didn’t.
+accept keyword arguments while built-in functions didn't.
 
 You are now able to call all built-in functions using keyword arguments.
 This will be especially useful for the security function to specify the
@@ -56,12 +56,12 @@ and
 `backtesting <https://getsatisfaction.com/tradingview/topics/backtesting-using-higher-time-frames-is-a-complete-lie>`__
 issues have been reported for some time. These issues are not identical,
 but they are interrelated. Version 3 aims to solve the backtesting
-issue. Here’s a more detailed explanation.
+issue. Here's a more detailed explanation.
 
 Repainting issue
 ~~~~~~~~~~~~~~~~
 
-There’s a substantial difference between historical and real-time data
+There's a substantial difference between historical and real-time data
 that a PineScript indicator or strategy uses. The key difference --- a
 historical bar does NOT contain information about price movements
 between High and Low of a bar. Only a few PineScript language tools are
@@ -72,7 +72,7 @@ sensitive to this difference:
 -  barstate.isrealtime, barstate.ishistory, barstate.islast,
    barstate.isnew --- while using built-in variables
 -  While using strategy combined with calc\_on\_every\_tick=true.
--  While using a built-in variable --- timenow, n (Doesn’t relate to the
+-  While using a built-in variable --- timenow, n (Doesn't relate to the
    historical and real-time data difference, but still causes the
    “repainting” issue sometimes).
 
@@ -82,7 +82,7 @@ the chart, an indicator is REcalculated based on data that becomes
 historical, while still using the same time period. The appearance of
 the indicator changes.
 
-In this case, the “repainting” effect is not a bug --- it’s a result of
+In this case, the “repainting” effect is not a bug --- it's a result of
 applying certain language tools with different calculation methods. This
 needs to be understood and taken into consideration while using
 PineScript.
@@ -129,7 +129,7 @@ create an incorrect backtesting strategy:
         strategy.entry("My Short Entry Id", strategy.short)
 
 However, we believe that this type of behavior of the security function
-could be useful when it’s being used in indicators. For instance,
+could be useful when it's being used in indicators. For instance,
 `ChrisMoody <https://www.tradingview.com/u/ChrisMoody/>`__ uses this
 effect in a popular indicator called `CM\_Pivot
 Points\_M-W-D-4H-1H\_Filtered <https://www.tradingview.com/script/kqKEuQpn-CM-Pivot-Points-M-W-D-4H-1H-Filtered/>`__
@@ -140,7 +140,7 @@ Line <https://www.tradingview.com/script/qDvoNB8f-Open-Close-Daily-Line/>`__,
 Superimpose <https://www.tradingview.com/script/QCvh8Cyx-Time-Frame-Superimpose/>`__,
 as well as the `GetSatisfaction
 comment <https://getsatisfaction.com/tradingview/topics/strategies-and-indicators-are-repainting#reply_18341804>`__.
-We decided that the old behavior will remain available only when it’s
+We decided that the old behavior will remain available only when it's
 expressly indicated.
 
 By default, security function will NOT return future data. This type of

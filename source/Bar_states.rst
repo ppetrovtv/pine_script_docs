@@ -18,7 +18,7 @@ of the bar which calculations are being made for.
 All historical bars are new bars. For bars updating in real-time a bar
 is considered as a new bar only at opening tick of this bar.
 
-Here’s the example of the script with new variables:
+Here's the example of the script with new variables:
 
 ::
 
@@ -38,6 +38,6 @@ Here’s the example of the script with new variables:
 .. image:: images/Chart_barstate_1.jpg
 
 The script draws red and blue symbols under the first and the last bars
-accordingly and puts ‘h’ on the top of the historical bars; background
+accordingly and puts 'h' on the top of the historical bars; background
 of the new bars will be highlighted green, and the real-time bars will
 be colored black.

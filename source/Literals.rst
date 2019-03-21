@@ -41,7 +41,7 @@ The first number is the rounded number Pi (π), the second number is very
 large, while the third is very small. The fourth number is simply the
 number ``3`` as a floating point number.
 
-.. note:: It’s possible to use uppercase ``E`` instead of lowercase ``e``.
+.. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``.
 
 Boolean Literals
 ----------------
@@ -100,5 +100,5 @@ value. Examples::
 It is possible to change transparency of the color using built-in
 function `color <https://www.tradingview.com/study-script-reference/#fun_color>`__.
 
-.. note:: When using hexadecimal figures it’s possible to use them in
+.. note:: When using hexadecimal figures it's possible to use them in
    either upper or lowercase.

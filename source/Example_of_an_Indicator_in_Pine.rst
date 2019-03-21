@@ -14,7 +14,7 @@ and variables necessary to calculate the result which will be rendered
 as a chart with a ``plot`` (or some other function that *produces the output*) 
 function call.
 
-As a first example, we’ll examine the implementation of the
+As a first example, we'll examine the implementation of the
 `MACD <https://www.tradingview.com/wiki/MACD>`__ indicator:
 
 .. code-block:: pine

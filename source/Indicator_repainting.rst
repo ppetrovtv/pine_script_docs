@@ -1,7 +1,7 @@
 Indicator Repainting
 ====================
 
-Historical data doesn’t include records of intra-bar movements of price.
+Historical data doesn't include records of intra-bar movements of price.
 This leads to a script working differently in historical data and in
 real-time. We can see this difference, if we add a script on a chart,
 wait till it compiles on a number of bars and then refresh the page.
@@ -31,7 +31,7 @@ that of a chart:
 Such a study will be calculated differently in real-time and in
 historical data, regardless of using the parameter lookahead (see
 `Understanding
-lookahead <Context_Switching,_The_‘security’_Function#Understanding_lookahead>`__).
+lookahead <Context_Switching,_The_'security'_Function#Understanding_lookahead>`__).
 
 3. Using **security** for requesting data with resolution smaller than
 on chart:
@@ -46,7 +46,7 @@ on chart:
     plot(c, color=red)
 
 -  in this scenario, a part of a minute-data will be inevitably lost, as
-   it’s impossible to display it on a 5-minute chart and not to amplify
+   it's impossible to display it on a 5-minute chart and not to amplify
    the time axis
 -  if lookahead=false --- there will be repainting. When lookahead=true,
    no repainting would happen (there is an exception to this --- when 1-
@@ -54,7 +54,7 @@ on chart:
 
 (Lookahead is the parameter which determines which 5-minute bar is shown
 - the first or the last. See more `Understanding
-lookahead <Context_Switching,_The_‘security’_Function#Understanding_lookahead>`__)
+lookahead <Context_Switching,_The_'security'_Function#Understanding_lookahead>`__)
 
 4. All the scripts which calculation results depend on a starting point.
 Intraday data gets aligned to the beginning of the week, month or a

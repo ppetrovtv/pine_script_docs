@@ -56,7 +56,7 @@ Editor.
 Figure <Point_and_Figure_(PnF)_Charts>`__, Heikin Ashi, `Spread
 Charts <Spread_Charts>`__) types of chart as a basis for strategy, you
 need to realize that the result will be different. The orders will be
-executed at the prices of this chart (e.g.for Heikin Ashi it’ll take
+executed at the prices of this chart (e.g.for Heikin Ashi it'll take
 Heikin Ashi prices (the average ones) not the real market prices).
 Therefore we highly recommend you to use standard chart type for
 strategies.
@@ -89,7 +89,7 @@ real trading, the emulator fills orders only at chart prices, that is
 why an order can be filled only on next tick in forwardtesting and on
 next bar in backtesting (or later) after strategy calculated.
 
-As stated above, in backtesting strategy is calculated on bar’s close.
+As stated above, in backtesting strategy is calculated on bar's close.
 The following logic is used to emulate order fills:
 
 #. If opening price of bar is closer to highest price of the same bar,
@@ -102,7 +102,7 @@ The following logic is used to emulate order fills:
    all intrabar prices are available for order execution.
 #. If the option “Recalculate On Every Tick” in strategy properties is
    enabled (or strategy(..., calc\_on\_every\_tick=true, ...) is
-   specified in script), code is still calculated only on bar’s close,
+   specified in script), code is still calculated only on bar's close,
    following the above logic.
 
 .. image:: images/Filled_stategy.png
@@ -250,7 +250,7 @@ To cancel a specific order (by its ID) the command
 **strategy.cancel(string id)** should be used. To cancel all pending
 orders the command **strategy.cancel\_all()** should be used. Strategy
 orders are placed as soon as their conditions are satisfied and command
-is called in code. Broker emulator doesn’t execute orders before next
+is called in code. Broker emulator doesn't execute orders before next
 tick comes after the code was calculated, while in real trading with
 real broker, an order can be filled sooner. It means that if a market
 order is generated at close of current bar, it is filled at open oif
@@ -340,7 +340,7 @@ Despite it is possible to exit from a specific entry in code, when
 orders are shown in the List of Trades on StrategyTester tab, they all
 are linked according FIFO (first in, first out) rule. If an entry order
 ID is not specified for an exit order in code, the exit order closes the
-first entry order that opened market position. Let’s study the following
+first entry order that opened market position. Let's study the following
 example:
 
 ::
@@ -414,8 +414,8 @@ Example:
 You may think that this is a reverse strategy since pyramiding is not
 allowed, but in fact both order will get filled because they are market
 order, what means they are to be executed immediately at current price.
-The second order doesn’t get cancelled because both are filled almost at
-the same moment and the system doesn’t have time to process first order
+The second order doesn't get cancelled because both are filled almost at
+the same moment and the system doesn't have time to process first order
 fill and cancel the second one before it gets executed. The same would
 happen if these were price orders with same or similar prices. Strategy
 places all orders (which are allowed according to market position, etc).
@@ -563,8 +563,8 @@ used and it will not be changed during whole trading session.
 
 When trading on resolutions higher than 1 day the cross-rate on the
 close of the trading day previous to the close of the bar where the
-strategy is calculated will be used. Let’s say we trade on a weekly
-chart, then the cross rate on Thursday’s session close will always be
+strategy is calculated will be used. Let's say we trade on a weekly
+chart, then the cross rate on Thursday's session close will always be
 used to calculate the profits.
 
-In real-time the yesterday’s session close rate is used.
+In real-time the yesterday's session close rate is used.

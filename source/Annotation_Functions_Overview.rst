@@ -4,10 +4,10 @@ Annotation Functions Overview
 .. contents:: :local:
     :depth: 2
 
-The annotation ’study’
+The annotation 'study'
 ----------------------
 
-As was noted in the section ‘Program Structure’, each script must
+As was noted in the section 'Program Structure', each script must
 contain one call of the annotation function
 ```study`` <https://www.tradingview.com/study-script-reference/#fun_study>`__.
 Functions have the following signatures:
@@ -18,10 +18,10 @@ Functions have the following signatures:
 
 The given function determines the characteristics of all indicators as a
 whole. Only ``title`` is a necessary argument which sets the name of the
-indicator. This name will be used in the Indicators’ dialogue.
+indicator. This name will be used in the Indicators' dialogue.
 
 ``shorttitle`` is the short name of an indicator displayed in the
-chart’s legend. If it has not been specified, then it will use the
+chart's legend. If it has not been specified, then it will use the
 ``title`` value.
 
 ``overlay`` is a logical type of argument. If it is true then the study
@@ -34,7 +34,7 @@ values on the price axis. Must be a non negative integer. Precision 0
 has special rules for formatting very large numbers (like volume, e.g.
 '5183' will be formatted as '5K'). Default value is 4.
 
-Output of Charts ‘plot’
+Output of Charts 'plot'
 -----------------------
 
 The annotation
@@ -59,13 +59,13 @@ series type value which will be the same number on every bar. The plot
 will be represented as a horizontal line.
 
 The annotation ``plot`` has a multitude of optional arguments, in
-particular those which set the graph’s display style: ``style``,
+particular those which set the graph's display style: ``style``,
 ``color``, ``title``, ``linewidth``, ``transparency``, and others.
 Additional descriptions of these arguments can be found
 `here <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
 
 The parameter ``color`` can have a different effect depending on the
-transmitted value. If it is set equal to a color type’s constant, for
+transmitted value. If it is set equal to a color type's constant, for
 example red, then the whole chart will be plotted with a red color:
 
 ::
@@ -101,22 +101,22 @@ the right) For example:
 
 
 As can be seen in the screenshot, the red series has been shifted to the
-left (since the argument's value ‘offset’ is negative), while the green
-series has been shifted to the right (its value ‘offset’ is positive).
+left (since the argument's value 'offset' is negative), while the green
+series has been shifted to the right (its value 'offset' is positive).
 
 Footnote. In Pine there is a built-in function
 ```offset`` <https://www.tradingview.com/study-script-reference/#fun_offset>`__
 which also enables the values of a series to be shifted, but only to the
 right. At the same time the values “out of range” of the current bar are
-discarded. The advantage of ‘offset’ lies in the fact that its result
+discarded. The advantage of 'offset' lies in the fact that its result
 can be used in other expressions to execute complex calculations. In the
-case of the argument ‘offset’ of the function ‘plot’, the shift appears
+case of the argument 'offset' of the function 'plot', the shift appears
 to be merely a visual effect of the plot.
 
-Barcoloring a series — ‘barcolor’
+Barcoloring a series — 'barcolor'
 ---------------------------------
 
-The annotation function ‘barcolor’ lets you specify a color for a bar
+The annotation function 'barcolor' lets you specify a color for a bar
 dependent on the fulfillment of a certain condition. The following
 example script renders the inside and outside bars in different colors:
 
@@ -144,7 +144,7 @@ of the background. Function will the color of that can be calculated in
 an expression, and an optional parameter ``transp`` --- transparency from
 0--100 range --- which is 90 by default.
 
-As an example, here’s a script for coloring trading sessions (use it on
+As an example, here's a script for coloring trading sessions (use it on
 EURUSD, 30 min resolution):
 
 ::
@@ -164,10 +164,10 @@ EURUSD, 30 min resolution):
 Inputs of the Indicator
 -----------------------
 
-‘input’ annotations make it possible to indicate which variables in the
-indicator’s code are incoming. Widgets will be generated for the
-variables on the indicator’s (properties/attributes) page in order to
-change the values via a more convenient way than modifying the script’s
+'input' annotations make it possible to indicate which variables in the
+indicator's code are incoming. Widgets will be generated for the
+variables on the indicator's (properties/attributes) page in order to
+change the values via a more convenient way than modifying the script's
 source code. You can also specify the title of the input in the form of
 a short text string. The title is meant to explain the purpose of the
 input, and you can specify lowest and highest possible values for
@@ -228,8 +228,8 @@ its widgets look like.
 .. image:: images/Inputs_of_indicator_4.png
 
 
-The input widget ‘symbol’ has a built-in symbol ‘search’ which is turned
-on automatically when the ticker’s first symbols are entered.
+The input widget 'symbol' has a built-in symbol 'search' which is turned
+on automatically when the ticker's first symbols are entered.
 
 --------------
 
@@ -257,10 +257,10 @@ on automatically when the ticker’s first symbols are entered.
 Find more information about indicator inputs in `Pine
 Reference <http://www.tradingview.com/study-script-reference/#fun_input>`__.
 
-Price levels ‘hline’
+Price levels 'hline'
 --------------------
 
-The annotation function ‘hline’ renders a horizontal line at a given
+The annotation function 'hline' renders a horizontal line at a given
 fixed price level. For example:
 
 ::
@@ -274,15 +274,15 @@ fixed price level. For example:
 .. image:: images/Price_levels_hline_1.png
 
 
-A number must be the first argument of ‘hline’. Values of a type series
-are forbidden. It’s possible to create a few horizontal lines with the
-help of ‘hline’ and fill in the background between them with a
-translucent light using the function ‘fill’.
+A number must be the first argument of 'hline'. Values of a type series
+are forbidden. It's possible to create a few horizontal lines with the
+help of 'hline' and fill in the background between them with a
+translucent light using the function 'fill'.
 
-Filling in the background between objects with ‘fill'
+Filling in the background between objects with 'fill'
 -----------------------------------------------------
 
-The ‘fill’ annotation function lets you color the background between two
+The 'fill' annotation function lets you color the background between two
 series, or two horizontal lines (created with hline). The following
 example illustrates how it works:
 
@@ -304,9 +304,9 @@ example illustrates how it works:
 .. image:: images/Filling_in_the_background_between_objects_with_fill_1.png
 
 
-Footnote: Never execute a fill between ‘plot’ and ‘hline’. However it’s
-possible to display, with the help of ‘plot’, a series of the identical
-values (which will look like a horizontal line, similar to ‘hline’) and
+Footnote: Never execute a fill between 'plot' and 'hline'. However it's
+possible to display, with the help of 'plot', a series of the identical
+values (which will look like a horizontal line, similar to 'hline') and
 execute a fill between it and another plot. For example:
 
 ::
@@ -352,15 +352,15 @@ The function has the following signature:
 
     alertcondition(condition, title, message)
 
-‘condition’ is a series of boolean values that is used for alert.
+'condition' is a series of boolean values that is used for alert.
 Available values: true, false. True means alert condition is met, alert
 should trigger. False means alert condition is not met, alert should not
 trigger. It is a required argument.
 
-‘title’ is an optional argument that sets the name of the alert
+'title' is an optional argument that sets the name of the alert
 condition.
 
-‘message’ is an optional argument that specifies text message to display
+'message' is an optional argument that specifies text message to display
 when the alert fires.
 
 Here is example of creating an alert condition:
@@ -394,7 +394,7 @@ choose the specific alert condition (implemented in the code itself).
 .. image:: images/Alertcondition_1.png
 
 
-When alert fires, you’ll see the message:
+When alert fires, you'll see the message:
 
 .. image:: images/Alertcondition_2.png
 

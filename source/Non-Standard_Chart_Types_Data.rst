@@ -70,7 +70,7 @@ Here is the source code:
 
 .. image:: images/Pine_Heikinashi_2.png
 
-Read more about ‘plotcandle’ (and ‘plotbar’) functions
+Read more about 'plotcandle' (and 'plotbar') functions
 `here <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__.
 
 ``renko`` function
@@ -148,8 +148,8 @@ For detailed reference on all ``kagi`` arguments go
 ------------------------
 
 Point and Figure (PnF) chart type only plots price movements, without
-taking time into consideration. A column of X’s is plotted as the price
-rises — and O’s as the price drops.
+taking time into consideration. A column of X's is plotted as the price
+rises — and O's as the price drops.
 
 Please note that you cannot plot PnF X's and O's from Pine script
 exactly as they look. You can just get a series of numbers that are

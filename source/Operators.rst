@@ -73,9 +73,9 @@ All logical operators can operate with **bool** operands, numerical
 operands, or series type operands. Similar to arithmetic and comparison
 operators, if at least one of these operands of an operator has a **series**
 type, than the result will also have a **series** type. In all other cases
-the operator’s type of result will be the logical type **bool**.
+the operator's type of result will be the logical type **bool**.
 
-The operator ``not`` is unary. If an operator’s operand has a ``true``
+The operator ``not`` is unary. If an operator's operand has a ``true``
 value then the result will have a ``false`` value; if the operand has a
 ``false`` value then the result will have a ``true`` value.
 
@@ -194,8 +194,8 @@ The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
 So the operator ``[]`` can be thought of as the history referencing
 operator.
 
-**Note 1**. Almost all built-in functions in Pine’s standard library
-return a series result, for example the function ``sma``. Therefore it’s
+**Note 1**. Almost all built-in functions in Pine's standard library
+return a series result, for example the function ``sma``. Therefore it's
 possible to apply the operator ``[]`` directly to the function calls:
 
 ::
@@ -203,7 +203,7 @@ possible to apply the operator ``[]`` directly to the function calls:
     sma(close, 10)[1]
 
 **Note 2**. Despite the fact that the operator ``[]`` returns the result
-of the series type, it’s prohibited to apply this operator to the same
+of the series type, it's prohibited to apply this operator to the same
 operand over and over again. Here is an example of incorrect use:
 
 ::
@@ -233,7 +233,7 @@ nz <preventing_na_values_functions_na_and_nz>`.
 Priority of Operators
 ---------------------
 
-The order of the calculations is determined by the operators’ priority.
+The order of the calculations is determined by the operators' priority.
 Operators with greater priority are calculated first. Below are a list
 of operators sorted by decreasing priority:
 
@@ -262,6 +262,6 @@ of operators sorted by decreasing priority:
 If in one expression there are several operators with the same priority,
 then they are calculated left to right.
 
-If it’s necessary to change the order of calculations to calculate the
+If it's necessary to change the order of calculations to calculate the
 expression, then parts of the expression should be grouped together with
 parentheses.

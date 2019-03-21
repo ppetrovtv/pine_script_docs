@@ -6,8 +6,8 @@ functions and annotation functions can be found in `Pine Script
 Reference <https://www.tradingview.com/study-script-reference/>`__.
 
 Second, write your own scripts by an example. Open new chart, push the
-*‘Pine Script Editor’* button on the toolbar. In the opened editor
-window click the ‘\ *New*\ ’ button. You’ll find lots of examples of
+*'Pine Script Editor'* button on the toolbar. In the opened editor
+window click the '\ *New*\ ' button. You'll find lots of examples of
 TradingView standard indicators in the dropdown list.
 
 Third, there is a public chat dedicated to `Pine script
@@ -16,7 +16,7 @@ active developers of our community help each other out.
 
 Finally, information about large releases and modifications to Pine
 Script (as well as other features) is regularly published on
-`TradingView’s blog <http://blog.tradingview.com>`__.
+`TradingView's blog <http://blog.tradingview.com>`__.
 
 More Links
 ----------

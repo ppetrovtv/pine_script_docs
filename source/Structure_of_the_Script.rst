@@ -2,7 +2,7 @@ Structure of the Script
 =======================
 
 A script in Pine syntactically consists of a series of statements. Each
-statement usually is placed on a separate line. It’s possible to place a
+statement usually is placed on a separate line. It's possible to place a
 few statements on one line, dividing them with a comma ``,``. The first
 statement on the line must be placed at the beginning, keeping in mind
 that spaces before the statement are not allowed (this has a direct
@@ -13,6 +13,6 @@ of three kinds:
 -  :doc:`function declarations <Declaring_Functions>`
 -  :doc:`annotation function calls <Functions_vs_Annotation_Functions>`
 
-Long statements that don’t fit within in the width of the screen can be
+Long statements that don't fit within in the width of the screen can be
 split to a few lines, further information about this can be found
 :doc:`here <Lines_Wrapping>`.

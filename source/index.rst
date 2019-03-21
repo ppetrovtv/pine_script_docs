@@ -25,7 +25,7 @@ Pine Script documentation
    Declaring Functions <Declaring_Functions>
    Lines Wrapping <Lines_Wrapping>
    Context Switching, the ``security`` Function <Context_Switching_the_security_Function>
-   Bar States. Built-in Variables ‘barstate’ <Bar_states>
+   Bar States. Built-in Variables 'barstate' <Bar_states>
    Sessions and Time Functions <Sessions_and_Time_Functions>
    Extended and Regular Sessions <Extended_and_Regular_Sessions>
    Non-Standard Chart Types Data <Non-Standard_Chart_Types_Data>

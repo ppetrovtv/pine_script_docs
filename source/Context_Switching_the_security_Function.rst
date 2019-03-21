@@ -12,7 +12,7 @@ Detailed Description
 --------------------
 
 We will assume that we are applying a script to the chart IBM,1. The
-following script will display the ‘close’ of the IBM symbol but on a 15
+following script will display the 'close' of the IBM symbol but on a 15
 resolution.
 
 ::
@@ -33,24 +33,24 @@ The name of the symbol can be set using two variants: with a prefix that
 shows the exchange (or data provider) or without it. For example:
 “NYSE:IBM”, “BATS:IBM” or“IBM”. In the case of using the name of a
 symbol without an exchange prefix, the exchange selected by default is
-BATS. Current symbol name is assigned to ‘ticker’ and ‘tickerid’
-built-in variables. The variable ‘ticker’ contains the value of the
-symbol name without an exchange prefix, for example ‘MSFT’. The variable
-‘tickerid’ is a symbol name with an exchange prefix, for example,
-‘BATS:MSFT’, ‘NASDAQ:MSFT’. It’s recommended to use ‘tickerid’ to avoid
-possible ambiguity in the indicator’s displayed values of data taken
+BATS. Current symbol name is assigned to 'ticker' and 'tickerid'
+built-in variables. The variable 'ticker' contains the value of the
+symbol name without an exchange prefix, for example 'MSFT'. The variable
+'tickerid' is a symbol name with an exchange prefix, for example,
+'BATS:MSFT', 'NASDAQ:MSFT'. It's recommended to use 'tickerid' to avoid
+possible ambiguity in the indicator's displayed values of data taken
 from different exchanges. Fundamentals data could be requested with
 security too, here you can find more info `Fundamentals
 Data <Fundamentals_Data>`__.
 
 The resolution (the second argument of the ``security`` function ) is
 also set as a string. Any intraday resolution is set by specifying a
-number of minutes. The lowest resolution is ‘minute’ which is set by the
-literal “1”. It’s possible to request any number of minutes: “5”, “10”,
-“21”, etc. ‘Hourly’ resolution is also set by minutes. For example, the
+number of minutes. The lowest resolution is 'minute' which is set by the
+literal “1”. It's possible to request any number of minutes: “5”, “10”,
+“21”, etc. 'Hourly' resolution is also set by minutes. For example, the
 following lines signify an hour, two hours and four hours respectively:
 “60”, “120”, “240”. A resolution with a value of 1 day is set by the
-symbols “D” or “1D”. It’s possible to request any number of days: “2D”,
+symbols “D” or “1D”. It's possible to request any number of days: “2D”,
 “3D”, etc. Weekly and monthly resolutions are set in a similar way: “W”,
 “1W”, “2W”, …, “M”, “1M”, “2M”. “M” and “1M” are sorts of one month
 resolution value. “W” and “1W” are the same weekly resolution value. The
@@ -88,7 +88,7 @@ The function ``security``, as should be understood from the examples,
 returns a series which is adapted correspondingly to the time scale of
 the current chart's symbol. This result can be either shown directly on
 the chart (i.e., with ``plot``), or be used in further calculations of
-the indicator’s code. The indicator ‘Advance Decline Line’ of the
+the indicator's code. The indicator 'Advance Decline Line' of the
 function ``security`` is a more difficult example:
 
 ::
@@ -112,7 +112,7 @@ write a bit less of code).
 ``security`` function was designed to request data of a timeframe higher
 than the current chart timeframe. For example, if you have a 1h chart,
 you can request 4h, 1D, 1W (or any higher timeframe) and plot the
-results. It’s not recommended to request lower timeframe, for example
+results. It's not recommended to request lower timeframe, for example
 15min data from 1h chart.
 
 .. _barmerge_gaps_and_lookahead:
@@ -154,14 +154,14 @@ chart:
 .. image:: images/V3.png
 
 The green line on the chart is the Low price of an hourly bar that is
-requested with lookahead on. It’s the old behavior of the security
+requested with lookahead on. It's the old behavior of the security
 function, implemented in PineScript v2. The green line based on
 historical data is displayed at the price level of an hourly low right
 after a new hourly bar is created (dotted blue vertical lines). The red
 line is a Low price of an hourly bar that is requested with lookahead
 off. In this case the requested Low price of an hourly historical bar
 will be given only on the last minute bar of the requested hour, when an
-hourly bar’s Low won’t return future data. The fuchsia dotted line
+hourly bar's Low won't return future data. The fuchsia dotted line
 represents the beginning of real-time data. You can see that
 ``barmerge.lookahead_on`` and ``barmerge.lookahead_off`` based on
 real-time data behaves the same way according to
@@ -179,12 +179,12 @@ There are many published scripts with the following lines:
     a = security(tickerid, 'D', close[1]) // It's barmerge.lookahead_on, because version=2
 
 The expression in security (``close[1]``) is a value of ``close`` of the
-previous day, which is why the construction **doesn’t use future data**.
+previous day, which is why the construction **doesn't use future data**.
 
 In v3 we can rewrite this in two ways.
 
 ``barmerge.lookahead_on`` OR ``barmerge.lookahead_off``. If you use
-``barmerge.lookahead_on``, then it’s quite simple:
+``barmerge.lookahead_on``, then it's quite simple:
 
 ::
 

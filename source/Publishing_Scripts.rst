@@ -37,8 +37,8 @@ high-demand feature that lets you share knowledge and protect
 intellectual property at the same time. These indicators are available
 in the public Script Library, and any user can use it, but only the
 author can see the source code. Each user can view, comment and favorite
-the script’s page with its description, screenshot and author’s
-comments. It’s will available in the Public Library section in the
+the script's page with its description, screenshot and author's
+comments. It's will available in the Public Library section in the
 Indicators dialog, and any user can add this script to a chart. Only the
 author can open the source code of Protected scripts. This is a great
 option for those who want to share the script, but protect its
@@ -66,7 +66,7 @@ then provide access to the paying customers.
 
 | Simply choose the “Invite-only script” option when publishing, and
   only users who you specifically add will be able to use it.
-  |Invite_only_script_new| On the published script’s page
+  |Invite_only_script_new| On the published script's page
   authors will see a Manage Access button, where you can add/remove
   users, and manage access rights.
 | |Manage_access_button|
@@ -74,8 +74,8 @@ then provide access to the paying customers.
 | The invite-only indicators are visible in the `Public
   Library <Public_Library>`__, but nobody can add it to a chart without
   explicit permission from the author, and only the author can see the
-  source code. Each user can view, comment and favorite the script’s
-  page with its description, screenshot and author’s comments, and it’s
+  source code. Each user can view, comment and favorite the script's
+  page with its description, screenshot and author's comments, and it's
   available in the Public Library section in the Indicators dialog. Only
   users with explicit permission from the author can add the script to a
   chart. Nobody except the author can view the source code of these

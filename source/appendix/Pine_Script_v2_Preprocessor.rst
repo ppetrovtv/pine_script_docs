@@ -5,7 +5,7 @@ Algorithm of *@version=2* Pine Script preprocessor in pseudo-code:
 
 #. Remove comments
 #. Replace ``\r\n`` or ``\r`` with just ``\n``
-#. Add ``\n`` to the end of the text if it’s missing
+#. Add ``\n`` to the end of the text if it's missing
 #. Lines that contain only whitespace replace with just empty strings
 #. Add \|INDENT\| tokens. They indicate that statement is in a block of
    code, such as function body, ``if`` or ``for`` body. Every tab or
@@ -17,7 +17,7 @@ Algorithm of *@version=2* Pine Script preprocessor in pseudo-code:
    ``|END|`` - end of the block, ``|PE|`` - possible end of the block).
 
 This is illustrated by example. Initial Pine Script text. Note there is
-a comment *//@version=2* on the first line, it’s a directive that helps
+a comment *//@version=2* on the first line, it's a directive that helps
 to choose correct Pine Script preprocessor/parser version.
 
 ::
@@ -148,7 +148,7 @@ After step 8).
 Done. This text is ready to be processed by Pine Script lexer and
 parser. There are lexer and parser grammars for your reference.
 
-After the lexer/parser processing, we’d have an AST:
+After the lexer/parser processing, we'd have an AST:
 
 ::
 
