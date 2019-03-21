@@ -62,9 +62,9 @@ Repainting issue
 ~~~~~~~~~~~~~~~~
 
 There's a substantial difference between historical and real-time data
-that a PineScript indicator or strategy uses. The key difference --- a
+that a Pine Script indicator or strategy uses. The key difference --- a
 historical bar does NOT contain information about price movements
-between High and Low of a bar. Only a few PineScript language tools are
+between High and Low of a bar. Only a few Pine Script language tools are
 sensitive to this difference:
 
 -  Security --- while requesting data of a larger timeframe than a current
@@ -85,7 +85,7 @@ the indicator changes.
 In this case, the "repainting" effect is not a bug --- it's a result of
 applying certain language tools with different calculation methods. This
 needs to be understood and taken into consideration while using
-PineScript.
+Pine Script.
 
 Here is a basic example that describes this case:
 
@@ -144,7 +144,7 @@ We decided that the old behavior will remain available only when it's
 expressly indicated.
 
 By default, security function will NOT return future data. This type of
-behavior will be available by default starting from the PineScript v3 in
+behavior will be available by default starting from the Pine Script v3 in
 order to maintain backward compatibility (``//@version=3``).
 
 We also added a new parameter lookahead with two values:

@@ -27,7 +27,7 @@ More Links
 -  `TradingView programming
    articles <https://www.tradingcode.net/tradingview-programming-articles/>`__
 
--  `3 Best Places To Find PineScript Reference Material
+-  `3 Best Places To Find Pine Script Reference Material
    (Video) <http://blog.tradingview.com/?p=510>`__
 
 -  `The Commitments of Traders (COT) on
