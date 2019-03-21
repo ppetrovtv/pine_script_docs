@@ -159,7 +159,7 @@ real-time data behaves the same way according to
 ``barmerge.lookahead_off``.
 
 Understanding Lookahead
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 There are many published scripts with the following lines::
 
