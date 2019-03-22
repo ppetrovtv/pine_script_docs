@@ -21,51 +21,81 @@ Here is the initial code of the first script "Bar date/time":
     study("Bar date/time")
     plot(time)
 
-This illustrates the meaning of the variable time. The variable
-```time`` <https://www.tradingview.com/study-script-reference/#var_time>`__
-returns the date/time (timestamp) of each bar on the chart in UNIX
-format. As can be seen from the screenshot, the value ``time`` on the
+This illustrates the meaning of the variable ``time``. The variable
+`time <https://www.tradingview.com/study-script-reference/#var_time>`__
+returns the date/time (timestamp) of each bar start on the chart in `UNIX
+format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_. 
+As can be seen from the screenshot, the value ``time`` on the
 last bar is equal to 1397593800000. This value is the number of
-milliseconds that have passed since 00:00:00 UTC, 1 January, 1970 and
-corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC. (There are
-a lot of online convertors, for example
-`OnlineConversion.com <http://www.onlineconversion.com/unix_time.htm>`__).
+*milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
+corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC.
 The chart's time gauge in the screenshot shows the time of the last bar
 as 2014-04-15 16:30 (in the exchange timezone, from here the difference
 between this time and UTC is 4 hours).
 
-The second script, "Session bars":
-
-::
+The second script, "Session bars"::
 
     study("Session bars")
     t = time(period, "0930-1600")
     plot(na(t) ? 0 : 1)
 
 This shows how the user can distinguish between session bars and bars
-that get into extended hours by using the built-in function ``time`` and
+that get into extended hours by using the built-in *function* ``time`` and
 not the variable ``time`` (the background behind these bars has been
 colored over with grey). The function ``time`` returns the time of the
-bar in milliseconds UNIX time or NaN value if the bar is located outside
+bar start in milliseconds UNIX time or ``na`` value if the bar is located outside
 the given trade session (09:30-16:00 in our example). ``time`` accepts
-two arguments, the first is 'resolution', the bars of which are needed
-to determine their timestamp, and the second --- 'session specification',
+two arguments, the first is ``resolution``, the bars of which are needed
+to determine their timestamp, and the second --- ``session`` (session specification),
 which is a string that specifies the beginning and end of the trade
 session (in the exchange timezone). The string "0930-1600" corresponds
-to the trade session symbol IBM. Examples of trade session
-configurations: "0000-0000" --- a complete 24 hours with the session
-beginning at midnight. "1700-1700" --- a complete 24 hours with the
-session beginning at 17:00. "0900-1600,1700-2000" --- a session that
-begins at 9:00 with a break at 16:00 until 17:00 and ending at 20:00
-"2000-1630" --- an overnight session that begins at 20:00 and ends at
-16:30 the next day. "0930-1700:146" --- a session that begins at 9:30 and
-ends at 17:00 on Sundays (1), Wednesdays (4) and Fridays (6) (other days
-of the week are days off).
+to the trade session of IBM symbol. Examples of trade session
+specifications: 
+
+"0000-0000" 
+   a complete 24 hours with the session
+   beginning at midnight. 
+
+"1700-1700"
+   a complete 24 hours with the
+   session beginning at 17:00.
+
+"0900-1600,1700-2000"
+   a session that
+   begins at 9:00 with a break at 16:00 until 17:00 and ending at 20:00.
+
+"2000-1630"
+   an overnight session that begins at 20:00 and ends at
+   16:30 the next day.
+
+"0930-1700:146"
+   a session that begins at 9:30 and
+   ends at 17:00 on Sundays (1), Wednesdays (4) and Fridays (6) (other days
+   of the week are days off).
+
+"24x7" 
+   is everyday session 00:00--00:00.
+
+"0000-0000:1234567" 
+   same as "24x7", an everyday session 00:00--00:00.
+
+"0000-0000:23456" 
+   same as "0000-0000", Monday to Friday session
+   that starts every day at 00:00 and ends at 00:00 of the next day.
+
+"1700-1700" 
+   is an *overnight session*. Monday session starts at
+   Sunday, 17:00, and ends at Monday, 17:00. Also, only on
+   Monday--Friday.
+
+"1000-1001:26" 
+   is a weird session, that lasts only one minute on
+   Mondays (2), and one minute on Fridays (6).
 
 Session specification, which is being passed to the function ``time``,
 is not required to correspond with the real trade session of the symbol
-on the chart. It's possible to pass different "hypothetical" session
-specifications which can be used to highlight those or (other?) bars in
+on the chart. It's possible to pass different 'hypothetical' session
+specifications which can be used to highlight some other bars of
 a data series. It's possible to transfer the different 'hypothetical'
 session specifications which can be used to highlight those or other
 bars in a data series.
@@ -74,9 +104,7 @@ There is an overloaded function ``time`` that allows the user to skip
 custom session specification. In this case, internally, it will use a
 regular session specification of a symbol. For example, it's possible to
 highlight the beginning of each half-hour bar on a minute-based chart in
-the following way:
-
-::
+the following way::
 
     study("new 30 min bar")
     is_newbar(res) =>
@@ -89,9 +117,7 @@ the following way:
 
 The function ``is_newbar`` similar to the previous example can be used
 in many situations. For example, it's essential to display on an
-intraday chart the highs and lows which began at the market's opening:
-
-::
+intraday chart the highs and lows which began at the market's opening::
 
     //@version=3
     study("Opening high/low", overlay=true)
@@ -116,61 +142,52 @@ intraday chart the highs and lows which began at the market's opening:
 
 
 Pay attention to the variables ``highTimeFrame`` and ``sessSpec``. They
-have been declared in a special way with the variable of the functions
-``input``. Further information about indicator's inputs can be found
-here: `input
-variables <http:////www.tradingview.com/study-script-reference/#fun_input>`__.
+have been declared in a special way with the help of the 
+`input <http:////www.tradingview.com/study-script-reference/#fun_input>`__ functions.
 
-Session Format by example
--------------------------
 
--  ``24x7`` --- is everyday session 00:00 -- 00:00.
--  ``0000-0000:1234567`` --- same as ``24x7``.
--  ``0000-0000:23456`` --- same as ``0000-0000``, monday to friday session
-   that starts every day at 00:00 and ends at 00:00 of the next day.
--  ``1700-1700`` --- is an overnight session. Monday session starts at
-   sunday, 17:00, and ends at monday, 17:00. Also, only on
-   monday-friday.
--  ``1000-1001:26`` --- is a weird session, that lasts only one minute on
-   mondays, and one minute on fridays.
-
-Built-in Variables for working with Time
+Built-in Variables for Working with Time
 ----------------------------------------
 
-Pine's standard library has an assortment of built-in variables which
-allow a bar's time in the logic of an argument's algorithm to be used in
-scripts:
+Pine's standard library has an assortment of built-in variables and functions which
+make it possible to use time in various cases of the script logic.
 
--  ``time`` --- UNIX time of the current bar in milliseconds **(in UTC
-   timezone)**.
--  ``year`` --- Current bar year.
--  ``month`` --- Current bar month.
--  ``weekofyear`` --- Week number of current bar time.
--  ``dayofmonth`` --- Date of current bar time.
--  ``dayofweek`` --- Day of week for current bar time. You can use
-   `sunday <https://www.tradingview.com/study-script-reference/#var_sunday>`__,
-   `monday <https://www.tradingview.com/study-script-reference/#var_monday>`__,
-   `tuesday <https://www.tradingview.com/study-script-reference/#var_tuesday>`__,
-   `wednesday <https://www.tradingview.com/study-script-reference/#var_wednesday>`__,
-   `thursday <https://www.tradingview.com/study-script-reference/#var_thursday>`__,
-   `friday <https://www.tradingview.com/study-script-reference/#var_friday>`__
-   and
-   `saturday <https://www.tradingview.com/study-script-reference/#var_saturday>`__
-   variables for comparisons.
--  ``hour`` --- Current bar hour.
--  ``minute`` --- Current bar minute.
--  ``second`` --- Current bar second.
+The most basic variables:
 
-The following are also built-in functions:
+-  `time <https://www.tradingview.com/study-script-reference/#var_time>`__ --- UNIX time of the *current bar start* in milliseconds, **UTC timezone**.
+-  `timenow <https://www.tradingview.com/study-script-reference/#var_timenow>`__ --- Current UNIX time in milliseconds, **UTC timezone**.
+-  `syminfo.timezone <https://www.tradingview.com/study-script-reference/#var_syminfo{dot}timezone>`__ --- Exchange timezone of the chart main symbol series.
 
--  ``year(x)`` --- Returns year for provided UTC time.
--  ``month(x)`` --- Returns month for provided UTC time.
--  ``weekofyear(x)`` --- Returns week of year for provided UTC time.
--  ``dayofmonth(x)`` --- Returns day of month for provided UTC time.
--  ``dayofweek(x)`` --- Returns day of week for provided UTC time.
--  ``hour(x)`` --- Returns hour for provided UTC time.
--  ``minute(x)`` --- Returns minute for provided UTC time.
--  ``second(x)`` --- Returns second for provided time.
+Variables that give information about the current bar start time:
 
-All these variables and functions return **time in exchange time zone**,
-except for the ``time`` variable which returns time in UTC timezone.
+-  `year <https://www.tradingview.com/study-script-reference/#var_year>`__ --- Current bar year.
+-  `month <https://www.tradingview.com/study-script-reference/#var_month>`__ --- Current bar month.
+-  `weekofyear <https://www.tradingview.com/study-script-reference/#var_weekofyear>`__ --- Week number of current bar.
+-  `dayofmonth <https://www.tradingview.com/study-script-reference/#var_dayofmonth>`__ --- Date of current bar.
+-  `dayofweek <https://www.tradingview.com/study-script-reference/#var_dayofweek>`__ --- Day of week for current bar. You can use
+   ``sunday``, ``monday``, ``tuesday``, ``wednesday``, ``thursday``, ``friday`` and ``saturday`` variables for comparisons.
+-  `hour <https://www.tradingview.com/study-script-reference/#var_hour>`__ --- Hour of the current bar start time (in exchange timezone).
+-  `minute <https://www.tradingview.com/study-script-reference/#var_minute>`__ --- Minute of the current bar start time (in exchange timezone).
+-  `second <https://www.tradingview.com/study-script-reference/#var_second>`__ --- Second of the current bar start time (in exchange timezone).
+
+Functions for UNIX time 'construction':
+
+-  `year(t) <https://www.tradingview.com/study-script-reference/#fun_year>`__ --- Returns year for provided UTC time ``t``.
+-  `month(t) <https://www.tradingview.com/study-script-reference/#fun_month>`__ --- Returns month for provided UTC time ``t``.
+-  `weekofyear(t) <https://www.tradingview.com/study-script-reference/#fun_weekofyear>`__ --- Returns week of year for provided UTC time ``t``.
+-  `dayofmonth(t) <https://www.tradingview.com/study-script-reference/#fun_dayofmonth>`__ --- Returns day of month for provided UTC time ``t``.
+-  `dayofweek(t) <https://www.tradingview.com/study-script-reference/#fun_dayofweek>`__ --- Returns day of week for provided UTC time ``t``.
+-  `hour(t) <https://www.tradingview.com/study-script-reference/#fun_hour>`__ --- Returns hour for provided UTC time ``t``.
+-  `minute(t) <https://www.tradingview.com/study-script-reference/#fun_minute>`__ --- Returns minute for provided UTC time ``t``.
+-  `second(t) <https://www.tradingview.com/study-script-reference/#fun_second>`__ --- Returns second for provided UTC time ``t``.
+-  `timestamp(year, month, day, hour, minute) <https://www.tradingview.com/study-script-reference/#fun_timestamp>`__ --- 
+   Returns UNIX time of specified date and time. Note, there is also an overloaded version with an additional ``timezone`` parameter.
+
+All these variables and functions return time in **exchange time zone**,
+except for the ``time`` and ``timenow`` variables which return time in UTC timezone.
+
+
+.. rubric:: Footnotes
+
+.. [#millis] UNIX time is measured in seconds. Pine Script uses UNIX time multiplied by 1000, so it's in millisecods.
+
