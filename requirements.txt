@@ -1,1 +1,1 @@
-pip install -e git+https://github.com/vlkv/sphinx_rtd_theme/#egg=sphinx_rtd_theme
+-e git+https://github.com/vlkv/sphinx_rtd_theme/#egg=sphinx_rtd_theme
