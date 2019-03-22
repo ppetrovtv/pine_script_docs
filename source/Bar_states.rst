@@ -1,26 +1,31 @@
-Bar states. Built-in variables ``barstate.*``
+Bar States. Built-in Variables ``barstate.*``
 =============================================
 
-A set of build-in ``barstate.*`` variables allows users to define a state
+A set of built-in ``barstate.*`` variables allows users to define a state
 of the bar which calculations are being made for.
 
--  ``barstate.isfirst`` --- ``true`` if a current bar is the first in the
-   range of bars, otherwise --- ``false``,
--  ``barstate.islast`` --- ``true`` if a current bar is the last in the
-   range of bars, otherwise --- ``false``,
--  ``barstate.ishistory`` --- ``true`` if a current bar is a historical
-   one, otherwise --- ``false``,
--  ``barstate.isrealtime`` --- ``true`` if a current bar is a real-time
-   bar, otherwise --- ``false``,
--  ``barstate.isnew`` --- ``true`` if a current bar is a new bar,
-   otherwise --- ``false``.
+-  ``barstate.isfirst`` --- ``true`` if current bar is the first in the
+   whole range of bars available, ``false`` otherwise.
 
-All historical bars are new bars. For bars updating in real-time a bar
-is considered as a new bar only at opening tick of this bar.
+-  ``barstate.islast`` --- ``true`` if current bar is the last in the
+   whole range of bars available, ``false`` otherwise. This flag helps to detect *the last historical bar*.
 
-Here's the example of the script with new variables:
+-  ``barstate.ishistory`` --- ``true`` if a current data update is a historical bar update, ``false`` otherwise (thus it is real-time).
 
-::
+-  ``barstate.isrealtime`` --- ``true`` if current data update is a real-time bar update, 
+   ``false`` otherwise (thus it is historical). Note that every real-time bar is also the *last* one.
+
+-  ``barstate.isnew`` --- ``true`` if current data update is the first (opening) update of a new bar,
+   ``false`` otherwise.
+
+-  ``barstate.isconfirmed`` --- ``true`` if current data update is the last (closing) update of the current bar, 
+   ``false`` otherwise. The next data update will be an opening update of a new bar [#isconfirmed]_.
+
+All historical bars are *new* bars. That is because of the fact that the script receives them in a sequential order 
+from the oldest to the newer ones. For bars that update in real-time a bar
+is considered as a new bar only at the opening tick of this bar.
+
+Here is an example of a script with ``barstate.*`` variables::
 
     study("Example barstate", overlay = true)
     first = barstate.isfirst
@@ -38,6 +43,12 @@ Here's the example of the script with new variables:
 .. image:: images/Chart_barstate_1.jpg
 
 The script draws red and blue symbols under the first and the last bars
-accordingly and puts 'h' on the top of the historical bars; background
+accordingly and puts 'h' on the top of the historical bars. Background
 of the new bars will be highlighted green, and the real-time bars will
 be colored black.
+
+.. rubric:: Footnotes
+
+.. [#isconfirmed] Variable ``barstate.isconfirmed`` returns the state of current chart symbol data only. 
+   It does not take into account any secondary symbol data requested with the ``security`` function.
+

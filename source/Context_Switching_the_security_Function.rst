@@ -44,8 +44,8 @@ from different exchanges.
 The ``resolution`` (or *timeframe*, the second argument of the ``security`` function) is
 also set as a string. Any intraday resolution is set by specifying a
 number of minutes. The lowest resolution is *minute* which is set by the
-literal ``"1"``. It's possible to request any [#note_minutes]_ number of minutes: ``"5"``, ``"10"``,
-``"21"``, etc. *Hourly* resolution is also set by minutes [#note_hours]_. For example, the
+literal ``"1"``. It's possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
+``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
 following lines signify an hour, two hours and four hours respectively:
 ``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is set by the
 symbols ``"D"`` or ``"1D"``. It's possible to request any number of days: ``"2D"``,
@@ -200,6 +200,6 @@ real-time data, we take the *close* of the previous day without shifting the
 
 .. rubric:: Footnotes
 
-.. [#note_minutes] Actually the highest supported minute resolution is "1440" (which is a number of minutes in 24 hours).
+.. [#minutes] Actually the highest supported minute resolution is "1440" (which is a number of minutes in 24 hours).
 
-.. [#note_hours] Requesting data of ``"1h"`` or ``"1H"`` resolution would result in an error. Use ``"60"`` instead.
+.. [#hours] Requesting data of ``"1h"`` or ``"1H"`` resolution would result in an error. Use ``"60"`` instead.

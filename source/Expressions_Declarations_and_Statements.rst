@@ -276,7 +276,7 @@ Example::
     // If current close > current open, then x = close.
     // Otherwise the x = na.
 
-The blocks 'then' and 'else' are shifted by 4 spaces [#note_on_tabs]_. If statements can
+The blocks 'then' and 'else' are shifted by 4 spaces [#tabs]_. If statements can
 be nested, then add 4 more spaces::
 
     x = if close > open
@@ -337,7 +337,7 @@ where:
    ``from`` is greater than ``to`` loop step will change direction
    automatically, no need to specify negative numbers.
 -  ``var_decl0``, ... ``var_declN``, ``return_expression`` --- body of the loop. It
-   must be shifted by 4 spaces [#note_on_tabs]_.
+   must be shifted by 4 spaces [#tabs]_.
 -  ``return_expression`` --- returning value. When a loop is finished or
    broken, the returning value is given to the ``var_declarationX``.
 -  ``continue`` --- a keyword. Can be used only in loops. It switches the loop
@@ -367,4 +367,4 @@ for simple moving average as it calculates faster.
 
 .. rubric:: Footnotes
 
-.. [#note_on_tabs] In TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.
+.. [#tabs] In TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.
