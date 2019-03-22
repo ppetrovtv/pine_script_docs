@@ -1,1 +1,1 @@
--e git+https://github.com/vlkv/sphinx_rtd_theme/#egg=sphinx_rtd_theme
+-e git+https://github.com/vlkv/sphinx_rtd_theme@79f0b77f3b639dcef70842b7e52e8f67d550832e#egg=sphinx_rtd_theme
