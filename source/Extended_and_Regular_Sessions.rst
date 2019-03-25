@@ -3,7 +3,7 @@
 Extended and Regular Sessions
 =============================
 
-In TradingView there is an option (*right click* on chart, then *Properties* |rarr|
+At TradingView there is an option (*right click* on chart, then *Properties* |rarr|
 *Timezone/Sessions* |rarr| *Extended Hours*) that controls type of current chart
 session. There are two types of session: *regular* (without pre and post market
 data) and *extended* (with them). In Pine scripts it is possible
