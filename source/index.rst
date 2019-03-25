@@ -30,7 +30,6 @@ Pine Script documentation
    Extended_and_Regular_Sessions
    Non-Standard_Chart_Types_Data
    Annotation_Functions_Overview
-   Alerts_in_pine
    Shapes_using_plotshape,_plotchar,_plotarrow
    Custom_OHLC_bars_and_candles
    Strategies

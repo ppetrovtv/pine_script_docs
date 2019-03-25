@@ -4,21 +4,19 @@ Annotation Functions Overview
 .. contents:: :local:
     :depth: 2
 
-The annotation 'study'
-----------------------
+``study`` Annotation
+--------------------
 
-As was noted in the section 'Program Structure', each script must
-contain one call of the annotation function
-```study`` <https://www.tradingview.com/study-script-reference/#fun_study>`__.
-Functions have the following signatures:
+Every *indicator* [#strategy]_ script must contain at least one call of the annotation function
+`study <https://www.tradingview.com/study-script-reference/#fun_study>`__ which has the following signature:
 
-::
+.. code-block:: text
 
     study(title, shorttitle, overlay, precision)
 
 The given function determines the characteristics of all indicators as a
 whole. Only ``title`` is a necessary argument which sets the name of the
-indicator. This name will be used in the Indicators' dialogue.
+indicator. This name will be used in the *Indicators'* dialogue.
 
 ``shorttitle`` is the short name of an indicator displayed in the
 chart's legend. If it has not been specified, then it will use the
@@ -29,17 +27,17 @@ will be added as an overlay on top of the main series. If it is false
 then it will be added on a separate chart pane; false is the default
 setting.
 
-``precision`` --- number of digits after the floating point for study
+``precision`` is a number of digits after the floating point for study
 values on the price axis. Must be a non negative integer. Precision 0
 has special rules for formatting very large numbers (like volume, e.g.
 '5183' will be formatted as '5K'). Default value is 4.
 
-Output of Charts 'plot'
------------------------
 
-The annotation
-```plot`` <https://www.tradingview.com/study-script-reference/#fun_plot>`__
-accepts one mandatory argument: the value of a series type and displays
+``plot`` Annotation
+-------------------
+
+The annotation `plot <https://www.tradingview.com/study-script-reference/#fun_plot>`__
+accepts one mandatory argument --- the value of a *series* type --- and displays
 it on the chart as a line. A very basic call looks like this:
 
 ::
@@ -61,24 +59,18 @@ will be represented as a horizontal line.
 The annotation ``plot`` has a multitude of optional arguments, in
 particular those which set the graph's display style: ``style``,
 ``color``, ``title``, ``linewidth``, ``transparency``, and others.
-Additional descriptions of these arguments can be found
-`here <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
 
 The parameter ``color`` can have a different effect depending on the
 transmitted value. If it is set equal to a color type's constant, for
-example red, then the whole chart will be plotted with a red color:
-
-::
+example ``red``, then the whole chart will be plotted with a *red* color::
 
     plot(close, color=red)
 
 .. image:: images/Output_of_charts_plot_1.png
 
-However, the argument ``color`` can receive an expression of a series
+However, the argument ``color`` can receive an expression of a *series*
 type of colored values as values. This series of colors will be used to
-color the chart when rendered. For example:
-
-::
+color the chart when rendered. For example::
 
     c = close >= open ? lime : red
     plot(close, color = c)
@@ -89,9 +81,7 @@ color the chart when rendered. For example:
 Interest also represents the argument ``offset`` of the function
 ``plot``. It specifies the shift used when the chart is plotted
 (negative values shift the chart to the left, while positive values --- to
-the right) For example:
-
-::
+the right) [#offset_function]_. For example::
 
     study("My Script 12", overlay=true)
     plot(close, color=red, offset=-5)
@@ -100,27 +90,18 @@ the right) For example:
 .. image:: images/Output_of_charts_plot_3.png
 
 
-As can be seen in the screenshot, the red series has been shifted to the
-left (since the argument's value 'offset' is negative), while the green
-series has been shifted to the right (its value 'offset' is positive).
+As can be seen in the screenshot, the *red* series has been shifted to the
+left (since the argument's value ``offset`` is negative), while the *green*
+series has been shifted to the right (its value ``offset`` is positive).
 
-Footnote. In Pine there is a built-in function
-```offset`` <https://www.tradingview.com/study-script-reference/#fun_offset>`__
-which also enables the values of a series to be shifted, but only to the
-right. At the same time the values "out of range" of the current bar are
-discarded. The advantage of 'offset' lies in the fact that its result
-can be used in other expressions to execute complex calculations. In the
-case of the argument 'offset' of the function 'plot', the shift appears
-to be merely a visual effect of the plot.
 
-Barcoloring a series --- 'barcolor'
------------------------------------
+Barcoloring a Series with ``barcolor``
+--------------------------------------
 
-The annotation function 'barcolor' lets you specify a color for a bar
+The annotation function `barcolor <https://www.tradingview.com/study-script-reference/#fun_barcolor>`__ 
+lets you specify a color for a bar
 dependent on the fulfillment of a certain condition. The following
-example script renders the inside and outside bars in different colors:
-
-::
+example script renders the *inside* and *outside* bars in different colors::
 
     study("barcolor example", overlay=true)
     isUp() => close > open
@@ -133,21 +114,20 @@ example script renders the inside and outside bars in different colors:
 .. image:: images/Barcoloring_a_series_barcolor_1.png
 
 
-As you can see, when passing the na value, the colors stay the default
+As you can see, when passing the ``na`` value, the colors stay the default
 chart color.
 
-Background coloring --- ``bgcolor``
------------------------------------
+Background Coloring with ``bgcolor``
+------------------------------------
 
-Similar to the barcolor function, the bgcolor function changes the color
+Similar to the ``barcolor`` function, the `bgcolor <https://www.tradingview.com/study-script-reference/#fun_bgcolor>`__ 
+function changes the color
 of the background. Function will the color of that can be calculated in
 an expression, and an optional parameter ``transp`` --- transparency from
 0--100 range --- which is 90 by default.
 
-As an example, here's a script for coloring trading sessions (use it on
-EURUSD, 30 min resolution):
-
-::
+As an example, here's a script for coloring trading sessions (try it on
+EURUSD, 30 min resolution)::
 
     study("bgcolor example", overlay=true)
     timeinrange(res, sess) => time(res, sess) != 0
@@ -161,11 +141,12 @@ EURUSD, 30 min resolution):
 .. image:: images/Background_coloring_bgcolor_1.png
 
 
-Inputs of the Indicator
------------------------
+Indicator Inputs
+----------------
 
-'input' annotations make it possible to indicate which variables in the
-indicator's code are incoming. Widgets will be generated for the
+`input <https://www.tradingview.com/study-script-reference/#fun_input>`__ annotations 
+make it possible to indicate which variables in the
+indicator's code are *incoming*. Widgets will be generated for the
 variables on the indicator's (properties/attributes) page in order to
 change the values via a more convenient way than modifying the script's
 source code. You can also specify the title of the input in the form of
@@ -185,7 +166,7 @@ inputs:
 -  session,
 -  source.
 
-The following examples show how to create, in code, each input and what
+The following examples show how to create, each input and what
 its widgets look like.
 
 ::
@@ -193,30 +174,30 @@ its widgets look like.
     b = input(title="On/Off", type=bool, defval=true)
     plot(b ? open : na)
 
-.. image:: images/Inputs_of_indicator_1.png
+.. figure:: images/Inputs_of_indicator_1.png
+   
+   Boolean input
 
-
---------------
 
 ::
 
     i = input(title="Offset", type=integer, defval=7, minval=-10, maxval=10)
     plot(offset(close, i))
 
-.. image:: images/Inputs_of_indicator_2.png
+.. figure:: images/Inputs_of_indicator_2.png
 
+   Integer input
 
---------------
 
 ::
 
     f = input(title="Angle", type=float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
     plot(sin(f) > 0 ? close : open)
 
-.. image:: images/Inputs_of_indicator_3.png
+.. figure:: images/Inputs_of_indicator_3.png
 
+   Float input
 
---------------
 
 ::
 
@@ -225,23 +206,24 @@ its widgets look like.
     plot(close, color=red)
     plot(security(sym, res, close), color=green)
 
-.. image:: images/Inputs_of_indicator_4.png
+.. figure:: images/Inputs_of_indicator_4.png
+
+   Symbol and resolution inputs
 
 
-The input widget 'symbol' has a built-in symbol 'search' which is turned
-on automatically when the ticker's first symbols are entered.
+The symbol input widget has a built-in *symbol search* which is turned
+on automatically when the ticker's first symbols are typed.
 
---------------
 
 ::
 
     s = input(title="Session", type=session, defval="24x7")
     plot(time(period, s))
 
-.. image:: images/Inputs_of_indicator_5.png
+.. figure:: images/Inputs_of_indicator_5.png
 
+   Session input
 
---------------
 
 ::
 
@@ -249,21 +231,17 @@ on automatically when the ticker's first symbols are entered.
     ma = sma(src, 9)
     plot(ma)
 
-.. image:: images/Inputs_of_indicator_6.png
+.. figure:: images/Inputs_of_indicator_6.png
+
+   Source input
 
 
---------------
+Price levels, ``hline``
+-----------------------
 
-Find more information about indicator inputs in `Pine
-Reference <http://www.tradingview.com/study-script-reference/#fun_input>`__.
-
-Price levels 'hline'
---------------------
-
-The annotation function 'hline' renders a horizontal line at a given
-fixed price level. For example:
-
-::
+The annotation function `hline <https://www.tradingview.com/study-script-reference/#fun_hline>`__ 
+renders a horizontal line at a given
+fixed price level. For example::
 
     study(title="Chaikin Oscillator", shorttitle="Chaikin Osc")
     short = input(3,minval=1), long = input(10,minval=1)
@@ -274,19 +252,18 @@ fixed price level. For example:
 .. image:: images/Price_levels_hline_1.png
 
 
-A number must be the first argument of 'hline'. Values of a type series
+A *number* must be the first argument of ``hline``. Values of a *series* type
 are forbidden. It's possible to create a few horizontal lines with the
-help of 'hline' and fill in the background between them with a
-translucent light using the function 'fill'.
+help of ``hline`` and fill in the background between them with a
+translucent light using the function `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__.
 
-Filling in the background between objects with 'fill'
------------------------------------------------------
+Filling in the Background with ``fill``
+---------------------------------------
 
-The 'fill' annotation function lets you color the background between two
-series, or two horizontal lines (created with hline). The following
-example illustrates how it works:
-
-::
+The `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__ 
+annotation function lets you color the background between two
+series, or two horizontal lines (created with ``hline``). The following
+example illustrates how it works::
 
     study("fill Example")
     p1 = plot(sin(high))
@@ -304,12 +281,8 @@ example illustrates how it works:
 .. image:: images/Filling_in_the_background_between_objects_with_fill_1.png
 
 
-Footnote: Never execute a fill between 'plot' and 'hline'. However it's
-possible to display, with the help of 'plot', a series of the identical
-values (which will look like a horizontal line, similar to 'hline') and
-execute a fill between it and another plot. For example:
-
-::
+Please note that ``fill`` annotation is not designed to be used with ``plot`` and ``hline`` arguments simultaneously. 
+As a workaround you may replace ``hline`` call with a ``plot(<constant number>)``. For example::
 
     study("Fill example 2")
     src = close, len = 10
@@ -322,11 +295,9 @@ execute a fill between it and another plot. For example:
 .. image:: images/Filling_in_the_background_between_objects_with_fill_2.png
 
 
-You can set filling color by using constants like 'color=red' or
-'color=#ff001a' as well as complex expressions like 'color = close >=
-open ? green : red'. Example:
-
-::
+You can set the filling color by using constants like ``color=red`` or
+``color=#ff001a`` as well as complex expressions like ``color = close >=
+open ? green : red``. Example::
 
     //@version=2
     study(title="Colored fill")
@@ -339,33 +310,32 @@ open ? green : red'. Example:
 .. image:: images/Filling_in_the_background_between_objects_with_fill_3.png
 
 
-Alert conditions
+Alert Conditions
 ----------------
 
 The annotation function
 `alertcondition <https://www.tradingview.com/study-script-reference/#fun_alertcondition>`__
-allows you to create custom alert conditions in Pine studies.
-
+allows you to create custom *alert conditions* in Pine indicators. One script may have one or more ``alertcondition`` calls.
 The function has the following signature:
 
-::
+.. code-block:: text
 
     alertcondition(condition, title, message)
 
-'condition' is a series of boolean values that is used for alert.
-Available values: true, false. True means alert condition is met, alert
-should trigger. False means alert condition is not met, alert should not
-trigger. It is a required argument.
+``condition``
+   is a series of boolean (``true`` or ``false``) values that is used for alert.
+   ``true`` means that the alert condition is met, alert
+   should trigger. ``false`` means that the alert condition is not met, alert should not
+   trigger. It is a required argument.
 
-'title' is an optional argument that sets the name of the alert
-condition.
+``title``
+   is an optional argument that sets the name of the alert condition.
 
-'message' is an optional argument that specifies text message to display
-when the alert fires.
+``message``
+   is an optional argument that specifies text message to display
+   when the alert fires.
 
-Here is example of creating an alert condition:
-
-::
+Here is example of creating an alert condition::
 
     //@version=2
     study("Example of alertcondition")
@@ -377,17 +347,15 @@ Here is example of creating an alert condition:
     plot(ma_1, color=red)
     plot(ma_2, color=blue)
 
-The function creates alert condition that is available in Create Alert
-dialog. Please note, that alertcondition does NOT fire alerts from code
-automatically, it only gives you opportunity to create a custom
-condition for Create Alert dialog. Alerts must be still set manually.
-Also, an alert triggered based on a custom condition you created in Pine
+The function creates alert condition that is available in *Create Alert*
+dialog. Please note, that alertcondition **does NOT start alerts programmatically**, 
+it only gives you opportunity to create a custom
+condition for *Create Alert* dialog. Alerts must be still started manually.
+Also, an alert created with a custom ``alertcondition`` in Pine
 code is not displayed on a chart.
 
-One script may include more than one alertcondition.
-
-To create an alert based on alertcondition, one should apply a Pine code
-(study) with alertcontidion to current chart, open the Create Alert
+To create an alert based on an alertcondition, one should apply a Pine indicator 
+with an alertcontidion to the current chart, open the *Create Alert*
 dialog, select the applied Pine code as main condition for the alert and
 choose the specific alert condition (implemented in the code itself).
 
@@ -398,3 +366,18 @@ When alert fires, you'll see the message:
 
 .. image:: images/Alertcondition_2.png
 
+
+
+.. rubric:: Footnotes
+
+.. [#strategy] There is also a similar `strategy <https://www.tradingview.com/study-script-reference/#fun_strategy>`__ 
+   annotation which is used to create a :doc:`backtesting strategy <Strategies>` rather than an indicator.
+
+.. [#offset_function] In Pine there is a built-in function
+   `offset <https://www.tradingview.com/study-script-reference/#fun_offset>`__
+   which also enables the values of a series to be shifted, but only to the
+   right. At the same time the values 'out of range' of the current bar are
+   discarded. The advantage of ``offset`` lies in the fact that its result
+   can be used in other expressions to execute complex calculations. In the
+   case of the argument ``offset`` of the function ``plot``, the shift appears
+   to be merely a visual effect of the plot.
