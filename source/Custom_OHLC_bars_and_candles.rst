@@ -1,24 +1,18 @@
 Custom OHLC Bars and Candles
 ============================
 
-You may define your own custom bars and candles in Pine scripts. There
-are functions
-`plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__
-and
-`plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__
-for that purpose. Here is a small example:
-
-::
+You may define your own custom *bars* and *candles* in Pine scripts. There
+are functions `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__
+and `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__
+for that purpose. Here is a small example::
 
     study("Example 1")
     plotbar(open, high, low, close)
 
 .. image:: images/Custom_ohlc_bars_and_candles_1.png
 
-The script "Example 1" simply replicates bars of the current symbol.
-Nothing outstanding. We can paint them with green and red colors:
-
-::
+The script *Example 1* simply replicates bars of the current symbol.
+Nothing outstanding. We can paint them with green and red colors::
 
     study("Example 2")
     palette = close >= open ? lime : red
@@ -26,19 +20,17 @@ Nothing outstanding. We can paint them with green and red colors:
 
 .. image:: images/Custom_ohlc_bars_and_candles_2.png
 
-The "Example 2" illustrates 'color' argument, which could be given
-constant values as red, lime, "#FF9090", as well as expressions that
-calculate color ('palette' variable) in runtime.
+The *Example 2* illustrates ``color`` argument, which could be given
+constant values as ``red``, ``lime``, ``"#FF9090"``, as well as expressions that
+calculate color (``palette`` variable in the example above) at runtime.
 
-Function 'plotcandle' is similar to 'plotbar', it just plots candles
-instead of bars and have optional argument 'wickcolor'.
+Function ``plotcandle`` is similar to ``plotbar``, it just plots candles
+instead of bars and have optional argument ``wickcolor``.
 
-Both 'plotbar' and 'plotcandle' need four series arguments that will be
-used as bar/candle OHLC prices correspondingly. If for example one of
-the OHLC variables at some bar have NaN value, then the whole bar is not
-plotted. Example:
-
-::
+Both ``plotbar`` and ``plotcandle`` need four series arguments that will be
+used as bar/candle OHLC prices correspondingly. If, for example, one of
+the OHLC variables at some bar have a ``na`` value, then the whole bar is not
+plotted. Example::
 
     study("Example 3")
     c = close > open ? na : close
@@ -46,11 +38,9 @@ plotted. Example:
 
 .. image:: images/Custom_ohlc_bars_and_candles_3.png
 
-Of course you may calculate OHLC values without using available 'open',
-'high', 'low' and 'close' values. For example you can plot "smoothed"
-candles:
-
-::
+Of course you may calculate OHLC values without using the available ``open``,
+``high``, ``low`` and ``close`` values. For example you can calculate and plot 
+some sort of a *smoothed* candles::
 
     study("Example 4")
     len = input(9)
@@ -64,11 +54,8 @@ candles:
 
 .. image:: images/Custom_ohlc_bars_and_candles_4.png
 
-You may get an interesting effect, if you plot OHLC values taken from
-higher timeframe. Let's say you want to plot daily bars on 60 minute
-chart:
-
-::
+You may get an interesting effect, if you plot OHLC values taken from a
+higher timeframe. Let's say you want to plot daily bars on 60 minute chart::
 
     // NOTE: add this script on intraday chart
     study("Example 5")
@@ -84,6 +71,5 @@ chart:
 
 .. image:: images/Custom_ohlc_bars_and_candles_5.png
 
-Functions plotbar and
-plotcandle also have 'title' argument, so user can distinguish them in
+Functions ``plotbar`` and ``plotcandle`` also have a ``title`` argument, so user can distinguish them in
 Styles tab of Format dialog.
