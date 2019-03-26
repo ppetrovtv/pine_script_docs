@@ -101,11 +101,12 @@ Pay attention to the fact that, out of convenience, the call
 ``security`` is 'wrapped up' in the user function ``sym``. (just to
 write a bit less of code).
 
-``security`` function was designed to request data of a timeframe higher
+``security`` function was designed to request data of a timeframe *higher*
 than the current chart timeframe. For example, if you have a 60 minute chart,
 you can request 240, D, W (or any higher timeframe) and plot the
-results. It's not recommended to request lower timeframe, for example
-15 minute data from 240 minute chart.
+results.
+
+
 
 .. _barmerge_gaps_and_lookahead:
 
@@ -158,6 +159,8 @@ represents the beginning of real-time data. You can see that
 real-time data behaves the same way according to
 ``barmerge.lookahead_off``.
 
+.. _understanding_lookahead:
+
 Understanding Lookahead
 -----------------------
 
@@ -196,6 +199,34 @@ the daily resolution and shift the result of ``security`` function call one bar 
 right in the current resolution. When an indicator is calculated on
 real-time data, we take the *close* of the previous day without shifting the
 ``security`` data.
+
+.. _requesting_data_of_a_lower_timeframe:
+
+Requesting Data of a Lower Timeframe
+------------------------------------
+
+It's not recommended to request data of a timeframe *lower* that the current chart timeframe
+(for example 1 minute data from 5 minute chart). The main problem with such a case is that 
+some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a 5 minute 
+chart and not to break the time axis. So the ``security`` behaviour could be rather weird. 
+The next example illustrates this::
+    
+    // Add this script on a "5" minute chart
+    //@version=3
+    study("Lookahead On/Off", overlay=true, precision=5)
+    l_on = security(tickerid, "1", close, lookahead=true)
+    l_off = security(tickerid, "1", close, lookahead=false)
+    plot(l_on, color=red)
+    plot(l_off, color=blue)
+
+.. image:: images/SecurityLowerTF_LookaheadOnOff.png
+
+This study plots two lines which correspond to different values of ``lookahead`` parameter.
+Red line shows data returned by ``security`` with ``lookahead=true``, blue line --- with ``lookahead=false``.
+Let us look at the 5 minute bar that starts at 07:50. The red line at this bar has value of 1.13151 which corresponds to 
+a value of *the first of the five 1 minute bars* that fall into the time range 07:50--07:54. 
+On the other hand, the blue line at the same bar has value of 1.13121 which corresponds to 
+*the last of the five 1 minute bars* of the same time range.
 
 
 .. rubric:: Footnotes
