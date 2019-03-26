@@ -5,8 +5,8 @@
 
 .. Helpful doc https://devguide.python.org/documenting/#restructuredtext-primer
 
-Pine Script Documentation
-*************************
+Pine Script |version| Documentation
+************************************
 
 .. toctree::
    :maxdepth: 3
