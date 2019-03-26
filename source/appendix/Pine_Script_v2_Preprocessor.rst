@@ -1,23 +1,23 @@
-Pine Script v2 preprocessor
+Pine Script v2 Preprocessor
 ---------------------------
 
-Algorithm of *@version=2* Pine Script preprocessor in pseudo-code:
+Algorithm of ``@version=2`` Pine Script preprocessor in pseudo-code:
 
-#. Remove comments
-#. Replace ``\r\n`` or ``\r`` with just ``\n``
-#. Add ``\n`` to the end of the text if it's missing
-#. Lines that contain only whitespace replace with just empty strings
-#. Add \|INDENT\| tokens. They indicate that statement is in a block of
+#. Remove comments.
+#. Replace ``\r\n`` or ``\r`` with just ``\n``.
+#. Add ``\n`` to the end of the text if it's missing.
+#. Lines that contain only whitespace replace with just empty strings.
+#. Add ``|INDENT|`` tokens. They indicate that statement is in a block of
    code, such as function body, ``if`` or ``for`` body. Every tab or
    four spaces are replaced with token ``|INDENT|``.
 #. Add ``|B|`` and ``|E|`` tokens. They indicate line begin and line
    end. Replace empty lines with ``|EMPTY|`` tokens.
 #. Join lines that represent one splitted statement.
-#. Add code block tokens (``|BEGIN|`` - beginning of the block,
-   ``|END|`` - end of the block, ``|PE|`` - possible end of the block).
+#. Add code block tokens (``|BEGIN|`` --- beginning of the block,
+   ``|END|`` --- end of the block, ``|PE|`` --- possible end of the block).
 
 This is illustrated by example. Initial Pine Script text. Note there is
-a comment *//@version=2* on the first line, it's a directive that helps
+a comment ``//@version=2`` on the first line, it's a directive that helps
 to choose correct Pine Script preprocessor/parser version.
 
 ::
@@ -38,12 +38,9 @@ to choose correct Pine Script preprocessor/parser version.
          style=linebr, trackprice=true) // It's prefixed with 5 spaces, so it won't be considered as an indent
     alertcondition(c > 100)"
 
-After steps 1), 2), 3) and 4).
+After steps 1), 2), 3) and 4) we have::
 
-::
-
-    "
-    study('Preprocessor example')
+    "study('Preprocessor example')
     fun(x, y) =>
         if close > open 
             x + y 
@@ -55,14 +52,12 @@ After steps 1), 2), 3) and 4).
     b = fun(a, 123)
     c = security(tickerid, period, b)
     plot(c, title='Out', color=c > c[1] ? lime : red, 
-         style=linebr, trackprice=true) 
+         style=linebr, trackprice=true)
     alertcondition(c > 100)
     "
 
 After step 5). Every 4 spaces has been replaced with ``|INDENT|`` token.
-Note that 8 spaces replaced with two ``|INDENT|`` tokens and so on.
-
-::
+Note that 8 spaces replaced with two ``|INDENT|`` tokens and so on::
 
     "
     study('Preprocessor example')
@@ -81,9 +76,7 @@ Note that 8 spaces replaced with two ``|INDENT|`` tokens and so on.
     alertcondition(c > 100)
     "
 
-After step 6).
-
-::
+After step 6)::
 
     "|EMPTY|
     |B|study('Preprocessor example')|E|
@@ -103,9 +96,7 @@ After step 6).
     |EMPTY|"
 
 After step 7). Note that line with ``plot(c, title=`` has been joined
-with the next line.
-
-::
+with the next line::
 
     "|EMPTY|
     |B|study('Preprocessor example')|E|
@@ -124,9 +115,7 @@ with the next line.
     |B|alertcondition(c > 100)|E|
     |EMPTY|"
 
-After step 8).
-
-::
+After step 8)::
 
     "|EMPTY|
     |B|study('Preprocessor example')|E|
@@ -148,9 +137,7 @@ After step 8).
 Done. This text is ready to be processed by Pine Script lexer and
 parser. There are lexer and parser grammars for your reference.
 
-After the lexer/parser processing, we'd have an AST:
-
-::
+After the lexer/parser processing, we'd have an AST::
 
     "
     (FUN_CALL study (FUN_ARGS 'Preprocessor example'))

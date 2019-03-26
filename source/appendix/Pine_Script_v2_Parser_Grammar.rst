@@ -1,10 +1,10 @@
-Pine Script v2 parser grammar
+Pine Script v2 Parser Grammar
 -----------------------------
 
-Pine Script *@version=2* parser grammar in `ANTLR
-v3 <http://www.antlr3.org/>`__ syntax. Start rule is ``tvscript``.
+Pine Script ``@version=2`` parser grammar in `ANTLR
+v3 <http://www.antlr3.org/>`__ syntax. Start rule is ``tvscript``:
 
-.. code:: antlr
+.. code-block:: text
 
     tvscript : ( stmt )+ ;
     stmt : ( fun_def_stmt | global_stmt_or_multistmt );
