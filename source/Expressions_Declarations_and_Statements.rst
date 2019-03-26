@@ -367,4 +367,4 @@ for simple moving average as it calculates faster.
 
 .. rubric:: Footnotes
 
-.. [#tabs] At TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.
+.. [#tabs] On TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.

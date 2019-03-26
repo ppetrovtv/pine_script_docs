@@ -1,7 +1,7 @@
 Transparency in Pine Scripts
 ============================
 
-Color type variables now have an additional parameter to set default
+Color type variables have an additional parameter to set default
 transparency. There are 2 ways to configure transparency level:
 
 #. ``#FFA50040`` --- the last 2 digits stand for 64% transparency (40 in 
@@ -27,7 +27,7 @@ Example::
       color(blue, 80)
     bgcolor(color=bgColor)
 
-You can control transparency in properties of a study on Style tab.
+You can control transparency in properties of a study on *Style* tab.
 |Transparency settings|
 
 .. |Transparency settings| image:: images/Transparency_settings.png

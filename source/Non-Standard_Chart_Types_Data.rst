@@ -166,5 +166,5 @@ For detailed reference see `pointfigure <https://www.tradingview.com/study-scrip
 
 .. rubric:: Footnotes
 
-.. [#ticks] At TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLCV candles of a lower timeframe, 
+.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLCV candles of a lower timeframe, 
    which is an approximation of corresponding chart type built from tick data.

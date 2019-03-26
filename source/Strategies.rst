@@ -63,7 +63,7 @@ Editor*.
 Backtesting and Forwardtesting
 ------------------------------
 
-At TradingView strategies are calculated on all available historical
+On TradingView strategies are calculated on all available historical
 data on the chart and automatically continue calculation when real-time
 data comes in.
 
@@ -81,7 +81,7 @@ filled* in settings or do it in the script code: ``strategy(..., calc_on_order_f
 Broker Emulator
 ---------------
 
-There is a *broker emulator* at TradingView for testing strategies. Unlike
+There is a *broker emulator* on TradingView for testing strategies. Unlike
 real trading, the emulator fills orders only at chart prices, that is
 why an order can be filled only on next tick in forwardtesting and on
 next bar in backtesting (or later) after the strategy calculated.
