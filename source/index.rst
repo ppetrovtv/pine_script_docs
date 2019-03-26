@@ -37,12 +37,10 @@ Pine Script |version| Documentation
    Transparency_in_pine_scripts
    Public_Library
    Publishing_Scripts
-   HOWTOs
-   Pine_Compilation_Errors
-   Where_can_I_get_more_information
+   
    Pine_Script_Release_Notes
-   Pine_Version_3_Migration_Guide
    Appendix <appendix/subindex>
+   Where_can_I_get_more_information
    Pine Script Reference <https://www.tradingview.com/study-script-reference/>
 
 

@@ -105,7 +105,7 @@ In Pine version 3, this can be achieved using the syntax of :ref:`mutable variab
     fib := na(fib[1]) or na(fib[2]) ? 1 : fib[1] + fib[2]
     plot(fib)
 
-See also :doc:`Pine_Version_3_Migration_Guide`.
+See also :doc:`appendix/Pine_Version_3_Migration_Guide`.
 
 **Expert tip**: mod out the Fibonacci numbers by 1000 to generate a plot you
 can actually see:

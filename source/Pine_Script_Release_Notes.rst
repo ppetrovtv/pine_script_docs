@@ -136,5 +136,5 @@ Changes in Type System
 * Self-referenced and forward-referenced variables are removed.
 * Math operations with booleans are forbidden.
 
-See :doc:`Pine_Version_3_Migration_Guide` for more
+See :doc:`appendix/Pine_Version_3_Migration_Guide` for more
 details.
