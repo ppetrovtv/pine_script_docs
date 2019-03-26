@@ -6,13 +6,11 @@ Pine Version 3 Migration Guide
 This document helps to migrate Pine Script code from ``@version=2`` to
 ``@version=3``.
 
-Default behaviour of ``security`` function has changed
+Default Behaviour of ``security`` Function Has Changed
 ------------------------------------------------------
 
-Let's look at the simple 'security' function use case. Add this
-indicator on an intraday chart:
-
-::
+Let's look at the simple ``security`` function use case. Add this
+indicator on an intraday chart::
 
     // Add this indicator on an intraday (e.g. '30' minutes) chart
     //@version=2
@@ -21,50 +19,46 @@ indicator on an intraday chart:
     plot(s)
 
 This indicator is calculated based on historical data and looks somewhat
-into the future. At the first bar of every session an indicator plots
+*into the future*. At the first bar of every session an indicator plots
 the high price of the entire day. This could be useful in some cases for
 analysis, but doesn't work for backtesting strategies.
 
-We worked on this and made changes in Pine v3. If this indicator is
+We worked on this and made changes in Pine version 3. If this indicator is
 compiled with ``//@version=3`` directive, we get a completely different
-picture. |images/V3.png|
+picture: |images/V3.png|
 
 The old behaviour is still available though. We added a parameter to the
 ``security`` function (the fifth one) called ``lookahead``.
 
 It can take on the form of two different values:
-``barmerge.lookahead_off`` (and this is the default for Pine v3) or
-``barmerge.lookahead_on`` (which is the default for Pine v2).
+``barmerge.lookahead_off`` (and this is the default for Pine version 3) or
+``barmerge.lookahead_on`` (which is the default for Pine version 2).
 
-Self-referenced variables are removed
+Self-Referenced Variables Are Removed
 -------------------------------------
 
-Pine version = 2 pieces of code, containing a self-referenced variable:
-
-::
+Pine version 2 pieces of code, containing a self-referenced variable::
 
     //@version=2
     //...
     s = nz(s[1]) + close
 
-Compiling this piece of code with Pine v3 will give you
-``Undeclared identifier 's'`` error. It should be rewritten as:
-
-::
+Compiling this piece of code with Pine version 3 will give you an
+``Undeclared identifier 's'`` error. It should be rewritten as::
 
     //@version=3
     //...
     s = 0.0
     s := nz(s[1]) + close
 
-``s`` is now a mutable variable that is initialized at line 3. At line 3
-the initial value gives the Pine translator the information about the
+``s`` is now a *mutable variable* that is initialized at line 3. At line 3
+the initial value gives the Pine compiler the information about the
 variable type. It's a float in this example.
 
 In some cases you may initialize that mutable variable (like ``s``) with
 a ``na`` value. But in complex cases that won't work.
 
-Forward-referenced variables are removed
+Forward-Referenced Variables Are Removed
 ----------------------------------------
 
 ::
@@ -76,11 +70,9 @@ Forward-referenced variables are removed
     f = e + close
 
 In this example ``f`` is a forward-referenced variable, because it's
-referenced at line 3 before it was declared and initialized. In Pine v3
+referenced at line 3 before it was declared and initialized. In Pine version 3
 this will give you an error ``Undeclared identifier 'f'``. This example
-should be rewritten in Pine v3 as follows:
-
-::
+should be rewritten in Pine version 3 as follows::
 
     //@version=3
     //...
@@ -89,14 +81,12 @@ should be rewritten in Pine v3 as follows:
     e = d + 1
     f := e + close
 
-Resolving a problem with a mutable variable in the ``security`` expression
+Resolving a Problem with a Mutable Variable in the ``security`` Expression
 --------------------------------------------------------------------------
 
-When you migrate script to v3 it's possible that after removing
-self-referenced and forward-referenced variables the Pine translator
-will give you an error:
-
-::
+When you migrate script to version 3 it's possible that after removing
+self-referenced and forward-referenced variables the Pine compiler
+will give you an error::
 
     //@version=3
     //...
@@ -107,10 +97,8 @@ will give you an error:
 ``Cannot use mutable variable as an argument for security function!``
 
 This limitation exists since mutable variables were introduced in Pine,
-i.e in v2. It can resolved as before: wrap the code with a mutable
-variable in a function.
-
-::
+i.e., in version 2. It can be resolved as before: wrap the code with a mutable
+variable in a function::
 
     //@version=3
     //...
@@ -119,17 +107,13 @@ variable in a function.
         s := nz(s[1]) + close
     t = security(tickerid, period, calcS())
 
-No more math operations with booleans
--------------------------------------
+Math Operations with Booleans Are Forbidden
+-------------------------------------------
 
 In Pine Script v2 there were rules of implicit conversion of booleans
 into numeric types. In v3 this is forbidden. There is a conversion of
-numeric types into booleans instead (zero and 'na' values are false, all
-the other numbers are true). Example:
-
-In v2 this code compiled fine:
-
-::
+numeric types into booleans instead (0 and ``na`` values are ``false``, all
+the other numbers are ``true``). Example (In v2 this code compiles fine)::
 
     //@version=2
     study("My Script")
@@ -140,10 +124,10 @@ In v2 this code compiled fine:
     col = sum == 1 ? white : sum == 2 ? blue : sum == 3 ? red : na
     bgcolor(col)
 
-Variables ``s``, ``s1`` and ``s2`` are boolean type. But at line 6 we
-add three of them and store the result in a variable ``sum``. ``Sum`` is
+Variables ``s``, ``s1`` and ``s2`` are of *bool* type. But at line 6 we
+add three of them and store the result in a variable ``sum``. ``sum`` is
 a number, since we cannot add booleans. Booleans were implicitly
-converted to numbers (true values to 1.0 and false to 0.0) and then they
+converted to numbers (``true`` values to ``1.0`` and ``false`` to ``0.0``) and then they
 were added.
 
 This approach leads to unintentional errors in more complicated scripts.
@@ -154,9 +138,7 @@ If you try to compile this example as a Pine v3 code, you'll get an
 error:
 ``Cannot call `operator +` with arguments (series__bool, series__bool); <...>``
 It means that you cannot use the addition operator with boolean values.
-To make this example work in Pine v3 you can do the following:
-
-::
+To make this example work in Pine v3 you can do the following::
 
     //@version=3
     study("My Script")
@@ -169,8 +151,8 @@ To make this example work in Pine v3 you can do the following:
     col = sum == 1 ? white : sum == 2 ? blue : sum == 3 ? red : na
     bgcolor(col)
 
-Function ``bton`` (abbreviation of 'boolean-to-number') explicitly
-"converts" any boolean value to a number if you really need this.
+Function ``bton`` (abbreviation of boolean-to-number) explicitly
+converts any boolean value to a number if you really need this.
 
 .. |images/V3.png| image:: images/V3.png
 

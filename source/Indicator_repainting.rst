@@ -72,3 +72,14 @@ We can see repainting in the following cases:
      `barstate.isrealtime <https://www.tradingview.com/study-script-reference/#var_barstate{dot}isrealtime>`__;
    * `timenow <https://www.tradingview.com/study-script-reference/#var_timenow>`__;
    * `n <https://www.tradingview.com/study-script-reference/#var_n>`__.
+
+The "repainting" issue usually occurs when using tools above --- since an
+indicator is calculated based on real-time data first. After reloading
+the chart, an indicator is REcalculated using the data that had become
+a historical data, while still using the same time period. The appearance of
+the indicator changes.
+
+In this case, the "repainting" effect is not a bug --- it's a result of
+applying certain language tools with different calculation methods. This
+needs to be understood and taken into consideration while using
+Pine Script.

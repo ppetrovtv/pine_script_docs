@@ -4,7 +4,7 @@ HOWTOs
 .. contents:: :local:
     :depth: 2
 
-Get real OHLC price on a Heikin Ashi chart
+Get Real OHLC price on a Heikin Ashi chart
 ------------------------------------------
 
 Suppose, we have a Heikin Ashi chart (or Renko, Kagi, PriceBreak etc)
@@ -17,15 +17,13 @@ and we've added a pine script on it:
     c = close
     plot(c)
 
-You may see that variable 'c' is a Heikin Ashi close price which is not
-the same as real OHLC price. Because 'close' built-in variable is always
+You may see that variable ``c`` is a Heikin Ashi *close* price which is not
+the same as real OHLC price. Because ``close`` built-in variable is always
 a value that corresponds to a visible bar (or candle) on the chart.
 
 So, how do we get the real OHLC prices in Pine Script code, if current
-chart type is non-standard? We should use 'security' function in
-combination with 'tickerid' function. Here is an example:
-
-::
+chart type is non-standard? We should use ``security`` function in
+combination with ``tickerid`` function. Here is an example::
 
     //@version=2
     study("Real OHLC", overlay=true)
@@ -33,15 +31,13 @@ combination with 'tickerid' function. Here is an example:
     realC = security(t, period, close)
     plot(realC)
 
-In a similar way we may get other OHLC prices: open, high and low.
+In a similar way we may get other OHLC prices: *open*, *high* and *low*.
 
-Plot buy/sell arrows on the chart
----------------------------------
+Plot Arrows on the Chart
+------------------------
 
-You may use plotshape with style **shape.arrowup** and
-**shape.arrowdown**:
-
-::
+You may use plotshape with style ``shape.arrowup`` and
+``shape.arrowdown``::
 
     study('Ex 1', overlay=true)
     data = close >= open
@@ -50,9 +46,7 @@ You may use plotshape with style **shape.arrowup** and
 
 .. image:: images/Buy_sell_chart1.png
 
-You may use plotchar function with any unicode character:
-
-::
+You may use ``plotchar`` function with any unicode character::
 
     study('buy/sell arrows', overlay=true)
     data = close >= open
@@ -62,14 +56,12 @@ You may use plotchar function with any unicode character:
 .. image:: images/Buy_sell_chart2.png
    
 
-Plot horizontal line (moving)
+Plot Horizontal Line (Moving)
 -----------------------------
 
 There is function ``hline`` in pine. But it is now limited to only plot
 constant value. Here is a Pine Script with workaround to plot changing
-hline.
-
-::
+hline::
 
     //@version=2
     study("Horizontal line", overlay=true)
@@ -78,7 +70,7 @@ hline.
     // offset=-9999 hides the plot
     plot(close, color=#FFFFFFFF) // forces to show study
 
-Plot vertical line on condition
+Plot Vertical Line on Condition
 -------------------------------
 
 ::
@@ -94,7 +86,7 @@ Plot vertical line on condition
     // use the style of histogram, a vertical bar
     plot(cond ? 10e20 : na, style = histogram)
 
-Access previous value
+Access Previous Value
 ---------------------
 
 ::
@@ -106,12 +98,13 @@ Access previous value
     if (condition)
         s := s + 1
 
-Get 5-day high
+Get 5-Day High
 --------------
 
 Lookback 5 days from the current bar, find the highest bar, plot a star
-character at that price level above the current bar |Mark the highest
-bar within a 5 day lookback window range|
+character at that price level above the current bar
+
+|Mark the highest bar within a 5 day lookback window range|
 
 ::
 
@@ -166,10 +159,10 @@ bar within a 5 day lookback window range|
     // fill the background of the 5 day lookback window range with aqua color
     bgcolor(leftborder and not rightborder ? aqua : na, transp=70)
 
-Get count of bars in barset
----------------------------
+Get Count of Bars in Dataset
+----------------------------
 
-Get a count of all the bars in the loaded barset. Might be useful for
+Get a count of all the bars in the loaded dataset. Might be useful for
 calculating flexible lookback periods based on number of bars.
 
 ::
@@ -178,8 +171,8 @@ calculating flexible lookback periods based on number of bars.
     study("Bar Count", overlay=true, scale=scale.none)
     plot(n + 1, style=histogram)
 
-Enumerate bars in day
----------------------
+Enumerate Bars in a Day
+-----------------------
 
 ::
 
@@ -192,7 +185,7 @@ Enumerate bars in day
 
     plot(barssince(is_new_day()), style=cross)
 
-Find the highest and lowest values for the entire dataset
+Find the Highest and Lowest Values for the Entire Dataset
 ---------------------------------------------------------
 
 ::
@@ -217,12 +210,10 @@ Find the highest and lowest values for the entire dataset
     plot(biggest(close), color=green)
     plot(smallest(close), color=red)
 
-Query the last non-empty value
+Query the Last Non-Empty Value
 ------------------------------
 
-You can use the script below to avoid gaps in a series.
-
-::
+You can use the script below to avoid gaps in a series::
 
     //@version=3
     study("My Script")
@@ -232,4 +223,3 @@ You can use the script below to avoid gaps in a series.
     plot(vw) // all na values are replaced with the last non-empty value
 
 .. |Mark the highest bar within a 5 day lookback window range| image:: images/Wiki_howto_range_analysis.png
-

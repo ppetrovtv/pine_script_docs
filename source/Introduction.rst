@@ -44,6 +44,8 @@ the comments section of a script (preferably in the beginning). Our
 position on the matter is very much like that of
 `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
+.. _versions:
+
 Versions
 --------
 
