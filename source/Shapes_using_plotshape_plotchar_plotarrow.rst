@@ -16,7 +16,7 @@ it's recommended to use the functions ``plotshape``, ``plotchar``,
 
 The `plotshape <https://www.tradingview.com/study-script-reference/#fun_plotshape>`__ 
 function is designed for displaying, under or above
-bars, a few icon-shapes. For example, the script below will draw an 'X'
+bars, a few icon-shapes. For example, the script below will draw an "X"
 above all green bars:
 
 ::
@@ -166,10 +166,10 @@ the in-use font). For example::
 .. image:: images/Plotchar_example_1.png
 
 
-By default, the parameter char accepts the value ★ (U+2605, the 'BLACK STAR' character). It's possible to use any letters, digits or various symbols,
+By default, the parameter char accepts the value ★ (U+2605, the "BLACK STAR" character). It's possible to use any letters, digits or various symbols,
 for example: ❤, ☀, €, ⚑, ❄, ◆, ⬆, ⬇.
 
-Example of the 'SNOWFLAKE' (❄, U+2744) character usage::
+Example of the "SNOWFLAKE" (❄, U+2744) character usage::
 
     study('plotchar example', overlay=true)
     data = close >= open
@@ -206,7 +206,7 @@ arrows on the chart, using the following logic:
 -  If ``series`` value on the current bar is less than 0, then a *down
    arrow* will be drawn, the length of the arrow proportional to an
    absolute value.
--  If ``series`` value on the current bar is equal to 0 or 'na' then the
+-  If ``series`` value on the current bar is equal to 0 or ``na`` then the
    arrow is not displayed.
 
 Here is a simple script that illustrates how ``plotarrow`` function works::

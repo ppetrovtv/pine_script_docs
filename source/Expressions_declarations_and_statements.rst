@@ -73,7 +73,7 @@ Variable assignment example::
         price := hl2
     plot(price)
 
-We also use an :ref:`'if' statement <if_statement>` in this example.
+We also use an :ref:`"if" statement <if_statement>` in this example.
 
 .. _self_ref_variables:
 
@@ -130,8 +130,8 @@ Finally, on the third bar both of them are defined and can be added.
 
 .. note:: Since the sequence of Fibonacci numbers grows rather fast, the
    variable ``fib`` very quickly overflows. As such, the user should apply
-   the given indicator on the monthly 'M' or yearly 'Y' resolution,
-   otherwise the value 'n/a' will be on the chart instead of the Fibonacci
+   the given indicator on the monthly "M" or yearly "Y" resolution,
+   otherwise the value "n/a" will be on the chart instead of the Fibonacci
    numbers.
 
 .. _preventing_na_values_functions_na_and_nz:
@@ -176,7 +176,7 @@ if the argument is ``na`` or not. Check it out
 
 The difference between ``na`` and ``nz``: ``na`` returns a boolean value
 (true or false), and is therefore useful in constructing logical
-expressions (e.g., ``if na(x)``). ``nz`` is a 'filler', as it fills ``na``
+expressions (e.g., ``if na(x)``). ``nz`` is a "filler", as it fills ``na``
 values of a series with zeros (in the case of ``nz(x)``) or with a
 user-specified value (in the case of ``nz(x, y)``). Note: the
 double-argument version ``nz(x, y)`` is equivalent to the logical
@@ -238,19 +238,19 @@ where:
 
 -  ``var_declarationX`` --- this variable gets the value of the ``if``
    statement.
--  ``condition`` --- if the ``condition`` expression is true, the logic from the block
-   'then' (``var_decl_then0``, ``var_decl_then1``, etc.) is used, if the
-   ``condition`` is false, the logic from the block 'else'
+-  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block
+   (``var_decl_then0``, ``var_decl_then1``, etc.) is used, if the
+   ``condition`` is false, the logic from the *else* block 
    (``var_decl_else0``, ``var_decl_else1``, etc.) is used.
 -  ``return_expression_then``, ``return_expression_else`` --- the last
-   expression from the block 'then' or from the block 'else' will
+   expression from the *then* block or from the *else* block will
    return the final value of the whole ``if`` statement. If declaration of the
    variable is in the end, its value will be the result.
 
 The type of returning value of the ``if`` statement depends on
 ``return_expression_then`` and ``return_expression_else`` type (their types
-must match, it is not possible to return an integer value from the 'then' block,
-while you have a string value in the 'else' block).
+must match, it is not possible to return an integer value from the *then* block,
+while you have a string value in the *else* block).
 
 Example::
 
@@ -265,7 +265,7 @@ Example::
     else
         "open"
 
-It is possible to omit the ``else`` block. In this case if the ``condition``
+It is possible to omit the *else* block. In this case, if the ``condition``
 is false, an *empty* value (``na``, or ``false``, or ``""``) will be assigned to the
 ``var_declarationX`` variable.
 
@@ -276,7 +276,7 @@ Example::
     // If current close > current open, then x = close.
     // Otherwise the x = na.
 
-The blocks 'then' and 'else' are shifted by 4 spaces [#tabs]_. If statements can
+The blocks *then* and *else* are shifted by 4 spaces [#tabs]_. If statements can
 be nested, then add 4 more spaces::
 
     x = if close > open

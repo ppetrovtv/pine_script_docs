@@ -43,7 +43,7 @@ Here is an example of a script with ``barstate.*`` variables::
 .. image:: images/Chart_barstate_1.jpg
 
 The script draws red and blue symbols under the first and the last bars
-accordingly and puts 'h' on the top of the historical bars. Background
+accordingly and puts "h" on the top of the historical bars. Background
 of the new bars will be highlighted green, and the real-time bars will
 be colored black.
 

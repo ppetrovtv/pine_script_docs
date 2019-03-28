@@ -30,7 +30,7 @@ setting.
 ``precision`` is a number of digits after the floating point for study
 values on the price axis. Must be a non negative integer. Precision 0
 has special rules for formatting very large numbers (like volume, e.g.
-'5183' will be formatted as '5K'). Default value is 4.
+"5183" will be formatted as "5K"). Default value is 4.
 
 
 ``plot`` annotation

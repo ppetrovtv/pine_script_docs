@@ -94,9 +94,9 @@ specifications:
 
 Session specification, which is being passed to the function ``time``,
 is not required to correspond with the real trade session of the symbol
-on the chart. It's possible to pass different 'hypothetical' session
+on the chart. It's possible to pass different "hypothetical" session
 specifications which can be used to highlight some other bars of
-a data series. It's possible to transfer the different 'hypothetical'
+a data series. It's possible to transfer the different "hypothetical"
 session specifications which can be used to highlight those or other
 bars in a data series.
 
@@ -170,7 +170,7 @@ Variables that give information about the current bar start time:
 -  `minute <https://www.tradingview.com/study-script-reference/#var_minute>`__ --- Minute of the current bar start time (in exchange timezone).
 -  `second <https://www.tradingview.com/study-script-reference/#var_second>`__ --- Second of the current bar start time (in exchange timezone).
 
-Functions for UNIX time 'construction':
+Functions for UNIX time "construction":
 
 -  `year(t) <https://www.tradingview.com/study-script-reference/#fun_year>`__ --- Returns year for provided UTC time ``t``.
 -  `month(t) <https://www.tradingview.com/study-script-reference/#fun_month>`__ --- Returns month for provided UTC time ``t``.

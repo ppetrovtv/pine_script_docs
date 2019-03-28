@@ -186,7 +186,7 @@ When a vector is shifted, a special ``na`` value is pushed to vector's
 tail. ``na`` means that the numerical value based on the given index is
 absent (*not available*). The values to the right, which do not have enough space to be
 placed in a vector of a line of 10 elements are simply removed. The
-value from the vector's head is 'popped'. In the given example the index
+value from the vector's head is "popped". In the given example the index
 of the current bar is equal to 9. The value of the vector ``close[1]`` on the current bar will be equal 
 to the previous value of the initial vector ``close``. 
 The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
