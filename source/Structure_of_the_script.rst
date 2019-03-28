@@ -1,4 +1,4 @@
-Structure of the Script
+Structure of the script
 =======================
 
 A script in Pine syntactically consists of a series of statements. Each
@@ -10,9 +10,9 @@ relation to the syntax of multiple line functions). Statements are one
 of three kinds:
 
 -  :ref:`variable declarations <variable_declaration>`
--  :doc:`function declarations <Declaring_Functions>`
--  :doc:`annotation function calls <Functions_vs_Annotation_Functions>`
+-  :doc:`function declarations <Declaring_functions>`
+-  :doc:`annotation function calls <Functions_vs_annotation_functions>`
 
 Long statements that don't fit within in the width of the screen can be
 split to a few lines, further information about this can be found
-:doc:`here <Lines_Wrapping>`.
+:doc:`here <Lines_wrapping>`.

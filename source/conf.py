@@ -27,9 +27,9 @@ source_parsers = {
 
 # -- Project information -----------------------------------------------------
 
-project = u'Pine Script Documentation'
+project = u'Pine Script documentation'
 copyright = u'2019, TradingView'
-author = u'vvolkov'
+author = u''
 
 # The short X.Y version
 version = u'3' # Could be referenced from *.rst with |version| macro

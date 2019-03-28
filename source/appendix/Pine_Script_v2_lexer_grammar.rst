@@ -1,4 +1,4 @@
-Pine Script v2 Lexer Grammar
+Pine Script v2 lexer grammar
 ----------------------------
 
 Pine Script ``@version=2`` lexer grammar in `ANTLR

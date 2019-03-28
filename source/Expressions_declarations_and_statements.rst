@@ -1,4 +1,4 @@
-Expressions, Declarations and Statements
+Expressions, declarations and statements
 ========================================
 
 .. contents:: :local:
@@ -21,7 +21,7 @@ Here are some examples of simple expressions::
 
 .. _variable_declaration:
 
-Variable Declaration
+Variable declaration
 --------------------
 
 Variables in Pine are declared with the help of the special symbol ``=``
@@ -46,7 +46,7 @@ Average <https://www.tradingview.com/wiki/Moving_Average>`__.
 
 .. _variable_assignment:
 
-Variable Assignment
+Variable assignment
 -------------------
 
 Mutable variable is such a variable which can be given a new value.
@@ -77,8 +77,8 @@ We also use an :ref:`'if' statement <if_statement>` in this example.
 
 .. _self_ref_variables:
 
-Self Referencing Variables
------------------------------------------
+Self referencing variables
+--------------------------
 
 The ability to reference the previous values of declared variables in
 expressions where they are declared (using the operator ``[]``) is a
@@ -105,7 +105,7 @@ In Pine version 3, this can be achieved using the syntax of :ref:`mutable variab
     fib := na(fib[1]) or na(fib[2]) ? 1 : fib[1] + fib[2]
     plot(fib)
 
-See also :doc:`appendix/Pine_Version_3_Migration_Guide`.
+See also :doc:`appendix/Pine_version_3_migration_guide`.
 
 **Expert tip**: mod out the Fibonacci numbers by 1000 to generate a plot you
 can actually see:
@@ -136,7 +136,7 @@ Finally, on the third bar both of them are defined and can be added.
 
 .. _preventing_na_values_functions_na_and_nz:
 
-Preventing ``na`` values, Functions ``na`` and ``nz``
+Preventing ``na`` values, functions ``na`` and ``nz``
 -----------------------------------------------------
 
 Self referencing variables allow for the accumulation of values during
@@ -182,7 +182,7 @@ user-specified value (in the case of ``nz(x, y)``). Note: the
 double-argument version ``nz(x, y)`` is equivalent to the logical
 construction ``na(x) ? y : x``. (``?:`` is a :ref:`ternary operator<ternary_operator>`).
 
-Simple Moving Average Without Applying the Function ``sma``
+Simple moving average without applying the function ``sma``
 -----------------------------------------------------------
 
 While using self referencing variables, it's possible to write the

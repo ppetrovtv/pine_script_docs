@@ -1,4 +1,4 @@
-Pine Compilation Errors
+Pine compilation errors
 =======================
 
 .. contents:: :local:

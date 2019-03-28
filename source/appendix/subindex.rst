@@ -5,9 +5,9 @@ Appendix
    :maxdepth: 3
    :name: appendixtoc
    
-   Pine_Version_3_Migration_Guide
+   Pine_version_3_migration_guide
    HOWTOs
-   Pine_Compilation_Errors
-   Pine Script v2 Preprocessor <Pine_Script_v2_Preprocessor>
-   Pine Script v2 Lexer Grammar <Pine_Script_v2_Lexer_Grammar>
-   Pine Script v2 Parser Grammar <Pine_Script_v2_Parser_Grammar>
+   Pine_compilation_errors
+   Pine_Script_v2_preprocessor
+   Pine_Script_v2_lexer_grammar
+   Pine_Script_v2_parser_grammar

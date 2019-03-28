@@ -1,4 +1,4 @@
-Non-Standard Chart Types Data
+Non-standard chart types data
 =============================
 
 .. contents:: :local:
@@ -10,7 +10,7 @@ function return value. They are ``heikinashi``, ``renko``,
 same manner, they just create a special ticker identifier that could be
 passed later as ``security`` function first argument.
 
-``heikinashi`` Function
+``heikinashi`` function
 -----------------------
 
 *Heikin-Ashi* means 'average bar' in Japanese. Open, high, low and close
@@ -68,7 +68,7 @@ Here is the source code::
 Read more about `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__ 
 (and `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__) functions in section :doc:`Custom_OHLC_bars_and_candles`.
 
-``renko`` Function
+``renko`` function
 ------------------
 
 *Renko* chart type only plots price movements, without taking time or
@@ -91,7 +91,7 @@ OHLC values for Renko chart and use them in your algorithms.
 
 For detailed reference see `renko <https://www.tradingview.com/study-script-reference/#fun_renko>`__.
 
-``linebreak`` Function
+``linebreak`` function
 ----------------------
 
 *Line Break* chart type displays a series of vertical boxes that are based on
@@ -113,7 +113,7 @@ algorithms.
 
 For detailed reference see `linebreak <https://www.tradingview.com/study-script-reference/#fun_linebreak>`__.
 
-``kagi`` Function
+``kagi`` function
 -----------------
 
 *Kagi* chart type looks like a continuous line that changes directions and
@@ -136,7 +136,7 @@ values for Kagi chart and use them in your algorithms.
 
 For detailed reference see `kagi <https://www.tradingview.com/study-script-reference/#fun_kagi>`__.
 
-``pointfigure`` Function
+``pointfigure`` function
 ------------------------
 
 *Point and Figure* (PnF) chart type only plots price movements [#ticks]_, without

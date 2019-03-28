@@ -1,4 +1,4 @@
-Pine Script v2 Parser Grammar
+Pine Script v2 parser grammar
 -----------------------------
 
 Pine Script ``@version=2`` parser grammar in `ANTLR

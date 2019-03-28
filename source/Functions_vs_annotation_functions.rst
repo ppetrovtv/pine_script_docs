@@ -1,4 +1,4 @@
-Functions vs Annotation Functions
+Functions vs annotation functions
 =================================
 
 Pine, besides operators, also has functions and *annotation functions*.

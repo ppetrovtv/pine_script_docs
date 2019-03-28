@@ -4,8 +4,8 @@ Operators
 .. contents:: :local:
     :depth: 2
 
-Arithmetic Operators (``+``, ``-``, ``*``, ``/``, ``%``)
---------------------------------------------------------
+Arithmetic operators 
+--------------------
 
 There are five arithmetic operators in Pine Script:
 
@@ -31,8 +31,8 @@ result will also have the type *integer*.
 Footnote: if at least one operand is ``na`` then the result is also
 ``na``. 
 
-Comparison Operators (``<``, ``<=``, ``!=``, ``==``, ``>``, ``>=``)
--------------------------------------------------------------------
+Comparison operators
+--------------------
 
 There are six comparison operators in Pine Script:
 
@@ -56,10 +56,10 @@ the type of result will also be the *series* (a series of logical
 values). If both operands have a numerical type, then the result will be
 of the logical type *bool*.
 
-Logical Operators (``not``, ``and``, ``or``)
---------------------------------------------
+Logical operators
+-----------------
 
-There are three comparison operators in Pine Script:
+There are three logical operators in Pine Script:
 
 +--------+---------------------------------+
 | ``not`` | Negation                       |
@@ -79,7 +79,7 @@ The operator ``not`` is unary. If an operator's operand has a ``true``
 value then the result will have a ``false`` value; if the operand has a
 ``false`` value then the result will have a ``true`` value.
 
-``and`` Operator truth table:
+``and`` operator truth table:
 
 +---------+---------+-----------+
 | a       | b       | a and b   |
@@ -93,7 +93,7 @@ value then the result will have a ``false`` value; if the operand has a
 | false   | false   | false     |
 +---------+---------+-----------+
 
-``or`` Operator truth table:
+``or`` operator truth table:
 
 +---------+---------+----------+
 | a       | b       | a or b   |
@@ -109,11 +109,11 @@ value then the result will have a ``false`` value; if the operand has a
 
 .. _ternary_operator:
 
-Conditional Operator ``?:`` and the Function ``iff``
+Conditional operator ``?:`` and the function ``iff``
 ----------------------------------------------------
 
-`Conditional Ternary
-Operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
+`Conditional ternary
+operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
 calculates the first expression (condition) and returns a value either
 of the second operand (if the condition is ``true``) or of the third
 operand (if the condition is ``false``). Syntax::
@@ -154,8 +154,8 @@ previous example using ``iff`` will look like::
 
 .. _history_referencing_operator:
 
-History Referencing Operator (Square Brackets ``[]``)
------------------------------------------------------
+History reference operator ``[]``
+---------------------------------
 
 It is possible to refer to the historical values of any variable of a
 *series* type (values which the variable had on the previous bars) with
@@ -221,7 +221,7 @@ Further details about ``plot`` and its arguments can be found
 `here <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
 
 There is another important consideration when using operator ``[]`` in
-Pine scripts. The indicator executes a calculation on each bar,
+Pine Scripts. The indicator executes a calculation on each bar,
 beginning from the oldest existing bar until the most recent one (the
 last). As seen in the table, ``close[3]`` has ``na`` values on the
 first three bars. ``na`` represents a value which is not a number and
@@ -230,7 +230,7 @@ to `NaN <https://en.wikipedia.org/wiki/NaN>`__). So your
 code should specifically handle ``na`` values using functions :ref:`na and
 nz <preventing_na_values_functions_na_and_nz>`.
 
-Priority of Operators
+Priority of operators
 ---------------------
 
 The order of the calculations is determined by the operators' priority.

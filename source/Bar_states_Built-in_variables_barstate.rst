@@ -1,4 +1,4 @@
-Bar States. Built-in Variables ``barstate.*``
+Bar states. Built-in variables ``barstate.*``
 =============================================
 
 A set of built-in ``barstate.*`` variables allows users to define a state

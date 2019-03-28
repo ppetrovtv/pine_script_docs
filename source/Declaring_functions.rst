@@ -1,4 +1,4 @@
-Declaring Functions
+Declaring functions
 ===================
 
 .. contents:: :local:
@@ -8,7 +8,7 @@ In Pine Script there is an extensive library of built-in functions which
 can be used to create indicators. Apart from these functions, the user
 is able to create his or her own personal functions in Pine.
 
-Single-line Functions
+Single-line functions
 ---------------------
 
 Simple short functions are convenient to write on one line. The
@@ -43,7 +43,7 @@ Pine Scipt functions do not support recursion. It is not allowed for a function 
 
 .. _multi_line_functions:
 
-Multi-line Functions
+Multi-line functions
 --------------------
 
 Of course it's difficult to do any sort of advanced calculations with
@@ -79,7 +79,7 @@ in the body: ``a`` and ``b``. The last statement calls the function ``sqrt``
 (an extraction of the square root). The ``geom_average`` call will return
 the last expression value ``(sqrt(a + b))``.
 
-Scopes in the Script
+Scopes in the script
 --------------------
 
 Variables which are declared outside the body of any function belong to
@@ -103,7 +103,7 @@ In Pine, nested functions are not allowed, i.e. one can't declare
 function inside another function. All user functions are declared in the
 global scope. Local scopes do not intersect between one another.
 
-Functions with 'self ref' Variables in the Body
+Functions with 'self ref' variables in the body
 -----------------------------------------------
 
 .. note:: :ref:`Self referencing variables<self_ref_variables>` are not supported since Pine Script version 3.

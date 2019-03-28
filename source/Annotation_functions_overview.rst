@@ -1,10 +1,10 @@
-Annotation Functions Overview
+Annotation functions overview
 =============================
 
 .. contents:: :local:
     :depth: 2
 
-``study`` Annotation
+``study`` annotation
 --------------------
 
 Every *indicator* [#strategy]_ script must contain at least one call of the annotation function
@@ -33,7 +33,7 @@ has special rules for formatting very large numbers (like volume, e.g.
 '5183' will be formatted as '5K'). Default value is 4.
 
 
-``plot`` Annotation
+``plot`` annotation
 -------------------
 
 The annotation `plot <https://www.tradingview.com/study-script-reference/#fun_plot>`__
@@ -95,7 +95,7 @@ left (since the argument's value ``offset`` is negative), while the *green*
 series has been shifted to the right (its value ``offset`` is positive).
 
 
-Barcoloring a Series with ``barcolor``
+Barcoloring a series with ``barcolor``
 --------------------------------------
 
 The annotation function `barcolor <https://www.tradingview.com/study-script-reference/#fun_barcolor>`__ 
@@ -117,7 +117,7 @@ example script renders the *inside* and *outside* bars in different colors::
 As you can see, when passing the ``na`` value, the colors stay the default
 chart color.
 
-Background Coloring with ``bgcolor``
+Background coloring with ``bgcolor``
 ------------------------------------
 
 Similar to the ``barcolor`` function, the `bgcolor <https://www.tradingview.com/study-script-reference/#fun_bgcolor>`__ 
@@ -141,7 +141,7 @@ EURUSD, 30 min resolution)::
 .. image:: images/Background_coloring_bgcolor_1.png
 
 
-Indicator Inputs
+Indicator inputs
 ----------------
 
 `input <https://www.tradingview.com/study-script-reference/#fun_input>`__ annotations 
@@ -257,7 +257,7 @@ are forbidden. It's possible to create a few horizontal lines with the
 help of ``hline`` and fill in the background between them with a
 translucent light using the function `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__.
 
-Filling in the Background with ``fill``
+Filling in the background with ``fill``
 ---------------------------------------
 
 The `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__ 
@@ -310,7 +310,7 @@ open ? green : red``. Example::
 .. image:: images/Filling_in_the_background_between_objects_with_fill_3.png
 
 
-Alert Conditions
+Alert conditions
 ----------------
 
 The annotation function

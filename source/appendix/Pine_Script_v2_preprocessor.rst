@@ -1,4 +1,4 @@
-Pine Script v2 Preprocessor
+Pine Script v2 preprocessor
 ---------------------------
 
 Algorithm of ``@version=2`` Pine Script preprocessor in pseudo-code:

@@ -1,4 +1,4 @@
-Publishing Scripts
+Publishing scripts
 ==================
 
 .. contents:: :local:
@@ -12,7 +12,7 @@ script is about before applying it. If you want to protect your
 indicator, you can use *Protected* and *Invite-Only* scripts, which hides
 the source code from other users.
 
-Publishing Open Source Pine Scripts
+Publishing open source Pine Scripts
 -----------------------------------
 
 To publish an *open source* Pine indicator or strategy:
@@ -29,7 +29,18 @@ The published script will be displayed in `Public Library <https://www.tradingvi
 which is available to all TradingView users. Every registered TradingView user will be able to make a copy of
 your script.
 
-Protected Source Code for Pine Indicators
+Choosing a licence
+------------------
+
+Choosing a license or not is entirely up to you. You are under no
+obligation to do so. If you publish scripts with open source code you
+can select a license of your choice. You can include the license in
+the comments section of a script (preferably in the beginning). Our
+position on the matter is very much like that of
+`GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
+
+
+Protected source code for Pine indicators
 -----------------------------------------
 
 It is possible to publish indicators with a *protected source code*. This is a
@@ -55,7 +66,7 @@ ideas, send links to charts in chat --- your intellectual property remains
 protected and no one will have access to your source code without your
 decision.
 
-Pine Indicators with Managed Access
+Pine indicators with managed access
 -----------------------------------
 
 Authors can manage who can access their indicators. This is great for

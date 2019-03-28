@@ -1,4 +1,4 @@
-Type System
+Type system
 ===========
 
 The basic type of data in Pine is a list of values, named *series*.
@@ -51,8 +51,8 @@ Finally, there is also a *void* type in Pine Script. Some functions with *side e
 return void result. For example a 
 `strategy.entry <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}entry>`__.
 
-Cast Rules
-----------
+Type cast rules
+---------------
 
 In the following picture arrow means ability to cast one type to
 another. For example *NotAvailable* type (type of the ``na`` variable), can be

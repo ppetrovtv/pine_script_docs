@@ -1,4 +1,4 @@
-Context Switching, the ``security`` Function
+Context switching, the ``security`` function
 ============================================
 
 .. contents:: :local:
@@ -8,7 +8,7 @@ The function ``security`` lets the user to request data from additional
 symbols and resolutions, other than the ones to which the indicator is
 applied.
 
-Detailed Description
+Detailed description
 --------------------
 
 We will assume that we are applying a script to the chart IBM,1. The
@@ -110,7 +110,7 @@ results.
 
 .. _barmerge_gaps_and_lookahead:
 
-Barmerge Gaps and Lookahead
+Barmerge gaps and lookahead
 ---------------------------
 
 There are two switches that define how requested data will be mapped to the
@@ -161,7 +161,7 @@ real-time data behaves the same way according to
 
 .. _understanding_lookahead:
 
-Understanding Lookahead
+Understanding lookahead
 -----------------------
 
 There are many published scripts with the following lines::
@@ -202,7 +202,7 @@ real-time data, we take the *close* of the previous day without shifting the
 
 .. _requesting_data_of_a_lower_timeframe:
 
-Requesting Data of a Lower Timeframe
+Requesting data of a lower timeframe
 ------------------------------------
 
 It's not recommended to request data of a timeframe *lower* that the current chart timeframe

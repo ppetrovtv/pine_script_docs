@@ -11,7 +11,7 @@ a good fit. Although it's possible to execute this kind of task by applying
 it's recommended to use the functions ``plotshape``, ``plotchar``,
 ``plotarrow``.
 
-``plotshape`` Function
+``plotshape`` function
 ----------------------
 
 The `plotshape <https://www.tradingview.com/study-script-reference/#fun_plotshape>`__ 
@@ -150,7 +150,7 @@ Some other features of the ``plotshape`` function:
    You may use ``\n`` to separate text lines.
 
 
-``plotchar`` Function
+``plotchar`` function
 ---------------------
 
 `plotchar <https://www.tradingview.com/study-script-reference/#fun_plotchar>`__'s 
@@ -189,7 +189,7 @@ Like ``plotshape``, the function ``plotchar`` allows:
 -  Use the ``text`` parameter to display some short text above/below the shape.
    You may use ``\n`` to separate text lines.
 
-``plotarrow`` Function
+``plotarrow`` function
 ----------------------
 
 The function `plotarrow <https://www.tradingview.com/study-script-reference/#fun_plotarrow>`__ 

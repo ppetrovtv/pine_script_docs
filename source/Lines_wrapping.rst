@@ -1,4 +1,4 @@
-Lines Wrapping
+Lines wrapping
 ==============
 
 Any statement that is too long in Pine Script can be placed on a few

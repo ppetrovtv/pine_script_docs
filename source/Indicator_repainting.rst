@@ -1,4 +1,4 @@
-Indicator Repainting
+Indicator repainting
 ====================
 
 Historical data doesn't include records of intra-bar movements of price.

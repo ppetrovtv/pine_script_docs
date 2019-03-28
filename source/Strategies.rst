@@ -20,7 +20,7 @@ keywords. The same information is available for you on the *Strategy
 Tester* tab. Once a strategy is calculated on historical data, you can
 see hypothetical order fills.
 
-A Simple Strategy Example
+A simple strategy example
 -------------------------
 
 ::
@@ -42,7 +42,7 @@ type and its name is "test". ``strategy.entry()`` is a command to send
 "buy" and "sell" orders. ``plot(strategy.equity)`` plots the equity
 curve.
 
-How to Apply a Strategy to the Chart
+How to apply a strategy to the chart
 ------------------------------------
 
 To test your strategy, apply it to the chart. Use the symbol and time
@@ -52,7 +52,7 @@ Editor*.
 
 .. image:: images/Strategy_tester.png
 
-.. note:: When using :doc:`non-standard types of chart <Non-Standard_Chart_Types_Data>` 
+.. note:: When using :doc:`non-standard types of chart <Non-standard_chart_types_data>` 
    (Heikin Ashi, Renko, etc.) as a basis for strategy, you
    need to realize that the result will be different. The orders will be
    executed at the prices of this chart (e.g., for Heikin Ashi it'll take
@@ -60,7 +60,7 @@ Editor*.
    Therefore we highly recommend you to use standard chart type for
    strategies.
 
-Backtesting and Forwardtesting
+Backtesting and forwardtesting
 ------------------------------
 
 On TradingView strategies are calculated on all available historical
@@ -78,7 +78,7 @@ You can set the strategy to perform additional calculation after an
 order is filled. For this you need to check off *Recalculate After Order
 filled* in settings or do it in the script code: ``strategy(..., calc_on_order_fills=true)``.
 
-Broker Emulator
+Broker emulator
 ---------------
 
 There is a *broker emulator* on TradingView for testing strategies. Unlike
@@ -140,7 +140,7 @@ The execution price still matches the limit order price. Example:
   ``12.50`` (original order price), even if the price is not available
   anymore.
 
-Order Placement Commands
+Order placement commands
 ------------------------
 
 All keywords that are designed for strategies start with a
@@ -315,7 +315,7 @@ was not closed before the end of the calculation as the exit command has
 already been triggered.
 
 
-Closing Market Position
+Closing market position
 -----------------------
 
 Despite it is possible to exit from a specific entry in code, when
@@ -369,7 +369,7 @@ the same way when trading with through a real broker.
 
 .. _oca_groups:
 
-OCA Groups
+OCA groups
 ----------
 
 It is possible to put orders in 2 different One-Cancells-All (OCA) groups in Pine Script:
@@ -437,7 +437,7 @@ different. "Order" will be outside of any group as its type is set to
 as exits are always placed in the ``strategy.oca.reduce_size`` type
 group.
 
-Risk Management
+Risk management
 ---------------
 
 It is not easy to create a universal profitable strategy. Usually,

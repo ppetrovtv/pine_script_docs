@@ -1,4 +1,4 @@
-Example of an Indicator in Pine
+Example of an indicator in Pine
 ===============================
 
 A program written in Pine is composed of functions and variables.

@@ -4,7 +4,7 @@ HOWTOs
 .. contents:: :local:
     :depth: 2
 
-Get Real OHLC price on a Heikin Ashi chart
+Get real OHLC price on a Heikin Ashi chart
 ------------------------------------------
 
 Suppose, we have a Heikin Ashi chart (or Renko, Kagi, PriceBreak etc)
@@ -33,7 +33,7 @@ combination with ``tickerid`` function. Here is an example::
 
 In a similar way we may get other OHLC prices: *open*, *high* and *low*.
 
-Plot Arrows on the Chart
+Plot arrows on the chart
 ------------------------
 
 You may use plotshape with style ``shape.arrowup`` and
@@ -56,8 +56,8 @@ You may use ``plotchar`` function with any unicode character::
 .. image:: images/Buy_sell_chart2.png
    
 
-Plot Horizontal Line (Moving)
------------------------------
+Plot a dynamic horizontal line
+------------------------------
 
 There is function ``hline`` in pine. But it is now limited to only plot
 constant value. Here is a Pine Script with workaround to plot changing
@@ -70,7 +70,7 @@ hline::
     // offset=-9999 hides the plot
     plot(close, color=#FFFFFFFF) // forces to show study
 
-Plot Vertical Line on Condition
+Plot vertical line on condition
 -------------------------------
 
 ::
@@ -86,7 +86,7 @@ Plot Vertical Line on Condition
     // use the style of histogram, a vertical bar
     plot(cond ? 10e20 : na, style = histogram)
 
-Access Previous Value
+Access previous value
 ---------------------
 
 ::
@@ -98,8 +98,8 @@ Access Previous Value
     if (condition)
         s := s + 1
 
-Get 5-Day High
---------------
+Get a 5-day high
+----------------
 
 Lookback 5 days from the current bar, find the highest bar, plot a star
 character at that price level above the current bar
@@ -159,8 +159,8 @@ character at that price level above the current bar
     // fill the background of the 5 day lookback window range with aqua color
     bgcolor(leftborder and not rightborder ? aqua : na, transp=70)
 
-Get Count of Bars in Dataset
-----------------------------
+Count bars in a dataset
+-----------------------
 
 Get a count of all the bars in the loaded dataset. Might be useful for
 calculating flexible lookback periods based on number of bars.
@@ -171,7 +171,7 @@ calculating flexible lookback periods based on number of bars.
     study("Bar Count", overlay=true, scale=scale.none)
     plot(n + 1, style=histogram)
 
-Enumerate Bars in a Day
+enumerate bars in a day
 -----------------------
 
 ::
@@ -185,7 +185,7 @@ Enumerate Bars in a Day
 
     plot(barssince(is_new_day()), style=cross)
 
-Find the Highest and Lowest Values for the Entire Dataset
+Find the highest and lowest values for the entire dataset
 ---------------------------------------------------------
 
 ::
@@ -210,8 +210,8 @@ Find the Highest and Lowest Values for the Entire Dataset
     plot(biggest(close), color=green)
     plot(smallest(close), color=red)
 
-Query the Last Non-Empty Value
-------------------------------
+Query the last non-``na`` value
+-------------------------------
 
 You can use the script below to avoid gaps in a series::
 

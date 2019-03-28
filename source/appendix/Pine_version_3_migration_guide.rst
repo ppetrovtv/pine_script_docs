@@ -1,12 +1,12 @@
 .. _pine_v3_migration_guide:
 
-Pine Version 3 Migration Guide
+Pine version 3 migration guide
 ==============================
 
 This document helps to migrate Pine Script code from ``@version=2`` to
 ``@version=3``.
 
-Default Behaviour of ``security`` Function Has Changed
+Default behaviour of ``security`` function has changed
 ------------------------------------------------------
 
 Let's look at the simple ``security`` function use case. Add this
@@ -34,7 +34,7 @@ It can take on the form of two different values:
 ``barmerge.lookahead_off`` (and this is the default for Pine version 3) or
 ``barmerge.lookahead_on`` (which is the default for Pine version 2).
 
-Self-Referenced Variables Are Removed
+Self-referenced variables are removed
 -------------------------------------
 
 Pine version 2 pieces of code, containing a self-referenced variable::
@@ -58,7 +58,7 @@ variable type. It's a float in this example.
 In some cases you may initialize that mutable variable (like ``s``) with
 a ``na`` value. But in complex cases that won't work.
 
-Forward-Referenced Variables Are Removed
+Forward-referenced variables are removed
 ----------------------------------------
 
 ::
@@ -81,8 +81,8 @@ should be rewritten in Pine version 3 as follows::
     e = d + 1
     f := e + close
 
-Resolving a Problem with a Mutable Variable in the ``security`` Expression
---------------------------------------------------------------------------
+Resolving a problem with a mutable variable in a ``security`` expression
+------------------------------------------------------------------------
 
 When you migrate script to version 3 it's possible that after removing
 self-referenced and forward-referenced variables the Pine compiler
@@ -107,7 +107,7 @@ variable in a function::
         s := nz(s[1]) + close
     t = security(tickerid, period, calcS())
 
-Math Operations with Booleans Are Forbidden
+Math operations with booleans are forbidden
 -------------------------------------------
 
 In Pine Script v2 there were rules of implicit conversion of booleans

@@ -1,6 +1,6 @@
 .. _pine_script_release_notes:
 
-Pine Script Release Notes
+Pine Script release notes
 =========================
 
 .. contents:: :local:
@@ -8,7 +8,7 @@ Pine Script Release Notes
 
 This page contains release notes of notable changes in Pine Script.
  
-2017-05-17: Compile-Time Constants
+2017-05-17: Compile-time constants
 ----------------------------------
 
 Pine Script used to have 3 types of constants --- literal, non-literal and
@@ -26,7 +26,7 @@ compilation-time constants take a spot between the literal and
 non-literal types. All of the functions that accepted literal as an
 argument will now accept compilation-time constants as well.
 
-2017-04-26: Input with Options
+2017-04-26: Input with options
 ------------------------------
 
 Some built-in indicators have a setting that lets you choose several
@@ -39,8 +39,8 @@ options. The same is possible in Pine Script now. For example::
 
 .. _kwargs_syntax_for_all_builtin_functions:
 
-2017-04-17: kwargs Syntax for All Builtin Functions
----------------------------------------------------
+2017-04-17: Kwargs syntax for all built-in functions
+----------------------------------------------------
 
 Pinescript had different calls for annotation functions (``study``, ``plot``, ...)
 and built-in functions (``sma``, ``security``, ...). Annotation functions used to
@@ -54,7 +54,7 @@ This will be especially useful for the ``security`` function to specify the
 
 .. _pine_script_release_notes_v3:
 
-2017-03-20: Pine Version 3
+2017-03-20: Pine version 3
 --------------------------
 
 `Repainting <https://getsatisfaction.com/tradingview/topics/strategies-and-indicators-are-repainting>`__
@@ -63,7 +63,7 @@ issues have been reported for some time. These issues are not identical,
 but they are interrelated. Version 3 aims to solve the backtesting
 issue. Here's a more detailed explanation.
 
-Repainting Issue
+Repainting issue
 ~~~~~~~~~~~~~~~~
 
 There's a substantial difference between historical and real-time data
@@ -85,7 +85,7 @@ data. After each chart reload (after pressing *F5*) the border that
 divides historical data and real-time will be shifted, in accordance
 with the current time period.
 
-Backtesting Issue
+Backtesting issue
 ~~~~~~~~~~~~~~~~~
 
 The second issue is a security function that allows you to get "future"
@@ -130,11 +130,11 @@ to switch between the new and old behavior of the
 `security <https://www.tradingview.com/study-script-reference/#fun_security>`__
 function. Detailed description of this parameter can be found in the section :ref:`barmerge_gaps_and_lookahead`.
 
-Changes in Type System
+Changes in type system
 ~~~~~~~~~~~~~~~~~~~~~~
 
 * Self-referenced and forward-referenced variables are removed.
 * Math operations with booleans are forbidden.
 
-See :doc:`appendix/Pine_Version_3_Migration_Guide` for more
+See :doc:`appendix/Pine_version_3_migration_guide` for more
 details.

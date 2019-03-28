@@ -10,7 +10,7 @@ It's a replacement of [Pine Tutorial Wiki](https://www.tradingview.com/wiki/Pine
 * Capitalize all proper nouns
 
 ### Filenames for *.rst files
-Take a page title, replace all spaces with `_`, remove all punctuation, add `.rst` extension.
+Take a page title, replace all spaces with underscores (`_`), remove all punctuation (except dashes, `-`), add `.rst` extension.
 For example such a content:
 ```
 Expressions, declarations and statements

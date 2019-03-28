@@ -16,4 +16,4 @@ one can highlight the large code fragment in Script Editor and press
 `Ctrl + /` is pressed again, commentary will be taken away.
 
 Also, comments could not be placed in the middle of a statement wrapped
-to several lines, read more here: :doc:`Lines_Wrapping`.
+to several lines, read more here: :doc:`Lines_wrapping`.

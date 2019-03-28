@@ -1,4 +1,4 @@
-Where Can I Get More Information?
+Where can I get more information?
 =================================
 
 First, additional descriptions of all built-in operators, variables,
@@ -21,8 +21,8 @@ Finally, information about large releases and modifications to Pine
 Script (as well as other features) is regularly published on
 `TradingView's blog <http://blog.tradingview.com>`__.
 
-More Links
-----------
+Additional resources
+--------------------
 
 -  `Getting Started with Pine
    Script <https://backtest-rookies.com/getting-started/#tv>`__

@@ -23,7 +23,7 @@ or in the *Indicators* |rarr| *Public Library* tab:
 |Public_Library_tab|
 
 
-Copying a Script from Public to Personal Library
+Copying a script from Public to Personal Library
 ------------------------------------------------
 
 To copy a script choose one of two methods:
@@ -46,10 +46,10 @@ the *Indicators* window:
  |Sorted_by_popularity|
 
 
-Editing a Script from the Public Library
-----------------------------------------
+Editing a script from Public Library
+------------------------------------
 
-To edit a script from the Public Library:
+To edit a script from Public Library:
 
 #. Open the script (the script will be unavailable for editing and
    will be colored lighter than normal): |Open_the_script|
@@ -67,7 +67,7 @@ If the same script is published more than once, a notification on older
 versions will appear that a new version is available.
 
 
-Searching for a Script
+Searching for a script
 ----------------------
 
 To search for a script, use the *Search* field in the *Indicators* dialog:
@@ -79,7 +79,7 @@ This will search both your Personal and Public Library at the same time:
 |Search|
 
 
-Educational Videos
+Educational videos
 ------------------
 
 #. `Importing Custom Indicators <https://player.vimeo.com/video/86111066>`__

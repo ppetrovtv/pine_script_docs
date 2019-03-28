@@ -1,10 +1,10 @@
-Sessions and Time Functions
+Sessions and time functions
 ===========================
 
 .. contents:: :local:
     :depth: 2
 
-Functions and the Variable ``time``
+Functions and the variable ``time``
 -----------------------------------
 
 In Pine there are special means for working with trade sessions, time
@@ -146,7 +146,7 @@ have been declared in a special way with the help of the
 `input <http:////www.tradingview.com/study-script-reference/#fun_input>`__ functions.
 
 
-Built-in Variables for Working with Time
+Built-in variables for working with time
 ----------------------------------------
 
 Pine's standard library has an assortment of built-in variables and functions which

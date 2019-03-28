@@ -13,7 +13,7 @@ series type. Instead, there are built-in variables of a series type
 (such as ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
 ``hl2``, ``hlc3``, ``ohlc4``). These variables are not literals.
 
-Integer Literals
+Integer literals
 ----------------
 
 Integral-valued literals can be presented only in the decimal system.
@@ -24,7 +24,7 @@ For example::
     94572
     100
 
-Floating-point Literals
+Floating-point literals
 -----------------------
 
 Real literals in comparison with integral-valued literals contain a
@@ -43,7 +43,7 @@ number ``3`` as a floating point number.
 
 .. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``.
 
-Boolean Literals
+Boolean literals
 ----------------
 
 There are only two literals for representing logical values::
@@ -51,7 +51,7 @@ There are only two literals for representing logical values::
     true    // true value
     false   // false value
 
-String Literals
+String literals
 ---------------
 
 String literals may be enclosed by single or double quotation marks, for
@@ -76,7 +76,7 @@ preceded with backslash. For example::
     'It\'s an example'
     "The \"Star\" indicator"
 
-Color Literals
+Color literals
 --------------
 
 Color literals have the following format: ``#`` followed by 6 or 8

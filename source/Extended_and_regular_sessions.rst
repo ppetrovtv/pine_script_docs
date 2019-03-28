@@ -1,12 +1,12 @@
 ..    include:: <isonum.txt>
 
-Extended and Regular Sessions
+Extended and regular sessions
 =============================
 
 On TradingView there is an option (*right click* on chart, then *Properties* |rarr|
 *Timezone/Sessions* |rarr| *Extended Hours*) that controls type of current chart
 session. There are two types of session: *regular* (without pre and post market
-data) and *extended* (with them). In Pine scripts it is possible
+data) and *extended* (with them). In Pine Scripts it is possible
 to specify session type for additional data, that is requested with
 ``security`` function.
 
