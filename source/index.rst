@@ -14,32 +14,10 @@ Pine Script |version| documentation
    
    Introduction
    Example_of_an_indicator_in_Pine
-   Structure_of_the_script
-   Comments
-   Identifiers
-   Type_system
-   Literals
-   Operators
-   Functions_vs_annotation_functions
-   Expressions_declarations_and_statements
-   Declaring_functions
-   Lines_wrapping
-   Context_switching_the_security_function
-   Bar_states_Built-in_variables_barstate
-   Sessions_and_time_functions
-   Extended_and_regular_sessions
-   Non-standard_chart_types_data
-   Annotation_functions_overview
-   Shapes_using_plotshape_plotchar_plotarrow
-   Custom_OHLC_bars_and_candles
-   Strategies
-   Indicator_repainting
-   Transparency_in_Pine_Scripts
-   Public_Library
-   Publishing_scripts
+   language/index
+   essential/index
+   annotations/index
+   infra/index
    Pine_Script_release_notes
-   Appendix <appendix/subindex>
+   appendix/index
    Where_can_I_get_more_information
-   Pine Script reference <https://www.tradingview.com/study-script-reference/>
-
-

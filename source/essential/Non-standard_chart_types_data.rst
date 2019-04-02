@@ -66,7 +66,7 @@ Here is the source code::
 .. image:: images/Pine_Heikinashi_2.png
 
 Read more about `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__ 
-(and `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__) functions in section :doc:`Custom_OHLC_bars_and_candles`.
+(and `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__) functions in section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
 
 ``renko`` function
 ------------------

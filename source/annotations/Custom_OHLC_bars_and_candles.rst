@@ -1,6 +1,9 @@
 Custom OHLC bars and candles
 ============================
 
+.. contents:: :local:
+    :depth: 2
+
 You may define your own custom *bars* and *candles* in Pine Scripts. There
 are functions `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__
 and `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__

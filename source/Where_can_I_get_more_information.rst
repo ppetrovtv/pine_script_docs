@@ -20,21 +20,3 @@ Fourth, there is a Pine Script community growing on StackOverflow, see questions
 Finally, information about large releases and modifications to Pine
 Script (as well as other features) is regularly published on
 `TradingView's blog <http://blog.tradingview.com>`__.
-
-Additional resources
---------------------
-
--  `Getting Started with Pine
-   Script <https://backtest-rookies.com/getting-started/#tv>`__
-
--  `TradingView programming
-   articles <https://www.tradingcode.net/tradingview-programming-articles/>`__
-
--  `3 Best Places To Find Pine Script Reference Material
-   (Video) <http://blog.tradingview.com/?p=510>`__
-
--  `The Commitments of Traders (COT) on
-   TradingView <http://blog.tradingview.com/?p=472>`__
-
--  `TradingView integrates Quandl --- Best Web Charting Meets 9 Million
-   Datasets! <http://blog.tradingview.com/?p=452>`__

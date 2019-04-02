@@ -82,9 +82,12 @@ Color literals
 Color literals have the following format: ``#`` followed by 6 or 8
 hexadecimal digits matching RGB or RGBA value. The first two digits
 determine the value for the **red** color component, the second two --- for
-**green**, and the third pair --- the value for the **blue** component. Fourth
-pair of digits is optional. When set, it specifies the **alpha** (opacity)
-value. Examples::
+**green**, and the third pair --- the value for the **blue** component. 
+Each component value is a hexadecimal number between ``00`` and ``FF`` (0 and 255 in decimal).
+
+Fourth pair of digits is optional. When set, it specifies the **alpha** (opacity) 
+component which value is also between ``00`` (fully transparent) and ``FF`` (fully opaque).
+Examples::
 
     #000000                // black color
     #FF0000                // red color
@@ -93,12 +96,28 @@ value. Examples::
     #FFFFFF                // white color
     #808080                // gray color
     #3ff7a0                // some custom color
-    #FF000080              // semi-transparent red color
-    #00FF00FF              // same as #00FF00
-    #00FF0000              // completely transparent color
-
-It is possible to change transparency of the color using built-in
-function `color <https://www.tradingview.com/study-script-reference/#fun_color>`__.
+    #FF000080              // 50% transparent red color
+    #FF0000FF              // same as #00FF00, fully opaque red color
+    #FF000000              // completely transparent color
 
 .. note:: When using hexadecimal figures it's possible to use them in
    either upper or lowercase.
+
+It is possible to change transparency of the color using built-in
+function `color <https://www.tradingview.com/study-script-reference/#fun_color>`__.
+Here is an example of ``color`` usage::
+
+    //@version=2
+    study(title="Shading the chart's background", overlay=true)
+    c = navy
+    bgColor = (dayofweek == monday) ? color(c, 50) :
+      (dayofweek == tuesday) ? color(c, 60) :
+      (dayofweek == wednesday) ? color(c, 70) :
+      (dayofweek == thursday) ? color(c, 80) :
+      (dayofweek == friday) ? color(c, 90) :
+      color(blue, 80)
+    bgcolor(color=bgColor)
+
+You can control transparency in properties of a study on *Style* tab:
+
+.. image:: images/Transparency_settings.png

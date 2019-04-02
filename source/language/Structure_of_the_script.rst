@@ -11,7 +11,7 @@ of three kinds:
 
 -  :ref:`variable declarations <variable_declaration>`
 -  :doc:`function declarations <Declaring_functions>`
--  :doc:`annotation function calls <Functions_vs_annotation_functions>`
+-  :doc:`functions and annotations calls <Functions_and_annotations>`
 
 Long statements that don't fit within in the width of the screen can be
 split to a few lines, further information about this can be found

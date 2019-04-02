@@ -105,7 +105,7 @@ In Pine version 3, this can be achieved using the syntax of :ref:`mutable variab
     fib := na(fib[1]) or na(fib[2]) ? 1 : fib[1] + fib[2]
     plot(fib)
 
-See also :doc:`appendix/Pine_version_3_migration_guide`.
+See also :doc:`/appendix/Pine_version_3_migration_guide`.
 
 **Expert tip**: mod out the Fibonacci numbers by 1000 to generate a plot you
 can actually see:
@@ -290,7 +290,7 @@ be nested, then add 4 more spaces::
 
 It is possible to ignore the resulting value of an ``if`` statement
 (``var_declarationX =`` can be omited). It may be useful if you need the
-side effect of the expression, for example in :doc:`strategy trading<Strategies>`:
+side effect of the expression, for example in :doc:`strategy trading</essential/Strategies>`:
 
 ::
 

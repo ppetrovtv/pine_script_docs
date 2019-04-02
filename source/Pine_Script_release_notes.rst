@@ -74,7 +74,7 @@ There's a substantial difference between historical and real-time data
 that a Pine Script indicator or strategy uses. The key difference --- a
 historical bar does NOT contain information about price movements
 between *high* and *low* of a bar. Only a few Pine Script language tools are
-sensitive to this difference, read more :doc:`Indicator_repainting`.
+sensitive to this difference, read more :doc:`/essential/Indicator_repainting`.
 
 Here is a basic example that describes this case::
 

@@ -1,5 +1,5 @@
-Shapes using ``plotshape``, ``plotchar``, ``plotarrow``
-=======================================================
+Plotting shapes, chars and arrows
+=================================
 
 .. contents:: :local:
     :depth: 2

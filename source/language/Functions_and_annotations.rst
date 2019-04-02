@@ -1,21 +1,19 @@
-Functions vs annotation functions
-=================================
+Functions and annotations
+=========================
 
-Pine, besides operators, also has functions and *annotation functions*.
-Occasionally, for brevity's sake, this manual will refer to annotation
-functions as simply annotations. Syntactically they are similar (however
-there are some differences which will now be discussed), but they have
-different purposes and usage effects.
+Pine Script distinguishes between *functions* and *annotation functions* (or just *annotations*).
+Syntactically they are similar, but they have different purposes and usage effects.
 
-Functions are used for calculating values and always return a result.
+Functions are used for calculating values and most of the time return a result.
 Some functions have side effects (e.g., `strategy.entry`, `strategy.exit`). 
 Function calls are used in
 expressions along with operators. Essentially, they determine the
-calculation algorithm. Functions are divided into built-in or custom
-(user-defined). Examples of built-in functions:
+calculation algorithm. Functions are divided into built-in and :doc:`user-defined <Declaring_functions>`.
+Examples of built-in functions:
 `sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__,
 `ema <https://www.tradingview.com/study-script-reference/#fun_ema>`__,
 `rsi <https://www.tradingview.com/study-script-reference/#fun_rsi>`__.
+
 
 Function annotations are used for determining meta information which
 describes an indicator being created (they also have side effects). All
@@ -32,13 +30,15 @@ Name, color and each graph's display style are determined in
 annotations. Examples of annotation functions:
 `study <https://www.tradingview.com/study-script-reference/#fun_study>`__,
 `input <https://www.tradingview.com/study-script-reference/#fun_input>`__,
-`plot <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
+`plot <https://www.tradingview.com/study-script-reference/#fun_plot>`__. 
 
 A few annotations have not only side effects (in the form of determining
 meta information) but also return a result. ``plot`` and ``hline`` are such
 annotations. However this result can be used only in other annotations
 and can't take part in the indicator's calculations 
 (see annotation `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__).
+
+A detailed overview of available Pine Script annotations could be found :doc:`here </annotations/index>`.
 
 Syntactically, user-defined functions, built-in functions and annotation
 functions are similar in use within the script: to use either function
@@ -49,19 +49,11 @@ built-in functions accept keyword arguments while user-defined functions
 do not (see :ref:`release note on kwargs in built-in
 functions <kwargs_syntax_for_all_builtin_functions>`).
 
-Function calls allows to pass arguments only by position. For most of
-programming languages it's the only available method of arguments
-passing. Function annotation calls also accepts keyword arguments. This
-allows to specify only part of arguments leaving others by default.
-Compare the following:
-
-::
+Example of an annotation call with positional arguments::
 
     study('Example', 'Ex', true)
 
-and
-
-::
+Compare it with the equivalent call but with keyword arguments::
 
     study(title='Example', shorttitle='Ex', overlay=true)
 
@@ -71,4 +63,4 @@ following call is not valid:
 
 ::
 
-    study(precision=3, 'Example')
+    study(precision=3, 'Example') // Compilation error!
