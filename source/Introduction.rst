@@ -42,27 +42,7 @@ Versions
 Currently there are three versions of Pine Script Language. A special
 attribute must be used in the first line of a code to switch between
 versions ``//@version=N`` where ``N`` is number. Note, that Pine Script
-Language versions are incompatible with each other.
+Language versions are incompatible with each other. 
 
-Features introduced in version 2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Notable changes are documented in :doc:`Pine_Script_release_notes`.
 
--  :ref:`Variable assignment<variable_assignment>` (or mutable variables),
--  :ref:`if_statement`,
--  :ref:`for_statement`,
-
-Features introduced in version 3
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  new ``security`` function behavour, controlled by parameter: :ref:`lookahead <barmerge_gaps_and_lookahead>`,
--  self-referenced and forward-referenced variables were removed,
--  changes in type system: forbid math operations on booleans,
--  `input with
-   options <https://blog.tradingview.com/en/several-new-features-added-pine-scripting-language-3933/>`__,
--  `keyword arguments supported in all built-in
-   functions <https://blog.tradingview.com/en/kwargs-syntax-now-covers-built-functions-3914/>`__,
--  `compile time
-   constants <https://blog.tradingview.com/en/possibilities-compile-time-constants-4127/>`__.
-
-See :ref:`Version 3 Release Notes <pine_script_release_notes_v3>`
-and :ref:`Migration Guide <pine_v3_migration_guide>` for details.
