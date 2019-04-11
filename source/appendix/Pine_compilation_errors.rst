@@ -96,13 +96,13 @@ The result of such ternary operator should be series of string. But
 there is no support for *series of string* type in Pine Script. So this call
 is forbidden.
 
-Loop is too long (> 100 ms)
+Loop is too long (> 200 ms)
 ---------------------------
 
 We limit the computation time of loop on every historical bar and
 realtime tick to protect our servers from infinite or very long loops.
 This limit also fail-fast indicators that will take too long to compute.
-For example, if you'll have 5000 bars, and indicator takes 100 milliseconds to
+For example, if you'll have 5000 bars, and indicator takes 200 milliseconds to
 compute on each of bars, it would have result in more than 8 minutes of
 loading.
 
