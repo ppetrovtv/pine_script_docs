@@ -17,7 +17,14 @@ Pine Script |version| documentation
    language/index
    essential/index
    annotations/index
-   infra/index
+   Publishing_scripts
+   Public_Library
    Release_notes
    appendix/index
    Where_can_I_get_more_information
+
+
+.. TODO: Need pages about Pine Editor (Open, New, Save, Add To Chart)
+.. TODO: Delete gotcha - operation could not be reverted
+.. TODO: Notes about Pine souce code versioning. How to revert to any previous version
+.. TODO: Pine publishing gotcha https://jira.xtools.tv/browse/JV-193
