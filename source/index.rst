@@ -18,6 +18,6 @@ Pine Script |version| documentation
    essential/index
    annotations/index
    infra/index
-   Pine_Script_release_notes
+   Release_notes
    appendix/index
    Where_can_I_get_more_information

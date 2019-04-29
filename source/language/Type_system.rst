@@ -61,7 +61,7 @@ cast to any of *color*, *integer*, *float* or *series* types. But
 
 .. image:: images/Pine_Types_v3.jpg
 
-.. note:: Pine type system was changed in version 3. See :ref:`pine_script_release_notes`. See also type casts
+.. note:: Pine type system was changed in version 3. See :doc:`/Release_notes`. See also type casts
    graph for version 2:
    
    |Pine_Types_v2|

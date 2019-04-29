@@ -93,7 +93,7 @@ variables. For Example:
     plot(fib)
 
 .. note:: self referencing variables and forward referencing variables were
-   removed in :ref:`version 3 <pine_script_release_notes_v3>`.
+   removed in :ref:`version 3 <release_notes_v3>`.
 
 In Pine version 3, this can be achieved using the syntax of :ref:`mutable variables<variable_assignment>`:
 

@@ -1,7 +1,5 @@
-.. _pine_script_release_notes:
-
-Pine Script release notes
-=========================
+Release notes
+=============
 
 .. contents:: :local:
     :depth: 2
@@ -56,7 +54,7 @@ This will be especially useful for the ``security`` function to specify the
 
     security('TSLA', 'D', close, lookahead=barmerge.lookahead_off)
 
-.. _pine_script_release_notes_v3:
+.. _release_notes_v3:
 
 Pine version 3 (20 Mar 2017)
 ----------------------------

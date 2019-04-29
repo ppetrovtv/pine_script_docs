@@ -123,7 +123,7 @@ If `barmerge.gaps_on <https://www.tradingview.com/study-script-reference/#var_ba
 be merged possibly with gaps (``na`` values).
 
 Second one --- ``lookahead`` --- was added in :ref:`Pine Script version
-3 <pine_script_release_notes_v3>`. The parameter has two possible values:
+3 <release_notes_v3>`. The parameter has two possible values:
 `barmerge.lookahead_off <https://www.tradingview.com/study-script-reference/#var_barmerge{dot}lookahead_off>`__
 and
 `barmerge.lookahead_on <https://www.tradingview.com/study-script-reference/#var_barmerge{dot}lookahead_on>`__
