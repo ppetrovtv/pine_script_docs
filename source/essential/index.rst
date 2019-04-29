@@ -1,5 +1,5 @@
-Essential Pine Features
-=======================
+Essential Features
+==================
 
 .. toctree::
    :maxdepth: 3
