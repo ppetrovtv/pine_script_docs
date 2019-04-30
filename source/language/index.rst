@@ -1,4 +1,4 @@
-Language Fundamentals
+Language fundamentals
 =====================
 
 .. toctree::

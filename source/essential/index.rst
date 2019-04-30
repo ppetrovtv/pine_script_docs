@@ -1,4 +1,4 @@
-Essential Features
+Essential features
 ==================
 
 .. toctree::
