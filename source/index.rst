@@ -13,7 +13,7 @@ Pine Script |version| documentation
    :name: mastertoc
    
    Introduction
-   Example_of_an_indicator_in_Pine
+   Quickstart_guide
    language/index
    essential/index
    annotations/index

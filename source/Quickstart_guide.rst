@@ -1,5 +1,5 @@
-Example of an indicator in Pine
-===============================
+Quickstart guide
+================
 
 A program written in Pine is composed of functions and variables.
 Functions contain instructions that describe required calculations and
@@ -13,6 +13,9 @@ name and some other script properties. Script body contains functions
 and variables necessary to calculate the result which will be rendered
 as a chart with a ``plot`` (or some other function that *produces the output*) 
 function call.
+
+Example of an indicator in Pine
+-------------------------------
 
 As a first example, we'll examine the implementation of the
 `MACD <https://www.tradingview.com/wiki/MACD>`__ indicator:
