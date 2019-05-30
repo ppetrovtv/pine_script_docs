@@ -96,9 +96,7 @@ Session specification, which is being passed to the function ``time``,
 is not required to correspond with the real trade session of the symbol
 on the chart. It's possible to pass different "hypothetical" session
 specifications which can be used to highlight some other bars of
-a data series. It's possible to transfer the different "hypothetical"
-session specifications which can be used to highlight those or other
-bars in a data series.
+a data series.
 
 There is an overloaded function ``time`` that allows the user to skip
 custom session specification. In this case, internally, it will use a
