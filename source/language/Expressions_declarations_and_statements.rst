@@ -25,7 +25,7 @@ Variable declaration
 --------------------
 
 Variables in Pine are declared with the help of the special symbol ``=`` and optional ``var`` keyword
-in one the following ways:
+in one of the following ways:
 
 .. code-block:: text
 
@@ -66,6 +66,8 @@ green bars on the chart::
 
 Without the ``var`` modifier, variable ``count`` would be reset to zero (thus loosing it's value) every time a new bar update triggers script calculation.
 
+.. note:: ``var`` keyword was introduced in Pine since version 4.
+
 In Pine v3 the study "Green Bars Count" could be written without use of the ``var`` keyword::
     
     //@version=3
@@ -101,18 +103,14 @@ Example, illustrating the effect of ``var`` keyword::
     // Creates just one label object on the first history bar only:
     var label lb = label.new(bar_index, close, title="Hello, World!")
 
+
 .. _variable_assignment:
 
 Variable assignment
 -------------------
 
-Mutable variable is such a variable which can be given a new value.
-
-The operator ``:=`` must be used to give a new value to a variable. To use
-this operator, a special attribute must be used in the first line of a
-code: ``//@version=2``. This attribute identifies the version of Pine
-Script. Mutable variables were introduced in version 2.
-
+Mutable variable is such a variable which can be given a new value. 
+The operator ``:=`` must be used to give a new value to a variable. 
 A variable must be declared before you can set a value for it
 (declaration of variables has been described :ref:`above<variable_declaration>`).
 
@@ -131,6 +129,9 @@ Variable assignment example::
     plot(price)
 
 We also use an :ref:`"if" statement <if_statement>` in this example.
+
+.. note:: Operator ``:=`` and mutable variables concept were introduced in Pine since version 2.
+
 
 .. _if_statement:
 
