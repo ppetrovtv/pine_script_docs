@@ -8,7 +8,7 @@ Expressions
 -----------
 
 An expression is a sequence where operators or function
-calls are applied to operands (variables, values) to define the calculations
+calls are applied to operands (variables or values) to define the calculations
 and actions required by the script. Expressions in Pine almost always
 produce a result (exceptions are the functions
 ``study``, ``fill``, ``strategy.entry``, etc. They produce side effects and will be covered
