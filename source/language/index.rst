@@ -11,7 +11,6 @@ Language fundamentals
    Identifiers
    Lines_wrapping
    Type_system
-   Literals
    Operators
    Functions_and_annotations
    Expressions_declarations_and_statements

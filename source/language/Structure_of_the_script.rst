@@ -1,7 +1,7 @@
 Structure of the script
 =======================
 
-..    include:: <isonum.txt>
+.. include:: <isonum.txt>
 
 A script in Pine usually consists of 
 
