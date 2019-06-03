@@ -119,6 +119,13 @@ For example::
     94572
     100
 
+There are all 5 forms of int type in Pine:
+    * *literal int*
+    * *const int*
+    * *input int*
+    * *int* 
+    * *series int*
+
 float
 ^^^^^
 
@@ -138,6 +145,13 @@ number ``3`` as a floating point number.
 
 .. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``.
 
+There are all 5 forms of float type in Pine:
+    * *literal float*
+    * *const float*
+    * *input float*
+    * *float* 
+    * *series float*
+
 bool
 ^^^^
 
@@ -145,6 +159,14 @@ There are only two literals for representing logical values::
 
     true    // true value
     false   // false value
+
+There are all 5 forms of bool type in Pine:
+    * *literal bool*
+    * *const bool*
+    * *input bool*
+    * *bool* 
+    * *series bool*
+
 
 color
 ^^^^^
@@ -172,6 +194,26 @@ Examples::
 
 .. note:: When using hexadecimal figures it's possible to use them in
    either upper or lowercase.
+
+There are all 5 forms of color type in Pine:
+    * *literal color*
+    * *const color*
+    * *input color*
+    * *color*
+    * *series color*
+
+One might wonder how to get a value of type *input color* if there is no color 
+`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ in Pine. The answer is, 
+with an arithmetic expression with other input types and color literals/constants. For example::
+
+   b = input(true, "Use red color")
+   c = b ? color.red : #000000  // c has color input type
+
+There is an arithmetic expression with Pine ternary operator ``?:`` which involves
+three different types: ``b`` of type *input bool*, ``color.red`` of type *const color* and ``#000000`` of 
+type *literal color*. Pine compiler takes into account two things: Pine automatic type casting rules (see below), 
+and available overloads of operator ``?:``. Thus the resulting type is the most narrow type that could be 
+auto casted to and this is *input color* type.
 
 Apart from configuring a color value directly with a literal (in hexadecimal format), 
 in the language there are more convenient, built-in variables of the type *color*. For
@@ -226,23 +268,64 @@ preceded with backslash. For example::
     'It\'s an example'
     "The \"Star\" indicator"
 
+There are all 5 forms of string type in Pine:
+    * *literal string*
+    * *const string*
+    * *input string*
+    * *string*
+    * *series string*
+
 
 line and label
 ^^^^^^^^^^^^^^
 
-TODO
+New drawing objects were introduced in Pine v4. These objects could be created with 
+`line.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}new>`__ 
+and `label.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}new>`__ 
+functions. Their types are  *series line* and *series label* correspondingly.
+There is only one series form of drawing types in Pine.
+
 
 void
 ----
 
-Finally, there is also a *void* type in Pine Script. Some functions with *side effect* 
+There is a *void* type in Pine Script. All the functions and annotation functions with *side effect* 
 return void result. For example a 
-`strategy.entry <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}entry>`__.
+`strategy.entry <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}entry>`__,
+`plotshape <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_plotshape>`__ etc.
 
-na type
--------
+Void result from function means that it cannot be used in any arithmetic expression or to be assigned to a variable.
 
-TODO
+``na`` value
+------------
+
+In Pine there is a special built-in variable ``na``, which is an acronym for *not available*.
+Such a value means that an expression or a variable has actually no value (or value is not avaiable). This is very similar
+to ``null`` value in Java or ``None`` in Python.
+
+There are a few things to know about ``na`` values. First, ``na`` value could be automatically casted to almost any type.
+
+Second, in some cases Pine compiler cannot automatically infer type for ``na`` value, because more that one automatic type cast rules 
+could be applied. For example::
+    
+    myVar = na // Compilation error!
+
+Compiler cannot guess, would ``myVar`` be used to plot something, e.g. ``plot(myVar)`` (and thus it's type is *series float*), or to set some text
+``label.set_text(lb, text=myVar)`` (meaning that it's type is *series string*).
+
+Such cases could be resolved in a two ways::
+    
+    float myVar = na
+
+or::
+    
+    myVar = float(na)
+
+Third, to test some value if it is *not available* or not, a special function `na <>`__ should be used. Do not use operator ``==`` against ``na`` value.
+This is not guaranteed to work. This is very similar to double *NaN* values in . 
+
+    
+
 
 Tuples
 ------
