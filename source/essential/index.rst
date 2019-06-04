@@ -12,3 +12,4 @@ Essential features
    Non-standard_chart_types_data
    Strategies
    Indicator_repainting
+   Drawings
