@@ -120,6 +120,7 @@ For example::
     100
 
 There are all 5 forms of int type in Pine:
+
     * *literal int*
     * *const int*
     * *input int*
@@ -146,6 +147,7 @@ number ``3`` as a floating point number.
 .. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``.
 
 There are all 5 forms of float type in Pine:
+
     * *literal float*
     * *const float*
     * *input float*
@@ -161,6 +163,7 @@ There are only two literals for representing logical values::
     false   // false value
 
 There are all 5 forms of bool type in Pine:
+
     * *literal bool*
     * *const bool*
     * *input bool*
@@ -196,6 +199,7 @@ Examples::
    either upper or lowercase.
 
 There are all 5 forms of color type in Pine:
+
     * *literal color*
     * *const color*
     * *input color*
@@ -217,31 +221,28 @@ auto casted to and this is *input color* type.
 
 Apart from configuring a color value directly with a literal (in hexadecimal format), 
 in the language there are more convenient, built-in variables of the type *color*. For
-basic colors there are: ``black``, ``silver``, ``gray``, ``white``,
-``maroon``, ``red``, ``purple``, ``fuchsia``, ``green``, ``lime``,
-``olive``, ``yellow``, ``navy``, ``blue``, ``teal``, ``aqua``,
-``orange``. 
+basic colors there are: ``color.black``, ``color.silver``, ``color.gray``, ``color.white``,
+``color.maroon``, ``color.red``, ``color.purple``, ``color.fuchsia``, ``color.green``, ``color.lime``,
+``color.olive``, ``color.yellow``, ``color.navy``, ``color.blue``, ``color.teal``, ``color.aqua``,
+``color.orange``. 
 
 It is possible to change transparency of the color using
 built-in function
-`color <https://www.tradingview.com/study-script-reference/#fun_color>`__.
+`color.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_color{dot}new>`__.
 
-Here is an example of ``color`` usage::
+Here is an example of ``color.new`` usage::
 
-    //@version=2
+    //@version=4
     study(title="Shading the chart's background", overlay=true)
-    c = navy
-    bgColor = (dayofweek == monday) ? color(c, 50) :
-      (dayofweek == tuesday) ? color(c, 60) :
-      (dayofweek == wednesday) ? color(c, 70) :
-      (dayofweek == thursday) ? color(c, 80) :
-      (dayofweek == friday) ? color(c, 90) :
-      color(blue, 80)
+    c = color.navy
+    bgColor = (dayofweek == dayofweek.monday) ? color.new(c, 50) :
+    (dayofweek == dayofweek.tuesday) ? color.new(c, 60) :
+    (dayofweek == dayofweek.wednesday) ? color.new(c, 70) :
+    (dayofweek == dayofweek.thursday) ? color.new(c, 80) :
+    (dayofweek == dayofweek.friday) ? color.new(c, 90) :
+    color.new(color.blue, 80)
     bgcolor(color=bgColor)
 
-You can control transparency in properties of a study on *Style* tab:
-
-.. image:: images/Transparency_settings.png
 
 string
 ^^^^^^
@@ -269,6 +270,7 @@ preceded with backslash. For example::
     "The \"Star\" indicator"
 
 There are all 5 forms of string type in Pine:
+
     * *literal string*
     * *const string*
     * *input string*
@@ -311,9 +313,8 @@ could be applied. For example::
     myVar = na // Compilation error!
 
 Compiler cannot guess, would ``myVar`` be used to plot something, e.g. ``plot(myVar)`` (and thus it's type is *series float*), or to set some text
-``label.set_text(lb, text=myVar)`` (meaning that it's type is *series string*).
-
-Such cases could be resolved in a two ways::
+``label.set_text(lb, text=myVar)`` (meaning that it's type is *series string*) and so on. 
+Such cases could be resolved in a two equivalent ways::
     
     float myVar = na
 
@@ -321,16 +322,27 @@ or::
     
     myVar = float(na)
 
-Third, to test some value if it is *not available* or not, a special function `na <>`__ should be used. Do not use operator ``==`` against ``na`` value.
-This is not guaranteed to work. This is very similar to double *NaN* values in . 
-
-    
+Third, to test if some value is *not available* or not, a special function `na <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_na>`__ should be used. Do not use operator ``==`` against ``na`` value.
+This is not guaranteed to work.
 
 
 Tuples
 ------
 
-TODO
+In Pine Script there is a limited support for tuple types. A tuple is a immutable sequence of values that could be returned as a function call result.
+For example::
+
+    calcSumAndMul(a, b) =>
+        sum = a + b
+        mul = a * b
+        [sum, mul]
+
+In this example there is a 2-tuple on the last statement of function ``calcSumAndMul``. Tuple elements could be of an arbitrary type. 
+There is also a special syntax for calling functions that return tuples. For example ``calcSumAndMul`` could be called::
+
+    [s, m] = calcSumAndMul(high, low)
+
+Value of local variable ``sum`` will be written to ``s`` variable of the outer scope. So as ``mul`` value will be written to ``m`` variable.
 
 Other
 ^^^^^
