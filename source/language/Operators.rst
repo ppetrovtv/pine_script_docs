@@ -227,8 +227,8 @@ last). As seen in the table, ``close[3]`` has ``na`` values on the
 first three bars. ``na`` represents a value which is not a number and
 using it in any math expression will result in also ``na`` (similar 
 to `NaN <https://en.wikipedia.org/wiki/NaN>`__). So your
-code should specifically handle ``na`` values using functions :ref:`na and
-nz <preventing_na_values_functions_na_and_nz>`.
+code should specifically handle ``na`` values using functions `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
+`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__.
 
 Priority of operators
 ---------------------

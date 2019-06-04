@@ -19,12 +19,6 @@ sys.path.insert(0, os.path.abspath('./modules'))
 from sphinx.highlighting import lexers
 import pine_lexer
 
-from recommonmark.parser import CommonMarkParser
-
-source_parsers = {
-    '.md': CommonMarkParser,
-}
-
 # -- Project information -----------------------------------------------------
 
 project = u'Pine Script documentation'
@@ -32,10 +26,10 @@ copyright = u'2019, TradingView'
 author = u''
 
 # The short X.Y version
-version = u'3' # Could be referenced from *.rst with |version| macro
+version = u'4' # Could be referenced from *.rst with |version| macro
 
 # The full version, including alpha/beta/rc tags
-release = u'3' # Could be referenced from *.rst with |release| macro
+release = u'4' # Could be referenced from *.rst with |release| macro
 
 
 # -- General configuration ---------------------------------------------------
@@ -86,10 +80,16 @@ highlight_language = 'pine'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+import guzzle_sphinx_theme
+html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
+html_theme = 'guzzle_sphinx_theme'
 
-# Hint: To do local theme development clone the sphinx_rtd_theme git repo and symlink it to `_themes/sphinx_rtd_theme`
-html_theme_path = ['_themes/sphinx_rtd_theme/']
+html_theme_path = guzzle_sphinx_theme.html_theme_path()
+
+# Custom sidebar templates, maps document names to template names.
+html_sidebars = {
+    '**': ['logo-text.html', 'globaltoc.html', 'searchbox.html']
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
