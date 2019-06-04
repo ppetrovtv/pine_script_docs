@@ -19,12 +19,6 @@ sys.path.insert(0, os.path.abspath('./modules'))
 from sphinx.highlighting import lexers
 import pine_lexer
 
-from recommonmark.parser import CommonMarkParser
-
-source_parsers = {
-    '.md': CommonMarkParser,
-}
-
 # -- Project information -----------------------------------------------------
 
 project = u'Pine Script documentation'
@@ -92,9 +86,6 @@ html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
 html_theme = 'guzzle_sphinx_theme'
 
 html_theme_path = guzzle_sphinx_theme.html_theme_path()
-# Hint: To do local theme development clone the guzzle_sphinx_theme git repo and symlink it to `_themes/guzzle_sphinx_theme`
-# html_theme_path = ['_themes/guzzle_sphinx_theme/guzzle_sphinx_theme/']
-
 
 # Custom sidebar templates, maps document names to template names.
 html_sidebars = {

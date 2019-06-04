@@ -1,2 +1,1 @@
-# -e git+https://github.com/tradingview/sphinx_rtd_theme@master#egg=sphinx_rtd_theme
 -e git+https://github.com/guzzle/guzzle_sphinx_theme@master#egg=guzzle_sphinx_theme
