@@ -345,7 +345,7 @@ There is also a special syntax for calling functions that return tuples. For exa
 Value of local variable ``sum`` will be written to ``s`` variable of the outer scope. So as ``mul`` value will be written to ``m`` variable.
 
 Other
-^^^^^
+-----
 
 A few function annotations (in particular ``plot`` and ``hline``) return
 values which represent objects created on the chart. The function
