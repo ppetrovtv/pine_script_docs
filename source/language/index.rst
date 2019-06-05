@@ -15,3 +15,4 @@ Language fundamentals
    Functions_and_annotations
    Expressions_declarations_and_statements
    Declaring_functions
+   Execution_model

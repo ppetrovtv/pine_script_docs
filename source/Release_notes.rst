@@ -5,7 +5,24 @@ Release notes
     :depth: 2
 
 This page contains release notes of notable changes in Pine Script.
- 
+
+Pine version 4 (June 2019)
+--------------------------
+
+* Drawing objects support. Added drawings *label* and *line*
+* ``var`` keyword for one time variable initialization
+* Type system improvements: 
+
+  * *series string* data type
+  * functions for explicit type casting
+  * syntax for explicit variable type declaration
+  * new *input* type forms
+
+* Built-ins renamings and a version 3 to 4 converter utility
+* ``max_bars_back`` function to control series variables internal history buffer sizes
+* Pine Script documentation versioning
+
+
 Pine version 3 (17 May 2017) 
 ----------------------------
 
