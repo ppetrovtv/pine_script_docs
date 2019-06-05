@@ -1,6 +1,9 @@
 Drawings
 ========
 
+.. contents:: :local:
+    :depth: 2
+
 Since Pine version 4, it is possible to write indicators and strategies which
 create *drawing objects* on chart. At the moment two kinds of 
 drawings are supported, they are *label* and *line*:
@@ -50,9 +53,31 @@ Here is a modified version of the same script that shows values of ``x`` and ``y
 In this example labels are shown without a background coloring (because of parameter ``style=label.style_none``) but with a 
 dynamically created text (``text="x=" + tostring(bar_index) + "\ny=" + tostring(high)``) that prints actual values of label coordinates.
 
+Finally, here is a minimal code, that creates a line objects on chart::
+
+    //@version=4
+    study("My Script", overlay=true)
+    line.new(x1=bar_index[1], y1=low[1], x2=bar_index, y2=high)
+
+.. image:: images/minimal_line.png
+
+
+Calculation of drawings on bar updates
+--------------------------------------
+
+Drawing objects are subject to both *commit* and *rollback* actions as well as any other Pine variables, :doc:`/language/Execution_model`.
+
+That is why script::
+
+    //@version=4
+    study("My Script", overlay=true)
+    label.new(bar_index, high)
+
+Being calculated on realtime bar updates does not produce a new label object after every price movement.
+
+To be continued...
 
 .. TODO How to create and modify drawings
-.. TODO drawing objects calculation over OHLCV bar updates (rollback/commit concepts)
 .. TODO how to delete old drawings
 .. TODO limit of 50 drawing objects
 .. TODO label locations: absolute vs above/below bars
