@@ -1,1 +1,1 @@
--e git+https://github.com/guzzle/guzzle_sphinx_theme@master#egg=guzzle_sphinx_theme
+-e git+https://git.xtools.tv/tv/guzzle_sphinx_theme@master#egg=guzzle_sphinx_theme
