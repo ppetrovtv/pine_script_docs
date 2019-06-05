@@ -53,7 +53,7 @@ Here is a modified version of the same script that shows values of ``x`` and ``y
 In this example labels are shown without a background coloring (because of parameter ``style=label.style_none``) but with a 
 dynamically created text (``text="x=" + tostring(bar_index) + "\ny=" + tostring(high)``) that prints actual values of label coordinates.
 
-Finally, here is a minimal code, that creates a line objects on chart::
+Finally, here is a minimal code, that creates line objects on chart::
 
     //@version=4
     study("My Script", overlay=true)
