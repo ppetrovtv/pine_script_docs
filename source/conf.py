@@ -98,7 +98,7 @@ html_sidebars = {
 #
 html_theme_options = {
     # Set the name of the project to appear in the sidebar
-    'project_nav_name': u'Pine Script documentation',
+    'project_nav_name': u'Pine Script v3 documentation',
 }
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -175,8 +175,7 @@ gettext_compact = False
 html_context = {
     'current_version': 'v3',
     'languages': [
-        'en',
-        'ru'
+        'en'
     ],
     'versions': [
         'v3',
