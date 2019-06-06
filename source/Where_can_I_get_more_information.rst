@@ -20,3 +20,9 @@ Fourth, there is a Pine Script community growing on StackOverflow, see questions
 Finally, information about large releases and modifications to Pine
 Script (as well as other features) is regularly published on
 `TradingView's blog <http://blog.tradingview.com>`__.
+
+
+External resources
+-------------------
+
+-  `TradingView programming articles <https://kodify.net/tradingview-programming-articles/>`__.
