@@ -76,6 +76,7 @@ That is why script::
 Being calculated on realtime bar updates script does not produce a new label object after every price movement. Rollback erases any drawing objects,
 created during any intra-bar update. After calculation on a closing bar update a label object is finally commited and stays on chart.
 
+.. _drawings_coordinates:
 
 Coordinates
 -----------
@@ -150,7 +151,7 @@ List of available *setter* functions for label drawing:
 
     * `label.set_color <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_color>`__ --- changes color of label
     * `label.set_size <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_size>`__ --- changes size of label
-    * `label.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_style>`__ --- changes style of label
+    * `label.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_style>`__ --- changes :ref:`style of label <drawings_label_styles>`
     * `label.set_text <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_text>`__ --- changes text of label
     * `label.set_textcolor <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of label text
     * `label.set_x <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_x>`__ --- changes x-coordinate of label
@@ -162,10 +163,15 @@ List of available *setter* functions for label drawing:
 List of available *setter* functions for line drawing:
 
     * `line.set_color <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_color>`__ --- changes color of line
-    * `line.set_extend <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_extend>`__ --- changes attribute that makes a line segment, a ray or an endless line.
-    * `line.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_style>`__ --- changes style of line (solid, dotted, dashed or with an arrow end)
+    * `line.set_extend <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_extend>`__ --- changes attribute that makes 
+      
+      - ``extend.none`` - a line segment
+      - ``extend.left``/``extend.right`` - a ray
+      - ``extend.both`` - an endless line
+
+    * `line.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_style>`__ --- changes :ref:`style of line <drawings_line_styles>`
     * `line.set_width <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_width>`__ --- changes width of line
-    * `line.set_xloc <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xloc>`__ --- changes x-location of line both ``x1`` and ``x2`` coordinates
+    * `line.set_xloc <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xloc>`__ --- changes x-location of line both x1 and x2 coordinates
     * `line.set_x1 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_x1>`__ --- changes x1-coordinate of line
     * `line.set_y1 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_y1>`__ --- changes y1-coordinate of line
     * `line.set_xy1 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xy1>`__ --- changes both x1 and y1 coordinates of line at once
@@ -174,10 +180,15 @@ List of available *setter* functions for line drawing:
     * `line.set_xy2 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xy2>`__ --- changes both x2 and y2 coordinates of line at once
 
 
+.. _drawings_label_styles:
+
 Label styles
 ------------
 
-Script uses only two label styles: ``label.style_labelup`` and ``label.style_labeldown``. Other available styles are:
+Pine labels support a number of various styles. Style could be set either with
+`label.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}new>`__ or 
+`label.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_style>`__ 
+function:
 
 +--------------------------------+-------------------------------------------------+-------------------------------------------------+
 | Label style name               | Label                                           | Label with text                                 |
@@ -237,8 +248,39 @@ Script uses only two label styles: ``label.style_labelup`` and ``label.style_lab
 .. |label_style_diamond_t| image:: images/label.style_diamond_t.png
 
 
+.. _drawings_line_styles:
+
 Line styles
 -----------
+
+Pine lines support a number of various styles. Style could be set either with
+`line.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}new>`__ or 
+`line.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_style>`__ 
+function:
+
++--------------------------------+-------------------------------------------------+
+| Line style name                | Line                                            |
++================================+=================================================+
+| ``line.style_solid``           | |line_style_solid|                              |
++--------------------------------+-------------------------------------------------+
+| ``line.style_dotted``          | |line_style_dotted|                             |
++--------------------------------+-------------------------------------------------+
+| ``line.style_dashed``          | |line_style_dashed|                             |
++--------------------------------+-------------------------------------------------+
+| ``line.style_arrow_left``      | |line_style_arrow_left|                         |
++--------------------------------+-------------------------------------------------+
+| ``line.style_arrow_right``     | |line_style_arrow_right|                        |
++--------------------------------+-------------------------------------------------+
+| ``line.style_arrow_both``      | |line_style_arrow_both|                         |
++--------------------------------+-------------------------------------------------+
+
+
+.. |line_style_solid| image:: images/line.style_solid.png
+.. |line_style_dotted| image:: images/line.style_dotted.png
+.. |line_style_dashed| image:: images/line.style_dashed.png
+.. |line_style_arrow_left| image:: images/line.style_arrow_left.png
+.. |line_style_arrow_right| image:: images/line.style_arrow_right.png
+.. |line_style_arrow_both| image:: images/line.style_arrow_both.png
 
 
 Deleting drawings
