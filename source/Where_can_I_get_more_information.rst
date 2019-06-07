@@ -25,4 +25,7 @@ Script (as well as other features) is regularly published on
 External resources
 -------------------
 
--  `TradingView programming articles <https://kodify.net/tradingview-programming-articles/>`__.
+- `Kodify <https://kodify.net/tradingview-programming-articles/>`__ has TradingView tutorials on various topics for beginners and more experienced coders alike. 
+  Topics include plotting, alerts, strategy orders, and complete example indicators and strategies.
+
+.. TODO: add more links here
