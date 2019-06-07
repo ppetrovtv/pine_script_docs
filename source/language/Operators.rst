@@ -61,13 +61,13 @@ Logical operators
 
 There are three logical operators in Pine Script:
 
-+--------+---------------------------------+
-| ``not`` | Negation                       |
-+--------+---------------------------------+
-| ``and`` | Logical Conjunction            |
-+--------+---------------------------------+
-| ``or``  | Logical Disjunction            |
-+--------+---------------------------------+
++---------+---------------------------------+
+| ``not`` | Negation                        |
++---------+---------------------------------+
+| ``and`` | Logical Conjunction             |
++---------+---------------------------------+
+| ``or``  | Logical Disjunction             |
++---------+---------------------------------+
 
 All logical operators can operate with *bool* operands, numerical
 operands, or series type operands. Similar to arithmetic and comparison
