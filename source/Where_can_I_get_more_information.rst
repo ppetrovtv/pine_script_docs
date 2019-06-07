@@ -25,9 +25,7 @@ Script (as well as other features) is regularly published on
 External resources
 -------------------
 
+- `Backtest Rookies <https://backtest-rookies.com/category/tradingview>`__ publishes high-quality blog articles focusing on realizing specific tasks in Pine.
 - `Kodify <https://kodify.net/tradingview-programming-articles>`__ has TradingView tutorials on various topics for beginners and more experienced coders alike. 
   Topics include plotting, alerts, strategy orders, and complete example indicators and strategies.
-
 - `Pinescripters <https://pinescripters.com>`__, the most active independent community of Pine coders, a place to share ideas, resources, and to learn. 
-
-.. TODO: add more links here
