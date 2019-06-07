@@ -286,25 +286,278 @@ function:
 Deleting drawings
 -----------------
 
-.. TODO how to delete old drawings
-.. TODO limit of 50 drawing objects
+Functions `label.delete <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}delete>`__ 
+and `line.delete <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}delete>`__ 
+delete *label* and *line* drawing objects on chart correspondingly. 
+
+As an example, here is a Pine code that keeps just one label drawing object on the current bar,
+*deleting the old ones*::
+
+    //@version=4
+    study("Last Bar Close 1", overlay=true)
+
+    c = close >= open ? color.lime : color.red
+    l = label.new(bar_index, na, 
+      text=tostring(close), color=c, 
+      style=label.style_labeldown, yloc=yloc.abovebar)
+
+    label.delete(l[1])
+
+.. image:: images/Last_Bar_Close_1.png
+
+In "Last Bar Close 1" study, on every new bar update a new label object is created and written to variable ``l``.
+Variable ``l`` has type *series label*, so operator ``[]`` is used to get label object on the previous bar. 
+That old label then is passed to ``label.delete`` function to delete it.
+
+Functions ``label.delete`` and ``line.delete`` do nothing if ``na`` object is passed to them. That is why::
+
+    if not na(l[1])
+        label.delete(l[1])
+
+Such a "protection" (the ``if`` statement) is not necessary.
+
+Exactly the same behaviour could be achieved with another approach. An old label could be deleted and then a new one created using just one 
+reference ``l`` on the same current bar::
+
+    //@version=4
+    study("Last Bar Close 2", overlay=true)
+
+    var label l = na
+    label.delete(l)
+    c = close >= open ? color.lime : color.red
+    l := label.new(bar_index, na, 
+      text=tostring(close), color=c,
+      style=label.style_labeldown, yloc=yloc.abovebar)
+
+In more detail, when study "Last Bar Close 2" gets a new bar update, variable ``l`` is still referencing to the old label object, created on the previous bar.
+So, it is deleted with call ``label.delete(l)`` and then a new label is created and written to ``l``. That is why in this approach there is 
+no need to use operator ``[]``.
+
+Note the use of new (since Pine v4) :ref:`var keyword <variable_declaration>`. It creates variable ``l`` and initializes it with ``na`` value just once. 
+Without this detail, ``label.delete(l)`` call would not delete any objects.
+
+By the way, there is one more approach without objects deletions. A drawing object may be created just once and then
+on every bar update it is moved forward along with the current bar::
+
+    //@version=4
+    study("Last Bar Close 3", overlay=true)
+
+    var label l = label.new(bar_index, na,
+      style=label.style_labeldown, yloc=yloc.abovebar)
+
+    c = close >= open ? color.lime : color.red
+    label.set_color(l, c)
+    label.set_text(l, tostring(close))
+    label.set_x(l, bar_index)
+
+Once again, the use of new :ref:`var keyword <variable_declaration>` is essential. Call ``label.new`` is executed only once on the very first 
+history bar.
 
 
 Examples of classic indicators
 ------------------------------
 
-Pivot points
-^^^^^^^^^^^^
+Pivot points standard
+^^^^^^^^^^^^^^^^^^^^^
 
-Zig Zag
-^^^^^^^
+.. image:: images/drawings_pivot_points_std.png
+
+::
+
+    //@version=4
+    study("Pivot Points Standard", overlay=true)
+    higherTF = input("D", type=input.resolution)
+    prevCloseHTF = security(syminfo.tickerid, higherTF, close[1], lookahead=true)
+    prevOpenHTF = security(syminfo.tickerid, higherTF, open[1], lookahead=true)
+    prevHighHTF = security(syminfo.tickerid, higherTF, high[1], lookahead=true)
+    prevLowHTF = security(syminfo.tickerid, higherTF, low[1], lookahead=true)
+
+    pLevel = (prevHighHTF + prevLowHTF + prevCloseHTF) / 3
+    r1Level = pLevel * 2 - prevLowHTF
+    s1Level = pLevel * 2 - prevHighHTF
+
+    var line r1Line = na
+    var line pLine = na
+    var line s1Line = na
+
+    if pLevel[1] != pLevel
+        line.set_x2(r1Line, bar_index)
+        line.set_x2(pLine, bar_index)
+        line.set_x2(s1Line, bar_index)
+        line.set_extend(r1Line, extend.none)
+        line.set_extend(pLine, extend.none)
+        line.set_extend(s1Line, extend.none)
+        r1Line := line.new(bar_index, r1Level, bar_index, r1Level, extend=extend.right)
+        pLine := line.new(bar_index, pLevel, bar_index, pLevel, width=3, extend=extend.right)
+        s1Line := line.new(bar_index, s1Level, bar_index, s1Level, extend=extend.right)
+        label.new(bar_index, r1Level, "R1", style=label.style_none)
+        label.new(bar_index, pLevel, "P", style=label.style_none)
+        label.new(bar_index, s1Level, "S1", style=label.style_none)
+        
+    if not na(pLine) and line.get_x2(pLine) != bar_index
+        line.set_x2(r1Line, bar_index)
+        line.set_x2(pLine, bar_index)
+        line.set_x2(s1Line, bar_index)
+
+
+
+
+Pivot points high/low
+^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/drawings_pivot_points_hl.png
+
+::
+
+    //@version=4
+    study('Pivots HL', overlay=true)
+
+    lenH = input(title='Length High', type=input.integer, defval=10, minval=1)
+    lenL = input(title='Length Low', type=input.integer, defval=10, minval=1)
+
+    fun(src, len, isHigh, _style, _yloc, _color) => 
+        p = nz(src[len])
+        isFound = true
+        for i = 0 to len * 2
+            if isHigh and src[i] > p
+                isFound := false
+            
+            if not isHigh and src[i] < p
+                isFound := false
+        
+        if isFound
+            label.new(bar_index[len], p, tostring(p), style=_style, yloc=_yloc, color=_color)
+
+    fun(high, lenH, true, label.style_labeldown, yloc.abovebar, color.lime)
+    fun(low, lenL, false, label.style_labelup, yloc.belowbar, color.red)
+
 
 Linear Regression
 ^^^^^^^^^^^^^^^^^
 
+.. image:: images/drawings_linear_regression.png
+
+::
+
+    //@version=4
+    study("Linear Regression", overlay=true)
+    src = input(close)
+    len = input(50)
+
+    calcSlope(src, len0) =>
+        if not barstate.islast
+            [float(na), float(na), float(na)]
+        else
+            sumX = 0.0
+            sumY = 0.0
+            sumXSqr = 0.0
+            sumXY = 0.0
+            for i = 0 to len - 1
+                val = src[i]
+                per = i + 1.0
+                sumX := sumX + per
+                sumY := sumY + val
+                sumXSqr := sumXSqr + per * per
+                sumXY := sumXY + val * per
+            slope = (len * sumXY - sumX * sumY) / (len * sumXSqr - sumX * sumX)
+            average = sumY / len
+            intercept = average - slope * sumX / len + slope
+            [slope, average, intercept]
+
+    [s, a, i] = calcSlope(src, len)
+
+    startPrice = i + s * (len - 1)
+    endPrice = i
+    var line baseLine = na
+    if na(baseLine)
+        baseLine := line.new(bar_index - len + 1, startPrice, bar_index, endPrice, width=4, extend=extend.right)
+    else
+        line.set_xy1(baseLine, bar_index - len + 1, startPrice)
+        line.set_xy2(baseLine, bar_index, endPrice)
+        na // To match the 'then' block type
+        
+
+Zig Zag
+^^^^^^^
+
+.. image:: images/drawings_zig_zag.png
+
+:: 
+
+    //@version=4
+    study('Zig Zag', overlay=true)
+
+    dev_threshold = input(title='Deviation', type=input.float, defval=5, minval=0)
+    depth = input(title='Depth', type=input.integer, defval=10, minval=1)
+
+    pivots(src, length, isHigh) => 
+        l2 = length * 2 
+        c = nz(src[length])
+        ok = true
+        for i = 0 to l2
+            if isHigh and src[i] > c
+                ok := false
+            
+            if not isHigh and src[i] < c
+                ok := false
+        if ok
+            [bar_index[length], c]
+        else
+            [int(na), float(na)]
+
+    [iH, pH] = pivots(high, depth / 2, true)
+    [iL, pL] = pivots(low, depth / 2, false)
+
+    calc_dev(base_price, price) =>
+        100 * (price - base_price) / base_price
+
+    var line lineLast = na
+    var int iLast = 0
+    var float pLast = 0
+    var isHighLast = false // otherwise the last pivot is a low pivot
+
+    pivotFound(dev, isHigh, index, price) => 
+        if isHighLast == isHigh and not na(lineLast)
+            // same direction
+            if isHighLast ? price > pLast : price < pLast
+                line.set_xy2(lineLast, index, price)
+                [lineLast, isHighLast]
+            else
+                [line(na), bool(na)]
+        else // reverse the direction (or create the very first line)
+            if abs(dev) > dev_threshold
+                // price move is significant
+                id = line.new(iLast, pLast, index, price, color=color.red, width=2)
+                [id, isHigh]
+            else
+                [line(na), bool(na)]
+            
+    if not na(iH)
+        dev = calc_dev(pLast, pH)
+        [id, isHigh] = pivotFound(dev, true, iH, pH)
+        if not na(id)
+            lineLast := id
+            isHighLast := isHigh
+            iLast := iH
+            pLast := pH
+    else
+        if not na(iL)
+            dev = calc_dev(pLast, pL)
+            [id, isHigh] = pivotFound(dev, false, iL, pL)
+            if not na(id)
+                lineLast := id
+                isHighLast := isHigh
+                iLast := iL
+                pLast := pL
+
+
+
+
+
 Tips and tricks
 ---------------
 
+.. TODO limit of 50 drawing objects
 .. TODO max_bars_back(time, XXX)
 .. TODO limitation: cannot create drawings on a secondary securities
 .. TODO advantages of labels vs plotshapes
