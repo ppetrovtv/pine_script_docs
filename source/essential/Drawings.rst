@@ -24,8 +24,8 @@ drawing objects could be created on historical bars as well as in the future (wh
 Creating drawings
 -----------------
 
-Drawing objects in Pine are created with functions `label.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}new>`__ 
-and `line.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}new>`__. 
+Drawing objects in Pine are created with functions `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ 
+and `line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__. 
 Each function has a number of various parameters, but only the coorinates are the mandatory ones.
 For example, a minimal code, that creates a label on every bar::
     
@@ -36,9 +36,9 @@ For example, a minimal code, that creates a label on every bar::
 .. image:: images/minimal_label.png
 
 Label is created with parameters ``x=bar_index`` (which is the index of the current bar, 
-`bar_index <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_bar_index>`__) and ``y=high`` (high price of the current bar).
+`bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__) and ``y=high`` (high price of the current bar).
 When a new bar opens, a new label is created on it. Label object, created on the previous closed bar stays on chart, 
-until indicator deletes it with an explicit call of `label.delete <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}delete>`__ 
+until indicator deletes it with an explicit call of `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
 function or it would be automatically collected as an old garbage object after a while.
 
 Here is a modified version of the same script that shows values of ``x`` and ``y`` coordinates of the created labels::
@@ -84,15 +84,15 @@ Coordinates
 Drawing objects are positioned on chart according to the *x* and *y* coordinates. Meaning (and the resulting effect) could be different, depending on
 values of drawing properties *x-location* and *y-location*. Plus there are minor nuances for label and line.
 
-If drawing object uses `xloc.bar_index <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_xloc{dot}bar_index>`__, then
+If drawing object uses `xloc.bar_index <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_index>`__, then
 x-coordinate is treated as an absolute bar index. Bar index of the current bar could be obtained from built-in variable ``bar_index``. 
 Bar index of the previous bars are ``bar_index[1]``, ``bar_index[2]`` and so on. ``xloc.bar_index`` is the default value for x-location parameters
 of both label and line drawings.
 
-If drawing object uses `xloc.bar_time <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_xloc{dot}bar_time>`__, then
+If drawing object uses `xloc.bar_time <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_time>`__, then
 x-coordinate is treated as UNIX time in milliseconds. Start time of the current bar could be obtained from built-in variable ``time``.
 Bar time of the previous bars are ``time[1]``, ``time[2]`` and so on. Time could be set as an absolute time point with the help of 
-function `timestamp <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_timestamp>`__.
+function `timestamp <https://www.tradingview.com/study-script-reference/v4/#fun_timestamp>`__.
 
 ``xloc.bar_time`` mode gives an ability to place a drawing object in the future, in front of the current bar. For example::
 
@@ -107,11 +107,11 @@ function `timestamp <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_
 This code places a label object in the future. X-location logic works identically for both label and line drawings.
 
 In contrast, y-location logic is different for label and line drawings.
-For *line* drawings there is only one option here, they use `yloc.price <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_yloc{dot}price>`__.
+For *line* drawings there is only one option here, they use `yloc.price <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}price>`__.
 It means, that y-coordinate is treated as an absolute price value.
 
-Label drawing has additional y-location values: `yloc.abovebar <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_yloc{dot}abovebar>`__ and
-`yloc.belowbar <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_yloc{dot}belowbar>`__.
+Label drawing has additional y-location values: `yloc.abovebar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}abovebar>`__ and
+`yloc.belowbar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}belowbar>`__.
 In this case, value of ``y`` parameter is ignored, because drawing object is placed on chart near the corresponding bar, above or below it.
 
 
@@ -149,35 +149,35 @@ A finite value for ``y`` is needed only if label uses ``yloc.price`` as y-locati
 
 List of available *setter* functions for label drawing:
 
-    * `label.set_color <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_color>`__ --- changes color of label
-    * `label.set_size <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_size>`__ --- changes size of label
-    * `label.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_style>`__ --- changes :ref:`style of label <drawings_label_styles>`
-    * `label.set_text <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_text>`__ --- changes text of label
-    * `label.set_textcolor <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of label text
-    * `label.set_x <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_x>`__ --- changes x-coordinate of label
-    * `label.set_y <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_y>`__ --- changes y-coordinate of label
-    * `label.set_xy <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_xy>`__ --- changes both x and y coordinates of label at once
-    * `label.set_xloc <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_xloc>`__ --- changes x-location of label
-    * `label.set_yloc <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_yloc>`__ --- changes y-location of label
+    * `label.set_color <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_color>`__ --- changes color of label
+    * `label.set_size <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_size>`__ --- changes size of label
+    * `label.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_style>`__ --- changes :ref:`style of label <drawings_label_styles>`
+    * `label.set_text <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_text>`__ --- changes text of label
+    * `label.set_textcolor <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of label text
+    * `label.set_x <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_x>`__ --- changes x-coordinate of label
+    * `label.set_y <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_y>`__ --- changes y-coordinate of label
+    * `label.set_xy <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_xy>`__ --- changes both x and y coordinates of label at once
+    * `label.set_xloc <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_xloc>`__ --- changes x-location of label
+    * `label.set_yloc <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_yloc>`__ --- changes y-location of label
 
 List of available *setter* functions for line drawing:
 
-    * `line.set_color <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_color>`__ --- changes color of line
-    * `line.set_extend <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_extend>`__ --- changes attribute that makes 
+    * `line.set_color <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_color>`__ --- changes color of line
+    * `line.set_extend <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_extend>`__ --- changes attribute that makes 
       
       - ``extend.none`` - a line segment
       - ``extend.left``/``extend.right`` - a ray
       - ``extend.both`` - an endless line
 
-    * `line.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_style>`__ --- changes :ref:`style of line <drawings_line_styles>`
-    * `line.set_width <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_width>`__ --- changes width of line
-    * `line.set_xloc <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xloc>`__ --- changes x-location of line both x1 and x2 coordinates
-    * `line.set_x1 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_x1>`__ --- changes x1-coordinate of line
-    * `line.set_y1 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_y1>`__ --- changes y1-coordinate of line
-    * `line.set_xy1 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xy1>`__ --- changes both x1 and y1 coordinates of line at once
-    * `line.set_x2 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_x2>`__ --- changes x2-coordinate of line
-    * `line.set_y2 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_y2>`__ --- changes y2-coordinate of line
-    * `line.set_xy2 <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_xy2>`__ --- changes both x2 and y2 coordinates of line at once
+    * `line.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_style>`__ --- changes :ref:`style of line <drawings_line_styles>`
+    * `line.set_width <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_width>`__ --- changes width of line
+    * `line.set_xloc <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xloc>`__ --- changes x-location of line both x1 and x2 coordinates
+    * `line.set_x1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_x1>`__ --- changes x1-coordinate of line
+    * `line.set_y1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_y1>`__ --- changes y1-coordinate of line
+    * `line.set_xy1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xy1>`__ --- changes both x1 and y1 coordinates of line at once
+    * `line.set_x2 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_x2>`__ --- changes x2-coordinate of line
+    * `line.set_y2 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_y2>`__ --- changes y2-coordinate of line
+    * `line.set_xy2 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xy2>`__ --- changes both x2 and y2 coordinates of line at once
 
 
 .. _drawings_label_styles:
@@ -186,8 +186,8 @@ Label styles
 ------------
 
 Pine labels support a number of various styles. Style could be set either with
-`label.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}new>`__ or 
-`label.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}set_style>`__ 
+`label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ or 
+`label.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_style>`__ 
 function:
 
 +--------------------------------+-------------------------------------------------+-------------------------------------------------+
@@ -254,8 +254,8 @@ Line styles
 -----------
 
 Pine lines support a number of various styles. Style could be set either with
-`line.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}new>`__ or 
-`line.set_style <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}set_style>`__ 
+`line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__ or 
+`line.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_style>`__ 
 function:
 
 +--------------------------------+-------------------------------------------------+
@@ -286,8 +286,8 @@ function:
 Deleting drawings
 -----------------
 
-Functions `label.delete <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}delete>`__ 
-and `line.delete <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}delete>`__ 
+Functions `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
+and `line.delete <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}delete>`__ 
 delete *label* and *line* drawing objects on chart correspondingly. 
 
 As an example, here is a Pine code that keeps just one label drawing object on the current bar,
@@ -605,7 +605,7 @@ Thus the system knows what history buffer size a series or a variable needs. Con
 ``bar_index[10]`` to be skipped for all history bars, so the system does not know anything about the ``bar_index`` (but, remember, ``time`` series)
 history buffer size needed. That is why the code fails.
 
-Solution for this is to use `max_bars_back <https://tvpm244.xstaging.tv/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for ``time`` series::
+Solution for this is to use `max_bars_back <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for ``time`` series::
 
     //@version=4
     study("My Script", overlay=true)

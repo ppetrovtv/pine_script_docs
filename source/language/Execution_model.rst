@@ -8,7 +8,7 @@ Pine code is always executed against some OHLCV symbol data set. This is a data 
 Any symbol data set has a finite number of bars. If user scrolls chart to the left (to see the most early bars), then a portion of bars
 is loaded on the chart. Loading process stops when either there are no more bars on that particular symbol or chart gets about 10000 bars [#all_available_bars]_.
 User may scroll the chart to the left until the very first bar available, this is the bar with index 0 
-(see `bar_index <https://tvpm244.xstaging.tv/study-script-reference/v4/#var_bar_index>`__).
+(see `bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__).
 
 Bars that are closed are the *historic bars*. If there is a trading session running and there were trades recently (withing a bar timeframe period),
 then there is also a *current bar* on the chart that is updating in realtime. After a while, *current bar* closes becoming a historic bar and a new

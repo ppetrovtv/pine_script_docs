@@ -58,7 +58,7 @@ Values of *input* type are the ones that
 
     * do not change during the script execution
     * unknown at script compile time
-    * they are values that come from `input <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_input>`__ function
+    * they are values that come from `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ function
 
 For example::
 
@@ -228,7 +228,7 @@ basic colors there are: ``color.black``, ``color.silver``, ``color.gray``, ``col
 
 It is possible to change transparency of the color using
 built-in function
-`color.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_color{dot}new>`__.
+`color.new <https://www.tradingview.com/study-script-reference/v4/#fun_color{dot}new>`__.
 
 Here is an example of ``color.new`` usage::
 
@@ -282,8 +282,8 @@ line and label
 ^^^^^^^^^^^^^^
 
 New drawing objects were introduced in Pine v4. These objects could be created with 
-`line.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line{dot}new>`__ 
-and `label.new <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label{dot}new>`__ 
+`line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__ 
+and `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ 
 functions. Their types are  *series line* and *series label* correspondingly.
 There is only one series form of drawing types in Pine.
 
@@ -294,7 +294,7 @@ void
 There is a *void* type in Pine Script. All the functions and annotation functions with *side effect* 
 return void result. For example a 
 `strategy.entry <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}entry>`__,
-`plotshape <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_plotshape>`__ etc.
+`plotshape <https://www.tradingview.com/study-script-reference/v4/#fun_plotshape>`__ etc.
 
 Void result from function means that it cannot be used in any arithmetic expression or to be assigned to a variable.
 
@@ -322,7 +322,7 @@ or::
     
     myVar = float(na)
 
-Third, to test if some value is *not available* or not, a special function `na <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_na>`__ should be used. Do not use operator ``==`` against ``na`` value.
+Third, to test if some value is *not available* or not, a special function `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ should be used. Do not use operator ``==`` against ``na`` value.
 This is not guaranteed to work.
 
 
@@ -380,13 +380,13 @@ an automatic type cast rule *series float* |rarr| *series bool* (see the diagram
 Sometimes there is no type conversion *X* |rarr| *Y*. That is why in Pine (since version 4) there are 
 functions for explicit type casting. They are:
     
-    * `int <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_int>`__
-    * `float <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_float>`__
-    * `string <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_string>`__
-    * `bool <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_bool>`__
-    * `color <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_color>`__
-    * `line <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_line>`__
-    * `label <https://tvpm244.xstaging.tv/study-script-reference/v4/#fun_label>`__
+    * `int <https://www.tradingview.com/study-script-reference/v4/#fun_int>`__
+    * `float <https://www.tradingview.com/study-script-reference/v4/#fun_float>`__
+    * `string <https://www.tradingview.com/study-script-reference/v4/#fun_string>`__
+    * `bool <https://www.tradingview.com/study-script-reference/v4/#fun_bool>`__
+    * `color <https://www.tradingview.com/study-script-reference/v4/#fun_color>`__
+    * `line <https://www.tradingview.com/study-script-reference/v4/#fun_line>`__
+    * `label <https://www.tradingview.com/study-script-reference/v4/#fun_label>`__
 
 Here is an example::
 
