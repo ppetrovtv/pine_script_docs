@@ -23,8 +23,8 @@ The long ``plot`` call line may be wrapped as
 ::
 
     plot(correlation(src, ovr, length),
-       color=purple,
-       style=area,
+       color=color.purple,
+       style=plot.style_area,
        transp=40)
 
 Statements inside user functions also can be wrapped to several lines.
@@ -52,15 +52,16 @@ example:
 This rule also applies to comments. Don't use comments combined
 with lines wrapping. Following code would NOT compile::
 
-    //@version=2
+    //@version=4
     study("My Script")
-    c = open > close ? red :
-      high > high[1] ? lime : // a comment
-      low < low[1] ? blue : black
+    c = open > close ? color.red :
+    high > high[1] ? color.lime : // a comment
+    low < low[1] ? color.blue : color.black
     bgcolor(c)
 
+
 Compiler fails with an error:
-``Add to Chart operation failed, reason: line 3: no viable alternative at input '|E|'``.
+``Add to Chart operation failed, reason: line 3: syntax error at input 'end of line without line continuation'``.
 To make this pine work, simply remove the ``// a comment`` comment. This
 limitation is inconvenient... We hope it could be removed in future Pine
 releases.

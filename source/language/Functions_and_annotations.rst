@@ -10,9 +10,9 @@ Function calls are used in
 expressions along with operators. Essentially, they determine the
 calculation algorithm. Functions are divided into built-in and :doc:`user-defined <Declaring_functions>`.
 Examples of built-in functions:
-`sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__,
-`ema <https://www.tradingview.com/study-script-reference/#fun_ema>`__,
-`rsi <https://www.tradingview.com/study-script-reference/#fun_rsi>`__.
+`sma <https://www.tradingview.com/study-script-reference/v4/#fun_sma>`__,
+`ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__,
+`rsi <https://www.tradingview.com/study-script-reference/v4/#fun_rsi>`__.
 
 
 Function annotations are used for determining meta information which
@@ -28,15 +28,16 @@ annotations are built-in. Annotations may
 
 Name, color and each graph's display style are determined in
 annotations. Examples of annotation functions:
-`study <https://www.tradingview.com/study-script-reference/#fun_study>`__,
-`input <https://www.tradingview.com/study-script-reference/#fun_input>`__,
-`plot <https://www.tradingview.com/study-script-reference/#fun_plot>`__. 
+`study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__,
+`strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__,
+`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__,
+`plot <https://www.tradingview.com/study-script-reference/v4/#fun_plot>`__. 
 
 A few annotations have not only side effects (in the form of determining
 meta information) but also return a result. ``plot`` and ``hline`` are such
 annotations. However this result can be used only in other annotations
 and can't take part in the indicator's calculations 
-(see annotation `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__).
+(see annotation `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__).
 
 A detailed overview of available Pine Script annotations could be found :doc:`here </annotations/index>`.
 

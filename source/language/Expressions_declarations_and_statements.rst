@@ -121,7 +121,7 @@ compilation error.
 
 Variable assignment example::
 
-    //@version=2
+    //@version=4
     study("My Script")
     price = close
     if hl2 > price
@@ -272,7 +272,7 @@ where:
 
 ::
 
-    //@version=2
+    //@version=4
     study("For loop")
     my_sma(price, length) =>
         sum = price

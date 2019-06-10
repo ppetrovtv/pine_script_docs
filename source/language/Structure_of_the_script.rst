@@ -5,7 +5,7 @@ Structure of the script
 
 A script in Pine usually consists of 
 
-* `// @version=4` A special directive in a comment, that specifies the Pine language version. 
+* ``//@version=4`` A special directive in a comment, that specifies the Pine language version. 
   If ``@version`` directive is missing, version 1 will be used. It is strongly recommended always
   use the latest version available.
 * `study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__ or a 
@@ -23,11 +23,8 @@ A script in Pine usually consists of
     -  :doc:`function declarations <Declaring_functions>`
     -  :doc:`functions and annotations calls <Functions_and_annotations>`
   
-  Long statements that don't fit within in the width of the screen can be
-  split to a few lines, further information about this can be found
-  :doc:`here <Lines_wrapping>`.
 * It is required that study has at least one function/annotation call which produces some output on the chart 
-  (e.g. ``plot``, ``plotshape``, ``barcolor`` or ``line.new``).
+  (e.g. ``plot``, ``plotshape``, ``barcolor`` or ``line.new``, etc.)
   For a strategy it is required to have at least one ``strategy.*`` call, e.g. ``strategy.entry``.
 
   The simplest valid Pine study could be found in *Pine Editor* |rarr| *New* |rarr| *Blank indicator script*::

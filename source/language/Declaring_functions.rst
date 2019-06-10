@@ -38,7 +38,7 @@ type of variable ``a`` is *series*, because arguments are both *series*. The typ
 *integer*, because arguments are both *literal integers*. The type of variable ``c`` is *series*, 
 because addition of *series* and *literal integer* produces *series* result.
 
-Pine Scipt functions do not support recursion. It is not allowed for a function to call itself from within its own code.
+Pine Scipt functions do not support recursion. It is **not allowed** for a function to call itself from within its own code.
 
 
 .. _multi_line_functions:

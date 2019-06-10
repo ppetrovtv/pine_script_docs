@@ -293,7 +293,7 @@ void
 
 There is a *void* type in Pine Script. All the functions and annotation functions with *side effect* 
 return void result. For example a 
-`strategy.entry <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}entry>`__,
+`strategy.entry <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}entry>`__,
 `plotshape <https://www.tradingview.com/study-script-reference/v4/#fun_plotshape>`__ etc.
 
 Void result from function means that it cannot be used in any arithmetic expression or to be assigned to a variable.
@@ -352,7 +352,7 @@ values which represent objects created on the chart. The function
 ``plot`` returns an object of the type *plot*, represented as a line
 or diagram on the chart. The function ``hline`` returns an object of the
 type *hline*, represented as a horizontal line. These objects can be
-passed to the `fill <https://www.tradingview.com/study-script-reference/#fun_fill>`__ 
+passed to the `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
 function to color the area in between them.
 
 Type casting

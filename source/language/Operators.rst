@@ -113,7 +113,7 @@ Conditional operator ``?:`` and the function ``iff``
 ----------------------------------------------------
 
 `Conditional ternary
-operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
+operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
 calculates the first expression (condition) and returns a value either
 of the second operand (if the condition is ``true``) or of the third
 operand (if the condition is ``false``). Syntax::
