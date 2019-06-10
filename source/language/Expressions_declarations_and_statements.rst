@@ -36,7 +36,7 @@ in one of the following ways:
 
 ``<identifier>`` is the name of the declared variable, see :doc:`Identifiers`.
 
-``<type>`` could be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
+``<type>`` can be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
 However, in most cases, explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
 on the right of the ``=`` at compile time. It is strongly recommended to explicitly declare variable type only in case compiler 
 cannot determine it automatically. For example::
@@ -45,14 +45,10 @@ cannot determine it automatically. For example::
     float baseLine1 = na    // OK
     baseLine2 = float(na)   // OK
 
-Compiler cannot determine type of the ``baseLine0`` variable, because ``na`` is an expression that could be automatically casted to 
-almost any type (so exact type of ``na`` is unknown). Declaration of the ``baseLine1`` variable is correct, because ``float`` type is declared explicitly.
-Declaration of the ``baseLine2`` variable is also correct because type is autodetected from the expression ``float(na)``, which is 
-an explicit cast of ``na`` value to ``float`` type. Declarations of ``baseLine1`` and ``baseLine2`` are equivalent.
+In the frist line of the example, the compiler cannot determine the type of the ``baseLine0`` variable because ``na`` is a generic value of no particular type. The declaration of the ``baseLine1`` variable is correct because its ``float`` type is declared explicitly.
+The declaration of the ``baseLine2`` variable is also correct because its type can be derived from the expression ``float(na)``, which is an explicit cast of ``na`` value to ``float`` type. The declarations of ``baseLine1`` and ``baseLine2`` are equivalent, by the way.
 
-``var`` keyword is a special modifier that tells compiler to *create and initialize the variable only once*. This behaviour is very handful in cases
-if variable should persist it's value from one bar update to another. For example, suppose we'd like to count number of 
-green bars on the chart::
+The ``var`` keyword is a special modifier that instructs the compiler to *create and initialize the variable only once*. This behavior is very useful in cases where a variable's value must peresist through the successive bar iterations of the script. For example, suppose we'd like to count the number of green bars on the chart::
 
     //@version=4
     study("Green Bars Count")
