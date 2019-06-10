@@ -72,6 +72,6 @@ algorithms (`SMA <https://www.tradingview.com/wiki/Moving_Average#Simple_Moving_
 `WMA <https://www.tradingview.com/wiki/Moving_Average#Weighted_Moving_Average_.28WMA.29>`__, etc.) as well as
 making it possible to create your custom functions. You can find a
 description of all available built-in functions
-`here <https://www.tradingview.com/v4/study-script-reference/>`__. In the
+`here <https://www.tradingview.com/study-script-reference/v4/>`__. In the
 following sections the document will describe in full all the Pine
 Script capabilities.
