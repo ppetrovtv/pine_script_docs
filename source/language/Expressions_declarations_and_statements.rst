@@ -135,8 +135,8 @@ We also use an :ref:`"if" statement <if_statement>` in this example.
 
 .. _if_statement:
 
-``if`` statement
-----------------
+if statement
+------------
 
 ``if`` statement defines what block of statements must be executed when
 conditions of the expression are satisfied.
@@ -229,8 +229,8 @@ side effect of the expression, for example in :doc:`strategy trading</essential/
 
 .. _for_statement:
 
-``for`` statement
------------------
+for statement
+-------------
 
 ``for`` statement allows to execute a number of instructions repeatedly.
 General code form of the statement:

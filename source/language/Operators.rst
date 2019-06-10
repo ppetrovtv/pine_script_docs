@@ -109,8 +109,8 @@ value then the result will have a ``false`` value; if the operand has a
 
 .. _ternary_operator:
 
-Conditional operator ``?:`` and the function ``iff``
-----------------------------------------------------
+Conditional operator ?: and the function iff
+--------------------------------------------
 
 `Conditional ternary
 operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
@@ -154,8 +154,8 @@ previous example using ``iff`` will look like::
 
 .. _history_referencing_operator:
 
-History reference operator ``[]``
----------------------------------
+History reference operator []
+-----------------------------
 
 It is possible to refer to the historical values of any variable of a
 *series* type (values which the variable had on the previous bars) with

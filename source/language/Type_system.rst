@@ -298,8 +298,8 @@ return void result. For example a
 
 Void result from function means that it cannot be used in any arithmetic expression or to be assigned to a variable.
 
-``na`` value
-------------
+na value
+--------
 
 In Pine there is a special built-in variable ``na``, which is an acronym for *not available*.
 Such a value means that an expression or a variable has actually no value (or value is not avaiable). This is very similar
