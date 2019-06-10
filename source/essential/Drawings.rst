@@ -551,16 +551,69 @@ Zig Zag
                 pLast := pL
 
 
+Issues
+------
+
+Total number of drawings limit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pine code that operates with drawing objects consume server resources. That is why there is a limitation on total number of drawings 
+per study or strategy. If Pine code creates too many drawings, the old ones are automatically deleted by the Pine runtime.
+
+For example, here is a code, that creates a drawing on every bar::
+
+    //@version=4
+    study("My Script", overlay=true)
+    label.new(bar_index, high)
+
+Scrolling the chart to the left one may see that there are no drawings after about the 50 bars back:
+
+.. image:: images/drawings_total_number_limit.png
 
 
+Additional securities
+^^^^^^^^^^^^^^^^^^^^^
 
-Tips and tricks
----------------
-
-.. TODO limit of 50 drawing objects
-.. TODO max_bars_back(time, XXX)
-.. TODO limitation: cannot create drawings on a secondary securities
-.. TODO advantages of labels vs plotshapes
+Pine code may use additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function. 
+But all the drawing functions are allowed to be called only on the main symbol context. Anyway, secondary symbols are not displayed on the
+chart, so this limitation is pretty natural.
 
 
+max_bars_back of time
+^^^^^^^^^^^^^^^^^^^^^
+
+Usage of ``barstate.isrealtime`` in combination with drawings sometimes could lead to not so obvious weird behaviour of Pine code.
+For example, there is a code, that supposed to create label drawings on the *realtime* bars, skipping
+all the history bars::
+
+    //@version=4
+    study("My Script", overlay=true)
+
+    if barstate.isrealtime
+        label.new(bar_index[10], na, text="Label", yloc=yloc.abovebar)
+
+This study doesn't add anything on chart at all, actually, it fails in runtime with an error. 
+The reason for the error is that Pine could not determine the buffer size for history values of ``time`` plot, but...
+``time`` built-in variable even was not mentioned in the Pine code!
+
+First, built-in variable ``bar_index`` under the covers works with ``time`` series. Accessing the value of 
+bar index 10 bars back, needs that history buffer size of ``time`` series should be of size 10 elements or more.
+
+Second, in Pine there is a mechanism that automaticaly detects history buffer sizes in most of the cases.
+Autodetection works like this. For a limited number of bars study is allowed to access history values any bars back from the current bar.
+Thus the system knows what history buffer size a series or a variable needs. Condition `if barstate.isrealtime` makes the line with
+``bar_index[10]`` to be skipped for all history bars, so the system does not know anything about the ``bar_index`` (but, remember, ``time`` series)
+history buffer size needed. That is why the code fails.
+
+Solution for this is to use `max_bars_back <https://tvpm244.xstaging.tv/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for ``time`` series::
+
+    //@version=4
+    study("My Script", overlay=true)
+
+    max_bars_back(time, 10)
+
+    if barstate.isrealtime
+        label.new(bar_index[10], na, text="Label", yloc=yloc.abovebar)
+
+This case is rare, and very confusing. Pine team knows about it and works hard to make things simpler and clearer.
 
