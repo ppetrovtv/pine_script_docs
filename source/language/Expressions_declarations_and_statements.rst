@@ -275,7 +275,7 @@ where:
 
 Variable ``sum`` is a :ref:`mutable variable <variable_assignment>` so a
 new value can be given to it by the operator ``:=`` in the loop's body.
-Also note that we recommend to use the built-in
+Note that we recommend using the built-in
 `sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__
 function for simple moving averages, as it calculates faster.
 
