@@ -59,7 +59,7 @@ The ``var`` keyword is a special modifier that instructs the compiler to *create
 
 .. image:: images/GreenBarsCount.png
 
-Without the ``var`` modifier, variable ``count`` would be reset to zero (thus loosing it's value) every time a new bar update triggered a script recalculation.
+Without the ``var`` modifier, variable ``count`` would be reset to zero (thus losing it's value) every time a new bar update triggered a script recalculation.
 
 .. note:: The ``var`` keyword was introduced in Pine v4.
 
