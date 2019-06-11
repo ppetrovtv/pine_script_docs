@@ -157,7 +157,7 @@ where:
 
 -  ``var_declarationX`` --- this variable if assigned the value of the ``if``
    statement as a whole.
--  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block
+-  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block immediately following the ``if`` first line
    (``var_decl_then0``, ``var_decl_then1``, etc.) is used, if the
    ``condition`` is false, the logic from the *else* block 
    (``var_decl_else0``, ``var_decl_else1``, etc.) is used.
@@ -166,7 +166,7 @@ where:
    return the final value of the whole ``if`` statement. If declaration of the
    variable is in the end, its value will be the result.
 
-.. note:: ``if`` statement was introduced in Pine since version 2.
+.. note:: The ``if`` statement was introduced in Pine v2.
 
 The type of returning value of the ``if`` statement depends on
 ``return_expression_then`` and ``return_expression_else`` type (their types
