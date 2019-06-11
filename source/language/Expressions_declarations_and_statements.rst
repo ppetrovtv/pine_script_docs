@@ -61,8 +61,6 @@ The ``var`` keyword is a special modifier that instructs the compiler to *create
 
 Without the ``var`` modifier, variable ``count`` would be reset to zero (thus losing it's value) every time a new bar update triggered a script recalculation.
 
-.. note:: The ``var`` keyword was introduced in Pine v4.
-
 In Pine v3 the study "Green Bars Count" could be written without using the ``var`` keyword::
     
     //@version=3
@@ -123,10 +121,6 @@ Variable assignment example::
         price := hl2
     plot(price)
 
-
-.. note:: The ``:=`` operator and mutable variables were introduced in Pine v2.
-
-
 .. _if_statement:
 
 if statement
@@ -164,8 +158,6 @@ where:
 -  ``return_expression_then``, ``return_expression_else`` --- the last
    expression from the *then* block or from the *else* block will
    determine the final value of the whole ``if`` statement.
-
-.. note:: The ``if`` statement was introduced in Pine v2.
 
 The type of the returning value of the ``if`` statement is determined by the type of 
 ``return_expression_then`` and ``return_expression_else``. Their types
@@ -257,8 +249,6 @@ where:
 -  ``continue`` --- a keyword. Can only be used in loops. It jumps to the loop's
    next iteration.
 -  ``break`` --- a keyword. Can be used only in loops. It exits the loop.
-
-.. note:: The ``for`` statement was introduced in Pine v2.
 
 ``for`` loop example:
 
