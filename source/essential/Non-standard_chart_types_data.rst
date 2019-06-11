@@ -10,24 +10,25 @@ function return value. They are ``heikinashi``, ``renko``,
 same manner, they just create a special ticker identifier that could be
 passed later as ``security`` function first argument.
 
-``heikinashi`` function
------------------------
+heikinashi function
+-------------------
 
-*Heikin-Ashi* means 'average bar' in Japanese. Open, high, low and close
+*Heikin-Ashi* means *average bar* in Japanese. Open, high, low and close
 prices of HA candlesticks are not actual prices, they are results from
 avergaing values of the previous bar, which helps eliminate random
 volatility.
 
-Pine function `heikinashi <https://www.tradingview.com/study-script-reference/#fun_heikinashi>`__ 
+Pine function `heikinashi <https://www.tradingview.com/study-script-reference/v4/#fun_heikinashi>`__ 
 creates a special ticker identifier for
 requesting Heikin-Ashi data with ``security`` function.
 
 This script requests low prices of Heikin-Ashi bars and plots them on
 top of usual OHLC bars::
 
+    //@version=4
     study("Example 5", overlay=true)
-    ha_t = heikinashi(tickerid)
-    ha_low = security(ha_t, period, low)
+    ha_t = heikinashi(syminfo.tickerid)
+    ha_low = security(ha_t, timeframe.period, low)
     plot(ha_low)
 
 .. image:: images/Pine_Heikinashi.png
@@ -65,11 +66,11 @@ Here is the source code::
 
 .. image:: images/Pine_Heikinashi_2.png
 
-Read more about `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__ 
-(and `plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__) functions in section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
+Read more about `plotcandle <https://www.tradingview.com/study-script-reference/v4/#fun_plotcandle>`__ 
+(and `plotbar <https://www.tradingview.com/study-script-reference/v4/#fun_plotbar>`__) functions in section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
 
-``renko`` function
-------------------
+renko function
+--------------
 
 *Renko* chart type only plots price movements, without taking time or
 volume into consideration. It is constructed from ticks and looks like
@@ -89,10 +90,10 @@ Please note that you cannot plot Renko bricks from Pine script exactly
 as they look. You can just get a series of numbers that are somewhat
 OHLC values for Renko chart and use them in your algorithms.
 
-For detailed reference see `renko <https://www.tradingview.com/study-script-reference/#fun_renko>`__.
+For detailed reference see `renko <https://www.tradingview.com/study-script-reference/v4/#fun_renko>`__.
 
-``linebreak`` function
-----------------------
+linebreak function
+------------------
 
 *Line Break* chart type displays a series of vertical boxes that are based on
 price changes [#ticks]_.
@@ -111,10 +112,10 @@ exactly as they look. You can just get a series of numbers that are
 somewhat OHLC values for Line Break chart and use them in your
 algorithms.
 
-For detailed reference see `linebreak <https://www.tradingview.com/study-script-reference/#fun_linebreak>`__.
+For detailed reference see `linebreak <https://www.tradingview.com/study-script-reference/v4/#fun_linebreak>`__.
 
-``kagi`` function
------------------
+kagi function
+-------------
 
 *Kagi* chart type looks like a continuous line that changes directions and
 switches from thin to bold. The direction changes when the price changes [#ticks]_
@@ -134,10 +135,10 @@ Please note that you cannot plot Kagi lines from Pine script exactly as
 they look. You can just get a series of numbers that are somewhat OHLC
 values for Kagi chart and use them in your algorithms.
 
-For detailed reference see `kagi <https://www.tradingview.com/study-script-reference/#fun_kagi>`__.
+For detailed reference see `kagi <https://www.tradingview.com/study-script-reference/v4/#fun_kagi>`__.
 
-``pointfigure`` function
-------------------------
+pointfigure function
+--------------------
 
 *Point and Figure* (PnF) chart type only plots price movements [#ticks]_, without
 taking time into consideration. A column of X's is plotted as the price
@@ -161,7 +162,7 @@ request and get those numbers and plot them on chart.
 
 .. image:: images/Pine_Point_and_Figure.png
 
-For detailed reference see `pointfigure <https://www.tradingview.com/study-script-reference/#fun_pointfigure>`__.
+For detailed reference see `pointfigure <https://www.tradingview.com/study-script-reference/v4/#fun_pointfigure>`__.
 
 
 .. rubric:: Footnotes
