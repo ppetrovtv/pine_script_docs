@@ -155,7 +155,7 @@ General code form:
 
 where:
 
--  ``var_declarationX`` --- this variable if assigned the value of the ``if``
+-  ``var_declarationX`` --- this variable is assigned the value of the ``if``
    statement as a whole.
 -  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block immediately following the ``if`` first line
    (``var_decl_then0``, ``var_decl_then1``, etc.) is used, if the
