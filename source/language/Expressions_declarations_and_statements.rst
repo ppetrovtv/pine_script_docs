@@ -251,7 +251,7 @@ where:
 -  ``step`` --- loop step. Optional. Default is 1. If
    ``from`` is greater than ``to``, the loop step will automatically change direction; no need to use a negative step.
 -  ``var_decl0``, ... ``var_declN``, ``return_expression`` --- body of the loop. It
-   must be shifted by 4 spaces [#tabs]_.
+   must be indented by 4 spaces [#tabs]_.
 -  ``return_expression`` --- returning value. When a loop is finished or
    broken, the returning value is assigned to ``var_declarationX``.
 -  ``continue`` --- a keyword. Can only be used in loops. It jumps to the loop's
