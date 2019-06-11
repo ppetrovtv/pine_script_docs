@@ -163,15 +163,14 @@ where:
    (``var_decl_else0``, ``var_decl_else1``, etc.) is used.
 -  ``return_expression_then``, ``return_expression_else`` --- the last
    expression from the *then* block or from the *else* block will
-   return the final value of the whole ``if`` statement. If declaration of the
-   variable is in the end, its value will be the result.
+   determine the final value of the whole ``if`` statement.
 
 .. note:: The ``if`` statement was introduced in Pine v2.
 
-The type of returning value of the ``if`` statement depends on
-``return_expression_then`` and ``return_expression_else`` type (their types
-must match, it is not possible to return an integer value from the *then* block,
-while you have a string value in the *else* block).
+The type of the returning value of the ``if`` statement is determined by the type of 
+``return_expression_then`` and ``return_expression_else``. Their types
+must match. It is not possible to return an integer value from the *then* block
+if the *else* block returns a string value.
 
 Example::
 
@@ -197,8 +196,8 @@ Example::
     // If current close > current open, then x = close.
     // Otherwise the x = na.
 
-The blocks *then* and *else* are shifted by 4 spaces [#tabs]_. If statements can
-be nested, then add 4 more spaces::
+The *then* and *else* blocks are shifted by 4 spaces [#tabs]_. ``if`` statements can
+be nested by adding 4 more spaces::
 
     x = if close > open
         b = if close > close[1]
@@ -209,8 +208,8 @@ be nested, then add 4 more spaces::
     else
         open
 
-It is possible to ignore the resulting value of an ``if`` statement
-(``var_declarationX =`` can be omited). It may be useful if you need the
+It is possible and quite frequent to ignore the resulting value of an ``if`` statement
+(``var_declarationX =`` can be omited). This form is used when you need the
 side effect of the expression, for example in :doc:`strategy trading</essential/Strategies>`:
 
 ::
@@ -227,8 +226,7 @@ side effect of the expression, for example in :doc:`strategy trading</essential/
 for statement
 -------------
 
-``for`` statement allows to execute a number of instructions repeatedly.
-General code form of the statement:
+The ``for`` statement allows to execute a number of instructions repeatedly:
 
 .. code-block:: text
 
@@ -248,20 +246,19 @@ where:
 -  ``i`` --- a loop counter variable.
 -  ``from`` --- start value of the counter.
 -  ``to`` --- end value of the counter. When the counter becomes greater
-   than ``to`` (or less than ``to`` in case ``from > to``) the
+   than ``to`` (or less than ``to`` in the case where ``from > to``) the
    loop is stopped.
--  ``step`` --- loop step. Can be omitted (by default loop step = 1). If
-   ``from`` is greater than ``to`` loop step will change direction
-   automatically, no need to specify negative numbers.
+-  ``step`` --- loop step. Optional. Default is 1. If
+   ``from`` is greater than ``to``, the loop step will automatically change direction; no need to use a negative step.
 -  ``var_decl0``, ... ``var_declN``, ``return_expression`` --- body of the loop. It
    must be shifted by 4 spaces [#tabs]_.
 -  ``return_expression`` --- returning value. When a loop is finished or
-   broken, the returning value is given to the ``var_declarationX``.
--  ``continue`` --- a keyword. Can be used only in loops. It switches the loop
-   to the next iteration.
--  ``break`` --- a keyword. Can be used only in loops. It breaks (stops) the loop.
+   broken, the returning value is assigned to ``var_declarationX``.
+-  ``continue`` --- a keyword. Can only be used in loops. It jumps to the loop's
+   next iteration.
+-  ``break`` --- a keyword. Can be used only in loops. It exits the loop.
 
-.. note:: ``for`` statement was introduced in Pine since version 2.
+.. note:: The ``for`` statement was introduced in Pine v2.
 
 ``for`` loop example:
 
@@ -276,11 +273,11 @@ where:
         sum / length
     plot(my_sma(close,14))
 
-Variable ``sum`` is a :ref:`mutable variable <variable_assignment>` and a
-new value can be given to it by the operator ``:=`` in body of the loop.
-Also note that we recommend to use a built-in function
+Variable ``sum`` is a :ref:`mutable variable <variable_assignment>` so a
+new value can be given to it by the operator ``:=`` in the loop's body.
+Also note that we recommend to use the built-in
 `sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__
-for simple moving average as it calculates faster.
+function for simple moving averages, as it calculates faster.
 
 .. rubric:: Footnotes
 
