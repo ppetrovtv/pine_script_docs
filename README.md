@@ -1,7 +1,16 @@
 # Pine Script documentation
 
-Official documentation of Pine Script language. You may read it [here](https://pine-script-docs.readthedocs.io) (temporarily).
+Official documentation of Pine Script language. You may read it (`TODO need URL`).
 It's a replacement of [Pine Tutorial Wiki](https://www.tradingview.com/wiki/Pine_Script_Tutorial).
+
+## How to build html docs
+Follow these steps:
+
+* Install [sphinx-doc](http://www.sphinx-doc.org/en/master/usage/installation.html)
+* Execute `make syncpackages` (this would download the theme)
+* Execute `make html`
+
+Your docs will be in the `build/html` folder.
 
 ## Notes for writers
 

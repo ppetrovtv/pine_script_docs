@@ -61,13 +61,13 @@ Logical operators
 
 There are three logical operators in Pine Script:
 
-+--------+---------------------------------+
-| ``not`` | Negation                       |
-+--------+---------------------------------+
-| ``and`` | Logical Conjunction            |
-+--------+---------------------------------+
-| ``or``  | Logical Disjunction            |
-+--------+---------------------------------+
++---------+---------------------------------+
+| ``not`` | Negation                        |
++---------+---------------------------------+
+| ``and`` | Logical Conjunction             |
++---------+---------------------------------+
+| ``or``  | Logical Disjunction             |
++---------+---------------------------------+
 
 All logical operators can operate with *bool* operands, numerical
 operands, or series type operands. Similar to arithmetic and comparison
@@ -109,11 +109,11 @@ value then the result will have a ``false`` value; if the operand has a
 
 .. _ternary_operator:
 
-Conditional operator ``?:`` and the function ``iff``
-----------------------------------------------------
+Conditional operator ?: and the function iff
+--------------------------------------------
 
 `Conditional ternary
-operator <https://www.tradingview.com/study-script-reference/#op_%7Bquestion%7D%7Bcolon%7D>`__
+operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
 calculates the first expression (condition) and returns a value either
 of the second operand (if the condition is ``true``) or of the third
 operand (if the condition is ``false``). Syntax::
@@ -154,8 +154,8 @@ previous example using ``iff`` will look like::
 
 .. _history_referencing_operator:
 
-History reference operator ``[]``
----------------------------------
+History reference operator []
+-----------------------------
 
 It is possible to refer to the historical values of any variable of a
 *series* type (values which the variable had on the previous bars) with
@@ -227,8 +227,8 @@ last). As seen in the table, ``close[3]`` has ``na`` values on the
 first three bars. ``na`` represents a value which is not a number and
 using it in any math expression will result in also ``na`` (similar 
 to `NaN <https://en.wikipedia.org/wiki/NaN>`__). So your
-code should specifically handle ``na`` values using functions :ref:`na and
-nz <preventing_na_values_functions_na_and_nz>`.
+code should specifically handle ``na`` values using functions `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
+`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__.
 
 Priority of operators
 ---------------------

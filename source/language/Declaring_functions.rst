@@ -38,7 +38,7 @@ type of variable ``a`` is *series*, because arguments are both *series*. The typ
 *integer*, because arguments are both *literal integers*. The type of variable ``c`` is *series*, 
 because addition of *series* and *literal integer* produces *series* result.
 
-Pine Scipt functions do not support recursion. It is not allowed for a function to call itself from within its own code.
+Pine Scipt functions do not support recursion. It is **not allowed** for a function to call itself from within its own code.
 
 
 .. _multi_line_functions:
@@ -103,53 +103,6 @@ In Pine, nested functions are not allowed, i.e. one can't declare
 function inside another function. All user functions are declared in the
 global scope. Local scopes do not intersect between one another.
 
-Functions with 'self ref' variables in the body
------------------------------------------------
-
-.. note:: :ref:`Self referencing variables<self_ref_variables>` are not supported since Pine Script version 3.
-
-The body of a multi-line function is a sequence of expressions and/or
-variable declarations. Any variable that is being declared in the body
-of a function can be a self referencing one. An example of the function
-``my_sma`` which is equivalent to the built-in function ``sma``::
-
-    study("Custom Simple MA", overlay=true)
-    my_sma(src, len) =>
-        sum = nz(sum[1]) - nz(src[len]) + src
-        sum/len   
-    plot(my_sma(close, 9))
-
-Pay attention to the use of function ``nz`` to prevent ``na`` values; they
-appear from the left side of the series as a result of shifting it to
-the right.
-
-A slightly more difficult example, the function ``my_ema`` is identical
-to the built-in function ``ema``:
-
-::
-
-    study("Custom Exp MA", overlay=true)
-    my_ema(src, len) =>
-        weight = 2.0 / (len + 1)
-        sum = nz(sum[1]) - nz(src[len]) + src
-        ma = na(src[len]) ? na : sum/len
-        out = na(out[1]) ? ma : (src - out[1]) * weight + out[1]
-        out
-    plot(my_ema(close, 9))
-
-Pay attention to the fact ``out`` is the last statement of the function
-``my_ema``. It is a simple expression consisting of one of the variable
-reference. The value of the variable ``out`` in particular, is a value
-being returned by the whole function ``my_ema``. If the last expression
-is a variable declaration then its value will be the function's result.
-So the following two functions are completely the same::
-
-    f1(x) =>
-        a = x + a[1]
-        a
-    
-    f2(x) =>
-        a = x + a[1]
 
 Functions that return multiple result
 -------------------------------------

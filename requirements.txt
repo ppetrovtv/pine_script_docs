@@ -1,1 +1,1 @@
--e git+https://github.com/tradingview/sphinx_rtd_theme@master#egg=sphinx_rtd_theme
+-e git+git@xgit.tradingview.com:tv/guzzle_sphinx_theme.git@master#egg=guzzle_sphinx_theme
