@@ -12,7 +12,7 @@ All of these types exist in several modified forms. There are 5 forms of types:
 *literal*, *const*, *input*, *simple* and a *series*. For example, Pine compiler distincts 
 a *literal bool* type, an *input bool* type, a *series bool* type and so on.
 
-There is also a *void* type, a *na* (not available) type and a compound *tuple* type.
+There is also a *void* type, a *na* (not available) value and a compound *tuple* type.
 
 Type forms
 ----------
@@ -287,6 +287,16 @@ and `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label
 functions. Their types are  *series line* and *series label* correspondingly.
 There is only one series form of drawing types in Pine.
 
+plot and hline
+^^^^^^^^^^^^^^
+
+A few function annotations (in particular ``plot`` and ``hline``) return
+values which represent objects created on the chart. The function
+``plot`` returns an object of the type *plot*, represented as a line
+or diagram on the chart. The function ``hline`` returns an object of the
+type *hline*, represented as a horizontal line. These objects can be
+passed to the `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
+function to color the area in between them.
 
 void
 ----
@@ -344,16 +354,6 @@ There is also a special syntax for calling functions that return tuples. For exa
 
 Value of local variable ``sum`` will be written to ``s`` variable of the outer scope. So as ``mul`` value will be written to ``m`` variable.
 
-Other
------
-
-A few function annotations (in particular ``plot`` and ``hline``) return
-values which represent objects created on the chart. The function
-``plot`` returns an object of the type *plot*, represented as a line
-or diagram on the chart. The function ``hline`` returns an object of the
-type *hline*, represented as a horizontal line. These objects can be
-passed to the `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
-function to color the area in between them.
 
 Type casting
 ------------
