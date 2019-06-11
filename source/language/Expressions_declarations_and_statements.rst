@@ -11,7 +11,7 @@ An expression is a sequence where operators or function
 calls are applied to operands (variables or values) to define the calculations
 and actions required by the script. Expressions in Pine almost always
 produce a result (exceptions are the functions
-``study``, ``fill``, ``strategy.entry``, etc. They produce side effects and will be covered
+``study``, ``fill``, ``strategy.entry``, etc., which produce side effects and will be covered
 later).
 
 Here are some examples of simple expressions::
@@ -24,7 +24,7 @@ Here are some examples of simple expressions::
 Variable declaration
 --------------------
 
-Variables in Pine are declared with the help of the special symbol ``=`` and optional ``var`` keyword
+Variables in Pine are declared with the special symbol ``=`` and an optional ``var`` keyword
 in one of the following ways:
 
 .. code-block:: text
@@ -36,22 +36,18 @@ in one of the following ways:
 
 ``<identifier>`` is the name of the declared variable, see :doc:`Identifiers`.
 
-``<type>`` could be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
-However, in most cases, explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
-on the right of the ``=`` at compile time. For example::
+``<type>`` can be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
+However, in most cases, an explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
+on the right of the ``=`` at compile time, so the decision to use them is often a matter of preference. For example::
 
     baseLine0 = na          // compile time error!
     float baseLine1 = na    // OK
     baseLine2 = float(na)   // OK
 
-Compiler cannot determine type of the ``baseLine0`` variable, because ``na`` is an expression that could be automatically casted to 
-almost any type (so exact type of ``na`` is unknown). Declaration of the ``baseLine1`` variable is correct, because ``float`` type is declared explicitly.
-Declaration of the ``baseLine2`` variable is also correct because type is autodetected from the expression ``float(na)``, which is 
-an explicit cast of ``na`` value to ``float`` type. Declarations of ``baseLine1`` and ``baseLine2`` are equivalent.
+In the first line of the example, the compiler cannot determine the type of the ``baseLine0`` variable because ``na`` is a generic value of no particular type. The declaration of the ``baseLine1`` variable is correct because its ``float`` type is declared explicitly.
+The declaration of the ``baseLine2`` variable is also correct because its type can be derived from the expression ``float(na)``, which is an explicit cast of ``na`` value to ``float`` type. The declarations of ``baseLine1`` and ``baseLine2`` are equivalent.
 
-``var`` keyword is a special modifier that tells compiler to *create and initialize the variable only once*. This behaviour is very handful in cases
-if variable should persist it's value from one bar update to another. For example, suppose we'd like to count number of 
-green bars on the chart::
+The ``var`` keyword is a special modifier that instructs the compiler to *create and initialize the variable only once*. This behavior is very useful in cases where a variable's value must persist through the iterations of a script across successive bars. For example, suppose we'd like to count the number of green bars on the chart::
 
     //@version=4
     study("Green Bars Count")
@@ -63,9 +59,9 @@ green bars on the chart::
 
 .. image:: images/GreenBarsCount.png
 
-Without the ``var`` modifier, variable ``count`` would be reset to zero (thus loosing it's value) every time a new bar update triggers script calculation.
+Without the ``var`` modifier, variable ``count`` would be reset to zero (thus losing it's value) every time a new bar update triggered a script recalculation.
 
-In Pine v3 the study "Green Bars Count" could be written without use of the ``var`` keyword::
+In Pine v3 the study "Green Bars Count" could be written without using the ``var`` keyword::
     
     //@version=3
     study("Green Bars Count")
@@ -76,7 +72,7 @@ In Pine v3 the study "Green Bars Count" could be written without use of the ``va
         count := count + 1
     plot(count)
 
-Which is less readable. Plus it could be less efficient too. Suppose that ``count`` variable is 
+The v4 code is more readable and can be more efficient if, for example, the ``count`` variable is 
 initialized with an expensive function call instead of ``0``.
 
 Examples of simple variable declarations::
@@ -87,8 +83,8 @@ Examples of simple variable declarations::
 
 Examples with type modifiers and var keyword::
 
-    float f = 10            // NOTE: expression of an int type, but the variable is float
-    i = int(close)          // NOTE: explicit cast of float expression close to int type
+    float f = 10            // NOTE: while the expression is of type int, the variable is float
+    i = int(close)          // NOTE: explicit cast of float expression close to type int
     r = round(close)        // NOTE: round() and int() are different... int() simply throws fractional part away
     var hl = high - low
 
@@ -97,7 +93,7 @@ Example, illustrating the effect of ``var`` keyword::
     // Creates a new label object on every bar:
     label lb = label.new(bar_index, close, title="Hello, World!")
 
-    // Creates just one label object on the first history bar only:
+    // Creates a label object only on the first bar in history:
     var label lb = label.new(bar_index, close, title="Hello, World!")
 
 
@@ -106,15 +102,15 @@ Example, illustrating the effect of ``var`` keyword::
 Variable assignment
 -------------------
 
-Mutable variable is such a variable which can be given a new value. 
+A mutable variable is a variable which can be given a new value. 
 The operator ``:=`` must be used to give a new value to a variable. 
-A variable must be declared before you can set a value for it
-(declaration of variables has been described :ref:`above<variable_declaration>`).
+A variable must be declared before you can assign a value to it
+(see declaration of variables :ref:`above<variable_declaration>`).
 
-Type of a variable is identified on the declaration step. A variable can
+The type of a variable is identified at declaration time. From then on, a variable can
 be given a value of expression only if both the expression and the
-variable belong to the same type, otherwise it will give you a
-compilation error.
+variable belong to the same type, otherwise a
+compilation error will occur.
 
 Variable assignment example::
 
@@ -125,16 +121,14 @@ Variable assignment example::
         price := hl2
     plot(price)
 
-We also use an :ref:`"if" statement <if_statement>` in this example.
-
-
 .. _if_statement:
 
 if statement
 ------------
 
-``if`` statement defines what block of statements must be executed when
-conditions of the expression are satisfied.
+An ``if`` statement defines a block of statements to be executed when
+the ``if``'s conditional expression evaluates to ``true``, and optionally, 
+an alternative block to be executed when the expression is ``false``.
 
 General code form:
 
@@ -155,20 +149,20 @@ General code form:
 
 where:
 
--  ``var_declarationX`` --- this variable gets the value of the ``if``
-   statement.
--  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block
+-  ``var_declarationX`` --- this variable is assigned the value of the ``if``
+   statement as a whole.
+-  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block immediately following the ``if`` first line
    (``var_decl_then0``, ``var_decl_then1``, etc.) is used, if the
    ``condition`` is false, the logic from the *else* block 
    (``var_decl_else0``, ``var_decl_else1``, etc.) is used.
 -  ``return_expression_then``, ``return_expression_else`` --- the last
    expression from the *then* block or from the *else* block will
-   return the final value of the whole ``if`` statement.
+   determine the final value of the whole ``if`` statement.
 
-The type of returning value of the ``if`` statement depends on
-``return_expression_then`` and ``return_expression_else`` type (their types
-must match, it is not possible to return an integer value from the *then* block,
-while you have a string value in the *else* block).
+The type of the returning value of the ``if`` statement is determined by the type of 
+``return_expression_then`` and ``return_expression_else``. Their types
+must match. It is not possible to return an integer value from the *then* block
+if the *else* block returns a string value.
 
 Example::
 
@@ -194,8 +188,8 @@ Example::
     // If current close > current open, then x = close.
     // Otherwise the x = na.
 
-The blocks *then* and *else* are shifted by 4 spaces [#tabs]_. If statements can
-be nested, then add 4 more spaces::
+The *then* and *else* blocks are shifted by 4 spaces [#tabs]_. ``if`` statements can
+be nested by adding 4 more spaces::
 
     x = if close > open
         b = if close > close[1]
@@ -206,8 +200,8 @@ be nested, then add 4 more spaces::
     else
         open
 
-It is possible to ignore the resulting value of an ``if`` statement
-(``var_declarationX =`` can be omited). It may be useful if you need the
+It is possible and quite frequent to ignore the resulting value of an ``if`` statement
+(``var_declarationX =`` can be omited). This form is used when you need the
 side effect of the expression, for example in :doc:`strategy trading</essential/Strategies>`:
 
 ::
@@ -224,8 +218,7 @@ side effect of the expression, for example in :doc:`strategy trading</essential/
 for statement
 -------------
 
-``for`` statement allows to execute a number of instructions repeatedly.
-General code form of the statement:
+The ``for`` statement allows to execute a number of instructions repeatedly:
 
 .. code-block:: text
 
@@ -245,18 +238,17 @@ where:
 -  ``i`` --- a loop counter variable.
 -  ``from`` --- start value of the counter.
 -  ``to`` --- end value of the counter. When the counter becomes greater
-   than ``to`` (or less than ``to`` in case ``from > to``) the
+   than ``to`` (or less than ``to`` in the case where ``from > to``) the
    loop is stopped.
--  ``step`` --- loop step. Can be omitted (by default loop step = 1). If
-   ``from`` is greater than ``to`` loop step will change direction
-   automatically, no need to specify negative numbers.
+-  ``step`` --- loop step. Optional. Default is 1. If
+   ``from`` is greater than ``to``, the loop step will automatically change direction; no need to use a negative step.
 -  ``var_decl0``, ... ``var_declN``, ``return_expression`` --- body of the loop. It
-   must be shifted by 4 spaces [#tabs]_.
+   must be indented by 4 spaces [#tabs]_.
 -  ``return_expression`` --- returning value. When a loop is finished or
-   broken, the returning value is given to the ``var_declarationX``.
--  ``continue`` --- a keyword. Can be used only in loops. It switches the loop
-   to the next iteration.
--  ``break`` --- a keyword. Can be used only in loops. It breaks (stops) the loop.
+   broken, the returning value is assigned to ``var_declarationX``.
+-  ``continue`` --- a keyword. Can only be used in loops. It jumps to the loop's
+   next iteration.
+-  ``break`` --- a keyword. Can be used only in loops. It exits the loop.
 
 ``for`` loop example:
 
@@ -271,12 +263,12 @@ where:
         sum / length
     plot(my_sma(close,14))
 
-Variable ``sum`` is a :ref:`mutable variable <variable_assignment>` and a
-new value can be given to it by the operator ``:=`` in body of the loop.
-Also note that we recommend to use a built-in function
+Variable ``sum`` is a :ref:`mutable variable <variable_assignment>` so a
+new value can be given to it by the operator ``:=`` in the loop's body.
+Note that we recommend using the built-in
 `sma <https://www.tradingview.com/study-script-reference/#fun_sma>`__
-for simple moving average as it calculates faster.
+function for simple moving averages, as it calculates faster.
 
 .. rubric:: Footnotes
 
-.. [#tabs] On TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.
+.. [#tabs] TradingView's *Pine Editor* automatically replaces **Tab** with 4 spaces.
