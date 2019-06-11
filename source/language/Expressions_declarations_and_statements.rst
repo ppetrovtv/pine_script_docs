@@ -38,8 +38,7 @@ in one of the following ways:
 
 ``<type>`` could be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
 However, in most cases, explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
-on the right of the ``=`` at compile time. It is strongly recommended to explicitly declare variable type only in case compiler 
-cannot determine it automatically. For example::
+on the right of the ``=`` at compile time. For example::
 
     baseLine0 = na          // compile time error!
     float baseLine1 = na    // OK
@@ -168,8 +167,7 @@ where:
    (``var_decl_else0``, ``var_decl_else1``, etc.) is used.
 -  ``return_expression_then``, ``return_expression_else`` --- the last
    expression from the *then* block or from the *else* block will
-   return the final value of the whole ``if`` statement. If declaration of the
-   variable is in the end, its value will be the result.
+   return the final value of the whole ``if`` statement.
 
 .. note:: ``if`` statement was introduced in Pine since version 2.
 
