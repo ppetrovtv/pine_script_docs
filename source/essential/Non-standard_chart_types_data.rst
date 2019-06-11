@@ -37,37 +37,40 @@ Note that low prices of Heikin-Ashi bars are different from usual bars
 low prices.
 
 You may want to switch off extended hours data in *Example 5*. In this
-case we should use ``tickerid`` function instead of ``tickerid``
+case we should use ``tickerid`` function instead of ``syminfo.tickerid``
 variable::
 
+    //@version=4
     study("Example 6", overlay=true)
-    t = tickerid(syminfo.prefix, ticker, session.regular)
+    t = tickerid(syminfo.prefix, syminfo.ticker, session.regular)
     ha_t = heikinashi(t)
-    ha_low = security(ha_t, period, low, true)
-    plot(ha_low, style=linebr)
+    ha_low = security(ha_t, timeframe.period, low, gaps=barmerge.gaps_on)
+    plot(ha_low, style=plot.style_linebr)
 
-Note that we pass additional fourth parameter to security (``gaps`` which is set to ``true``),
+Note that we pass additional fourth parameter to security (``gaps=barmerge.gaps_on``),
 and it means that points where data is absent, will not be filled up
 with previous values. So we'd get empty areas during the extended hours.
 To be able to see this on chart we also had to specify special plot
-style (``style=linebr`` --- *Line With Breaks* style).
+style (``style=plot.style_linebr`` --- *Line With Breaks* style).
 
 You may plot Heikin-Ashi bars exactly as they look from Pine script.
 Here is the source code::
 
+    //@version=4
     study("Example 6.1")
-    ha_t = heikinashi(tickerid)
-    ha_open = security(ha_t, period, open)
-    ha_high = security(ha_t, period, high)
-    ha_low = security(ha_t, period, low)
-    ha_close = security(ha_t, period, close)
-    palette = ha_close >= ha_open ? lime : red
+    ha_t = heikinashi(syminfo.tickerid)
+    ha_open = security(ha_t, timeframe.period, open)
+    ha_high = security(ha_t, timeframe.period, high)
+    ha_low = security(ha_t, timeframe.period, low)
+    ha_close = security(ha_t, timeframe.period, close)
+    palette = ha_close >= ha_open ? color.green : color.red
     plotcandle(ha_open, ha_high, ha_low, ha_close, color=palette)
 
 .. image:: images/Pine_Heikinashi_2.png
 
 Read more about `plotcandle <https://www.tradingview.com/study-script-reference/v4/#fun_plotcandle>`__ 
-(and `plotbar <https://www.tradingview.com/study-script-reference/v4/#fun_plotbar>`__) functions in section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
+and `plotbar <https://www.tradingview.com/study-script-reference/v4/#fun_plotbar>`__ functions in 
+section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
 
 renko function
 --------------
@@ -79,9 +82,10 @@ passes the top or bottom of previously predefined amount.
 
 ::
 
+    //@version=4
     study("Example 7", overlay=true)
-    renko_t = renko(tickerid, "open", "ATR", 10)
-    renko_low = security(renko_t, period, low)
+    renko_t = renko(syminfo.tickerid, "ATR", 10)
+    renko_low = security(renko_t, timeframe.period, low)
     plot(renko_low)
 
 .. image:: images/Pine_Renko.png
@@ -100,9 +104,10 @@ price changes [#ticks]_.
 
 ::
 
+    //@version=4
     study("Example 8", overlay=true)
-    lb_t = linebreak(tickerid, "close", 3)
-    lb_close = security(lb_t, period, close)
+    lb_t = linebreak(syminfo.tickerid, 3)
+    lb_close = security(lb_t, timeframe.period, close)
     plot(lb_close)
 
 .. image:: images/Pine_Linebreak.png
@@ -124,9 +129,10 @@ if the last change bypassed the last horizontal line.
 
 ::
 
+    //@version=4
     study("Example 9", overlay=true)
-    kagi_t = kagi(tickerid, "close", 1)
-    kagi_close = security(kagi_t, period, close)
+    kagi_t = kagi(syminfo.tickerid, 1)
+    kagi_close = security(kagi_t, timeframe.period, close)
     plot(kagi_close)
 
 .. image:: images/Pine_Kagi.png
@@ -153,12 +159,13 @@ request and get those numbers and plot them on chart.
 
 ::
 
+    //@version=4
     study("Example 10", overlay=true)
-    pnf_t = pointfigure(tickerid, "hl", "ATR", 14, 3)
-    pnf_open = security(pnf_t, period, open, true)
-    pnf_close = security(pnf_t, period, close, true)
-    plot(pnf_open, color=lime, style=linebr, linewidth=4)
-    plot(pnf_close, color=red, style=linebr, linewidth=4)
+    pnf_t = pointfigure(syminfo.tickerid, "hl", "ATR", 14, 3)
+    pnf_open = security(pnf_t, timeframe.period, open, true)
+    pnf_close = security(pnf_t, timeframe.period, close, true)
+    plot(pnf_open, color=color.green, style=plot.style_linebr, linewidth=4)
+    plot(pnf_close, color=color.red, style=plot.style_linebr, linewidth=4)
 
 .. image:: images/Pine_Point_and_Figure.png
 
@@ -167,5 +174,5 @@ For detailed reference see `pointfigure <https://www.tradingview.com/study-scrip
 
 .. rubric:: Footnotes
 
-.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLCV candles of a lower timeframe, 
+.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLC candles of a lower timeframe, 
    which is an approximation of corresponding chart type built from tick data.
