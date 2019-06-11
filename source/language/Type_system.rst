@@ -7,10 +7,10 @@ Type system
 .. include:: <isonum.txt>
 
 Pine has 7 fundamental data types. They are: 
-*float*, *int*, *bool*, *color*, *string*, *line*, *label*. 
-All of these types exist in several modified forms. There are 5 forms of types:
-*literal*, *const*, *input*, *simple* and a *series*. For example, Pine compiler distincts 
-a *literal bool* type, an *input bool* type, a *series bool* type and so on.
+*int*, *float*, *bool*, *color*, *string*, *line*, *label*. 
+All of these types exist in several forms. There are 5 forms of types:
+*literal*, *const*, *input*, *simple* and a *series*. For example, the Pine compiler distinguishes 
+between a *literal bool* type, an *input bool* type, a *series bool* type and so on.
 
 There is also a *void* type, a *na* (not available) type and a compound *tuple* type.
 
@@ -20,24 +20,24 @@ Type forms
 Literal
 ^^^^^^^
 
-A *literal* is a special notation for representing a fixed value in source code. This fixed value itself is an 
-expression and such expressions have literal form of a corresponding type. In Pine there are only 4 literal types:
+A *literal* is a special notation for representing a fixed value in Pine. This fixed value itself is an 
+expression and such literal expressions are always of one of the 4 following types:
     
     * *literal float* (e.g. ``3.14``)
     * *literal int* (e.g. ``42``)
     * *literal bool* (e.g. ``true``, ``false``)
     * *literal string* (e.g. ``"A text literal"``)
 
-.. note:: In Pine well-known built-in names ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
-    ``hl2``, ``hlc3``, ``ohlc4`` that represent market prices are not literals. They have a *series* type, read below.
+.. note:: In Pine, the built-in names ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
+    ``hl2``, ``hlc3``, ``ohlc4`` are not literals. They are of the *series* type.
 
 Const
 ^^^^^
 
-Values of *const* type are the ones that
+Values of the form *const* are ones that:
     
     * do not change during the script execution
-    * their value is known (or can be calculated by compiler) at compile time
+    * are known or can be calculated at compile time
 
 For example::
     
@@ -47,18 +47,18 @@ For example::
     if open > close
         c3 := 0
 
-Type of ``c1`` value is *const float* because it is initialized with *literal* expression.
-Type of ``c2`` value is *const float* too, because it is initialized with an arithmetic expression of *const float* type.
-Type of ``c3`` value is *series float* because it changes in runtime.
+The type of ``c1`` is *const float* because it is initialized with a *literal* expression.
+The type of ``c2`` is *const float* too, because it is initialized with an arithmetic expression of *const float* type.
+The type of ``c3`` is *series float* because it changes at runtime.
 
 Input
 ^^^^^
 
-Values of *input* type are the ones that
+Values of the form *input* are ones that:
 
-    * do not change during the script execution
-    * unknown at script compile time
-    * they are values that come from `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ function
+    * do not change during script execution
+    * are unknown at compile time
+    * originate from an `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ function
 
 For example::
 
@@ -69,41 +69,42 @@ Type of ``p`` variable is *input integer*.
 Simple
 ^^^^^^
 
-Values of *simple* type are the ones that
+Values of the form *simple* are ones that:
 
-    * do not change during the script execution
-    * unknown at script compile time
+    * do not change during script execution
+    * are unknown at compile time
 
-They are values that come from the main chart symbol information. For example, `syminfo.mintick <https://www.tradingview.com/study-script-reference/v4/#var_syminfo{dot}mintick>`__
-built-in variable has type *float* (we don't call it *simple float*, just *float*).
+They are values that come from the main chart symbol information. For example, 
+the `syminfo.mintick <https://www.tradingview.com/study-script-reference/v4/#var_syminfo{dot}mintick>`__
+built-in variable is a *simple float*. The word *simple* is usually omitted when referring to this form, 
+so we use *float* rather than *simple float*.
 
 Series
 ^^^^^^
 
-Finally, values of *series* type are the ones that
+Values of the form *series* are ones that:
 
     * change during the script execution
-    * every series variable stores a sequence of values that are associated with bars of main chart symbol
-    * history values (associated with closed bars) of a series variable are available for reading (with the ``[]`` operator)
-    * only the last (associated with the current bar) series value is available for both reading and writing
+    * store a sequence of historical values associated with bars of the main chart's symbol
+    * can be accessed using the ``[]`` operator. Note that only the last value in the series, i.e.
+    the one associated with the current bar, is available for both reading and writing
 
-*series* data type is probably the most common data type in Pine.
-Examples of built-in series variables are: ``open``, ``high``, ``low``,
+The *series* form is the most common form in Pine.
+Examples of built-in *series* variables are: ``open``, ``high``, ``low``,
 ``close``, ``volume`` and ``time``. The size of these lists are equal to the
 quantity of available bars based on the current ticker and timeframe
-(resolution). The series may contain numbers or a special value ``na``
-(meaning that value is *not available*, further information about ``na`` values
+(resolution). The series may contain numbers or a special value: ``na``
+(meaning that a value is *not available*. Further information about ``na`` values
 can be found :ref:`here <history_referencing_operator>`). 
 Any expression that contains a series variable will be treated as a
 series itself. For example::
 
-    a = open + close // addition of two series
-    b = high / 2     // division of a series variable
-                     // to the integer literal constant (b will be a
-                     // series)
+    a = open + close // Addition of two series
+    b = high / 2     // Division of a series variable by
+                     // an integer literal constant
     c = close[1]     // Referring to the previous ``close`` value
 
-.. note:: The operator ``[]`` also returns a value of a series type.
+.. note:: The ``[]`` operator also returns a value of the *series* form.
 
 Fundamental types
 -----------------
@@ -111,7 +112,7 @@ Fundamental types
 int
 ^^^
 
-Integral-valued literals can be presented only in the decimal system.
+Integer literals must be written in decimal notation.
 For example::
 
     1
@@ -119,7 +120,7 @@ For example::
     94572
     100
 
-There are all 5 forms of int type in Pine:
+There are 5 forms of int type in Pine:
 
     * *literal int*
     * *const int*
@@ -130,10 +131,10 @@ There are all 5 forms of int type in Pine:
 float
 ^^^^^
 
-Floating-point literals in comparison with integral-valued literals contain a
-delimiter (the symbol ``.``) and/or the symbol ``e`` (which means
+Floating-point literals contain a
+delimiter (the symbol ``.``) and may also contain the symbol ``e`` (which means
 "multiply by 10 to the power of X", where X is the number after the
-symbol ``e``) or both. Examples::
+symbol ``e``). Examples::
 
     3.14159    // 3.14159
     6.02e23    // 6.02 * 10^23
@@ -146,7 +147,7 @@ number ``3`` as a floating point number.
 
 .. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``.
 
-There are all 5 forms of float type in Pine:
+There are 5 forms of float type in Pine:
 
     * *literal float*
     * *const float*
@@ -162,7 +163,7 @@ There are only two literals for representing logical values::
     true    // true value
     false   // false value
 
-There are all 5 forms of bool type in Pine:
+There are 5 forms of bool type in Pine:
 
     * *literal bool*
     * *const bool*
@@ -176,12 +177,12 @@ color
 
 Color literals have the following format: ``#`` followed by 6 or 8
 hexadecimal digits matching RGB or RGBA value. The first two digits
-determine the value for the **red** color component, the second two --- for
-**green**, and the third pair --- the value for the **blue** component. 
-Each component value is a hexadecimal number between ``00`` and ``FF`` (0 and 255 in decimal).
+determine the value for the **red** color component, the next two, 
+**green**, and the third, **blue**. 
+Each component value must be a hexadecimal number from ``00`` to ``FF`` (0 and 255 in decimal).
 
-Fourth pair of digits is optional. When set, it specifies the **alpha** (opacity) 
-component which value is also between ``00`` (fully transparent) and ``FF`` (fully opaque).
+The fourth pair of digits is optional. When used, it specifies the **alpha** (opacity) 
+component, a value also from ``00`` (fully transparent) to ``FF`` (fully opaque).
 Examples::
 
     #000000                // black color
@@ -195,10 +196,9 @@ Examples::
     #FF0000FF              // same as #00FF00, fully opaque red color
     #FF000000              // completely transparent color
 
-.. note:: When using hexadecimal figures it's possible to use them in
-   either upper or lowercase.
+.. note:: Hexadecimal notation is not case-sensitive.
 
-There are all 5 forms of color type in Pine:
+There are 5 forms of color type in Pine:
 
     * *literal color*
     * *const color*
