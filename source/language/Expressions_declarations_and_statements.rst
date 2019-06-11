@@ -65,8 +65,6 @@ green bars on the chart::
 
 Without the ``var`` modifier, variable ``count`` would be reset to zero (thus loosing it's value) every time a new bar update triggers script calculation.
 
-.. note:: ``var`` keyword was introduced in Pine since version 4.
-
 In Pine v3 the study "Green Bars Count" could be written without use of the ``var`` keyword::
     
     //@version=3
@@ -129,8 +127,6 @@ Variable assignment example::
 
 We also use an :ref:`"if" statement <if_statement>` in this example.
 
-.. note:: Operator ``:=`` and mutable variables concept were introduced in Pine since version 2.
-
 
 .. _if_statement:
 
@@ -168,8 +164,6 @@ where:
 -  ``return_expression_then``, ``return_expression_else`` --- the last
    expression from the *then* block or from the *else* block will
    return the final value of the whole ``if`` statement.
-
-.. note:: ``if`` statement was introduced in Pine since version 2.
 
 The type of returning value of the ``if`` statement depends on
 ``return_expression_then`` and ``return_expression_else`` type (their types
@@ -263,8 +257,6 @@ where:
 -  ``continue`` --- a keyword. Can be used only in loops. It switches the loop
    to the next iteration.
 -  ``break`` --- a keyword. Can be used only in loops. It breaks (stops) the loop.
-
-.. note:: ``for`` statement was introduced in Pine since version 2.
 
 ``for`` loop example:
 
