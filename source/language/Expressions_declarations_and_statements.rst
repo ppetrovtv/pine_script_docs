@@ -281,4 +281,4 @@ function for simple moving averages, as it calculates faster.
 
 .. rubric:: Footnotes
 
-.. [#tabs] On TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.
+.. [#tabs] TradingView's *Pine Editor* automatically replaces **Tab** with 4 spaces.
