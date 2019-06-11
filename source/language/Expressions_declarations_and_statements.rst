@@ -38,17 +38,16 @@ in one of the following ways:
 
 ``<type>`` can be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
 However, in most cases, explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
-on the right of the ``=`` at compile time. It is strongly recommended to explicitly declare variable type only in case compiler 
-cannot determine it automatically. For example::
+on the right of the ``=`` at compile time, so the decision to use them is often a matter of preference. For example::
 
     baseLine0 = na          // compile time error!
     float baseLine1 = na    // OK
     baseLine2 = float(na)   // OK
 
-In the frist line of the example, the compiler cannot determine the type of the ``baseLine0`` variable because ``na`` is a generic value of no particular type. The declaration of the ``baseLine1`` variable is correct because its ``float`` type is declared explicitly.
-The declaration of the ``baseLine2`` variable is also correct because its type can be derived from the expression ``float(na)``, which is an explicit cast of ``na`` value to ``float`` type. The declarations of ``baseLine1`` and ``baseLine2`` are equivalent, by the way.
+In the first line of the example, the compiler cannot determine the type of the ``baseLine0`` variable because ``na`` is a generic value of no particular type. The declaration of the ``baseLine1`` variable is correct because its ``float`` type is declared explicitly.
+The declaration of the ``baseLine2`` variable is also correct because its type can be derived from the expression ``float(na)``, which is an explicit cast of ``na`` value to ``float`` type. The declarations of ``baseLine1`` and ``baseLine2`` are equivalent.
 
-The ``var`` keyword is a special modifier that instructs the compiler to *create and initialize the variable only once*. This behavior is very useful in cases where a variable's value must peresist through the successive bar iterations of the script. For example, suppose we'd like to count the number of green bars on the chart::
+The ``var`` keyword is a special modifier that instructs the compiler to *create and initialize the variable only once*. This behavior is very useful in cases where a variable's value must persist through the successive bar iterations of the script. For example, suppose we'd like to count the number of green bars on the chart::
 
     //@version=4
     study("Green Bars Count")
@@ -60,11 +59,11 @@ The ``var`` keyword is a special modifier that instructs the compiler to *create
 
 .. image:: images/GreenBarsCount.png
 
-Without the ``var`` modifier, variable ``count`` would be reset to zero (thus loosing it's value) every time a new bar update triggers script calculation.
+Without the ``var`` modifier, variable ``count`` would be reset to zero (thus loosing it's value) every time a new bar update triggered a script recalculation.
 
-.. note:: ``var`` keyword was introduced in Pine since version 4.
+.. note:: The ``var`` keyword was introduced in Pine v4.
 
-In Pine v3 the study "Green Bars Count" could be written without use of the ``var`` keyword::
+In Pine v3 the study "Green Bars Count" could be written without using the ``var`` keyword::
     
     //@version=3
     study("Green Bars Count")
@@ -75,7 +74,7 @@ In Pine v3 the study "Green Bars Count" could be written without use of the ``va
         count := count + 1
     plot(count)
 
-Which is less readable. Plus it could be less efficient too. Suppose that ``count`` variable is 
+The v4 code is more readable and can be more efficient if, for example, the ``count`` variable is 
 initialized with an expensive function call instead of ``0``.
 
 Examples of simple variable declarations::
@@ -86,8 +85,8 @@ Examples of simple variable declarations::
 
 Examples with type modifiers and var keyword::
 
-    float f = 10            // NOTE: expression of an int type, but the variable is float
-    i = int(close)          // NOTE: explicit cast of float expression close to int type
+    float f = 10            // NOTE: while the expression is of type int, the variable is float
+    i = int(close)          // NOTE: explicit cast of float expression close to type int
     r = round(close)        // NOTE: round() and int() are different... int() simply throws fractional part away
     var hl = high - low
 
@@ -96,7 +95,7 @@ Example, illustrating the effect of ``var`` keyword::
     // Creates a new label object on every bar:
     label lb = label.new(bar_index, close, title="Hello, World!")
 
-    // Creates just one label object on the first history bar only:
+    // Creates a label object only on the first bar in history:
     var label lb = label.new(bar_index, close, title="Hello, World!")
 
 
@@ -105,15 +104,15 @@ Example, illustrating the effect of ``var`` keyword::
 Variable assignment
 -------------------
 
-Mutable variable is such a variable which can be given a new value. 
+A mutable variable is a variable which can be given a new value. 
 The operator ``:=`` must be used to give a new value to a variable. 
-A variable must be declared before you can set a value for it
-(declaration of variables has been described :ref:`above<variable_declaration>`).
+A variable must be declared before you can assign a value to it
+(see declaration of variables :ref:`above<variable_declaration>`).
 
-Type of a variable is identified on the declaration step. A variable can
+The type of a variable is identified at declaration time. From then on, a variable can
 be given a value of expression only if both the expression and the
-variable belong to the same type, otherwise it will give you a
-compilation error.
+variable belong to the same type, otherwise a
+compilation error will occur.
 
 Variable assignment example::
 
@@ -126,7 +125,7 @@ Variable assignment example::
 
 We also use an :ref:`"if" statement <if_statement>` in this example.
 
-.. note:: Operator ``:=`` and mutable variables concept were introduced in Pine since version 2.
+.. note:: The ``:=`` operator and mutable variables were introduced in Pine v2.
 
 
 .. _if_statement:
@@ -134,8 +133,8 @@ We also use an :ref:`"if" statement <if_statement>` in this example.
 if statement
 ------------
 
-``if`` statement defines what block of statements must be executed when
-conditions of the expression are satisfied.
+An ``if`` statement defines a block of statements to be executed when
+the ``if``'s conditional expression evaluates to ``true``.
 
 General code form:
 
@@ -156,8 +155,8 @@ General code form:
 
 where:
 
--  ``var_declarationX`` --- this variable gets the value of the ``if``
-   statement.
+-  ``var_declarationX`` --- this variable if assigned the value of the ``if``
+   statement as a whole.
 -  ``condition`` --- if the ``condition`` expression is true, the logic from the *then* block
    (``var_decl_then0``, ``var_decl_then1``, etc.) is used, if the
    ``condition`` is false, the logic from the *else* block 
