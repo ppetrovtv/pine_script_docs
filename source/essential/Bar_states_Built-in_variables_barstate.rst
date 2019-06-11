@@ -1,7 +1,7 @@
 Bar states. Built-in variables barstate.*
 =========================================
 
-A set of built-in ``barstate.*`` variables allows users to define a state
+A set of built-in variables on the ``barstate`` namespace allows users to define a state
 of the bar which calculations are being made for.
 
 -  ``barstate.isfirst`` --- ``true`` if current bar is the first in the
