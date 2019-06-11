@@ -24,7 +24,7 @@ Here are some examples of simple expressions::
 Variable declaration
 --------------------
 
-Variables in Pine are declared with the help of the special symbol ``=`` and optional ``var`` keyword
+Variables in Pine are declared with the special symbol ``=`` and an optional ``var`` keyword
 in one of the following ways:
 
 .. code-block:: text
@@ -47,7 +47,7 @@ on the right of the ``=`` at compile time, so the decision to use them is often 
 In the first line of the example, the compiler cannot determine the type of the ``baseLine0`` variable because ``na`` is a generic value of no particular type. The declaration of the ``baseLine1`` variable is correct because its ``float`` type is declared explicitly.
 The declaration of the ``baseLine2`` variable is also correct because its type can be derived from the expression ``float(na)``, which is an explicit cast of ``na`` value to ``float`` type. The declarations of ``baseLine1`` and ``baseLine2`` are equivalent.
 
-The ``var`` keyword is a special modifier that instructs the compiler to *create and initialize the variable only once*. This behavior is very useful in cases where a variable's value must persist through the successive bar iterations of the script. For example, suppose we'd like to count the number of green bars on the chart::
+The ``var`` keyword is a special modifier that instructs the compiler to *create and initialize the variable only once*. This behavior is very useful in cases where a variable's value must persist through the iterations of a script across successive bars. For example, suppose we'd like to count the number of green bars on the chart::
 
     //@version=4
     study("Green Bars Count")
