@@ -123,7 +123,6 @@ Variable assignment example::
         price := hl2
     plot(price)
 
-We also use an :ref:`"if" statement <if_statement>` in this example.
 
 .. note:: The ``:=`` operator and mutable variables were introduced in Pine v2.
 
