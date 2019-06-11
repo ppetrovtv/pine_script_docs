@@ -37,7 +37,7 @@ in one of the following ways:
 ``<identifier>`` is the name of the declared variable, see :doc:`Identifiers`.
 
 ``<type>`` can be one of the predefined keywords: ``float``, ``int``, ``bool``, ``color``, ``string``, ``line`` or ``label``.
-However, in most cases, explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
+However, in most cases, an explicit type declaration is redundant because type is automatically inferred from the ``<expression>`` 
 on the right of the ``=`` at compile time, so the decision to use them is often a matter of preference. For example::
 
     baseLine0 = na          // compile time error!
