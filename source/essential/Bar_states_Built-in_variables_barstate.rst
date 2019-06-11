@@ -10,7 +10,7 @@ of the bar which calculations are being made for.
 -  ``barstate.islast`` --- ``true`` if current bar is the last in the
    whole range of bars available, ``false`` otherwise. This flag helps to detect *the last historical bar*.
 
--  ``barstate.ishistory`` --- ``true`` if a current data update is a historical bar update, ``false`` otherwise (thus it is real-time).
+-  ``barstate.ishistory`` --- ``true`` if current data update is a historical bar update, ``false`` otherwise (thus it is real-time).
 
 -  ``barstate.isrealtime`` --- ``true`` if current data update is a real-time bar update, 
    ``false`` otherwise (thus it is historical). Note that every real-time bar is also the *last* one.
