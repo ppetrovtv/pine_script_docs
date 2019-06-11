@@ -133,7 +133,8 @@ if statement
 ------------
 
 An ``if`` statement defines a block of statements to be executed when
-the ``if``'s conditional expression evaluates to ``true``.
+the ``if``'s conditional expression evaluates to ``true``, and optionally, 
+an alternative block to be executed when the expression is ``false``.
 
 General code form:
 
