@@ -158,7 +158,7 @@ There are 5 forms of float type in Pine:
 bool
 ^^^^
 
-There are only two literals for representing logical values::
+There are only two literals representing *bool* values::
 
     true    // true value
     false   // false value
