@@ -91,8 +91,8 @@ Values of the form *series* are ones that:
 
 The *series* form is the most common form in Pine.
 Examples of built-in *series* variables are: ``open``, ``high``, ``low``,
-``close``, ``volume`` and ``time``. The size of these lists are equal to the
-quantity of available bars based on the current ticker and timeframe
+``close``, ``volume`` and ``time``. The size of these lists is equal to the
+quantity of available bars for the current ticker and timeframe
 (resolution). The series may contain numbers or a special value: ``na``,
 meaning that a value is *not available*. Further information about ``na`` values
 can be found :ref:`here <history_referencing_operator>`. 
