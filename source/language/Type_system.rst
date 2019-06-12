@@ -325,7 +325,7 @@ Do not use the operator ``==`` to test for ``na`` values, as this is not guarant
 Tuples
 ------
 
-In Pine Script there is limited support for a tuple type. A tuple is an immutable sequence of values that a function call can return as a  result.
+In Pine Script there is limited support for a tuple type. A tuple is an immutable sequence of values used when a function must return more than one variable as a result.
 For example::
 
     calcSumAndMul(a, b) =>
