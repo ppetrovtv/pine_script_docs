@@ -215,7 +215,7 @@ through an arithmetic expression with other input types and color literals/const
 
 This is an arithmetic expression using Pine's ternary operator ``?:`` where 
 three different types of values are used: ``b`` of type *input bool*, ``color.red`` of type *const color* and ``#000000`` of 
-type *literal color*. In determing the result's type, the Pine compiler takes into account its automatic type casting rules (see the end of this section), and the available overloads of the ``?:`` operator. The resulting type is the narrowest type fitting these criteria: *input color*.
+type *literal color*. In determing the result's type, the Pine compiler takes into account its automatic type-casting rules (see the end of this section) and the available overloads of the ``?:`` operator. The resulting type is the narrowest type fitting these criteria: *input color*.
 
 The following built-in *color* variables can be used to avoid hexadecimal color literals: ``color.black``, ``color.silver``, ``color.gray``, ``color.white``,
 ``color.maroon``, ``color.red``, ``color.purple``, ``color.fuchsia``, ``color.green``, ``color.lime``,
