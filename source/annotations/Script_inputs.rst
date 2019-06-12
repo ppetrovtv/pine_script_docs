@@ -1,7 +1,7 @@
 Script inputs
 -------------
 
-`input <https://www.tradingview.com/study-script-reference/#fun_input>`__ annotations 
+`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ annotations 
 make it possible to indicate which variables in the
 indicator's code are *incoming*. Widgets will be generated for the
 variables on the indicator's (properties/attributes) page in order to
@@ -28,7 +28,7 @@ its widgets look like.
 
 ::
 
-    b = input(title="On/Off", type=bool, defval=true)
+    b = input(title="On/Off", type=input.bool, defval=true)
     plot(b ? open : na)
 
 .. figure:: images/Inputs_of_indicator_1.png
@@ -38,7 +38,7 @@ its widgets look like.
 
 ::
 
-    i = input(title="Offset", type=integer, defval=7, minval=-10, maxval=10)
+    i = input(title="Offset", type=input.integer, defval=7, minval=-10, maxval=10)
     plot(offset(close, i))
 
 .. figure:: images/Inputs_of_indicator_2.png
@@ -48,7 +48,7 @@ its widgets look like.
 
 ::
 
-    f = input(title="Angle", type=float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
+    f = input(title="Angle", type=input.float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
     plot(sin(f) > 0 ? close : open)
 
 .. figure:: images/Inputs_of_indicator_3.png
@@ -58,10 +58,10 @@ its widgets look like.
 
 ::
 
-    sym = input(title="Symbol", type=symbol, defval="SPY")
-    res = input(title="Resolution", type=resolution, defval="60")
-    plot(close, color=red)
-    plot(security(sym, res, close), color=green)
+    sym = input(title="Symbol", type=input.symbol, defval="SPY")
+    res = input(title="Resolution", type=input.resolution, defval="60")
+    plot(close, color=color.red)
+    plot(security(sym, res, close), color=color.green)
 
 .. figure:: images/Inputs_of_indicator_4.png
 
@@ -74,7 +74,7 @@ on automatically when the ticker's first symbols are typed.
 
 ::
 
-    s = input(title="Session", type=session, defval="24x7")
+    s = input(title="Session", type=input.session, defval="24x7")
     plot(time(period, s))
 
 .. figure:: images/Inputs_of_indicator_5.png
@@ -84,7 +84,7 @@ on automatically when the ticker's first symbols are typed.
 
 ::
 
-    src = input(title="Source", type=source, defval=close)
+    src = input(title="Source", type=input.source, defval=close)
     ma = sma(src, 9)
     plot(ma)
 

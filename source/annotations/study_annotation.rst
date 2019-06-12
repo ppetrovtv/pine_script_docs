@@ -1,8 +1,8 @@
-``study`` annotation
---------------------
+study annotation
+----------------
 
 Every *indicator* [#strategy]_ script must contain at least one call of the annotation function
-`study <https://www.tradingview.com/study-script-reference/#fun_study>`__ which has the following signature:
+`study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__ which has the following signature:
 
 .. code-block:: text
 
@@ -29,5 +29,5 @@ has special rules for formatting very large numbers (like volume, e.g.
 
 .. rubric:: Footnotes
 
-.. [#strategy] There is also a similar `strategy <https://www.tradingview.com/study-script-reference/#fun_strategy>`__ 
+.. [#strategy] There is also a similar `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__ 
    annotation which is used to create a :doc:`backtesting strategy </essential/Strategies>` rather than an indicator.

@@ -58,9 +58,6 @@ show the *confirmed* state.
 
 .. image:: images/barstates_history_then_more_realtime.png
 
-.. note:: None of the history bars have *confirmed* attribute. This might look weird and incorrect... and it is. 
-  Hopefully this would be fixed in the future Pine versions.
-
 .. rubric:: Footnotes
 
 .. [#isconfirmed] Variable ``barstate.isconfirmed`` returns the state of current chart symbol data only. 

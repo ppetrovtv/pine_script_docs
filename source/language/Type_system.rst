@@ -6,14 +6,14 @@ Type system
 
 .. include:: <isonum.txt>
 
-Pine has 7 fundamental data **types**. They are: 
-*int*, *float*, *bool*, *color*, *string*, *line*, *label*. 
+Pine has 9 fundamental data **types**. They are: 
+*int*, *float*, *bool*, *color*, *string*, *line*, *label*, *plot*, *hline*. 
 All of these types exist in several **forms**. There are 5 forms of types:
 *literal*, *const*, *input*, *simple* and a *series*. We will often refer to a pair *form type* as a *type*.
 The Pine compiler distinguishes 
 between a *literal bool* type, an *input bool* type, a *series bool* type and so on.
 
-There is also a *void* type, a *na* (not available) type and a compound *tuple* type.
+There is also a *void* type, a *na* (not available) value and a compound *tuple* type.
 
 Type forms
 ----------
@@ -91,7 +91,7 @@ Values of the form *series* are ones that:
 
 The *series* form is the most common form in Pine.
 Examples of built-in *series* variables are: ``open``, ``high``, ``low``,
-``close``, ``volume`` and ``time``. The size of these lists is equal to the
+``close``, ``volume`` and ``time``. The size of these series is equal to the
 quantity of available bars for the current ticker and timeframe
 (resolution). Series may contain numbers or a special value: ``na``,
 meaning that a value is *not available*. Further information about the ``na`` value
@@ -280,6 +280,16 @@ and `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label
 functions. Their type is *series line* and *series label*, respectively.
 There is only one form of the *line* and *label* types in Pine: *series*.
 
+plot and hline
+^^^^^^^^^^^^^^
+
+A few function annotations (in particular ``plot`` and ``hline``) return
+values which represent objects created on the chart. The function
+``plot`` returns an object of the type *plot*, represented as a line
+or diagram on the chart. The function ``hline`` returns an object of the
+type *hline*, represented as a horizontal line. These objects can be
+passed to the `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
+function to color the area in between them.
 
 void
 ----
@@ -340,16 +350,6 @@ There is also a special syntax for calling functions that return tuples. For exa
 
 where the value of local variables ``sum`` and ``mul`` will be written to the ``s`` and ``m`` variables of the outer scope.
 
-Other
------
-
-A few function annotations (in particular ``plot`` and ``hline``) return
-values which represent objects created on the chart. The function
-``plot`` returns an object of the type *plot*, represented as a line
-or diagram on the chart. The function ``hline`` returns an object of the
-type *hline*, represented as a horizontal line. These objects can be
-passed to the `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
-function to color the area in between them.
 
 Type casting
 ------------
