@@ -49,7 +49,7 @@ For example::
         c3 := 0
 
 The type of ``c1`` is *const float* because it is initialized with a *literal* expression.
-The type of ``c2`` is *const float* too, because it is initialized with an arithmetic expression of *const float* type.
+The type of ``c2`` is also *const float* because it is initialized with an arithmetic expression of *const float* type.
 The type of ``c3`` is *series float* because it changes at runtime.
 
 Input
