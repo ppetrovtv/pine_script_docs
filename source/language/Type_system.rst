@@ -315,8 +315,11 @@ or::
     
     myVar = float(na)
 
-Thirdly, to test if some value is *not available*, a special function must be used: `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__. Do not use the operator ``==`` to test for ``na`` values, as this 
-is not guaranteed to work.
+Thirdly, to test if some value is *not available*, a special function must be used: `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__. For example::
+
+    myClose = na(myVar) ? 0 : close
+
+Do not use the operator ``==`` to test for ``na`` values, as this is not guaranteed to work.
 
 
 Tuples
