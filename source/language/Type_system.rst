@@ -65,7 +65,7 @@ For example::
 
     p = input(10, title="Period")
 
-Type of ``p`` variable is *input integer*. 
+The type of ``p`` variable is *input integer*. 
 
 Simple
 ^^^^^^
