@@ -206,8 +206,8 @@ There are 5 forms of color type in Pine:
     * *color*
     * *series color*
 
-One might ask how a value can be of type *input color* if there is no color 
-`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ in Pine. The answer is: 
+One might ask how a value can be of type *input color* if it is impossible to use  
+`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ to input a color in Pine. The answer is: 
 through an arithmetic expression with other input types and color literals/constants. For example::
 
    b = input(true, "Use red color")
