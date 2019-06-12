@@ -75,7 +75,7 @@ Values of the form *simple* are ones that:
     * do not change during script execution
     * are unknown at compile time
 
-They are values that come from the main chart symbol information. For example, 
+They are values that come from the main chart's symbol information. For example, 
 the `syminfo.mintick <https://www.tradingview.com/study-script-reference/v4/#var_syminfo{dot}mintick>`__
 built-in variable is a *simple float*. The word *simple* is usually omitted when referring to this form, 
 so we use *float* rather than *simple float*.
