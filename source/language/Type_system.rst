@@ -179,7 +179,7 @@ Color literals have the following format: ``#`` followed by 6 or 8
 hexadecimal digits matching RGB or RGBA value. The first two digits
 determine the value for the **red** color component, the next two, 
 **green**, and the third, **blue**. 
-Each component value must be a hexadecimal number from ``00`` to ``FF`` (0 and 255 in decimal).
+Each component value must be a hexadecimal number from ``00`` to ``FF`` (0 to 255 in decimal).
 
 The fourth pair of digits is optional. When used, it specifies the **alpha** (opacity) 
 component, a value also from ``00`` (fully transparent) to ``FF`` (fully opaque).
@@ -206,31 +206,27 @@ There are 5 forms of color type in Pine:
     * *color*
     * *series color*
 
-One might wonder how to get a value of type *input color* if there is no color 
-`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ in Pine. The answer is, 
-with an arithmetic expression with other input types and color literals/constants. For example::
+One might ask how a value can become of type *input color* if there is no color 
+`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ in Pine. The answer is: 
+through an arithmetic expression with other input types and color literals/constants. For example::
 
    b = input(true, "Use red color")
    c = b ? color.red : #000000  // c has color input type
 
-There is an arithmetic expression with Pine ternary operator ``?:`` which involves
-three different types: ``b`` of type *input bool*, ``color.red`` of type *const color* and ``#000000`` of 
-type *literal color*. Pine compiler takes into account two things: Pine automatic type casting rules (see below), 
-and available overloads of operator ``?:``. Thus the resulting type is the most narrow type that could be 
-auto casted to and this is *input color* type.
+This is an arithmetic expression using Pine's ternary operator ``?:`` where 
+three different types of values are used: ``b`` of type *input bool*, ``color.red`` of type *const color* and ``#000000`` of 
+type *literal color*. In determing the result's type, the Pine compiler takes into account its automatic type casting rules (see the end of this section), and the available overloads of the ``?:`` operator. The resulting type is the narrowest type fitting these criteria: *input color*.
 
-Apart from configuring a color value directly with a literal (in hexadecimal format), 
-in the language there are more convenient, built-in variables of the type *color*. For
-basic colors there are: ``color.black``, ``color.silver``, ``color.gray``, ``color.white``,
+The following built-in *color* variables can be used to avoid hexadecimal color literals: ``color.black``, ``color.silver``, ``color.gray``, ``color.white``,
 ``color.maroon``, ``color.red``, ``color.purple``, ``color.fuchsia``, ``color.green``, ``color.lime``,
 ``color.olive``, ``color.yellow``, ``color.navy``, ``color.blue``, ``color.teal``, ``color.aqua``,
 ``color.orange``. 
 
-It is possible to change transparency of the color using
-built-in function
-`color.new <https://www.tradingview.com/study-script-reference/v4/#fun_color{dot}new>`__.
+It is possible to change the transparency of a color using
+the 
+`color.new <https://www.tradingview.com/study-script-reference/v4/#fun_color{dot}new>`__ built-in function.
 
-Here is an example of ``color.new`` usage::
+Here is an example::
 
     //@version=4
     study(title="Shading the chart's background", overlay=true)
@@ -247,29 +243,26 @@ Here is an example of ``color.new`` usage::
 string
 ^^^^^^
 
-String literals may be enclosed by single or double quotation marks, for
-example::
+String literals may be enclosed in single or double quotation marks.
+Examples::
 
     "This is a double quoted string literal"
     'This is a single quoted string literal'
 
-Single or double quotation marks are completely the same --- you may use
-what you prefer. The line that was written with double quotation marks
-may contain a single quotation mark, just as a line that is written with
-single quotation marks may contain double quotation marks::
+Single and double quotation marks are functionally equivalent.
+A string enclosed within double quotation marks
+may contain any number of single quotation marks, and vice versa::
 
     "It's an example"
     'The "Star" indicator'
 
-If a user needs to put either double quotation marks in a line that is
-enclosed by double quotation marks (or put single quotation marks in a
-line that is enclosed by single quotation marks,) then they must be
-preceded with backslash. For example::
+If you need to enclose the string's delimiter in the string,
+it must be preceded by a backslash. For example::
 
     'It\'s an example'
     "The \"Star\" indicator"
 
-There are all 5 forms of string type in Pine:
+There are 5 forms of string type in Pine:
 
     * *literal string*
     * *const string*
@@ -281,22 +274,23 @@ There are all 5 forms of string type in Pine:
 line and label
 ^^^^^^^^^^^^^^
 
-New drawing objects were introduced in Pine v4. These objects could be created with 
+New drawing objects were introduced in Pine v4. These objects are created with the 
 `line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__ 
 and `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ 
-functions. Their types are  *series line* and *series label* correspondingly.
-There is only one series form of drawing types in Pine.
+functions. Their type is *series line* and *series label*, respectively.
+There is only one form of the *line* and *label* types in Pine: *series*.
 
 
 void
 ----
 
-There is a *void* type in Pine Script. All the functions and annotation functions with *side effect* 
-return void result. For example a 
+There is a *void* type in Pine Script. All functions and annotation functions which produce a *side effect* 
+return a void result. E.g. 
 `strategy.entry <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}entry>`__,
 `plotshape <https://www.tradingview.com/study-script-reference/v4/#fun_plotshape>`__ etc.
 
-Void result from function means that it cannot be used in any arithmetic expression or to be assigned to a variable.
+A void result cannot be used in any arithmetic expression or be assigned to a variable.
+
 
 na value
 --------
