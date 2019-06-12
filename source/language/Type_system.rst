@@ -206,7 +206,7 @@ There are 5 forms of color type in Pine:
     * *color*
     * *series color*
 
-One might ask how a value can become of type *input color* if there is no color 
+One might ask how a value can be of type *input color* if there is no color 
 `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ in Pine. The answer is: 
 through an arithmetic expression with other input types and color literals/constants. For example::
 
