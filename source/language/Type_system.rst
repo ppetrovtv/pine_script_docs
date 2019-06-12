@@ -6,8 +6,8 @@ Type system
 
 .. include:: <isonum.txt>
 
-Pine has 7 fundamental data **types**. They are: 
-*int*, *float*, *bool*, *color*, *string*, *line*, *label*. 
+Pine has 9 fundamental data **types**. They are: 
+*int*, *float*, *bool*, *color*, *string*, *line*, *label*, *plot*, *hline*. 
 All of these types exist in several **forms**. There are 5 forms of types:
 *literal*, *const*, *input*, *simple* and a *series*. We will often refer to a pair *form type* as a *type*.
 The Pine compiler distinguishes 
