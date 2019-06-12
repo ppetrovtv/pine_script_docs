@@ -9,7 +9,8 @@ Type system
 Pine has 7 fundamental data **types**. They are: 
 *int*, *float*, *bool*, *color*, *string*, *line*, *label*. 
 All of these types exist in several **forms**. There are 5 forms of types:
-*literal*, *const*, *input*, *simple* and a *series*. The Pine compiler distinguishes 
+*literal*, *const*, *input*, *simple* and a *series*. We will often refer to a pair *form type* as a *type*.
+The Pine compiler distinguishes 
 between a *literal bool* type, an *input bool* type, a *series bool* type and so on.
 
 There is also a *void* type, a *na* (not available) type and a compound *tuple* type.
@@ -29,14 +30,14 @@ expression and such literal expressions are always of one of the 4 following typ
     * *literal string* (e.g. ``"A text literal"``)
 
 .. note:: In Pine, the built-in names ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
-    ``hl2``, ``hlc3``, ``ohlc4`` are not literals. They are of the *series* type.
+    ``hl2``, ``hlc3``, ``ohlc4`` are not literals. They are of the *series* form.
 
 Const
 ^^^^^
 
 Values of the form *const* are ones that:
     
-    * do not change during the script execution
+    * do not change during script execution
     * are known or can be calculated at compile time
 
 For example::
