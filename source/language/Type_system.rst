@@ -305,7 +305,7 @@ Secondly, in some cases the Pine compiler cannot automatically infer a type for 
     
     myVar = na // Compilation error!
 
-Here, the compiler cannot determine if ``myVar`` will be used to plot something, e.g. as in ``plot(myVar)`` where its type would be *series float*, or to set some text 
+Here, the compiler cannot determine if ``myVar`` will be used to plot something, as in ``plot(myVar)`` where its type would be *series float*, or to set some text as in 
 ``label.set_text(lb, text=myVar)`` where its type would be *series string*, or for some other purpose. 
 Such cases must be explicitly resolved in one of two ways::
     
