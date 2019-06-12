@@ -295,20 +295,19 @@ A void result cannot be used in any arithmetic expression or be assigned to a va
 na value
 --------
 
-In Pine there is a special built-in variable ``na``, which is an acronym for *not available*.
-Such a value means that an expression or a variable has actually no value (or value is not avaiable). This is very similar
-to ``null`` value in Java or ``None`` in Python.
+In Pine there is a special built-in variable ``na``, which is an acronym for *not available*, meaning 
+an expression or variable has no value. This is very similar
+to the ``null`` value in Java or ``None`` in Python.
 
-There are a few things to know about ``na`` values. First, ``na`` value could be automatically casted to almost any type.
+There are a few things to know about ``na`` values. First, the ``na`` value can be automatically cast to almost any type.
 
-Second, in some cases Pine compiler cannot automatically infer type for ``na`` value, because more that one automatic type cast rules 
-could be applied. For example::
+Secondly, in some cases the Pine compiler cannot automatically infer a type for a ``na`` value because more that one automatic type-casting rule can be applied. For example::
     
     myVar = na // Compilation error!
 
-Compiler cannot guess, would ``myVar`` be used to plot something, e.g. ``plot(myVar)`` (and thus it's type is *series float*), or to set some text
-``label.set_text(lb, text=myVar)`` (meaning that it's type is *series string*) and so on. 
-Such cases could be resolved in a two equivalent ways::
+Here, the compiler cannot determine if ``myVar`` will be used to plot something, e.g. as in ``plot(myVar)`` where its type would be *series float*, or to set some text 
+``label.set_text(lb, text=myVar)`` where its type would be *series string*, or for some other purpose. 
+Such cases must be explicitly resolved in one of two ways::
     
     float myVar = na
 
@@ -316,14 +315,14 @@ or::
     
     myVar = float(na)
 
-Third, to test if some value is *not available* or not, a special function `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ should be used. Do not use operator ``==`` against ``na`` value.
-This is not guaranteed to work.
+Thirdly, to test if some value is *not available*, a special function must be used: `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__. Do not use the operator ``==`` to test for ``na`` values, as this 
+is not guaranteed to work.
 
 
 Tuples
 ------
 
-In Pine Script there is a limited support for tuple types. A tuple is a immutable sequence of values that could be returned as a function call result.
+In Pine Script there is limited support for tuple types. A tuple is an immutable sequence of values that a function call can return as a  result.
 For example::
 
     calcSumAndMul(a, b) =>
@@ -331,12 +330,12 @@ For example::
         mul = a * b
         [sum, mul]
 
-In this example there is a 2-tuple on the last statement of function ``calcSumAndMul``. Tuple elements could be of an arbitrary type. 
-There is also a special syntax for calling functions that return tuples. For example ``calcSumAndMul`` could be called::
+In this example there is a 2-tuple on the last statement of the function ``calcSumAndMul``. Tuple elements can be of any type. 
+There is also a special syntax for calling functions that return tuples. For example, ``calcSumAndMul`` must be called as follows::
 
     [s, m] = calcSumAndMul(high, low)
 
-Value of local variable ``sum`` will be written to ``s`` variable of the outer scope. So as ``mul`` value will be written to ``m`` variable.
+where the value of local variables ``sum`` and ``mul`` will be written to the ``s`` and ``m`` variables of the outer scope.
 
 Other
 -----
@@ -352,8 +351,8 @@ function to color the area in between them.
 Type casting
 ------------
 
-There is an automatic type casting in Pine Script. 
-In the following picture an arrow means ability to automatically cast one type to
+There is an automatic type-casting mechanism in Pine Script. 
+In the following picture, an arrow denotes the Pine compiler's ability to automatically cast one type to
 another:
 
 .. image:: images/Type_cast_rules_v4.svg
@@ -366,13 +365,13 @@ For example::
     study("My Script")
     plotshape(series=close)
 
-Type of ``series`` parameter of ``plotshape`` function is *series bool*. But the function is called 
-with ``close`` argument which type is *series float*. Types do not match, but there is
-an automatic type cast rule *series float* |rarr| *series bool* (see the diagram) which does the conversion.
+The type of the ``series`` parameter of the ``plotshape`` function is *series bool*. But the function is called 
+with the ``close`` argument of type *series float*. The types do not match, but 
+an automatic type-casting rule *series float* |rarr| *series bool* (see the diagram) does the proper conversion.
 
 
-Sometimes there is no type conversion *X* |rarr| *Y*. That is why in Pine (since version 4) there are 
-functions for explicit type casting. They are:
+Sometimes there is no automatic *X* |rarr| *Y* type-casting rule. For these cases, explicit type-casting functions
+were introduced in Pine v4. They are:
     
     * `int <https://www.tradingview.com/study-script-reference/v4/#fun_int>`__
     * `float <https://www.tradingview.com/study-script-reference/v4/#fun_float>`__
@@ -393,9 +392,9 @@ Here is an example::
 This code fails to compile with an error: **Add to Chart operation failed, reason: 
 line 4: Cannot call `sma` with arguments (series[float], const float); available overloads: 
 sma(series[float], integer) => series[float];**
-Compiler says that type of ``len`` variable is *const float* but the ``sma`` function
-expected ``integer``. There is no automatic type casting from *const float* to *integer*.
-But an explicit type cast function could be used::
+The compiler says that while the type of the ``len`` variable is *const float*, the ``sma`` function
+expected an ``integer``. There is no automatic type casting from *const float* to *integer*,
+but an explicit type-casting function can be used::
 
     //@version=4
     study("My Script")
