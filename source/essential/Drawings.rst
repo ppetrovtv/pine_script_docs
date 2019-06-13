@@ -304,9 +304,9 @@ Here is Pine code that keeps just one label drawing object on the current bar,
 
 .. image:: images/Last_Bar_Close_1.png
 
-In "Last Bar Close 1" study, on every new bar update a new label object is created and written to variable ``l``.
-Variable ``l`` has type *series label*, so operator ``[]`` is used to get label object on the previous bar. 
-That old label then is passed to the ``label.delete`` function to delete it.
+On every new bar update of the "Last Bar Close 1" study, a new label object is created and written to variable ``l``.
+Variable ``l`` is of type *series label*, so the ``[]`` operator is used to get the previous bar's label object. 
+That previous label is then passed to the ``label.delete`` function to delete it.
 
 Functions ``label.delete`` and ``line.delete`` do nothing if the ``na`` value is used as an id, which makes code like the following unnecessary::
 
