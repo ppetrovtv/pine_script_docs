@@ -12,9 +12,9 @@ You will find one instance of each on the following chart:
 .. image:: images/label_and_line_drawings.png
 
 .. note:: On TradingView charts, a complete set of *Drawing Tools*
-  allows users to create and modify drawings using mouse actions. While they may look very similar to
-  Pine drawing objects, they are essentially different entities. 
-  Drawing objects created from Pine code cannot be modified by mouse actions.
+  allows users to create and modify drawings using mouse actions. While they may look similar to
+  drawing objects created with Pine code, they are essentially different entities. 
+  Drawing objects created from Pine code cannot be modified with mouse actions.
 
 The new line and label drawings in Pine v4 allow you to create indicators with more sophisticated
 visual components, like pivot points, support/resistance levels,
