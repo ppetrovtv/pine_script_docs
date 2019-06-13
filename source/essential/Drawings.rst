@@ -28,7 +28,7 @@ Creating drawings
 Pine drawing objects are created with the `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ 
 and `line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__ functions. 
 While each function has many parameters, only the coordinates are mandatory.
-This is an example of minimal code used to create a label on every bar::
+This is an example of code used to create a label on every bar::
     
     //@version=4
     study("My Script", overlay=true)
@@ -54,7 +54,7 @@ Here is a modified version of the same script that shows the values of the ``x``
 In this example labels are shown without background coloring (because of parameter ``style=label.style_none``) but with 
 dynamically created text (``text="x=" + tostring(bar_index) + "\ny=" + tostring(high)``) that prints label coordinates.
 
-This is an example of minimal code that creates line objects on a chart::
+This is an example of code that creates line objects on a chart::
 
     //@version=4
     study("My Script", overlay=true)
