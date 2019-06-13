@@ -119,7 +119,7 @@ Changing drawings
 
 A drawing object can be modified after its creation. The ``label.new`` and ``line.new`` functions return 
 a reference to the created drawing object (of type *series label* and *series line* respectively).
-This reference can then could be used as the first argument to the ``label.set_*`` and ``line.set_*`` functions used to modify drawings. 
+This reference can then be used as the first argument to the ``label.set_*`` and ``line.set_*`` functions used to modify drawings. 
 For example::
 
     //@version=4
@@ -138,31 +138,31 @@ For example::
 
 .. image:: images/label_changing_example.png
 
-This simple script creates a label on the current bar first and then it writes a reference to it in a variable ``l``. 
+This simple script first creates a label on the current bar and then it writes a reference to it in a variable ``l``. 
 Then, depending on whether current bar is a rising or a falling bar (condition ``close >= open``), a number of label drawing properties are modified:
 text, color, *y* coordinate location (``yloc``) and label style.
 
-One may notice that ``na`` is passed as ``y`` argument to the ``label.new`` function call. The reason for this is that
-label use either ``yloc.belowbar`` or ``yloc.abovebar`` y-locations. It means that label is bounded to the bar position on the chart. 
-A finite value for ``y`` is needed only if label uses ``yloc.price`` as y-location value.
+One may notice that ``na`` is passed as the ``y`` argument to the ``label.new`` function call. The reason for this is that
+the example's label use either ``yloc.belowbar`` or ``yloc.abovebar`` y-locations, which don't require a y value.
+A finite value for ``y`` is needed only if a label uses ``yloc.price``.
 
-List of available *setter* functions for label drawing:
+The available *setter* functions for label drawings are:
 
     * `label.set_color <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_color>`__ --- changes color of label
     * `label.set_size <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_size>`__ --- changes size of label
     * `label.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_style>`__ --- changes :ref:`style of label <drawings_label_styles>`
     * `label.set_text <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_text>`__ --- changes text of label
-    * `label.set_textcolor <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of label text
+    * `label.set_textcolor <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of  text
     * `label.set_x <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_x>`__ --- changes x-coordinate of label
     * `label.set_y <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_y>`__ --- changes y-coordinate of label
-    * `label.set_xy <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_xy>`__ --- changes both x and y coordinates of label at once
+    * `label.set_xy <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_xy>`__ --- changes both x and y coordinates of label
     * `label.set_xloc <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_xloc>`__ --- changes x-location of label
     * `label.set_yloc <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_yloc>`__ --- changes y-location of label
 
-List of available *setter* functions for line drawing:
+The available *setter* functions for line drawings are:
 
     * `line.set_color <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_color>`__ --- changes color of line
-    * `line.set_extend <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_extend>`__ --- changes attribute that makes 
+    * `line.set_extend <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_extend>`__ --- changes attribute that makes: 
       
       - ``extend.none`` - a line segment
       - ``extend.left``/``extend.right`` - a ray
@@ -170,10 +170,10 @@ List of available *setter* functions for line drawing:
 
     * `line.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_style>`__ --- changes :ref:`style of line <drawings_line_styles>`
     * `line.set_width <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_width>`__ --- changes width of line
-    * `line.set_xloc <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xloc>`__ --- changes x-location of line both x1 and x2 coordinates
+    * `line.set_xloc <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xloc>`__ --- changes x-location of line (both x1 and x2)
     * `line.set_x1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_x1>`__ --- changes x1-coordinate of line
     * `line.set_y1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_y1>`__ --- changes y1-coordinate of line
-    * `line.set_xy1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xy1>`__ --- changes both x1 and y1 coordinates of line at once
+    * `line.set_xy1 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xy1>`__ --- changes both x1 and y1 coordinates of line
     * `line.set_x2 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_x2>`__ --- changes x2-coordinate of line
     * `line.set_y2 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_y2>`__ --- changes y2-coordinate of line
     * `line.set_xy2 <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_xy2>`__ --- changes both x2 and y2 coordinates of line at once
@@ -184,8 +184,7 @@ List of available *setter* functions for line drawing:
 Label styles
 ------------
 
-Pine labels support a number of various styles. Style could be set either with
-`label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ or 
+Various styles can be applied to labels with either the `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ or 
 `label.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_style>`__ 
 function:
 
@@ -252,7 +251,7 @@ function:
 Line styles
 -----------
 
-Pine lines support a number of various styles. Style could be set either with
+Various styles can be applied to lines with either the
 `line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__ or 
 `line.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}set_style>`__ 
 function:
@@ -285,11 +284,11 @@ function:
 Deleting drawings
 -----------------
 
-Functions `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
+The `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
 and `line.delete <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}delete>`__ 
-delete *label* and *line* drawing objects on chart correspondingly. 
+functions delete *label* and *line* drawing objects from the chart. 
 
-As an example, here is a Pine code that keeps just one label drawing object on the current bar,
+Here is Pine code that keeps just one label drawing object on the current bar,
 *deleting the old ones*::
 
     //@version=4
