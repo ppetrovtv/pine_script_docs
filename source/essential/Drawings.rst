@@ -140,7 +140,7 @@ For example::
 .. image:: images/label_changing_example.png
 
 This simple script first creates a label on the current bar and then it writes a reference to it in a variable ``l``. 
-Then, depending on whether current bar is a rising or a falling bar (condition ``close >= open``), a number of label drawing properties are modified:
+Then, depending on whether the current bar is rising or falling (condition ``close >= open``), a number of label drawing properties are modified:
 text, color, *y* coordinate location (``yloc``) and label style.
 
 One may notice that ``na`` is passed as the ``y`` argument to the ``label.new`` function call. The reason for this is that
