@@ -144,7 +144,7 @@ Then, depending on whether the current bar is rising or falling (condition ``clo
 text, color, *y* coordinate location (``yloc``) and label style.
 
 One may notice that ``na`` is passed as the ``y`` argument to the ``label.new`` function call. The reason for this is that
-the example's label use either ``yloc.belowbar`` or ``yloc.abovebar`` y-locations, which don't require a y value.
+the example's label uses either ``yloc.belowbar`` or ``yloc.abovebar`` y-locations, which don't require a y value.
 A finite value for ``y`` is needed only if a label uses ``yloc.price``.
 
 The available *setter* functions for label drawings are:
