@@ -583,13 +583,12 @@ This code's intention, for example, is to ignore all history bars and create a l
         label.new(bar_index[10], na, text="Label", yloc=yloc.abovebar)
 
 It will, however, fail at runtime. The reason for the error is that Pine cannot determine the buffer size 
-for history values of the ``time`` plot, even though the ``time`` built-in variable isn't mentioned in the code.
-
+for history values of the ``time`` plot, even though the ``time`` built-in variable isn't mentioned in the code. 
 This is due to the fact that the built-in variable ``bar_index`` uses the ``time`` series in its inner workings.
 Accessing the value of the bar index 10 bars back requires that the history buffer size of the ``time`` series
 be of size 10 or more.
 
-In Pine, there is a mechanism that automaticaly detects required history buffer sizes for most of cases.
+In Pine, there is a mechanism that automaticaly detects the required history buffer size for most cases.
 Autodetection works by letting Pine code access history values any number of bars back for a limited duration.
 In this script's case, the `if barstate.isrealtime` condition prevents any such accesses to occur,
 so the required history buffer size cannot be inferred and the code fails.
