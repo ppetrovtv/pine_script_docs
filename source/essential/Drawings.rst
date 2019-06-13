@@ -590,7 +590,7 @@ be of size 10 or more.
 
 In Pine, there is a mechanism that automaticaly detects the required history buffer size for most cases.
 Autodetection works by letting Pine code access history values any number of bars back for a limited duration.
-In this script's case, the `if barstate.isrealtime` condition prevents any such accesses to occur,
+In this script's case, the ``if barstate.isrealtime`` condition prevents any such accesses to occur,
 so the required history buffer size cannot be inferred and the code fails.
 
 The solution to this conundrum is to use the `max_bars_back <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for the ``time`` series::
