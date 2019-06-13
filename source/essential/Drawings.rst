@@ -305,17 +305,14 @@ Here is Pine code that keeps just one label drawing object on the current bar,
 
 In "Last Bar Close 1" study, on every new bar update a new label object is created and written to variable ``l``.
 Variable ``l`` has type *series label*, so operator ``[]`` is used to get label object on the previous bar. 
-That old label then is passed to ``label.delete`` function to delete it.
+That old label then is passed to the ``label.delete`` function to delete it.
 
-Functions ``label.delete`` and ``line.delete`` do nothing if ``na`` object is passed to them. That is why::
+Functions ``label.delete`` and ``line.delete`` do nothing if the ``na`` value is used as an id, which makes code like the following unnecessary::
 
     if not na(l[1])
         label.delete(l[1])
 
-Such a "protection" (the ``if`` statement) is not necessary.
-
-Exactly the same behaviour could be achieved with another approach. An old label could be deleted and then a new one created using just one 
-reference ``l`` on the same current bar::
+The previous script's behavior can be reproduced using another approach::
 
     //@version=4
     study("Last Bar Close 2", overlay=true)
@@ -327,15 +324,11 @@ reference ``l`` on the same current bar::
       text=tostring(close), color=c,
       style=label.style_labeldown, yloc=yloc.abovebar)
 
-In more detail, when study "Last Bar Close 2" gets a new bar update, variable ``l`` is still referencing to the old label object, created on the previous bar.
-So, it is deleted with call ``label.delete(l)`` and then a new label is created and written to ``l``. That is why in this approach there is 
-no need to use operator ``[]``.
+When the study "Last Bar Close 2" gets a new bar update, variable ``l`` is still referencing the old label object created on the previous bar. This label is deleted with the ``label.delete(l)`` call. A new label is then created and its id save to ``l``. Using this approach there is no need to use the ``[]`` operator.
 
-Note the use of new (since Pine v4) :ref:`var keyword <variable_declaration>`. It creates variable ``l`` and initializes it with ``na`` value just once. 
-Without this detail, ``label.delete(l)`` call would not delete any objects.
+Note the use of the new Pine v4 :ref:`var keyword <variable_declaration>`. It creates variable ``l`` and initializes it with the ``na`` value only once. ``label.delete(l)`` would have no object to delete if it weren't for the fact that ``l`` is initialized only once.
 
-By the way, there is one more approach without objects deletions. A drawing object may be created just once and then
-on every bar update it is moved forward along with the current bar::
+There is yet another way to achieve the same objective as in the two previous scripts, this time by modifying the label rather than deleting it::
 
     //@version=4
     study("Last Bar Close 3", overlay=true)
@@ -348,8 +341,8 @@ on every bar update it is moved forward along with the current bar::
     label.set_text(l, tostring(close))
     label.set_x(l, bar_index)
 
-Once again, the use of new :ref:`var keyword <variable_declaration>` is essential. Call ``label.new`` is executed only once on the very first 
-history bar.
+Once again, the use of new :ref:`var keyword <variable_declaration>` is essential. It is what allows the ``label.new`` call to be
+executed only once, on the very first history bar.
 
 
 Examples of classic indicators
@@ -555,16 +548,17 @@ Limits
 Total number of drawings limit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Pine code that operates with drawing objects consume server resources. That is why there is a limitation on total number of drawings 
-per study or strategy. If Pine code creates too many drawings, the old ones are automatically deleted by the Pine runtime.
+Drawing objects consume server resources, which is why there is a limitat on the total number of drawings 
+per study or strategy. When too many drawings are created, old ones are automatically deleted by the Pine runtime, 
+in a process referred to as *garbage collection*.
 
-For example, here is a code, that creates a drawing on every bar::
+This code creates a drawing on every bar::
 
     //@version=4
     study("My Script", overlay=true)
     label.new(bar_index, high)
 
-Scrolling the chart to the left one may see that there are no drawings after about the 50 bars back:
+Scrolling the chart left, one will see there are no drawings after approximately 50 bars:
 
 .. image:: images/drawings_total_number_limit.png
 
@@ -572,17 +566,15 @@ Scrolling the chart to the left one may see that there are no drawings after abo
 Additional securities
 ^^^^^^^^^^^^^^^^^^^^^
 
-Pine code may use additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function. 
-But all the drawing functions are allowed to be called only on the main symbol context. Anyway, secondary symbols are not displayed on the
-chart, so this limitation is pretty natural.
+Pine code sometimes uses additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function in script areas unrelated to drawings. 
+But drawing functions can only be used in the main symbol's context.
 
 
 max_bars_back of time
 ^^^^^^^^^^^^^^^^^^^^^
 
-Usage of ``barstate.isrealtime`` in combination with drawings sometimes could lead to not so obvious weird behaviour of Pine code.
-For example, there is a code, that supposed to create label drawings on the *realtime* bars, skipping
-all the history bars::
+Use of ``barstate.isrealtime`` in combination with drawings may sometimes produce unexpected results.
+This code's intention, for example, is to ignore all history bars and create a label drawing on the *realtime* bar::
 
     //@version=4
     study("My Script", overlay=true)
@@ -590,20 +582,19 @@ all the history bars::
     if barstate.isrealtime
         label.new(bar_index[10], na, text="Label", yloc=yloc.abovebar)
 
-This study doesn't add anything on chart at all, actually, it fails in runtime with an error. 
-The reason for the error is that Pine could not determine the buffer size for history values of ``time`` plot, but...
-``time`` built-in variable even was not mentioned in the Pine code!
+It will, however, fail at runtime. The reason for the error is that Pine cannot determine the buffer size 
+for history values of the ``time`` plot, even though the ``time`` built-in variable isn't mentioned in the code.
 
-First, built-in variable ``bar_index`` under the covers works with ``time`` series. Accessing the value of 
-bar index 10 bars back, needs that history buffer size of ``time`` series should be of size 10 elements or more.
+This is due to the fact that the built-in variable ``bar_index`` uses the ``time`` series in its inner workings.
+Accessing the value of the bar index 10 bars back requires that the history buffer size of the ``time`` series
+be of size 10 or more.
 
-Second, in Pine there is a mechanism that automaticaly detects history buffer sizes in most of the cases.
-Autodetection works like this. For a limited number of bars study is allowed to access history values any bars back from the current bar.
-Thus the system knows what history buffer size a series or a variable needs. Condition `if barstate.isrealtime` makes the line with
-``bar_index[10]`` to be skipped for all history bars, so the system does not know anything about the ``bar_index`` (but, remember, ``time`` series)
-history buffer size needed. That is why the code fails.
+In Pine, there is a mechanism that automaticaly detects required history buffer sizes for most of cases.
+Autodetection works by letting Pine code access history values any number of bars back for a limited duration.
+In this script's case, the `if barstate.isrealtime` condition prevents any such accesses to occur,
+so the required history buffer size cannot be inferred and the code fails.
 
-Solution for this is to use `max_bars_back <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for ``time`` series::
+The solution to this conundrum is to use the `max_bars_back <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for the ``time`` series::
 
     //@version=4
     study("My Script", overlay=true)
@@ -613,5 +604,4 @@ Solution for this is to use `max_bars_back <https://www.tradingview.com/pine-scr
     if barstate.isrealtime
         label.new(bar_index[10], na, text="Label", yloc=yloc.abovebar)
 
-This case is rare, and very confusing. Pine team knows about it and works hard to make things simpler and clearer.
-
+Such occurrences are confusing, but rare. In time, the Pine team hopes to eliminate them.
