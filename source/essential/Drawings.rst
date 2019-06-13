@@ -85,17 +85,15 @@ Coordinates
 
 Drawing objects are positioned on the chart according to *x* and *y* coordinates using a combination of 4 parameters: ``x``, ``y``, ``xloc`` and ``yloc``. The value of ``xloc`` determines whether ``x`` will hold a bar index or time value. When ``yloc=yloc.price``, ``y`` holds a price. ``y`` is ignored when ``yloc`` is set to `yloc.abovebar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}abovebar>`__ or `yloc.belowbar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}belowbar>`__.
 
-If drawing object uses `xloc.bar_index <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_index>`__, then
-x-coordinate is treated as an absolute bar index. Bar index of the current bar could be obtained from built-in variable ``bar_index``. 
-Bar index of the previous bars are ``bar_index[1]``, ``bar_index[2]`` and so on. ``xloc.bar_index`` is the default value for x-location parameters
-of both label and line drawings.
+If a drawing object uses `xloc.bar_index <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_index>`__, then
+the x-coordinate is treated as an absolute bar index. The bar index of the current bar can be obtained from the built-in variable ``bar_index``. The bar index of previous bars is ``bar_index[1]``, ``bar_index[2]`` and so on. ``xloc.bar_index`` is the default value for x-location parameters of both label and line drawings.
 
-If drawing object uses `xloc.bar_time <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_time>`__, then
-x-coordinate is treated as UNIX time in milliseconds. Start time of the current bar could be obtained from built-in variable ``time``.
-Bar time of the previous bars are ``time[1]``, ``time[2]`` and so on. Time could be set as an absolute time point with the help of 
-function `timestamp <https://www.tradingview.com/study-script-reference/v4/#fun_timestamp>`__.
+If a drawing object uses `xloc.bar_time <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_time>`__, then
+the x-coordinate is treated as a UNIX time in milliseconds. The start time of the current bar can be obtained from the built-in variable ``time``.
+The bar time of previous bars is ``time[1]``, ``time[2]`` and so on. Time can also be set to an absolute time point with the 
+`timestamp <https://www.tradingview.com/study-script-reference/v4/#fun_timestamp>`__ function.
 
-``xloc.bar_time`` mode gives an ability to place a drawing object in the future, in front of the current bar. For example::
+The ``xloc.bar_time`` mode makes it possible to place a drawing object in the future, to the right of the current bar. For example::
 
     //@version=4
     study("My Script", overlay=true)
@@ -108,20 +106,20 @@ function `timestamp <https://www.tradingview.com/study-script-reference/v4/#fun_
 This code places a label object in the future. X-location logic works identically for both label and line drawings.
 
 In contrast, y-location logic is different for label and line drawings.
-For *line* drawings there is only one option here, they use `yloc.price <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}price>`__.
-It means, that y-coordinate is treated as an absolute price value.
+Pine's *line* drawings always use `yloc.price <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}price>`__,
+so their y-coordinate is always treated as an absolute price value.
 
-Label drawing has additional y-location values: `yloc.abovebar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}abovebar>`__ and
+Label drawings have additional y-location values: `yloc.abovebar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}abovebar>`__ and
 `yloc.belowbar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}belowbar>`__.
-In this case, value of ``y`` parameter is ignored, because drawing object is placed on chart near the corresponding bar, above or below it.
+When they are used, the value of the ``y`` parameter is ignored and the drawing object is placed above or below the bar.
 
 
 Changing drawings
 -----------------
 
-Once a drawing object is created, it could be changed later. Functions ``label.new`` and ``line.new`` return 
+A drawing object can be modified after its creation. The ``label.new`` and ``line.new`` functions return 
 a reference to the created drawing object (of type *series label* and *series line* respectively).
-This reference then could be used as the first argument to functions ``label.set_*`` and ``line.set_*`` to modify the drawing. 
+This reference can then could be used as the first argument to the ``label.set_*`` and ``line.set_*`` functions used to modify drawings. 
 For example::
 
     //@version=4
