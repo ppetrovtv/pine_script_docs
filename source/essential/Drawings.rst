@@ -41,7 +41,7 @@ The label is created with the parameters ``x=bar_index`` (the index of the curre
 `bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__) and ``y=high`` (high price of the current bar).
 When a new bar opens, a new label is created on it. Label objects created on previous bars stay on the chart 
 until the indicator deletes them with an explicit call of the `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
-function or the automatic garbage collection process removes them.
+function, or until the automatic garbage collection process removes them.
 
 Here is a modified version of the same script that shows the values of the ``x`` and ``y`` coordinates used to create the labels::
 
