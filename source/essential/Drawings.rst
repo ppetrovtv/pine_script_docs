@@ -325,7 +325,7 @@ The previous script's behavior can be reproduced using another approach::
       text=tostring(close), color=c,
       style=label.style_labeldown, yloc=yloc.abovebar)
 
-When the study "Last Bar Close 2" gets a new bar update, variable ``l`` is still referencing the old label object created on the previous bar. This label is deleted with the ``label.delete(l)`` call. A new label is then created and its id save to ``l``. Using this approach there is no need to use the ``[]`` operator.
+When the study "Last Bar Close 2" gets a new bar update, variable ``l`` is still referencing the old label object created on the previous bar. This label is deleted with the ``label.delete(l)`` call. A new label is then created and its id saved to ``l``. Using this approach there is no need to use the ``[]`` operator.
 
 Note the use of the new Pine v4 :ref:`var keyword <variable_declaration>`. It creates variable ``l`` and initializes it with the ``na`` value only once. ``label.delete(l)`` would have no object to delete if it weren't for the fact that ``l`` is initialized only once.
 
