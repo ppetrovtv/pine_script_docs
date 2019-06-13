@@ -10,7 +10,7 @@ drawings are supported: *label* and *line*. There is one instance of each on the
 
 .. image:: images/label_and_line_drawings.png
 
-.. note:: On TradingView charts a complete set of *Drawing Tools*
+.. note:: On TradingView charts, a complete set of *Drawing Tools*
   allows users to create and modify drawings using mouse actions. While they may look very similar to
   Pine drawing objects, they are essentially different entities. 
   Drawing objects created from Pine code cannot be modified by mouse actions.
