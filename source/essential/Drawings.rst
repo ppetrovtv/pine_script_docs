@@ -4,7 +4,7 @@ Drawings
 .. contents:: :local:
     :depth: 2
 
-Since Pine version 4, it is possible to write indicators and strategies which
+Starting with Pine v4, indicators and strategies can
 create *drawing objects* on chart. At the moment two kinds of 
 drawings are supported, they are *label* and *line*:
 
