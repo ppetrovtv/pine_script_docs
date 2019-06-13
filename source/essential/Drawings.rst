@@ -5,7 +5,7 @@ Drawings
     :depth: 2
 
 Starting with Pine v4, indicators and strategies can
-create *drawing objects* on chart. At the moment two kinds of 
+create *drawing objects* on the chart. At the moment, two kinds of 
 drawings are supported, *label* and *line*. There is one instance of each on the following chart:
 
 .. image:: images/label_and_line_drawings.png
