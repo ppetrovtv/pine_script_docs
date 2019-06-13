@@ -6,28 +6,29 @@ Drawings
 
 Starting with Pine v4, indicators and strategies can
 create *drawing objects* on chart. At the moment two kinds of 
-drawings are supported, they are *label* and *line*:
+drawings are supported, *label* and *line*. There is one instance of each on the following chart:
 
 .. image:: images/label_and_line_drawings.png
 
-.. note:: On TradingView chart there is a whole set of *Drawing Tools*
-  which are created and modified manually by user mouse actions. Though they look very similar to
-  Pine drawing objects they are essentially different entities. 
-  Drawing objects created from Pine code are unable to modify by mouse actions.
+.. note:: On TradingView charts a complete set of *Drawing Tools*
+  allows users to create and modify drawings using mouse actions. While they may look very similar to
+  Pine drawing objects, they are essentially different entities. 
+  Drawing objects created from Pine code cannot be modified by mouse actions.
 
-Lines and labels allow you to create more sophisticated indicators like pivot points support/resistance levels,
-zig zag, various labels with dynamic text info, etc.
+The new line and label drawings in Pine v4 allow you to create indicators with more sophisticated
+visual components, like pivot points, support/resistance levels,
+zig zag lines, labels containing dynamic text, etc.
 
 In contrast to indicator plots (plots are created with functions ``plot``, ``plotshape``, ``plotchar``), 
-drawing objects could be created on historical bars as well as in the future (where there is no bars yet).
+drawing objects can be created on historical bars as well as in the future, where no bars exist yet.
 
 Creating drawings
 -----------------
 
-Drawing objects in Pine are created with functions `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ 
-and `line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__. 
-Each function has a number of various parameters, but only the coorinates are the mandatory ones.
-For example, a minimal code, that creates a label on every bar::
+Pine drawing objects are created with the `label.new <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}new>`__ 
+and `line.new <https://www.tradingview.com/study-script-reference/v4/#fun_line{dot}new>`__ functions. 
+While each function has many parameters, only the coordinates are mandatory.
+This is an example of minimal code used to create a label on every bar::
     
     //@version=4
     study("My Script", overlay=true)
@@ -35,13 +36,13 @@ For example, a minimal code, that creates a label on every bar::
 
 .. image:: images/minimal_label.png
 
-Label is created with parameters ``x=bar_index`` (which is the index of the current bar, 
+The label is created with the parameters ``x=bar_index`` (the index of the current bar, 
 `bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__) and ``y=high`` (high price of the current bar).
-When a new bar opens, a new label is created on it. Label object, created on the previous closed bar stays on chart, 
-until indicator deletes it with an explicit call of `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
-function or it would be automatically collected as an old garbage object after a while.
+When a new bar opens, a new label is created on it. Label objects created on previous bars stay on the chart 
+until the indicator deletes them with an explicit call of the `label.delete <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}delete>`__ 
+function or the automatic garbage collection process removes them.
 
-Here is a modified version of the same script that shows values of ``x`` and ``y`` coordinates of the created labels::
+Here is a modified version of the same script that shows the values of the ``x`` and ``y`` coordinates used to create the labels::
 
     //@version=4
     study("My Script", overlay=true)
@@ -50,10 +51,10 @@ Here is a modified version of the same script that shows values of ``x`` and ``y
 
 .. image:: images/minimal_label_with_x_y_coordinates.png
 
-In this example labels are shown without a background coloring (because of parameter ``style=label.style_none``) but with a 
-dynamically created text (``text="x=" + tostring(bar_index) + "\ny=" + tostring(high)``) that prints actual values of label coordinates.
+In this example labels are shown without background coloring (because of parameter ``style=label.style_none``) but with 
+dynamically created text (``text="x=" + tostring(bar_index) + "\ny=" + tostring(high)``) that prints label coordinates.
 
-Finally, here is a minimal code, that creates line objects on chart::
+This is an example of minimal code that creates line objects on a chart::
 
     //@version=4
     study("My Script", overlay=true)
