@@ -567,8 +567,7 @@ Scrolling the chart left, one will see there are no drawings after approximately
 Additional securities
 ^^^^^^^^^^^^^^^^^^^^^
 
-Pine code sometimes uses additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function in script areas unrelated to drawings. 
-But drawing functions can only be used in the main symbol's context.
+Pine code sometimes uses additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function. Drawing functions can only be used in the main symbol's context.
 
 
 max_bars_back of time
