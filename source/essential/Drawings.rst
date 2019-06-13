@@ -115,7 +115,7 @@ Label drawings have additional y-location values: `yloc.abovebar <https://www.tr
 When they are used, the value of the ``y`` parameter is ignored and the drawing object is placed above or below the bar.
 
 
-Changing drawings
+Modifying drawings
 -----------------
 
 A drawing object can be modified after its creation. The ``label.new`` and ``line.new`` functions return 
