@@ -551,7 +551,7 @@ Zig Zag
                 pLast := pL
 
 
-Issues
+Limits
 ------
 
 Total number of drawings limit
