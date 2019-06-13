@@ -546,9 +546,9 @@ Limits
 ------
 
 Total number of drawings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Drawing objects consume server resources, which is why there is a limitat on the total number of drawings 
+Drawing objects consume server resources, which is why there is a limit to the total number of drawings 
 per study or strategy. When too many drawings are created, old ones are automatically deleted by the Pine runtime, 
 in a process referred to as *garbage collection*.
 
