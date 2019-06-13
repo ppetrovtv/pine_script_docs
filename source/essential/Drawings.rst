@@ -545,7 +545,7 @@ Zig Zag
 Limits
 ------
 
-Total number of drawings limit
+Total number of drawings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Drawing objects consume server resources, which is why there is a limitat on the total number of drawings 
