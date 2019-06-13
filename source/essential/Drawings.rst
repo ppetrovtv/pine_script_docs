@@ -83,7 +83,7 @@ the most recent label created in the script's previous iteration is also automat
 Coordinates
 -----------
 
-Drawing objects are positioned on the chart according to *x* and *y* coordinates using a combination of 4 parameters: ``x``, ``y``, ``xloc`` and ``yloc``. The value of ``xloc`` determines whether ``x`` will hold a bar index or time value. When ``yloc=yloc.price``, ``y`` holds a price. ``y`` is ignored when ``yloc`` is set to `yloc.abovebar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}abovebar>`__ or ``yloc.belowbar``.
+Drawing objects are positioned on the chart according to *x* and *y* coordinates using a combination of 4 parameters: ``x``, ``y``, ``xloc`` and ``yloc``. The value of ``xloc`` determines whether ``x`` will hold a bar index or time value. When ``yloc=yloc.price``, ``y`` holds a price. ``y`` is ignored when ``yloc`` is set to `yloc.abovebar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}abovebar>`__ or `yloc.belowbar <https://www.tradingview.com/study-script-reference/v4/#var_yloc{dot}belowbar>`__.
 
 If drawing object uses `xloc.bar_index <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_index>`__, then
 x-coordinate is treated as an absolute bar index. Bar index of the current bar could be obtained from built-in variable ``bar_index``. 
