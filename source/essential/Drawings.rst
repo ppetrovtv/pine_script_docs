@@ -66,23 +66,24 @@ This is an example of code that creates line objects on a chart::
 Calculation of drawings on bar updates
 --------------------------------------
 
-Drawing objects are subject to both *commit* and *rollback* actions as well as any other Pine variables, :doc:`/language/Execution_model`.
+Drawing objects are subject to both *commit* and *rollback* actions, which affect the behavior of a script when it executes 
+in the realtime bar, :doc:`/language/Execution_model`.
 
-That is why script::
+This script demonstrates the effect of rollback when running in the realtime bar::
 
     //@version=4
     study("My Script", overlay=true)
     label.new(bar_index, high)
 
-Being calculated on realtime bar updates script does not produce a new label object after every price movement. Rollback erases any drawing objects,
-created during any intra-bar update. After calculation on a closing bar update a label object is finally commited and stays on chart.
+While ``label.new`` creates a new label on every iteration of the script when price changes in the realtime bar,
+the most recent label created in the script's previous iteration is also automatically deleted because of rollback before the next iteration. Only the last label created before the realtime bar's close will be committed, and will thus persist.
 
 .. _drawings_coordinates:
 
 Coordinates
 -----------
 
-Drawing objects are positioned on chart according to the *x* and *y* coordinates. Meaning (and the resulting effect) could be different, depending on
+Drawing objects are positioned on the chart according to *x* and *y* coordinates using a combination of 4 parameters: ``x``, ```y``, ``xloc`` and ```yloc``. Meaning (and the resulting effect) could be different, depending on
 values of drawing properties *x-location* and *y-location*. Plus there are minor nuances for label and line.
 
 If drawing object uses `xloc.bar_index <https://www.tradingview.com/study-script-reference/v4/#var_xloc{dot}bar_index>`__, then
