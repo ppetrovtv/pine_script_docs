@@ -53,7 +53,7 @@ When a real-time update is received, the picture changes slightly. The current b
 
 .. image:: images/barstates_history_then_realtime.png
 
-This is a screenshot of the same symbol at a 1 minute timeframe, after several real-time bars have elapsed.
+This is a screenshot of the same symbol at a 1 minute timeframe, after a few real-time bars have elapsed.
 The elapsed real-time bars show the *confirmed* state.
 
 .. image:: images/barstates_history_then_more_realtime.png
