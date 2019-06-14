@@ -44,17 +44,17 @@ Here is an example of a script using ``barstate.*`` variables::
     label.new(bar_index, na, yloc=yloc.abovebar, text=t, 
     color=hist ? color.green : color.red)
 
-We begin by adding the "Bar States" study to a yearly chart and take a screenshot before any realtime update is received. 
+We begin by adding the "Bar States" study to a yearly chart and take a screenshot before any real-time update is received. 
 This shows the *first* and the *last* bars, and the fact that all bars are *new* ones:
 
 .. image:: images/barstates_history_only.png
 
-When a realtime update is received, the picture changes slightly. The current bar is no longer a historical bar, it has become a realtime bar. Additionally, it is neither *new* nor *confirmed*, which we indicate with the *intra-bar* text in the label.
+When a real-time update is received, the picture changes slightly. The current bar is no longer a historical bar, it has become a real-time bar. Additionally, it is neither *new* nor *confirmed*, which we indicate with the *intra-bar* text in the label.
 
 .. image:: images/barstates_history_then_realtime.png
 
-This is a screenshot of the same symbol at a 1 minute timeframe, after several realtime bars have elapsed.
-The elapsed realtime bars show the *confirmed* state.
+This is a screenshot of the same symbol at a 1 minute timeframe, after several real-time bars have elapsed.
+The elapsed real-time bars show the *confirmed* state.
 
 .. image:: images/barstates_history_then_more_realtime.png
 
