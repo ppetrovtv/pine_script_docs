@@ -20,16 +20,16 @@ Type forms
 Literal
 ^^^^^^^
 
-A *literal* is a special notation for representing a fixed value in source code. This fixed value itself is an 
-expression and such expressions have literal form of a corresponding type. In Pine there are only 4 literal types:
+A *literal* is a special notation for representing a fixed value in a source code. This fixed value itself is an 
+expression and such expressions have literal form of a corresponding type. There are only 4 literal types in Pine:
     
     * *literal float* (e.g. ``3.14``)
     * *literal int* (e.g. ``42``)
     * *literal bool* (e.g. ``true``, ``false``)
     * *literal string* (e.g. ``"A text literal"``)
 
-.. note:: In Pine well-known built-in names ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
-    ``hl2``, ``hlc3``, ``ohlc4`` that represent market prices are not literals. They have a *series* type, read below.
+.. note:: Well-known built-in names ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
+    ``hl2``, ``hlc3``, ``ohlc4`` that represent market prices are not literals in Pine. They have a *series* type, read below.
 
 Const
 ^^^^^
@@ -37,7 +37,7 @@ Const
 Values of *const* type are the ones that
     
     * do not change during the script execution
-    * their value is known (or can be calculated by compiler) at compile time
+    * their value is known (or can be calculated by a compiler) at compile time
 
 For example::
     
@@ -84,7 +84,7 @@ Finally, values of *series* type are the ones that
 
     * change during the script execution
     * every series variable stores a sequence of values that are associated with bars of main chart symbol
-    * history values (associated with closed bars) of a series variable are available for reading (with the ``[]`` operator)
+    * historical values (associated with closed bars) of a series variable are available for reading (with the ``[]`` operator)
     * only the last (associated with the current bar) series value is available for both reading and writing
 
 *series* data type is probably the most common data type in Pine.
@@ -198,7 +198,7 @@ Examples::
 .. note:: When using hexadecimal figures it's possible to use them in
    either upper or lowercase.
 
-There are all 5 forms of color type in Pine:
+All 5 color types exist in Pine:
 
     * *literal color*
     * *const color*
@@ -226,7 +226,7 @@ basic colors there are: ``color.black``, ``color.silver``, ``color.gray``, ``col
 ``color.olive``, ``color.yellow``, ``color.navy``, ``color.blue``, ``color.teal``, ``color.aqua``,
 ``color.orange``. 
 
-It is possible to change transparency of the color using
+It is possible to change transparency of the color using a
 built-in function
 `color.new <https://www.tradingview.com/study-script-reference/v4/#fun_color{dot}new>`__.
 
@@ -254,7 +254,7 @@ example::
     'This is a single quoted string literal'
 
 Single or double quotation marks are completely the same --- you may use
-what you prefer. The line that was written with double quotation marks
+whatever you prefer. The line that was written with double quotation marks
 may contain a single quotation mark, just as a line that is written with
 single quotation marks may contain double quotation marks::
 
