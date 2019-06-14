@@ -13,7 +13,7 @@ for which scripts actions are performed:
 -  ``barstate.ishistory`` --- ``true`` if the current data update is a historical bar update, ``false`` otherwise (thus it is realtime).
 
 -  ``barstate.isrealtime`` --- ``true`` if the current data update is a real-time bar update, 
-   ``false`` otherwise (thus it is historical). Note that every real-time bar is also the *last* one.
+   ``false`` otherwise (thus it is historical). Note that every realtime bar is also the *last* one.
 
 -  ``barstate.isnew`` --- ``true`` if the current data update is the first (opening) update of a new bar,
    ``false`` otherwise.
