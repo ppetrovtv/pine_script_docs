@@ -10,7 +10,7 @@ for which scripts actions are performed:
 -  ``barstate.islast`` --- ``true`` if the current bar is the last in the
    whole range of bars available, ``false`` otherwise. This flag helps to detect *the last historical bar*.
 
--  ``barstate.ishistory`` --- ``true`` if the current data update is a historical bar update, ``false`` otherwise (thus it is real-time).
+-  ``barstate.ishistory`` --- ``true`` if the current data update is a historical bar update, ``false`` otherwise (thus it is realtime).
 
 -  ``barstate.isrealtime`` --- ``true`` if the current data update is a real-time bar update, 
    ``false`` otherwise (thus it is historical). Note that every real-time bar is also the *last* one.
@@ -22,7 +22,7 @@ for which scripts actions are performed:
    ``false`` otherwise. The next data update will be an opening update of a new bar [#isconfirmed]_.
 
 All historical bars are considered *new* bars. That is because of the fact that the script receives them in a sequential order 
-from the oldest to the newer ones. For bars that update in real-time, a bar
+from the oldest to the newer ones. For bars that update in realtime, a bar
 is considered new only at the opening tick of this bar.
 
 Here is an example of a script using ``barstate.*`` variables::
@@ -44,17 +44,17 @@ Here is an example of a script using ``barstate.*`` variables::
     label.new(bar_index, na, yloc=yloc.abovebar, text=t, 
     color=hist ? color.green : color.red)
 
-We begin by adding the "Bar States" study to a yearly chart and take a screenshot before any real-time update is received. 
+We begin by adding the "Bar States" study to a yearly chart and take a screenshot before any realtime update is received. 
 This shows the *first* and the *last* bars, and the fact that all bars are *new* ones:
 
 .. image:: images/barstates_history_only.png
 
-When a real-time update is received, the picture changes slightly. The current bar is no longer a historical bar, it has become a real-time bar. Additionally, it is neither *new* nor *confirmed*, which we indicate with the *intra-bar* text in the label.
+When a realtime update is received, the picture changes slightly. The current bar is no longer a historical bar, it has become a realtime bar. Additionally, it is neither *new* nor *confirmed*, which we indicate with the *intra-bar* text in the label.
 
 .. image:: images/barstates_history_then_realtime.png
 
-This is a screenshot of the same symbol at a 1 minute timeframe, after a few real-time bars have elapsed.
-The elapsed real-time bars show the *confirmed* state.
+This is a screenshot of the same symbol at a 1 minute timeframe, after a few realtime bars have elapsed.
+The elapsed realtime bars show the *confirmed* state.
 
 .. image:: images/barstates_history_then_more_realtime.png
 
