@@ -349,7 +349,7 @@ executed only once, on the very first history bar.
 Examples of classic indicators
 ------------------------------
 
-Standard Pivot Points
+Pivot Points Standard
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/drawings_pivot_points_std.png
@@ -394,7 +394,7 @@ Standard Pivot Points
 
 
 
-High/Low Pivot Points 
+Pivot Points High/Low
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/drawings_pivot_points_hl.png
