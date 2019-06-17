@@ -40,7 +40,7 @@ Line 3: ``fast = 12, slow = 26``
 Line 4: ``fastMA = ema(close, fast)``
     Defines the variable ``fastMA``, containing the result of the
     EMA calculation (Exponential Moving Average) with a length equal
-    to ``fast`` (12) on ``close`` series (closing prices of bars).
+    to ``fast`` (12), on the ``close`` series, i.e. the closing price of bars.
 Line 5: ``slowMA = ema(close, slow)``
     Defines the variable ``slowMA``, containing the result of the
     EMA calculation with a length equal to ``slow`` (26) from ``close``.
