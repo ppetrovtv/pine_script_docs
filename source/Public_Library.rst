@@ -19,19 +19,19 @@ TradingView.
 The Public Library contains all user-published scripts. All
 published scripts can be viewed either from the `Scripts <https://www.tradingview.com/script/>`__ section
 of tradingview.com's page, 
-or in the *Indicators* |rarr| *Public Library* tab: 
+or from the *Indicators* |rarr| *Public Library* tab: 
 
 |Public_Library_tab|
 
 
-Copying a script from the Public to Personal Library
-------------------------------------------------
+Copying a script from the Public to your Personal Library
+---------------------------------------------------------
 
-To copy a script choose one of two methods:
+To copy a script, use one of the two following methods:
 
 #. Click the star next to the needed script in the Indicators window: |Add_to_Personal_Library|
 
-#. Open the needed script on the `SCRIPTS <https://www.tradingview.com/script/>`__ page 
+#. Open the needed script from the `Scripts <https://www.tradingview.com/script/>`__ section 
    and click the *Add to Favorite Scripts* button: |Add_to_Personal_Library_2|
 
 The script will be added to your Favorites section in the Indicators
@@ -40,22 +40,20 @@ window, where you can easily find it when needed:
 |Favorites_section|
 
  
-Scripts in the *Indicators* window are sorted by popularity: the more
-users have favorited the script, the higher it will be displayed in
-the *Indicators* window:
+Scripts in the *Indicators* window are sorted by popularity. Scripts with the most likes appear first:
 
  |Sorted_by_popularity|
 
 
-Editing a script from Public Library
+Editing a script from the Public Library
 ------------------------------------
 
-To edit a script from Public Library:
+To edit a script from the Public Library:
 
 #. Open the script (the script will be unavailable for editing and
    will be colored lighter than normal): |Open_the_script|
 
-#. Click on the *Save As...* button, enter the desired name and save a copy to your
+#. Click on the *Save As...* button, enter the desired name and save a copy in your
    personal library: |Save_as|
 
 
@@ -65,7 +63,7 @@ the *Indicators* |rarr| *My Scripts* tab: |My_Scripts|
 Now you can open and edit the script.
 
 If the same script is published more than once, a notification on older
-versions will appear that a new version is available.
+versions will appear, indicating a new version is available.
 
 
 Searching for a script
@@ -79,6 +77,9 @@ This will search both your Personal and Public Library at the same time:
 
 |Search|
 
+You may also search for scripts from the tradingview.com home page 
+by first selecting *Scripts* from the *Ticker* dropdown menu and 
+entering your search criteria.
 
 Educational videos
 ------------------
