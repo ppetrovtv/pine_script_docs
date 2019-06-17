@@ -43,7 +43,7 @@ Line 4: ``fastMA = ema(close, fast)``
     to ``fast`` (12), on the ``close`` series, i.e. the closing price of bars.
 Line 5: ``slowMA = ema(close, slow)``
     Defines the variable ``slowMA``, containing the result of the
-    EMA calculation with a length equal to ``slow`` (26) from ``close``.
+    EMA calculation with a length equal to ``slow`` (26), from ``close``.
 Line 6: ``macd = fastMA - slowMA``
     Defines the variable ``macd``, which is being calculated as the
     difference between the two EMAs.
