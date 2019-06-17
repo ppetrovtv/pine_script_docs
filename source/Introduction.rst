@@ -4,6 +4,8 @@ Introduction
 .. image:: images/Pine_Script_logo_text.png
    :alt: Pine Script logo
    :align: right
+   :width: 240
+   :height: 240
 
 We created our own coding language called 
 `Pine Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__,
@@ -33,16 +35,3 @@ improve the documentation and support to ensure that anyone who wants to
 can learn and use Pine, which will help the
 development community grow, get more robust and create more helpful
 analysis.
-
-.. _versions:
-
-Versions
---------
-
-Currently there are three versions of Pine Script Language. A special
-attribute must be used in the first line of a code to switch between
-versions ``//@version=N`` where ``N`` is number. Note, that Pine Script
-Language versions are incompatible with each other. 
-
-Notable changes are documented in :doc:`Pine_Script_release_notes`.
-

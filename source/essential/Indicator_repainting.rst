@@ -19,11 +19,11 @@ We can see repainting in the following cases:
 #. Using ``security`` for requesting data with a resolution *higher* than the resolution of chart main symbol::
 
     // Add this study on 1 minute chart
-    //@version=3
+    //@version=4
     study("My Script")
-    c = security(tickerid, "5", close)
+    c = security(syminfo.tickerid, "5", close)
     plot(close)
-    plot(c, color=red)
+    plot(c, color=color.red)
 
    Such a study will be calculated differently at real-time and on
    historical data, regardless of using the parameter ``lookahead`` (see
@@ -41,9 +41,9 @@ We can see repainting in the following cases:
    such scripts can differ from time to time. Here are the examples of
    scripts relying on the starting point:
 
-   * `valuewhen <https://www.tradingview.com/study-script-reference/#fun_valuewhen>`__,
-     `barssince <https://www.tradingview.com/study-script-reference/#fun_barssince>`__,
-     `ema <https://www.tradingview.com/study-script-reference/#fun_ema>`__
+   * `valuewhen <https://www.tradingview.com/study-script-reference/v4/#fun_valuewhen>`__,
+     `barssince <https://www.tradingview.com/study-script-reference/v4/#fun_barssince>`__,
+     `ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__
      functions (peculiarities of the algorithm).
    * any backtesting strategy (regardless of parameter ``calc_on_every_tick``).
 
@@ -64,14 +64,14 @@ We can see repainting in the following cases:
 
 #. Presence of the following variables in the script usually leads to repainting:
 
-   * `barstate.isconfirmed <https://www.tradingview.com/study-script-reference/#var_barstate{dot}isconfirmed>`__,
-     `barstate.isfirst <https://www.tradingview.com/study-script-reference/#var_barstate{dot}isfirst>`__, 
-     `barstate.ishistory <https://www.tradingview.com/study-script-reference/#var_barstate{dot}ishistory>`__,
-     `barstate.islast <https://www.tradingview.com/study-script-reference/#var_barstate{dot}islast>`__, 
-     `barstate.isnew <https://www.tradingview.com/study-script-reference/#var_barstate{dot}isnew>`__, 
-     `barstate.isrealtime <https://www.tradingview.com/study-script-reference/#var_barstate{dot}isrealtime>`__;
-   * `timenow <https://www.tradingview.com/study-script-reference/#var_timenow>`__;
-   * `n <https://www.tradingview.com/study-script-reference/#var_n>`__.
+   * `barstate.isconfirmed <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isconfirmed>`__,
+     `barstate.isfirst <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isfirst>`__, 
+     `barstate.ishistory <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}ishistory>`__,
+     `barstate.islast <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}islast>`__, 
+     `barstate.isnew <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isnew>`__, 
+     `barstate.isrealtime <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isrealtime>`__;
+   * `timenow <https://www.tradingview.com/study-script-reference/v4/#var_timenow>`__;
+   * `bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__.
 
 The "repainting" issue usually occurs when using tools above --- since an
 indicator is calculated based on real-time data first. After reloading

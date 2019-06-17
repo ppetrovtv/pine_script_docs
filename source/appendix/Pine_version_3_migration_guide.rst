@@ -37,7 +37,7 @@ It can take on the form of two different values:
 Self-referenced variables are removed
 -------------------------------------
 
-Pine version 2 pieces of code, containing a self-referenced variable::
+Pine version 2 pieces of code, containing a self-referencing variable::
 
     //@version=2
     //...
@@ -69,7 +69,7 @@ Forward-referenced variables are removed
     e = d + 1
     f = e + close
 
-In this example ``f`` is a forward-referenced variable, because it's
+In this example ``f`` is a forward-referencing variable, because it's
 referenced at line 3 before it was declared and initialized. In Pine version 3
 this will give you an error ``Undeclared identifier 'f'``. This example
 should be rewritten in Pine version 3 as follows::
@@ -85,7 +85,7 @@ Resolving a problem with a mutable variable in a ``security`` expression
 ------------------------------------------------------------------------
 
 When you migrate script to version 3 it's possible that after removing
-self-referenced and forward-referenced variables the Pine compiler
+self-referencing and forward-referencing variables the Pine compiler
 will give you an error::
 
     //@version=3

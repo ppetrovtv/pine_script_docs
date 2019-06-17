@@ -1,5 +1,5 @@
-Essential Pine Features
-=======================
+Essential features
+==================
 
 .. toctree::
    :maxdepth: 3
@@ -12,3 +12,4 @@ Essential Pine Features
    Non-standard_chart_types_data
    Strategies
    Indicator_repainting
+   Drawings
