@@ -30,7 +30,7 @@ which is available to all TradingView users. Every registered TradingView user w
 your script.
 
 Choosing a licence
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Choosing a license or not is entirely up to you. You are under no
 obligation to do so. If you publish scripts with open source code you
