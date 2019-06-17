@@ -116,7 +116,7 @@ When they are used, the value of the ``y`` parameter is ignored and the drawing 
 
 
 Modifying drawings
------------------
+------------------
 
 A drawing object can be modified after its creation. The ``label.new`` and ``line.new`` functions return 
 a reference to the created drawing object (of type *series label* and *series line* respectively).
@@ -153,7 +153,7 @@ The available *setter* functions for label drawings are:
     * `label.set_size <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_size>`__ --- changes size of label
     * `label.set_style <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_style>`__ --- changes :ref:`style of label <drawings_label_styles>`
     * `label.set_text <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_text>`__ --- changes text of label
-    * `label.set_textcolor <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of  text
+    * `label.set_textcolor <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_textcolor>`__ --- changes color of text
     * `label.set_x <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_x>`__ --- changes x-coordinate of label
     * `label.set_y <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_y>`__ --- changes y-coordinate of label
     * `label.set_xy <https://www.tradingview.com/study-script-reference/v4/#fun_label{dot}set_xy>`__ --- changes both x and y coordinates of label
