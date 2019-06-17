@@ -18,8 +18,7 @@ To publish an *open source* Pine script:
 
 #. Open Pine Script Editor: |Pine_editor|
 #. Open/write the script.
-#. Apply the script to the current chart and arrange the chart the way you want it to appear when
-it is published with your script.
+#. Apply the script to the current chart and arrange the chart the way you want it to appear when it is published with your script.
 #. Click the *Publish Script* button: |Publish_script_button|
 #. Select the *Publish New Script* button: |Publish_script_new|
 #. Enter the script's title, tags (optional) and description.
