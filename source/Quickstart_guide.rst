@@ -45,8 +45,7 @@ Line 5: ``slowMA = ema(close, slow)``
     Defines the variable ``slowMA``, containing the result of the
     EMA calculation with a length equal to ``slow`` (26), from ``close``.
 Line 6: ``macd = fastMA - slowMA``
-    Defines the variable ``macd``, which is being calculated as the
-    difference between the two EMAs.
+    Defines the variable ``macd`` as the difference between the two EMAs.
 Line 7: ``signal = sma(macd, 9)``
     Defines the variable ``signal`` as a smoothed value of
     ``macd`` using the SMA algorithm (Simple Moving Average) with
