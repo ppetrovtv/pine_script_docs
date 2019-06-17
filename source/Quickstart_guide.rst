@@ -36,7 +36,7 @@ Line 1: ``//@version=4``
 Line 2: ``study("MACD")``
     Defines the name of the script that will appear on the chart as "MACD".
 Line 3: ``fast = 12, slow = 26``
-    Defines two integer variables, ``fast`` and ``slow``.
+    Defines two integer variables: ``fast`` and ``slow``.
 Line 4: ``fastMA = ema(close, fast)``
     Defines the variable ``fastMA``, containing the result of the
     EMA calculation (Exponential Moving Average) with a length equal
