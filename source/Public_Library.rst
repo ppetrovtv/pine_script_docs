@@ -9,21 +9,22 @@ Public Library
 Description
 -----------
 
-On TradingView it's possible to use pre-built indicators and write
-custom ones using Pine Script. Users who write their own scripts can publish them to the 
-*Public Library*. You can search the
-library for needed scripts before writing one. You can also ask users
+On TradingView you may choose from our built-in scripts, from the user-published scripts in
+the *Public Library*, or write your own custom scripts using Pine Script. 
+You can search the
+library for scripts before writing one. You may also ask users
 who publish scripts for help by sending them a private message (PM) on
 TradingView.
 
-Public Library is the storage of all user-published scripts. All
-published scripts can be viewed on the `SCRIPTS <https://www.tradingview.com/script/>`__ page, 
+The Public Library contains all user-published scripts. All
+published scripts can be viewed either from the `Scripts <https://www.tradingview.com/script/>`__ section
+of tradingview.com's page, 
 or in the *Indicators* |rarr| *Public Library* tab: 
 
 |Public_Library_tab|
 
 
-Copying a script from Public to Personal Library
+Copying a script from the Public to Personal Library
 ------------------------------------------------
 
 To copy a script choose one of two methods:
