@@ -24,7 +24,7 @@ The function has the following signature:
    is an optional argument that specifies the text message to display
    when the alert fires.
 
-Here is example of code creating an alert condition::
+Here is an example of code creating an alert condition::
 
     //@version=2
     study("Example of alertcondition")
