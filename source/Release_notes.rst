@@ -9,7 +9,7 @@ This page contains release notes of notable changes in Pine Script.
 Pine version 4 (June 2019)
 --------------------------
 
-* Support for drawing objects support. Added *label* and *line* drawings
+* Support for drawing objects. Added *label* and *line* drawings
 * ``var`` keyword for one time variable initialization
 * Type system improvements: 
 
