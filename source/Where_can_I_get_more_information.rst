@@ -4,7 +4,7 @@ Where can I get more information?
 ..    include:: <isonum.txt>
 
 * Additional descriptions of all built-in operators, variables,
-  functions and annotation functions can be found in 
+  functions and annotation functions can be found in the
   `Pine Script Reference <https://www.tradingview.com/study-script-reference/>`__.
 
 * Use the code from one of TradingVIew's built-in scripts to start from. Open a new chart and click the
