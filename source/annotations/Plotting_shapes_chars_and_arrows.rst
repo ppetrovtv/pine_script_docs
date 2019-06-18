@@ -8,7 +8,7 @@ There are situations where you need to mark or highlight specific bars on a char
 a usual line plot using ``plot`` may not be optimal.
 Although it may be possible to do so using
 ``plot`` with ``style=circles`` or ``style=cross``,
-it is often easier to use the``plotshape``, ``plotchar`` and ``plotarrow`` annotation functions.
+it is often easier to use the ``plotshape``, ``plotchar`` and ``plotarrow`` annotation functions.
 
 ``plotshape``
 -------------
