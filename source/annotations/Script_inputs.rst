@@ -27,7 +27,7 @@ The following examples show how to create, each input and what
 its widgets look like.
 
    
-   Boolean input
+Boolean input
 ::
 
     b = input(title="On/Off", type=input.bool, defval=true)
