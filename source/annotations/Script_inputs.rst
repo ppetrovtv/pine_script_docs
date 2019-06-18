@@ -26,14 +26,14 @@ inputs:
 The following examples show how to create, each input and what
 its widgets look like.
 
+   
+   Boolean input
 ::
 
     b = input(title="On/Off", type=input.bool, defval=true)
     plot(b ? open : na)
 
 .. figure:: images/Inputs_of_indicator_1.png
-   
-   Boolean input
 
 
 ::
