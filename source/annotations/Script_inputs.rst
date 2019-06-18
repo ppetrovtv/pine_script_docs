@@ -26,7 +26,8 @@ inputs:
 The following examples show how to create, each input and what
 its widgets look like.
 
-   
+
+
 Boolean input
 ::
 
@@ -36,6 +37,8 @@ Boolean input
 .. figure:: images/Inputs_of_indicator_1.png
 
 
+
+Integer input
 ::
 
     i = input(title="Offset", type=input.integer, defval=7, minval=-10, maxval=10)
@@ -43,9 +46,9 @@ Boolean input
 
 .. figure:: images/Inputs_of_indicator_2.png
 
-   Integer input
 
 
+Float input
 ::
 
     f = input(title="Angle", type=input.float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
@@ -53,7 +56,6 @@ Boolean input
 
 .. figure:: images/Inputs_of_indicator_3.png
 
-   Float input
 
 
 ::
