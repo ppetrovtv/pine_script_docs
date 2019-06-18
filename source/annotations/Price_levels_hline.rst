@@ -1,8 +1,8 @@
 Price levels, hline
 -------------------
 
-The annotation function `hline <https://www.tradingview.com/study-script-reference/v4/#fun_hline>`__ 
-renders a horizontal line at a given level. For example::
+The `hline <https://www.tradingview.com/study-script-reference/v4/#fun_hline>`__ 
+annotation function renders a horizontal line at a given level. For example::
 
     //@version=4
     study(title="Chaikin Oscillator", shorttitle="Chaikin Osc")
