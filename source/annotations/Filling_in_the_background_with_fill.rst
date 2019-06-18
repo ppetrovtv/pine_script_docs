@@ -3,7 +3,7 @@ Filling the background with fill
 
 The `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
 annotation function lets you color the background between two plotted
-series, or two horizontal lines created with ``hline``. The following
+series or two horizontal lines created with ``hline``. The following
 example illustrates how ``fill`` works::
 
     //@version=4
