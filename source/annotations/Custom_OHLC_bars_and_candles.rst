@@ -73,5 +73,5 @@ higher timeframe. You can, for example, plot daily bars on a 60 minute chart::
 
 .. image:: images/Custom_ohlc_bars_and_candles_5.png
 
-The ``plotbar`` and ``plotcandle`` annotation functions also have a ``title`` argument, so user can distinguish them in
+The ``plotbar`` and ``plotcandle`` annotation functions also have a ``title`` argument, so users can distinguish them in
 the *Style* tab of the *Settings* dialog box.
