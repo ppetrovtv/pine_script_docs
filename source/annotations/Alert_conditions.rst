@@ -44,8 +44,8 @@ Also, an alert created with a custom ``alertcondition`` in Pine
 code does not display anything on a chart.
 
 To create an alert based on an alertcondition, one should apply a Pine indicator 
-with an alertcontidion to the current chart, open the *Create Alert*
-dialog, select the applied Pine code as the main condition for the alert and
+containing an alertcondition to the current chart, open the *Create Alert*
+dialog, select the indicator as the main condition for the alert and then
 choose one of the specific alert conditions defined in the script's code.
 
 .. image:: images/Alertcondition_1.png
