@@ -30,9 +30,9 @@ calculate colors conditionally at runtime (see the ``palette`` variable in the e
 The ``plotcandle`` annotation function is similar to ``plotbar``, but it plots candles
 instead of bars and has an optional argument: ``wickcolor``.
 
-Both ``plotbar`` and ``plotcandle`` need four series arguments that will be
-used as the bar/candle OHLC prices. If one of
-the OHLC variables for a bar has a ``na`` value, then the bar is not
+Both ``plotbar`` and ``plotcandle`` need four series as the arguments that will be
+used for new bar/candle OHLC prices. If one of
+the arguments for a bar has a ``na`` value, then the bar is not
 plotted. Example::
 
     study("Example 3")
