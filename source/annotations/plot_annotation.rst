@@ -22,7 +22,7 @@ will be represented as a horizontal line.
 
 The ``plot`` annotation has many optional parameters, in
 particular those which set the line's display style: ``style``,
-``color``, ``title``, ``linewidth``, ``transparency``, and others.
+``color``, ``linewidth``, ``transparency``, and others.
 
 The value of the ``color`` parameter can be defined in different ways.
 If it is a color constant, for
