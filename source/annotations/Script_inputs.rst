@@ -29,6 +29,7 @@ its widgets look like.
 
 
 Boolean input
+^^^^^^^^^^^^^
 ::
 
     b = input(title="On/Off", type=input.bool, defval=true)
