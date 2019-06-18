@@ -106,13 +106,13 @@ use another position, use the
 .. image:: images/Plotshape_example_2.png
 
 
-Possible values for the parameter ``location``:
+Possible values for the parameter ``location`` are:
 
 -  ``location.abovebar`` --- above a bar.
 -  ``location.belowbar`` --- below a bar.
--  ``location.top`` --- top of a chart.
--  ``location.bottom`` --- bottom of a chart.
--  ``location.absolute`` --- any set/specified point on a chart.
+-  ``location.top`` --- top of the script's *y* space.
+-  ``location.bottom`` --- bottom of the script's *y* space.
+-  ``location.absolute`` --- any position in the *y* space.
 
 ``location.absolute`` can be used when the shapes need to
 be positioned more precisely in the script's *y* space. The first parameter of the function 
