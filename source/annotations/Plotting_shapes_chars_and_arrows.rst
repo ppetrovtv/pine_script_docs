@@ -162,7 +162,7 @@ defined with the ``char`` parameter. For example::
 The default character is ★ (U+2605, the "BLACK STAR" character). It's possible to use any letter or digit and many symbols,
 for example: ❤, ☀, €, ⚑, ❄, ◆, ⬆, ⬇.
 
-Example using the "SNOWFLAKE" (❄, U+2744) character::
+The next example uses the "SNOWFLAKE" (❄, U+2744) character::
 
     study('plotchar example', overlay=true)
     data = close >= open
