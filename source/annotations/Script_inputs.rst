@@ -97,11 +97,11 @@ Source input
 
 ``options`` parameter
 ^^^^^^^^^^^^^
+The ``options`` parameter is useful to provide users with a list 
+of constant values they can choose from using a drowdown menu.
 ::
 
     choice = input(title="Choice", defval="A", options=["A", "B"])
     plot(choice=="A"? close : choice=="B"? open : na)
 
 
-The ``options`` parameter is useful to provide users with a list 
-of constant values they can choose from.
