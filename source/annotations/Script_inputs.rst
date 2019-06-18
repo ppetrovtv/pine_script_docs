@@ -40,6 +40,7 @@ Boolean input
 
 
 Integer input
+^^^^^^^^^^^^^
 ::
 
     i = input(title="Offset", type=input.integer, defval=7, minval=-10, maxval=10)
@@ -50,6 +51,7 @@ Integer input
 
 
 Float input
+^^^^^^^^^^^^^
 ::
 
     f = input(title="Angle", type=input.float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
@@ -57,10 +59,9 @@ Float input
 
 .. figure:: images/Inputs_of_indicator_3.png
 
-
-
+Symbol and resolution inputs
+^^^^^^^^^^^^^
 ::
-
     sym = input(title="Symbol", type=input.symbol, defval="SPY")
     res = input(title="Resolution", type=input.resolution, defval="60")
     plot(close, color=color.red)
@@ -68,7 +69,6 @@ Float input
 
 .. figure:: images/Inputs_of_indicator_4.png
 
-   Symbol and resolution inputs
 
 
 The symbol input widget has a built-in *symbol search* which is turned
