@@ -41,7 +41,7 @@ dialog box. Please note that the alertcondition **does NOT start alerts programm
 it only gives you the opportunity to create an alert from it 
 in the *Create Alert* dialog box. Alerts must always be created manually.
 Also, an alert created with a custom ``alertcondition`` in Pine
-code is not displayed on a chart.
+code does not display anything on a chart.
 
 To create an alert based on an alertcondition, one should apply a Pine indicator 
 with an alertcontidion to the current chart, open the *Create Alert*
