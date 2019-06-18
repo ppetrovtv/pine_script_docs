@@ -27,7 +27,6 @@ The following examples show how to create, each input and what
 its widgets look like.
 
 
-
 Boolean input
 ^^^^^^^^^^^^^
 ::
@@ -36,7 +35,6 @@ Boolean input
     plot(b ? open : na)
 
 .. figure:: images/Inputs_of_indicator_1.png
-
 
 
 Integer input
@@ -49,7 +47,6 @@ Integer input
 .. figure:: images/Inputs_of_indicator_2.png
 
 
-
 Float input
 ^^^^^^^^^^^^^
 ::
@@ -59,10 +56,12 @@ Float input
 
 .. figure:: images/Inputs_of_indicator_3.png
 
+
 Symbol and resolution inputs
 ^^^^^^^^^^^^^
 ::
-    sym = input(title="Symbol", type=input.symbol, defval="SPY")
+
+sym = input(title="Symbol", type=input.symbol, defval="SPY")
     res = input(title="Resolution", type=input.resolution, defval="60")
     plot(close, color=color.red)
     plot(security(sym, res, close), color=color.green)
@@ -75,6 +74,8 @@ The symbol input widget has a built-in *symbol search* which is turned
 on automatically when the ticker's first symbols are typed.
 
 
+Session input
+^^^^^^^^^^^^^
 ::
 
     s = input(title="Session", type=input.session, defval="24x7")
@@ -82,9 +83,10 @@ on automatically when the ticker's first symbols are typed.
 
 .. figure:: images/Inputs_of_indicator_5.png
 
-   Session input
 
 
+Source input
+^^^^^^^^^^^^^
 ::
 
     src = input(title="Source", type=input.source, defval=close)
@@ -92,5 +94,3 @@ on automatically when the ticker's first symbols are typed.
     plot(ma)
 
 .. figure:: images/Inputs_of_indicator_6.png
-
-   Source input
