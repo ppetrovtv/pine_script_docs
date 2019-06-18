@@ -4,7 +4,7 @@ Alert conditions
 
 The annotation function
 `alertcondition <https://www.tradingview.com/study-script-reference/#fun_alertcondition>`__
-allows you to create custom *alert conditions* in Pine indicators. One script may have one or more ``alertcondition`` calls.
+allows you to create custom *alert conditions* in Pine studies. One study may contain more than one ``alertcondition`` calls.
 The function has the following signature:
 
 .. code-block:: text
@@ -12,19 +12,19 @@ The function has the following signature:
     alertcondition(condition, title, message)
 
 ``condition``
-   is a series of boolean (``true`` or ``false``) values that is used for alert.
-   ``true`` means that the alert condition is met, alert
-   should trigger. ``false`` means that the alert condition is not met, alert should not
+   is a series of boolean (``true`` or ``false``) values that is used to trigger the alert.
+   ``true`` means that the alert condition is met and the alert
+   should trigger. ``false`` means that the alert condition is not met and the alert should not
    trigger. It is a required argument.
 
 ``title``
-   is an optional argument that sets the name of the alert condition.
+   is an optional argument that sets the name of the alert condition as it will appear in TradingView's *Create Alert* dialog box.
 
 ``message``
-   is an optional argument that specifies text message to display
+   is an optional argument that specifies the text message to display
    when the alert fires.
 
-Here is example of creating an alert condition::
+Here is example of code creating an alert condition::
 
     //@version=2
     study("Example of alertcondition")
@@ -36,22 +36,22 @@ Here is example of creating an alert condition::
     plot(ma_1, color=red)
     plot(ma_2, color=blue)
 
-The function creates alert condition that is available in *Create Alert*
-dialog. Please note, that alertcondition **does NOT start alerts programmatically**, 
-it only gives you opportunity to create a custom
-condition for *Create Alert* dialog. Alerts must be still started manually.
+The function makes the alert available in *Create Alert*
+dialog box. Please note, that alertcondition **does NOT start alerts programmatically**, 
+it only gives you the opportunity to create an alert from it 
+in the *Create Alert* dialog box. Alerts must always be created manually.
 Also, an alert created with a custom ``alertcondition`` in Pine
 code is not displayed on a chart.
 
 To create an alert based on an alertcondition, one should apply a Pine indicator 
 with an alertcontidion to the current chart, open the *Create Alert*
-dialog, select the applied Pine code as main condition for the alert and
-choose the specific alert condition (implemented in the code itself).
+dialog, select the applied Pine code as the main condition for the alert and
+choose one of the specific alert conditions defined in the script's code.
 
 .. image:: images/Alertcondition_1.png
 
 
-When alert fires, you'll see the message:
+When the alert fires, you'll see the message:
 
 .. image:: images/Alertcondition_2.png
 
