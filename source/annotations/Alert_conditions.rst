@@ -37,7 +37,7 @@ Here is an example of code creating an alert condition::
     plot(ma_2, color=blue)
 
 The function makes the alert available in the *Create Alert*
-dialog box. Please note, that alertcondition **does NOT start alerts programmatically**, 
+dialog box. Please note that the alertcondition **does NOT start alerts programmatically**; 
 it only gives you the opportunity to create an alert from it 
 in the *Create Alert* dialog box. Alerts must always be created manually.
 Also, an alert created with a custom ``alertcondition`` in Pine
