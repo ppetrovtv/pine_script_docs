@@ -33,7 +33,7 @@ example ``color.red``, then the whole line will be plotted using a *red* color::
 .. image:: images/Output_of_charts_plot_1.png
 
 The value of ``color`` can also be an expression of a *series*
-type of colored values as values. This series of colors will be used to
+type of color values. This series of colors will be used to
 color the rendered line. For example::
 
     c = close >= open ? color.lime : color.red
