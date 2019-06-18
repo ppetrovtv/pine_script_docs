@@ -2,8 +2,8 @@
 Alert conditions
 ----------------
 
-The annotation function
-`alertcondition <https://www.tradingview.com/study-script-reference/#fun_alertcondition>`__
+The 
+`alertcondition <https://www.tradingview.com/study-script-reference/#fun_alertcondition>`__ annotation function
 allows you to create custom *alert conditions* in Pine studies. One study may contain more than one ``alertcondition`` calls.
 The function has the following signature:
 
