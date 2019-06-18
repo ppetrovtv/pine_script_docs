@@ -235,8 +235,7 @@ pixels) can be set using the ``minheight`` and ``maxheight`` parameters.
 
 Additionally, the ``plotarrow`` function allows you to:
 
--  Set the name of a displayed series of data using the parameter
-   ``title``.
+-  Set the name of a displayed series of data using the ``title`` parameter.
 -  Set the color of an *up arrow* using the ``colorup`` parameter.
 -  Set the color of a *down arrow* using the ``colordown`` parameter.
 -  Shift a series of arrows left/right using the ``offset`` parameter.
