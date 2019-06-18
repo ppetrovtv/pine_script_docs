@@ -3,7 +3,7 @@ Background coloring with bgcolor
 --------------------------------
 
 The `bgcolor <https://www.tradingview.com/study-script-reference/v4/#fun_bgcolor>`__ 
-function changes the color
+annotation function changes the color
 of the script's background. If the script is running in ``overlay=true`` mode,
 then it will color the chart's background.
 The color used in ``bgcolor`` can be calculated in
