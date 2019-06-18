@@ -7,7 +7,7 @@ Where can I get more information?
   functions and annotation functions can be found in the
   `Pine Script Reference <https://www.tradingview.com/study-script-reference/>`__.
 
-* Use the code from one of TradingVIew's built-in scripts to start from. Open a new chart and click the
+* Use the code from one of TradingView's built-in scripts to start from. Open a new chart and click the
   *Pine Editor* button on the toolbar. Once in the editor
   window, click the *New* button. You'll find the
   TradingView built-in scripts in the dropdown list.
