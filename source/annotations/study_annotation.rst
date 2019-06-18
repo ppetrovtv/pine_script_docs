@@ -19,7 +19,7 @@ chart, if it must be different than the value of ``title``.
 
 ``overlay`` is a logical type of argument. If it is true then the study
 will be added as an overlay on top of the main chart. If it is false
-then it will be added on in separate pane. False is the default
+then it will be added in a separate pane. False is the default
 setting.
 
 ``precision`` is the number of digits after the floating point for study
