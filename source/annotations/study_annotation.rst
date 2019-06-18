@@ -25,7 +25,7 @@ setting.
 ``precision`` is the number of digits after the floating point for study
 values. It must be a non negative integer. Precision 0 uses
 special formatting rules for very large numbers such as volume
-("5183" will be formatted as "5K"). The default ``precision`` value is 4.
+("5183" will be formatted as "5K"). The default value for ``precision`` is 4.
 
 
 .. rubric:: Footnotes
