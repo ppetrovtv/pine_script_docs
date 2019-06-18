@@ -8,8 +8,8 @@ without the need to modify the script's code.
 
 Specific widgets are supplied in the *Settings/Inputs* dialog box
 for each type of input. A description of the value as well as minimum/maximum
-vaues and a step increment can also be defined. If the type of the input variable 
-cannot be infered, it can be explicitly defined using the ``type`` parameter.
+values and a step increment can also be defined. If the type of the input variable 
+cannot be inferred, it can be explicitly defined using the ``type`` parameter.
 
 Pine supports the following types of input:
 
