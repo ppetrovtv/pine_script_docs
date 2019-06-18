@@ -119,7 +119,7 @@ be positioned more precisely in the script's *y* space. The first parameter of t
 is then used as a *y* coordinate.
 
 'plotshape example 2' illustrates how the shape's
-color can be defined using the ``color` parameter and  
+color can be defined using the ``color`` parameter and  
 expressions which will calculate the shape's color
 depending on conditions at runtime. For example::
 
