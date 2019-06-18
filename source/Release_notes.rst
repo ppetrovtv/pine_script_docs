@@ -18,7 +18,7 @@ Pine version 4 (June 2019)
   * syntax for explicit variable type declaration
   * new *input* type forms
 
-* Built-ins renaming and a version 3 to 4 converter utility
+* Renaming of built-ins and a version 3 to 4 converter utility
 * ``max_bars_back`` function to control series variables internal history buffer sizes
 * Pine Script documentation versioning
 
