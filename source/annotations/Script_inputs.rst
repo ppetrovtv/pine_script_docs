@@ -98,7 +98,7 @@ Source input
 ``options`` parameter
 ^^^^^^^^^^^^^
 The ``options`` parameter is useful to provide users with a list 
-of constant values they can choose from using a drowdown menu.
+of constant values they can choose from using a dropdown menu.
 ::
 
     choice = input(title="Choice", defval="A", options=["A", "B"])
