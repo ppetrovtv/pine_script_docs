@@ -2,13 +2,15 @@
 Background coloring with bgcolor
 --------------------------------
 
-Similar to the ``barcolor`` function, the `bgcolor <https://www.tradingview.com/study-script-reference/v4/#fun_bgcolor>`__ 
+The `bgcolor <https://www.tradingview.com/study-script-reference/v4/#fun_bgcolor>`__ 
 function changes the color
-of the background. Function will the color of that can be calculated in
-an expression, and an optional parameter ``transp`` --- transparency from
-0--100 range --- which is 90 by default.
+of the script's background. If the script is running in ``overlay=true`` mode,
+then it will color the chart's background.
+The color used in ``bgcolor`` can be calculated in
+an expression and an optional ``transp`` parameter (0--100, default 90) allows
+control over the transparency level.
 
-As an example, here's a script for coloring trading sessions (try it on
+Here is a script that colors the background of trading sessions (try it on
 EURUSD, 30 min resolution)::
 
     //@version=4
