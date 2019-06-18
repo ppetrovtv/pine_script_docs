@@ -1,7 +1,7 @@
 study annotation
 ----------------
 
-Every *indicator* [#strategy]_ script must contain one call of the 
+Every *indicator* (also known as a *study*) [#strategy]_ script must contain one call of the 
 `study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__ 
 annotation function, which has the following signature:
 
