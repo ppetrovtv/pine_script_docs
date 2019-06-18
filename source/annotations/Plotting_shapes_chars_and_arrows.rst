@@ -106,7 +106,7 @@ use another position, use the
 .. image:: images/Plotshape_example_2.png
 
 
-Possible values for the parameter ``location`` are:
+Possible values for the ``location`` parameter are:
 
 -  ``location.abovebar`` --- above a bar.
 -  ``location.belowbar`` --- below a bar.
