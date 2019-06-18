@@ -189,8 +189,8 @@ annotation function allows for up/down arrows to be displayed on
 the chart. The arrow length is not the same on each bar and is
 calculated from the first parameter's value.
 
-The first ``series`` parameter of the function ``plotarrow`` is used to place
-arrows on the chart, using the following logic:
+The first ``series`` parameter of the ``plotarrow`` function is used to place
+arrows on the chart using the following logic:
 
 -  If the ``series`` value on the current bar is greater than 0, then an *up
    arrow* will be drawn, the length of which will be proportional to the 
