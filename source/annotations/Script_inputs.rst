@@ -1,18 +1,17 @@
 Script inputs
 -------------
 
-`input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ annotations 
-make it possible to indicate which variables in the
-indicator's code are *incoming*. Widgets will be generated for the
-variables on the indicator's (properties/attributes) page in order to
-change the values via a more convenient way than modifying the script's
-source code. You can also specify the title of the input in the form of
-a short text string. The title is meant to explain the purpose of the
-input, and you can specify lowest and highest possible values for
-numerical inputs.
+The `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ 
+annotation function makes it possible for script users to modify selected
+values which the script can then use in its calculation or logic,
+without the need to modify the script's code.
 
-When the document is written, in Pine there are the following types of
-inputs:
+Specific widgets are supplied in the *Settings/Inputs* dialog box
+for each type of input. A description of the value as well as minimum/maximum
+vaues and a step increment can also be defined. If the type of the input variable 
+cannot be infered, it can be explicitly defined using the ``type`` parameter.
+
+Pine supports the following types of input:
 
 -  bool,
 -  integer,
@@ -23,8 +22,8 @@ inputs:
 -  session,
 -  source.
 
-The following examples show how to create, each input and what
-its widgets look like.
+The following examples show how to create each type of input and what
+its widget looks like.
 
 
 Boolean input
@@ -70,8 +69,8 @@ sym = input(title="Symbol", type=input.symbol, defval="SPY")
 
 
 
-The symbol input widget has a built-in *symbol search* which is turned
-on automatically when the ticker's first symbols are typed.
+The symbol input widget has a built-in *symbol search* which activates
+automatically when the ticker's first characters are typed.
 
 
 Session input
@@ -94,3 +93,6 @@ Source input
     plot(ma)
 
 .. figure:: images/Inputs_of_indicator_6.png
+
+The ``options`` parameter is useful to provide users with a list 
+of constant values they can choose from.
