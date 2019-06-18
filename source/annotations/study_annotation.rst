@@ -28,7 +28,7 @@ special formatting rules for very large numbers such as volume
 ("5183" will be formatted as "5K"). The default value for ``precision`` is 4.
 
 
-.. rubric:: Footnotes
+.. rubric:: Footnote
 
 .. [#strategy] Pine also has a `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__ 
    annotation function which is used to create a :doc:`backtesting strategy </essential/Strategies>` rather than an indicator (or study).
