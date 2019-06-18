@@ -61,8 +61,8 @@ series has been shifted to the right (its value is positive).
 
 .. rubric:: Footnotes
 
-.. [#offset_function] In Pine there is a built-in function
-   `offset <https://www.tradingview.com/study-script-reference/v4/#fun_offset>`__
+.. [#offset_function] In Pine there is a built-in 
+   `offset <https://www.tradingview.com/study-script-reference/v4/#fun_offset>`__ function
    which shifts the values of a series to the right while discarding 'out of range' values.
    The advantage of the ``offset`` function lies in the fact that its result
    can be used in other expressions to execute complex calculations. In the
