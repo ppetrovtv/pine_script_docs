@@ -102,6 +102,6 @@ of constant values they can choose from using a dropdown menu.
 ::
 
     choice = input(title="Choice", defval="A", options=["A", "B"])
-    plot(choice=="A"? close : choice=="B"? open : na)
+    plot(choice=="A" ? close : choice=="B" ? open : na)
 
 
