@@ -13,8 +13,8 @@ The function has the following signature:
 
 ``condition``
    is a series of boolean (``true`` or ``false``) values that is used to trigger the alert.
-   ``true`` means that the alert condition is met and the alert
-   should trigger. ``false`` means that the alert condition is not met and the alert should not
+   ``true`` means the alert condition is met and the alert
+   should trigger. ``false`` means the alert condition is not met and the alert should not
    trigger. It is a required argument.
 
 ``title``
