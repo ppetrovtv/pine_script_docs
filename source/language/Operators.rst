@@ -74,7 +74,7 @@ All logical operators can operate with *bool* operands, numerical
 operands, or *series* type operands. As is the case with arithmetic and comparison
 operators, if at least one of the operands is of *series*
 type, then the result will also be of *series* type. In all other cases
-the type of the operator's result will be the logical type *bool*.
+the type of the result will be the logical type *bool*.
 
 The operator ``not`` is unary. If an operator's operand has a ``true``
 value then the result will have a ``false`` value; if the operand has a
