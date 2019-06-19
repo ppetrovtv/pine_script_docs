@@ -31,7 +31,7 @@ Statements inside user functions can also be wrapped.
 However, since a local statement must syntactically begin with an
 indentation (4 spaces or 1 tab), when splitting it onto the
 following line, the continuation of the statement must start with more
-than one indentation (and not equal to multiple of 4 spaces). For
+than one indentation (not equal to multiple of 4 spaces). For
 example:
 
 ::
@@ -49,8 +49,8 @@ example:
                        -1 :
                        nz(ud[1])-1)
 
-This rule also applies to comments. Don't use comments combined
-with lines wrapping. The following code does NOT compile::
+Do not use comments with line wrapping.
+The following code does NOT compile::
 
     //@version=4
     study("My Script")
