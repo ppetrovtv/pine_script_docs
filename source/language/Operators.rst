@@ -165,7 +165,7 @@ containing 10 values corresponding to a chart with 10 bars:
 | close   | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   | 12.53   | 12.43   |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-Applying the operator ``[]`` with arguments 1, 2, 3, we will receive the
+Applying the ``[]`` operator with arguments 1, 2, 3, we will receive the
 following vector:
 
 +------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -178,16 +178,16 @@ following vector:
 | close[3]   | ``na``| ``na``  | ``na``  | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   |
 +------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-When a vector is shifted, a special ``na`` value is pushed to vector's
+When a vector is shifted, a special ``na`` value is pushed to the vector's
 tail. ``na`` means that the numerical value based on the given index is
 absent (*not available*). The values to the right, which do not have enough space to be
-placed in a vector of a line of 10 elements are simply removed. The
-value from the vector's head is "popped". In the given example the index
-of the current bar is equal to 9. The value of the vector ``close[1]`` on the current bar will be equal 
-to the previous value of the initial vector ``close``. 
+placed in a vector of 10 elements, are simply removed. The
+value from the vector's head is *popped*. In the given example, the index
+of the current bar is equal to 9. The value of the ``close[1]`` vector on the current bar will be equal 
+to the previous value of the initial ``close`` vector. 
 The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
 
-So the ``[]`` operator can be thought of as the history referencing
+So the ``[]`` operator can be thought of as a history-referencing
 operator.
 
 **Note 1**. Almost all built-in functions in Pine's standard library
