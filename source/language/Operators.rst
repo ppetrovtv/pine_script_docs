@@ -129,10 +129,7 @@ example::
 
     isintraday ? red : isdaily ? green : ismonthly ? blue : na
 
-The example will be calculated in the order illustrated with the parentheses::
-
-    isintraday ? red : (isdaily ? green : (ismonthly ? blue : na))
-
+The example is calculated from left to right.
 First, the ``isintraday`` condition is calculated; if it is ``true`` then
 ``red`` will be the result. If it is ``false`` then ``isdaily`` is calculated,
 if this is ``true``, then ``green`` will be the result. If it is
