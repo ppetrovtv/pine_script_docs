@@ -11,7 +11,7 @@ Functions may be built-in, such as
 `sma <https://www.tradingview.com/study-script-reference/v4/#fun_sma>`__,
 `ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__,
 `rsi <https://www.tradingview.com/study-script-reference/v4/#fun_rsi>`__, 
-or :doc:`user-defined <Declaring_functions>`. All annotations are buit-in.
+or :doc:`user-defined <Declaring_functions>`. All annotations are built-in.
 
 The side effects annotations are used for include:
 
