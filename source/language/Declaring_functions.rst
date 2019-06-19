@@ -74,7 +74,7 @@ the value of the last expression: ``(sqrt(a + b))``.
 Scopes in the script
 --------------------
 
-Variables declared outside the body of a function or other local blocks belong to
+Variables declared outside the body of a function or of other local blocks belong to
 the *global* scope. User-declared and buit-in functions, as well as built-in
 variables also belong to the global scope.
 
