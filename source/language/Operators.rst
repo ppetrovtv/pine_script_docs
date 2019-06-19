@@ -113,42 +113,41 @@ value then the result will have a ``false`` value; if the operand has a
 ``?:`` conditional operator and the ``iff`` function
 --------------------------------------------
 
-The ``?:`` `Conditional ternary
+The ``?:`` `conditional ternary
 operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
-calculates the first expression (condition) and returns a value either
-of the second operand (if the condition is ``true``) or of the third
+calculates the first expression (condition) and returns the value of either
+the second operand (if the condition is ``true``) or of the third
 operand (if the condition is ``false``). Syntax::
 
     condition ? result1 : result2
 
-If ``condition`` will be calculated to ``true``, then ``result1`` will be the
-result of all ternary operator, otherwise, ``result2`` will be the result.
+If ``condition`` is ``true`` then the ternary operator will return ``result1``,
+otherwise it will return ``result2``.
 
-The combination of a few conditional operators helps to build
-constructions similar to *switch* statements in other languages. For
+A combination of conditional operators can build
+constructs similar to *switch* statements in other languages. For
 example::
 
     isintraday ? red : isdaily ? green : ismonthly ? blue : na
 
-The given example will be calculated in the following order (brackets
-show the processing order of the given expression)::
+The example will be calculated in the order illustrated with the parentheses::
 
     isintraday ? red : (isdaily ? green : (ismonthly ? blue : na))
 
-First the condition ``isintraday`` is calculated; if it is ``true`` then
+First, the ``isintraday`` condition is calculated; if it is ``true`` then
 ``red`` will be the result. If it is ``false`` then ``isdaily`` is calculated,
-if this is ``true``, then ``green`` will be the result. If this is
+if this is ``true``, then ``green`` will be the result. If it is
 ``false``, then ``ismonthly`` is calculated. If it is ``true``, then ``blue``
-will be the result, otherwise it will be the ``na`` value. For those who find
-using the operator syntax ``?:`` inconvenient, in Pine there is an
-alternative (with equivalent functionality) --- the built-in function
-``iff``. The function has the following signature::
+will be the result, otherwise ``na`` will be the result. For those who find
+using the ``?:`` operator syntax inconvenient, there is an
+alternative: the built-in ``iff`` function. 
+The function has the following signature::
 
     iff(condition, result1, result2)
 
-The function acts identically to the operator ``?:``, i.e., if the
-condition is ``true`` then it returns ``result1``, otherwise --- ``result2``. The
-previous example using ``iff`` will look like::
+The function acts identically to the ``?:`` operator, i.e., if the
+condition is ``true`` then it returns ``result1``, otherwise ``result2``. 
+This is the equivalent of the previous example using ``iff``::
 
     iff(isintraday, red, iff(isdaily, green,
                          iff(ismonthly, blue, na)))
@@ -159,10 +158,9 @@ History reference operator []
 -----------------------------
 
 It is possible to refer to the historical values of any variable of a
-*series* type (values which the variable had on the previous bars) with
-the ``[]`` operator. For example, we will assume that we have the
-variable ``close``, containing 10 values (that correspond to a chart
-with a certain hypothetical symbol with 10 bars):
+*series* type with the ``[]`` operator. Historical values are the values for the previous bars.
+For example, let's assume we have the
+variable ``close``, containing 10 values (that correspond to a chart with 10 bars):
 
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 | Index   | 0       | 1       | 2       | 3       | 4       | 5       | 6       | 7       | 8       | 9       |
@@ -192,54 +190,56 @@ of the current bar is equal to 9. The value of the vector ``close[1]`` on the cu
 to the previous value of the initial vector ``close``. 
 The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
 
-So the operator ``[]`` can be thought of as the history referencing
+So the ``[]`` operator can be thought of as the history referencing
 operator.
 
 **Note 1**. Almost all built-in functions in Pine's standard library
-return a series result, for example the function ``sma``. Therefore it's
-possible to apply the operator ``[]`` directly to the function calls:
+return a *series* result. It is therefore
+possible to apply the ``[]`` operator directly to function calls, as is done here:
 
 ::
 
     sma(close, 10)[1]
 
-**Note 2**. Despite the fact that the operator ``[]`` returns the result
-of the series type, it's prohibited to apply this operator to the same
-operand over and over again. Here is an example of incorrect use:
+**Note 2**. Despite the fact that the ``[]`` operator returns a result
+of *series* type, it is prohibited to apply this operator to the same
+operand over and over again. Here is an example of incorrect use
+which will generate a compilation error:
 
 ::
 
-    close[1][2] // Error: incorrect use of operator []
-
-A compilation error message will appear.
+    close[1][2] // Error: incorrect use of [] operator
 
 In some situations, the user may want to shift the series to the left.
 Negative arguments for the operator ``[]`` are prohibited. This can be
-accomplished using ``offset`` argument in ``plot`` annotation. It
-supports both positive and negative values. Note, though that it is a
-visual shift., i.e., it will be applied after all the calculations.
-Further details about ``plot`` and its arguments can be found
+accomplished using the ``offset`` parameter in the ``plot`` annotation, which
+supports both positive and negative values. Note though that it is a
+visual shift., i.e., it will be applied after all calculations.
+Further details on ``plot`` and its parameters can be found
 `here <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
 
-There is another important consideration when using operator ``[]`` in
-Pine Scripts. The indicator executes a calculation on each bar,
-beginning from the oldest existing bar until the most recent one (the
-last). As seen in the table, ``close[3]`` has ``na`` values on the
+There is another important consideration when using the ``[]`` operator in
+Pine. The script executes a calculation on each bar,
+beginning from the earliest bar until the last. 
+As seen in the table, ``close[3]`` has ``na`` values on the
 first three bars. ``na`` represents a value which is not a number and
 using it in any math expression will result in also ``na`` (similar 
-to `NaN <https://en.wikipedia.org/wiki/NaN>`__). So your
-code should specifically handle ``na`` values using functions `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
-`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__.
+to `NaN <https://en.wikipedia.org/wiki/NaN>`__),
+which in some cases can ripple through results all the way to the realtime bar. 
+Your code must provide for handling the special cases in early history
+when expressions may result in ``na`` values. This can be accomplished using the
+`na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
+`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__ functions.
 
 Priority of operators
 ---------------------
 
-The order of the calculations is determined by the operators' priority.
-Operators with greater priority are calculated first. Below are a list
-of operators sorted by decreasing priority:
+The order of calculations is determined by the operators' precedence.
+Operators with greater precedence are calculated first. Below are a list
+of operators sorted by decreasing precedence:
 
 +------------+-------------------------------------+
-| Priority   | Operator Symbol                     |
+| Precedence | Operator                            |
 +============+=====================================+
 | 9          | ``[]``                              |
 +------------+-------------------------------------+
@@ -260,9 +260,8 @@ of operators sorted by decreasing priority:
 | 1          | ``?:``                              |
 +------------+-------------------------------------+
 
-If in one expression there are several operators with the same priority,
+If in one expression there are several operators with the same precedence,
 then they are calculated left to right.
 
-If it's necessary to change the order of calculations to calculate the
-expression, then parts of the expression should be grouped together with
-parentheses.
+If the expression must be calculated in a different order than precedence would dictate, 
+then parts of the expression can be grouped together with parentheses.
