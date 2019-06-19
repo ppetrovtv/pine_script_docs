@@ -21,11 +21,12 @@ There are five arithmetic operators in Pine Script:
 | ``%`` | Take the remainder after dividing  |
 +-------+------------------------------------+
 
-Arithmetic operators above are binary. The type of result depends on
-the type of operands. If at least one of the operands is a *series*, then
-the result also will have a *series* type. If both operands are numeric,
+The arithmetic operators above are all binary, whith ``+`` and ``-`` also serving as unary operators.
+When using arithmetic operators, the type of the result depends on
+the type of the operands. If at least one of the operands is a *series*, then
+the result will also have a *series* type. If both operands are numeric,
 but at least one of these has the type *float*, then the result will
-also have the type *float*. If both operands are *integers*, then the
+also have the type *float*. If both operands are of type *integer*, then the
 result will also have the type *integer*.
 
 Footnote: if at least one operand is ``na`` then the result is also
@@ -47,7 +48,7 @@ There are six comparison operators in Pine Script:
 +--------+---------------------------------+
 | ``>``  | Greater Than                    |
 +--------+---------------------------------+
-| ``>=`` | Greater Than                    |
+| ``>=`` | Greater Than or Equal To        |
 +--------+---------------------------------+
 
 Comparison operations are binary. The result is determined by the type
