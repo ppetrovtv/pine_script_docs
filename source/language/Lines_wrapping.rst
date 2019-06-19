@@ -55,8 +55,8 @@ with lines wrapping. The following code does NOT compile::
     //@version=4
     study("My Script")
     c = open > close ? color.red :
-    high > high[1] ? color.lime : // a comment
-    low < low[1] ? color.blue : color.black
+      high > high[1] ? color.lime : // a comment
+      low < low[1] ? color.blue : color.black
     bgcolor(c)
 
 
