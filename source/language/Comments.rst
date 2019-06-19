@@ -9,11 +9,9 @@ Pine Script has single-line comments only. Any text from the symbol
     a = close // This is also a comment
     plot(a)
 
-*Pine Editor* has hotkeys for commenting/uncommenting block of code:
-``Ctrl + /``. Thanks to this, there is no need for multi-line comments ---
-one can highlight the large code fragment in Pine Editor and press
-``Ctrl + /``. This will comment out highlighted fragment; if
-``Ctrl + /`` is pressed again, commentary will be taken away.
+The *Pine Editor* has a hotkey for commenting/uncommenting:
+``Ctrl + /``. Highlight a code fragment and press ``Ctrl + /``
+to comment/uncomment whole blocks of code at a time.
 
-Also, comments could not be placed in the middle of a statement wrapped
-to several lines, read more here: :doc:`Lines_wrapping`.
+Comments cannot be placed in the middle of a statement continued
+on multiple lines. Read more on this here: :doc:`Lines_wrapping`.
