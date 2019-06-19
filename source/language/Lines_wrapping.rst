@@ -1,11 +1,11 @@
 Lines wrapping
 ==============
 
-Any statement that is too long in Pine Script can be placed on a few
-lines. Syntactically, **a statement must begin at the beginning of the
+Any statement that is too long in Pine Script can be placed on more than
+one line. Syntactically, a statement **must** begin at the beginning of the
 line. If it wraps to the next line then the continuation of the
-statement must begin with one or several (different from multiple of 4)
-spaces**. For example, the expression::
+statement **must** begin with one or several (different from multiple of 4)
+spaces. For example, the expression::
 
     a = open + high + low + close
 
