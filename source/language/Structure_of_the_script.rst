@@ -23,7 +23,7 @@ A script in Pine usually consists of:
     -  :doc:`functions and annotations calls <Functions_and_annotations>`
   
 * A *study* must contain at least one function/annotation call which produces some output on the chart 
-  (e.g., ``plot``, ``plotshape``, ``barcolor``, ``line.new``, etc.)
+  (e.g., ``plot``, ``plotshape``, ``barcolor``, ``line.new``, etc.).
   A strategy must contain at least one ``strategy.*`` call, e.g., ``strategy.entry``.
 
   The simplest valid Pine v4 study can be generated using *Pine Editor* |rarr| *New* |rarr| *Blank indicator script*::
