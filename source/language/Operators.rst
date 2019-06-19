@@ -109,7 +109,7 @@ value then the result will have a ``false`` value; if the operand has a
 
 .. _ternary_operator:
 
-Conditional operator ?: and the function iff
+``?:`` conditional operator and the ``iff`` function
 --------------------------------------------
 
 `Conditional ternary
