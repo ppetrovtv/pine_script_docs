@@ -27,7 +27,7 @@ A long ``plot`` call may be wrapped as:
        style=plot.style_area,
        transp=40)
 
-Statements inside user functions can also be wrapped on several lines.
+Statements inside user functions can also be wrapped.
 However, since a local statement must syntactically begin with an
 indentation (4 spaces or 1 tab), when splitting it onto the
 following line, the continuation of the statement must start with more
