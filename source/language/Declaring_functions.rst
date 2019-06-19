@@ -50,7 +50,7 @@ Pine also supports multi-line functions with the following syntax:
         ...
         <variable declaration or expression>
 
-The body of a multi-line function consists of a several statements. Each
+The body of a multi-line function consists of several statements. Each
 statement is placed on a separate line and must be preceded by 1
 indentation (4 spaces or 1 tab). The indentation before the statement
 indicates that it is a part of the body of the function and not part of the
