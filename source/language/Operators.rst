@@ -18,7 +18,7 @@ There are five arithmetic operators in Pine Script:
 +-------+------------------------------------+
 | ``/`` | Division                           |
 +-------+------------------------------------+
-| ``%`` | Take the remainder after dividing  |
+| ``%`` | Modulo (remainder after division)  |
 +-------+------------------------------------+
 
 The arithmetic operators above are all binary, whith ``+`` and ``-`` also serving as unary operators.
@@ -53,7 +53,7 @@ There are six comparison operators in Pine Script:
 
 Comparison operations are binary. The result is determined by the type
 of operands. If at least one of these operands has a *series* type, then
-the type of result will also be the *series* (a series of logical
+the type of the result will also be *series* (a series of logical
 values). If both operands have a numerical type, then the result will be
 of the logical type *bool*.
 
@@ -71,10 +71,10 @@ There are three logical operators in Pine Script:
 +---------+---------------------------------+
 
 All logical operators can operate with *bool* operands, numerical
-operands, or series type operands. Similar to arithmetic and comparison
-operators, if at least one of these operands of an operator has a *series*
-type, than the result will also have a *series* type. In all other cases
-the operator's type of result will be the logical type *bool*.
+operands, or *series* type operands. As is the case with arithmetic and comparison
+operators, if at least one of the operands is of *series*
+type, then the result will also be of *series* type. In all other cases
+the type of the operator's result will be the logical type *bool*.
 
 The operator ``not`` is unary. If an operator's operand has a ``true``
 value then the result will have a ``false`` value; if the operand has a
@@ -113,8 +113,8 @@ value then the result will have a ``false`` value; if the operand has a
 ``?:`` conditional operator and the ``iff`` function
 --------------------------------------------
 
-`Conditional ternary
-operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
+`{question}{colon} conditional ternary
+operator <https://www.tradingview.com/pine-script-reference/v4/#op_>`__
 calculates the first expression (condition) and returns a value either
 of the second operand (if the condition is ``true``) or of the third
 operand (if the condition is ``false``). Syntax::
