@@ -116,7 +116,7 @@ The ``?:`` `conditional ternary
 operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
 calculates the first expression (condition) and returns the value of either
 the second operand (if the condition is ``true``) or of the third
-operand (if the condition is ``false``). Syntax::
+operand (if the condition is ``false``). Syntax is::
 
     condition ? result1 : result2
 
