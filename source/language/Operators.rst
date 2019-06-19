@@ -134,9 +134,10 @@ First, the ``isintraday`` condition is calculated; if it is ``true`` then
 ``red`` will be the result. If it is ``false`` then ``isdaily`` is calculated,
 if this is ``true``, then ``green`` will be the result. If it is
 ``false``, then ``ismonthly`` is calculated. If it is ``true``, then ``blue``
-will be the result, otherwise ``na`` will be the result. For those who find
-using the ``?:`` operator syntax inconvenient, there is an
-alternative: the built-in ``iff`` function. 
+will be the result, otherwise ``na`` will be the result.
+
+For those who find using the ``?:`` operator syntax inconvenient, 
+there is an alternative: the built-in ``iff`` function. 
 The function has the following signature::
 
     iff(condition, result1, result2)
