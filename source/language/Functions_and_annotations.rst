@@ -2,13 +2,22 @@ Functions and annotations
 =========================
 
 Pine Script distinguishes between *functions* and *annotation functions* (or just *annotations*).
-Syntactically they are similar, but they have different purposes and usage effects.
+Syntactically they are similar, but they serve different purposes.
 
-Functions are used for calculating values and most of the time return a result.
+While functions are generally used to calculate values and for the result they return,
+annotations are mostly used for their side effects and only occasionnaly for the result some of them return.
+
+Functions may be built-in, such as
+`sma <https://www.tradingview.com/study-script-reference/v4/#fun_sma>`__,
+`ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__,
+`rsi <https://www.tradingview.com/study-script-reference/v4/#fun_rsi>`__, 
+or :doc:`user-defined <Declaring_functions>`. All annotations are buit-in.
+
+for calculating values and most of the time return a result.
 Some functions have side effects (e.g., `strategy.entry`, `strategy.exit`). 
 Function calls are used in
 expressions along with operators. Essentially, they determine the
-calculation algorithm. Functions are divided into built-in and :doc:`user-defined <Declaring_functions>`.
+calculation algorithm. Functions are divided into built-in and .
 Examples of built-in functions:
 `sma <https://www.tradingview.com/study-script-reference/v4/#fun_sma>`__,
 `ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__,
