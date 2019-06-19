@@ -220,7 +220,7 @@ Pine. The script executes a calculation on each bar,
 beginning from the earliest bar until the last. 
 As seen in the table, ``close[3]`` has ``na`` values on the
 first three bars. ``na`` represents a value which is not a number and
-using it in any math expression will result in also ``na`` (similar 
+using it in any math expression will produce a result that is also ``na`` (similar 
 to `NaN <https://en.wikipedia.org/wiki/NaN>`__),
 which in some cases can ripple through results all the way to the realtime bar. 
 Your code must provide for handling the special cases in early history
