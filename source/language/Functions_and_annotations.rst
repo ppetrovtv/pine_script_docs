@@ -20,7 +20,7 @@ The side effects annotations are used for include:
    or `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__
 -  determining the inputs of a script using 
    `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__
--  determing the outputs of a script using 
+-  determining the outputs of a script using 
    `plot <https://www.tradingview.com/study-script-reference/v4/#fun_plot>`__
 
 In addition to having side effects, a few annotations such as ``plot`` and ``hline``
