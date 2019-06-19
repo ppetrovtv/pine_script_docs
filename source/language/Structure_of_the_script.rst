@@ -15,7 +15,7 @@ A script in Pine usually consists of:
   Each statement is usually placed on a separate line. It is possible to place more
   than one statement on a line by using the comma (``,``) as a separator. 
   Lines containing statements that are not part of local blocks cannot begin with
-  white space. Their first character must be also the line's first character.
+  white space. Their first character must also be the line's first character.
   Statements may be one of three kinds:
 
     -  :ref:`variable declarations <variable_declaration>`
