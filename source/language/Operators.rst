@@ -52,7 +52,7 @@ There are six comparison operators in Pine Script:
 +--------+---------------------------------+
 
 Comparison operations are binary. The result is determined by the type
-of operands. If at least one of these operands has a *series* type, then
+of the operands. If at least one of these operands has a *series* type, then
 the type of the result will also be *series* (a series of logical
 values). If both operands have a numerical type, then the result will be
 of the logical type *bool*.
