@@ -8,10 +8,10 @@ A script in Pine usually consists of:
 * ``//@version=4`` A compiler directive in a comment that specifies which version of Pine the script will use. 
   If the ``@version`` directive is missing, version 1 will be used. It is strongly recommended to always
   use the latest version available.
-* `study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__ or a 
+* A `study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__ or a 
   `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__ annotation call. 
   Their parameters define the script's title and other properties.
-* series of statements which implement the script's algorithm. 
+* A series of statements which implement the script's algorithm. 
   Each statement is usually placed on a separate line. It is possible to place more
   than one statement on a line by using the comma (``,``) as a separator. 
   Lines containing statements that are not part of local blocks cannot begin with
