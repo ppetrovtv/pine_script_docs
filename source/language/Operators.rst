@@ -232,7 +232,7 @@ Operator precedence
 ---------------------
 
 The order of calculations is determined by the operators' precedence.
-Operators with greater precedence are calculated first. Below are a list
+Operators with greater precedence are calculated first. Below is a list
 of operators sorted by decreasing precedence:
 
 +------------+-------------------------------------+
