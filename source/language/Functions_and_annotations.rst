@@ -5,7 +5,7 @@ Pine Script distinguishes between *functions* and *annotation functions* (or jus
 Syntactically they are similar, but they serve different purposes.
 
 While functions are generally used to calculate values and for the result they return,
-annotations are mostly used for their side effects and only occasionnaly for the result some of them return.
+annotations are mostly used for their side effects and only occasionally for the result some of them return.
 
 Functions may be built-in, such as
 `sma <https://www.tradingview.com/study-script-reference/v4/#fun_sma>`__,
