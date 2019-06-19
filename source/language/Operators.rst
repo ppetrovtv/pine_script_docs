@@ -76,9 +76,8 @@ operators, if at least one of the operands is of *series*
 type, then the result will also be of *series* type. In all other cases
 the type of the result will be the logical type *bool*.
 
-The operator ``not`` is unary. If an operator's operand has a ``true``
-value then the result will have a ``false`` value; if the operand has a
-``false`` value then the result will have a ``true`` value.
+The operator ``not`` is unary. When applied to a ``true``
+operand the result will be ``false``, and vice versa.
 
 ``and`` operator truth table:
 
