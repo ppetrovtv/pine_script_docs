@@ -231,7 +231,7 @@ when expressions may result in ``na`` values. This can be accomplished using the
 `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
 `nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__ functions.
 
-Priority of operators
+Operator precedence
 ---------------------
 
 The order of calculations is determined by the operators' precedence.
