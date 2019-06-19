@@ -2,9 +2,13 @@ Identifiers
 ===========
 
 Identifiers are names used for user-defined variables and functions.
-Identifiers can be composed of lower and upper-case letters (from the
-English alphabet), underscore ``_`` and numbers. An identifier
-cannot begin with a number. Identifiers are case-sensitive. 
+They can be composed of:
+
+-  upper and lower case letters (from the English alphabet),
+-  underscore (``_``),
+-  numbers.
+
+An identifier cannot begin with a number. Identifiers are case-sensitive. 
 Here are some examples of valid identifiers::
 
     myVar
