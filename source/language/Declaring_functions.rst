@@ -85,9 +85,9 @@ outside --- e.g., from the global scope or the local scope of another
 function.
 
 On the other hand, since it is possible to refer to any variable or function
-declared in the global scope from the scope of a function (except in the case
-of self-referencing recursive calls), one can say
-that the local scope is embedded into the the global scope.
+declared in the global scope from the scope of a function (except for 
+self-referencing recursive calls), one can say
+that the local scope is embedded into the global scope.
 
 In Pine, nested functions are not allowed, i.e. one cannot declare a
 function inside another one. All user functions are declared in the
