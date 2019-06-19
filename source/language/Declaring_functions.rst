@@ -41,7 +41,7 @@ Pine Scipt functions do not support recursion. It is **not allowed** for a funct
 Multi-line functions
 --------------------
 
-Pine also support multi-line functions with the following syntax:
+Pine also supports multi-line functions with the following syntax:
 
 .. code-block:: text
 
