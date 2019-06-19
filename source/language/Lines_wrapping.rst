@@ -60,6 +60,6 @@ The following code does NOT compile::
     bgcolor(c)
 
 
-Compiler fails with an error:
+The compiler fails with the error:
 ``Add to Chart operation failed, reason: line 3: syntax error at input 'end of line without line continuation'``.
 To make this code compile, simply remove the ``// a comment`` comment.
