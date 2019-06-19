@@ -14,6 +14,7 @@ Functions may be built-in, such as
 or :doc:`user-defined <Declaring_functions>`. All annotations are buit-in.
 
 The side effects annotations are used for include:
+
 -  assigning a name or other global properties to a script using
    `study <https://www.tradingview.com/study-script-reference/v4/#fun_study>`__
    or `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__
