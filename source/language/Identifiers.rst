@@ -6,9 +6,10 @@ They can be composed of:
 
 -  upper (``A-Z``) or lower (``a-z``) case letters,
 -  underscore (``_``),
--  numbers (``0-9``).
+-  digits (``0-9``).
 
-An identifier cannot begin with a number. Identifiers are case-sensitive. 
+An identifier cannot begin with a digit.
+Identifiers are case-sensitive. 
 Here are some examples of valid identifiers::
 
     myVar
