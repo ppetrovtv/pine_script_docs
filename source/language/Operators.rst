@@ -154,10 +154,10 @@ This is the equivalent of the previous example using ``iff``::
 History reference operator ``[]``
 -----------------------------
 
-It is possible to refer to the historical values of any variable of a
-*series* type with the ``[]`` operator. Historical values are the values for the previous bars.
-For example, let's assume we have the
-variable ``close``, containing 10 values (that correspond to a chart with 10 bars):
+It is possible to refer to the historical values of any variable of the
+*series* type with the ``[]`` operator (*historical* values are the values for the previous bars).
+Let's assume we have the variable ``close``, 
+containing 10 values (that correspond to a chart with 10 bars):
 
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 | Index   | 0       | 1       | 2       | 3       | 4       | 5       | 6       | 7       | 8       | 9       |
