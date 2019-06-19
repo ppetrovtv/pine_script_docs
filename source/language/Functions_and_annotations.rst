@@ -25,7 +25,7 @@ The side effects annotations are used for include:
 
 In addition to having side effects, a few annotations such as ``plot`` and ``hline``
 also return a result which may be used or not. This result, however, can only be used in other annotations
-and can't take part in the indicator's calculations 
+and can't take part in the script's calculations 
 (see `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ annotation).
 
 A detailed overview of Pine annotations can be found :doc:`here </annotations/index>`.
