@@ -24,7 +24,7 @@ The side effects annotations are used for include:
    `plot <https://www.tradingview.com/study-script-reference/v4/#fun_plot>`__
 
 In addition to having side effects, a few annotations such as ``plot`` and ``hline``
-also return a result. This result, however, can only be used in other annotations
+also return a result which may be used or not. This result, however, can only be used in other annotations
 and can't take part in the indicator's calculations 
 (see `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ annotation).
 
