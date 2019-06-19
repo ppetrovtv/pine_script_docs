@@ -69,7 +69,7 @@ be the result of the function's call. For example::
 The function ``geom_average`` has two arguments and creates two variables
 in the body: ``a`` and ``b``. The last statement calls the function ``sqrt``
 (an extraction of the square root). The ``geom_average`` call will return
-the last expression value ``(sqrt(a + b))``.
+the value of the last expression: ``(sqrt(a + b))``.
 
 Scopes in the script
 --------------------
