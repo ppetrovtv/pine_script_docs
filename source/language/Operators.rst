@@ -113,7 +113,7 @@ value then the result will have a ``false`` value; if the operand has a
 ``?:`` conditional operator and the ``iff`` function
 --------------------------------------------
 
-`Conditional ternary
+The ``?:`` `Conditional ternary
 operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
 calculates the first expression (condition) and returns a value either
 of the second operand (if the condition is ``true``) or of the third
