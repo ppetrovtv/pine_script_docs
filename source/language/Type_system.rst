@@ -36,10 +36,9 @@ Const
 ^^^^^
 
 Values of the form *const* are ones that:
-    
+
     * do not change during script execution
     * are known or can be calculated at compile time
-
 For example::
     
     c1 = 0
@@ -222,9 +221,9 @@ The following built-in *color* variables can be used to avoid hexadecimal color 
 ``color.olive``, ``color.yellow``, ``color.navy``, ``color.blue``, ``color.teal``, ``color.aqua``,
 ``color.orange``. 
 
-It is possible to change the transparency of a color using
-the 
-`color.new <https://www.tradingview.com/study-script-reference/v4/#fun_color{dot}new>`__ built-in function.
+It is possible to change transparency of the color using a
+built-in function
+`color.new <https://www.tradingview.com/study-script-reference/v4/#fun_color{dot}new>`__.
 
 Here is an example::
 
