@@ -23,19 +23,17 @@ The side effects annotations are used for include:
 -  determing the outputs of a script using 
    `plot <https://www.tradingview.com/study-script-reference/v4/#fun_plot>`__
 
-A few annotations have not only side effects (in the form of determining
-meta information) but also return a result. ``plot`` and ``hline`` are such
-annotations. However this result can be used only in other annotations
+In addition to having side effects, a few annotations such as ``plot`` and ``hline``
+also return a result. This result, however, can only be used in other annotations
 and can't take part in the indicator's calculations 
-(see annotation `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__).
+(see `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ annotation).
 
-A detailed overview of available Pine Script annotations could be found :doc:`here </annotations/index>`.
+A detailed overview of Pine annotations can be found :doc:`here </annotations/index>`.
 
 Syntactically, user-defined functions, built-in functions and annotation
-functions are similar in use within the script: to use either function
-or annotation one should specify its name as well as the list of actual
-arguments in parentheses. The main difference is in usage semantic.
-Also, there is a difference in passing arguments --- annotations and
+functions are similar, i.e. we call them by name with a list of
+arguments in parentheses. Differences between them are mostly semantic, except
+for the fact that annotations and
 built-in functions accept keyword arguments while user-defined functions
 do not (see :ref:`release note on kwargs in built-in
 functions <kwargs_syntax_for_all_builtin_functions>`).
@@ -44,7 +42,7 @@ Example of an annotation call with positional arguments::
 
     study('Example', 'Ex', true)
 
-Compare it with the equivalent call but with keyword arguments::
+The same call with keyword arguments::
 
     study(title='Example', shorttitle='Ex', overlay=true)
 
