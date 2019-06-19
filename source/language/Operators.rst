@@ -82,7 +82,7 @@ operand the result will be ``false``, and vice versa.
 ``and`` operator truth table:
 
 +---------+---------+-----------+
-| a       | b       | a and b   |
+| a       | b       | a ``and`` b   |
 +=========+=========+===========+
 | true    | true    | true      |
 +---------+---------+-----------+
@@ -96,7 +96,7 @@ operand the result will be ``false``, and vice versa.
 ``or`` operator truth table:
 
 +---------+---------+----------+
-| a       | b       | a or b   |
+| a       | b       | a ``or`` b   |
 +=========+=========+==========+
 | true    | true    | true     |
 +---------+---------+----------+
