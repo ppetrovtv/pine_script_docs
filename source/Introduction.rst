@@ -4,6 +4,8 @@ Introduction
 .. image:: images/Pine_Script_logo_text.png
    :alt: Pine Script logo
    :align: right
+   :width: 240
+   :height: 240
 
 TradingView has designed its own scripting language called 
 `Pine Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__.
