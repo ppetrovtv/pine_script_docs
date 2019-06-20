@@ -10,6 +10,8 @@ function return value. They are ``heikinashi``, ``renko``,
 same manner, they just create a special ticker identifier that could be
 passed later as ``security`` function first argument.
 
+Note that the "source" argument of the ``renko``, ``kagi``, and ``linebreak`` functions is deprecated and is used up to the third (inclusive) version of Pine.
+
 ``heikinashi`` function
 -----------------------
 
@@ -79,7 +81,7 @@ passes the top or bottom of previously predefined amount.
 ::
 
     study("Example 7", overlay=true)
-    renko_t = renko(tickerid, "open", "ATR", 10)
+    renko_t = renko(tickerid, "close", "ATR", 10)
     renko_low = security(renko_t, period, low)
     plot(renko_low)
 
