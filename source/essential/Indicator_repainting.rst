@@ -74,7 +74,7 @@ We can see repainting in the following cases:
    processing the data:
 
    * 10000 historical bars for all Pro plans.
-   * 5000 historical bars for users without a Pro plan.
+   * 5000 historical bars for other plans.
 
 #. Changes in historical data, for example, due to a *split*.
 
