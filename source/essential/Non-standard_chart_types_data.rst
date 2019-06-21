@@ -123,9 +123,9 @@ For detailed information, see `linebreak <https://www.tradingview.com/study-scri
 kagi function
 -------------
 
-*Kagi* charts look like a continuous line that changes directions. 
+*Kagi* charts are made of a continuous line that changes directions. 
 The direction changes when the price changes [#ticks]_
-beyond a predefined amount.
+beyond a predetermined amount.
 
 ::
 
