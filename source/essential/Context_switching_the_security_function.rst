@@ -28,7 +28,7 @@ argument is the required resolution and the third one is an expression
 which will be calculated on the requested series *within* the ``security`` call.
 
 The name of the symbol can be defined using two variants: with a prefix that
-shows the exchange (or data provider) or without it. For example:
+contains the exchange (or data provider), or without it. For example:
 ``"NYSE:IBM"``, ``"BATS:IBM"`` or ``"IBM"``. When an exchange is not provided,
 BATS will be used as the default. The current symbol name is stored in the 
 `syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and 
