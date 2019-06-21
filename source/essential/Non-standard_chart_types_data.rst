@@ -173,5 +173,5 @@ For detailed information, see `pointfigure <https://www.tradingview.com/study-sc
 
 .. rubric:: Footnotes
 
-.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are generated from OHLC values of a lower timeframe. 
+.. [#ticks] On TradingView, Renko, Line Break, Kagi and PnF chart types are generated from OHLC values from a lower timeframe. 
    These chart types thus represent only an approximation of what they would be like if they were generated from tick data.
