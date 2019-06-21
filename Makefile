@@ -29,3 +29,6 @@ help:
 
 syncpackages:
 	pip install --user -r requirements.txt
+
+install_hooks:
+	cp -r ./git-hooks/. ./.git/hooks

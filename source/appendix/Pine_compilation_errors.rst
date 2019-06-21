@@ -133,7 +133,7 @@ this case, algorithm may be optimized like this:
 
     s = 0
     for i = 1 to 1e3  // to make it longer
-        s := s - bar_back_at(timestamp(2017, 02, 23, 23, 59)) + 
+        s := s - bar_back_at(timestamp(2017, 02, 23, 23, 59)) +
              bar_back_at(timestamp(2017, 02, 23, 00, 00))
         s
     plot(s)
