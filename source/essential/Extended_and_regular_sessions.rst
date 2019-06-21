@@ -50,7 +50,7 @@ could be rewritten as::
     cc = security("BATS:AAPL", timeframe.period, close, true)
     plot(cc, style=plot.style_linebr)
 
-If you want to request the same session information that is set for the chart's main
+If you want to request the same session information used for the chart's main
 symbol, omit the third argument; it is optional. Or, if you want your code to
 explicitly declare your intention, use the ``syminfo.session``
 built-in variable as the third argument to ``tickerid`` function, as it 
