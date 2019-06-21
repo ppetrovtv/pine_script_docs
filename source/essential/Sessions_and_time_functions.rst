@@ -14,7 +14,7 @@ two scripts are running: "Bar date/time" and "Session bars".
 .. image:: images/Chart_time_1.png
 
 
-Here is the "Bar date/time" script:
+This is the "Bar date/time" script:
 
 ::
 
