@@ -4,7 +4,7 @@ Language fundamentals
 .. toctree::
    :maxdepth: 3
    :name: appendixtoc
-   
+
    Structure_of_the_script
    Versions
    Comments

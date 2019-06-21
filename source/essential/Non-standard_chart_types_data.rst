@@ -18,7 +18,7 @@ prices of HA candlesticks are not actual prices, they are results from
 avergaing values of the previous bar, which helps eliminate random
 volatility.
 
-Pine function `heikinashi <https://www.tradingview.com/study-script-reference/v4/#fun_heikinashi>`__ 
+Pine function `heikinashi <https://www.tradingview.com/pine-script-reference/v4/#fun_heikinashi>`__
 creates a special ticker identifier for
 requesting Heikin-Ashi data with ``security`` function.
 
@@ -68,8 +68,8 @@ Here is the source code::
 
 .. image:: images/Pine_Heikinashi_2.png
 
-Read more about `plotcandle <https://www.tradingview.com/study-script-reference/v4/#fun_plotcandle>`__ 
-and `plotbar <https://www.tradingview.com/study-script-reference/v4/#fun_plotbar>`__ functions in 
+Read more about `plotcandle <https://www.tradingview.com/pine-script-reference/v4/#fun_plotcandle>`__
+and `plotbar <https://www.tradingview.com/pine-script-reference/v4/#fun_plotbar>`__ functions in
 section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
 
 renko function
@@ -94,7 +94,7 @@ Please note that you cannot plot Renko bricks from Pine script exactly
 as they look. You can just get a series of numbers that are somewhat
 OHLC values for Renko chart and use them in your algorithms.
 
-For detailed reference see `renko <https://www.tradingview.com/study-script-reference/v4/#fun_renko>`__.
+For detailed reference see `renko <https://www.tradingview.com/pine-script-reference/v4/#fun_renko>`__.
 
 linebreak function
 ------------------
@@ -117,7 +117,7 @@ exactly as they look. You can just get a series of numbers that are
 somewhat OHLC values for Line Break chart and use them in your
 algorithms.
 
-For detailed reference see `linebreak <https://www.tradingview.com/study-script-reference/v4/#fun_linebreak>`__.
+For detailed reference see `linebreak <https://www.tradingview.com/pine-script-reference/v4/#fun_linebreak>`__.
 
 kagi function
 -------------
@@ -141,7 +141,7 @@ Please note that you cannot plot Kagi lines from Pine script exactly as
 they look. You can just get a series of numbers that are somewhat OHLC
 values for Kagi chart and use them in your algorithms.
 
-For detailed reference see `kagi <https://www.tradingview.com/study-script-reference/v4/#fun_kagi>`__.
+For detailed reference see `kagi <https://www.tradingview.com/pine-script-reference/v4/#fun_kagi>`__.
 
 pointfigure function
 --------------------
@@ -169,10 +169,10 @@ request and get those numbers and plot them on chart.
 
 .. image:: images/Pine_Point_and_Figure.png
 
-For detailed reference see `pointfigure <https://www.tradingview.com/study-script-reference/v4/#fun_pointfigure>`__.
+For detailed reference see `pointfigure <https://www.tradingview.com/pine-script-reference/v4/#fun_pointfigure>`__.
 
 
 .. rubric:: Footnotes
 
-.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLC candles of a lower timeframe, 
+.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLC candles of a lower timeframe,
    which is an approximation of corresponding chart type built from tick data.

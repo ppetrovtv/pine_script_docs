@@ -57,4 +57,3 @@ For example:
 ..    include:: <isonum.txt>
 Indicators |rarr| Built-ins
 ```
-

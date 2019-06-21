@@ -1,26 +1,26 @@
 Script inputs
 -------------
 
-The `input <https://www.tradingview.com/study-script-reference/v4/#fun_input>`__ 
+The `input <https://www.tradingview.com/pine-script-reference/v4/#fun_input>`__
 annotation function makes it possible for script users to modify selected
 values which the script can then use in its calculation or logic,
 without the need to modify the script's code.
 
 Specific widgets are supplied in the *Settings/Inputs* dialog box
 for each type of input. A description of the value as well as minimum/maximum
-values and a step increment can also be defined. If the type of the input variable 
+values and a step increment can also be defined. If the type of the input variable
 cannot be inferred at compile time, it can be explicitly defined using the ``type`` parameter.
 
 Pine supports the following types of input:
 
--  bool,
--  integer,
--  float,
--  string,
--  symbol,
--  resolution,
--  session,
--  source.
+-  input.bool,
+-  input.integer,
+-  input.float,
+-  input.string,
+-  input.symbol,
+-  input.resolution,
+-  input.session,
+-  input.source.
 
 The following examples show how to create each type of input and what
 its widget looks like.
@@ -57,10 +57,10 @@ Float input
 
 
 Symbol and resolution inputs
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-sym = input(title="Symbol", type=input.symbol, defval="SPY")
+    sym = input(title="Symbol", type=input.symbol, defval="SPY")
     res = input(title="Resolution", type=input.resolution, defval="60")
     plot(close, color=color.red)
     plot(security(sym, res, close), color=color.green)
@@ -96,8 +96,8 @@ Source input
 
 
 ``options`` parameter
-^^^^^^^^^^^^^
-The ``options`` parameter is useful to provide users with a list 
+^^^^^^^^^^^^^^^^^^^^^
+The ``options`` parameter is useful to provide users with a list
 of constant values they can choose from using a dropdown menu.
 ::
 
