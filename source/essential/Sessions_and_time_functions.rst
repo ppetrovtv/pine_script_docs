@@ -43,8 +43,9 @@ The second script is "Session bars"::
 This shows how the user can distinguish between regular session and extended hours bars
 by using the built-in 
 `time <https://www.tradingview.com/study-script-reference/v4/#fun_time>`__ 
-function rather than the ``time`` variable. The background behind these bars 
-is colored because of the chart's settings. The ``time`` function returns the time of the
+function rather than the ``time`` variable. Note that the background behind these bars 
+is colored because of the chart's settings; not because of the script. 
+The ``time`` function returns the time of the
 bar's start in milliseconds UNIX time, or ``na`` if the bar is located outside
 the given trade session (09:30--16:00 in our example). The ``time`` function accepts
 two arguments: the ``resolution`` used to determine the bar 
