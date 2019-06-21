@@ -4,9 +4,9 @@ Indicator repainting
 Historical data doesn't include records of intra-bar movements of price.
 This leads to a script working differently on historical data and at
 real-time. If we add a script on a chart,
-wait till it calculates on some number of real-time bars and then reload the page, 
+wait till it calculates on some number of real-time bars and then reload the page,
 we can see this difference. This peculiarity is called *Indicator repainting*.
-Not all indicators have an effect of repainting. In most cases it depends on whether or not 
+Not all indicators have an effect of repainting. In most cases it depends on whether or not
 some certain functions or language constructs are used in the code. This document reveals this question in detail.
 
 We can see repainting in the following cases:
@@ -29,10 +29,10 @@ We can see repainting in the following cases:
    historical data, regardless of using the parameter ``lookahead`` (see
    :ref:`understanding_lookahead`).
 
-#. Using ``security`` for requesting data with resolution *lower* than the resolution of chart main symbol 
+#. Using ``security`` for requesting data with resolution *lower* than the resolution of chart main symbol
    (this case in more detail :ref:`here <requesting_data_of_a_lower_timeframe>`).
    if ``lookahead=false``, there will be repainting. When ``lookahead=true``,
-   repainting is less possible. It still could happen, when 1 and 5 minute updates 
+   repainting is less possible. It still could happen, when 1 and 5 minute updates
    outrun each other.
 
 #. All the scripts which calculation results depend on a *starting point*.
@@ -41,9 +41,9 @@ We can see repainting in the following cases:
    such scripts can differ from time to time. Here are the examples of
    scripts relying on the starting point:
 
-   * `valuewhen <https://www.tradingview.com/study-script-reference/v4/#fun_valuewhen>`__,
-     `barssince <https://www.tradingview.com/study-script-reference/v4/#fun_barssince>`__,
-     `ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__
+   * `valuewhen <https://www.tradingview.com/pine-script-reference/v4/#fun_valuewhen>`__,
+     `barssince <https://www.tradingview.com/pine-script-reference/v4/#fun_barssince>`__,
+     `ema <https://www.tradingview.com/pine-script-reference/v4/#fun_ema>`__
      functions (peculiarities of the algorithm).
    * any backtesting strategy (regardless of parameter ``calc_on_every_tick``).
 
@@ -64,14 +64,14 @@ We can see repainting in the following cases:
 
 #. Presence of the following variables in the script usually leads to repainting:
 
-   * `barstate.isconfirmed <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isconfirmed>`__,
-     `barstate.isfirst <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isfirst>`__, 
-     `barstate.ishistory <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}ishistory>`__,
-     `barstate.islast <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}islast>`__, 
-     `barstate.isnew <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isnew>`__, 
-     `barstate.isrealtime <https://www.tradingview.com/study-script-reference/v4/#var_barstate{dot}isrealtime>`__;
-   * `timenow <https://www.tradingview.com/study-script-reference/v4/#var_timenow>`__;
-   * `bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__.
+   * `barstate.isconfirmed <https://www.tradingview.com/pine-script-reference/v4/#var_barstate{dot}isconfirmed>`__,
+     `barstate.isfirst <https://www.tradingview.com/pine-script-reference/v4/#var_barstate{dot}isfirst>`__,
+     `barstate.ishistory <https://www.tradingview.com/pine-script-reference/v4/#var_barstate{dot}ishistory>`__,
+     `barstate.islast <https://www.tradingview.com/pine-script-reference/v4/#var_barstate{dot}islast>`__,
+     `barstate.isnew <https://www.tradingview.com/pine-script-reference/v4/#var_barstate{dot}isnew>`__,
+     `barstate.isrealtime <https://www.tradingview.com/pine-script-reference/v4/#var_barstate{dot}isrealtime>`__;
+   * `timenow <https://www.tradingview.com/pine-script-reference/v4/#var_timenow>`__;
+   * `bar_index <https://www.tradingview.com/pine-script-reference/v4/#var_bar_index>`__.
 
 The "repainting" issue usually occurs when using tools above --- since an
 indicator is calculated based on real-time data first. After reloading

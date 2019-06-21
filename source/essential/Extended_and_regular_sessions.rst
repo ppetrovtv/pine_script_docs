@@ -22,7 +22,7 @@ data with regular session type will be requested. For example::
 .. image:: images/Pine-_Regular_Session_Data.png
 
 If you want to request the same data but with extended session type, you
-should use `tickerid <https://www.tradingview.com/study-script-reference/#fun_tickerid>`__ function, 
+should use `tickerid <https://www.tradingview.com/pine-script-reference/v4/#fun_tickerid>`__ function,
 for example::
 
     //@version=4

@@ -14,7 +14,7 @@ algorithms.
 
 A strategy written in Pine Script language has all the same capabilities
 as a Pine indicator. When you write a strategy code, it should start
-with the `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__ 
+with the `strategy <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy>`__
 annotation call (instead of ``study``). Strategies not
 only plot something, but also place, modify and cancel orders. They have
 access to essential strategy performance information through specific
@@ -54,7 +54,7 @@ Editor*.
 
 .. image:: images/Strategy_tester.png
 
-.. note:: When using :doc:`non-standard types of chart <Non-standard_chart_types_data>` 
+.. note:: When using :doc:`non-standard types of chart <Non-standard_chart_types_data>`
    (Heikin Ashi, Renko, etc.) as a basis for strategy, you
    need to realize that the result will be different. The orders will be
    executed at the prices of this chart (e.g., for Heikin Ashi it'll take
@@ -150,23 +150,23 @@ All keywords that are designed for strategies start with a
 ``strategy.`` prefix. The following commands are used for placing
 orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``:
 
-`strategy.entry <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}entry>`__
+`strategy.entry <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}entry>`__
    This command places only entry orders. It is
    affected by ``pyramiding`` setting (in strategy properties) and by
    ``strategy.risk.allow_entry_in`` function. If there is an open
    market position when an opposite direction order is generated, the
    number of contracts/shares/lots/units will be increased by the number
-   of currently open contracts (script equivalent: ``strategy.position_size + quantity``). 
+   of currently open contracts (script equivalent: ``strategy.position_size + quantity``).
    As the result, the size of market position to open will be equal to order size, specified in
    the command ``strategy.entry``.
 
-`strategy.order <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}order>`__
+`strategy.order <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}order>`__
    This command places both entry and exit orders. It is not affected by pyramiding setting and by
    ``strategy.risk.allow_entry_in`` function. It allows you to create
    complex enter and exit order constructions when capabilities of the
    ``strategy.entry`` and ``strategy.exit`` are not enough.
 
-`strategy.exit <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}exit>`__
+`strategy.exit <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}exit>`__
    This command allows you to exit a market position
    by an order or or form multiple exit order strategy (stop loss,
    profit target, trailing stop). All such orders are part of the same
@@ -175,8 +175,8 @@ orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``:
    (an exit order is bound to ID of an entry order). It is not possible
    to exit a position with a market order using the command
    ``strategy.exit``. For this goal the following commands should be
-   used: `strategy.close <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}close>`__ 
-   or `strategy.close_all <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}close_all>`__. 
+   used: `strategy.close <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}close>`__
+   or `strategy.close_all <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}close_all>`__.
    If number of contracts/shares/lots/units specified for the ``strategy.exit`` is
    less than the size of current open position, the exit will be
    partial. It is not possible to exit from the same entry order more
@@ -239,9 +239,9 @@ with the same IDs (they can modify the same entry order).
 entry order and an exit order with the same ID).
 
 To cancel a specific order (by its ID) the command
-`strategy.cancel(string ID) <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}cancel>`__ 
+`strategy.cancel(string ID) <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}cancel>`__
 should be used. To cancel all pending
-orders the command `strategy.cancel_all() <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}cancel_all>`__ 
+orders the command `strategy.cancel_all() <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy{dot}cancel_all>`__
 should be used. Strategy orders are placed as soon as their conditions are satisfied and command
 is called in code. Broker emulator doesn't execute orders before next
 tick comes after the code was calculated, while in real trading with
@@ -271,7 +271,7 @@ Example (for MSFT, 1D)::
     //@version=4
     strategy("Priced Entry demo")
     var c = 0
-    if year > 2014 
+    if year > 2014
         c := c + 1
     if c == 1
         strategy.entry("LE1", strategy.long, 2, stop = high + 35 * syminfo.mintick)
@@ -288,7 +288,7 @@ modified code::
     //@version=4
     strategy("Priced Entry demo")
     var c = 0
-    if year > 2014 
+    if year > 2014
         c := c + 1
     if c == 1
         strategy.entry("LE1", strategy.long, 2, stop = high + 35 * syminfo.mintick, oca_type = strategy.oca.cancel, oca_name = "LE")
@@ -307,7 +307,7 @@ others are cancelled.
 
 The same is true for price type exits --- orders will be placed once their
 conditions are met (i.e. an entry order with the respective ID is
-filled). 
+filled).
 
 Example::
 
@@ -337,9 +337,9 @@ example::
 
     //@version=4
     strategy("exit Demo", pyramiding=2, overlay=true)
-    strategy.entry("Buy1", strategy.long, 5, 
+    strategy.entry("Buy1", strategy.long, 5,
                    when = strategy.position_size == 0 and year > 2014)
-    strategy.entry("Buy2", strategy.long, 
+    strategy.entry("Buy2", strategy.long,
                    10, stop = strategy.position_avg_price +
                    strategy.position_avg_price*0.1,
                    when = strategy.position_size == 5)
@@ -357,8 +357,8 @@ Another example::
     //@version=4
     strategy("exit Demo", pyramiding=2, overlay=true)
     strategy.entry("Buy1", strategy.long, 5, when = strategy.position_size == 0)
-    strategy.entry("Buy2", strategy.long, 
-                10, stop = strategy.position_avg_price + 
+    strategy.entry("Buy2", strategy.long,
+                10, stop = strategy.position_avg_price +
                 strategy.position_avg_price*0.1,
                 when = strategy.position_size == 5)
     strategy.close("Buy2",when=strategy.position_size == 15)
@@ -386,7 +386,7 @@ OCA groups
 
 It is possible to put orders in 2 different One-Cancells-All (OCA) groups in Pine Script:
 
-`strategy.oca.cancel <https://www.tradingview.com/study-script-reference/v4/#var_strategy{dot}oca{dot}cancel>`__
+`strategy.oca.cancel <https://www.tradingview.com/pine-script-reference/v4/#var_strategy{dot}oca{dot}cancel>`__
    As soon as an order from the group is filled
    (even partially) or cancelled, the other orders from the same group
    get cancelled. One should keep in mind that if order prices are the
@@ -417,7 +417,7 @@ At each tick calculation, firstly all orders with the satisfied
 conditions are executed and only then the orders from the group where an
 order was executed are cancelled.
 
-`strategy.oca.reduce <https://www.tradingview.com/study-script-reference/v4/#var_strategy{dot}oca{dot}reduce>`__
+`strategy.oca.reduce <https://www.tradingview.com/pine-script-reference/v4/#var_strategy{dot}oca{dot}reduce>`__
    This group type allows multiple orders
    within the group to be filled. As one of the orders within the group
    starts to be filled, the size of other orders is reduced by the
@@ -427,7 +427,7 @@ order was executed are cancelled.
    filled contracts amount, thus protecting the rest of the open
    position.
 
-`strategy.oca.none <https://www.tradingview.com/study-script-reference/v4/#var_strategy{dot}oca{dot}none>`__
+`strategy.oca.none <https://www.tradingview.com/pine-script-reference/v4/#var_strategy{dot}oca{dot}none>`__
    The order is placed outside of the group
    (default value for the ``strategy.order`` and ``strategy.entry`` functions).
 

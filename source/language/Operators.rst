@@ -4,7 +4,7 @@ Operators
 .. contents:: :local:
     :depth: 2
 
-Arithmetic operators 
+Arithmetic operators
 --------------------
 
 There are five arithmetic operators in Pine Script:
@@ -30,7 +30,7 @@ also have the type *float*. If both operands are of type *integer*, then the
 result will also have the type *integer*.
 
 Footnote: if at least one operand is ``na`` then the result is also
-``na``. 
+``na``.
 
 Comparison operators
 --------------------
@@ -110,7 +110,7 @@ operand the result will be ``false``, and vice versa.
 .. _ternary_operator:
 
 ``?:`` conditional operator and the ``iff`` function
---------------------------------------------
+----------------------------------------------------
 
 The ``?:`` `conditional ternary
 operator <https://www.tradingview.com/pine-script-reference/v4/#op_{question}{colon}>`__
@@ -136,14 +136,14 @@ if this is ``true``, then ``green`` will be the result. If it is
 ``false``, then ``ismonthly`` is calculated. If it is ``true``, then ``blue``
 will be the result, otherwise ``na`` will be the result.
 
-For those who find using the ``?:`` operator syntax inconvenient, 
-there is an alternative: the built-in ``iff`` function. 
+For those who find using the ``?:`` operator syntax inconvenient,
+there is an alternative: the built-in ``iff`` function.
 The function has the following signature::
 
     iff(condition, result1, result2)
 
 The function acts identically to the ``?:`` operator, i.e., if the
-condition is ``true`` then it returns ``result1``, otherwise ``result2``. 
+condition is ``true`` then it returns ``result1``, otherwise ``result2``.
 This is the equivalent of the previous example using ``iff``::
 
     iff(isintraday, red, iff(isdaily, green,
@@ -152,11 +152,11 @@ This is the equivalent of the previous example using ``iff``::
 .. _history_referencing_operator:
 
 History reference operator ``[]``
------------------------------
+---------------------------------
 
 It is possible to refer to the historical values of any variable of the
 *series* type with the ``[]`` operator (*historical* values are the values for the previous bars).
-Let's assume we have the variable ``close``, 
+Let's assume we have the variable ``close``,
 containing 10 values corresponding to a chart with 10 bars:
 
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -183,8 +183,8 @@ tail. ``na`` means that the numerical value based on the given index is
 absent (*not available*). The values to the right, which do not have enough space to be
 placed in a vector of 10 elements, are simply removed. The
 value from the vector's head is *popped*. In the given example, the index
-of the current bar is equal to 9. The value of the ``close[1]`` vector on the current bar will be equal 
-to the previous value of the initial ``close`` vector. 
+of the current bar is equal to 9. The value of the ``close[1]`` vector on the current bar will be equal
+to the previous value of the initial ``close`` vector.
 The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
 
 So the ``[]`` operator can be thought of as a history-referencing
@@ -213,20 +213,20 @@ accomplished using the ``offset`` parameter in the ``plot`` annotation, which
 supports both positive and negative values. Note though that it is a
 visual shift., i.e., it will be applied after all calculations.
 Further details on ``plot`` and its parameters can be found
-`here <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
+`here <https://www.tradingview.com/pine-script-reference/v4/#fun_plot>`__.
 
 There is another important consideration when using the ``[]`` operator in
 Pine. The script executes a calculation on each bar,
-beginning from the earliest bar until the last. 
+beginning from the earliest bar until the last.
 As seen in the table, ``close[3]`` has ``na`` values on the
 first three bars. ``na`` represents a value which is not a number and
-using it in any math expression will produce a result that is also ``na`` (similar 
+using it in any math expression will produce a result that is also ``na`` (similar
 to `NaN <https://en.wikipedia.org/wiki/NaN>`__),
-which in some cases can ripple through results all the way to the realtime bar. 
+which in some cases can ripple through results all the way to the realtime bar.
 Your code must provide for handling the special cases in early history
 when expressions may result in ``na`` values. This can be accomplished using the
-`na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
-`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__ functions.
+`na <https://www.tradingview.com/pine-script-reference/v4/#fun_na>`__ and
+`nz <https://www.tradingview.com/pine-script-reference/v4/#fun_nz>`__ functions.
 
 Operator precedence
 ---------------------
@@ -260,5 +260,5 @@ of operators sorted by decreasing precedence:
 If in one expression there are several operators with the same precedence,
 then they are calculated left to right.
 
-If the expression must be calculated in a different order than precedence would dictate, 
+If the expression must be calculated in a different order than precedence would dictate,
 then parts of the expression can be grouped together with parentheses.

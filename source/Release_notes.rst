@@ -11,7 +11,7 @@ Pine version 4 (June 2019)
 
 * Support for drawing objects. Added *label* and *line* drawings
 * ``var`` keyword for one time variable initialization
-* Type system improvements: 
+* Type system improvements:
 
   * *series string* data type
   * functions for explicit type casting
@@ -23,15 +23,15 @@ Pine version 4 (June 2019)
 * Pine Script documentation versioning
 
 
-Pine version 3 (17 May 2017) 
+Pine version 3 (17 May 2017)
 ----------------------------
 
 Added `compile-time constants <https://blog.tradingview.com/en/possibilities-compile-time-constants-4127/>`__.
-Pine Script used to have 3 types of constants --- 
-literal, non-literal and 
+Pine Script used to have 3 types of constants ---
+literal, non-literal and
 serial. Now there's one more, but let's look at existing ones first.
 
-Some functions (``input``, ``color``) could only accept literals as 
+Some functions (``input``, ``color``) could only accept literals as
 arguments. To make it more convenient, we added a
 new type of constants that can be calculated during compilation. In
 addition to literals, they include mathematical expressions that use
@@ -46,7 +46,7 @@ argument will now accept compilation-time constants as well.
 Pine version 3 (26 Apr 2017)
 ----------------------------
 
-Added `string input with options <https://blog.tradingview.com/en/several-new-features-added-pine-scripting-language-3933/>`__. 
+Added `string input with options <https://blog.tradingview.com/en/several-new-features-added-pine-scripting-language-3933/>`__.
 Some built-in indicators have a setting that lets you choose several
 options. The same is possible in Pine Script now. For example::
 
@@ -130,23 +130,23 @@ create an incorrect backtesting strategy::
 
 However, we believe that this type of behavior of the security function
 could be useful when it's being used in studies. For instance,
-`ChrisMoody <https://www.tradingview.com/u/ChrisMoody/>`__ 
-uses this effect in a popular indicator called 
+`ChrisMoody <https://www.tradingview.com/u/ChrisMoody/>`__
+uses this effect in a popular indicator called
 `CM_Pivot Points_M-W-D-4H-1H_Filtered <https://www.tradingview.com/script/kqKEuQpn-CM-Pivot-Points-M-W-D-4H-1H-Filtered/>`__
-(over 3000 likes) that is used to create pivot lines. Other examples include: 
+(over 3000 likes) that is used to create pivot lines. Other examples include:
 `Open Close Daily Line <https://www.tradingview.com/script/qDvoNB8f-Open-Close-Daily-Line/>`__,
 `Time Frame Superimpose <https://www.tradingview.com/script/QCvh8Cyx-Time-Frame-Superimpose/>`__,
-as well as the 
+as well as the
 `Get Satisfaction comment <https://getsatisfaction.com/tradingview/topics/strategies-and-indicators-are-repainting#reply_18341804>`__.
 We decided that the old behavior will remain available only when it's explicitly indicated.
 
 By default, in Pine Script version 3, the ``security`` function will NOT return future data (in contrast to version 2).
 We also added the new ``lookahead`` parameter with two values:
-`barmerge.lookahead_off <https://www.tradingview.com/study-script-reference/#var_barmerge.lookahead_off>`__
+`barmerge.lookahead_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge.lookahead_off>`__
 and
-`barmerge.lookahead_on <https://www.tradingview.com/study-script-reference/#var_barmerge.lookahead_on>`__
+`barmerge.lookahead_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge.lookahead_on>`__
 to switch between the new and old behavior of the
-`security <https://www.tradingview.com/study-script-reference/#fun_security>`__
+`security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__
 function. Detailed description of this parameter can be found in the section :ref:`barmerge_gaps_and_lookahead`.
 
 Other changes
