@@ -58,7 +58,7 @@ The resolution of the main chart's symbol is stored in the
 `timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__
 built-in variable.
 
-Using the ``security`` function, users can view a 1min chart while
+With the ``security`` function, users can view a 1min chart while
 displaying an SMA (or any other expression) from any other resolution
 (i.e., daily, weekly, monthly)::
 
