@@ -52,7 +52,7 @@ variable directly::
 Note that we use an additional fourth parameter with ``security``: ``gaps=barmerge.gaps_on``,
 which instructs the function not to use previous values to fill slots where data is absent. 
 This means we will get empty areas during extended hours.
-To be able to see this on the chart, we also had to use a special plot
+To be able to see this on the chart, we also need to use a special plot
 style (``style=plot.style_linebr``), the *Line With Breaks* style.
 
 You may plot Heikin-Ashi bars from a script so they look exactly like a 
