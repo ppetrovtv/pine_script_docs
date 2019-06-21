@@ -18,7 +18,6 @@ Let's look at the implementation of the
 `MACD <https://www.tradingview.com/wiki/MACD>`__ indicator in Pine:
 
 .. code-block:: pine
-    :linenos:
 
     //@version=4
     study("MACD")
