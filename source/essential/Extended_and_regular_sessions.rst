@@ -24,7 +24,7 @@ Used this way, the ``security`` function will return data for the regular sessio
 
 If you want the ``security`` call to return extended session data, you
 must first use the `tickerid <https://www.tradingview.com/study-script-reference/#fun_tickerid>`__ function
-to first build the first argument of the ``security`` call::
+to build ``security`` call's first argument::
 
     //@version=4
     study("Example 2: Extended Session Data")
