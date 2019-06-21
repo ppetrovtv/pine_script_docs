@@ -1,15 +1,14 @@
-Context switching, the security function
-============================================
+Context switching: the "security" function
+==========================================
 
 .. contents:: :local:
     :depth: 2
 
-The function ``security`` lets the user to request data from additional
-symbols and resolutions, other than the ones to which the indicator is
-applied.
+The ``security`` function enables scripts to request data from 
+symbols and/or resolutions other than the ones a script is running on.
 
-Detailed description
---------------------
+"security" function
+-------------------
 
 We will assume that we are applying a script to the chart IBM,1. The
 following script will display the *close* price of the IBM symbol but on a 15
