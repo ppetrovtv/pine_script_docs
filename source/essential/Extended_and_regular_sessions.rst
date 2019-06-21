@@ -13,7 +13,7 @@ Pine scripts may request additional session data using the
 
 The ``security`` function can be called with a symbol name 
 (*"EXCHANGE_PREFIX:TICKER"*, e.g. "BATS:AAPL") as its first argument. 
-In such cases, data for the regular session will be returned. For example::
+Used this way, the ``security`` function will return data for the regular session. For example::
 
     //@version=4
     study("Example 1: Regular Session Data")
