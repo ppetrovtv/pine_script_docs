@@ -47,11 +47,11 @@ number of minutes. The lowest resolution is *one minute* and is indicated by the
 literal ``"1"``. It is possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
 ``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
 following lines signify one hour, two hours and four hours respectively:
-``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is indicated by the
-symbols ``"D"`` or ``"1D"``. It is possible to request any number of days: ``"2D"``,
-``"3D"``, etc. *Weekly* and *monthly* resolutions are set in a similar way: ``"W"``,
-``"1W"``, ``"2W"``, ..., ``"M"``, ``"1M"``, ``"2M"``. ``"M"`` and ``"1M"`` have the same one month
-resolution value. ``"W"`` and ``"1W"`` have the same weekly resolution value. The
+``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is indicated by 
+``"D"`` or ``"1D"``. It is possible to request any number of days: ``"2D"``,
+``"3D"``, etc. *Weekly* and *Monthly* resolutions are set in a similar way: ``"W"``,
+``"1W"``, ``"2W"``, ..., ``"M"``, ``"1M"``, ``"2M"``. ``"M"`` and ``"1M"`` denote the same monthly
+resolution, and ``"W"`` and ``"1W"`` the same weekly resolution. The
 third parameter of the security function can be any arithmetic
 expression or a function call, which will be calculated in the context of the chosen series.
 The resolution of the main chart's symbol is stored in the  
