@@ -56,10 +56,10 @@ to the trade session of the IBM symbol. These are examples of trade session
 specifications: 
 
 0000-0000
-   A complete 24 hours with the session beginning at midnight. 
+   A complete 24-hour session beginning at midnight. 
 
 1700-1700
-   A complete 24 hours with the session beginning at 17:00.
+   A complete 24-hour session beginning at 17:00.
 
 0900-1600,1700-2000
    A session that begins at 9:00, breaks from 16:00 to 17:00 and continues until 20:00.
