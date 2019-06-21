@@ -96,7 +96,7 @@ session. Hypothetical session specifications can be used to highlight
 other bars of a data series.
 
 Pine provides an overloaded version of the ``time`` function which does not require 
-custom session definition. This version of the function uses the
+custom session information. This version of the function uses the
 regular session of a symbol. For example, it is possible to
 highlight the beginning of each half-hour bar on a minute chart in
 the following way::
