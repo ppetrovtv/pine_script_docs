@@ -4,9 +4,9 @@ Indicator repainting
 Historical data does not include records of intra-bar movements of price;
 only open, high, low and close (OHLC). This leads to a script sometimes 
 working differently on historical data and in real-time, where only the open price
-does not change and where price will typically move many times before the 
+is known and where price will typically move many times before the 
 real-time bar's final high, low and close values are
-known after the real-time bar closes.
+set after the real-time bar closes.
 
 If we add a script on a chart,
 wait until it calculates on a number of real-time bars and then reload the page, 
