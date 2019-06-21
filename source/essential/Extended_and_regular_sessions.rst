@@ -35,7 +35,9 @@ to build ``security`` call's first argument::
 .. image:: images/Pine_Extended_Session_Data.png
 
 
-Notice that the previous chart's gaps in the script's plot are now filled.
+Notice that the previous chart's gaps in the script's plot are now filled. Also keep in mind
+that the background coloring on the chart is not produced by the our example scripts;  
+it is due to the chart's settings showing extended hours.
 
 The first argument of the ``tickerid`` function is an exchange prefix ("BATS") and the
 second argument is a ticker ("AAPL"). The third argument specifies the type
