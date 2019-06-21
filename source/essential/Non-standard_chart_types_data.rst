@@ -4,26 +4,28 @@ Non-standard chart types data
 .. contents:: :local:
     :depth: 2
 
-There are additional functions that you may apply to ``tickerid``
-function return value. They are ``heikinashi``, ``renko``,
+These functions allow scripts to fetch information from non-standard
+bars or chart types, regardless of the type of chart the script is running on. 
+They are ``heikinashi``, ``renko``,
 ``linebreak``, ``kagi`` and ``pointfigure``. All of them work in the
-same manner, they just create a special ticker identifier that could be
-passed later as ``security`` function first argument.
+same manner; they create a special ticker identifier to be used as 
+the first argument in a ``security`` function call.
 
 heikinashi function
 -------------------
 
-*Heikin-Ashi* means *average bar* in Japanese. Open, high, low and close
-prices of HA candlesticks are not actual prices, they are results from
-avergaing values of the previous bar, which helps eliminate random
-volatility.
+*Heikin-Ashi* means *average bar* in Japanese. The open, high, low and close
+prices of Heikin-Ashi candlesticks are synthetic; they are not actual prices. 
+Each value is calculated using combinations of normal OHLC 
+values from the current and previous bar. The calculations used make HA bars
+less noisy than normal candlesticks.
 
-Pine function `heikinashi <https://www.tradingview.com/study-script-reference/v4/#fun_heikinashi>`__ 
-creates a special ticker identifier for
-requesting Heikin-Ashi data with ``security`` function.
+The `heikinashi <https://www.tradingview.com/study-script-reference/v4/#fun_heikinashi>`__ 
+function creates a special ticker identifier for
+requesting Heikin-Ashi data with the ``security`` function.
 
 This script requests low prices of Heikin-Ashi bars and plots them on
-top of usual OHLC bars::
+top of the usual candlesticks::
 
     //@version=4
     study("Example 5", overlay=true)
@@ -33,12 +35,12 @@ top of usual OHLC bars::
 
 .. image:: images/Pine_Heikinashi.png
 
-Note that low prices of Heikin-Ashi bars are different from usual bars
+Note that the low prices of Heikin-Ashi bars are different from usual bars
 low prices.
 
-You may want to switch off extended hours data in *Example 5*. In this
-case we should use ``tickerid`` function instead of ``syminfo.tickerid``
-variable::
+If you wanted to switch off extended hours data in *Example 5*, you would 
+need to use the ``tickerid`` function first, instead of using the ``syminfo.tickerid``
+variable directly::
 
     //@version=4
     study("Example 6", overlay=true)
@@ -47,14 +49,14 @@ variable::
     ha_low = security(ha_t, timeframe.period, low, gaps=barmerge.gaps_on)
     plot(ha_low, style=plot.style_linebr)
 
-Note that we pass additional fourth parameter to security (``gaps=barmerge.gaps_on``),
-and it means that points where data is absent, will not be filled up
-with previous values. So we'd get empty areas during the extended hours.
-To be able to see this on chart we also had to specify special plot
-style (``style=plot.style_linebr`` --- *Line With Breaks* style).
+Note that we use an additional fourth parameter with ``security``: ``gaps=barmerge.gaps_on``,
+which instructs the function not to use previous values to fill slots where data is absent. 
+This means we will get empty areas during extended hours.
+To be able to see this on the chart, we also had to use a special plot
+style (``style=plot.style_linebr``), the *Line With Breaks* style.
 
-You may plot Heikin-Ashi bars exactly as they look from Pine script.
-Here is the source code::
+You may plot Heikin-Ashi bars from a script so they look exactly like a 
+chart's Heikin-Ashi bars::
 
     //@version=4
     study("Example 6.1")
@@ -68,9 +70,9 @@ Here is the source code::
 
 .. image:: images/Pine_Heikinashi_2.png
 
-Read more about `plotcandle <https://www.tradingview.com/study-script-reference/v4/#fun_plotcandle>`__ 
+You will find more information on the `plotcandle <https://www.tradingview.com/study-script-reference/v4/#fun_plotcandle>`__ 
 and `plotbar <https://www.tradingview.com/study-script-reference/v4/#fun_plotbar>`__ functions in 
-section :doc:`/annotations/Custom_OHLC_bars_and_candles`.
+the :doc:`/annotations/Custom_OHLC_bars_and_candles` section.
 
 renko function
 --------------
