@@ -232,6 +232,6 @@ On the other hand, the blue line at the same bar has a value of 1.13121 which co
 
 .. rubric:: Footnotes
 
-.. [#minutes] Actually the highest supported minute resolution is "1440" (which is a number of minutes in 24 hours).
+.. [#minutes] Actually the highest supported minute resolution is "1440" (which is the number of minutes in 24 hours).
 
 .. [#hours] Requesting data of ``"1h"`` or ``"1H"`` resolution would result in an error. Use ``"60"`` instead.
