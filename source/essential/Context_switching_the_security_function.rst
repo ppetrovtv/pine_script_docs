@@ -37,7 +37,7 @@ built-in variables. ``syminfo.ticker`` contains the value of the
 symbol name without its exchange prefix, for example ``"MSFT"``. 
 ``syminfo.tickerid`` contains the value of the symbol name with its exchange prefix, for example,
 ``"BATS:MSFT"`` or ``"NASDAQ:MSFT"``. It is recommended to use ``syminfo.tickerid`` to avoid
-ambiguity in the origin of the values returned by ``security``.
+ambiguity in the values returned by ``security``.
 
 .. TODO write about syminfo.tickerid in extended format and function tickerid
 
