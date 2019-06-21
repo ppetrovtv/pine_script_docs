@@ -77,7 +77,7 @@ the :doc:`/annotations/Custom_OHLC_bars_and_candles` section.
 renko function
 --------------
 
-*Renko* bars only plots price movements, without taking time or
+*Renko* bars only plot price movements, without taking time or
 volume into consideration. They are constructed from ticks and looks like
 bricks stacked in adjacent columns [#ticks]_. A new brick is drawn after the price
 passes the top or bottom of previously predefined amount.
