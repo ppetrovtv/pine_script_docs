@@ -12,7 +12,7 @@ Pine scripts may request additional session data using the
 `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__ function.
 
 The ``security`` function can be called with a symbol name 
-(*"EXCHANGE_PREFIX:TICKER"*, e.g. "BATS:AAPL") as its first argument. 
+(*"EXCHANGE_PREFIX:TICKER"*, e.g., "BATS:AAPL") as its first argument. 
 Used this way, the ``security`` function will return data for the regular session. For example::
 
     //@version=4
