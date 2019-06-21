@@ -46,7 +46,7 @@ also a string. All intraday resolutions are defined using a
 number of minutes. The lowest resolution is *one minute* and is indicated by the
 literal ``"1"``. It is possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
 ``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
-following lines signify an hour, two hours and four hours respectively:
+following lines signify one hour, two hours and four hours respectively:
 ``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is set by the
 symbols ``"D"`` or ``"1D"``. It's possible to request any number of days: ``"2D"``,
 ``"3D"``, etc. *Weekly* and *monthly* resolutions are set in a similar way: ``"W"``,
