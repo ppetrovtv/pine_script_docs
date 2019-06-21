@@ -42,7 +42,7 @@ ambiguity in the values returned by ``security``.
 .. TODO write about syminfo.tickerid in extended format and function tickerid
 
 The second argument of the ``security`` function, ``resolution`` (i.e., the *timeframe*), is
-also a string. Any intraday resolution is set by specifying a
+also a string. All intraday resolutions are defined using a
 number of minutes. The lowest resolution is *one minute* which is indicated by the
 literal ``"1"``. It is possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
 ``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
