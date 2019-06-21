@@ -46,32 +46,31 @@ We can see repainting in the following cases:
    historical data, regardless of ``lookahead`` parameter's value (see
    :ref:`understanding_lookahead`).
 
-#. Using ``security`` for requesting data with resolution *lower* than the resolution of chart main symbol 
-   (this case in more detail :ref:`here <requesting_data_of_a_lower_timeframe>`).
-   if ``lookahead=false``, there will be repainting. When ``lookahead=true``,
-   repainting is less possible. It still could happen, when 1 and 5 minute updates 
+#. Using ``security`` for requesting data with resolution *lower* than the resolution of chart's main symbol 
+   (more information :ref:`here <requesting_data_of_a_lower_timeframe>`).
+   If ``lookahead=false``, repainting will occur. When ``lookahead=true``,
+   repainting is less probable. It may still happen when 1 and 5 minute updates 
    outrun each other.
 
-#. All the scripts which calculation results depend on a *starting point*.
-   Intraday data gets aligned to the beginning of the week, month or a
+#. All scripts which calculations depending on a *starting point*.
+   Intraday data gets aligned to the beginning of the week, month or
    year, depending on the resolution. Due to this, the results produced by
-   such scripts can differ from time to time. Here are the examples of
-   scripts relying on the starting point:
+   such scripts can differ from time to time. These are cases where
+   scripts will be relying on a starting point:
 
-   * `valuewhen <https://www.tradingview.com/study-script-reference/v4/#fun_valuewhen>`__,
-     `barssince <https://www.tradingview.com/study-script-reference/v4/#fun_barssince>`__,
+   * when they use `valuewhen <https://www.tradingview.com/study-script-reference/v4/#fun_valuewhen>`__,
+     `barssince <https://www.tradingview.com/study-script-reference/v4/#fun_barssince>`__ or
      `ema <https://www.tradingview.com/study-script-reference/v4/#fun_ema>`__
-     functions (peculiarities of the algorithm).
-   * any backtesting strategy (regardless of parameter ``calc_on_every_tick``).
+     functions (due to peculiarities in their algorithm).
+   * any backtesting strategy (regardless of how the ``calc_on_every_tick`` parameter is defined).
 
-   There is a dependency between the alignment of a starting point and
-   resolution:
+   There is a dependency between the resolution and the alignment of a starting point:
 
    * 1--14 minutes --- aligns to the beginning of a week.
    * 15--29 minutes --- aligns to the beginning of a month.
-   * from 30 minutes and higher --- to the beginning of a year.
+   * from 30 minutes and higher --- aligns to the beginning of a year.
 
-   The following limitations of history length are taken into account when
+   The following limitations of history lengths are taken into account when
    processing the data:
 
    * 10000 historical bars for all Pro plans.
@@ -90,13 +89,4 @@ We can see repainting in the following cases:
    * `timenow <https://www.tradingview.com/study-script-reference/v4/#var_timenow>`__;
    * `bar_index <https://www.tradingview.com/study-script-reference/v4/#var_bar_index>`__.
 
-The "repainting" issue usually occurs when using tools above --- since an
-indicator is calculated based on real-time data first. After reloading
-the chart, an indicator is REcalculated using the data that had become
-a historical data, while still using the same time period. The appearance of
-the indicator changes.
 
-In this case, the "repainting" effect is not a bug --- it's a result of
-applying certain language tools with different calculation methods. This
-needs to be understood and taken into consideration while using
-Pine Script.
