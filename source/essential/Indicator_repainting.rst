@@ -46,7 +46,7 @@ We can see repainting in the following cases:
    historical data, regardless of ``lookahead`` parameter's value (see
    :ref:`understanding_lookahead`).
 
-#. Using ``security`` for requesting data with resolution *lower* than the resolution of chart's main symbol 
+#. Using ``security`` for requesting data from a resolution *lower* than the resolution of chart's main symbol 
    (more information :ref:`here <requesting_data_of_a_lower_timeframe>`).
    If ``lookahead=false``, repainting will occur. When ``lookahead=true``,
    repainting is less probable. It may still happen when 1 and 5 minute updates 
