@@ -42,7 +42,7 @@ We can see repainting in the following cases:
     plot(c, color=color.red)
 
    This study will calculate differently on real-time and
-   historical data, regardless of using the ``lookahead`` parameter's value (see
+   historical data, regardless of ``lookahead`` parameter's value (see
    :ref:`understanding_lookahead`).
 
 #. Using ``security`` for requesting data with resolution *lower* than the resolution of chart main symbol 
