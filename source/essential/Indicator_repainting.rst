@@ -31,8 +31,7 @@ We can see repainting in the following cases:
 
 #. Strategies using ``calc_on_every_tick=true``.
    A strategy with parameter ``calc_on_every_tick = false`` may also be
-   prone to repainting too, but to a lesser degree, as all strategies
-   depend on a starting point.
+   prone to repainting, but to a lesser degree.
 
 #. Using ``security`` for requesting data from a resolution *higher* than the resolution of the chart's main symbol::
 
