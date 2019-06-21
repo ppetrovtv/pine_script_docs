@@ -48,8 +48,8 @@ is colored because of the chart's settings; not because of the script.
 The ``time`` function returns the time of the
 bar's start in milliseconds UNIX time, or ``na`` if the bar is located outside
 the given trade session (09:30--16:00 in our example). The ``time`` function accepts
-two arguments: the ``resolution`` used to determine the bar 
-timestamps and ``session``, the session specification in the form of
+two arguments: the ``resolution`` used to determine the timestamp of bars 
+and ``session``, the session specification in the form of
 a string containing the beginning and end of the trade
 session in the exchange's timezone. The string "0930-1600" corresponds
 to the trade session of the IBM symbol. These are examples of trade session
