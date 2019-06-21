@@ -17,7 +17,7 @@ heikinashi function
 *Heikin-Ashi* means *average bar* in Japanese. The open, high, low and close
 prices of Heikin-Ashi candlesticks are synthetic; they are not actual prices. 
 Each value is calculated using combinations of normal OHLC 
-values from the current and previous bar. The calculations used make HA bars
+values from the current and previous bar. The calculations used make Heikin-Ashi bars
 less noisy than normal candlesticks.
 
 The `heikinashi <https://www.tradingview.com/study-script-reference/v4/#fun_heikinashi>`__ 
