@@ -343,7 +343,7 @@ There is yet another way to achieve the same objective as in the two previous sc
     label.set_x(l, bar_index)
 
 Once again, the use of new :ref:`var keyword <variable_declaration>` is essential. It is what allows the ``label.new`` call to be
-executed only once, on the very first history bar.
+executed only once, on the very first historical bar.
 
 
 Examples of classic indicators
@@ -574,7 +574,7 @@ max_bars_back of time
 ^^^^^^^^^^^^^^^^^^^^^
 
 Use of ``barstate.isrealtime`` in combination with drawings may sometimes produce unexpected results.
-This code's intention, for example, is to ignore all history bars and create a label drawing on the *realtime* bar::
+This code's intention, for example, is to ignore all historical bars and create a label drawing on the *realtime* bar::
 
     //@version=4
     study("My Script", overlay=true)
@@ -583,17 +583,17 @@ This code's intention, for example, is to ignore all history bars and create a l
         label.new(bar_index[10], na, text="Label", yloc=yloc.abovebar)
 
 It will, however, fail at runtime. The reason for the error is that Pine cannot determine the buffer size
-for history values of the ``time`` plot, even though the ``time`` built-in variable isn't mentioned in the code.
+for historical values of the ``time`` plot, even though the ``time`` built-in variable isn't mentioned in the code.
 This is due to the fact that the built-in variable ``bar_index`` uses the ``time`` series in its inner workings.
 Accessing the value of the bar index 10 bars back requires that the history buffer size of the ``time`` series
 be of size 10 or more.
 
-In Pine, there is a mechanism that automaticaly detects the required history buffer size for most cases.
-Autodetection works by letting Pine code access history values any number of bars back for a limited duration.
+In Pine, there is a mechanism that automaticaly detects the required historical buffer size for most cases.
+Autodetection works by letting Pine code access historical values any number of bars back for a limited duration.
 In this script's case, the ``if barstate.isrealtime`` condition prevents any such accesses to occur,
-so the required history buffer size cannot be inferred and the code fails.
+so the required historical buffer size cannot be inferred and the code fails.
 
-The solution to this conundrum is to use the `max_bars_back <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the history buffer size for the ``time`` series::
+The solution to this conundrum is to use the `max_bars_back <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ function to explicitly set the historical buffer size for the ``time`` series::
 
     //@version=4
     study("My Script", overlay=true)
