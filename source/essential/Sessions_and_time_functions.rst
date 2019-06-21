@@ -74,7 +74,7 @@ specifications:
    of the week are days off).
 
 24x7
-   A complete 24 hours with session beginning at 00:00.
+   A complete 24-hour session beginning at 00:00 every day.
 
 0000-0000:1234567
    Same as "24x7".
