@@ -40,8 +40,8 @@ The second script is "Session bars"::
     t = time(timeframe.period, "0930-1600")
     plot(na(t) ? 0 : 1)
 
-This shows how the user can distinguish between session bars and bars
-that belong to extended hours by using the built-in 
+This shows how the user can distinguish between regular session and extended hours bars
+by using the built-in 
 `time <https://www.tradingview.com/study-script-reference/v4/#fun_time>`__ 
 function rather than the ``time`` variable. The background behind these bars 
 is colored because of the chart's settings. The ``time`` function returns the time of the
