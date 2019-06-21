@@ -109,28 +109,25 @@ more <https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
 Barmerge gaps and lookahead
 ---------------------------
 
-There are two switches that define how requested data will be mapped to the
-current timeframe.
+There are two switches that define how data requested with ``security`` 
+will be mapped to the current timeframe.
 
-First one --- ``gaps`` --- controls gaps in data. Default value is 
+The first one, ``gaps``, controls gaps in data. With the default value  
 `barmerge.gaps_off <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_off>`__, data is
-merged continiously (without ``na``-gaps). All the gaps (if any) are filled with the previous nearest non-``na`` value.
-If `barmerge.gaps_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_on>`__ then data will
-be merged possibly with gaps (``na`` values).
+merged continuously (without ``na`` gaps). All gaps, if any, are filled with the previous nearest non-``na`` value.
+If `barmerge.gaps_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_on>`__ 
+is used, then merged data may contain gaps in the form of ``na`` values.
 
-Second one --- ``lookahead`` --- was added in :ref:`Pine Script version
+The second switch, ``lookahead``, was added in :ref:`Pine Script version
 3 <release_notes_v3>`. The parameter has two possible values:
 `barmerge.lookahead_off <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
 and
 `barmerge.lookahead_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}lookahead_on>`__
-to switch between the new (version 3) and old behavior (version 2 and 1)
-of the
-`security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__
-function.
+to respectively switch between the new, default behavior of 
+`security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__,
+and the old behavior dating from Pine v1 and v2.
 
-Here is an example that
-shows the behavioral difference of the security function on a 5 minute
-chart::
+This example shows the difference on a 5min chart::
 
     //@version=4
     study('My Script', overlay=true)
@@ -143,33 +140,34 @@ chart::
 
 The green line on the chart is the *low* price of an hourly bar that is
 requested with *lookahead on*. It's the old behavior of the security
-function, implemented in Pine Script v2. The green line based on
+function. The green line based on
 historical data is displayed at the price level of an hourly *low* right
-after a new hourly bar is created (dotted blue vertical lines). The red
-line is a *low* price of an hourly bar that is requested with *lookahead
+after a new hourly bar is created (dotted blue vertical lines).
+
+The red line is a *low* price of an hourly bar that is requested with *lookahead
 off*. In this case the requested *low* price of an hourly historical bar
 will be given only on the last minute bar of the requested hour, when an
-hourly bar's *low* won't return future data. The fuchsia dotted line
-represents the beginning of real-time data. You can see that
-``barmerge.lookahead_on`` and ``barmerge.lookahead_off`` based on
-real-time data behaves the same way according to
-``barmerge.lookahead_off``.
+hourly bar's *low* won't return future data.
+
+The fuchsia dotted line represents the beginning of real-time data. You can see that
+``barmerge.lookahead_on`` and ``barmerge.lookahead_off`` behave the same way
+on real-time data, i.e., as ``barmerge.lookahead_off`` does.
 
 .. _understanding_lookahead:
 
 Understanding lookahead
 -----------------------
 
-There are many published scripts with the following lines::
+There are many published scripts using the following code::
 
     //@version=2
     //...
     a = security(tickerid, 'D', close[1]) // It's barmerge.lookahead_on, because version is 2
 
-The expression in security (``close[1]``) is a value of ``close`` of the
-previous day, which is why the construction **doesn't use future data**.
+In this case the ``close[1]`` expression fetches the ``close`` of the
+previous day, so the construction **does not use future data**.
 
-In Pine Script version 3 (or later) we can rewrite this in two different ways, using
+In Pine v3 or later, we can rewrite this in two different ways, using
 ``barmerge.lookahead_on`` or ``barmerge.lookahead_off``. If you use
 ``barmerge.lookahead_on``, then it's quite simple::
 
@@ -177,10 +175,10 @@ In Pine Script version 3 (or later) we can rewrite this in two different ways, u
     //...
     a = security(syminfo.tickerid, 'D', close[1], lookahead=barmerge.lookahead_on)
 
-Because original construction doesn't use data from future it is
+Because the original construction doesn't use future data, it is
 possible to rewrite it using ``barmerge.lookahead_off``. If you use
-``barmerge.lookahead_off``, the script becomes more complex, but gives
-you an understanding of how the lookahead parameter works::
+``barmerge.lookahead_off``, the script is more complex but shows
+how the lookahead parameter works::
 
     //@version=4
     //...
@@ -190,7 +188,7 @@ you an understanding of how the lookahead parameter works::
     a = a0[indexCurrTF]
 
 When an indicator is based on historical data (i.e.,
-``barstate.isrealtime`` equals ``false``), we take the current *close* of
+``barstate.isrealtime`` is ``false``), we take the current *close* of
 the daily resolution and shift the result of ``security`` function call one bar to the
 right in the current resolution. When an indicator is calculated on
 real-time data, we take the *close* of the previous day without shifting the
@@ -204,14 +202,13 @@ Requesting data of a lower timeframe
 ------------------------------------
 
 ``security`` function was designed to request data of a timeframe *higher*
-than the current chart timeframe. For example, if you have a 60 minute chart,
-you can request 240, D, W (or any higher timeframe) and plot the
-results.
+than the current chart timeframe. On a 60min chart,
+this would mean requesting 240, D, W, or any higher timeframe.
 
-It's not recommended to request data of a timeframe *lower* that the current chart timeframe
-(for example 1 minute data from 5 minute chart). The main problem with such a case is that 
+It is not recommended to request data of a timeframe *lower* that the current chart timeframe, 
+for example 1min data from a 5min chart. The main problem with such a case is that 
 some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a 5 minute 
-chart and not to break the time axis. So the ``security`` behaviour could be rather weird. 
+chart and not to break the time axis. In such cases the behavior of ``security`` can be rather unexpected. 
 The next example illustrates this::
     
     // Add this script on a "5" minute chart
@@ -224,12 +221,12 @@ The next example illustrates this::
 
 .. image:: images/SecurityLowerTF_LookaheadOnOff.png
 
-This study plots two lines which correspond to different values of ``lookahead`` parameter.
-Red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``, blue line --- with ``lookahead=barmerge.lookahead_off``.
-Let us look at the 5 minute bar that starts at 07:50. The red line at this bar has value of 1.13151 which corresponds to 
-a value of *the first of the five 1 minute bars* that fall into the time range 07:50--07:54. 
-On the other hand, the blue line at the same bar has value of 1.13121 which corresponds to 
-*the last of the five 1 minute bars* of the same time range.
+This study plots two lines which correspond to different values of the ``lookahead`` parameter.
+The red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``. The blue line with ``lookahead=barmerge.lookahead_off``. Let's look at the 5min bar starting at 07:50. 
+The red line at this bar has a value of 1.13151 which corresponds to the
+value of *the first of the five 1min bars* that fall into the time range 07:50--07:54. 
+On the other hand, the blue line at the same bar has a value of 1.13121 which corresponds to 
+*the last of the five 1min bars* of the same time range.
 
 
 
