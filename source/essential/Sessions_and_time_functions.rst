@@ -1,5 +1,5 @@
-Session and time functions
-==========================
+Session and time information
+============================
 
 .. contents:: :local:
     :depth: 2
@@ -8,8 +8,8 @@ The "time" function and variable
 --------------------------------
 
 Pine provides means to work with trade session, time
-and date information. We will review a simple chart, IBM at 30min,
-where 2 scripts are running: "Bar date/time" and "Session bars".
+and date information. On this IBM chart at 30min,
+two scripts are running: "Bar date/time" and "Session bars".
 
 .. image:: images/Chart_time_1.png
 
