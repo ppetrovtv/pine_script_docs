@@ -77,8 +77,8 @@ the :doc:`/annotations/Custom_OHLC_bars_and_candles` section.
 renko function
 --------------
 
-*Renko* chart type only plots price movements, without taking time or
-volume into consideration. It is constructed from ticks and looks like
+*Renko* bars only plots price movements, without taking time or
+volume into consideration. They are constructed from ticks and looks like
 bricks stacked in adjacent columns [#ticks]_. A new brick is drawn after the price
 passes the top or bottom of previously predefined amount.
 
@@ -93,15 +93,15 @@ passes the top or bottom of previously predefined amount.
 .. image:: images/Pine_Renko.png
 
 Please note that you cannot plot Renko bricks from Pine script exactly
-as they look. You can just get a series of numbers that are somewhat
-OHLC values for Renko chart and use them in your algorithms.
+as they look. You can only get a series of numbers similar to 
+OHLC values for Renko bars and use them in your algorithms.
 
-For detailed reference see `renko <https://www.tradingview.com/study-script-reference/v4/#fun_renko>`__.
+For detailed information, see `renko <https://www.tradingview.com/study-script-reference/v4/#fun_renko>`__.
 
 linebreak function
 ------------------
 
-*Line Break* chart type displays a series of vertical boxes that are based on
+The *Line Break* chart type displays a series of vertical boxes that are based on
 price changes [#ticks]_.
 
 ::
@@ -115,19 +115,17 @@ price changes [#ticks]_.
 .. image:: images/Pine_Linebreak.png
 
 Please note that you cannot plot Line Break boxes from Pine script
-exactly as they look. You can just get a series of numbers that are
-somewhat OHLC values for Line Break chart and use them in your
-algorithms.
+exactly as they look. You can only get a series of numbers similar to
+OHLC values for Line Break charts and use them in your algorithms.
 
-For detailed reference see `linebreak <https://www.tradingview.com/study-script-reference/v4/#fun_linebreak>`__.
+For detailed information, see `linebreak <https://www.tradingview.com/study-script-reference/v4/#fun_linebreak>`__.
 
 kagi function
 -------------
 
-*Kagi* chart type looks like a continuous line that changes directions and
-switches from thin to bold. The direction changes when the price changes [#ticks]_
-beyond a predefined amount, and the line switches between thin and bold
-if the last change bypassed the last horizontal line.
+*Kagi* charts look like a continuous line that changes directions. 
+The direction changes when the price changes [#ticks]_
+beyond a predefined amount.
 
 ::
 
@@ -140,10 +138,10 @@ if the last change bypassed the last horizontal line.
 .. image:: images/Pine_Kagi.png
 
 Please note that you cannot plot Kagi lines from Pine script exactly as
-they look. You can just get a series of numbers that are somewhat OHLC
-values for Kagi chart and use them in your algorithms.
+they look. You can only get a series of numbers similar to OHLC
+values for Kagi charts and use them in your algorithms.
 
-For detailed reference see `kagi <https://www.tradingview.com/study-script-reference/v4/#fun_kagi>`__.
+For detailed information, see `kagi <https://www.tradingview.com/study-script-reference/v4/#fun_kagi>`__.
 
 pointfigure function
 --------------------
@@ -153,11 +151,10 @@ taking time into consideration. A column of X's is plotted as the price
 rises --- and O's as the price drops.
 
 Please note that you cannot plot PnF X's and O's from Pine script
-exactly as they look. You can just get a series of numbers that are
-somewhat OHLC values for PnF chart and use them in your algorithms.
-Every column of X's or O's are represented with four numbers, you may
-think of them as some imaginary OHLC PnF values. In Pine script you may
-request and get those numbers and plot them on chart.
+exactly as they look. You can only get a series of numbers that are
+similar to OHLC values for PnF charts and use them in your algorithms.
+Every column of X's or O's is represented with four numbers. You may
+think of them as synthetic OHLC PnF values.
 
 ::
 
@@ -171,10 +168,10 @@ request and get those numbers and plot them on chart.
 
 .. image:: images/Pine_Point_and_Figure.png
 
-For detailed reference see `pointfigure <https://www.tradingview.com/study-script-reference/v4/#fun_pointfigure>`__.
+For detailed information, see `pointfigure <https://www.tradingview.com/study-script-reference/v4/#fun_pointfigure>`__.
 
 
 .. rubric:: Footnotes
 
-.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are built from OHLC candles of a lower timeframe, 
-   which is an approximation of corresponding chart type built from tick data.
+.. [#ticks] On TradingView Renko, Line Break, Kagi and PnF chart types are generated from OHLC values of a lower timeframe. 
+   These chart types thus represent only an approximation of what they would be like if they were generated from tick data.
