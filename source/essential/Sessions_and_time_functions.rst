@@ -14,7 +14,7 @@ where 2 scripts are running: "Bar date/time" and "Session bars".
 .. image:: images/Chart_time_1.png
 
 
-Here is the initial code of the "Bar date/time" script:
+Here is the "Bar date/time" script:
 
 ::
 
@@ -30,10 +30,10 @@ last bar is equal to 1397593800000. This value is the number of
 *milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
 corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC.
 The chart's time gauge in the screenshot shows the time of the last bar
-as 2014-04-15 16:30 (in the exchange timezone, from here the difference
-between this time and UTC is 4 hours).
+as 2014-04-15 16:30 because it has a 4 hour difference between the exchange's timezone, 
+which is the default time returned by the ``time`` function.
 
-The second script, "Session bars"::
+The second script is "Session bars"::
 
     //@version=4
     study("Session bars")
@@ -41,17 +41,17 @@ The second script, "Session bars"::
     plot(na(t) ? 0 : 1)
 
 This shows how the user can distinguish between session bars and bars
-that get into extended hours by using the built-in *function* 
-`time <https://www.tradingview.com/study-script-reference/v4/#fun_time>`__ and
-not the variable ``time`` (the background behind these bars has been
-colored over with grey). The function ``time`` returns the time of the
-bar start in milliseconds UNIX time or ``na`` value if the bar is located outside
-the given trade session (09:30--16:00 in our example). ``time`` accepts
-two arguments, the first is ``resolution``, the bars of which are needed
-to determine their timestamp, and the second --- ``session`` (session specification),
-which is a string that specifies the beginning and end of the trade
-session (in the exchange timezone). The string "0930-1600" corresponds
-to the trade session of IBM symbol. Examples of trade session
+that belong to extended hours by using the built-in 
+`time <https://www.tradingview.com/study-script-reference/v4/#fun_time>`__ 
+function rather than the ``time`` variable. The background behind these bars 
+is colored because of the chart's settings. The ``time`` function returns the time of the
+bar's start in milliseconds UNIX time, or ``na`` if the bar is located outside
+the given trade session (09:30--16:00 in our example). The ``time`` function accepts
+two arguments: the ``resolution`` used to determine the bar 
+timestamps and ``session``, the session specification in the form of
+a string containing the beginning and end of the trade
+session in the exchange's timezone. The string "0930-1600" corresponds
+to the trade session of the IBM symbol. These are examples of trade session
 specifications: 
 
 0000-0000
@@ -85,7 +85,7 @@ specifications:
    same as "0000-0000", Monday to Friday session
    that starts every day at 00:00 and ends at 00:00 of the next day.
 
-1700-1700
+1700-1700:12345
    is an *overnight session*. Monday session starts at
    Sunday, 17:00, and ends at Monday, 17:00. Also, only on
    Monday--Friday.
@@ -94,16 +94,15 @@ specifications:
    is a weird session, that lasts only one minute on
    Mondays (2), and one minute on Fridays (6).
 
-Session specification, which is being passed to the function ``time``,
-is not required to correspond with the real trade session of the symbol
-on the chart. It's possible to pass different "hypothetical" session
-specifications which can be used to highlight some other bars of
-a data series.
+Session information used for the ``time`` function's
+second argument does not need to correspond to the symbol's real trade 
+session. Hypothetical session specifications can be used to highlight 
+other bars of a data series.
 
-There is an overloaded function ``time`` that allows the user to skip
-custom session specification. In this case, internally, it will use a
-regular session specification of a symbol. For example, it's possible to
-highlight the beginning of each half-hour bar on a minute-based chart in
+Pine provides an overloaded version of the ``time`` function which does not require 
+custom session definition. This version of the function uses the
+regular session of a symbol. For example, it is possible to
+highlight the beginning of each half-hour bar on a minute chart in
 the following way::
 
     //@version=4
@@ -116,9 +115,9 @@ the following way::
 .. image:: images/Chart_time_2.png
 
 
-The function ``is_newbar`` is similar to the previous example and can be used
-in many situations. For example, it's essential to display on an
-intraday chart the highs and lows which began at the market's opening::
+The previous example's ``is_newbar`` custom function can be used
+in many situations. Here, we use it to display the market's opening 
+high and low on an intraday chart::
 
     //@version=4
     study("Opening high/low", overlay=true)
@@ -145,15 +144,15 @@ intraday chart the highs and lows which began at the market's opening::
 
 
 Pay attention to the variables ``highTimeFrame`` and ``sessSpec``. They
-have been declared in a special way with the help of the 
-`input <http:////www.tradingview.com/study-script-reference/v4/#fun_input>`__ functions.
+are defined using the `input <http:////www.tradingview.com/study-script-reference/v4/#fun_input>`__ function
+and its ``type`` parameter to make their type explicit. 
 
 
 Built-in variables for working with time
 ----------------------------------------
 
 Pine's standard library has an assortment of built-in variables and functions which
-make it possible to use time in various cases of the script logic.
+make it possible to use time in the script's logic.
 
 The most basic variables:
 
@@ -186,7 +185,7 @@ Functions for UNIX time "construction":
 -  `timestamp(year, month, day, hour, minute) <https://www.tradingview.com/study-script-reference/v4/#fun_timestamp>`__ --- 
    Returns UNIX time of specified date and time. Note, there is also an overloaded version with an additional ``timezone`` parameter.
 
-All these variables and functions return time in **exchange time zone**,
+All these variables and functions return time in the **exchange time zone**,
 except for the ``time`` and ``timenow`` variables which return time in **UTC timezone**.
 
 
