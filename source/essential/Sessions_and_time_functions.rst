@@ -4,8 +4,8 @@ Sessions and time functions
 .. contents:: :local:
     :depth: 2
 
-Functions and the variable time
--------------------------------
+Functions and the "time" variable
+---------------------------------
 
 In Pine there are special means for working with trade sessions, time
 and date. We will review a simple chart, IBM,30 on which has been
