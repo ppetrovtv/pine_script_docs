@@ -14,26 +14,25 @@ we will sometimes see a script's plots change slightly. This behavior is one of 
 different types of behaviors commonly referred to as *Indicator repainting*. It is the
 type of repainting we are concerned with here and which we will refer to when using *repainting*.
 
-Other types of behavior sometimes referred to as *repainting* include plotting with a
+Other types of behavior rightly or wrongly referred to as *repainting* include plotting with a
 negative offset on past bars and using otherwise unavailable future information with
-calls to the ``security`` function, without understanding that used improperly, they
-may inadvertently introduce into script calculations future information 
-that is not available in real-time.
+misunderstood calls to the ``security`` function, as they introduce into script calculations 
+future information not available in real-time.
 
 Not all indicators are subject to the type of repainting we discuss here. 
 In most cases it depends on whether or not certain functions or language 
 constructs are used in the code. Please note that this repainting effect 
-is not a bug; it's the result of the inherent difference between historic 
+is **not** a bug; it is the result of the inherent differences between historic 
 bars and real-time bar information on TradingView.
 
 We can see repainting in the following cases:
 
-#. Strategies with parameter ``calc_on_every_tick`` set to ``true``.
-   A strategy with parameter ``calc_on_every_tick = false`` will be
-   prone to repainting too (though to a lesser degree) as any strategy
-   depends on a starting point, more on this below.
+#. Strategies using ``calc_on_every_tick=true``.
+   A strategy with parameter ``calc_on_every_tick = false`` may also be
+   prone to repainting too, but to a lesser degree, as all strategies
+   depend on a starting point.
 
-#. Using ``security`` for requesting data with a resolution *higher* than the resolution of chart main symbol::
+#. Using ``security`` for requesting data from a resolution *higher* than the resolution of the chart's main symbol::
 
     // Add this study on 1 minute chart
     //@version=4
@@ -42,8 +41,8 @@ We can see repainting in the following cases:
     plot(close)
     plot(c, color=color.red)
 
-   Such a study will be calculated differently at real-time and on
-   historical data, regardless of using the parameter ``lookahead`` (see
+   This study will calculate differently on real-time and
+   historical data, regardless of using the ``lookahead`` parameter's value (see
    :ref:`understanding_lookahead`).
 
 #. Using ``security`` for requesting data with resolution *lower* than the resolution of chart main symbol 
