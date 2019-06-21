@@ -5,7 +5,7 @@ Extended and regular sessions
 
 On TradingView you can access extended hours sessions by
 *right-clicking* on a chart and choosing *Settings* |rarr|
-*Symbols* |rarr| *Extended Hours (Intraday only)*. 
+*Symbol* |rarr| *Extended Hours (Intraday only)*. 
 There are two types of sessions: *regular* (excluding pre- and post-market
 data) and *extended* (including pre- and post-market data). 
 Pine scripts may request additional session data using the
