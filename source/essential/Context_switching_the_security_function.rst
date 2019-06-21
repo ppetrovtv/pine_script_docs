@@ -85,7 +85,7 @@ The ``security`` function
 returns a series which is then adapted to the time scale of
 the current chart's symbol. This result can be either shown directly on
 the chart (i.e., with ``plot``), or used in further calculations. 
-The "Advance Decline Line" script illustrates a more
+The "Advance Decline Ratio" script illustrates a more
 involved use of ``security``::
 
     //@version=4
