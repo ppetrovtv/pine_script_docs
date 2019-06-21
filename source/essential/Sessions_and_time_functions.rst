@@ -24,7 +24,7 @@ This is the "Bar date/time" script:
 
 The `time <https://www.tradingview.com/study-script-reference/v4/#var_time>`__ 
 variable returns the date/time (timestamp) of each bar's opening time in `UNIX
-format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_. 
+format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_, in the exchange's timezone. 
 As can be seen from the screenshot, the ``time`` value on the
 last bar is equal to 1397593800000. This value is the number of
 *milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
