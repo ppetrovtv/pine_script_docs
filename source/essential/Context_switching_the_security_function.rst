@@ -24,7 +24,7 @@ resolution.
 
 .. image:: images/Chart_security_1.png
 
-As seen from the `security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__ 
+As seen from the `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__
 arguments description,
 the first argument is the name of the requested symbol. The second
 argument is the required resolution, and the third one is an expression
@@ -34,8 +34,8 @@ The name of the symbol can be set using two variants: with a prefix that
 shows the exchange (or data provider) or without it. For example:
 ``"NYSE:IBM"``, ``"BATS:IBM"`` or ``"IBM"``. In the case of using the name of a
 symbol without an exchange prefix, the exchange selected by default is
-BATS. Current symbol name is stored in 
-`syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and 
+BATS. Current symbol name is stored in
+`syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and
 `syminfo.tickerid <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}tickerid>`__
 built-in variables. The variable ``syminfo.ticker`` contains the value of the
 symbol name without an exchange prefix, for example ``"MSFT"``. The variable
@@ -59,7 +59,7 @@ symbols ``"D"`` or ``"1D"``. It's possible to request any number of days: ``"2D"
 resolution value. ``"W"`` and ``"1W"`` are the same weekly resolution value. The
 third parameter of the security function can be any arithmetic
 expression or a function call, which will be calculated in chosen series
-context. Resolution of the main chart symbol is stored in built-in variable 
+context. Resolution of the main chart symbol is stored in built-in variable
 `timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__.
 
 For example, with the ``security`` the user can view a minute chart and
@@ -94,7 +94,7 @@ function ``security`` is a more difficult example::
 
     //@version=4
     study(title = "Advance Decline Ratio", shorttitle="ADR")
-    ratio(t1, t2, source) => 
+    ratio(t1, t2, source) =>
         s1 = security(t1, timeframe.period, source)
         s2 = security(t2, timeframe.period, source)
         s1 / s2
@@ -116,20 +116,20 @@ Barmerge gaps and lookahead
 There are two switches that define how requested data will be mapped to the
 current timeframe.
 
-First one --- ``gaps`` --- controls gaps in data. Default value is 
-`barmerge.gaps_off <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_off>`__, data is
+First one --- ``gaps`` --- controls gaps in data. Default value is
+`barmerge.gaps_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_off>`__, data is
 merged continiously (without ``na``-gaps). All the gaps (if any) are filled with the previous nearest non-``na`` value.
-If `barmerge.gaps_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_on>`__ then data will
+If `barmerge.gaps_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_on>`__ then data will
 be merged possibly with gaps (``na`` values).
 
 Second one --- ``lookahead`` --- was added in :ref:`Pine Script version
 3 <release_notes_v3>`. The parameter has two possible values:
-`barmerge.lookahead_off <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
+`barmerge.lookahead_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
 and
-`barmerge.lookahead_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}lookahead_on>`__
+`barmerge.lookahead_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_on>`__
 to switch between the new (version 3) and old behavior (version 2 and 1)
 of the
-`security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__
+`security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__
 function.
 
 Here is an example that
@@ -213,11 +213,11 @@ you can request 240, D, W (or any higher timeframe) and plot the
 results.
 
 It's not recommended to request data of a timeframe *lower* that the current chart timeframe
-(for example 1 minute data from 5 minute chart). The main problem with such a case is that 
-some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a 5 minute 
-chart and not to break the time axis. So the ``security`` behaviour could be rather weird. 
+(for example 1 minute data from 5 minute chart). The main problem with such a case is that
+some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a 5 minute
+chart and not to break the time axis. So the ``security`` behaviour could be rather weird.
 The next example illustrates this::
-    
+
     // Add this script on a "5" minute chart
     //@version=4
     study("Lookahead On/Off", overlay=true, precision=5)
@@ -230,9 +230,9 @@ The next example illustrates this::
 
 This study plots two lines which correspond to different values of ``lookahead`` parameter.
 Red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``, blue line --- with ``lookahead=barmerge.lookahead_off``.
-Let us look at the 5 minute bar that starts at 07:50. The red line at this bar has value of 1.13151 which corresponds to 
-a value of *the first of the five 1 minute bars* that fall into the time range 07:50--07:54. 
-On the other hand, the blue line at the same bar has value of 1.13121 which corresponds to 
+Let us look at the 5 minute bar that starts at 07:50. The red line at this bar has value of 1.13151 which corresponds to
+a value of *the first of the five 1 minute bars* that fall into the time range 07:50--07:54.
+On the other hand, the blue line at the same bar has value of 1.13121 which corresponds to
 *the last of the five 1 minute bars* of the same time range.
 
 

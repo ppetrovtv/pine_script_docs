@@ -1,7 +1,7 @@
 Price levels, hline
 -------------------
 
-The `hline <https://www.tradingview.com/study-script-reference/v4/#fun_hline>`__ 
+The `hline <https://www.tradingview.com/pine-script-reference/v4/#fun_hline>`__
 annotation function renders a horizontal line at a given level. For example::
 
     //@version=4
@@ -18,4 +18,4 @@ annotation function renders a horizontal line at a given level. For example::
 A *number* must be the first argument of ``hline``. Values of *series* type
 are forbidden. It's possible to create a few horizontal lines with the
 help of ``hline`` and fill the background between them with a
-translucent color using `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__.
+translucent color using `fill <https://www.tradingview.com/pine-script-reference/v4/#fun_fill>`__.

@@ -9,7 +9,7 @@ They can be composed of:
 -  digits (``0-9``).
 
 An identifier cannot begin with a digit.
-Identifiers are case-sensitive. 
+Identifiers are case-sensitive.
 Here are some examples of valid identifiers::
 
     myVar

@@ -22,9 +22,9 @@ Here is the initial code of the first script "Bar date/time":
     study("Bar date/time")
     plot(time)
 
-This illustrates the meaning of the variable `time <https://www.tradingview.com/study-script-reference/v4/#var_time>`__, 
+This illustrates the meaning of the variable `time <https://www.tradingview.com/pine-script-reference/v4/#var_time>`__,
 which returns the date/time (timestamp) of each bar start on the chart in `UNIX
-format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_. 
+format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_.
 As can be seen from the screenshot, the value ``time`` on the
 last bar is equal to 1397593800000. This value is the number of
 *milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
@@ -41,8 +41,8 @@ The second script, "Session bars"::
     plot(na(t) ? 0 : 1)
 
 This shows how the user can distinguish between session bars and bars
-that get into extended hours by using the built-in *function* 
-`time <https://www.tradingview.com/study-script-reference/v4/#fun_time>`__ and
+that get into extended hours by using the built-in *function*
+`time <https://www.tradingview.com/pine-script-reference/v4/#fun_time>`__ and
 not the variable ``time`` (the background behind these bars has been
 colored over with grey). The function ``time`` returns the time of the
 bar start in milliseconds UNIX time or ``na`` value if the bar is located outside
@@ -52,11 +52,11 @@ to determine their timestamp, and the second --- ``session`` (session specificat
 which is a string that specifies the beginning and end of the trade
 session (in the exchange timezone). The string "0930-1600" corresponds
 to the trade session of IBM symbol. Examples of trade session
-specifications: 
+specifications:
 
 0000-0000
    a complete 24 hours with the session
-   beginning at midnight. 
+   beginning at midnight.
 
 1700-1700
    a complete 24 hours with the
@@ -145,8 +145,8 @@ intraday chart the highs and lows which began at the market's opening::
 
 
 Pay attention to the variables ``highTimeFrame`` and ``sessSpec``. They
-have been declared in a special way with the help of the 
-`input <http:////www.tradingview.com/study-script-reference/v4/#fun_input>`__ functions.
+have been declared in a special way with the help of the
+`input <http:////www.tradingview.com/pine-script-reference/v4/#fun_input>`__ functions.
 
 
 Built-in variables for working with time
@@ -157,33 +157,33 @@ make it possible to use time in various cases of the script logic.
 
 The most basic variables:
 
--  `time <https://www.tradingview.com/study-script-reference/v4/#var_time>`__ --- UNIX time of the *current bar start* in milliseconds, UTC timezone.
--  `timenow <https://www.tradingview.com/study-script-reference/v4/#var_timenow>`__ --- Current UNIX time in milliseconds, UTC timezone.
--  `syminfo.timezone <https://www.tradingview.com/study-script-reference/v4/#var_syminfo{dot}timezone>`__ --- Exchange timezone of the chart main symbol series.
+-  `time <https://www.tradingview.com/pine-script-reference/v4/#var_time>`__ --- UNIX time of the *current bar start* in milliseconds, UTC timezone.
+-  `timenow <https://www.tradingview.com/pine-script-reference/v4/#var_timenow>`__ --- Current UNIX time in milliseconds, UTC timezone.
+-  `syminfo.timezone <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}timezone>`__ --- Exchange timezone of the chart main symbol series.
 
 Variables that give information about the current bar start time:
 
--  `year <https://www.tradingview.com/study-script-reference/v4/#var_year>`__ --- Current bar year.
--  `month <https://www.tradingview.com/study-script-reference/v4/#var_month>`__ --- Current bar month.
--  `weekofyear <https://www.tradingview.com/study-script-reference/v4/#var_weekofyear>`__ --- Week number of current bar.
--  `dayofmonth <https://www.tradingview.com/study-script-reference/v4/#var_dayofmonth>`__ --- Date of current bar.
--  `dayofweek <https://www.tradingview.com/study-script-reference/v4/#var_dayofweek>`__ --- Day of week for current bar. You can use
+-  `year <https://www.tradingview.com/pine-script-reference/v4/#var_year>`__ --- Current bar year.
+-  `month <https://www.tradingview.com/pine-script-reference/v4/#var_month>`__ --- Current bar month.
+-  `weekofyear <https://www.tradingview.com/pine-script-reference/v4/#var_weekofyear>`__ --- Week number of current bar.
+-  `dayofmonth <https://www.tradingview.com/pine-script-reference/v4/#var_dayofmonth>`__ --- Date of current bar.
+-  `dayofweek <https://www.tradingview.com/pine-script-reference/v4/#var_dayofweek>`__ --- Day of week for current bar. You can use
    ``sunday``, ``monday``, ``tuesday``, ``wednesday``, ``thursday``, ``friday`` and ``saturday`` variables for comparisons.
--  `hour <https://www.tradingview.com/study-script-reference/v4/#var_hour>`__ --- Hour of the current bar start time (in exchange timezone).
--  `minute <https://www.tradingview.com/study-script-reference/v4/#var_minute>`__ --- Minute of the current bar start time (in exchange timezone).
--  `second <https://www.tradingview.com/study-script-reference/v4/#var_second>`__ --- Second of the current bar start time (in exchange timezone).
+-  `hour <https://www.tradingview.com/pine-script-reference/v4/#var_hour>`__ --- Hour of the current bar start time (in exchange timezone).
+-  `minute <https://www.tradingview.com/pine-script-reference/v4/#var_minute>`__ --- Minute of the current bar start time (in exchange timezone).
+-  `second <https://www.tradingview.com/pine-script-reference/v4/#var_second>`__ --- Second of the current bar start time (in exchange timezone).
 
 Functions for UNIX time "construction":
 
--  `year(t) <https://www.tradingview.com/study-script-reference/v4/#fun_year>`__ --- Returns year for provided UTC time ``t``.
--  `month(t) <https://www.tradingview.com/study-script-reference/v4/#fun_month>`__ --- Returns month for provided UTC time ``t``.
--  `weekofyear(t) <https://www.tradingview.com/study-script-reference/v4/#fun_weekofyear>`__ --- Returns week of year for provided UTC time ``t``.
--  `dayofmonth(t) <https://www.tradingview.com/study-script-reference/v4/#fun_dayofmonth>`__ --- Returns day of month for provided UTC time ``t``.
--  `dayofweek(t) <https://www.tradingview.com/study-script-reference/v4/#fun_dayofweek>`__ --- Returns day of week for provided UTC time ``t``.
--  `hour(t) <https://www.tradingview.com/study-script-reference/v4/#fun_hour>`__ --- Returns hour for provided UTC time ``t``.
--  `minute(t) <https://www.tradingview.com/study-script-reference/v4/#fun_minute>`__ --- Returns minute for provided UTC time ``t``.
--  `second(t) <https://www.tradingview.com/study-script-reference/v4/#fun_second>`__ --- Returns second for provided UTC time ``t``.
--  `timestamp(year, month, day, hour, minute) <https://www.tradingview.com/study-script-reference/v4/#fun_timestamp>`__ --- 
+-  `year(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_year>`__ --- Returns year for provided UTC time ``t``.
+-  `month(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_month>`__ --- Returns month for provided UTC time ``t``.
+-  `weekofyear(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_weekofyear>`__ --- Returns week of year for provided UTC time ``t``.
+-  `dayofmonth(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_dayofmonth>`__ --- Returns day of month for provided UTC time ``t``.
+-  `dayofweek(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_dayofweek>`__ --- Returns day of week for provided UTC time ``t``.
+-  `hour(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_hour>`__ --- Returns hour for provided UTC time ``t``.
+-  `minute(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_minute>`__ --- Returns minute for provided UTC time ``t``.
+-  `second(t) <https://www.tradingview.com/pine-script-reference/v4/#fun_second>`__ --- Returns second for provided UTC time ``t``.
+-  `timestamp(year, month, day, hour, minute) <https://www.tradingview.com/pine-script-reference/v4/#fun_timestamp>`__ ---
    Returns UNIX time of specified date and time. Note, there is also an overloaded version with an additional ``timezone`` parameter.
 
 All these variables and functions return time in **exchange time zone**,
