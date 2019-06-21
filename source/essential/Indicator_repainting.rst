@@ -1,13 +1,30 @@
 Indicator repainting
 ====================
 
-Historical data doesn't include records of intra-bar movements of price.
-This leads to a script working differently on historical data and at
-real-time. If we add a script on a chart,
-wait till it calculates on some number of real-time bars and then reload the page, 
-we can see this difference. This peculiarity is called *Indicator repainting*.
-Not all indicators have an effect of repainting. In most cases it depends on whether or not 
-some certain functions or language constructs are used in the code. This document reveals this question in detail.
+Historical data does not include records of intra-bar movements of price;
+only open, high, low and close (OHLC). This leads to a script sometimes 
+working differently on historical data and in real-time, where only the open price
+does not change and where price will typically move many times before the 
+real-time bar's final high, low and close values are
+known after the real-time bar closes.
+
+If we add a script on a chart,
+wait until it calculates on a number of real-time bars and then reload the page, 
+we will sometimes see a script's plots change slightly. This behavior is one of a few
+different types of behaviors commonly referred to as *Indicator repainting*, and it is the
+type of repainting we are concerned with here, and which we will refer to when using *repainting*.
+
+Other types of behavior sometimes referred to as *repainting* include plotting with a
+negative offset on past bars and using otherwise unavailable future information with
+calls to the ``security`` function, without understanding that used improperly, they
+may inadvertently introduce into script calculations future information 
+that is not available in real-time.
+
+Not all indicators are subject to the type of repainting we discuss here. 
+In most cases it depends on whether or not certain functions or language 
+constructs are used in the code. Please note that this repainting effect 
+is not a bug; it's the result of the inherent difference between historic 
+bars and real-time bar information on TradingView.
 
 We can see repainting in the following cases:
 
