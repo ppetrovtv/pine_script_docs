@@ -13,6 +13,8 @@ wait until it calculates on a number of real-time bars and then reload the page,
 we will sometimes see a script's plots change slightly. This behavior is one of a few
 different types of behaviors commonly referred to as *Indicator repainting*. It is the
 type of repainting we are concerned with here and which we will refer to when using *repainting*.
+It is due to the fact that when certain features are used in scripts, they will
+calculate differently on historical and real-time bars.
 
 Other types of behavior rightly or wrongly referred to as *repainting* include plotting with a
 negative offset on past bars and using otherwise unavailable future information with
