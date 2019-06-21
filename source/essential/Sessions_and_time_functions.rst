@@ -7,14 +7,14 @@ Sessions and time functions
 Functions and the "time" variable
 ---------------------------------
 
-In Pine there are special means for working with trade sessions, time
-and date. We will review a simple chart, IBM,30 on which has been
-applied 2 scripts: "Bar date/time" and "Session bars".
+Pine provides means to work with trade session, time
+and date information. We will review a simple chart, IBM at 30min,
+where 2 scripts are running: "Bar date/time" and "Session bars".
 
 .. image:: images/Chart_time_1.png
 
 
-Here is the initial code of the first script "Bar date/time":
+Here is the initial code of the "Bar date/time" script:
 
 ::
 
@@ -22,10 +22,10 @@ Here is the initial code of the first script "Bar date/time":
     study("Bar date/time")
     plot(time)
 
-This illustrates the meaning of the variable `time <https://www.tradingview.com/study-script-reference/v4/#var_time>`__, 
-which returns the date/time (timestamp) of each bar start on the chart in `UNIX
+The `time <https://www.tradingview.com/study-script-reference/v4/#var_time>`__ 
+variable returns the date/time (timestamp) of each bar's opening time in `UNIX
 format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_. 
-As can be seen from the screenshot, the value ``time`` on the
+As can be seen from the screenshot, the ``time`` value on the
 last bar is equal to 1397593800000. This value is the number of
 *milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
 corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC.
