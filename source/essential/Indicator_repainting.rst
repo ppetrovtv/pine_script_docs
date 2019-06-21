@@ -17,9 +17,9 @@ It is due to the fact that when certain features are used in scripts, they will
 calculate differently on historical and real-time bars.
 
 Other types of behavior rightly or wrongly referred to as *repainting* include plotting with a
-negative offset on past bars and using otherwise unavailable future information with
-misunderstood calls to the ``security`` function, as they introduce into script calculations 
-future information not available in real-time.
+negative offset on past bars and using otherwise unavailable future information received through
+misunderstood calls to the ``security`` function, which can introduce  
+future information not available in real-time into script calculations.
 
 Not all indicators are subject to the type of repainting we discuss here. 
 In most cases it depends on whether or not certain functions or language 
