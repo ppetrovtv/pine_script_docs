@@ -35,8 +35,8 @@ top of the usual candlesticks::
 
 .. image:: images/Pine_Heikinashi.png
 
-Note that the low prices of Heikin-Ashi bars are different from usual bars
-low prices.
+Note that the low prices of Heikin-Ashi bars are different from the
+low prices of the normal candlesticks.
 
 If you wanted to switch off extended hours data in *Example 5*, you would 
 need to use the ``tickerid`` function first, instead of using the ``syminfo.tickerid``
