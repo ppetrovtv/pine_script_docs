@@ -30,7 +30,7 @@ last bar is equal to 1397593800000. This value is the number of
 *milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
 corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC.
 The chart's time gauge in the screenshot shows the time of the last bar
-as 2014-04-15 16:30 because it has a 4 hour difference between the exchange's timezone, 
+as 2014-04-15 16:30 because it has a 4-hour difference between the exchange's timezone, 
 which is the default time returned by the ``time`` function.
 
 The second script is "Session bars"::
