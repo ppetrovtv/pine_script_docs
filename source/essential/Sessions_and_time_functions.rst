@@ -1,5 +1,5 @@
-Sessions and time functions
-===========================
+Session and time functions
+==========================
 
 .. contents:: :local:
     :depth: 2
