@@ -10,9 +10,8 @@ symbols and/or resolutions other than the ones a script is running on.
 "security" function
 -------------------
 
-We will assume that we are applying a script to the chart IBM,1. The
-following script will display the *close* price of the IBM symbol but on a 15
-resolution.
+Let's assume the following script is running on an IBM chart at 1min. It
+will display the *close* price of the IBM symbol, but at 15min resolution.
 
 ::
 
@@ -23,46 +22,44 @@ resolution.
 
 .. image:: images/Chart_security_1.png
 
-As seen from the `security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__ 
-arguments description,
-the first argument is the name of the requested symbol. The second
-argument is the required resolution, and the third one is an expression
-which needs to be computed on the requested series.
+The `security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__ 
+function's first argument is the name of the requested symbol. The second
+argument is the required resolution and the third one is an expression
+which will be calculated on the requested series *within* the ``security`` call.
 
-The name of the symbol can be set using two variants: with a prefix that
+The name of the symbol can be defined using two variants: with a prefix that
 shows the exchange (or data provider) or without it. For example:
-``"NYSE:IBM"``, ``"BATS:IBM"`` or ``"IBM"``. In the case of using the name of a
-symbol without an exchange prefix, the exchange selected by default is
-BATS. Current symbol name is stored in 
+``"NYSE:IBM"``, ``"BATS:IBM"`` or ``"IBM"``. When an exchange is not provided,
+BATS will be used as the default. The current symbol name is stored in the 
 `syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and 
 `syminfo.tickerid <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}tickerid>`__
-built-in variables. The variable ``syminfo.ticker`` contains the value of the
-symbol name without an exchange prefix, for example ``"MSFT"``. The variable
-``syminfo.tickerid`` is a symbol name with an exchange prefix, for example,
-``"BATS:MSFT"``, ``"NASDAQ:MSFT"``. It's recommended to use ``syminfo.tickerid`` to avoid
-possible ambiguity in the indicator's displayed values of data taken
-from different exchanges.
+built-in variables. ``syminfo.ticker`` contains the value of the
+symbol name without its exchange prefix, for example ``"MSFT"``. 
+``syminfo.tickerid`` contains the value of the symbol name with its exchange prefix, for example,
+``"BATS:MSFT"`` or ``"NASDAQ:MSFT"``. It is recommended to use ``syminfo.tickerid`` to avoid
+ambiguity in the origin of the values returned by ``security``.
 
 .. TODO write about syminfo.tickerid in extended format and function tickerid
 
-The ``resolution`` (or *timeframe*, the second argument of the ``security`` function) is
-also set as a string. Any intraday resolution is set by specifying a
-number of minutes. The lowest resolution is *minute* which is set by the
-literal ``"1"``. It's possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
+The second argument of the ``security`` function, ``resolution`` (i.e., the *timeframe*), is
+also a string. Any intraday resolution is set by specifying a
+number of minutes. The lowest resolution is *one minute* which is indicated by the
+literal ``"1"``. It is possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
 ``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
 following lines signify an hour, two hours and four hours respectively:
 ``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is set by the
 symbols ``"D"`` or ``"1D"``. It's possible to request any number of days: ``"2D"``,
 ``"3D"``, etc. *Weekly* and *monthly* resolutions are set in a similar way: ``"W"``,
-``"1W"``, ``"2W"``, ..., ``"M"``, ``"1M"``, ``"2M"``. ``"M"`` and ``"1M"`` are sorts of one month
-resolution value. ``"W"`` and ``"1W"`` are the same weekly resolution value. The
+``"1W"``, ``"2W"``, ..., ``"M"``, ``"1M"``, ``"2M"``. ``"M"`` and ``"1M"`` have the same one month
+resolution value. ``"W"`` and ``"1W"`` have the same weekly resolution value. The
 third parameter of the security function can be any arithmetic
-expression or a function call, which will be calculated in chosen series
-context. Resolution of the main chart symbol is stored in built-in variable 
-`timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__.
+expression or a function call, which will be calculated in the context of the chosen series.
+The resolution of the main chart's symbol is stored in the  
+`timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__
+built-in variable.
 
-For example, with the ``security`` the user can view a minute chart and
-display an SMA (or any other indicator) based on any other resolution
+Using the ``security`` function, users can view a 1min chart while
+displaying an SMA (or any other expression) from any other resolution
 (i.e., daily, weekly, monthly)::
 
     //@version=4
@@ -72,24 +69,24 @@ display an SMA (or any other indicator) based on any other resolution
     out1 = security(syminfo.tickerid, 'D', out)
     plot(out1)
 
-Or one can declare the variable
+One can declare the following variable:
 
 ::
 
     spread = high - low
 
-and calculate it in 1, 15 and 60 minutes::
+and calculate it at 1min, 15min and 60min::
 
     spread_1 = security(tickerid, '1', spread)
     spread_15 = security(tickerid, '15', spread)
     spread_60 = security(tickerid, '60', spread)
 
-The function ``security``, as should be understood from the examples,
-returns a series which is adopted correspondingly to the time scale of
+The ``security`` function 
+returns a series which is then adapted to the time scale of
 the current chart's symbol. This result can be either shown directly on
-the chart (i.e., with ``plot``), or be used in further calculations of
-the indicator's code. The indicator "Advance Decline Line" of the
-function ``security`` is a more difficult example::
+the chart (i.e., with ``plot``), or used in further calculations. 
+The "Advance Decline Line" script illustrates a more
+involved use of ``security``::
 
     //@version=4
     study(title = "Advance Decline Ratio", shorttitle="ADR")
@@ -99,8 +96,8 @@ function ``security`` is a more difficult example::
         s1 / s2
     plot(ratio("USI:ADVN.NY", "USI:DECL.NY", close))
 
-The script requests two additional securities. Results of the
-requests are then added to an arithmetic formula. As a result, we have a
+The script requests two additional securities. The results of the
+requests are then used in an arithmetic formula. As a result, we have a
 stock market indicator used by investors to measure the number of
 individual stocks participating in an upward or downward trend (`read
 more <https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
