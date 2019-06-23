@@ -324,9 +324,9 @@ already been triggered.
 Closing market position
 -----------------------
 
-Despite it is possible to exit from a specific entry in code, when
-orders are shown in the *List of Trades* on *Strategy Tester* tab, they all
-are linked according FIFO (first in, first out) rule. If an entry order
+Despite the fact that it is possible to exit from a specific entry in code, when
+orders are shown in the *List of Trades* in the *Strategy Tester* tab, they all
+are linked according to FIFO (first in, first out) rules. If an entry order
 ID is not specified for an exit order in code, the exit order closes the
 first entry order that opened market position. Let's study the following
 example::
@@ -342,9 +342,9 @@ example::
     strategy.exit("bracket", loss=10, profit=10, when=strategy.position_size == 15)
 
 The code given above places 2 orders sequentially: "Buy1" at market
-price and "Buy2" at 10% higher price (stop order). Exit order is placed
+price and "Buy2" at a 10% higher price (stop order). The exit order is placed
 only after entry orders have been filled. If you apply the code to a
-chart, you will see that each entry order is closed by exit order,
+chart, you will see that each entry order is closed by an exit order,
 though we did not specify entry order ID to close in this line:
 ``strategy.exit("bracket", loss=10, profit=10, when=strategy.position_size == 15)``
 
@@ -361,7 +361,7 @@ Another example::
     strategy.exit("bracket", "Buy1", loss=10, profit=10, when=strategy.position_size == 15)
     plot(strategy.position_avg_price)
 
--  It opens 5 contracts long position with the order "Buy1".
+-  It opens a 5-contract long position with the order "Buy1".
 -  It extends the long position by purchasing 10 more contracts at 10%
    higher price with the order "Buy2".
 -  The exit order (strategy.close) to sell 10 contracts (exit from
@@ -370,17 +370,17 @@ Another example::
 If you take a look at the plot, you can see that average entry price =
 "Buy2" execution price and our strategy closed exactly this entry order,
 while on the *Trade List* tab we can see that it closed the first "Buy1"
-order and half of the second "Buy2". It means that the no matter what
+order and half of the second "Buy2". It means that no matter which
 entry order you specify for your strategy to close, the broker emulator
-will still close the the first one (according to FIFO rule). It works
-the same way when trading with through a real broker.
+will still close the first one, according to FIFO rules. It works
+the same way as when trading with a real broker.
 
 .. _oca_groups:
 
 OCA groups
 ----------
 
-It is possible to put orders in 2 different One-Cancells-All (OCA) groups in Pine Script:
+It is possible to put orders in 2 different One-Cancells-All (OCA) groups in Pine Script.
 
 `strategy.oca.cancel <https://www.tradingview.com/study-script-reference/v4/#var_strategy{dot}oca{dot}cancel>`__
    As soon as an order from the group is filled
@@ -399,13 +399,13 @@ Example::
         strategy.entry("SE", strategy.short, oca_type = strategy.oca.cancel, oca_name="Entry")
 
 You may think that this is a reverse strategy since pyramiding is not
-allowed, but in fact both order will get filled because they are market
-orders, what means they are to be executed immediately at the current price.
+allowed, but in fact both orders will get filled because they are market
+orders, which means they are to be executed immediately at the current price.
 The second order doesn't get cancelled because both are filled almost at
-the same moment and the system doesn't have time to process first order
+the same moment and the system doesn't have time to process the first order
 fill and cancel the second one before it gets executed. The same would
-happen if these were price orders with same or similar prices. Strategy
-places all orders (which are allowed according to market position, etc).
+happen if these were price orders with same or similar prices. The strategy
+places all orders allowed according to market position, etc.
 
 The strategy places all orders that do not contradict the rules (in our
 case market position is flat, therefore any entry order can be filled).
@@ -427,7 +427,7 @@ order was executed are cancelled.
    The order is placed outside of the group
    (default value for the ``strategy.order`` and ``strategy.entry`` functions).
 
-Every group has its own unique id (the same way as the orders have). If
+Every group has its own unique id, like orders. If
 two groups have the same id, but different type, they will be considered a
 different groups. Example::
 
@@ -448,25 +448,26 @@ group.
 Risk management
 ---------------
 
-It is not easy to create a universal profitable strategy. Usually,
+It is not easy to create a universally profitable strategy. Usually,
 strategies are created for certain market patterns and can produce
 uncontrollable losses when applied to other data. Therefore stopping
-auto trading in time should things go bad is a serious issue. There is a
-special group of strategy commands to manage risks. They all start with
+auto trading when too many losses occur is important. A
+special group of strategy commands help you manage risk. They all start with
 the ``strategy.risk.`` prefix.
 
-You can combine any number of risks in any combination within one
-strategy. Every risk category command is calculated at every tick as
-well as at every order execution event regardless of the
+In any given strategy you can combine any number of risk management criteria 
+in any combination. Every risk category command is calculated at every tick as
+well as at every order execution event, regardless of the
 ``calc_on_order_fills`` strategy setting. There is no way to disable
-any risk rule at runtime from script. Regardless of where in the script
+any risk rule at runtime from a script. Regardless of where in the script
 the risk rule is located it will always be applied unless the line with
 the rule is deleted and the script is recompiled.
 
-If on the next calculation any of the rules is triggered, no orders will
-be sent. Therefore if a strategy has several rules of the same type with
+When a risk management rule is triggered, no orders will be generated 
+starting from the next iteration of the script. 
+Therefore if a strategy has several rules of the same type with
 different parameters, it will stop calculating when the rule with the
-most strict parameters is triggered. When a strategy is stopped all
+most strict parameters is triggered. When a strategy is stopped, all
 unexecuted orders are cancelled and then a market order is sent to close
 the position if it is not flat.
 
@@ -484,13 +485,13 @@ Example (MSFT, 1)::
     strategy.risk.max_intraday_filled_orders(2)
 
 The position will be closed and trading will be stopped until the end of
-every trading session after two orders are executed within this session
+every trading session after two orders are executed within this session,
 as the second rule is triggered earlier and is valid until the end of
 the trading session.
 
 One should remember that the ``strategy.risk.allow_entry_in`` rule is
 applied to entries only so it will be possible to enter in a trade using
-the ``strategy.order`` command as this command is not an entry command
+the ``strategy.order`` command, as this command is not an entry command
 per se. Moreover, when the ``strategy.risk.allow_entry_in`` rule is
 active, entries in a "prohibited trade" become exits instead of reverse
 trades.
@@ -504,18 +505,18 @@ Example (MSFT, 1D)::
         strategy.entry("SE", strategy.short, when=strategy.position_size > 0)
     strategy.risk.allow_entry_in(strategy.direction.long)
 
-As short entries are prohibited by the risk rules, instead of reverse
-trades long exit trades will be made.
+As short entries are prohibited by the risk rules, 
+long exit trades will be made instead of reverse trades.
 
 Currency
 --------
 
 TradingView strategies can operate in a currency that is different from the
-instrument currency. *Net Profit* and *Open Profit* are recalculated in the
+instrument's currency. *Net Profit* and *Open Profit* are recalculated in the
 account currency. Account currency is set in the strategy properties ---
 the *Base Currency* drop-down list or in the script via the
-``strategy(..., currency=currency.*)`` parameter. At the same time,
-performance report values are calculated in the selected currency.
+``strategy(..., currency=currency.*)`` parameter. 
+Performance report values are calculated in the selected currency.
 
 Trade profit (open or closed) is calculated based on the profit in the
 instrument currency multiplied by the cross-rate on the *close* of the
@@ -540,14 +541,14 @@ After adding this strategy to the chart we can see that the plot lines
 are matching. This demonstrates that the rate to calculate the profit
 for every trade was based on the *close* of the previous day.
 
-When trading on intra-day resolutions the cross-rate on the close of the
+When trading on intra-day resolutions, the cross-rate on the close of the
 trading day previous to the bar where the strategy is calculated will be
-used and it will not be changed during whole trading session.
+used and it will not be changed during the trading session.
 
-When trading on resolutions higher than 1 day the cross-rate on the
+When trading on resolutions higher than 1 day, the cross-rate on the
 close of the trading day previous to the close of the bar where the
 strategy is calculated will be used. Let's say we trade on a weekly
 chart, then the cross rate on Thursday's session close will always be
 used to calculate the profits.
 
-In real-time the yesterday's session close rate is used.
+In real-time, yesterday's session close rate is used.
