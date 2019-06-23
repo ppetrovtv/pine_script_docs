@@ -162,7 +162,7 @@ orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``.
    This command places both entry and exit orders. It is not affected by pyramiding settinga or by the
    ``strategy.risk.allow_entry_in`` function. It allows you to create
    complex enter and exit order constructions when the functionality of
-   ``strategy.entry`` and ``strategy.exit`` are not enough.
+   ``strategy.entry`` and ``strategy.exit`` will not do.
 
 `strategy.exit <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}exit>`__
    This command allows you to exit a market position
