@@ -88,7 +88,6 @@ in real trading, the emulator only fills orders at chart prices, which is
 why an order can only be filled on the next tick in forwardtesting and on
 the next bar or later in backtesting, i.e., after the strategy calculates.
 
-As stated above, in backtesting the strategy is calculated on bar's close.
 The following logic is used to emulate order fills:
 
 #. If the open of bar is closer to the high price of the bar,
