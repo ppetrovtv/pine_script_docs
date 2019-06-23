@@ -111,7 +111,7 @@ emulator::
     strategy("History SAW demo", overlay=true, pyramiding=100, calc_on_order_fills=true)
     strategy.entry("LE", strategy.long)
 
-This code is calculated once per bar, on the close. But 
+This code is calculated once per bar on the close, but 
 an additional calculation occurs as soon as an order is filled. That
 is why you can see 4 filled orders on every bar: 2 orders on open, 1
 order on high and 1 order on low. This is backtesting. If it were at
