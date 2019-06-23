@@ -155,7 +155,7 @@ orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``.
    market position when an opposite direction order is generated, the
    number of contracts/shares/lots/units will be increased by the number
    of currently open contracts (script equivalent: ``strategy.position_size + quantity``). 
-   As the result, the size of the opened market position will be equal to the order size specified in
+   As a result, the size of the opened market position will be equal to the order size specified in
    the ``strategy.entry`` command.
 
 `strategy.order <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}order>`__
