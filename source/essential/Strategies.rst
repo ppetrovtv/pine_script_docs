@@ -118,7 +118,7 @@ order on high and 1 order on low. This is for backtesting. In
 real-time, orders would be executed on every new tick.
 
 It is also possible to emulate an *order queue*. The setting is called
-*Verify Price For Limit Orders* and can be found in strategy properties
+*Verify Price For Limit Orders* and can be found in strategy properties,
 or set in the script's code with ``strategy(..., backtest_fill_limits_assumption=X)``.
 The specified value is a minimum price movements in number of points/pips (default value is 0).
 A limit order is filled if the current price is better (higher for sell
