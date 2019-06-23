@@ -83,7 +83,7 @@ using: ``strategy(..., calc_on_order_fills=true)``.
 Broker emulator
 ---------------
 
-There is a *broker emulator* on TradingView for testing strategies. Unlike
+TradingView uses a *broker emulator* for testing strategies. Unlike
 in real trading, the emulator only fills orders at chart prices, which is
 why an order can only be filled on the next tick in forwardtesting and on
 the next bar or later in backtesting, i.e., after the strategy calculates.
