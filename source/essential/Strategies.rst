@@ -7,18 +7,18 @@ Strategies
 ..    include:: <isonum.txt>
 
 A *strategy* is a study that can send, modify and cancel *orders* (to
-buy/sell). Strategies allow you to perform *backtesting* (emulation of
+buy/sell). Strategies allow you to perform *backtesting* (emulation of a
 strategy trading on historical data) and *forwardtesting* (emulation
-of strategy trading on real-time data) according to your precoded
+of a strategy trading on real-time data) according to your 
 algorithms.
 
-A strategy written in Pine Script language has all the same capabilities
-as a Pine indicator. When you write a strategy code, it should start
+A strategy written in Pine has many of the same capabilities
+as a Pine *study*, a.k.a. *indicator*. When you write a strategy, it must start
 with the `strategy <https://www.tradingview.com/study-script-reference/v4/#fun_strategy>`__ 
-annotation call (instead of ``study``). Strategies not
-only plot something, but also place, modify and cancel orders. They have
+annotation call (instead of ``study``). Strategies may plot data,
+but they can also place, modify and cancel orders. They also have
 access to essential strategy performance information through specific
-keywords. The same information is available for you on the *Strategy
+keywords. The same information is available externally in the *Strategy
 Tester* tab. Once a strategy is calculated on historical data, you can
 see hypothetical order fills.
 
@@ -36,11 +36,11 @@ A simple strategy example
 
 As soon as the script is compiled and applied to a chart, you can see
 filled order marks on it and how your balance was changing during
-backtesting (*equity* curve). It is a simplest strategy that buys and
+backtesting (*equity* curve). This is a very basic strategy that buys and
 sells on every bar.
 
-The line ``strategy("test")`` states that the code belongs to strategy
-type and its name is "test". ``strategy.entry()`` is a command to send
+The ``strategy("test")`` line states that the script is a strategy
+named "test". ``strategy.entry()`` is a command that can be used to send both
 "buy" and "sell" orders. ``plot(strategy.equity)`` plots the equity
 curve.
 
@@ -49,36 +49,36 @@ How to apply a strategy to the chart
 
 To test your strategy, apply it to the chart. Use the symbol and time
 intervals that you want to test. You can use a built-in strategy from
-the *Indicators & Strategies* dialog box, or write your own in *Pine
-Editor*.
+the *Indicators & Strategies* dialog box, or write your own.
 
 .. image:: images/Strategy_tester.png
 
-.. note:: When using :doc:`non-standard types of chart <Non-standard_chart_types_data>` 
-   (Heikin Ashi, Renko, etc.) as a basis for strategy, you
-   need to realize that the result will be different. The orders will be
-   executed at the prices of this chart (e.g., for Heikin Ashi it'll take
-   Heikin Ashi prices (the average ones) **not the real market prices**).
-   Therefore we highly recommend you to use standard chart type for
-   strategies.
+.. note:: When applying strategies to :doc:`non-standard types of chart <Non-standard_chart_types_data>` 
+   (Heikin Ashi, Renko, etc.), it is very important to realize that results
+   will not reflect real market conditions. Orders on these types of charts will be
+   executed at the synthetic price levels used on these charts,
+   which often **do not reflect real market prices** and thus lead
+   to unrealistic backtesting results. We therefore highly recommend 
+   using only standard chart types for backtesting strategies.
 
 Backtesting and forwardtesting
 ------------------------------
 
-On TradingView strategies are calculated on all available historical
-data on the chart and automatically continue calculation when real-time
-data comes in.
+On TradingView, strategies are calculated on all the chart's available historical
+data (*backtesting*), and then automatically continue calculations when real-time data comes in (*forwardtesting*).
 
-Both during historical and real-time calculation, code is calculated on
-bar closes by default.
+By default, during both historical and real-time calculation, code is calculated on
+the bar's close.
 
-If this is forwardtesting, code calculates on every tick in real-time.
-To enable this, check off the option *Recalculate On Every Tick* in
-settings or specify it in the script code: ``strategy(..., calc_on_every_tick=true)``.
+When forwardtesting, you have the option of configuring code calculation to occur
+on every real-time tick. To enable this, check the *Recalculate On Every Tick*  option in
+the strategy's *Settings/Properties*, or specify it in the script's code
+using: ``strategy(..., calc_on_every_tick=true)``.
 
-You can set the strategy to perform additional calculation after an
-order is filled. For this you need to check off *Recalculate After Order
-filled* in settings or do it in the script code: ``strategy(..., calc_on_order_fills=true)``.
+You can set the strategy to perform one additional iteration after an
+order is filled. For this you need to check *Recalculate After Order
+filled* in the strategy's *Settings/Properties*, or do it in the script's code
+using: ``strategy(..., calc_on_order_fills=true)``.
 
 Broker emulator
 ---------------
