@@ -205,7 +205,7 @@ Example 2::
 This strategy demonstrates a case where a market position is never
 closed because it uses a partial exit order to close the market position 
 and it cannot be executed more than once. If you double the line
-for exiting, the strategy will close market position completely.
+for exiting, the strategy will close the market position completely.
 
 Example 3::
 
