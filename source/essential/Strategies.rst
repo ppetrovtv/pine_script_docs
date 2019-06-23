@@ -114,7 +114,7 @@ emulator::
 This code is calculated once per bar on the close, but 
 an additional calculation occurs as soon as an order is filled. That
 is why you can see 4 filled orders on every bar: 2 orders on open, 1
-order on high and 1 order on low. This is backtesting. If it were at
+order on high and 1 order on low. This is for backtesting. In
 real-time, orders would be executed on every new tick.
 
 It is also possible to emulate an *order queue*. The setting is called
