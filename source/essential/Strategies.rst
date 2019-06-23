@@ -90,10 +90,10 @@ the next bar or later in backtesting, i.e., after the strategy calculates.
 
 The following logic is used to emulate order fills:
 
-#. If the open of bar is closer to the high price of the bar,
+#. If the bar's high is closer to bar's open than the bar's low,
    the broker emulator assumes that intrabar price was moving this way:
    open → high → low → close.
-#. If the open of bar is closer to the low price of the bar,
+#. If the bar's low is closer to bar's open than the bar's high,
    the broker emulator assumes that intrabar price was moving this way:
    open → low → high → close.
 #. The broker emulator assumes that there are no gaps inside bars, meaning
