@@ -6,7 +6,7 @@ Strategies
 
 ..    include:: <isonum.txt>
 
-A *strategy* is a study that can send, modify and cancel *orders* (to
+A *strategy* is a Pine script that can send, modify and cancel *orders* (to
 buy/sell). Strategies allow you to perform *backtesting* (emulation of a
 strategy trading on historical data) and *forwardtesting* (emulation
 of a strategy trading on real-time data) according to your 
