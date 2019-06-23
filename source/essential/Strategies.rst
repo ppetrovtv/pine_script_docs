@@ -450,7 +450,7 @@ Risk management
 
 It is not easy to create a universally profitable strategy. Usually,
 strategies are created for certain market patterns and can produce
-uncontrollable losses when applied to other data. Therefore stopping
+uncontrollable losses when applied to other data. Therefore, stopping
 auto trading when too many losses occur is important. A
 special group of strategy commands help you manage risk. They all start with
 the ``strategy.risk.`` prefix.
@@ -465,7 +465,7 @@ the rule is deleted and the script is recompiled.
 
 When a risk management rule is triggered, no orders will be generated 
 starting from the next iteration of the script. 
-Therefore if a strategy has several rules of the same type with
+Therefore, if a strategy has several rules of the same type with
 different parameters, it will stop calculating when the rule with the
 most strict parameters is triggered. When a strategy is stopped, all
 unexecuted orders are cancelled and then a market order is sent to close
