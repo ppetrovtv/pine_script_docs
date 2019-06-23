@@ -161,7 +161,7 @@ orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``.
 `strategy.order <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}order>`__
    This command places both entry and exit orders. It is not affected by pyramiding settings or by the
    ``strategy.risk.allow_entry_in`` function. It allows you to create
-   complex enter and exit order constructions when the functionality of
+   complex entry and exit order constructions when the functionality of
    ``strategy.entry`` and ``strategy.exit`` will not do.
 
 `strategy.exit <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}exit>`__
