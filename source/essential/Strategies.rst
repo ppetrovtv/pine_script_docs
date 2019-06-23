@@ -133,7 +133,7 @@ The execution price still matches the limit order price. Example:
 
 * The order cannot be filled at the current price because
   ``backtest_fill_limits_assumption = 1``. To fill the order the price must
-  become ``0.25*1`` lower. The order is put in the queue.
+  be ``0.25*1`` lower. The order is put in the queue.
 
 * Assume that the next tick comes at price ``12.00``. This price is 2 points
   lower, meaning the condition ``backtest_fill_limits_assumption = 1``
