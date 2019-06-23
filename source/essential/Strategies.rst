@@ -144,14 +144,14 @@ The execution price still matches the limit order price. Example:
 Order placement commands
 ------------------------
 
-All keywords that are designed for strategies start with a
+All keywords related to strategies start with a
 ``strategy.`` prefix. The following commands are used for placing
 orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``:
 
 `strategy.entry <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}entry>`__
-   This command places only entry orders. It is
-   affected by ``pyramiding`` setting (in strategy properties) and by
-   ``strategy.risk.allow_entry_in`` function. If there is an open
+   This command only places entry orders. It is
+   affected by the ``pyramiding`` setting in the strategy's properties and by
+   the ``strategy.risk.allow_entry_in`` function. If there is an open
    market position when an opposite direction order is generated, the
    number of contracts/shares/lots/units will be increased by the number
    of currently open contracts (script equivalent: ``strategy.position_size + quantity``). 
@@ -166,22 +166,22 @@ orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``:
 
 `strategy.exit <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}exit>`__
    This command allows you to exit a market position
-   by an order or or form multiple exit order strategy (stop loss,
-   profit target, trailing stop). All such orders are part of the same
+   or form multiple exit order strategies using a stop loss,
+   profit target or trailing stop. All such orders are part of the same
    ``strategy.oca.reduce`` group. An exit order cannot be placed if
    there is no open market position or there is no active entry order
-   (an exit order is bound to ID of an entry order). It is not possible
+   (an exit order is bound to the ID of an entry order). It is not possible
    to exit a position with a market order using the command
-   ``strategy.exit``. For this goal the following commands should be
-   used: `strategy.close <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}close>`__ 
-   or `strategy.close_all <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}close_all>`__. 
-   If number of contracts/shares/lots/units specified for the ``strategy.exit`` is
-   less than the size of current open position, the exit will be
-   partial. It is not possible to exit from the same entry order more
-   than 1 time using the same exit order (ID), that allows you to create
-   exit strategies with multiple levels. In case, when a market position
-   was formed by multiple entry orders (pyramiding enabled), each exit
-   orders is bound to each entry order individually.
+   ``strategy.exit``. For this, the `strategy.close <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}close>`__ 
+   or `strategy.close_all <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}close_all>`__
+   commands should be used. 
+   If the number of contracts/shares/lots/units specified for the ``strategy.exit`` is
+   less than the size of current open positions, the exit will be
+   partial. It is possible to exit from the same entry order more
+   than 1 time using the same exit order (ID), which allows you to create
+   exit strategies with multiple levels. In cases where a market position
+   is formed by multiple entry orders (pyramiding enabled), each exit
+   order must be linked to a matching entry order.
 
 Example 1::
 
@@ -193,7 +193,7 @@ Example 1::
     plot(strategy.equity)
 
 The above strategy constantly reverses market position from +4 to -6,
-back and forth, what is shown by its plot.
+back and forth, which the plot shows.
 
 Example 2::
 
@@ -202,9 +202,9 @@ Example 2::
     strategy.entry("buy", strategy.long, 4, when=strategy.position_size <= 0)
     strategy.exit("bracket", "buy",  2, profit=10, stop=10)
 
-This strategy demonstrates the case, when market position is never
-closed, because it uses exit order to close market position only
-partially and it cannot be used more than once. If you double the line
+This strategy demonstrates a case where a market position is never
+closed because it uses a partial exit order to close the market position 
+and it cannot be executed more than once. If you double the line
 for exiting, the strategy will close market position completely.
 
 Example 3::
@@ -223,29 +223,28 @@ level to exit 2 contracts and the second one to exit all the rest.
 .. image:: images/Levels_brackets.png
 
 The first take profit and stop loss orders (level 1) are in an :ref:`OCA group <oca_groups>`.
-The other orders (level 2) are in another OCA group. It means
-that as soon as the order from level 1 is filled, the orders from level 2
-are not cancelled, they stay active.
+The other orders (level 2) are in another OCA group. This means
+that as the order from level 1 is filled, the orders from level 2
+are not cancelled; they stay active.
 
-Every command placing an order has an ID (string value) --- unique order
-identifier. If an order with same ID is already placed (but not yet
-filled), current command modifies the existing order. If modification is
-not possible (conversion from buy to sell), the old order is cancelled,
+Every command placing an order has an ID (string value) which is a unique order
+identifier. If an order with the same ID is already placed but not yet
+filled, the last command modifies the existing order. If modification is
+not possible (conversion from buy to sell), the old order is cancelled and
 the new order is placed. ``strategy.entry`` and ``strategy.order`` work
 with the same IDs (they can modify the same entry order).
 ``strategy.exit`` works with other order IDs (it is possible to have an
 entry order and an exit order with the same ID).
 
-To cancel a specific order (by its ID) the command
+To cancel a specific order using its ID, the 
 `strategy.cancel(string ID) <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}cancel>`__ 
-should be used. To cancel all pending
-orders the command `strategy.cancel_all() <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}cancel_all>`__ 
-should be used. Strategy orders are placed as soon as their conditions are satisfied and command
-is called in code. Broker emulator doesn't execute orders before next
-tick comes after the code was calculated, while in real trading with
-real broker, an order can be filled sooner. It means that if a market
-order is generated at close of current bar, it is filled at open price of the
-next bar.
+command should be used. To cancel all pending
+orders the `strategy.cancel_all() <https://www.tradingview.com/study-script-reference/#fun_strategy{dot}cancel_all>`__ 
+command should be used. Strategy orders are placed as soon as their conditions are satisfied and command
+is called in code. The broker emulator doesn't execute orders before the next
+tick comes after the code was calculated, while in real trading  
+an order can get filled sooner. When a market order is generated at the close of the current bar, 
+the broker emulator only executes it at the open price of the next.
 
 Example::
 
@@ -255,11 +254,11 @@ Example::
         strategy.order("buy", strategy.long, when=strategy.position_size == 0)
         strategy.order("sell", strategy.short, when=strategy.position_size != 0)
 
-If this code is applied to a chart, all orders are filled at open of
+If this code is applied to a chart, all orders are filled at the open of
 every bar.
 
 Conditions for order placement (``when``, ``pyramiding``, ``strategy.risk``)
-are checked when script is calculated. If all
+are checked when the script is calculated. If all
 conditions are satisfied, the order is placed. If any condition is not
 satisfied, the order is not placed. It is important to cancel price
 orders (limit, stop and stop-limit orders).
@@ -275,11 +274,11 @@ Example (for MSFT, 1D)::
         strategy.entry("LE1", strategy.long, 2, stop = high + 35 * syminfo.mintick)
         strategy.entry("LE2", strategy.long, 2, stop = high + 2 * syminfo.mintick)
 
-Even though pyramiding is disabled, these both orders are filled in
-backtesting, because when they are generated there is no open long
+Even though pyramiding is disabled, both these orders are filled in
+backtesting because when they are generated there is no open long
 market position. Both orders are placed and when price satisfies order
-execution, they both get executed. It is recommended to to put the
-orders in 1 OCA group by means of ``strategy.oca.cancel``. in this case
+execution, they both get executed. It is recommended to put the
+orders in an OCA group by means of ``strategy.oca.cancel``. This way
 only one order is filled and the other one is cancelled. Here is the
 modified code::
 
@@ -303,9 +302,8 @@ will not be cancelled automatically. To avoid issues we recommend using
 ``strategy.oca.cancel`` groups for entries so when one entry order is filled the
 others are cancelled.
 
-The same is true for price type exits --- orders will be placed once their
-conditions are met (i.e. an entry order with the respective ID is
-filled). 
+The same is true for price type exits. Orders will be placed once their
+conditions are met, i.e., an entry order with a matching ID is filled.
 
 Example::
 
@@ -317,9 +315,9 @@ Example::
     strategy.entry("buy", strategy.long, when=counter > 2)
 
 If you apply this example to a chart, you can see that the exit order
-has been filled despite the fact that it had been generated only once
+is filled despite the fact that it has been generated only once,
 before the entry order to be closed was placed. However, the next entry
-was not closed before the end of the calculation as the exit command has
+was not closed before the end of the calculation, as the exit command has
 already been triggered.
 
 
