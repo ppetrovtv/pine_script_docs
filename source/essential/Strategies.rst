@@ -70,7 +70,7 @@ data (*backtesting*), and then automatically continue calculations when real-tim
 By default, during both historical and real-time calculation, code is calculated on
 the bar's close.
 
-When forwardtesting, you have the option of configuring code calculation to occur
+When forwardtesting, you have the option of configuring script calculation to occur
 on every real-time tick. To enable this, check the *Recalculate On Every Tick*  option in
 the strategy's *Settings/Properties*, or specify it in the script's code
 using: ``strategy(..., calc_on_every_tick=true)``.
