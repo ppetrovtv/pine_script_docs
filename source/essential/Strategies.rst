@@ -513,8 +513,8 @@ Currency
 
 TradingView strategies can operate in a currency that is different from the
 instrument's currency. *Net Profit* and *Open Profit* are recalculated in the
-account currency. Account currency is set in the strategy properties ---
-the *Base Currency* drop-down list or in the script via the
+account currency. Account currency is set in the strategy properties' 
+*Base Currency* drop-down list or in the script via the
 ``strategy(..., currency=currency.*)`` parameter. 
 Performance report values are calculated in the selected currency.
 
