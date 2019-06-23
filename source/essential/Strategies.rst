@@ -178,7 +178,7 @@ orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``.
    If the number of contracts/shares/lots/units specified for the ``strategy.exit`` is
    less than the size of current open positions, the exit will be
    partial. It is possible to exit from the same entry order more
-   than once using the same exit order (ID), which allows you to create
+   than once using the same exit order ID, which allows you to create
    exit strategies with multiple levels. In cases where a market position
    is formed by multiple entry orders (pyramiding enabled), each exit
    order must be linked to a matching entry order.
