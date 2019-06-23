@@ -146,7 +146,7 @@ Order placement commands
 
 All keywords related to strategies start with a
 ``strategy.`` prefix. The following commands are used for placing
-orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``:
+orders: ``strategy.entry``, ``strategy.order`` and ``strategy.exit``.
 
 `strategy.entry <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}entry>`__
    This command only places entry orders. It is
