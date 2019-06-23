@@ -293,7 +293,7 @@ modified code::
 
 If, for some reason, order placing conditions are not met when executing
 the command, the entry order will not be placed. For example, if
-pyramiding settings are set to 2, existing position already contains two
+pyramiding settings are set to 2, the existing position already contains two
 entries and the strategy tries to place a third one, it will not be
 placed. Entry conditions are evaluated at the order generation stage and
 not at the execution stage. Therefore, if you submit two price type
