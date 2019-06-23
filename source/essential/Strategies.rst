@@ -84,25 +84,24 @@ Broker emulator
 ---------------
 
 There is a *broker emulator* on TradingView for testing strategies. Unlike
-real trading, the emulator fills orders only at chart prices, that is
-why an order can be filled only on next tick in forwardtesting and on
-next bar in backtesting (or later) after the strategy calculated.
+in real trading, the emulator only fills orders at chart prices, which is
+why an order can only be filled on the next tick in forwardtesting and on
+the next bar or later in backtesting, i.e., after the strategy calculates.
 
 As stated above, in backtesting the strategy is calculated on bar's close.
 The following logic is used to emulate order fills:
 
-#. If opening price of bar is closer to the highest price of the same bar,
+#. If the open of bar is closer to the high price of the bar,
    the broker emulator assumes that intrabar price was moving this way:
    open → high → low → close.
-#. If opening price of bar is closer to the lowest price of the same bar,
+#. If the open of bar is closer to the low price of the bar,
    the broker emulator assumes that intrabar price was moving this way:
    open → low → high → close.
-#. Broker emulator assumes that there were no gaps inside bar, meaning
-   all intrabar prices are available for order execution.
-#. If the option *Recalculate On Every Tick* in strategy properties is
-   enabled (or ``strategy`` parameter ``calc_on_every_tick=true`` is
-   specified in the script), code is still calculated only on bar's close,
-   following the above logic.
+#. The broker emulator assumes that there are no gaps inside bars, meaning
+   the full range of intrabar prices is available for order execution.
+#. Even if the *Recalculate On Every Tick* option is
+   enabled  in strategy properties (or the script's ``strategy`` call uses 
+   ``calc_on_every_tick=true``), the broker emulator's behavior still uses the above logic.
 
 .. image:: images/Filled_stategy.png
 
@@ -113,18 +112,18 @@ emulator::
     strategy("History SAW demo", overlay=true, pyramiding=100, calc_on_order_fills=true)
     strategy.entry("LE", strategy.long)
 
-This code is calculated once per bar by default, on its close, however
-there is an additional calculation as soon as an order is filled. That
+This code is calculated once per bar, on the close. But 
+an additional calculation occurs as soon as an order is filled. That
 is why you can see 4 filled orders on every bar: 2 orders on open, 1
 order on high and 1 order on low. This is backtesting. If it were at
 real-time, orders would be executed on every new tick.
 
 It is also possible to emulate an *order queue*. The setting is called
 *Verify Price For Limit Orders* and can be found in strategy properties
-or set in the script code: ``strategy(..., backtest_fill_limits_assumption=X)``.
-The specified value is a number of points/pips (minimum price movements), default value is 0.
-A limit order is filled if current price is better (higher for sell
-orders, lower for buy orders) for the specified number of points/pips.
+or set in the script's code with ``strategy(..., backtest_fill_limits_assumption=X)``.
+The specified value is a minimum price movements in number of points/pips (default value is 0).
+A limit order is filled if the current price is better (higher for sell
+orders, lower for buy orders) by the specified number of points/pips.
 The execution price still matches the limit order price. Example:
 
 * ``backtest_fill_limits_assumption = 1``. Minimum price movement is ``0.25``.
@@ -133,12 +132,12 @@ The execution price still matches the limit order price. Example:
 
 * Current price is ``12.50``.
 
-* The order cannot be filled at the current price only because
+* The order cannot be filled at the current price because
   ``backtest_fill_limits_assumption = 1``. To fill the order the price must
   become ``0.25*1`` lower. The order is put in the queue.
 
 * Assume that the next tick comes at price ``12.00``. This price is 2 points
-  lower, what means the condition ``backtest_fill_limits_assumption = 1``
+  lower, meaning the condition ``backtest_fill_limits_assumption = 1``
   is satisfied, so the order should be filled. The order is filled at
   ``12.50`` (original order price), even if the price is not available
   anymore.
