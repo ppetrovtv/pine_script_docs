@@ -275,10 +275,10 @@ Example (for MSFT, 1D)::
         strategy.entry("LE2", strategy.long, 2, stop = high + 2 * syminfo.mintick)
 
 Even though pyramiding is disabled, both these orders are filled in
-backtesting because when they are generated there is no open long
+backtesting because when they are generated there is no opened long
 market position. Both orders are placed and when price satisfies order
-execution, they both get executed. It is recommended to put the
-orders in an OCA group by means of ``strategy.oca.cancel``. This way
+execution conditions, they both get executed. It is recommended to put the
+orders in an OCA group using ``strategy.oca.cancel``. This way
 only one order is filled and the other one is cancelled. Here is the
 modified code::
 
