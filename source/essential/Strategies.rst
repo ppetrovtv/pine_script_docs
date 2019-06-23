@@ -543,7 +543,7 @@ for every trade was based on the *close* of the previous day.
 
 When trading on intra-day resolutions, the cross-rate on the close of the
 trading day previous to the bar where the strategy is calculated will be
-used and it will not be changed during the trading session.
+used and it will not change during the trading session.
 
 When trading on resolutions higher than 1 day, the cross-rate on the
 close of the trading day previous to the close of the bar where the
