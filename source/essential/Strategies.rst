@@ -44,8 +44,8 @@ named "test". ``strategy.entry()`` is a command that can be used to send both
 "buy" and "sell" orders. ``plot(strategy.equity)`` plots the equity
 curve.
 
-How to apply a strategy to a chart
-----------------------------------
+Applying a strategy to a chart
+------------------------------
 
 To test your strategy, apply it to the chart. Use the symbol and time
 intervals that you want to test. You can use a built-in strategy from
