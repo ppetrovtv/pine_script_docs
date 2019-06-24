@@ -95,7 +95,7 @@ global scope. Local scopes cannot intersect with each other.
 
 
 Functions that return multiple results
--------------------------------------
+--------------------------------------
 
 In most cases a function returns only one result, but it is possible to
 return a list of results (a *tuple*-like result)::
