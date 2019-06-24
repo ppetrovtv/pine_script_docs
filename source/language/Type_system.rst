@@ -23,7 +23,7 @@ Literal
 
 A *literal* is a special notation for representing a fixed value in Pine. This fixed value itself is an
 expression and such literal expressions are always of one of the 4 following types:
-    
+
     * *literal float* (``3.14``, ``6.02E-23``, ``3e8``)
     * *literal int* (``42``)
     * *literal bool* (``true``, ``false``)

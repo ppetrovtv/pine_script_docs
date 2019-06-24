@@ -4,7 +4,7 @@ Context switching and the security function
 .. contents:: :local:
     :depth: 2
 
-The ``security`` function enables scripts to request data from 
+The ``security`` function enables scripts to request data from
 symbols and/or resolutions other than the ones a script is running on.
 
 The security function
@@ -22,7 +22,7 @@ will display the *close* price of the IBM symbol, but at 15min resolution.
 
 .. image:: images/Chart_security_1.png
 
-The `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__ 
+The `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__
 function's first argument is the name of the requested symbol. The second
 argument is the required resolution and the third one is an expression
 which will be calculated on the requested series *within* the ``security`` call.
@@ -30,11 +30,11 @@ which will be calculated on the requested series *within* the ``security`` call.
 The name of the symbol can be defined using two variants: with a prefix that
 contains the exchange (or data provider), or without it. For example:
 ``"NYSE:IBM"``, ``"BATS:IBM"`` or ``"IBM"``. When an exchange is not provided,
-BATS will be used as the default. The current symbol name is stored in the 
-`syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and 
+BATS will be used as the default. The current symbol name is stored in the
+`syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and
 `syminfo.tickerid <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}tickerid>`__
 built-in variables. ``syminfo.ticker`` contains the value of the
-symbol name without its exchange prefix, for example ``"MSFT"``. 
+symbol name without its exchange prefix, for example ``"MSFT"``.
 ``syminfo.tickerid`` contains the value of the symbol name with its exchange prefix, for example,
 ``"BATS:MSFT"`` or ``"NASDAQ:MSFT"``. It is recommended to use ``syminfo.tickerid`` to avoid
 ambiguity in the values returned by ``security``.
@@ -47,14 +47,14 @@ number of minutes. The lowest resolution is *one minute* and is indicated by the
 literal ``"1"``. It is possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
 ``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
 following lines signify one hour, two hours and four hours respectively:
-``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is indicated by 
+``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is indicated by
 ``"D"`` or ``"1D"``. It is possible to request any number of days: ``"2D"``,
 ``"3D"``, etc. *Weekly* and *Monthly* resolutions are set in a similar way: ``"W"``,
 ``"1W"``, ``"2W"``, ..., ``"M"``, ``"1M"``, ``"2M"``. ``"M"`` and ``"1M"`` denote the same monthly
 resolution, and ``"W"`` and ``"1W"`` the same weekly resolution. The
 third parameter of the security function can be any arithmetic
 expression or a function call, which will be calculated in the context of the chosen series.
-The resolution of the main chart's symbol is stored in the  
+The resolution of the main chart's symbol is stored in the
 `timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__
 built-in variable.
 
@@ -81,10 +81,10 @@ and calculate it at 1min, 15min and 60min::
     spread_15 = security(tickerid, '15', spread)
     spread_60 = security(tickerid, '60', spread)
 
-The ``security`` function 
+The ``security`` function
 returns a series which is then adapted to the time scale of
 the current chart's symbol. This result can be either shown directly on
-the chart (i.e., with ``plot``), or used in further calculations. 
+the chart (i.e., with ``plot``), or used in further calculations.
 The "Advance Decline Ratio" script illustrates a more
 involved use of ``security``::
 
@@ -109,13 +109,13 @@ more <https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
 Barmerge gaps and lookahead
 ---------------------------
 
-There are two switches that define how data requested with ``security`` 
+There are two switches that define how data requested with ``security``
 will be mapped to the current timeframe.
 
-The first one, ``gaps``, controls gaps in data. With the default value  
+The first one, ``gaps``, controls gaps in data. With the default value
 `barmerge.gaps_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_off>`__, data is
 merged continuously (without ``na`` gaps). All gaps, if any, are filled with the previous nearest non-``na`` value.
-If `barmerge.gaps_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_on>`__ 
+If `barmerge.gaps_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_on>`__
 is used, then merged data may contain gaps in the form of ``na`` values.
 
 The second switch, ``lookahead``, was added in :ref:`Pine Script version
@@ -123,7 +123,7 @@ The second switch, ``lookahead``, was added in :ref:`Pine Script version
 `barmerge.lookahead_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
 and
 `barmerge.lookahead_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_on>`__
-to respectively switch between the new, default behavior of 
+to respectively switch between the new, default behavior of
 `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__,
 and the old behavior dating from Pine v1 and v2.
 

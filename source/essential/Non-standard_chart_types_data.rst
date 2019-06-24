@@ -5,22 +5,22 @@ Non-standard chart types data
     :depth: 2
 
 These functions allow scripts to fetch information from non-standard
-bars or chart types, regardless of the type of chart the script is running on. 
+bars or chart types, regardless of the type of chart the script is running on.
 They are ``heikinashi``, ``renko``,
 ``linebreak``, ``kagi`` and ``pointfigure``. All of them work in the
-same manner; they create a special ticker identifier to be used as 
+same manner; they create a special ticker identifier to be used as
 the first argument in a ``security`` function call.
 
 heikinashi function
 -------------------
 
 *Heikin-Ashi* means *average bar* in Japanese. The open, high, low and close
-prices of Heikin-Ashi candlesticks are synthetic; they are not actual prices. 
-Each value is calculated using combinations of normal OHLC 
+prices of Heikin-Ashi candlesticks are synthetic; they are not actual prices.
+Each value is calculated using combinations of normal OHLC
 values from the current and previous bar. The calculations used make Heikin-Ashi bars
 less noisy than normal candlesticks.
 
-The `heikinashi <https://www.tradingview.com/pine-script-reference/v4/#fun_heikinashi>`__ 
+The `heikinashi <https://www.tradingview.com/pine-script-reference/v4/#fun_heikinashi>`__
 function creates a special ticker identifier for
 requesting Heikin-Ashi data with the ``security`` function.
 
@@ -38,7 +38,7 @@ top of the usual candlesticks::
 Note that the low prices of Heikin-Ashi bars are different from the
 low prices of the normal candlesticks.
 
-If you wanted to switch off extended hours data in *Example 5*, you would 
+If you wanted to switch off extended hours data in *Example 5*, you would
 need to use the ``tickerid`` function first, instead of using the ``syminfo.tickerid``
 variable directly::
 
@@ -50,12 +50,12 @@ variable directly::
     plot(ha_low, style=plot.style_linebr)
 
 Note that we use an additional fourth parameter with ``security``: ``gaps=barmerge.gaps_on``,
-which instructs the function not to use previous values to fill slots where data is absent. 
+which instructs the function not to use previous values to fill slots where data is absent.
 This means we will get empty areas during extended hours.
 To be able to see this on the chart, we also need to use a special plot
 style (``style=plot.style_linebr``), the *Line With Breaks* style.
 
-You may plot Heikin-Ashi bars from a script so they look exactly like a 
+You may plot Heikin-Ashi bars from a script so they look exactly like a
 chart's Heikin-Ashi bars::
 
     //@version=4
@@ -70,8 +70,8 @@ chart's Heikin-Ashi bars::
 
 .. image:: images/Pine_Heikinashi_2.png
 
-You will find more information on the `plotcandle <https://www.tradingview.com/pine-script-reference/v4/#fun_plotcandle>`__ 
-and `plotbar <https://www.tradingview.com/pine-script-reference/v4/#fun_plotbar>`__ functions in 
+You will find more information on the `plotcandle <https://www.tradingview.com/pine-script-reference/v4/#fun_plotcandle>`__
+and `plotbar <https://www.tradingview.com/pine-script-reference/v4/#fun_plotbar>`__ functions in
 the :doc:`/annotations/Custom_OHLC_bars_and_candles` section.
 
 renko function
@@ -93,7 +93,7 @@ passes the top or bottom by a predetermined amount.
 .. image:: images/Pine_Renko.png
 
 Please note that you cannot plot Renko bricks from Pine script exactly
-as they look. You can only get a series of numbers similar to 
+as they look. You can only get a series of numbers similar to
 OHLC values for Renko bars and use them in your algorithms.
 
 For detailed information, see `renko <https://www.tradingview.com/pine-script-reference/v4/#fun_renko>`__.
@@ -123,7 +123,7 @@ For detailed information, see `linebreak <https://www.tradingview.com/pine-scrip
 kagi function
 -------------
 
-*Kagi* charts are made of a continuous line that changes directions. 
+*Kagi* charts are made of a continuous line that changes directions.
 The direction changes when the price changes [#ticks]_
 beyond a predetermined amount.
 
@@ -173,5 +173,5 @@ For detailed information, see `pointfigure <https://www.tradingview.com/pine-scr
 
 .. rubric:: Footnotes
 
-.. [#ticks] On TradingView, Renko, Line Break, Kagi and PnF chart types are generated from OHLC values from a lower timeframe. 
+.. [#ticks] On TradingView, Renko, Line Break, Kagi and PnF chart types are generated from OHLC values from a lower timeframe.
    These chart types thus represent only an approximation of what they would be like if they were generated from tick data.

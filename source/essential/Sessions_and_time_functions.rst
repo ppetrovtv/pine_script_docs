@@ -22,15 +22,15 @@ This is the "Bar date/time" script:
     study("Bar date/time")
     plot(time)
 
-The `time <https://www.tradingview.com/pine-script-reference/v4/#var_time>`__ 
+The `time <https://www.tradingview.com/pine-script-reference/v4/#var_time>`__
 variable returns the date/time (timestamp) of each bar's opening time in `UNIX
-format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_ and in the exchange's timezone. 
+format <https://en.wikipedia.org/wiki/Unix_time>`__ [#millis]_ and in the exchange's timezone.
 As can be seen from the screenshot, the ``time`` value on the
 last bar is equal to 1397593800000. This value is the number of
 *milliseconds* that have passed since 00:00:00 UTC, 1 January, 1970 and
 corresponds to Tuesday, 15th of April, 2014 at 20:30:00 UTC.
 The chart's time gauge in the screenshot shows the time of the last bar
-as 2014-04-15 16:30 because it has a 4-hour difference between the exchange's timezone, 
+as 2014-04-15 16:30 because it has a 4-hour difference between the exchange's timezone,
 which is the default time returned by the ``time`` function.
 
 The second script is "Session bars"::
@@ -41,22 +41,22 @@ The second script is "Session bars"::
     plot(na(t) ? 0 : 1)
 
 This shows how the user can distinguish between regular session and extended hours bars
-by using the built-in 
-`time <https://www.tradingview.com/pine-script-reference/v4/#fun_time>`__ 
-function rather than the ``time`` variable. Note that the background behind these bars 
-is colored because of the chart's settings; not because of the script. 
+by using the built-in
+`time <https://www.tradingview.com/pine-script-reference/v4/#fun_time>`__
+function rather than the ``time`` variable. Note that the background behind these bars
+is colored because of the chart's settings; not because of the script.
 The ``time`` function returns the time of the
 bar's start in milliseconds UNIX time, or ``na`` if the bar is located outside
 the given trade session (09:30--16:00 in our example). The ``time`` function accepts
-two arguments: the ``resolution`` used to determine the timestamp of bars 
+two arguments: the ``resolution`` used to determine the timestamp of bars
 and ``session``, the session specification in the form of
 a string containing the beginning and end of the trade
 session in the exchange's timezone. The string "0930-1600" corresponds
 to the trade session of the IBM symbol. These are examples of trade session
-specifications: 
+specifications:
 
 0000-0000
-   A complete 24-hour session beginning at midnight. 
+   A complete 24-hour session beginning at midnight.
 
 1700-1700
    A complete 24-hour session beginning at 17:00.
@@ -83,7 +83,7 @@ specifications:
    Same as previous example, but only Monday to Friday.
 
 1700-1700:12345
-   An *overnight session*. Monday session starts 
+   An *overnight session*. Monday session starts
    Sunday at 17:00 and ends Monday at 17:00. Applies to Monday through Friday.
 
 1000-1001:26
@@ -91,11 +91,11 @@ specifications:
    Mondays (2) and one minute on Fridays (6).
 
 Session information used for the ``time`` function's
-second argument does not need to correspond to the symbol's real trade 
-session. Hypothetical session specifications can be used to highlight 
+second argument does not need to correspond to the symbol's real trade
+session. Hypothetical session specifications can be used to highlight
 other bars of a data series.
 
-Pine provides an overloaded version of the ``time`` function which does not require 
+Pine provides an overloaded version of the ``time`` function which does not require
 custom session information. This version of the function uses the
 regular session of a symbol. For example, it is possible to
 highlight the beginning of each half-hour bar on a minute chart in
@@ -112,7 +112,7 @@ the following way::
 
 
 The previous example's ``is_newbar`` custom function can be used
-in many situations. Here, we use it to display the market's opening 
+in many situations. Here, we use it to display the market's opening
 high and low on an intraday chart::
 
     //@version=4
@@ -141,7 +141,7 @@ high and low on an intraday chart::
 
 Pay attention to the variables ``highTimeFrame`` and ``sessSpec``. They
 are defined using the `input <http:////www.tradingview.com/pine-script-reference/v4/#fun_input>`__ function
-and its ``type`` parameter to make their type explicit. 
+and its ``type`` parameter to make their type explicit.
 
 
 Built-in variables for working with time
