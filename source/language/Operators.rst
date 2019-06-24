@@ -167,7 +167,7 @@ Most data in Pine is stored in series (somewhat like arrays, but with a dynamic 
 Let’s see how the index is dynamic, and why series are also very different from arrays. 
 In Pine, the ``close`` variable, or ``close[0]`` which is equivalent, 
 holds the price at the close of the current bar. 
-If your code is now executing on the third bar of the dataset, 
+If your code is now executing on the **third** bar of the dataset, 
 ``close`` will contain the price at the close of that bar, 
 ``close[1]`` will contain the price at the close of the preceding bar (the second), 
 and ``close[2]``, the first. ``close[3]`` will return ``na`` because no bar exists 
