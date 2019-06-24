@@ -32,7 +32,8 @@ result will also have the type *integer*.
 Footnote: if at least one operand is ``na`` then the result is also
 ``na``. 
 
-Pine supports scientific notation for floats with ``e`` or ``E``: ``6.02e23`` 
+Pine supports scientific notation for floats with ``e`` or ``E``,
+which means "multiply by 10 to the power of X": ``6.02e23`` in Pine
 is equivalent to *6.02 * 10^23* and ``1.6e-19`` is equivalent to *1.6 * 10^-19*.
 
 Comparison operators
