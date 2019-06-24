@@ -70,8 +70,8 @@ hline::
     // offset=-9999 hides the plot
     plot(close, color=#FFFFFFFF) // forces to show study
 
-Plot vertical line on condition
--------------------------------
+Plot a vertical line on condition
+---------------------------------
 
 ::
 
@@ -86,8 +86,8 @@ Plot vertical line on condition
     // use the style of histogram, a vertical bar
     plot(cond ? 10e20 : na, style = histogram)
 
-Access previous value
----------------------
+Access the previous value
+-------------------------
 
 ::
 
@@ -171,7 +171,7 @@ calculating flexible lookback periods based on number of bars.
     study("Bar Count", overlay=true, scale=scale.none)
     plot(n + 1, style=histogram)
 
-enumerate bars in a day
+Enumerate bars in a day
 -----------------------
 
 ::
@@ -210,7 +210,7 @@ Find the highest and lowest values for the entire dataset
     plot(biggest(close), color=green)
     plot(smallest(close), color=red)
 
-Query the last non-``na`` value
+Query the last non-"na" value
 -------------------------------
 
 You can use the script below to avoid gaps in a series::
