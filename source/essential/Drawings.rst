@@ -17,7 +17,7 @@ You will find one instance of each on the following chart:
   Drawing objects created using Pine code cannot be modified with mouse actions.
 
 The new line and label drawings in Pine v4 allow you to create indicators with more sophisticated
-visual components, e.g. pivot points, support/resistance levels,
+visual components, e.g., pivot points, support/resistance levels,
 zig zag lines, labels containing dynamic text, etc.
 
 In contrast to indicator plots (plots are created with functions ``plot``, ``plotshape``, ``plotchar``), 
