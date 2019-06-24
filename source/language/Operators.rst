@@ -22,6 +22,7 @@ There are five arithmetic operators in Pine Script:
 +-------+------------------------------------+
 
 The arithmetic operators above are all binary, whith ``+`` and ``-`` also serving as unary operators.
+
 When using arithmetic operators, the type of the result depends on
 the type of the operands. If at least one of the operands is a *series*, then
 the result will also have a *series* type. If both operands are numeric,
@@ -29,7 +30,9 @@ but at least one of these has the type *float*, then the result will
 also have the type *float*. If both operands are of type *integer*, then the
 result will also have the type *integer*.
 
-Footnote: if at least one operand is ``na`` then the result is also
+..
+
+.. note:: Footnote: if at least one operand is ``na`` then the result is also
 ``na``. 
 
 Pine supports scientific notation for floats with ``e`` or ``E``,
