@@ -123,8 +123,8 @@ Variable assignment example::
 
 .. _if_statement:
 
-if statement
-------------
+"if" statement
+--------------
 
 An ``if`` statement defines a block of statements to be executed when
 the ``if``'s conditional expression evaluates to ``true``, and optionally, 
@@ -215,8 +215,8 @@ side effect of the expression, for example in :doc:`strategy trading</essential/
 
 .. _for_statement:
 
-for statement
--------------
+"for" statement
+---------------
 
 The ``for`` statement allows to execute a number of instructions repeatedly:
 
