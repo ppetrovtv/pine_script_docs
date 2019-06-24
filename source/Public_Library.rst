@@ -41,7 +41,7 @@ window, where you can easily find it when needed:
 
 Scripts in the *Indicators* window are sorted by popularity. Scripts with the most likes appear first:
 
- |Sorted_by_popularity|
+|Sorted_by_popularity|
 
 
 Editing a script from the Public Library
