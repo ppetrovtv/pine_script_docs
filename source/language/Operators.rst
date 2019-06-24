@@ -193,8 +193,10 @@ realtime bar the last time the script is executed on that bar, and from then on,
 when it is referred to using the history-refernecing operator.
 
 Pine has a variable that keeps track of the bar count: ``bar_index``. 
-On the first bar, bar_index=0 and it increases by 1 at each new bar, 
-so at the last bar, bar_index contains the number of bars in the dataset minus one.
+On the first bar, ``bar_index``=0 and it increases by 1 at each new bar, 
+so at the last bar, ``bar_index`` contains the number of bars in the dataset minus one.
+At any given point, referencing a variable with a historical index greater than ``bar_index``
+will return ``na``.
 
 **Note 1**. Almost all built-in functions in Pine's standard library
 return a *series* result. It is therefore
