@@ -47,7 +47,7 @@ Integer input
 
 
 Float input
-^^^^^^^^^^^^^
+^^^^^^^^^^^
 ::
 
     f = input(title="Angle", type=input.float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)
@@ -57,7 +57,7 @@ Float input
 
 
 Symbol and resolution inputs
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
 sym = input(title="Symbol", type=input.symbol, defval="SPY")
@@ -95,8 +95,8 @@ Source input
 .. figure:: images/Inputs_of_indicator_6.png
 
 
-``options`` parameter
-^^^^^^^^^^^^^
+"options" parameter
+^^^^^^^^^^^^^^^^^^^
 The ``options`` parameter is useful to provide users with a list 
 of constant values they can choose from using a dropdown menu.
 ::
