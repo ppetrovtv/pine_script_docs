@@ -170,7 +170,8 @@ holds the price at the close of the current bar.
 If your code is now executing on the third bar of the dataset, 
 ``close`` will contain the price at the close of that bar, 
 ``close[1]`` will contain the price at the close of the preceding bar (the second), 
-and ``close[2]``, the first.
+and ``close[2]``, the first. ``close[3]`` will return ``na`` because no bar exists 
+in that position, and thus its value is *not available*.
 
 When the same code is executed on the next bar, the fourth in the dataset, 
 ``close`` will now contain the closing price of that bar, and the same ``close[1]``
