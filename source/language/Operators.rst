@@ -194,7 +194,7 @@ when it is referred to using the history-referencing operator.
 
 Pine has a variable that keeps track of the bar count: ``bar_index``. 
 On the first bar, ``bar_index`` is equal to 0 and it increases by 1 at each new bar, 
-so at the last bar, ``bar_index`` contains the number of bars in the dataset minus one.
+so at the last bar, ``bar_index`` is equal to the number of bars in the dataset minus one.
 At any given point, referencing a variable with a historical index greater than ``bar_index``
 will return ``na``.
 
