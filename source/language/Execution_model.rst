@@ -78,7 +78,7 @@ Additional resources
 --------------------
 
 A number of built-in variables ``barstate.*`` provide information about the current type of bar update
-(e.g. historical, realtime, intra-bar, closing update etc.), :doc:`/essential/Bar_states_Built-in_variables_barstate`.
+(e.g., historical, realtime, intra-bar, closing update etc.), :doc:`/essential/Bar_states_Built-in_variables_barstate`.
 
 Calculation of strategies is more complex than calculation of indicators, :doc:`/essential/Strategies`.
 
