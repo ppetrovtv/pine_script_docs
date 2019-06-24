@@ -6,8 +6,8 @@ Pine version 3 migration guide
 This document helps to migrate Pine Script code from ``@version=2`` to
 ``@version=3``.
 
-Default behaviour of ``security`` function has changed
-------------------------------------------------------
+Default behaviour of "security" function has changed
+----------------------------------------------------
 
 Let's look at the simple ``security`` function use case. Add this
 indicator on an intraday chart::
@@ -81,7 +81,7 @@ should be rewritten in Pine version 3 as follows::
     e = d + 1
     f := e + close
 
-Resolving a problem with a mutable variable in a ``security`` expression
+Resolving a problem with a mutable variable in a "security" expression
 ------------------------------------------------------------------------
 
 When you migrate script to version 3 it's possible that after removing
