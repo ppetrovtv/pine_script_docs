@@ -25,7 +25,7 @@ Where can I get more information?
   of the tradingview.com home page and in the *Indicators* |rarr| *Public Library* dialog box.
 
 External resources
--------------------
+------------------
 
 - `Pinescripters <https://pinescripters.com>`__, the most active independent community of Pine coders, a place to share ideas, resources, and to learn. 
 - `Kodify <https://kodify.net/tradingview-programming-articles>`__ has TradingView tutorials on various topics for beginners and more experienced coders alike. 
