@@ -10,8 +10,8 @@ Although it may be possible to do so using
 ``plot`` with ``style=plot.style_circles`` or ``style=plot.style_cross``,
 it is often easier to use the ``plotshape``, ``plotchar`` and ``plotarrow`` annotation functions.
 
-``plotshape``
--------------
+plotshape
+---------
 
 The `plotshape <https://www.tradingview.com/pine-script-reference/v4/#fun_plotshape>`__
 function can display a variety of shapes. The script below will draw an "X"
@@ -146,8 +146,8 @@ Other features of the ``plotshape`` function:
    You may use ``\n`` to separate text lines.
 
 
-``plotchar``
-------------
+plotchar
+--------
 
 The main difference between ``plotshape`` and `plotchar <https://www.tradingview.com/pine-script-reference/v4/#fun_plotchar>`__
 is that with ``plotchar``, the shape is an ASCII or Unicode symbol (provided it's supported by the TradingView standard font)
@@ -182,8 +182,8 @@ Like ``plotshape``, the ``plotchar`` function allows you to:
 -  Use the ``text`` parameter to display a short text above/below the shape.
    You may use ``\n`` to separate text lines.
 
-``plotarrow``
--------------
+plotarrow
+---------
 
 The `plotarrow <https://www.tradingview.com/pine-script-reference/v4/#fun_plotarrow>`__
 annotation function allows for up/down arrows to be displayed on

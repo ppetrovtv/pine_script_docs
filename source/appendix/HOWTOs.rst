@@ -213,8 +213,8 @@ Find the highest and lowest values for the entire dataset
     plot(biggest(close), color=color.green)
     plot(smallest(close), color=color.red)
 
-Query the last non-``na`` value
--------------------------------
+Query the last non-na value
+---------------------------
 
 You can use the script below to avoid gaps in a series::
 

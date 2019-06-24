@@ -95,8 +95,8 @@ Source input
 .. figure:: images/Inputs_of_indicator_6.png
 
 
-``options`` parameter
-^^^^^^^^^^^^^^^^^^^^^
+options parameter
+^^^^^^^^^^^^^^^^^
 The ``options`` parameter is useful to provide users with a list
 of constant values they can choose from using a dropdown menu.
 ::
