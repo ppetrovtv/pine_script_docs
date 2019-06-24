@@ -128,7 +128,7 @@ character at that price level above the current bar
     // initialize variable "max" as na
     max = na
 
-    // if bar being examined is not within the lookback window range (i.e. leftborder = false)
+    // if bar being examined is not within the lookback window range (i.e., leftborder = false)
     // change the variable "max" to be na
     // else, test if value of "max" stored in the previous bar is na
     // (bcuz first bar being examined in the lookback window will not have a previous value ), 
