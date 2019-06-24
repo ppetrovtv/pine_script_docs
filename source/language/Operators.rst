@@ -190,10 +190,10 @@ does not exist in Pine.
 Note that the ``close`` variable means something different at the current, realtime bar. 
 It then represents the current price and will only contain the actual closing price of the 
 realtime bar the last time the script is executed on that bar, and from then on, 
-when it is referred to using the history-refernecing operator.
+when it is referred to using the history-referencing operator.
 
 Pine has a variable that keeps track of the bar count: ``bar_index``. 
-On the first bar, ``bar_index``=0 and it increases by 1 at each new bar, 
+On the first bar, ``bar_index`` is equal to 0 and it increases by 1 at each new bar, 
 so at the last bar, ``bar_index`` contains the number of bars in the dataset minus one.
 At any given point, referencing a variable with a historical index greater than ``bar_index``
 will return ``na``.
