@@ -179,7 +179,7 @@ used in your code will now refer to the close of the third bar.
 The close of the first bar in the dataset will now be ``close[3]`` 
 and this time ``close[4]`` will return ``na``.
 
-In the Pine runtime environment, as your code is executed once for each bar in the dataset, 
+In the Pine runtime environment, as your code is executed once for each historical bar in the dataset, 
 starting from the left of the chart, Pine is adding a new element in the series at index 0 
 and pushing the pre-existing elements in the series one index further away. 
 Arrays, in comparison, are usually static in size and their content or indexing structure 
