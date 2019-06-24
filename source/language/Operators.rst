@@ -28,13 +28,13 @@ the type of the operands. If at least one of the operands is a *series*, then
 the result will also have a *series* type. If both operands are numeric,
 but at least one of these has the type *float*, then the result will
 also have the type *float*. If both operands are of type *integer*, then the
-result will also have the type *integer*.
+result will also have the type *integer*. 
+If at least one operand is ``na`` then the result is also ``na``. 
 
-..
+The ``+`` operator also serves as the concatenation operator for strings.
+``"EUR"+"USD"`` constructs the "EURUSD" string.
 
-.. note:: Footnote: if at least one operand is ``na`` then the result is also ``na``. 
-
-.. note:: Pine supports scientific notation for floats with ``e`` or ``E``,
+Pine supports scientific notation for floats with ``e`` or ``E``,
 which means "multiply by 10 to the power of": ``6.02e23`` in Pine
 is equivalent to *6.02 * 10^23* and ``1.6e-19`` is equivalent to *1.6 * 10^-19*.
 
