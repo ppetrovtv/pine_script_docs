@@ -162,39 +162,36 @@ This is the equivalent of the previous example using ``iff``::
 
 It is possible to refer to the historical values of any variable of the
 *series* type with the ``[]`` operator (*historical* values are the values for the previous bars).
-Let's assume we have the variable ``close``, 
-containing 10 values corresponding to a chart with 10 bars:
 
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Index   | 0       | 1       | 2       | 3       | 4       | 5       | 6       | 7       | 8       | 9       |
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close   | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   | 12.53   | 12.43   |
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+Most data in Pine is stored in series (somewhat like arrays, but with a dynamic index).
+Let’s see how the index is dynamic, and why series are also very different from arrays. 
+In Pine, the ``close`` variable holds the price at the close of the current bar. 
+If your code is now executing on the third bar of the dataset, 
+``close`` will contain the price at the close of that bar, 
+``close[1]`` will contain the price at the close of the preceding bar (the second), 
+and ``close[2]``, the first.
 
-Applying the ``[]`` operator with arguments 1, 2, 3, we will receive the
-following vector:
+When the same code is executed on the next bar, the fourth in the dataset, 
+``close`` will now contain the closing price of that bar, and the same ``close[1]``
+used in your code will now refer to the close of the third bar. 
+The close of the first bar in the dataset will now be close[3].
 
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Index      | 0     | 1       | 2       | 3       | 4       | 5       | 6       | 7       | 8       | 9       |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close[1]   | ``na``| 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   | 12.53   |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close[2]   | ``na``| ``na``  | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close[3]   | ``na``| ``na``  | ``na``  | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+In the Pine runtime environment, as your code is executed once for each bar in the dataset, 
+starting from the left of the chart, Pine is adding a new element in the series at index 0 
+and pushing the pre-existing elements in the series one index further away. 
+Arrays, in comparison, are usually static in size and their content or indexing structure 
+is not modified by the runtime environment. Pine series are thus different from arrays and 
+share familiarity with them only through their indexing syntax; the array data structure 
+does not exist in Pine.
 
-When a vector is shifted, a special ``na`` value is pushed to the vector's
-tail. ``na`` means that the numerical value based on the given index is
-absent (*not available*). The values to the right, which do not have enough space to be
-placed in a vector of 10 elements, are simply removed. The
-value from the vector's head is *popped*. In the given example, the index
-of the current bar is equal to 9. The value of the ``close[1]`` vector on the current bar will be equal 
-to the previous value of the initial ``close`` vector. 
-The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
+Note that the ``close`` variable means something different at the current, realtime bar. 
+It then represents the current price and will only contain the actual closing price of the 
+realtime bar the last time the script is executed on that bar, and from then on, 
+when it is referred to using the history-refernecing operator.
 
-So the ``[]`` operator can be thought of as a history-referencing
-operator.
+Pine has a variable that keeps track of the bar count: ``bar_index``. 
+On the first bar, bar_index=0 and it increases by 1 at each new bar, 
+so at the last bar, bar_index contains the number of bars in the dataset minus one.
 
 **Note 1**. Almost all built-in functions in Pine's standard library
 return a *series* result. It is therefore
