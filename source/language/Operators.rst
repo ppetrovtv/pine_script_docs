@@ -198,6 +198,20 @@ so at the last bar, ``bar_index`` is equal to the number of bars in the dataset 
 At any given point, referencing a variable with a historical index greater than ``bar_index``
 will return ``na``.
 
+There is another important consideration to keep in mind when using the ``[]`` operator in
+Pine. We have seen cases when a history reference may return the ``na``
+value. ``na`` represents a value which is not a number and
+using it in any math expression will produce a result that is also ``na`` (similar 
+to `NaN <https://en.wikipedia.org/wiki/NaN>`__). 
+Such cases often happen during the script's calculations in the
+early bars of the dataset, but can also occur in later bars under certain conditions.
+If your Pine code does not explicitly provide for handling these special cases, 
+they can introduce invalid results in your script's calculations 
+which can ripple through all the way to the realtime bar.
+The `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
+`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__ functions 
+are designed to allow for handling such cases.
+
 **Note 1**. Almost all built-in functions in Pine's standard library
 return a *series* result. It is therefore
 possible to apply the ``[]`` operator directly to function calls, as is done here:
@@ -222,20 +236,6 @@ supports both positive and negative values. Note though that it is a
 visual shift., i.e., it will be applied after all calculations.
 Further details on ``plot`` and its parameters can be found
 `here <https://www.tradingview.com/study-script-reference/#fun_plot>`__.
-
-There is another important consideration when using the ``[]`` operator in
-Pine. We have seen cases when a history reference may return the ``na``
-value. ``na`` represents a value which is not a number and
-using it in any math expression will produce a result that is also ``na`` (similar 
-to `NaN <https://en.wikipedia.org/wiki/NaN>`__). 
-Such cases often happen during the script's calculations in the
-early bars of the dataset, but can also occur in later bars under certain conditions.
-If your Pine code does not explicitly provide for handling these special cases, 
-they can introduce invalid results in your script's calculations 
-which can ripple through all the way to the realtime bar.
-The `na <https://www.tradingview.com/study-script-reference/v4/#fun_na>`__ and
-`nz <https://www.tradingview.com/study-script-reference/v4/#fun_nz>`__ functions 
-are designed to allow for handling such cases.
 
 Operator precedence
 -------------------
