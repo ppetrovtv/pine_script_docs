@@ -46,7 +46,7 @@ Scripts in the *Indicators* window are sorted by popularity. Scripts with the mo
 
 
 Editing a script from the Public Library
-------------------------------------
+----------------------------------------
 
 To edit a script from the Public Library:
 
