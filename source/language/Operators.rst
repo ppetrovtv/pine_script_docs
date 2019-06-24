@@ -176,7 +176,8 @@ in that position, and thus its value is *not available*.
 When the same code is executed on the next bar, the **fourth** in the dataset, 
 ``close`` will now contain the closing price of that bar, and the same ``close[1]``
 used in your code will now refer to the close of the third bar. 
-The close of the first bar in the dataset will now be close[3].
+The close of the first bar in the dataset will now be ``close[3]`` 
+and this time ``close[4]`` will return ``na``.
 
 In the Pine runtime environment, as your code is executed once for each bar in the dataset, 
 starting from the left of the chart, Pine is adding a new element in the series at index 0 
