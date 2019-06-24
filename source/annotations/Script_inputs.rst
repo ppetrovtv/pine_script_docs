@@ -47,7 +47,7 @@ Integer input
 
 
 Float input
-^^^^^^^^^^^^^
+^^^^^^^^^^^
 ::
 
     f = input(title="Angle", type=input.float, defval=-0.5, minval=-3.14, maxval=3.14, step=0.2)

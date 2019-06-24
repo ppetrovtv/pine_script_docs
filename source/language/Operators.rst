@@ -22,15 +22,17 @@ There are five arithmetic operators in Pine Script:
 +-------+------------------------------------+
 
 The arithmetic operators above are all binary, whith ``+`` and ``-`` also serving as unary operators.
+
 When using arithmetic operators, the type of the result depends on
 the type of the operands. If at least one of the operands is a *series*, then
 the result will also have a *series* type. If both operands are numeric,
 but at least one of these has the type *float*, then the result will
 also have the type *float*. If both operands are of type *integer*, then the
-result will also have the type *integer*.
+result will also have the type *integer*. 
+If at least one operand is ``na`` then the result is also ``na``. 
 
-Footnote: if at least one operand is ``na`` then the result is also
-``na``.
+The ``+`` operator also serves as the concatenation operator for strings.
+``"EUR"+"USD"`` constructs the "EURUSD" string.
 
 Comparison operators
 --------------------
@@ -155,40 +157,56 @@ History reference operator []
 -----------------------------
 
 It is possible to refer to the historical values of any variable of the
-*series* type with the ``[]`` operator (*historical* values are the values for the previous bars).
-Let's assume we have the variable ``close``,
-containing 10 values corresponding to a chart with 10 bars:
+*series* type with the ``[]`` operator. *Historical* values are variable values for the previous bars.
 
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Index   | 0       | 1       | 2       | 3       | 4       | 5       | 6       | 7       | 8       | 9       |
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close   | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   | 12.53   | 12.43   |
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+Most data in Pine is stored in series (somewhat like arrays, but with a dynamic index).
+Let’s see how the index is dynamic, and why series are also very different from arrays. 
+In Pine, the ``close`` variable, or ``close[0]`` which is equivalent, 
+holds the price at the close of the current bar. 
+If your code is now executing on the **third** bar of the dataset, 
+``close`` will contain the price at the close of that bar, 
+``close[1]`` will contain the price at the close of the preceding bar (the second), 
+and ``close[2]``, the first. ``close[3]`` will return ``na`` because no bar exists 
+in that position, and thus its value is *not available*.
 
-Applying the ``[]`` operator with arguments 1, 2, 3, we will receive the
-following vector:
+When the same code is executed on the next bar, the **fourth** in the dataset, 
+``close`` will now contain the closing price of that bar, and the same ``close[1]``
+used in your code will now refer to the close of the third bar. 
+The close of the first bar in the dataset will now be ``close[3]`` 
+and this time ``close[4]`` will return ``na``.
 
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Index      | 0     | 1       | 2       | 3       | 4       | 5       | 6       | 7       | 8       | 9       |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close[1]   | ``na``| 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   | 12.53   |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close[2]   | ``na``| ``na``  | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   | 12.87   |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| close[3]   | ``na``| ``na``  | ``na``  | 15.25   | 15.46   | 15.35   | 15.03   | 15.02   | 14.80   | 15.01   |
-+------------+-------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+In the Pine runtime environment, as your code is executed once for each historical bar in the dataset, 
+starting from the left of the chart, Pine is adding a new element in the series at index 0 
+and pushing the pre-existing elements in the series one index further away. 
+Arrays, in comparison, are usually static in size and their content or indexing structure 
+is not modified by the runtime environment. Pine series are thus different from arrays and 
+share familiarity with them mostly through their indexing syntax; the array data structure 
+does not exist in Pine.
 
-When a vector is shifted, a special ``na`` value is pushed to the vector's
-tail. ``na`` means that the numerical value based on the given index is
-absent (*not available*). The values to the right, which do not have enough space to be
-placed in a vector of 10 elements, are simply removed. The
-value from the vector's head is *popped*. In the given example, the index
-of the current bar is equal to 9. The value of the ``close[1]`` vector on the current bar will be equal
-to the previous value of the initial ``close`` vector.
-The value ``close[2]`` will be equal to the value ``close`` two bars ago, etc.
+Note that the ``close`` variable means something different at the current, realtime bar. 
+It then represents the current price and will only contain the actual closing price of the 
+realtime bar the last time the script is executed on that bar, and from then on, 
+when it is referred to using the history-referencing operator.
 
-So the ``[]`` operator can be thought of as a history-referencing
-operator.
+Pine has a variable that keeps track of the bar count: ``bar_index``. 
+On the first bar, ``bar_index`` is equal to 0 and it increases by 1 at each new bar, 
+so at the last bar, ``bar_index`` is equal to the number of bars in the dataset minus one.
+At any given point, referencing a variable with a historical index greater than ``bar_index``
+will return ``na``.
+
+There is another important consideration to keep in mind when using the ``[]`` operator in
+Pine. We have seen cases when a history reference may return the ``na``
+value. ``na`` represents a value which is not a number and
+using it in any math expression will produce a result that is also ``na`` (similar 
+to `NaN <https://en.wikipedia.org/wiki/NaN>`__). 
+Such cases often happen during the script's calculations in the
+early bars of the dataset, but can also occur in later bars under certain conditions.
+If your Pine code does not explicitly provide for handling these special cases, 
+they can introduce invalid results in your script's calculations 
+which can ripple through all the way to the realtime bar.
+The `na <https://www.tradingview.com/pine-script-reference/v4/#fun_na>`__ and
+`nz <https://www.tradingview.com/pine-script-reference/v4/#fun_nz>`__ functions 
+are designed to allow for handling such cases.
 
 **Note 1**. Almost all built-in functions in Pine's standard library
 return a *series* result. It is therefore
@@ -215,21 +233,10 @@ visual shift., i.e., it will be applied after all calculations.
 Further details on ``plot`` and its parameters can be found
 `here <https://www.tradingview.com/pine-script-reference/v4/#fun_plot>`__.
 
-There is another important consideration when using the ``[]`` operator in
-Pine. The script executes a calculation on each bar,
-beginning from the earliest bar until the last.
-As seen in the table, ``close[3]`` has ``na`` values on the
-first three bars. ``na`` represents a value which is not a number and
-using it in any math expression will produce a result that is also ``na`` (similar
-to `NaN <https://en.wikipedia.org/wiki/NaN>`__),
-which in some cases can ripple through results all the way to the realtime bar.
-Your code must provide for handling the special cases in early history
-when expressions may result in ``na`` values. This can be accomplished using the
-`na <https://www.tradingview.com/pine-script-reference/v4/#fun_na>`__ and
-`nz <https://www.tradingview.com/pine-script-reference/v4/#fun_nz>`__ functions.
+`here <https://www.tradingview.com/pine-script-reference/#fun_plot>`__.
 
 Operator precedence
----------------------
+-------------------
 
 The order of calculations is determined by the operators' precedence.
 Operators with greater precedence are calculated first. Below is a list

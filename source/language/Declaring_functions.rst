@@ -89,7 +89,7 @@ declared in the global scope from the scope of a function (except for
 self-referencing recursive calls), one can say
 that the local scope is embedded into the global scope.
 
-In Pine, nested functions are not allowed, i.e. one cannot declare a
+In Pine, nested functions are not allowed, i.e., one cannot declare a
 function inside another one. All user functions are declared in the
 global scope. Local scopes cannot intersect with each other.
 

@@ -31,7 +31,7 @@ and can't take part in the script's calculations
 A detailed overview of Pine annotations can be found :doc:`here </annotations/index>`.
 
 Syntactically, user-defined functions, built-in functions and annotation
-functions are similar, i.e. we call them by name with a list of
+functions are similar, i.e., we call them by name with a list of
 arguments in parentheses. Differences between them are mostly semantic, except
 for the fact that annotations and
 built-in functions accept keyword arguments while user-defined functions

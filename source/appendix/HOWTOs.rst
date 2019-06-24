@@ -72,8 +72,8 @@ hline::
     // offset=-9999 hides the plot
     plot(close, color=#FFFFFFFF)  // forces to show study
 
-Plot vertical line on condition
--------------------------------
+Plot a vertical line on condition
+---------------------------------
 
 ::
 
@@ -88,8 +88,8 @@ Plot vertical line on condition
     // use the style of histogram, a vertical bar
     plot(cond ? 10e20 : na, style=plot.style_histogram)
 
-Access previous value
----------------------
+Access the previous value
+-------------------------
 
 ::
 
@@ -130,7 +130,7 @@ character at that price level above the current bar
     // initialize variable "max" as na
     max = float(na)
 
-    // if bar being examined is not within the lookback window range (i.e. leftborder = false)
+    // if bar being examined is not within the lookback window range (i.e., leftborder = false)
     // change the variable "max" to be na
     // else, test if value of "max" stored in the previous bar is na
     // (bcuz first bar being examined in the lookback window will not have a previous value ),
@@ -174,7 +174,7 @@ calculating flexible lookback periods based on number of bars.
     study("Bar Count", overlay=true, scale=scale.none)
     plot(bar_index + 1, style=plot.style_histogram)
 
-enumerate bars in a day
+Enumerate bars in a day
 -----------------------
 
 ::

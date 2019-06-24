@@ -1,5 +1,5 @@
-Lines wrapping
-==============
+Line wrapping
+=============
 
 Any statement that is too long in Pine Script can be placed on more than
 one line. Syntactically, a statement **must** begin at the beginning of the
