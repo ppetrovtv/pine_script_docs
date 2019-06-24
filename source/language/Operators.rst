@@ -161,7 +161,7 @@ This is the equivalent of the previous example using ``iff``::
 ----------------------------------
 
 It is possible to refer to the historical values of any variable of the
-*series* type with the ``[]`` operator (*historical* values are the values for the previous bars).
+*series* type with the ``[]`` operator. *Historical* values are variable values for the previous bars.
 
 Most data in Pine is stored in series (somewhat like arrays, but with a dynamic index).
 Let’s see how the index is dynamic, and why series are also very different from arrays. 
