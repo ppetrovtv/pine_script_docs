@@ -24,10 +24,10 @@ Literal
 A *literal* is a special notation for representing a fixed value in Pine. This fixed value itself is an 
 expression and such literal expressions are always of one of the 4 following types:
     
-    * *literal float* (e.g. ``3.14``)
-    * *literal int* (e.g. ``42``)
-    * *literal bool* (e.g. ``true``, ``false``)
-    * *literal string* (e.g. ``"A text literal"``)
+    * *literal float* (``3.14``)
+    * *literal int* (``42``)
+    * *literal bool* (``true``, ``false``)
+    * *literal string* (``"A text literal"``)
 
 .. note:: In Pine, the built-in names ``open``, ``high``, ``low``, ``close``, ``volume``, ``time``, 
     ``hl2``, ``hlc3``, ``ohlc4`` are not literals. They are of the *series* form.
@@ -294,7 +294,7 @@ void
 ----
 
 There is a *void* type in Pine Script. All functions and annotation functions which produce a *side effect* 
-return a void result. E.g. 
+return a void result. E.g., 
 `strategy.entry <https://www.tradingview.com/study-script-reference/v4/#fun_strategy{dot}entry>`__,
 `plotshape <https://www.tradingview.com/study-script-reference/v4/#fun_plotshape>`__ etc.
 
