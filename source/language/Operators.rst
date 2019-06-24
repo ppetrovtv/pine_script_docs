@@ -173,7 +173,7 @@ If your code is now executing on the **third** bar of the dataset,
 and ``close[2]``, the first. ``close[3]`` will return ``na`` because no bar exists 
 in that position, and thus its value is *not available*.
 
-When the same code is executed on the next bar, the fourth in the dataset, 
+When the same code is executed on the next bar, the **fourth** in the dataset, 
 ``close`` will now contain the closing price of that bar, and the same ``close[1]``
 used in your code will now refer to the close of the third bar. 
 The close of the first bar in the dataset will now be close[3].
