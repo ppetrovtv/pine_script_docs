@@ -184,7 +184,7 @@ starting from the left of the chart, Pine is adding a new element in the series 
 and pushing the pre-existing elements in the series one index further away. 
 Arrays, in comparison, are usually static in size and their content or indexing structure 
 is not modified by the runtime environment. Pine series are thus different from arrays and 
-share familiarity with them only through their indexing syntax; the array data structure 
+share familiarity with them mostly through their indexing syntax; the array data structure 
 does not exist in Pine.
 
 Note that the ``close`` variable means something different at the current, realtime bar. 
