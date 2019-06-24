@@ -151,8 +151,8 @@ This is the equivalent of the previous example using ``iff``::
 
 .. _history_referencing_operator:
 
-History reference operator "[ ]"
---------------------------------
+"[ ]" History-referencing operator
+----------------------------------
 
 It is possible to refer to the historical values of any variable of the
 *series* type with the ``[]`` operator (*historical* values are the values for the previous bars).
