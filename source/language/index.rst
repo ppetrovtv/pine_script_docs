@@ -9,7 +9,7 @@ Language fundamentals
    Versions
    Comments
    Identifiers
-   Lines_wrapping
+   Line_wrapping
    Type_system
    Operators
    Functions_and_annotations

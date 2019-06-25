@@ -75,7 +75,7 @@ on every real-time tick. To enable this, check the *Recalculate On Every Tick*  
 the strategy's *Settings/Properties*, or specify it in the script's code
 using: ``strategy(..., calc_on_every_tick=true)``.
 
-You can set the strategy to perform one additional iteration after an
+You can set the strategy to perform one additional calculation after an
 order is filled. For this you need to check *Recalculate After Order
 filled* in the strategy's *Settings/Properties*, or do it in the script's code
 using: ``strategy(..., calc_on_order_fills=true)``.
@@ -464,7 +464,7 @@ the risk rule is located it will always be applied unless the line with
 the rule is deleted and the script is recompiled.
 
 When a risk management rule is triggered, no orders will be generated
-starting from the next iteration of the script.
+starting from the next calculation of the script.
 Therefore, if a strategy has several rules of the same type with
 different parameters, it will stop calculating when the rule with the
 most strict parameters is triggered. When a strategy is stopped, all

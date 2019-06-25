@@ -15,4 +15,4 @@ The *Pine Editor* has a hotkey for commenting/uncommenting:
 to comment/uncomment whole blocks of code at a time.
 
 Comments cannot be placed in the middle of a statement continued
-on multiple lines. Read more on this here: :doc:`Lines_wrapping`.
+on multiple lines. Read more on this here: :doc:`Line_wrapping`.

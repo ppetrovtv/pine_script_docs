@@ -90,13 +90,13 @@ specifications:
    A weird session that lasts only one minute on
    Mondays (2) and one minute on Fridays (6).
 
-Session information used for the ``time`` function's
+Session specification used for the ``time`` function's
 second argument does not need to correspond to the symbol's real trade
 session. Hypothetical session specifications can be used to highlight
 other bars of a data series.
 
 Pine provides an overloaded version of the ``time`` function which does not require
-custom session information. This version of the function uses the
+custom session specification. This version of the function uses the
 regular session of a symbol. For example, it is possible to
 highlight the beginning of each half-hour bar on a minute chart in
 the following way::
