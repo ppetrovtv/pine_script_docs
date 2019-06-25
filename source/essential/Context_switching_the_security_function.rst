@@ -10,8 +10,8 @@ symbols and/or resolutions other than the ones a script is running on.
 The security function
 ---------------------
 
-Let's assume the following script is running on an IBM chart at 1min. It
-will display the *close* price of the IBM symbol, but at 15min resolution.
+Let's assume the following script is running on an IBM chart at *1 minute*. It
+will display the *close* price of the IBM symbol, but at *15 minutes* resolution.
 
 ::
 
@@ -58,7 +58,7 @@ The resolution of the main chart's symbol is stored in the
 `timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__
 built-in variable.
 
-With the ``security`` function, users can view a 1min chart while
+With the ``security`` function, users can view a *1 minute* chart while
 displaying an SMA (or any other expression) from any other resolution
 (i.e., daily, weekly, monthly)::
 
@@ -75,7 +75,7 @@ One can declare the following variable:
 
     spread = high - low
 
-and calculate it at 1min, 15min and 60min::
+and calculate it at *1 minute*, *15 minutes* and *60 minutes*::
 
     spread_1 = security(tickerid, '1', spread)
     spread_15 = security(tickerid, '15', spread)
@@ -127,7 +127,7 @@ to respectively switch between the new, default behavior of
 `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__,
 and the old behavior dating from Pine v1 and v2.
 
-This example shows the difference on a 5min chart::
+This example shows the difference on a *5 minutes* chart::
 
     //@version=4
     study('My Script', overlay=true)
@@ -202,12 +202,12 @@ Requesting data of a lower timeframe
 ------------------------------------
 
 ``security`` function was designed to request data of a timeframe *higher*
-than the current chart timeframe. On a 60min chart,
+than the current chart timeframe. On a *60 minutes* chart,
 this would mean requesting 240, D, W, or any higher timeframe.
 
 It is not recommended to request data of a timeframe *lower* that the current chart timeframe,
-for example 1min data from a 5min chart. The main problem with such a case is that
-some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a 5 minute
+for example *1 minute* data from a *5 minutes* chart. The main problem with such a case is that
+some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a *5 minutes*
 chart and not to break the time axis. In such cases the behavior of ``security`` can be rather unexpected.
 The next example illustrates this::
 
@@ -222,11 +222,12 @@ The next example illustrates this::
 .. image:: images/SecurityLowerTF_LookaheadOnOff.png
 
 This study plots two lines which correspond to different values of the ``lookahead`` parameter.
-The red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``. The blue line with ``lookahead=barmerge.lookahead_off``. Let's look at the 5min bar starting at 07:50.
+The red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``. 
+The blue line with ``lookahead=barmerge.lookahead_off``. Let's look at the *5 minutes* bar starting at 07:50.
 The red line at this bar has a value of 1.13151 which corresponds to the
-value of *the first of the five 1min bars* that fall into the time range 07:50--07:54.
+value of *the first of the five 1 minute bars* that fall into the time range 07:50--07:54.
 On the other hand, the blue line at the same bar has a value of 1.13121 which corresponds to
-*the last of the five 1min bars* of the same time range.
+*the last of the five 1 minute bars* of the same time range.
 
 
 

@@ -100,8 +100,8 @@ Access the previous value
     if (condition)
         s := s + 1
 
-Get a 5-day high
-----------------
+Get a 5-days high
+-----------------
 
 Lookback 5 days from the current bar, find the highest bar, plot a star
 character at that price level above the current bar
@@ -118,7 +118,7 @@ character at that price level above the current bar
     // plot(milliseconds_in_5days, title="ms in 5d", style=circles) //debug
     // subtract timestamp of the bar being examined from the current time
     // if value is less than 5 days ago, set variable "leftborder" as true
-    // this is set true at the bar being examined as the left border of the 5 day lookback window range
+    // this is set true at the bar being examined as the left border of the 5 days lookback window range
     leftborder = timenow - time < milliseconds_in_5days  // true or na when false
     // plot(leftborder ? 1 : na, title="bar within leftborder")  //debug
     // plot(time, title="bartime") //debug
@@ -159,7 +159,7 @@ character at that price level above the current bar
     // the x axis location will be the last bar (newest bar)
     plotchar(val, size=size.normal, location=location.absolute)
 
-    // fill the background of the 5 day lookback window range with aqua color
+    // fill the background of the 5 days lookback window range with aqua color
     bgcolor(leftborder and not rightborder ? color.aqua : na, transp=70)
 
 Count bars in a dataset

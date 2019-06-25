@@ -11,7 +11,7 @@ an expression and an optional ``transp`` parameter (0--100, default 90) allows
 control over the transparency level.
 
 Here is a script that colors the background of trading sessions (try it on
-EURUSD, at 30 min resolution)::
+EURUSD, at *30 minutes* resolution)::
 
     //@version=4
     study("bgcolor example", overlay=true)

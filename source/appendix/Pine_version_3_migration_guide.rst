@@ -12,7 +12,7 @@ Default behaviour of security function has changed
 Let's look at the simple ``security`` function use case. Add this
 indicator on an intraday chart::
 
-    // Add this indicator on an intraday (e.g., '30' minutes) chart
+    // Add this indicator on an intraday (e.g., 30 minutes) chart
     //@version=2
     study("My Script", overlay=true)
     s = security(tickerid, 'D', high, false)

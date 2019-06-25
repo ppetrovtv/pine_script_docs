@@ -61,7 +61,7 @@ For example you could calculate and plot *smoothed* candles using the following 
 .. image:: images/Custom_ohlc_bars_and_candles_4.png
 
 You may find it useful to plot OHLC values taken from a
-higher timeframe. You can, for example, plot daily bars on a 60 minute chart::
+higher timeframe. You can, for example, plot daily bars on a *60 minutes* chart::
 
     // NOTE: add this script on intraday chart
     //@version=4
