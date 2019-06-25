@@ -72,8 +72,8 @@ hline::
     // offset=-9999 hides the plot
     plot(close, color=#FFFFFFFF)  // forces to show study
 
-Plot vertical line on condition
--------------------------------
+Plot a vertical line on condition
+---------------------------------
 
 ::
 
@@ -88,8 +88,8 @@ Plot vertical line on condition
     // use the style of histogram, a vertical bar
     plot(cond ? 10e20 : na, style=plot.style_histogram)
 
-Access previous value
----------------------
+Access the previous value
+-------------------------
 
 ::
 
@@ -100,8 +100,8 @@ Access previous value
     if (condition)
         s := s + 1
 
-Get a 5-day high
-----------------
+Get a 5-days high
+-----------------
 
 Lookback 5 days from the current bar, find the highest bar, plot a star
 character at that price level above the current bar
@@ -118,7 +118,7 @@ character at that price level above the current bar
     // plot(milliseconds_in_5days, title="ms in 5d", style=circles) //debug
     // subtract timestamp of the bar being examined from the current time
     // if value is less than 5 days ago, set variable "leftborder" as true
-    // this is set true at the bar being examined as the left border of the 5 day lookback window range
+    // this is set true at the bar being examined as the left border of the 5 days lookback window range
     leftborder = timenow - time < milliseconds_in_5days  // true or na when false
     // plot(leftborder ? 1 : na, title="bar within leftborder")  //debug
     // plot(time, title="bartime") //debug
@@ -130,7 +130,7 @@ character at that price level above the current bar
     // initialize variable "max" as na
     max = float(na)
 
-    // if bar being examined is not within the lookback window range (i.e. leftborder = false)
+    // if bar being examined is not within the lookback window range (i.e., leftborder = false)
     // change the variable "max" to be na
     // else, test if value of "max" stored in the previous bar is na
     // (bcuz first bar being examined in the lookback window will not have a previous value ),
@@ -159,7 +159,7 @@ character at that price level above the current bar
     // the x axis location will be the last bar (newest bar)
     plotchar(val, size=size.normal, location=location.absolute)
 
-    // fill the background of the 5 day lookback window range with aqua color
+    // fill the background of the 5 days lookback window range with aqua color
     bgcolor(leftborder and not rightborder ? color.aqua : na, transp=70)
 
 Count bars in a dataset
@@ -174,7 +174,7 @@ calculating flexible lookback periods based on number of bars.
     study("Bar Count", overlay=true, scale=scale.none)
     plot(bar_index + 1, style=plot.style_histogram)
 
-enumerate bars in a day
+Enumerate bars in a day
 -----------------------
 
 ::

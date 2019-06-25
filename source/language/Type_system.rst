@@ -88,7 +88,7 @@ Values of the form *series* are ones that:
 
     * change during the script execution
     * store a sequence of historical values associated with bars of the main chart's symbol
-    * can be accessed using the ``[]`` operator. Note that only the last value in the series, i.e. the one associated with the current bar, is available for both reading and writing
+    * can be accessed using the ``[]`` operator. Note that only the last value in the series, i.e., the one associated with the current bar, is available for both reading and writing
 
 The *series* form is the most common form in Pine.
 Examples of built-in *series* variables are: ``open``, ``high``, ``low``,
@@ -223,7 +223,7 @@ The following built-in *color* variables can be used to avoid hexadecimal color 
 ``color.olive``, ``color.yellow``, ``color.navy``, ``color.blue``, ``color.teal``, ``color.aqua``,
 ``color.orange``.
 
-It is possible to change transparency of the color using a
+It is possible to change the transparency of the color using a
 built-in function
 `color.new <https://www.tradingview.com/pine-script-reference/v4/#fun_color{dot}new>`__.
 
