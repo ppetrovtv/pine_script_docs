@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+SPHINXBUILD   = python -m sphinx
 SOURCEDIR     = source
 BUILDDIR      = build
 
@@ -27,3 +27,6 @@ help:
 
 syncpackages:
 	pip install --user -r requirements.txt
+
+install_tools:
+	pip install sphinx==1.8.5
