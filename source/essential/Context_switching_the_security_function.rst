@@ -7,9 +7,6 @@ Context switching and the security function
 The ``security`` function enables scripts to request data from
 symbols and/or resolutions other than the ones a script is running on.
 
-The security function
----------------------
-
 Let's assume the following script is running on an IBM chart at *1 minute*. It
 will display the *close* price of the IBM symbol, but at *15 minutes* resolution.
 
@@ -99,8 +96,7 @@ involved use of ``security``::
 The script requests two additional securities. The results of the
 requests are then used in an arithmetic formula. As a result, we have a
 stock market indicator used by investors to measure the number of
-individual stocks participating in an upward or downward trend (`read
-more <https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
+individual stocks participating in an upward or downward trend.
 
 
 
