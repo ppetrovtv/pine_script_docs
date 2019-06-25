@@ -6,7 +6,7 @@ It's a replacement of [Pine Tutorial Wiki](https://www.tradingview.com/wiki/Pine
 ## How to build html docs
 Follow these steps:
 
-* Install [sphinx-doc](http://www.sphinx-doc.org/en/master/usage/installation.html)
+* Execute `sudo make install_tools`
 * Execute `make syncpackages` (this would download the theme)
 * Execute `make html`
 
