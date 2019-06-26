@@ -49,9 +49,9 @@ For example::
     if open > close
         c3 := 0
 
-The type of ``c1`` is *const float* because it is initialized with a *literal* expression.
-The type of ``c2`` is also *const float* because it is initialized with an arithmetic expression of *const float* type.
-The type of ``c3`` is *series float* because it changes at runtime.
+The type of ``c1`` is *const int* because it is initialized with a *literal int* expression.
+The type of ``c2`` is also *const int* because it is initialized with an arithmetic expression of *const int* type.
+The type of ``c3`` is *series int* because it changes at runtime.
 
 Input
 ^^^^^
