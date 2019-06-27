@@ -1,17 +1,14 @@
-Context switching and the "security" function
-=============================================
+Context switching and the security function
+===========================================
 
 .. contents:: :local:
     :depth: 2
 
-The ``security`` function enables scripts to request data from 
+The ``security`` function enables scripts to request data from
 symbols and/or resolutions other than the ones a script is running on.
 
-The "security" function
------------------------
-
-Let's assume the following script is running on an IBM chart at 1min. It
-will display the *close* price of the IBM symbol, but at 15min resolution.
+Let's assume the following script is running on an IBM chart at *1 minute*. It
+will display the *close* price of the IBM symbol, but at *15 minutes* resolution.
 
 ::
 
@@ -22,7 +19,7 @@ will display the *close* price of the IBM symbol, but at 15min resolution.
 
 .. image:: images/Chart_security_1.png
 
-The `security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__ 
+The `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__
 function's first argument is the name of the requested symbol. The second
 argument is the required resolution and the third one is an expression
 which will be calculated on the requested series *within* the ``security`` call.
@@ -30,11 +27,11 @@ which will be calculated on the requested series *within* the ``security`` call.
 The name of the symbol can be defined using two variants: with a prefix that
 contains the exchange (or data provider), or without it. For example:
 ``"NYSE:IBM"``, ``"BATS:IBM"`` or ``"IBM"``. When an exchange is not provided,
-BATS will be used as the default. The current symbol name is stored in the 
-`syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and 
+BATS will be used as the default. The current symbol name is stored in the
+`syminfo.ticker <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}ticker>`__ and
 `syminfo.tickerid <https://www.tradingview.com/pine-script-reference/v4/#var_syminfo{dot}tickerid>`__
 built-in variables. ``syminfo.ticker`` contains the value of the
-symbol name without its exchange prefix, for example ``"MSFT"``. 
+symbol name without its exchange prefix, for example ``"MSFT"``.
 ``syminfo.tickerid`` contains the value of the symbol name with its exchange prefix, for example,
 ``"BATS:MSFT"`` or ``"NASDAQ:MSFT"``. It is recommended to use ``syminfo.tickerid`` to avoid
 ambiguity in the values returned by ``security``.
@@ -47,18 +44,18 @@ number of minutes. The lowest resolution is *one minute* and is indicated by the
 literal ``"1"``. It is possible to request any [#minutes]_ number of minutes: ``"5"``, ``"10"``,
 ``"21"``, etc. *Hourly* resolution is also set by minutes [#hours]_. For example, the
 following lines signify one hour, two hours and four hours respectively:
-``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is indicated by 
+``"60"``, ``"120"``, ``"240"``. A resolution with a value of *1 day* is indicated by
 ``"D"`` or ``"1D"``. It is possible to request any number of days: ``"2D"``,
 ``"3D"``, etc. *Weekly* and *Monthly* resolutions are set in a similar way: ``"W"``,
 ``"1W"``, ``"2W"``, ..., ``"M"``, ``"1M"``, ``"2M"``. ``"M"`` and ``"1M"`` denote the same monthly
 resolution, and ``"W"`` and ``"1W"`` the same weekly resolution. The
 third parameter of the security function can be any arithmetic
 expression or a function call, which will be calculated in the context of the chosen series.
-The resolution of the main chart's symbol is stored in the  
+The resolution of the main chart's symbol is stored in the
 `timeframe.period <https://www.tradingview.com/pine-script-reference/v4/#var_timeframe{dot}period>`__
 built-in variable.
 
-With the ``security`` function, users can view a 1min chart while
+With the ``security`` function, users can view a *1 minute* chart while
 displaying an SMA (or any other expression) from any other resolution
 (i.e., daily, weekly, monthly)::
 
@@ -75,22 +72,22 @@ One can declare the following variable:
 
     spread = high - low
 
-and calculate it at 1min, 15min and 60min::
+and calculate it at *1 minute*, *15 minutes* and *60 minutes*::
 
     spread_1 = security(tickerid, '1', spread)
     spread_15 = security(tickerid, '15', spread)
     spread_60 = security(tickerid, '60', spread)
 
-The ``security`` function 
+The ``security`` function
 returns a series which is then adapted to the time scale of
 the current chart's symbol. This result can be either shown directly on
-the chart (i.e., with ``plot``), or used in further calculations. 
+the chart (i.e., with ``plot``), or used in further calculations.
 The "Advance Decline Ratio" script illustrates a more
 involved use of ``security``::
 
     //@version=4
     study(title = "Advance Decline Ratio", shorttitle="ADR")
-    ratio(t1, t2, source) => 
+    ratio(t1, t2, source) =>
         s1 = security(t1, timeframe.period, source)
         s2 = security(t2, timeframe.period, source)
         s1 / s2
@@ -99,8 +96,7 @@ involved use of ``security``::
 The script requests two additional securities. The results of the
 requests are then used in an arithmetic formula. As a result, we have a
 stock market indicator used by investors to measure the number of
-individual stocks participating in an upward or downward trend (`read
-more <https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
+individual stocks participating in an upward or downward trend.
 
 
 
@@ -109,25 +105,25 @@ more <https://en.wikipedia.org/wiki/Advance%E2%80%93decline_line>`__).
 Barmerge gaps and lookahead
 ---------------------------
 
-There are two switches that define how data requested with ``security`` 
+There are two switches that define how data requested with ``security``
 will be mapped to the current timeframe.
 
-The first one, ``gaps``, controls gaps in data. With the default value  
-`barmerge.gaps_off <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_off>`__, data is
+The first one, ``gaps``, controls gaps in data. With the default value
+`barmerge.gaps_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_off>`__, data is
 merged continuously (without ``na`` gaps). All gaps, if any, are filled with the previous nearest non-``na`` value.
-If `barmerge.gaps_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}gaps_on>`__ 
+If `barmerge.gaps_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_on>`__
 is used, then merged data may contain gaps in the form of ``na`` values.
 
 The second switch, ``lookahead``, was added in :ref:`Pine Script version
 3 <release_notes_v3>`. The parameter has two possible values:
-`barmerge.lookahead_off <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
+`barmerge.lookahead_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
 and
-`barmerge.lookahead_on <https://www.tradingview.com/study-script-reference/v4/#var_barmerge{dot}lookahead_on>`__
-to respectively switch between the new, default behavior of 
-`security <https://www.tradingview.com/study-script-reference/v4/#fun_security>`__,
+`barmerge.lookahead_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_on>`__
+to respectively switch between the new, default behavior of
+`security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__,
 and the old behavior dating from Pine v1 and v2.
 
-This example shows the difference on a 5min chart::
+This example shows the difference on a *5 minutes* chart::
 
     //@version=4
     study('My Script', overlay=true)
@@ -202,15 +198,15 @@ Requesting data of a lower timeframe
 ------------------------------------
 
 ``security`` function was designed to request data of a timeframe *higher*
-than the current chart timeframe. On a 60min chart,
+than the current chart timeframe. On a *60 minutes* chart,
 this would mean requesting 240, D, W, or any higher timeframe.
 
-It is not recommended to request data of a timeframe *lower* that the current chart timeframe, 
-for example 1min data from a 5min chart. The main problem with such a case is that 
-some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a 5 minute 
-chart and not to break the time axis. In such cases the behavior of ``security`` can be rather unexpected. 
+It is not recommended to request data of a timeframe *lower* that the current chart timeframe,
+for example *1 minute* data from a *5 minutes* chart. The main problem with such a case is that
+some part of a 1 minute data will be inevitably lost, as it's impossible to display it on a *5 minutes*
+chart and not to break the time axis. In such cases the behavior of ``security`` can be rather unexpected.
 The next example illustrates this::
-    
+
     // Add this script on a "5" minute chart
     //@version=4
     study("Lookahead On/Off", overlay=true, precision=5)
@@ -222,11 +218,12 @@ The next example illustrates this::
 .. image:: images/SecurityLowerTF_LookaheadOnOff.png
 
 This study plots two lines which correspond to different values of the ``lookahead`` parameter.
-The red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``. The blue line with ``lookahead=barmerge.lookahead_off``. Let's look at the 5min bar starting at 07:50. 
+The red line shows data returned by ``security`` with ``lookahead=barmerge.lookahead_on``. 
+The blue line with ``lookahead=barmerge.lookahead_off``. Let's look at the *5 minutes* bar starting at 07:50.
 The red line at this bar has a value of 1.13151 which corresponds to the
-value of *the first of the five 1min bars* that fall into the time range 07:50--07:54. 
-On the other hand, the blue line at the same bar has a value of 1.13121 which corresponds to 
-*the last of the five 1min bars* of the same time range.
+value of *the first of the five 1 minute bars* that fall into the time range 07:50--07:54.
+On the other hand, the blue line at the same bar has a value of 1.13121 which corresponds to
+*the last of the five 1 minute bars* of the same time range.
 
 
 

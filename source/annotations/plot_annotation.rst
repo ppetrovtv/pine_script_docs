@@ -1,7 +1,7 @@
 plot annotation
 ---------------
 
-The `plot <https://www.tradingview.com/study-script-reference/v4/#fun_plot>`__ annotation function
+The `plot <https://www.tradingview.com/pine-script-reference/v4/#fun_plot>`__ annotation function
 has one mandatory parameter: a value of *series* type, which it displays
 as a line. A basic call looks like this:
 
@@ -9,7 +9,7 @@ as a line. A basic call looks like this:
 
     plot(close)
 
-Pine's automatic type conversions makes it possible to also use 
+Pine's automatic type conversions makes it possible to also use
 any numeric value as an argument. For example:
 
 ::
@@ -61,11 +61,10 @@ series has been shifted to the right (its value is positive).
 
 .. rubric:: Footnotes
 
-.. [#offset_function] In Pine there is a built-in 
-   `offset <https://www.tradingview.com/study-script-reference/v4/#fun_offset>`__ function
+.. [#offset_function] In Pine there is a built-in
+   `offset <https://www.tradingview.com/pine-script-reference/v4/#fun_offset>`__ function
    which shifts the values of a series to the right while discarding 'out of range' values.
    The advantage of the ``offset`` function lies in the fact that its result
    can be used in other expressions to execute complex calculations. In the
    case of ``plot`` function's ``offset`` parameter, the shift is only cosmetic;
    the actual values in the series are not moved.
-   

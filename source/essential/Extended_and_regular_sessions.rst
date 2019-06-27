@@ -5,14 +5,14 @@ Extended and regular sessions
 
 On TradingView you can access extended hours sessions by
 *right-clicking* on a chart and choosing *Settings* |rarr|
-*Symbol* |rarr| *Extended Hours (Intraday only)*. 
+*Symbol* |rarr| *Extended Hours (Intraday only)*.
 There are two types of sessions: *regular* (excluding pre- and post-market
-data) and *extended* (including pre- and post-market data). 
+data) and *extended* (including pre- and post-market data).
 Pine scripts may request additional session data using the
 `security <https://www.tradingview.com/pine-script-reference/v4/#fun_security>`__ function.
 
-The ``security`` function can be called with a symbol name 
-(*"EXCHANGE_PREFIX:TICKER"*, e.g., "BATS:AAPL") as its first argument. 
+The ``security`` function can be called with a symbol name
+(*"EXCHANGE_PREFIX:TICKER"*, e.g., "BATS:AAPL") as its first argument.
 Used this way, the ``security`` function will return data for the regular session. For example::
 
     //@version=4
@@ -23,7 +23,7 @@ Used this way, the ``security`` function will return data for the regular sessio
 .. image:: images/Pine-_Regular_Session_Data.png
 
 If you want the ``security`` call to return extended session data, you
-must first use the `tickerid <https://www.tradingview.com/study-script-reference/#fun_tickerid>`__ function
+must first use the `tickerid <https://www.tradingview.com/pine-script-reference/#fun_tickerid>`__ function
 to build ``security`` call's first argument::
 
     //@version=4
@@ -36,7 +36,7 @@ to build ``security`` call's first argument::
 
 
 Notice that the previous chart's gaps in the script's plot are now filled. Also keep in mind
-that the background coloring on the chart is not produced by the our example scripts;  
+that the background coloring on the chart is not produced by our example scripts;
 it is due to the chart's settings showing extended hours.
 
 The first argument of the ``tickerid`` function is an exchange prefix ("BATS") and the
@@ -50,10 +50,10 @@ could be rewritten as::
     cc = security("BATS:AAPL", timeframe.period, close, true)
     plot(cc, style=plot.style_linebr)
 
-If you want to request the same session information used for the chart's main
+If you want to request the same session specification used for the chart's main
 symbol, omit the third argument; it is optional. Or, if you want your code to
 explicitly declare your intention, use the ``syminfo.session``
-built-in variable as the third argument to ``tickerid`` function, as it 
+built-in variable as the third argument to ``tickerid`` function, as it
 holds the session type of the chart's main symbol::
 
     //@version=4

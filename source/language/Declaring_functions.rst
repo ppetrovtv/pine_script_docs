@@ -27,10 +27,10 @@ After the function ``f`` has been declared, it's possible to call it using diffe
     b = f(2, 2)
     c = f(open, 2)
 
-The type of the value returned by function ``f`` is determined automatically 
+The type of the value returned by function ``f`` is determined automatically
 and depends on the type of the arguments used in each particular function call. In the example above, the
-type of variable ``a`` is *series* because the arguments are both *series*. The type of variable ``b`` is 
-*integer* because arguments are both *literal integers*. The type of variable ``c`` is *series* 
+type of variable ``a`` is *series* because the arguments are both *series*. The type of variable ``b`` is
+*integer* because arguments are both *literal integers*. The type of variable ``c`` is *series*
 because the addition of a *series* and *literal integer* produces a *series* result.
 
 Pine Scipt functions do not support recursion. It is **not allowed** for a function to call itself from within its own code.
@@ -85,7 +85,7 @@ outside --- e.g., from the global scope or the local scope of another
 function.
 
 On the other hand, since it is possible to refer to any variable or function
-declared in the global scope from the scope of a function (except for 
+declared in the global scope from the scope of a function (except for
 self-referencing recursive calls), one can say
 that the local scope is embedded into the global scope.
 

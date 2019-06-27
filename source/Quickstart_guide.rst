@@ -18,7 +18,6 @@ Let's look at the implementation of the
 `MACD <https://www.tradingview.com/wiki/MACD>`__ indicator in Pine:
 
 .. code-block:: pine
-    :linenos:
 
     //@version=4
     study("MACD")
@@ -65,4 +64,4 @@ algorithms (`SMA <https://www.tradingview.com/wiki/Moving_Average#Simple_Moving_
 `WMA <https://www.tradingview.com/wiki/Moving_Average#Weighted_Moving_Average_.28WMA.29>`__, etc.).
 You can also define your custom functions. You will find a
 description of all available built-in functions
-`here <https://www.tradingview.com/study-script-reference/v4/>`__.
+`here <https://www.tradingview.com/pine-script-reference/v4/>`__.
