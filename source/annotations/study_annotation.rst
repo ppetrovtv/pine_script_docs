@@ -11,7 +11,7 @@ annotation function, which has the following signature:
 
 The ``study`` annotation determines the indicator's general properties.
 Only the ``title`` parameter is mandatory. It defines the name of the
-indicator. This name will be used in the *Indicators* dialogue and is
+indicator. This name will be used in the *Indicators* dialog box and is
 independent of the name used to save the script in your Personal Library.
 
 ``shorttitle`` is the short name of the indicator displayed on the
