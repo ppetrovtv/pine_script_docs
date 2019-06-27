@@ -25,9 +25,10 @@ already on a chart, you need to use the *Add to Chart* button to implement the c
 
 ``format`` defines the type of formatting used for study values appearing 
 on the price axis, in indicator values or in the Data Window.
-Possible values are: ``format.inherit``, ``format.price`` and ``format.volume``. The default is ``format.inherit``.
-which uses the format settings from the chart, unless ``precision=`` is also used,
-in which case it will override the effect of ``format.inherit``. When ``format.price`` is used, 
+Possible values are: ``format.inherit``, ``format.price`` and ``format.volume``. 
+The default is ``format.inherit``, which uses the format settings from the chart, 
+unless ``precision=`` is also used, in which case it will override 
+the effect of ``format.inherit``. When ``format.price`` is used, 
 the default precision will be "2", unless one is specified using ``precision=``. When
 ``format.volume`` is used, the format is equivalent to ``precision=0`` used in 
 earlier versions of Pine, where "5183" becomes "5.183K". Using ``format.volume``
