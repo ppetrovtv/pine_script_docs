@@ -47,4 +47,4 @@ had been used.
 .. rubric:: Footnote
 
 .. [#strategy] Pine also has a `strategy <https://www.tradingview.com/pine-script-reference/v4/#fun_strategy>`__
-   annotation function which is used to create a :doc:`backtesting strategy </essential/Strategies>` rather than an indicator (or study).
+   annotation function which is used to create a :doc:`backtesting strategy </essential/Strategies>` rather than a study (or indicator).
