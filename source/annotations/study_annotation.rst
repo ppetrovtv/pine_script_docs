@@ -9,7 +9,7 @@ annotation function, which has the following signature:
 
     study(title, shorttitle, overlay, format, precision)
 
-The annotation determines the indicator's general properties.
+The ``study`` annotation determines the indicator's general properties.
 Only the ``title`` parameter is mandatory. It defines the name of the
 indicator. This name will be used in the *Indicators* dialogue and is
 independent of the name used to save the script in your Personal Library.
