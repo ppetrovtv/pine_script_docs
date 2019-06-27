@@ -1,7 +1,7 @@
 study annotation
 ----------------
 
-Every *indicator* (also known as a *study*) [#strategy]_ script must contain one call of the
+Every *study* (also known as an *indicator*) [#strategy]_ script must contain one call of the
 `study <https://www.tradingview.com/pine-script-reference/v4/#fun_study>`__
 annotation function, which has the following signature:
 
@@ -20,15 +20,26 @@ chart, if it must be different than the value of ``title``.
 ``overlay`` is a logical type of argument. If it is true then the study
 will be added as an overlay on top of the main chart. If it is false
 then it will be added in a separate pane. False is the default
-setting.
+setting. Note that if you change the parameter's value in a script that is
+already on a chart, you need to use the *Add to Chart* button to implement the change.
 
-``format`` is a type of formatting study values on the price axis.
-Possible values are: ``format.inherit``, ``format.price``, ``format.volume``. Default is ``format.inherit``.
+``format`` defines the type of formatting used for study values appearing on the price axis or in indicator values.
+Possible values are: ``format.inherit``, ``format.price``, ``format.volume``. The default is ``format.inherit``.
+which uses the format settings from the chart, unless ``precision=`` is also used,
+in which case it will override the effect of ``format.inherit``. When ``format.price`` is used, 
+the default precision will be "2", unless one is specified using ``precision=``. When
+``format.volume`` is used, the format is equivalent to ``precision=0`` used in 
+earlier versions of Pine, where "5183" becomes "5.183K". Using ``format.volume``
+overrides any value defined using the ``precision=`` parameter.
 
-``precision`` is the number of digits after the floating point for study values on the price axis.
-Must be a non negative integer and not greater than 16.
-If omitted, using formatting from parent series.
-If format is ``format.inherit`` and this argument is set, then format becomes ``format.price``.
+``precision`` is the number of digits after the floating point 
+used to format study values on the price axis and in indicator values.
+It must be a non-negative integer and not greater than 16.
+If omitted, then formatting from the parent series on the chart will be used.
+If format is ``format.inherit`` and the ``precision`` argument is used, 
+then the study will not inherit formatting from the chart's settings and 
+the value specified will be used instead, as if ``format=format.price`` 
+had been used.
 
 
 .. rubric:: Footnote
