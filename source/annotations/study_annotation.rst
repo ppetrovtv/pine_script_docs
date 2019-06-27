@@ -23,7 +23,8 @@ then it will be added in a separate pane. False is the default
 setting. Note that if you change the parameter's value in a script that is
 already on a chart, you need to use the *Add to Chart* button to implement the change.
 
-``format`` defines the type of formatting used for study values appearing on the price axis or in indicator values.
+``format`` defines the type of formatting used for study values appearing 
+on the price axis, in indicator values or in the Data Window.
 Possible values are: ``format.inherit``, ``format.price``, ``format.volume``. The default is ``format.inherit``.
 which uses the format settings from the chart, unless ``precision=`` is also used,
 in which case it will override the effect of ``format.inherit``. When ``format.price`` is used, 
