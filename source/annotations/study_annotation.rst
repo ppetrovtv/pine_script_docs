@@ -35,7 +35,7 @@ earlier versions of Pine, where "5183" becomes "5.183K". Using ``format.volume``
 overrides any value defined using the ``precision=`` parameter.
 
 ``precision`` is the number of digits after the floating point 
-used to format study values on the price axis and in indicator values.
+used to format study values.
 It must be a non-negative integer and not greater than 16.
 If omitted, then formatting from the parent series on the chart will be used.
 If format is ``format.inherit`` and the ``precision`` argument is used, 
