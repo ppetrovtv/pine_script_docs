@@ -44,8 +44,8 @@ The function makes the alert available in the *Create Alert*
 dialog box. Please note that the ``alertcondition`` **does NOT start alerts programmatically**;
 it only gives you the opportunity to create an alert from it
 in the *Create Alert* dialog box. Alerts must always be created manually.
-Also, an alert created with a custom ``alertcondition`` in Pine
-code does not display anything on a chart.
+An alert created from an ``alertcondition`` in the script's
+code does not display anything on the chart, except the message when it triggers.
 
 To create an alert based on an ``alertcondition``, one should apply a Pine study
 containing at least one ``alertcondition`` call to the current chart, open the *Create Alert*
