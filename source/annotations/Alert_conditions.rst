@@ -5,7 +5,7 @@ Alert conditions
 The
 `alertcondition <https://www.tradingview.com/pine-script-reference/v4/#fun_alertcondition>`__ annotation function
 allows you to create custom *alert conditions* in Pine studies. One study may contain more than one ``alertcondition`` call.
-While the presence of ``alertcondition`` calls in a Pine *strategy* script will not cause a compilation error,
+While the presence of ``alertcondition`` calls in a Pine **strategy** script will not cause a compilation error,
 alerts cannot be created from them.
 
 The ``alertcondition`` function has the following signature:
