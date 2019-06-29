@@ -55,7 +55,7 @@ choose one of the specific alert conditions defined in the study's code.
 .. image:: images/Alertcondition_1.png
 
 
-When the alert fires, you will see the message:
+When the alert fires, you will see the following message:
 
 .. image:: images/Alertcondition_2.png
 
