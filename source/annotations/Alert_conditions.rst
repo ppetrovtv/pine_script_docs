@@ -40,7 +40,7 @@ Here is an example of code creating an alert condition::
     plot(ma_1, color=color.red)
     plot(ma_2, color=color.blue)
 
-The ``alertcondition` function makes the alert available in the *Create Alert*
+The ``alertcondition`` function makes the alert available in the *Create Alert*
 dialog box. Please note that the ``alertcondition`` **does NOT start alerts programmatically**;
 it only gives you the opportunity to create an alert from it
 in the *Create Alert* dialog box. Alerts must always be created manually.
