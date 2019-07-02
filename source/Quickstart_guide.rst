@@ -71,7 +71,7 @@ description of all available built-in functions
 ---------------------
 Pine strategies are used to run backtests. In addition to normal script calculations, they also contain ``strategy.*`` calls to generate buy and sell orders. They can plot information on charts but cannot be used to generate alerts. See :doc:`/annotations/study_annotation`.
 
-Pine studies, as the one in the previous example, also contain calculations and plot information on charts, but cannot be used in backtesting. Studies containing ``alertcondition`` calls may be used to create alerts using the TradingView *Create Alert* dialog box. See :doc:`/essential/Strategies`.
+Pine studies, as the one in the previous example, also contain calculations and may plot information on charts, but cannot be used in backtesting. Studies containing ``alertcondition`` calls may be used to create alerts using the TradingView *Create Alert* dialog box. See :doc:`/essential/Strategies`.
 
 Execution model of Pine scripts
 -------------------------------
