@@ -66,3 +66,35 @@ algorithms (`SMA <https://www.tradingview.com/wiki/Moving_Average#Simple_Moving_
 You can also define your custom functions. You will find a
 description of all available built-in functions
 `here <https://www.tradingview.com/pine-script-reference/v4/>`__.
+
+Example of a Pine script
+------------------------
+
+"study" vs "strategy"
+---------------------
+Pine strategies are used to run backtests. In addition to normal script calculations, they also contain ``strategy.*`` calls to generate buy and sell orders. They can plot information on charts but cannot be used to generate alerts. See XXX for more information on strategies.
+Pine studies, as the one in the previous example, also contain calculations and plot information on charts, but cannot be used in backtesting. Studies containing ``alertcondition`` calls may be used to create alerts using the TradingView Create Alert dialog box. See XXX for more information on studies.
+
+Execution model of Pine scripts
+-------------------------------
+
+A Pine script is not like many normal programs that execute once and then stop. In the Pine runtime environment, a script runs in the equivalent of an invisible loop where it is executed once on each bar and then, when execution reaches the last, real-time bar, the script executes once every time price changes, and then one final time when the real-time bar closes and becomes a historical bar. By default, Pine strategies only execute once at the close of real-time bars, but they can also be instructed to execute on each price change. See XXX for more information on Pine’s execution model.
+Series
+The main data type used in Pine scripts is called a *time series*—or simply *series*. It is a continuous list of values that stretches back in time from any given bar and where one value exists for each bar. While this structure may remind many of an array, a Pine series is totally different and thinking in terms of arrays will be detrimental to understanding this key Pine concept. See XXX for more information on series.
+
+Understanding scripts
+---------------------
+If you intend to write Pine scripts of any reasonable complexity, a good comprehension of both the Pine execution model and time series is essential in understanding how Pine scripts work. If you have never worked with data organized in time series before, you will need practice in putting them to work for you. When you familiarize yourself with Pine’s fundamental concepts, you will discover that by combining series with our built-in functions designed to efficiently process series data, much can be accomplished in very few lines of Pine code.
+
+Pine Editor
+-----------
+
+The Pine editor is where you will be working on your scripts. To open it, click on the *Pine Editor* tab at the bottom of your TradingView chart. This will open up the editor window. We will create our first working Pine script. Start by bringing up the “New” dropdown menu at the top right of the editor and choose *Blank indicator script*. Then copy the previous example script, select the 3 lines already in the editor and replace them with the example script. Click *Save*, choose a name and then click *Add to Chart*. The MACD indicator will appear in a separate *Pane* under the chart.
+From here, you can change the script’s code, by changing the last line’s ``color.orange`` for ``color.fuchsia`` for example. When you save the script’s code, the change will be reflected in the indicator’s pane. Your first Pine script is running!
+
+Where to go from here?
+----------------------
+
+This documentation contains numerous examples of code used to illustrate how functions, variables and operators are used in Pine. By going through it, you will be able to both learn the foundations of Pine and study the example scripts.
+The fastest way to learn a programming language is to read about key concepts and try them out with real code. As we’ve just done, copy this documentation’s examples into your Pine Editor and play with them. Explore! You won’t break anything.
+You will also find examples of Pine scripts in the editor’s *New* dropdown menu and in TradingView extensive Public Library which contains thousands of open source Pine scripts. Enjoy and welcome to Pine!
