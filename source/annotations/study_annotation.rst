@@ -21,7 +21,7 @@ chart, if it must be different than the value of ``title``.
 will be added as an overlay on top of the main chart. If it is false
 then it will be added in a separate pane. False is the default
 setting. Note that if you change the parameter's value in a script that is
-already on a chart, you need to use the *Add to Chart* button to implement the change.
+already on a chart, you need to use the *Add to Chart* button to apply the change.
 
 ``format`` defines the type of formatting used for study values appearing 
 on the price axis, in indicator values or in the Data Window.
@@ -31,8 +31,7 @@ unless ``precision=`` is also used, in which case it will override
 the effect of ``format.inherit``. When ``format.price`` is used, 
 the default precision will be "2", unless one is specified using ``precision=``. When
 ``format.volume`` is used, the format is equivalent to ``precision=0`` used in 
-earlier versions of Pine, where "5183" becomes "5.183K". Using ``format.volume``
-overrides any value defined using the ``precision=`` parameter.
+earlier versions of Pine, where "5183" becomes "5.183K".
 
 ``precision`` is the number of digits after the floating point 
 used to format study values.
