@@ -69,16 +69,16 @@ description of all available built-in functions
 
 "study" vs "strategy"
 ---------------------
-Pine strategies are used to run backtests. In addition to normal script calculations, they also contain ``strategy.*`` calls to generate buy and sell orders. They can plot information on charts but cannot be used to generate alerts. See XXX for more information on strategies.
+Pine strategies are used to run backtests. In addition to normal script calculations, they also contain ``strategy.*`` calls to generate buy and sell orders. They can plot information on charts but cannot be used to generate alerts. See :doc:`/annotations/study_annotation`.
 
-Pine studies, as the one in the previous example, also contain calculations and plot information on charts, but cannot be used in backtesting. Studies containing ``alertcondition`` calls may be used to create alerts using the TradingView *Create Alert* dialog box. See XXX for more information on studies.
+Pine studies, as the one in the previous example, also contain calculations and plot information on charts, but cannot be used in backtesting. Studies containing ``alertcondition`` calls may be used to create alerts using the TradingView *Create Alert* dialog box. See :doc:`/essential/Strategies`.
 
 Execution model of Pine scripts
 -------------------------------
 
 A Pine script is **not** like many normal programs that execute once and then stop. In the Pine runtime environment, a script runs in the equivalent of an invisible loop where it is executed once on each historical bar. When execution reaches the last, real-time bar, the script executes once every time price changes, then one final time when the real-time bar closes and becomes a historical bar.
 
-By default, Pine *strategies* only execute once at the close of real-time bars, but they can also be instructed to execute on each price change, as *studies* do. See XXX for more information on Pine’s execution model.
+By default, Pine *strategies* only execute once at the close of real-time bars, but they can also be instructed to execute on each price change, as *studies* do. See :doc:`/language/Execution_model`.
 
 Series
 ------
