@@ -231,8 +231,6 @@ visual shift., i.e., it will be applied after all calculations.
 Further details on ``plot`` and its parameters can be found
 `here <https://www.tradingview.com/pine-script-reference/v4/#fun_plot>`__.
 
-`here <https://www.tradingview.com/pine-script-reference/#fun_plot>`__.
-
 Operator precedence
 -------------------
 
