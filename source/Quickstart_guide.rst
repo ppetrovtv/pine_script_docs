@@ -102,4 +102,4 @@ This documentation contains numerous examples of code used to illustrate how fun
 
 The fastest way to learn a programming language is to read about key concepts and try them out with real code. As we’ve just done, copy this documentation’s examples into your Pine Editor and play with them. Explore! You won’t break anything.
 
-You will also find examples of Pine scripts in the editor’s *New* dropdown menu and in TradingView extensive Public Library which contains thousands of open source Pine scripts. Enjoy and welcome to Pine!
+You will also find examples of Pine scripts in the editor’s *New* dropdown menu and in TradingView's extensive Public Library of `scripts <https://www.tradingview.com/script/>`__ which contains thousands of open source Pine scripts. Enjoy and welcome to Pine!
