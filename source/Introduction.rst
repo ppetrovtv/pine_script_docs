@@ -7,7 +7,8 @@ Introduction
    :width: 240
    :height: 240
 
-TradingView has designed its own scripting language called **Pine Script**.
+`TradingView <https://www.tradingview.com/>`__ has designed its own scripting language called
+**Pine Script**.
 It allows users to create customized indicators and run them
 on our servers. Pine was designed as a lightweight
 language focused on the specific task of developing indicators. TradingView's
