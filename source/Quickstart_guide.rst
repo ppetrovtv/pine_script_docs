@@ -76,7 +76,9 @@ Pine studies, as the one in the previous example, also contain calculations and 
 Execution model of Pine scripts
 -------------------------------
 
-A Pine script is **not** like many normal programs that execute once and then stop. In the Pine runtime environment, a script runs in the equivalent of an invisible loop where it is executed once on each historical bar. When execution reaches the last, real-time bar, the script executes once every time price changes, then one final time when the real-time bar closes and becomes a historical bar. By default, Pine strategies only execute once at the close of real-time bars, but they can also be instructed to execute on each price change. See XXX for more information on Pine’s execution model.
+A Pine script is **not** like many normal programs that execute once and then stop. In the Pine runtime environment, a script runs in the equivalent of an invisible loop where it is executed once on each historical bar. When execution reaches the last, real-time bar, the script executes once every time price changes, then one final time when the real-time bar closes and becomes a historical bar.
+
+By default, Pine *strategies* only execute once at the close of real-time bars, but they can also be instructed to execute on each price change. See XXX for more information on Pine’s execution model.
 
 Series
 ------
