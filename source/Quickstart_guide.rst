@@ -91,7 +91,7 @@ If you intend to write Pine scripts of any reasonable complexity, a good compreh
 Pine Editor
 -----------
 
-The Pine editor is where you will be working on your scripts. To open it, click on the *Pine Editor* tab at the bottom of your TradingView chart. This will open up the editor window. We will create our first working Pine script. Start by bringing up the “New” dropdown menu at the top right of the editor and choose *Blank indicator script*. Then copy the previous example script, select the 3 lines already in the editor and replace them with the example script. Click *Save*, choose a name and then click *Add to Chart*. The MACD indicator will appear in a separate *Pane* under the chart.
+The Pine Editor is where you will be working on your scripts. To open it, click on the *Pine Editor* tab at the bottom of your TradingView chart. This will open up the editor's window. We will create our first working Pine script. Start by bringing up the “New” dropdown menu at the top right of the editor and choose *Blank indicator script*. Then copy the previous example script, select the 3 lines already in the editor and replace them with the example script. Click *Save*, choose a name and then click *Add to Chart*. The MACD indicator will appear in a separate *Pane* under the chart.
 
 From here, you can change the script’s code. For example, change the last line’s ``color.orange`` for ``color.fuchsia``. When you save the script, the change will be reflected in the indicator’s pane. Your first Pine script is running!
 
@@ -100,6 +100,6 @@ Where to go from here?
 
 This documentation contains numerous examples of code used to illustrate how functions, variables and operators are used in Pine. By going through it, you will be able to both learn the foundations of Pine and study the example scripts.
 
-The fastest way to learn a programming language is to read about key concepts and try them out with real code. As we’ve just done, copy this documentation’s examples into your Pine Editor and play with them. Explore! You won’t break anything.
+The fastest way to learn a programming language is to read about key concepts and try them out with real code. As we’ve just done, copy this documentation’s examples in the editor and play with them. Explore! You won’t break anything.
 
 You will also find examples of Pine scripts in the editor’s *New* dropdown menu and in TradingView's extensive Public Library of `scripts <https://www.tradingview.com/script/>`__ which contains thousands of open source Pine scripts. Enjoy and welcome to Pine!
