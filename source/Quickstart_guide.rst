@@ -67,9 +67,6 @@ You can also define your custom functions. You will find a
 description of all available built-in functions
 `here <https://www.tradingview.com/pine-script-reference/v4/>`__.
 
-Example of a Pine script
-------------------------
-
 "study" vs "strategy"
 ---------------------
 Pine strategies are used to run backtests. In addition to normal script calculations, they also contain ``strategy.*`` calls to generate buy and sell orders. They can plot information on charts but cannot be used to generate alerts. See XXX for more information on strategies.
