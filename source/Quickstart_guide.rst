@@ -75,9 +75,11 @@ Pine studies, as the one in the previous example, also contain calculations and 
 Execution model of Pine scripts
 -------------------------------
 
-A Pine script is not like many normal programs that execute once and then stop. In the Pine runtime environment, a script runs in the equivalent of an invisible loop where it is executed once on each bar and then, when execution reaches the last, real-time bar, the script executes once every time price changes, and then one final time when the real-time bar closes and becomes a historical bar. By default, Pine strategies only execute once at the close of real-time bars, but they can also be instructed to execute on each price change. See XXX for more information on Pine’s execution model.
+A Pine script is not like many normal programs that execute once and then stop. In the Pine runtime environment, a script runs in the equivalent of an invisible loop where it is executed once on each historical bar. When execution reaches the last, real-time bar, the script executes once every time price changes, then one final time when the real-time bar closes and becomes a historical bar. By default, Pine strategies only execute once at the close of real-time bars, but they can also be instructed to execute on each price change. See XXX for more information on Pine’s execution model.
+
 Series
-The main data type used in Pine scripts is called a *time series*—or simply *series*. It is a continuous list of values that stretches back in time from any given bar and where one value exists for each bar. While this structure may remind many of an array, a Pine series is totally different and thinking in terms of arrays will be detrimental to understanding this key Pine concept. See XXX for more information on series.
+------
+The main data type used in Pine scripts is called a *series*. It is a continuous list of values that stretches back in time from the current bar and where one value exists for each bar. While this structure may remind many of an array, a Pine series is totally different and thinking in terms of arrays will be detrimental to understanding this key Pine concept. See XXX for more information on series.
 
 Understanding scripts
 ---------------------
