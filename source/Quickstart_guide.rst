@@ -93,7 +93,7 @@ Pine Editor
 
 The Pine editor is where you will be working on your scripts. To open it, click on the *Pine Editor* tab at the bottom of your TradingView chart. This will open up the editor window. We will create our first working Pine script. Start by bringing up the “New” dropdown menu at the top right of the editor and choose *Blank indicator script*. Then copy the previous example script, select the 3 lines already in the editor and replace them with the example script. Click *Save*, choose a name and then click *Add to Chart*. The MACD indicator will appear in a separate *Pane* under the chart.
 
-From here, you can change the script’s code, by changing the last line’s ``color.orange`` for ``color.fuchsia`` for example. When you save the script’s code, the change will be reflected in the indicator’s pane. Your first Pine script is running!
+From here, you can change the script’s code. For example, change the last line’s ``color.orange`` for ``color.fuchsia``. When you save the script’s code, the change will be reflected in the indicator’s pane. Your first Pine script is running!
 
 Where to go from here?
 ----------------------
