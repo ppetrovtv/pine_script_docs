@@ -436,7 +436,7 @@ Linear Regression
     src = input(close)
     len = input(50)
 
-    calcSlope(src, len0) =>
+    calcSlope(src, length) =>
         if not barstate.islast
             [float(na), float(na), float(na)]
         else
@@ -444,16 +444,16 @@ Linear Regression
             sumY = 0.0
             sumXSqr = 0.0
             sumXY = 0.0
-            for i = 0 to len - 1
+            for i = 0 to length - 1
                 val = src[i]
                 per = i + 1.0
                 sumX := sumX + per
                 sumY := sumY + val
                 sumXSqr := sumXSqr + per * per
                 sumXY := sumXY + val * per
-            slope = (len * sumXY - sumX * sumY) / (len * sumXSqr - sumX * sumX)
-            average = sumY / len
-            intercept = average - slope * sumX / len + slope
+            slope = (length * sumXY - sumX * sumY) / (length * sumXSqr - sumX * sumX)
+            average = sumY / length
+            intercept = average - slope * sumX / length + slope
             [slope, average, intercept]
 
     [s, a, i] = calcSlope(src, len)
