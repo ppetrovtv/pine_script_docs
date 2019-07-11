@@ -65,7 +65,7 @@ higher timeframe. Let's say you want to plot daily bars on 60 minute chart::
     higherRes = input("D", type=resolution)
     is_newbar(res) =>
         t = time(res)
-        change(t) != 0 ? 1 : 0
+        not na(t) and (na(t[1]) or t > t[1])
     o = security(tickerid, higherRes, open)
     h = security(tickerid, higherRes, high)
     l = security(tickerid, higherRes, low)
