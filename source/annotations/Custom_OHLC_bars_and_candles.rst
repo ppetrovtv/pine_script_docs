@@ -69,7 +69,7 @@ higher timeframe. You can, for example, plot daily bars on a *60 minutes* chart:
     higherRes = input("D", type=input.resolution)
     is_newbar(res) =>
         t = time(res)
-        change(t) != 0 ? 1 : 0
+        not na(t) and (na(t[1]) or t > t[1])
     o = security(syminfo.tickerid, higherRes, open)
     h = security(syminfo.tickerid, higherRes, high)
     l = security(syminfo.tickerid, higherRes, low)
