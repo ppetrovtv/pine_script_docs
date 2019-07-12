@@ -104,8 +104,8 @@ the following way::
     //@version=4
     study("new 30 min bar")
     is_newbar(res) =>
-      t = time(res)
-      not na(t) and (na(t[1]) or t > t[1])
+        t = time(res)
+        not na(t) and (na(t[1]) or t > t[1])
     plot(is_newbar("30"))
 
 .. image:: images/Chart_time_2.png
