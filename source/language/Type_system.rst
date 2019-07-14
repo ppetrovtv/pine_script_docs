@@ -146,8 +146,7 @@ The first number is the rounded number Pi (π), the second number is very
 large, while the third is very small. The fourth number is simply the
 number ``3`` as a floating point number.
 
-.. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``. The internal precision of
-floats in Pine is 1e-10.
+.. note:: It's possible to use uppercase ``E`` instead of lowercase ``e``.
 
 There are 5 forms of float type in Pine:
 
@@ -156,6 +155,8 @@ There are 5 forms of float type in Pine:
     * *input float*
     * *float*
     * *series float*
+
+The internal precision of floats in Pine is 1e-10.
 
 bool
 ^^^^
