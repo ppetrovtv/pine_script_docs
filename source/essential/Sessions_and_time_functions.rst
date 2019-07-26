@@ -105,12 +105,13 @@ custom session specification. In this case, internally, it will use a
 regular session specification of a symbol. For example, it's possible to
 highlight the beginning of each half-hour bar on a minute-based chart in
 the following way::
-
+    
+    //version=3
     study("new 30 min bar")
     is_newbar(res) =>
         t = time(res)
         not na(t) and (na(t[1]) or t > t[1])
-    plot(is_newbar("30"))
+    plot(is_newbar("30") ? 1 : 0)
 
 .. image:: images/Chart_time_2.png
 
