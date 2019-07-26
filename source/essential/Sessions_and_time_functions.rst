@@ -106,7 +106,7 @@ the following way::
     is_newbar(res) =>
         t = time(res)
         not na(t) and (na(t[1]) or t > t[1])
-    plot(is_newbar("30"))
+    plot(is_newbar("30") ? 1 : 0)
 
 .. image:: images/Chart_time_2.png
 
