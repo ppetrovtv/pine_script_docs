@@ -7,13 +7,13 @@ Plotting shapes, chars and arrows
 There are situations where you need to mark or highlight specific bars on a chart, and where
 a usual line plot using ``plot`` may not be optimal.
 Although it may be possible to do so using
-``plot`` with ``style=circles`` or ``style=cross``,
+``plot`` with ``style=plot.style_circles`` or ``style=plot.style_cross``,
 it is often easier to use the ``plotshape``, ``plotchar`` and ``plotarrow`` annotation functions.
 
-``plotshape``
--------------
+plotshape
+---------
 
-The `plotshape <https://www.tradingview.com/study-script-reference/#fun_plotshape>`__ 
+The `plotshape <https://www.tradingview.com/pine-script-reference/v4/#fun_plotshape>`__
 function can display a variety of shapes. The script below will draw an "X"
 above all green bars:
 
@@ -28,7 +28,7 @@ above all green bars:
 
 The first parameter, ``data``, is used as a series of logical
 values. The crosses are drawn on each true value. Nothing is drawn on false
-or ``na`` values. You may use a series of logical values or numbers as the first argument of 
+or ``na`` values. You may use a series of logical values or numbers as the first argument of
 ``plotshape``. A 0 or ``na`` is considered a false
 value, any other value is considered true.
 
@@ -89,19 +89,20 @@ shape. The available styles are:
 .. |Labeldown_with_text| image:: images/Labeldown_with_text.png
 
 The default position where ``plotshape`` draws shapes is above bars. To
-use another position, use the 
-``location`` parameter. The following script draws a green 
+use another position, use the
+``location`` parameter. The following script draws a green
 ``shape.triangleup`` *above* the green bars and a red ``shape.triangledown``
 *below* the red bars:
 
 ::
 
+    //@version=4
     study('plotshape example 2', overlay=true)
     data = close >= open
     plotshape(data, style=shape.triangleup,
-              location=location.abovebar, color=green)
+                     location=location.abovebar, color=color.green)
     plotshape(not data, style=shape.triangledown,
-              location=location.belowbar, color=red)
+                     location=location.belowbar, color=color.red)
 
 .. image:: images/Plotshape_example_2.png
 
@@ -115,28 +116,28 @@ Possible values for the ``location`` parameter are:
 -  ``location.absolute`` --- any position in the *y* space.
 
 ``location.absolute`` can be used when the shapes need to
-be positioned more precisely in the script's *y* space. The first parameter of the function 
+be positioned more precisely in the script's *y* space. The first parameter of the function
 is then used as a *y* coordinate.
 
 'plotshape example 2' illustrates how the shape's
-color can be defined using the ``color`` parameter and  
+color can be defined using the ``color`` parameter and
 expressions which will calculate the shape's color
 depending on conditions at runtime. For example::
 
     study('plotshape example 3', overlay=true)
     data = close >= open
-    plotshape(true, style=shape.flag, color=data ? green : red)
+    plotshape(true, style=shape.flag, color=data ? color.green : color.red)
 
 .. image:: images/Plotshape_example_3.png
 
 
 In the given example, the first parameter of the function ``plotshape`` is
-``true``, which means that a shape is displayed at every bar. 
-The color is calculated by the ``color=data ? green : red`` expression.
+``true``, which means that a shape is displayed at every bar.
+The color is calculated by the ``color=data ? color.green : color.red`` expression.
 
 Other features of the ``plotshape`` function:
 
--  Set the name of a displayed series of data using the 
+-  Set the name of a displayed series of data using the
    ``title`` parameter.
 -  Shift a series of shapes to the left/right using the
    ``offset`` parameter.
@@ -145,10 +146,10 @@ Other features of the ``plotshape`` function:
    You may use ``\n`` to separate text lines.
 
 
-``plotchar``
-------------
+plotchar
+--------
 
-The main difference between ``plotshape`` and `plotchar <https://www.tradingview.com/study-script-reference/#fun_plotchar>`__ 
+The main difference between ``plotshape`` and `plotchar <https://www.tradingview.com/pine-script-reference/v4/#fun_plotchar>`__
 is that with ``plotchar``, the shape is an ASCII or Unicode symbol (provided it's supported by the TradingView standard font)
 defined with the ``char`` parameter. For example::
 
@@ -181,10 +182,10 @@ Like ``plotshape``, the ``plotchar`` function allows you to:
 -  Use the ``text`` parameter to display a short text above/below the shape.
    You may use ``\n`` to separate text lines.
 
-``plotarrow``
--------------
+plotarrow
+---------
 
-The `plotarrow <https://www.tradingview.com/study-script-reference/#fun_plotarrow>`__ 
+The `plotarrow <https://www.tradingview.com/pine-script-reference/v4/#fun_plotarrow>`__
 annotation function allows for up/down arrows to be displayed on
 the chart. The arrow length is not the same on each bar and is
 calculated from the first parameter's value.
@@ -193,10 +194,10 @@ The first ``series`` parameter of the ``plotarrow`` function is used to place
 arrows on the chart using the following logic:
 
 -  If the ``series`` value on the current bar is greater than 0, then an *up
-   arrow* will be drawn, the length of which will be proportional to the 
+   arrow* will be drawn, the length of which will be proportional to the
    relative value of the series on that bar in relation to other series values.
 -  If the ``series`` value on the current bar is less than 0, then a *down
-   arrow* will be drawn, the length of which will be proportional to the 
+   arrow* will be drawn, the length of which will be proportional to the
    relative value of the series on that bar in relation to other series values.
 -  If the ``series`` value on the current bar is equal to 0 or ``na`` then the
    arrow is not displayed.

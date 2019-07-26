@@ -24,7 +24,7 @@ To publish an *open source* Pine script:
 #. Enter the script's title, tags (optional) and description.
 #. Click the *Publish Script* button.
 
-The published script will be displayed in the `Public Library <https://www.tradingview.com/script/>`__, 
+The published script will be displayed in the `Public Library <https://www.tradingview.com/script/>`__,
 which is available to all TradingView users. Any registered TradingView user will be able to make a copy of
 your script.
 
@@ -63,21 +63,21 @@ Managed access
 Authors can choose to manage who can access their scripts. This is great for
 commercial vendors, or authors who want to protect their IP or share
 with only a few select people. Authors who whish to sell access to their scripts
-must arrange for off-site payment and then use TradingView's *Manage Access* feature to 
+must arrange for off-site payment and then use TradingView's *Manage Access* feature to
 provide access to customers.
 
 To publish a script using the managed access mode, simply choose the *Invite Only* option prior to publishing
-from the script's publication window. 
+from the script's publication window.
 Only users you specifically add will then be able to use your script.
 
-|Invite_only_script_new| 
+|Invite_only_script_new|
 
 On the published script's page, authors will see a *Manage Access* button, where they can add/remove
 users and manage access rights.
 
 |Manage_access_button|
 
-Invite-only indicators are visible in the :doc:`Public_Library`, 
+Invite-only indicators are visible in the :doc:`Public_Library`,
 but nobody can add them to a chart without
 explicit permission from the author, and only the author can see the script's
 source code. Users may view, comment and favorite the script.

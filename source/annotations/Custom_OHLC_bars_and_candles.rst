@@ -5,10 +5,11 @@ Custom OHLC bars and candles
     :depth: 2
 
 You may create your own custom *bars* and *candles* in Pine scripts by using the
-`plotbar <https://www.tradingview.com/study-script-reference/#fun_plotbar>`__
-and `plotcandle <https://www.tradingview.com/study-script-reference/#fun_plotcandle>`__
+`plotbar <https://www.tradingview.com/pine-script-reference/v4/#fun_plotbar>`__
+and `plotcandle <https://www.tradingview.com/pine-script-reference/v4/#fun_plotcandle>`__
 annotation functions::
 
+    //@version=4
     study("Example 1")
     plotbar(open, high, low, close)
 
@@ -17,8 +18,9 @@ annotation functions::
 *Example 1* simply replicates bars of the current symbol.
 To color them green or red, we can use the following code::
 
+    //@version=4
     study("Example 2")
-    palette = close >= open ? lime : red
+    palette = close >= open ? color.lime : color.red
     plotbar(open, high, low, close, color=palette)
 
 .. image:: images/Custom_ohlc_bars_and_candles_2.png
@@ -35,6 +37,7 @@ used for new bar/candle OHLC prices. If one of
 the arguments for a bar has a ``na`` value, then the bar is not
 plotted. Example::
 
+    //@version=4
     study("Example 3")
     c = close > open ? na : close
     plotcandle(open, high, low, c)
@@ -44,6 +47,7 @@ plotted. Example::
 You can build bars or candles using values other than the actual OHLC values.
 For example you could calculate and plot *smoothed* candles using the following code::
 
+    //@version=4
     study("Example 4")
     len = input(9)
     smooth(x) =>
@@ -57,19 +61,20 @@ For example you could calculate and plot *smoothed* candles using the following 
 .. image:: images/Custom_ohlc_bars_and_candles_4.png
 
 You may find it useful to plot OHLC values taken from a
-higher timeframe. You can, for example, plot daily bars on a 60 minute chart::
+higher timeframe. You can, for example, plot daily bars on a *60 minutes* chart::
 
     // NOTE: add this script on intraday chart
+    //@version=4
     study("Example 5")
-    higherRes = input("D", type=resolution)
+    higherRes = input("D", type=input.resolution)
     is_newbar(res) =>
         t = time(res)
-        change(t) != 0 ? 1 : 0
-    o = security(tickerid, higherRes, open)
-    h = security(tickerid, higherRes, high)
-    l = security(tickerid, higherRes, low)
-    c = security(tickerid, higherRes, close)
-    plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? lime : red)
+        not na(t) and (na(t[1]) or t > t[1])
+    o = security(syminfo.tickerid, higherRes, open)
+    h = security(syminfo.tickerid, higherRes, high)
+    l = security(syminfo.tickerid, higherRes, low)
+    c = security(syminfo.tickerid, higherRes, close)
+    plotbar(is_newbar(higherRes) ? o : na, h, l, c, color=c >= o ? color.lime : color.red)
 
 .. image:: images/Custom_ohlc_bars_and_candles_5.png
 

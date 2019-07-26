@@ -7,8 +7,8 @@ Introduction
    :width: 240
    :height: 240
 
-TradingView has designed its own scripting language called 
-`Pine Script <https://blog.tradingview.com/en/tradingview-s-pine-script-introduction-203/>`__.
+`TradingView <https://www.tradingview.com/>`__ has designed its own scripting language called
+**Pine Script**.
 It allows users to create customized indicators and run them
 on our servers. Pine was designed as a lightweight
 language focused on the specific task of developing indicators. TradingView's
@@ -17,7 +17,7 @@ explicit goal to keep Pine accessible and easy to understand for the broadest
 possible audience.
 
 Pine is cloud-based and therefore
-different in nature to client-side programming languages. 
+different in nature to client-side programming languages.
 While we will not develop Pine into a full-fledged language with high-end
 coding capabilities for building very complex tools, constantly improving
 Pine is one of our highest priorities and we are happy to consider any
@@ -33,7 +33,7 @@ such as the amount of data from additional symbols, loop calculations,
 memory usage and script size. Additionally, we keep Pine syntax and
 semantics simple so it can handle common tasks efficiently.
 
-We will continue to improve Pine's documentation and 
-support to ensure that anyone who wishes to learn and use Pine may do so, 
+We will continue to improve Pine's documentation and
+support to ensure that anyone who wishes to learn and use Pine may do so,
 as this helps grow the Pine development community and provides TradingView users
 with more robust and helpful tools.

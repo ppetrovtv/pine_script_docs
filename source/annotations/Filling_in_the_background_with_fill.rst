@@ -1,7 +1,7 @@
 Filling the background with fill
 --------------------------------
 
-The `fill <https://www.tradingview.com/study-script-reference/v4/#fun_fill>`__ 
+The `fill <https://www.tradingview.com/pine-script-reference/v4/#fun_fill>`__
 annotation function lets you color the background between two plotted
 series or two horizontal lines created with ``hline``. The following
 example illustrates how ``fill`` works::
@@ -23,7 +23,7 @@ example illustrates how ``fill`` works::
 .. image:: images/Filling_in_the_background_between_objects_with_fill_1.png
 
 
-Please note that the ``fill`` annotation cannot be used with ``plot`` and ``hline`` arguments simultaneously. 
+Please note that the ``fill`` annotation cannot be used with ``plot`` and ``hline`` arguments simultaneously.
 As a workaround you may replace ``hline`` calls with a ``plot(<constant number>)``. For example::
 
     //@version=4
