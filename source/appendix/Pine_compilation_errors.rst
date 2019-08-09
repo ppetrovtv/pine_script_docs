@@ -1,4 +1,4 @@
-Pine compilation errors
+Pine compilation and execution errors
 =======================
 
 .. contents:: :local:
@@ -160,3 +160,41 @@ can be сonverted into::
 
     var3 = expr1 + expr2
 
+
+Pine miscalculated length of series, required length is N. Try using max_bars_back=N in study/strategy function
+---------------------------------------------------------------------------------------------------------
+
+The error appears in cases where Pine wrongly autodetects the required 
+maximum length of series used in a script. This happens when a script's 
+flow of execution does not allow Pine to inspect the use of series in 
+branches of conditional statements (``if``, ``iff`` or ``?``), and Pine
+cannot automatically detect how far back the series is referenced. Here 
+is an example of a script causing this problem::
+
+    //@version=4
+    study("Requires max_bars_back")
+    test = 0.0
+    if bar_index > 1000
+        test := vwma(close, 20)
+    plot(test)
+
+In order to help Pine with detection, you should add ``max_bars_back`` 
+param in ``study`` / ``stragety`` function::
+
+    //@version=4
+    study("Requires max_bars_back", max_bars_back=3000)
+    test = 0.0
+    if bar_index > 1000
+        test := vwma(close, 20)
+    plot(test)
+
+On the other hand, you can apply another solution - take the problematic 
+expression out from the condition::
+
+    //@version=4
+    study("Requires max_bars_back")
+    test = 0.0
+    vwma20 = vwma(close, 20)
+    if bar_index > 1000
+        test := vwma20
+    plot(test)
