@@ -161,16 +161,15 @@ can be сonverted into::
     var3 = expr1 + expr2
 
 
-Pine miscalculated length of series, required length is N. Try using max_bars_back=N in study() function
+Pine miscalculated length of series, required length is N. Try using max_bars_back=N in study/strategy function
 ---------------------------------------------------------------------------------------------------------
 
-The error appears in case Pine wrongly autodetected required max length of 
-series used in the script. When the script is trying to get a value N bars 
-ago, calculation fails. Most likely it happens when a script has an 
-``if``-condition (or ternary operator ``?``) with a branch referencing too 
-far back in history. And if a flow of execution seldom attends this branch, 
-so it difficult for Pine to detect the length.
-An example of the script with the problem::
+The error appears in cases where Pine wrongly autodetects the required 
+maximum length of series used in a script. This happens when a script's 
+flow of execution does not allow Pine to inspect the use of series in 
+branches of conditional statements (``if``, ``iff`` or ``?``), and Pine
+cannot automatically detect how far back the series is referenced. Here 
+is an example of a script causing this problem::
 
     //@version=4
     study("Requires max_bars_back")
@@ -180,7 +179,7 @@ An example of the script with the problem::
     plot(test)
 
 In order to help Pine with detection, you should add ``max_bars_back`` 
-param in ``study`` function::
+param in ``study`` / ``stragety`` function::
 
     //@version=4
     study("Requires max_bars_back", max_bars_back=3000)
