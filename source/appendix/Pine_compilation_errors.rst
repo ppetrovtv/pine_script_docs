@@ -1,5 +1,5 @@
 Pine compilation and execution errors
-=======================
+=====================================
 
 .. contents:: :local:
     :depth: 2
@@ -162,7 +162,7 @@ can be сonverted into::
 
 
 Pine miscalculated length of series, required length is N. Try using max_bars_back=N in study/strategy function
----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 
 The error appears in cases where Pine wrongly autodetects the required 
 maximum length of series used in a script. This happens when a script's 
