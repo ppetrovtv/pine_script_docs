@@ -79,6 +79,7 @@ If you have updated the study's code or its *Settings/Inputs*, you may:
 - Click *OK*.
 
 If you wish to change the symbol or the timeframe the alert is running on, you may:
+
 - Set your chart to the new symbol and/or timeframe you wish to apply to the alert.
 - Double-click rapidly on the alert in the *Manage Alerts* list to bring up the *Edit Alert* dialog box without the chart moving to the one configured in the alert.
 - Select from the *Condition* dropdown menu the symbol and timeframe you wish the alert to be configured with, which should correspond to the chart you are currently on.
