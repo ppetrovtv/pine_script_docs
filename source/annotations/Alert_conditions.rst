@@ -64,6 +64,7 @@ Modifying an alert
 
 When an alert is created, TradingView saves the following information with the
 alert so that it can run independently in the cloud:
+
 - The study's code
 - The study's current *Setting/Inputs* (including modifications made by the user)
 - The chart's main symbol and timeframe.
