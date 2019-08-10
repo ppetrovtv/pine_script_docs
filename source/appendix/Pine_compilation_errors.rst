@@ -204,7 +204,7 @@ parameter is not required::
 In cases where the problem is caused by a **variable** rather than a built-in **function** (``vwma`` in our example), 
 you may use the Pine v4 ``max_bars_back`` function to explicitly define the referencing length
 for that variable only. This has the advantage of requiring less runtime resources, but entails that you identify
-the problematic variable, e.g. variable ``s`` in the following example::
+the problematic variable, e.g., variable ``s`` in the following example::
 
     //@version=4
     study("My Script")
