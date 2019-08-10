@@ -200,8 +200,8 @@ parameter is not required::
         test := vwma20
     plot(test)
     
-In cases where the problem is caused by a variable rather than a built-in function (e.g., `vwma` in our example), 
-you may use the Pine v4 `max_bars_back` function in order to explicitly define the referencing length
+In cases where the problem is caused by a variable rather than a built-in function (e.g., ``vwma`` in our example), 
+you may use the Pine v4 ``max_bars_back`` function in order to explicitly define the referencing length
 for that variable only. This has the advantage of requiring less runtime resources, but entails that you identify
 the problematic variable. Here is such a case::
 
@@ -210,7 +210,19 @@ the problematic variable. Here is such a case::
     f(off) =>
         t = 0.0
         s = close
-        max_bars_back(s, 301) // fixes out of depth
+        if bar_index > 242
+            t := s[off]
+        t
+    plot(f(301))
+
+The solution here is to 
+
+    //@version=4
+    study("My Script")
+    f(off) =>
+        t = 0.0
+        s = close
+        max_bars_back(s, 301)
         if bar_index > 242
             t := s[off]
         t
