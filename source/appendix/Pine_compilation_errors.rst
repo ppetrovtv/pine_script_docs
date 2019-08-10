@@ -165,8 +165,6 @@ can be сonverted into::
 Pine miscalculated length of series, required length is N. Try using max_bars_back=N in study/strategy function
 ---------------------------------------------------------------------------------------------------------------
 
-**``max_bars_back`` parameter**
-
 The error appears in cases where Pine wrongly autodetects the required 
 maximum length of series used in a script. This happens when a script's 
 flow of execution does not allow Pine to inspect the use of series in 
@@ -203,8 +201,6 @@ parameter is not required::
         test := vwma20
     plot(test)
     
-**``max_bars_back`` function**
-
 In cases where the problem is caused by a **variable** rather than a built-in **function** (``vwma`` in our example), 
 you may use the Pine v4 ``max_bars_back`` function to explicitly define the referencing length
 for that variable only. This has the advantage of requiring less runtime resources, but entails that you identify
