@@ -76,7 +76,7 @@ alert and create a new one in the new context, or use the following steps to mod
 If you have updated the study's code or its *Settings/Inputs*, you may:
 
 - Double-click on the alert in the *Manage Alerts* list to bring up the *Edit Alert* dialog box.
-- Select from the *Condition* dropdown menu the new version of the study you want to use. It will be the lowest instance of the study in the menu. Nnote that if you have changed the study's *Settings/Inputs*, you will see those new values next to the study's new version in the dropdown menu.
+- Select from the *Condition* dropdown menu the new version of the study you want to use. It will be the lowest instance of the study in the menu. Note that if you have changed the study's *Settings/Inputs*, you will see those new values next to the study's new version in the dropdown menu.
 - Click *OK*.
 
 If you wish to change the symbol or the timeframe the alert is running on, you may:
