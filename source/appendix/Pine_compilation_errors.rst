@@ -178,8 +178,8 @@ is an example of a script causing this problem::
         test := vwma(close, 20)
     plot(test)
 
-In order to help Pine with detection, you should add ``max_bars_back`` 
-param in ``study`` / ``stragety`` function::
+In order to help Pine with detection, you should add the ``max_bars_back`` 
+parameter to the script's ``study`` or ``stragety`` function::
 
     //@version=4
     study("Requires max_bars_back", max_bars_back=3000)
@@ -188,8 +188,9 @@ param in ``study`` / ``stragety`` function::
         test := vwma(close, 20)
     plot(test)
 
-On the other hand, you can apply another solution - take the problematic 
-expression out from the condition::
+You may also resolve the issue by taking the problematic 
+expression out of the conditional branch, in which case the ``max_bars_back``
+parameter is not required::
 
     //@version=4
     study("Requires max_bars_back")
@@ -198,3 +199,4 @@ expression out from the condition::
     if bar_index > 1000
         test := vwma20
     plot(test)
+    
