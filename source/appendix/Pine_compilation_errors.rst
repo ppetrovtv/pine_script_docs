@@ -179,7 +179,7 @@ is an example of a script causing this problem::
     plot(test)
 
 In order to help Pine with detection, you should add the ``max_bars_back`` 
-parameter to the script's ``study`` or ``stragety`` function::
+parameter to the script's ``study`` or ``strategy`` function::
 
     //@version=4
     study("Requires max_bars_back", max_bars_back=3000)
@@ -200,3 +200,19 @@ parameter is not required::
         test := vwma20
     plot(test)
     
+In cases where the problem is caused by a variable rather than a built-in function (e.g., `vwma` in our example), 
+you may use the Pine v4 `max_bars_back` function in order to explicitly define the referencing length
+for that variable only. This has the advantage of requiring less runtime resources, but entails that you identify
+the problematic variable. Here is such a case::
+
+    //@version=4
+    study("My Script")
+    f(off) =>
+        t = 0.0
+        s = close
+        max_bars_back(s, 301) // fixes out of depth
+        if bar_index > 242
+            t := s[off]
+        t
+    plot(f(301))
+
