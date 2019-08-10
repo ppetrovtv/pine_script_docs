@@ -67,4 +67,6 @@ be reflected in an existing alert's behavior, you will need to either delete the
 alert and create a new one in the new context, or:
 
 - double-click rapidly on the alert in the *Manage Alerts* list
-- select from the condition dropdown menu the new version of the script you want to use (note that if you 
+- select from the *Condition* dropdown menu the new version of the script you want to use 
+(note that if you have changed the script's *Settings/Inputs*, you will see those new values
+next to the script's new version in the dropdown menu
