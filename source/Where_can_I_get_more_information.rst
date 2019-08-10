@@ -31,4 +31,4 @@ External resources
 - `Kodify <https://kodify.net/tradingview-programming-articles>`__ has TradingView tutorials on various topics for beginners and more experienced coders alike.
   Topics include plotting, alerts, strategy orders, and complete example indicators and strategies.
 - `Backtest Rookies <https://backtest-rookies.com/category/tradingview>`__ publishes good quality blog articles focusing on realizing specific tasks in Pine.
-- There is a Pine Script community growing on `StackOverflow <https://stackoverflow.com/questions/tagged/pine-script>`__ where you can ask questions. See the ones tagged with *pine-script*.
+- There is a Pine Script community growing on `StackOverflow <https://stackoverflow.com/questions/tagged/pine-script>`__ where you can ask questions. See questions tagged with *pine-script*.
