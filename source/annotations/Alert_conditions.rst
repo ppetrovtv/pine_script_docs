@@ -63,5 +63,8 @@ When an alert is created, TradingView saves the following information with the
 alert so that it can run independently in the cloud: the study's code, the 
 current *Setting/Inputs* (including modifications made by the user), 
 the chart's main symbol and timeframe. If you want any changes to this information to
-be reflected in an existing alert's behavior, you will need to delete the 
-alert and create a new one in the new context.
+be reflected in an existing alert's behavior, you will need to either delete the 
+alert and create a new one in the new context, or:
+
+- double-click rapidly on the alert in the *Manage Alerts* list
+- select from the condition dropdown menu the new version of the script you want to use (note that if you 
