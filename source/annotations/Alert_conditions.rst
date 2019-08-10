@@ -59,6 +59,8 @@ When the alert fires, you will see the following message:
 
 .. image:: images/Alertcondition_2.png
 
+**Modifying an alert**
+
 When an alert is created, TradingView saves the following information with the
 alert so that it can run independently in the cloud: the study's code, the 
 current *Setting/Inputs* (including modifications made by the user), 
