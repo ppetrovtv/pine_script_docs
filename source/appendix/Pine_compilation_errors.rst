@@ -215,7 +215,7 @@ the problematic variable. Here is such a case::
         t
     plot(f(301))
 
-The solution here is to 
+The solution here is to ::
 
     //@version=4
     study("My Script")
