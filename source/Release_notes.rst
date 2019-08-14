@@ -5,8 +5,46 @@ Release notes
     :depth: 2
 
 This page contains release notes of notable changes in Pine Script.
+
+
+
+
+July-August 2019
+--------------------------
+
+
+New variables added: 
+
+
+* ``isseconds`` returns true when current resolution is in seconds
+    
+* ``isminutes`` returns true when current resolution is in minutes
+    
+
+The behavior of some functions, variables and operators has changed:
+
+* ``time`` variable returns the correct open time of the bar for more special cases than before
+
+* An optional *seconds* parameter of the ``timestamp`` function allows you to set the time to within seconds 
+
+* ``security`` function:
+  
+  * Added the possibility of requesting resolutions in seconds:
+
+    1, 5, 15, 30 seconds (chart resolution should be less than or equal to the requested resolution)
+    
+  * Reduced the maximum value that can be requested in some of the other resolutions:
+    
+    from 1 to 1440 minutes
+    
+    from 1 to 365 days  
+    
+    from 1 to 52 weeks
+    
+    from 1 to 12 months
+
  
-Pine version 3 (17 May 2017) 
+17 May 2017
 ----------------------------
 
 Added `compile-time constants <https://blog.tradingview.com/en/possibilities-compile-time-constants-4127/>`__.
@@ -26,7 +64,7 @@ compilation-time constants take a spot between the literal and
 non-literal types. All of the functions that accepted literal as an
 argument will now accept compilation-time constants as well.
 
-Pine version 3 (26 Apr 2017)
+26 Apr 2017
 ----------------------------
 
 Added `string input with options <https://blog.tradingview.com/en/several-new-features-added-pine-scripting-language-3933/>`__. 
@@ -40,7 +78,7 @@ options. The same is possible in Pine Script now. For example::
 
 .. _kwargs_syntax_for_all_builtin_functions:
 
-Pine version 3 (17 Apr 2017)
+17 Apr 2017
 ----------------------------
 
 Added `kwargs syntax <https://blog.tradingview.com/en/kwargs-syntax-now-covers-built-functions-3914/>`__ for all built-in functions.
@@ -56,7 +94,7 @@ This will be especially useful for the ``security`` function to specify the
 
 .. _release_notes_v3:
 
-Pine version 3 (20 Mar 2017)
+20 Mar 2017
 ----------------------------
 
 `Repainting <https://getsatisfaction.com/tradingview/topics/strategies-and-indicators-are-repainting>`__
