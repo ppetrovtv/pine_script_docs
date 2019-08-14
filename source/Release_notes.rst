@@ -21,7 +21,7 @@ New variables added:
 * ``isminutes`` returns true when current resolution is in minutes
     
 
-The behavior of some functions, variables and operators has changed:
+The behavior of some functions and variables has changed:
 
 * ``time`` variable returns the correct open time of the bar for more special cases than before
 
