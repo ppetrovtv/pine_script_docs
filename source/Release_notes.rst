@@ -4,7 +4,7 @@ Release notes
 .. contents:: :local:
     :depth: 2
 
-This page contains release notes of notable changes in Pine Script.
+This page contains release notes of notable changes in Pine Script v3.
 
 
 
