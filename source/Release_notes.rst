@@ -21,7 +21,7 @@ New variables added:
 
 The behavior of some functions, variables and operators has changed:
 
-* ``time`` variable returns the correct open time of the bar for more special cases than before
+* The ``time`` variable returns the correct open time of the bar for more special cases than before
 
 * An optional *seconds* parameter of the ``timestamp`` function allows you to set the time to within seconds 
 
