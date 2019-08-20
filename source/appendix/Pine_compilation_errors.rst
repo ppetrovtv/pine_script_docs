@@ -162,8 +162,8 @@ can be сonverted into::
     var3 = expr1 + expr2
 
 
-Pine miscalculated length of series, required length is N. Try using max_bars_back=N in study/strategy function
----------------------------------------------------------------------------------------------------------------
+Pine cannot determine the referencing length of a series. Try using max_bars_back in the study or strategy function
+-------------------------------------------------------------------------------------------------------------------
 
 The error appears in cases where Pine wrongly autodetects the required 
 maximum length of series used in a script. This happens when a script's 
