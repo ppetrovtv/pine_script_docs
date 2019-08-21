@@ -158,6 +158,8 @@ There are 5 forms of float type in Pine:
     * *float*
     * *series float*
 
+The internal precision of floats in Pine is 1e-10.
+
 bool
 ^^^^
 
