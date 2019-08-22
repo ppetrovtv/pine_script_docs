@@ -35,8 +35,7 @@ functions are similar, i.e., we call them by name with a list of
 arguments in parentheses. Differences between them are mostly semantic, except
 for the fact that annotations and
 built-in functions accept keyword arguments while user-defined functions
-do not (see :ref:`release note on kwargs in built-in
-functions <kwargs_syntax_for_all_builtin_functions>`).
+do not.
 
 Example of an annotation call with positional arguments::
 
