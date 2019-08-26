@@ -30,7 +30,8 @@ Where can I get more information?
 External resources
 -------------------
 
-- `Pinescripters <https://pinescripters.com>`__, the most active independent community of Pine coders, a place to share ideas, resources, and to learn. 
-- `Kodify <https://kodify.net/tradingview-programming-articles>`__ has TradingView tutorials on various topics for beginners and more experienced coders alike. 
+- `PineCoders <https://pinecoders.com>`__ publishes useful information for Pine coders.
+- `Kodify <https://kodify.net/tradingview-programming-articles>`__ has TradingView tutorials on various topics for beginners and more experienced coders alike.
   Topics include plotting, alerts, strategy orders, and complete example indicators and strategies.
-- `Backtest Rookies <https://backtest-rookies.com/category/tradingview>`__ publishes high-quality blog articles focusing on realizing specific tasks in Pine.
+- `Backtest Rookies <https://backtest-rookies.com/category/tradingview>`__ publishes good quality blog articles focusing on realizing specific tasks in Pine.
+- There is a Pine Script community growing on `StackOverflow <https://stackoverflow.com/questions/tagged/pine-script>`__ where you can ask questions. See questions tagged with *pine-script*.
