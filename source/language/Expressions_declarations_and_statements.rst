@@ -284,7 +284,7 @@ example:
 While you may expect that ``sum`` will contain ``sma(close, 1) + sma(close, 2)``, this is not so.
 It will contain ``sma(close, 1) + sma(close, 1)`` because once ``sma`` is initialized with
 length 1, this length is stored until the script is removed from chart. To avoid this you may
-use your own, stateless function implementation. There is the list of built-in functions which have
+use your own, stateless function implementation. This is the list of built-in functions which have
 the same behavior:
 
 - ``sma(source, length)``: ``length`` is stateful.
