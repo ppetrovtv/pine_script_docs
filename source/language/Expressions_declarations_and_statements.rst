@@ -281,17 +281,17 @@ example:
         sum := sum + sma(close, i)
     plot(sum)
 
-You may expect that ``sum`` will contain ``sma(close, 1) + sma(close, 2)``, but it's not so.
-It will contain ``sma(close, 1) + sma(close, 1)`` because ``sma``, once being initialized with
-length 1, stores this length value until the script is removed from chart. To avoid this you may
-use your own, stateless, function implementation. There is the list of built-in functions which have
+While you may expect that ``sum`` will contain ``sma(close, 1) + sma(close, 2)``, this is not so.
+It will contain ``sma(close, 1) + sma(close, 1)`` because once ``sma`` is initialized with
+length 1, this length is stored until the script is removed from chart. To avoid this you may
+use your own, stateless function implementation. There is the list of built-in functions which have
 the same behavior:
 
 - ``sma(source, length)``: ``length`` is stateful.
 - ``ema(source, length)``: ``length`` is stateful.
 - ``sum(source, length)``: ``length`` is stateful.
-- ``valuewhen(condition, source, occurrence)``: ``occurence`` is stateful.
-- ``rsi(x, y)``: when ``y`` is integer and behaves like a length, ``y`` is stateful.
+- ``valuewhen(condition, source, occurrence)``: ``occurrence`` is stateful.
+- ``rsi(x, y)``: when ``y`` is of type integer and behaves like a length, ``y`` is stateful.
 
 .. rubric:: Footnotes
 
