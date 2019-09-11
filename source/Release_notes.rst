@@ -6,6 +6,18 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+
+
+September 2019
+--------------------------
+
+
+New parameters to the strategy function were added:
+
+* ``process_orders_on_close`` allows the broker emulator to try to execute orders after calculating the strategy at the bar's close
+
+* ``close_entries_rule`` allows to define the sequence used for closing positions
+
 July-August 2019
 --------------------------
 
