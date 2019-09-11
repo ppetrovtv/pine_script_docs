@@ -12,7 +12,7 @@ September 2019
 --------------------------
 
 
-New parameters to the strategy function were added:
+New parameters to the ``strategy`` function were added:
 
 * ``process_orders_on_close`` allows the broker emulator to try to execute orders after calculating the strategy at the bar's close
 
