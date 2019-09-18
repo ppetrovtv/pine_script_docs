@@ -81,6 +81,8 @@ the `syminfo.mintick <https://www.tradingview.com/pine-script-reference/v4/#var_
 built-in variable is a *simple float*. The word *simple* is usually omitted when referring to this form,
 so we use *float* rather than *simple float*.
 
+.. _series:
+
 Series
 ^^^^^^
 
@@ -155,6 +157,8 @@ There are 5 forms of float type in Pine:
     * *input float*
     * *float*
     * *series float*
+
+The internal precision of floats in Pine is 1e-10.
 
 bool
 ^^^^

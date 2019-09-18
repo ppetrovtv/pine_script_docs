@@ -18,15 +18,6 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-
-
-# TODO: create targets for
-# cd source
-# sphinx-build -b gettext . _build/gettext # regenerate *.pot files
-# sphinx-intl update -p _build/gettext -l ru # regenerate *.po files
-# Edit *.po files (translate and remove 'fuzzy' markers) then commit *.po files
-
-
 syncpackages:
 	pip install --user -r requirements.txt
 

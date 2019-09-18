@@ -1,5 +1,5 @@
-Pine compilation errors
-=======================
+Pine compilation and execution errors
+=====================================
 
 .. contents:: :local:
     :depth: 2
@@ -84,6 +84,7 @@ indent::
     study("My Script")
     plot(1)
 
+
 Loop is too long (> 200 ms)
 ---------------------------
 
@@ -160,3 +161,71 @@ can be сonverted into::
 
     var3 = expr1 + expr2
 
+
+Pine cannot determine the referencing length of a series. Try using max_bars_back in the study or strategy function
+-------------------------------------------------------------------------------------------------------------------
+
+The error appears in cases where Pine wrongly autodetects the required 
+maximum length of series used in a script. This happens when a script's 
+flow of execution does not allow Pine to inspect the use of series in 
+branches of conditional statements (``if``, ``iff`` or ``?``), and Pine
+cannot automatically detect how far back the series is referenced. Here 
+is an example of a script causing this problem::
+
+    //@version=4
+    study("Requires max_bars_back")
+    test = 0.0
+    if bar_index > 1000
+        test := vwma(close, 20)
+    plot(test)
+
+In order to help Pine with detection, you should add the ``max_bars_back`` 
+parameter to the script's ``study`` or ``strategy`` function::
+
+    //@version=4
+    study("Requires max_bars_back", max_bars_back=3000)
+    test = 0.0
+    if bar_index > 1000
+        test := vwma(close, 20)
+    plot(test)
+
+You may also resolve the issue by taking the problematic 
+expression out of the conditional branch, in which case the ``max_bars_back``
+parameter is not required::
+
+    //@version=4
+    study("Requires max_bars_back")
+    test = 0.0
+    vwma20 = vwma(close, 20)
+    if bar_index > 1000
+        test := vwma20
+    plot(test)
+    
+In cases where the problem is caused by a **variable** rather than a built-in **function** (``vwma`` in our example), 
+you may use the Pine v4 ``max_bars_back`` function to explicitly define the referencing length
+for that variable only. This has the advantage of requiring less runtime resources, but entails that you identify
+the problematic variable, e.g., variable ``s`` in the following example::
+
+    //@version=4
+    study("My Script")
+    f(off) =>
+        t = 0.0
+        s = close
+        if bar_index > 242
+            t := s[off]
+        t
+    plot(f(301))
+
+This situation can be resolved using the ``max_bars_back`` **function** to define the referencing length
+of variable ``s`` only, rather than for all the script's variables::
+
+    //@version=4
+    study("My Script")
+    f(off) =>
+        t = 0.0
+        s = close
+        max_bars_back(s, 301)
+        if bar_index > 242
+            t := s[off]
+        t
+    plot(f(301))

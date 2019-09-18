@@ -114,8 +114,8 @@ merged continuously (without ``na`` gaps). All gaps, if any, are filled with the
 If `barmerge.gaps_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}gaps_on>`__
 is used, then merged data may contain gaps in the form of ``na`` values.
 
-The second switch, ``lookahead``, was added in :ref:`Pine Script version
-3 <release_notes_v3>`. The parameter has two possible values:
+The second switch, ``lookahead``, was added in Pine Script version
+3. The parameter has two possible values:
 `barmerge.lookahead_off <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_off>`__
 and
 `barmerge.lookahead_on <https://www.tradingview.com/pine-script-reference/v4/#var_barmerge{dot}lookahead_on>`__

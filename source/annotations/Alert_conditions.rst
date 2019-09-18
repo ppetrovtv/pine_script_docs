@@ -59,9 +59,31 @@ When the alert fires, you will see the following message:
 
 .. image:: images/Alertcondition_2.png
 
+Modifying an alert
+^^^^^^^^^^^^^^^^^^
+
 When an alert is created, TradingView saves the following information with the
-alert so that it can run independently in the cloud: the study's code, the 
-current *Setting/Inputs* (including modifications made by the user), 
-the chart's main symbol and timeframe. If you want any changes to this information to
-be reflected in an existing alert's behavior, you will need to delete the 
-alert and create a new one in the new context.
+alert so that it can run independently in the cloud:
+
+- The study's code
+- The study's current *Setting/Inputs* (including modifications made by the user)
+- The chart's main symbol and timeframe.
+
+If you want any changes to this information to
+be reflected in an existing alert's behavior, you will need to either delete the 
+alert and create a new one in the new context, or use the following steps to modify the alert.
+
+If you have updated the study's code or its *Settings/Inputs*, you may:
+
+- Click on the the alert's line in the *Manage Alerts* list to bring up the chart and timeframe your alert is configured with.
+- Use the cog on the alert's line in the *Manage Alerts* list to bring up the *Edit Alert* dialog box.
+- Select from the *Condition* dropdown menu the new version of the study you want to use. It will be the lowest instance of the study in the menu. Note that if you have changed the study's *Settings/Inputs*, you will see those new values next to the study's new version in the dropdown menu.
+- Click *OK*.
+
+If you wish to change the symbol or the timeframe the alert is running on, you may:
+
+- Set your chart to the new symbol and/or timeframe you wish to apply to the alert.
+- Use the cog on the alert's line in the *Manage Alerts* list to bring up the *Edit Alert* dialog box.
+- Select from the *Condition* dropdown menu the symbol and timeframe you wish the alert to be configured with, which should correspond to the chart you are currently on.
+- Make a new selection from the *Condition* dropdown menu, this time being the study containing the alertcondition you want the alert to run on.
+- Click *OK*.
