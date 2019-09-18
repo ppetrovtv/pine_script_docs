@@ -7,6 +7,14 @@ Release notes
 This page contains release notes of notable changes in Pine Script v3.
 
 
+September 2019
+--------------------------
+
+Some fixes were made:
+
+* ``fill`` function now works correctly with ``na`` as the ``color`` parameter value
+
+* ``sign`` function now calculates correctly for literals and constants
 
 
 July-August 2019
