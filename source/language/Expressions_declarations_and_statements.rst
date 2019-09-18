@@ -365,6 +365,30 @@ for simple moving average as it calculates faster.
 
 .. |images/Fib.png| image:: images/Fib.png
 
+Note that some built-in functions may behave unexpectedly in for loop. Let's look at the following
+example:
+
+::
+
+    //@version=3
+    study("SMA in for loop")
+    sum = 0
+    for i = 1 to 2
+        sum := sum + sma(close, i)
+    plot(sum)
+
+While you may expect that ``sum`` will contain ``sma(close, 1) + sma(close, 2)``, this is not so.
+It will contain ``sma(close, 1) + sma(close, 1)`` because once ``sma`` is initialized with
+length 1, this length is stored until the script is removed from chart. To avoid this you may
+use your own, stateless function implementation. There is the list of built-in functions which have
+the same behavior:
+
+- ``sma(source, length)``: ``length`` is stateful.
+- ``ema(source, length)``: ``length`` is stateful.
+- ``sum(source, length)``: ``length`` is stateful.
+- ``valuewhen(condition, source, occurrence)``: ``occurrence`` is stateful.
+- ``rsi(x, y)``: when ``y`` is of type integer and behaves like a length, ``y`` is stateful.
+
 .. rubric:: Footnotes
 
 .. [#tabs] On TradingView *Pine Editor* the **Tab** key produces 4 spaces automatically.
