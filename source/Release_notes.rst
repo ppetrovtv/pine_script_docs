@@ -18,6 +18,12 @@ New parameters to the ``strategy`` function were added:
 
 * ``close_entries_rule`` allows to define the sequence used for closing positions
 
+Some fixes were made:
+
+* ``fill`` function now works correctly with ``na`` as the ``color`` parameter value
+
+* ``sign`` function now calculates correctly for literals and constants
+
 July-August 2019
 --------------------------
 
