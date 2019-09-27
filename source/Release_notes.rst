@@ -24,6 +24,8 @@ Some fixes were made:
 
 * ``sign`` function now calculates correctly for literals and constants
 
+``str.replace_all (source, target, replacement)`` function was added. It replaces each occurrence of a ``target`` string in the ``source`` string with a ``replacement`` string
+
 July-August 2019
 --------------------------
 
