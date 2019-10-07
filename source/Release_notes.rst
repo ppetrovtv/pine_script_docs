@@ -6,6 +6,16 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+October 2019
+--------------------------
+``plotchar`` function now supports most of the Unicode symbols::
+
+    //@version=4
+    study("My Script", overlay=true)
+    plotchar(open > close, char="🐻")
+
+
+.. image:: images/Bears_in_plotchar.png
 
 
 September 2019
