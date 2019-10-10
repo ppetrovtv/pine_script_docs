@@ -75,6 +75,8 @@ Let's look at this example script where the ``f`` and ``f2`` functions are calle
    plot(close[2], color=color.maroon)
    plot(close[1], color=color.lime)
 
+.. image:: images/Function_historical_context_1.png
+
 As can be seen with the resulting plots, ``a[1]`` returns the previous value of a in the function's context, so the last time ``f`` was called two bars ago — not the close of the previous bar, as ``close[1]`` does in ``f2``. This results in ``a[1]`` in the function block referring to a different past value than ``close[1]`` even though they use the same index of 1.
 
 Why this behavior?
@@ -95,8 +97,9 @@ In this script, ``barssince`` is not called on every bar because it is inside a 
 
 This leads to incorrect results because ``barssince`` is not executed on every bar:
 
-The solution is to take the barssince call outside the conditional branch to force its execution on every bar::
+.. image:: images/Function_historical_context_2.png
 
+The solution is to take the barssince call outside the conditional branch to force its execution on every bar::
 
    //@version=4		
    study("Barssince",overlay=false)
@@ -105,6 +108,8 @@ The solution is to take the barssince call outside the conditional branch to for
    plot(res, style=plot.style_histogram, color=res >= 0 ? color.red : color.blue)
 
 Using this technique we get the expected output:
+
+.. image:: images/Function_historical_context_3.png
 
 Exceptions
 ^^^^^^^
