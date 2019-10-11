@@ -91,7 +91,7 @@ The solution in these cases is to take those function calls outside their contex
 In this script, ``barssince`` is not called on every bar because it is inside a ternary operator's conditional branch::
 
    //@version=4
-   study("Barssince in ",overlay=false)
+   study("Barssince",overlay=false)
    res = close>close[1] ? barssince(close<close[1]) : -1
    plot(res, style=plot.style_histogram, color=res >= 0 ? color.red : color.blue)
 
