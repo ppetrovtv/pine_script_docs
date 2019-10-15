@@ -55,7 +55,7 @@ following call is not valid:
     
     
 Execution of Pine functions and historical context inside function blocks
------------
+-------------------------------------------------------------------------
 
 The history of series variables used inside Pine functions is created through each successive call to the function. If the function is not called on each bar the script runs on, this will result in disparities between the historic values of series inside vs outside the function's local block. Hence, series referenced inside and outside the function using the same index value will not refer to the same point in history if the function is not called on each bar.
 
@@ -80,7 +80,7 @@ Let's look at this example script where the ``f`` and ``f2`` functions are calle
 As can be seen with the resulting plots, ``a[1]`` returns the previous value of a in the function's context, so the last time ``f`` was called two bars ago — not the close of the previous bar, as ``close[1]`` does in ``f2``. This results in ``a[1]`` in the function block referring to a different past value than ``close[1]`` even though they use the same index of 1.
 
 Why this behavior?
-^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 This behavior is required because forcing execution of functions on each bar would lead to unexpected results, as would be the case for a ``label.new`` function call inside an if branch, which must not execute unless the if condition requires it.
 
@@ -112,7 +112,7 @@ Using this technique we get the expected output:
 .. image:: images/Function_historical_context_3.png
 
 Exceptions
-^^^^^^^
+^^^^^^^^^^
 
 Not all built-in functions need to be executed every bar. These are the functions which do not require it, and so do not need special treatment::
 
