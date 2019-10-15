@@ -17,6 +17,12 @@ October 2019
 
 .. image:: images/Bears_in_plotchar.png
 
+New ``bordercolor`` argument of the ``plotcandle`` function allows you to change the color of candles' borders::
+
+    //@version=4
+    study("My Script")
+    plotcandle(open, high, low, close, title='Title', color = open < close ? color.green : color.red, wickcolor=color.black, bordercolor=color.orange)
+
 
 September 2019
 --------------------------
