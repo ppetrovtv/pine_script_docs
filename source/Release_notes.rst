@@ -26,8 +26,6 @@ New ``bordercolor`` argument of the ``plotcandle`` function allows you to change
 
 
 
-
-
 September 2019
 --------------------------
 
