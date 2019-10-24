@@ -23,6 +23,11 @@ October 2019
     study("My Script")
     plotcandle(open, high, low, close, title='Title', color = open < close ? color.green : color.red, wickcolor=color.black, bordercolor=color.orange)
 
+* New variables added:
+  
+  * ``syminfo.description`` - returns a description of the current symbol
+  * ``syminfo.currency`` - returns the currency code of the current symbol (EUR, USD, etc.)
+  * ``syminfo.type`` - returns the type of the current symbol (stock, futures, index, etc.)
 
 September 2019
 --------------------------
