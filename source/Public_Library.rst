@@ -70,11 +70,9 @@ Searching for a script
 
 To search for a script, use the *Search* field in the *Indicators* dialog:
 
-|Search_field|
-
-This will search both your Personal and Public Library at the same time:
-
 |Search|
+
+This will search both your Personal and Public Library at the same time.
 
 You may also search for scripts from the tradingview.com home page
 by first selecting *Scripts* from the *Ticker* dropdown menu and
