@@ -4,9 +4,9 @@ Execution model
 .. contents:: :local:
     :depth: 2
 
-Pine code is always calculated based on some OHLCV symbol data. This is data of chart main symbol to which a Pine study is applied.
-Any symbol data set has a limited number of bars. If a user scrolls the chart to the left (oldest bars) then all the bars are not loaded immediately. Loading process stops when either there are no more bars for that particular symbol or the chart loads about 10000 bars [#all_available_bars]_.
-A user may scroll the chart to the left until the very begininng (bar with index 0).
+On historical bars, Pine code calculates using OHLCV (open, high, low, close, volume) symbol data, i.e., the data of the chart's main symbol to which a Pine script is applied.
+All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see earlier bars, the corresponding portion of the dataset is loaded on the chart. The loading process stops when either there are no more bars for that particular symbol or the chart loads approximately 10000 bars [#all_available_bars]_.
+A user may scroll the chart to the left until the very begininng. The first bar's index is 0.
 (see `bar_index <https://www.tradingview.com/pine-script-reference/v4/#var_bar_index>`__).
 
 Bars that are closed are *historical bars*. If there is a trading session running and there have been trades recently (during bar's timeframe) then there is also a *current bar* on the chart that is being updated in realtime. After a while, *current bar* closes becoming a historical bar and new current bar opens. All bars that are created outside of session hours are considered as historicial (since there are no trades).
@@ -79,6 +79,5 @@ Calculation of strategies is more complex than calculation of indicators, :doc:`
 
 .. rubric:: Footnotes
 
-.. [#all_available_bars] Upper limit for the total number of bars on chart is about 10000 for *Pro/Premium* users. *Free* users are able to
-   see about 5000 bars.
+.. [#all_available_bars] The upper limit for the total number of historical bars is about 10000 for *Pro/Premium* users. *Free* users are able to see about 5000 bars.
 
