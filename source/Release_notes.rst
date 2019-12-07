@@ -6,6 +6,47 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+October 2019
+--------------------------
+* ``plotchar`` function now supports most of the Unicode symbols::
+
+    //@version=4
+    study("My Script", overlay=true)
+    plotchar(open > close, char="🐻")
+
+
+  .. image:: images/Bears_in_plotchar.png
+
+* New ``bordercolor`` argument of the ``plotcandle`` function allows you to change the color of candles' borders::
+
+    //@version=4
+    study("My Script")
+    plotcandle(open, high, low, close, title='Title', color = open < close ? color.green : color.red, wickcolor=color.black, bordercolor=color.orange)
+
+* New variables added:
+  
+  * ``syminfo.description`` - returns a description of the current symbol
+  * ``syminfo.currency`` - returns the currency code of the current symbol (EUR, USD, etc.)
+  * ``syminfo.type`` - returns the type of the current symbol (stock, futures, index, etc.)
+
+September 2019
+--------------------------
+
+
+New parameters to the ``strategy`` function were added:
+
+* ``process_orders_on_close`` allows the broker emulator to try to execute orders after calculating the strategy at the bar's close
+
+* ``close_entries_rule`` allows to define the sequence used for closing positions
+
+Some fixes were made:
+
+* ``fill`` function now works correctly with ``na`` as the ``color`` parameter value
+
+* ``sign`` function now calculates correctly for literals and constants
+
+``str.replace_all (source, target, replacement)`` function was added. It replaces each occurrence of a ``target`` string in the ``source`` string with a ``replacement`` string
+
 July-August 2019
 --------------------------
 
