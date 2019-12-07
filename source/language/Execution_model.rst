@@ -6,20 +6,15 @@ Execution model
 
 When a Pine script is loaded on a chart it executes once on each historical bar, using the available OHLCV (open, high, low, close, volume) values for each bar. Once the script's execution reaches the rightmost bar in the dataset, if trading is currently active on the chart's symbol, then Pine *studies* will execute once every time price changes. Pine *strategies* will by default only execute when the rightmost bar closes, but they can also be configured to execute every time price changes, like studies do.
 
-on the rightmost bar of the chart, when a trading session is active. You can visualize a Pine script as being part of a loop where the code in the script is executed at the close of each historical bar.
-
-When a Pine script is loaded on a chart it calculates using the OHLCV (open, high, low, close, volume) data from the chart's main symbol. All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see the dataset's earlier bars, the corresponding bars are loaded on the chart. The loading process stops when there are no more bars for that particular symbol or the chart loads approximately 10000 bars [#all_available_bars]_. You can scroll the chart to the left until the very first bar of the dataset which has an index value of 0
+All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see the dataset's earlier bars, the corresponding bars are loaded on the chart. The loading process stops when there are no more bars for that particular symbol or the chart loads approximately 10000 bars [#all_available_bars]_. You can scroll the chart to the left until the very first bar of the dataset which has an index value of 0
 (see `bar_index <https://www.tradingview.com/pine-script-reference/v4/#var_bar_index>`__).
 
-
-All bars in a dataset are *historical bars* except the rightmost one if a trading session is active. When trading is active in the rightmost bar, it is called the *realtime bar*. The realtime bar updates when TradingView receives a price update from the data feed. a change is detected in the   and there have been trades recently (during bar's timeframe) then there is also a *current bar* on the chart that is being updated in realtime. After a while, *current bar* closes becoming a historical bar and new current bar opens. All bars that are created outside of session hours are considered as historicial (since there are no trades).
-
-In general, Pine indicator runs on all historical bars as well as on realtime updates of the current bar (if there are any) afterwards.
+All bars in a dataset are *historical bars* except the rightmost one if a trading session is active. When trading is active in the rightmost bar, it is called the *realtime bar*. The realtime bar updates when TradingView receives a price update from the data feed. When the realtime bar's closes it becomes a historical bar and a new realtime bar opens. All bars created outside of session hours are considered historicial bar since there are no trades then.
 
 Calculation based on historical bars
 ------------------------------------
 
-Let's take a simple script as an example::
+Let's take a simple script and follow its execution::
 
     //@version=4
     study("My Script", overlay=true)
