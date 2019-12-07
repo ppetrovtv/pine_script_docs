@@ -9,7 +9,7 @@ When a Pine script is loaded on a chart it executes once on each historical bar 
 All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see the dataset's earlier bars, the corresponding bars are loaded on the chart. The loading process stops when there are no more bars for that particular symbol or the chart loads approximately 10000 bars [#all_available_bars]_. You can scroll the chart to the left until the very first bar of the dataset which has an index value of 0
 (see `bar_index <https://www.tradingview.com/pine-script-reference/v4/#var_bar_index>`__).
 
-All bars in a dataset are *historical bars* except the rightmost one if a trading session is active. When trading is active in the rightmost bar, it is called the *realtime bar*. The realtime bar updates when TradingView receives a price update from the data feed. When the realtime bar's closes it becomes a historical bar and a new realtime bar opens. All bars created outside of session hours are considered historicial bar since there are no trades then.
+All bars in a dataset are *historical bars* except the rightmost one if a trading session is active. When trading is active in the rightmost bar, it is called the *realtime bar*. The realtime bar updates when TradingView receives a price update from the data feed. When the realtime bar closes it becomes a historical bar and a new realtime bar opens. All bars created outside of session hours are considered historicial bars since there are no trades then.
 
 Calculation based on historical bars
 ------------------------------------
