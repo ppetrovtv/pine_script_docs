@@ -36,7 +36,7 @@ initializes the variable ``src`` with the ``close`` value for that first bar, an
 
 The execution of each line in the script produces calculations which in turn generate the study's output values, which can then be plotted on the chart. Our example uses the ``plot`` and ``plotshape`` calls at the end of the script. In the case of a strategy, the outcome of the calculations can be used to plot values or dictate the orders to be placed.
 
-After execution and plotting on the first bar, the script is executed on the dataset's second bar which has an index of 1. The process then repeats until all historical bars in the dataset are processed.
+After execution and plotting on the first bar, the script is executed on the dataset's second bar which has an index of 1. The process then repeats until all historical bars in the dataset are processed and the script reaches the rightmost bar on the chart.
 
 .. image:: images/execution_model_calculation_on_history.png
 
