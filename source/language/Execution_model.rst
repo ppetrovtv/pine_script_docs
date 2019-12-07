@@ -26,7 +26,7 @@ Let's take a simple script and follow its execution on historical bars::
     plot(b, color=color.black)
     plotshape(c, color=color.red)
 
-On historical bars, a script executes at the equivalent of the bar's close, when the OHLCV values are all known for that bar. The built-in variables such as ``open``, ``high``, ``low``, ``close``, ``volume`` and ``time`` are thus set to values corresponding to those from that bar. A script executes **once per historical bar**.
+On historical bars a script executes at the equivalent of the bar's close, when the OHLCV values are all known for that bar. The built-in variables such as ``open``, ``high``, ``low``, ``close``, ``volume`` and ``time`` are thus set to values corresponding to those from that bar. A script executes **once per historical bar**.
 
 Our example script is first executed on the very first bar of the dataset at index 0. Each statement is executed using the values for the current bar. Accordingly, on the first bar of the dataset, the variable ``src`` is initialized with the ``close`` value for that first bar, and so on for each line. Because the script only executes once for each historical bar, the ``close`` value will always remain the same iteration of a script on a historical bar. The execution of each line in the script produces calculations which in turn generate the study's output values, which can then be plotted on the chart. Our example uses the ``plot`` and ``plotshape`` calls at the end of the script, but many other plotting methods can be used. In the case of a strategy, the outcome of the calculations can dictate the orders to be placed.
 
