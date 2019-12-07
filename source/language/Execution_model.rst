@@ -4,7 +4,7 @@ Execution model
 .. contents:: :local:
     :depth: 2
 
-When a Pine script is loaded on a chart it executes once on each historical bar, using the available OHLCV (open, high, low, close, volume) values for each bar. Once the script's execution reaches the rightmost bar in the dataset, if trading is currently active on the chart's symbol, then Pine *studies* will execute once every time price changes. Pine *strategies* will by default only execute when the rightmost bar closes, but they can also be configured to execute every time price changes, like studies do.
+When a Pine script is loaded on a chart it executes once on each historical bar using the available OHLCV (open, high, low, close, volume) values for each bar. Once the script's execution reaches the rightmost bar in the dataset, if trading is currently active on the chart's symbol, then Pine *studies* will execute once every time price changes. Pine *strategies* will by default only execute when the rightmost bar closes, but they can also be configured to execute every time price changes, like studies do.
 
 All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see the dataset's earlier bars, the corresponding bars are loaded on the chart. The loading process stops when there are no more bars for that particular symbol or the chart loads approximately 10000 bars [#all_available_bars]_. You can scroll the chart to the left until the very first bar of the dataset which has an index value of 0
 (see `bar_index <https://www.tradingview.com/pine-script-reference/v4/#var_bar_index>`__).
