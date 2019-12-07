@@ -14,7 +14,7 @@ All bars in a dataset are *historical bars* except the rightmost one if a tradin
 Calculation based on historical bars
 ------------------------------------
 
-Let's take a simple script and follow its execution::
+Let's take a simple script and follow its execution on historical bars::
 
     //@version=4
     study("My Script", overlay=true)
@@ -26,15 +26,13 @@ Let's take a simple script and follow its execution::
     plot(b, color=color.black)
     plotshape(c, color=color.red)
 
-In more detail, calculation of Pine indicator starts from the very first bar (which has a 0 index). The built-in variables ``open``, ``high``, ``low``, ``close``, ``volume``
-and ``time`` get corresponding values from the bar and the script calculates from the first statement to the last. This calculation produces study output
-values (which are plot, plotshape, drawing objects, strategy orders or other values) for that particular time point, associated with the bar.
-Then, in the same manner, the second bar (with 1 index) is processed and so on until all the historical bars are processed.
-Thus, Pine script is executed **once per historical bar**:
+On historical bars, a script executes at the equivalent of the bar's close, when the OHLCV values are all known for that bar, and the built-in variables such as ``open``, ``high``, ``low``, ``close``, ``volume`` and ``time`` are each set to values corresponding to those from that bar. The script executes **once per historical bar**.
+
+Our example script is first executed on the very first bar of the dataset at index 0. Each statement is executed using the values for the current bar. Accordingly, on the first bar of the dataset, the variable ``src`` is initialized with the ``close`` value for that first bar, and so on for each line. Because the script only executes once for each historical bar, the ``close`` value will always remain the same iteration of a script on a historical bar. The execution of each line in the script produces calculations which in turn generate the study's output values, which can then be plotted on the chart. Our example uses the ``plot`` and ``plotshape`` calls at the end of the script, but many other plotting methods can be used. In the case of a strategy, the outcome of the calculations can dictate the orders to be placed.
+
+After execution and plotting on the first bar, the script is executed on the dataset's second bar which has an index of 1. The process then repeats until all historical bars in the dataset are processed.
 
 .. image:: images/execution_model_calculation_on_history.png
-
-Then, indicator switches to a special mode to process realtime updates.
 
 Calculation based on realtime bars
 ----------------------------------
