@@ -63,7 +63,7 @@ To summarize the realtime bar process:
 
     * A script executes **once per bar update**.
     * Variables rollback **before every intra-bar update**.
-    * Variables commit **after every closing bar update**.
+    * Variables commit **once at the closing bar update**.
 
 Additional resources
 --------------------
