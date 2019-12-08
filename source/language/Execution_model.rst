@@ -32,7 +32,7 @@ Our example script is first executed on the very first bar of the dataset at ind
 
     src = close
 
-initializes the variable ``src`` with the ``close`` value for that first bar, and each of the next lines is executed in turn. Because the script only executes once for each historical bar, the ``close`` value will never change during the same iteration of a script on a historical bar.
+initializes the variable ``src`` with the ``close`` value for that first bar, and each of the next lines is executed in turn. Because the script only executes once for each historical bar, the script will always calculate using the same ``close`` value for any given historical bar.
 
 The execution of each line in the script produces calculations which in turn generate the study's output values, which can then be plotted on the chart. Our example uses the ``plot`` and ``plotshape`` calls at the end of the script. In the case of a strategy, the outcome of the calculations can be used to plot values or dictate the orders to be placed.
 
