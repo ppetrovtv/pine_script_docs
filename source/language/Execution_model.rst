@@ -80,6 +80,10 @@ A Pine script is executed on the realtime bar when:
     * One of the above conditions occurs.
     * Price changes.
 
+Note that when a chart is left untouched when the market is active, a succession of realtime bars which have been opened and then closed will trail the current realtime bar. While these bars will have been *confirmed* because their variables have all been committed, the script will not yet have executed on them in their current *historical* state, since they did not exist when the script was last run on the chart's dataset.
+
+When an event triggers the execution of the script on the chart and causes it to run on those bar which have now become historical bars, the script's calculation can sometimes vary from what they were when calculated on the last closing update of the same bars when they were realtime bars. This is due to slight variations between the OHLCV values saved at the close of realtime bars and those fetched from data feeds when the same bars have become historical bars. This behavior is also referred to as *repainting*.
+
 Additional resources
 --------------------
 
