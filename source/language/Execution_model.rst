@@ -68,14 +68,14 @@ To summarize the realtime bar process:
 Events triggering the execution of a script
 -------------------------------------------
 
-A Pine script is executed on the complete set of bars on the chart when one of the following events occurs:
+A script is executed on the complete set of bars on the chart when one of the following events occurs:
 
     * A new symbol or resolution is loaded on a chart.
     * A value is modified in the script's *Settings/Inputs* dialog box.
     * A value is modified in a strategy's *Settings/Properties* dialog box.
     * A browser refresh event is detected.
 
-A Pine script is executed on the realtime bar when:
+A script is executed on the realtime bar when:
 
     * One of the above conditions occurs.
     * Price changes.
