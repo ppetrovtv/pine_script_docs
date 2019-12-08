@@ -6,10 +6,10 @@ Execution model
 
 When a Pine script is loaded on a chart it executes once on each historical bar using the available OHLCV (open, high, low, close, volume) values for each bar. Once the script's execution reaches the rightmost bar in the dataset, if trading is currently active on the chart's symbol, then Pine *studies* will execute once every time price changes. Pine *strategies* will by default only execute when the rightmost bar closes, but they can also be configured to execute every time price changes, like studies do.
 
-All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see the dataset's earlier bars, the corresponding bars are loaded on the chart. The loading process stops when there are no more bars for that particular symbol/resolution pair or approximately 10000 bars have been loaded [#all_available_bars]_. You can scroll the chart to the left until the very first bar of the dataset which has an index value of 0
+All symbol/resolution pairs have a dataset comprising a limited number of bars. When you scroll a chart to the left to see the dataset's earlier bars, the corresponding bars are loaded on the chart. The loading process stops when there are no more bars for that particular symbol/resolution pair or approximately 10000 bars have been loaded [#all_available_bars]_. You can scroll the chart to the left until the very first bar of the dataset, which has an index value of 0
 (see `bar_index <https://www.tradingview.com/pine-script-reference/v4/#var_bar_index>`__).
 
-All bars in a dataset are *historical bars* except the rightmost one if a trading session is active. When trading is active in the rightmost bar, it is called the *realtime bar*. The realtime bar updates when a price change is detected. When the realtime bar closes it becomes a historical bar and a new realtime bar opens. All bars created outside of session hours are considered historicial bars since there are no trades then.
+All bars in a dataset are *historical bars*, except the rightmost one if a trading session is active. When trading is active in the rightmost bar, it is called the *realtime bar*. The realtime bar updates when a price change is detected. When the realtime bar closes it becomes a historical bar and a new realtime bar opens. All bars created outside of session hours are considered historicial bars since there are no trades then.
 
 Calculation based on historical bars
 ------------------------------------
@@ -32,11 +32,11 @@ Our example script is first executed on the very first bar of the dataset at ind
 
     src = close
 
-initializes the variable ``src`` with the ``close`` value for that first bar, and each of the next lines is executed in turn. Because the script only executes once for each historical bar, the script will always calculate using the same ``close`` value for any given historical bar.
+initializes the variable ``src`` with the ``close`` value for that first bar, and each of the next lines is executed in turn. Because the script only executes once for each historical bar, the script will always calculate using the same ``close`` value for a specific historical bar.
 
-The execution of each line in the script produces calculations which in turn generate the study's output values, which can then be plotted on the chart. Our example uses the ``plot`` and ``plotshape`` calls at the end of the script. In the case of a strategy, the outcome of the calculations can be used to plot values or dictate the orders to be placed.
+The execution of each line in the script produces calculations which in turn generate the study's output values, which can then be plotted on the chart. Our example uses the ``plot`` and ``plotshape`` calls at the end of the script to output some values. In the case of a strategy, the outcome of the calculations can be used to plot values or dictate the orders to be placed.
 
-After execution and plotting on the first bar, the script is executed on the dataset's second bar which has an index of 1. The process then repeats until all historical bars in the dataset are processed and the script reaches the rightmost bar on the chart.
+After execution and plotting on the first bar, the script is executed on the dataset's second bar, which has an index of 1. The process then repeats until all historical bars in the dataset are processed and the script reaches the rightmost bar on the chart.
 
 .. image:: images/execution_model_calculation_on_history.png
 
@@ -77,10 +77,10 @@ A script is executed on the complete set of bars on the chart when one of the fo
 
 A script is executed on the realtime bar when:
 
-    * One of the above conditions occurs.
+    * One of the above conditions occurs, or
     * Price changes.
 
-Note that when a chart is left untouched when the market is active, a succession of realtime bars which have been opened and then closed will trail the current realtime bar. While these bars will have been *confirmed* because their variables have all been committed, the script will not yet have executed on them in their current *historical* state, since they did not exist when the script was last run on the chart's dataset.
+Note that when a chart is left untouched when the market is active, a succession of realtime bars which have been opened and then closed will trail the current realtime bar. While these bars will have been *confirmed* because their variables have all been committed, the script will not yet have executed on them in their *historical* state, since they did not exist when the script was last run on the chart's dataset.
 
 When an event triggers the execution of the script on the chart and causes it to run on those bar which have now become historical bars, the script's calculation can sometimes vary from what they were when calculated on the last closing update of the same bars when they were realtime bars. This is due to slight variations between the OHLCV values saved at the close of realtime bars and those fetched from data feeds when the same bars have become historical bars. This behavior is also referred to as *repainting*.
 
@@ -88,7 +88,7 @@ Additional resources
 --------------------
 
 A number of ``barstate.*`` built-in variables provide information about the current type of bar update
-(historical, realtime, intra-bar, closing update, etc.). The page where they are documented also contains a script that allows you to visualize the distinction described above between elapsed realtime bars and historical bars: :doc:`/essential/Bar_states_Built-in_variables_barstate`.
+(historical, realtime, intra-bar, closing, etc.). The page where they are documented also contains a script that allows you to visualize the distinction described above between elapsed realtime bars and historical bars: :doc:`/essential/Bar_states_Built-in_variables_barstate`.
 
 This page explains the details of strategy calculations: :doc:`/essential/Strategies`.
 
