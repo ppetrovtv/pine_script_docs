@@ -47,9 +47,11 @@ The behavior of a Pine script on the realtime bar is very different than on hist
 
 The most important difference between execution of scripts on historical and realtime bars is that while they execute only once on historical bars, they execute every time a price update occurs during a realtime bar. This entails that built-in variables such as ``high``, ``low`` and ``close`` which never change on a historical, **can** change at each of a script's iteration in the realtime bar. Changes in the built-in variables used in the script's calculations will in turn induce changes in the results of those calculations. As a result, the same script may produce different results every time it executes during the realtime bar—a phenomenon referred to as *repainting*.
 
-**Note:** In the realtime bar, the ``close`` variable always represents the **current price**. It will only represent the realtime bar's actual close on the bar's last update. 
+**Note:** In the realtime bar, the ``close`` variable always represents the **current price**. Similarly, the ``high`` and ``low`` built-in variables represent the highest high and lowest low reached since the realtime bar's beginning. The built-in variables will only represent the realtime bar's final values on the bar's last update.
 
-has important consequences, as the script produce results each time of a script's calculations will 
+Let's follow our script example in the realtime bar.
+
+When the realtime bar opens, nothing happens, as a script only executes when a price update occurs. This explains why scripts will show no activity on the realtime bar until a price change occurs. Until that happens, the script's calculations cannot produce any results. On the first bar 
 
 
 Pine indicator calculation on realtime bar updates is slightly different comapred to historical bars because of
