@@ -45,48 +45,31 @@ Calculation based on realtime bars
 
 The behavior of a Pine script on the realtime bar is very different than on historical bars. Recall that the realtime bar is the rightmost bar on the chart when trading is active on the chart's symbol. Also recall that strategies can behave in two different ways in the realtime bar. By default they only execute when the realtime bar closes, but the ``calc_on_every_tick`` parameter of the ``strategy`` declaration statement can be set to true to modify the strategy's behavior so that it executes each time price updates in the realtime bar, as studies do. The behavior described here for studies will thus apply to strategies using ``calc_on_every_tick=true``.
 
-The most important difference between execution of scripts on historical and realtime bars is that while they execute only once on historical bars, they execute every time a price update occurs during a realtime bar. This entails that built-in variables such as ``high``, ``low`` and ``close`` which never change on a historical, **can** change at each of a script's iteration in the realtime bar. Changes in the built-in variables used in the script's calculations will in turn induce changes in the results of those calculations. As a result, the same script may produce different results every time it executes during the realtime bar—a phenomenon referred to as *repainting*.
+The most important difference between execution of scripts on historical and realtime bars is that while they execute only once on historical bars, they execute every time a price update occurs during a realtime bar. This entails that built-in variables such as ``high``, ``low`` and ``close`` which never change on a historical bar, **can** change at each of a script's iteration in the realtime bar. Changes in the built-in variables used in the script's calculations will in turn induce changes in the results of those calculations. This is required for the script to follow the realtime price action. As a result, the same script may produce different results every time it executes during the realtime bar. This phenomenon is often referred to as *repainting*.
 
-**Note:** In the realtime bar, the ``close`` variable always represents the **current price**. Similarly, the ``high`` and ``low`` built-in variables represent the highest high and lowest low reached since the realtime bar's beginning. The built-in variables will only represent the realtime bar's final values on the bar's last update.
+**Note:** In the realtime bar, the ``close`` variable always represents the **current price**. Similarly, the ``high`` and ``low`` built-in variables represent the highest high and lowest low reached since the realtime bar's beginning. The Pine built-in variables will only represent the realtime bar's final values on the bar's last update.
 
 Let's follow our script example in the realtime bar.
 
-When the realtime bar opens, nothing happens, as a script only executes when a price update occurs. This explains why scripts will show no activity on the realtime bar until a price change occurs. Until that happens, the script's calculations cannot produce any results. On the first bar 
+When the realtime bar opens, nothing happens, as a script only executes when a price update occurs. This explains why scripts will show no activity on the realtime bar until a price change occurs. Until that happens, the script's calculations cannot produce any results. When the first price update occurs, our script executes for the first time on the realtime bar. It then uses the current values of the built-in variables to produce a set of results, plots them if required, and then nothing happens until the next price update.
 
+Before the script is executed another time when the next price update happens, its user-defined variables are reset to a known state corresponding to that of the last *commit* on them, which occurred at the close of the previous bar. If no commit is done on the variables because they are initialized every bar, then they are reinitialized, so their last calculated state is lost. This resetting of the script's user-defined variables prior to each new iteration of the script in the realtime bar is called *rollback*. Its effect is to reset the script's state to the same known state it was at when the realtime bar opened, so calculations in the realtime bar are always performed on the same starting state of the script's variables.
 
-Pine indicator calculation on realtime bar updates is slightly different comapred to historical bars because of
-the additional *commit* and *rollback* actions on script variables.
+This constant recalculation of a script's values as price changes in the realtime can lead to a situation where variable ``c`` in our example becomes true because a cross has occurred, and so the red marker plotted by the script's last line would appear on the chart. If on the next price update the price has moved in such a way that the ``close`` value no longer produces calculations making ``c`` true because there is no longer a cross, then the marker previously plotted will disappear.
 
-In realtime processing mode, Pine indicator is executed **once per bar update** plus there is a
+When the realtime closes, a last execution of the script occurs. As usual, variables are rolled back prior to execution, but since this iteration is the last one on that bar, at the end of it variables are committed to their final values for the bar.
 
-    * variables rollback **before every intra-bar update**
-    * variables commit **after every closing bar update**
+To summarize the realtime bar process:
 
-All the script variables are set to their most recent commited values (or initial values, if there were no commits yet) during a rollback .
-Variables commit is a finalization of variables' values on the current bar. Commit makes variable values immutable on that particular bar.
-This happens only once per bar when the bar closes.
-
-In more detail, imageine there is a current bar (the latest bar) with a close price equal to 1.11500:
-
-.. image:: images/execution_model_calculation_on_realtime.png
-
-With such a close price value, indicator calculates ``c = cross(a, b)`` to ``true``,
-thus there is a red cross on the last bar on the chart (as shown on the screenshot).
-Imagine that in the next moment close price would go down, so script is going to recalculate.
-Before that, all the variables are rolled back to their last commited values and then ``a`` variable could be less than ``b`` variable.
-In such a case ``c = cross(a, b)`` can become ``false`` and red cross on the
-current bar would be erased. Values of script variables on the current bar may change (roll back and become another value)
-many times until they will be calculated for the last time as a result of the closing bar update
-(the next data update would create a new bar). Those values become historical values, it is said that they are *commited* then.
-
-Rollback and commit are very important, they give scripts an ability to be independent from price moves within a bar which in turn
-reduces *repainting* problems.
+    * A script executes **once per bar update**.
+    * Variables rollback **before every intra-bar update**.
+    * Variables commit **after every closing bar update**.
 
 Additional resources
 --------------------
 
-A number of built-in variables ``barstate.*`` provide information about the current type of bar update
-(e.g., historical, realtime, intra-bar, closing update etc.), :doc:`/essential/Bar_states_Built-in_variables_barstate`.
+A number of ``barstate.*`` built-in variables provide information about the current type of bar update
+(e.g., historical, realtime, intra-bar, closing update, etc.), :doc:`/essential/Bar_states_Built-in_variables_barstate`.
 
 Calculation of strategies is more complex than calculation of indicators, :doc:`/essential/Strategies`.
 
