@@ -57,13 +57,27 @@ Before the script executes another time when the next price update happens, its 
 
 The constant recalculation of a script's values as price changes in the realtime bar can lead to a situation where variable ``c`` in our example becomes true because a cross has occurred, and so the red marker plotted by the script's last line would appear on the chart. If on the next price update the price has moved in such a way that the ``close`` value no longer produces calculations making ``c`` true because there is no longer a cross, then the marker previously plotted will disappear.
 
-When the realtime bar closes, the script executes a last time. As usual, variables are rolled back prior to the execution. However, since this iteration is the last one on the realtime bar, this time variables are committed to their final values for the bar when calculations are completed.
+When the realtime bar closes, the script executes a last time. As usual, variables are rolled back prior to execution. However, since this iteration is the last one on the realtime bar, variables are committed to their final values for the bar when calculations are completed.
 
 To summarize the realtime bar process:
 
     * A script executes **once per bar update**.
     * Variables rollback **before every intra-bar update**.
     * Variables commit **once at the closing bar update**.
+
+Events triggering the execution of a script
+-------------------------------------------
+
+A Pine script is executed on the complete set of bars on the chart when one of the following events occurs:
+
+    * A new symbol or resolution is loaded on a chart.
+    * A value is modified in the script's *Settings/Inputs* dialog box.
+    * A value is modified in a strategy'S *Settings/Properties* dialog box.
+
+A Pine script is executed on the realtime bar when:
+
+    * One of the above conditions occurs.
+    * Price changes.
 
 Additional resources
 --------------------
