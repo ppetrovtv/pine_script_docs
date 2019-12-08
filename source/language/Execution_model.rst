@@ -72,7 +72,7 @@ A Pine script is executed on the complete set of bars on the chart when one of t
 
     * A new symbol or resolution is loaded on a chart.
     * A value is modified in the script's *Settings/Inputs* dialog box.
-    * A value is modified in a strategy'S *Settings/Properties* dialog box.
+    * A value is modified in a strategy's *Settings/Properties* dialog box.
 
 A Pine script is executed on the realtime bar when:
 
