@@ -88,7 +88,7 @@ Additional resources
 --------------------
 
 A number of ``barstate.*`` built-in variables provide information about the current type of bar update
-(historical, realtime, intra-bar, closing update, etc.). The page where they are documented also provides a script that allows you to visualize the distinction between elapsed realtime bars and historical bars described above: :doc:`/essential/Bar_states_Built-in_variables_barstate`.
+(historical, realtime, intra-bar, closing update, etc.). The page where they are documented also contains a script that allows you to visualize the distinction described above, between elapsed realtime bars and historical bars: :doc:`/essential/Bar_states_Built-in_variables_barstate`.
 
 This page explains the details of strategy calculations: :doc:`/essential/Strategies`.
 
