@@ -69,7 +69,7 @@ Additional resources
 --------------------
 
 A number of ``barstate.*`` built-in variables provide information about the current type of bar update
-(e.g., historical, realtime, intra-bar, closing update, etc.): :doc:`/essential/Bar_states_Built-in_variables_barstate`.
+(historical, realtime, intra-bar, closing update, etc.): :doc:`/essential/Bar_states_Built-in_variables_barstate`.
 
 This page explains the details of strategy calculations: :doc:`/essential/Strategies`.
 
