@@ -32,7 +32,8 @@ To copy a script, use one of the two following methods:
 #. Click the star next to the needed script in the Indicators window: |Add_to_Personal_Library|
 
 #. Open the needed script from the `Scripts <https://www.tradingview.com/script/>`__ section
-   and click the *Add to Favorite Scripts* button: |Add_to_Personal_Library_2|
+   and click the *Add to Favorite Scripts* button: 
+|Add_to_Personal_Library_2|
 
 The script will be added to your Favorites section in the Indicators
 window, where you can easily find it when needed:
