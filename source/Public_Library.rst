@@ -29,7 +29,8 @@ Copying a script from the Public to your Personal Library
 
 To copy a script, use one of the two following methods:
 
-#. Click the star next to the needed script in the Indicators window: |Add_to_Personal_Library|
+#. Click the star next to the needed script in the Indicators window: 
+|Add_to_Personal_Library|
 
 #. Open the needed script from the `Scripts <https://www.tradingview.com/script/>`__ section
    and click the *Add to Favorite Scripts* button: 
