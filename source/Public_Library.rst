@@ -54,10 +54,12 @@ Editing a script from the Public Library
 To edit a script from the Public Library:
 
 #. Open the script (the script will be unavailable for editing and
-   will be colored lighter than normal): |Open_the_script|
+   will be colored lighter than normal): 
+|Open_the_script|
 
 #. Click on the *Make a Copy...* button, enter the desired name and save a copy in your
-   personal library: |Save_as|
+   personal library: 
+|Save_as|
 
 
 A saved copy of the script will appear in the list of your scripts in
