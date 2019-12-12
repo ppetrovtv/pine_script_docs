@@ -51,7 +51,7 @@ The most important difference between execution of scripts on historical and rea
 
 Let's follow our script example in the realtime bar.
 
-When the script arrives on the realtime bar it executes a first time. It uses the current values of the built-in variables to produce a set of results and plots them if required. Before the script executes another time when the next update happens, its user-defined variables are reset to a known state corresponding to that of the last *commit* at the close of the previous bar. If no commit was made on the variables because they are initialized every bar, then they are reinitialized. In both cases their last calculated state is lost. This resetting of the script's user-defined variables prior to each new iteration of the script in the realtime bar is called *rollback*. Its effect is to reset the script to the same known state it was in when the realtime bar opened, so calculations in the realtime bar are always performed from a clean slate.
+When the script arrives on the realtime bar it executes a first time. It uses the current values of the built-in variables to produce a set of results and plots them if required. Before the script executes another time when the next update happens, its user-defined variables are reset to a known state corresponding to that of the last *commit* at the close of the previous bar. If no commit was made on the variables because they are initialized every bar, then they are reinitialized. In both cases their last calculated state is lost. The state of plotted labels and lines is also reset. This resetting of the script's user-defined variables and drawings prior to each new iteration of the script in the realtime bar is called *rollback*. Its effect is to reset the script to the same known state it was in when the realtime bar opened, so calculations in the realtime bar are always performed from a clean slate.
 
 The constant recalculation of a script's values as price or volume changes in the realtime bar can lead to a situation where variable ``c`` in our example becomes true because a cross has occurred, and so the red marker plotted by the script's last line would appear on the chart. If on the next price update the price has moved in such a way that the ``close`` value no longer produces calculations making ``c`` true because there is no longer a cross, then the marker previously plotted will disappear.
 
@@ -59,7 +59,7 @@ When the realtime bar closes, the script executes a last time. As usual, variabl
 
 To summarize the realtime bar process:
 
-    * A script executes **once per bar update**.
+    * A script executes **at the open of the realtime bad and then once per update**.
     * Variables are rolled back **before every realtime update**.
     * Variables are committed **once at the closing bar update**.
 
@@ -69,14 +69,15 @@ Events triggering the execution of a script
 A script is executed on the complete set of bars on the chart when one of the following events occurs:
 
     * A new symbol or resolution is loaded on a chart.
+    * A script is saved or added to the chart from the Pine Editor.
     * A value is modified in the script's *Settings/Inputs* dialog box.
     * A value is modified in a strategy's *Settings/Properties* dialog box.
     * A browser refresh event is detected.
 
-A script is executed on the realtime bar when:
+A script is executed on the realtime bar when trading is active and:
 
-    * One of the above conditions occurs, or
-    * Price or volume changes.
+    * One of the above conditions occurs, causing the script to execute on the open of the realtime bar, or
+    * The realtime bar updates because a price or volume change was detected.
 
 Note that when a chart is left untouched when the market is active, a succession of realtime bars which have been opened and then closed will trail the current realtime bar. While these bars will have been *confirmed* because their variables have all been committed, the script will not yet have executed on them in their *historical* state, since they did not exist when the script was last run on the chart's dataset.
 
