@@ -6,6 +6,12 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+December 2019
+--------------------------
+* Warning messages were added.
+
+  For example, if you don't specify exit parameters for ``strategy.exit`` - ``profit``, ``limit``, ``loss``, ``stop`` or one of the following pairs: ``trail_offset`` and ``trail_price`` / ``trail_points`` - you will see a warning message in the console in the Pine editor.
+  
 October 2019
 --------------------------
 * ``plotchar`` function now supports most of the Unicode symbols::
