@@ -95,7 +95,7 @@ Private scripts
 
 Updating scripts
 ----------------
-
+.. |Publishing_scripts_Editor_button| image:: images/Publishing_scripts_Editor_button.png
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
 .. |Publish_script_new| image:: images/Publish_script_new.png
