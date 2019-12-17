@@ -11,7 +11,7 @@ Introduction
 **Pine Script**.
 It allows users to create customized indicators and run them
 on our servers. Pine was designed as a lightweight
-language focused on the specific task of developing indicators. TradingView's
+language focused on the specific task of developing indicators. Most of TradingView's
 built-in indicators have been coded in Pine. It is our
 explicit goal to keep Pine accessible and easy to understand for the broadest
 possible audience.
@@ -23,7 +23,7 @@ coding capabilities for building very complex tools, constantly improving
 Pine is one of our highest priorities and we are happy to consider any
 requests for new features.
 
-Because each study uses computational resources in the cloud, we must
+Because each script uses computational resources in the cloud, we must
 impose limits in order to share these resources fairly among our users.
 We strive to impose as few limits as possible while enforcing as many as
 needed. We must ensure the platform keeps running smoothly so nobody is
