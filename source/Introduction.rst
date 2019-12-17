@@ -9,9 +9,9 @@ Introduction
 
 `TradingView <https://www.tradingview.com/>`__ has designed its own scripting language called
 **Pine Script**.
-It allows users to create customized indicators and run them
+It allows users to create custom indicators and run them
 on our servers. Pine was designed as a lightweight
-language focused on the specific task of developing indicators. Most of TradingView's
+language focused on the specific task of developing indicators and strategies. Most of TradingView's
 built-in indicators have been coded in Pine. It is our
 explicit goal to keep Pine accessible and easy to understand for the broadest
 possible audience.
