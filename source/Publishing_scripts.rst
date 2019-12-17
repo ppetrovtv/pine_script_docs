@@ -30,7 +30,7 @@ The published script will be displayed in the `Public Library <https://www.tradi
 which is available to all TradingView users. Any registered TradingView user will be able to make a copy of
 your script.
 
-# Choosing a licence
+#Choosing a licence
 
 Choosing to use an open source license is entirely up to you. You are under no
 obligation to do so. If you publish scripts with open source code you
