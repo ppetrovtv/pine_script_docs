@@ -29,7 +29,7 @@ We strive to impose as few limits as possible while enforcing as many as
 needed. We must ensure the platform keeps running smoothly so nobody is
 negatively affected by scripts that consume a
 disproportionate amount of resources. The imposed limits apply to elements
-such as the amount of data from additional symbols, loop calculations,
+such as the amount of data from additional symbols, execution time,
 memory usage and script size. Additionally, we keep Pine syntax and
 semantics simple so it can handle common tasks efficiently.
 
