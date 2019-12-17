@@ -12,7 +12,7 @@ script's code, you can publish your script using *Protected* or *Invite-Only* mo
 the source code from other users.
 
 Public scripts
--------------------------
+--------------
 
 Open source
 ^^^^^^^^^^^
@@ -88,6 +88,13 @@ All your scripts published in managed access mode are shown in a
 separate section of the Indicators window:
 
 |Invite_only_tab|
+
+Private scripts
+---------------
+
+
+Updating scripts
+----------------
 
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
