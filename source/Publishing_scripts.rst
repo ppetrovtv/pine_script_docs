@@ -11,7 +11,7 @@ script is about before using it. If you want to protect your
 script's code, you can publish your script using *Protected* or *Invite-Only* modes, which hide
 the source code from other users.
 
-Publishing public scripts
+Public scripts
 -------------------------
 
 Open source
@@ -40,8 +40,8 @@ position on the matter is similar to that of
 `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
 
-Protected source
-^^^^^^^^^^^^^^^^
+Protected
+^^^^^^^^^
 
 It is possible to publish scripts in *protected source* mode. This is a
 high-demand feature that lets you share knowledge while protecting your
@@ -58,8 +58,8 @@ publishing from the script publication window:
 
 |Protected_script_new|
 
-Managed access
-^^^^^^^^^^^^^^
+Invite-only
+^^^^^^^^^^^
 
 Authors can choose to manage who can access their scripts. This is great for
 commercial vendors, or authors who want to protect their IP or share
