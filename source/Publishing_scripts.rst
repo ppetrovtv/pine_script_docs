@@ -4,7 +4,10 @@ Publishing scripts
 .. contents:: :local:
     :depth: 2
 
-Users who write their own scripts can publish them in the :doc:`Public_Library` to share their
+Users who write their own scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can just save them in the Pine Editor and use them from there.
+
+You can share scripts in one of two ways:
+#. You may publish them in TradingView's :doc:`Public_Library` to share their
 scripts with other users. Each published script gets a page with a
 description, screenshot and source code, so users can see what the
 script is about before using it. If you want to protect your
