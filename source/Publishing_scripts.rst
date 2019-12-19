@@ -6,6 +6,8 @@ Publishing scripts
 
 Users who write scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can save them in the Pine Editor; you do not need to publish them.
 
+
+
 Public vs private scripts
 -------------------------
 
@@ -39,6 +41,8 @@ Private scripts
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 - Are not accessible through the search functions for scripts.
 
+
+
 Publishing modes
 ----------------
 
@@ -59,13 +63,16 @@ The invite-only publishing mode protects both the script's code and its accecss.
 
 TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors and do not involve TradingView.
 
-Invite-only scripts are the only type of public scripts which can be sold on TradingView.
+Invite-only scripts are the only type of public scripts for which paid access is allowed on TradingView.
+
+On the published script's page, authors will see a *Manage Access* button, where they can add/remove
+users and manage access rights.
+
+|Manage_access_button|
 
 
 How to publish a script
 -----------------------
-
-
 
 To publish an *open source* Pine script:
 
@@ -95,10 +102,6 @@ Only users you specifically add will then be able to use your script.
 
 |Invite_only_script_new|
 
-On the published script's page, authors will see a *Manage Access* button, where they can add/remove
-users and manage access rights.
-
-|Manage_access_button|
 
 Invite-only indicators are visible in the :doc:`Public_Library`,
 but nobody can add them to a chart without
@@ -112,8 +115,10 @@ separate section of the Indicators window:
 |Invite_only_tab|
 
 
+
 How to update a script
 ----------------------
+
 
 .. |Publishing_scripts_Editor_button| image:: images/Publishing_scripts_Editor_button.png
 .. |Pine_editor| image:: images/Pine_editor.png
