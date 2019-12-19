@@ -9,11 +9,11 @@ Users who write their own scripts and wish to share them with others can publish
 You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode. When you publish a script:
 
 - Your script must have a name, a description explaining what your script does and how to use it, and a chart.
-- Once published, you will not be able to modify its original description.
+- Once published, you will not be able to modify the script's original description.
 - The chart published with you script is the one in use when you publish.
 - The script's code can be updated and with each update you can write *release notes* which will appear, dated, under your original description.
 - Your published scripts appear under the *Scripts* tab of your user profile.
-- A script widget and a script page are created for your script. The script widget is your script's placeholder showing in lists of scripts. It contains your script's title, chart and the first few lines of your description. When users click on your script widget, the script's page opens. It contains all the information relating to your script. 
+- A *script widget* and a *script page* are created for your script. The script widget is your script's placeholder showing in lists of scripts. It contains your script's title, chart and the first few lines of your description. When users click on your script widget, the script's page opens. It contains all the information relating to your script. 
 
 **Public scripts**:
 
