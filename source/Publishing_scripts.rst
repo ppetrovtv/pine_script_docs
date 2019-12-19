@@ -125,8 +125,9 @@ separate section of the Indicators window:
 |Invite_only_tab|
 
 
-Updating scripts
-----------------
+How to update a script
+----------------------
+
 .. |Publishing_scripts_Editor_button| image:: images/Publishing_scripts_Editor_button.png
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
