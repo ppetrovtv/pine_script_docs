@@ -19,7 +19,7 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 
 - Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community.
 - Cannot be deleted.
-- Must comply with our script publishing House Rules and are subject to moderation.
+- Must comply with our `script publishing House Rules <https://www.tradingview.com/house-rules/#scripts>`__ and are subject to moderation.
 
 **Private scripts**:
 
