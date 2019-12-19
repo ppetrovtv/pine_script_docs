@@ -18,14 +18,15 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 - Your published scripts appear under the *Scripts* tab of your user profile.
 - A *script widget* and a *script page* are created for your script. The script widget is your script's placeholder showing in lists of scripts. It contains your script's title, chart and the first few lines of your description. When users click on your script widget, the script's page opens. It contains all the information relating to your script. 
 
-**Public scripts**:
+Public scripts
+^^^^^^^^^^^^^^
 
 - Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community.
 - Cannot be deleted.
 - Must comply with our `script publishing House Rules <https://www.tradingview.com/house-rules/#scripts>`__ and are subject to moderation.
 
-**Private scripts**:
-
+Private scripts
+^^^^^^^^^^^^^^^
 - Are only published on your user profile's *Scripts* tab. If you want to share them with other users, use the script's url.
 - Can be identified with the "X" icon in the top right of their widget, which is used to delete a script.
 - Are not moderated.
