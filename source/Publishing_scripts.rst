@@ -27,8 +27,7 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 **Private scripts**:
 
 - Are only published on your user profile's *Scripts* tab. If you want to share them with other users, use the script's url.
-- Can be identified with the "X" icon in the top right of their widget.
-- Can be deleted.
+- Can be identified with the "X" icon in the top right of their widget, which is used to delete the script.
 - Are not moderated.
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 
@@ -76,7 +75,7 @@ position on the matter is similar to that of
 
 
 Protected
-^^^^^^^^^
+
 
 It is possible to publish scripts in *protected source* mode. This is a
 high-demand feature that lets you share knowledge while protecting your
@@ -94,7 +93,7 @@ publishing from the script publication window:
 |Protected_script_new|
 
 Invite-only
-^^^^^^^^^^^
+
 
 Authors can choose to manage who can access their scripts. This is great for
 commercial vendors, or authors who want to protect their IP or share
