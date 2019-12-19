@@ -44,6 +44,8 @@ Publishing modes
 Open source
 ^^^^^^^^^^^
 
+The Pine code of scripts published in open-source mode is available to all users. Open-source scripts on TradingView use the Mozilla open-source license by default, but you may choose any license you want. You can find information on licensing at `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
+
 Protected
 ^^^^^^^^^
 
@@ -66,18 +68,6 @@ To publish an *open source* Pine script:
 #. Enter the script's title, tags (optional) and description.
 #. Click the *Publish Script* button.
 
-The published script will be displayed in the `Public Library <https://www.tradingview.com/script/>`__,
-which is available to all TradingView users. Any registered TradingView user will be able to make a copy of
-your script.
-
-#Choosing a licence
-
-Choosing to use an open source license is entirely up to you. You are under no
-obligation to do so. If you publish scripts with open source code you
-may choose the license of your choice. You can include the license in
-the comments section of your script (preferably in the beginning). Our
-position on the matter is similar to that of
-`GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
 
 Protected
