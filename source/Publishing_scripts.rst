@@ -32,6 +32,7 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 - Are not moderated.
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 
+
 Publishing modes
 ----------------
 
@@ -40,8 +41,10 @@ Open source
 
 Protected
 ^^^^^^^^^
+
 Invite-Only
 ^^^^^^^^^^^
+
 
 How to publish a script
 -----------------------
