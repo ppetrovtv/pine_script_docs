@@ -9,6 +9,7 @@ Users who write their own scripts and wish to share them with others can publish
 You can share scripts with other users in two ways: **publicly** or **privately**. With each of these modes, you will be able to choose if you publish your script in open source, protected or invite-only modes.
 
 **Public scripts** are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community:
+
 - Each published script gets a page with the description you write and the chart that was active when you published your script.
 - , screenshot, so users can see what the
 script is about before using it. If you want to protect your
