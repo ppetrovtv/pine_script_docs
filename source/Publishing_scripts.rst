@@ -4,7 +4,7 @@ Publishing scripts
 .. contents:: :local:
     :depth: 2
 
-Users who write their own scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can just save them in the Pine Editor and do not need to publish them.
+Users who write scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can save them in the Pine Editor and use them from there. You do not need to publish them.
 
 You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode. When you publish a script:
 
