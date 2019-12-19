@@ -6,16 +6,23 @@ Publishing scripts
 
 Users who write their own scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can just save them in the Pine Editor and use them from there.
 
-You can share scripts with other users in two ways: **publicly** or **privately**. With each of these modes, you will be able to choose if you publish your script in open source, protected or invite-only modes.
+You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode.
 
-**Public scripts** are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community:
+**All published scripts**:
 
-- Each published script gets a page with the description you write and the chart that was active when you published your script.
-- , screenshot, so users can see what the
-script is about before using it. If you want to protect your
-script's code, you can publish your script using *Protected* or *Invite-Only* modes, which hide
-the source code from other users.
+- Get a page with the description you write and the chart that was active when you published your script.
+- Once a script is published its original description cannot be changed.
+- You will be able to update the script's code, however, and with each update you can write *realease notes* which will appear, dated, under your original description.
 
+**Public scripts**:
+
+- Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community.
+- Cannot be deleted.
+- Must comply with our script publishing House Rules and are subject to moderation.
+
+**Private scripts**:
+
+- Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international 
 Public scripts
 --------------
 
