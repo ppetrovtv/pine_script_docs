@@ -37,6 +37,17 @@ Publishing modes
 
 Open source
 ^^^^^^^^^^^
+
+Protected
+^^^^^^^^^
+Invite-Only
+^^^^^^^^^^^
+
+How to publish a script
+-----------------------
+
+
+
 To publish an *open source* Pine script:
 
 #. Open the Pine Script Editor: |Publishing_scripts_Editor_button|
