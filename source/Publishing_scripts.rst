@@ -28,6 +28,7 @@ Public scripts
 - Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community.
 - Cannot be deleted.
 - Must comply with our `script publishing House Rules <https://www.tradingview.com/house-rules/#scripts>`__ and are subject to moderation.
+- Are accessible through the search functions for scripts.
 
 Private scripts
 ^^^^^^^^^^^^^^^
@@ -36,7 +37,7 @@ Private scripts
 - Can be identified with the "X" icon in the top right of their widget, which is used to delete a private script.
 - Are not moderated.
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
-
+- Are not accessible through the search functions for scripts.
 
 Publishing modes
 ----------------
@@ -44,13 +45,21 @@ Publishing modes
 Open source
 ^^^^^^^^^^^
 
-The Pine code of scripts published in open-source mode is available to all users. Open-source scripts on TradingView use the Mozilla open-source license by default, but you may choose any license you want. You can find information on licensing at `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
+The Pine code of scripts published in open-source mode is available to all users. Open-source scripts on TradingView use the Mozilla license by default, but you may choose any license you want. You can find information on licensing at `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
 Protected
 ^^^^^^^^^
 
-Invite-Only
+The code of protected scripts is hidden from view and no one but its author can access it. While the script's code is not accessible, protected scripts can be used freely by any user.
+
+Invite-only
 ^^^^^^^^^^^
+
+The invite-only publishing mode protects both the script's code and its accecss. The script's publisher must explicitly grant access to each user of an invite-only script. This mode is useful to authors who want to control who can access their script, and it can be used for script vendors who provide paid access to their scripts. This feature is only available to Premium accounts and special House Rules apply to invite-only publications, as well as to script vendors.
+
+TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors and do not involve TradingView.
+
+Invite-only scripts are the only type of public scripts which can be sold on TradingView.
 
 
 How to publish a script
@@ -70,29 +79,12 @@ To publish an *open source* Pine script:
 
 
 
-Protected
-
-
-It is possible to publish scripts in *protected source* mode. This is a
-high-demand feature that lets you share knowledge while protecting your
-intellectual property. These scripts are available
-in the :doc:`Public_Library` and any user can use them, but only the
-author can see the source code. Users can view, comment and favorite
-the script. It will also be available in the Public Library section of the
-Indicators dialog box, and any user will be able to add this script to a chart. Only the
-author, however, can view the source code of protected scripts. This is a great
-option for those who want to share a script while protecting its code.
-
 To publish a script using protected mode, simply choose *Protected* prior to
 publishing from the script publication window:
 
 |Protected_script_new|
 
-Invite-only
-
-
-Authors can choose to manage who can access their scripts. This is great for
-commercial vendors, or authors who want to protect their IP or share
+or authors who want to protect their IP or share
 with only a few select people. Authors who whish to sell access to their scripts
 must arrange for off-site payment and then use TradingView's *Manage Access* feature to
 provide access to customers.
