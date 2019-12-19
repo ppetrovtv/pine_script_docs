@@ -27,6 +27,7 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 - Can be identified with the "X" icon in the top right of their widget.
 - Can be deleted.
 - Are not moderated.
+- Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 
 Public scripts
 --------------
