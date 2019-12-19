@@ -6,6 +6,9 @@ Publishing scripts
 
 Users who write scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can save them in the Pine Editor and use them from there. You do not need to publish them.
 
+Public vs private scripts
+-------------------------
+
 You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode. When you publish a script:
 
 - Your script must have a name, a description explaining what your script does and how to use it, and a chart.
@@ -29,8 +32,8 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 - Are not moderated.
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 
-Public scripts
---------------
+Publishing modes
+----------------
 
 Open source
 ^^^^^^^^^^^
@@ -106,9 +109,6 @@ All your scripts published in managed access mode are shown in a
 separate section of the Indicators window:
 
 |Invite_only_tab|
-
-Private scripts
----------------
 
 
 Updating scripts
