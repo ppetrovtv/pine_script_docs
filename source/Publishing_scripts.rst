@@ -6,13 +6,13 @@ Publishing scripts
 
 Users who write their own scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can just save them in the Pine Editor and do not need to publish them.
 
-You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode.
+You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode. When you publish a script:
 
-**All published scripts**:
-
-- Get a page with the description you write and the chart that was active when you published your script.
-- Once a script is published its original description cannot be changed.
-- You will be able to update the script's code, however, and with each update you can write *realease notes* which will appear, dated, under your original description.
+- You must write a description that explains what your script does and how to use it.
+- The chart published with you script is the one in use when you publish.
+- The original description cannot be modified.
+- The script's code can be updated and with each update you can write *release notes* which will appear, dated, under your original description.
+- Your published scripts appear under the *Scripts* tab of your user profile.
 
 **Public scripts**:
 
