@@ -11,8 +11,8 @@ Public vs private scripts
 
 You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode.
 
-When you publish a script:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+When you publish a script
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Your script must have a name, a description explaining what your script does and how to use it, and a chart.
 - Once published, you will not be able to modify the script's original description.
