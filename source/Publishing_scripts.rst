@@ -27,7 +27,7 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 **Private scripts**:
 
 - Are only published on your user profile's *Scripts* tab. If you want to share them with other users, use the script's url.
-- Can be identified with the "X" icon in the top right of their widget, which is used to delete the script.
+- Can be identified with the "X" icon in the top right of their widget, which is used to delete a script.
 - Are not moderated.
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 
