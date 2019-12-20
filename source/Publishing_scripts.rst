@@ -59,14 +59,13 @@ The code of protected scripts is hidden from view and no one but its author can 
 Invite-only
 ^^^^^^^^^^^
 
-The invite-only publishing mode protects both the script's code and its accecss. The script's publisher must explicitly grant access to each user of an invite-only script. This mode is useful to authors who want to control who can access their script, and it can be used for script vendors who provide paid access to their scripts. This feature is only available to Premium accounts and special House Rules apply to invite-only publications, as well as to script vendors.
+The invite-only publishing mode protects both the script's code and its accecss. The script's publisher must explicitly grant access to each user of an invite-only script. This mode is useful to authors who want to control who can access their script. It can be used by script vendors providing paid access to their scripts. This feature is only available to Premium accounts. Special House Rules apply to invite-only publications, as well as to script vendors.
 
-TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors and do not involve TradingView.
+TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors, and do not involve TradingView.
 
 Invite-only scripts are the only type of public scripts for which paid access is allowed on TradingView.
 
-On the published script's page, authors will see a *Manage Access* button, where they can add/remove
-users and manage access rights.
+On their invite-only script's page, authors will see a *Manage Access* button. The *Manage Access* window allows authors to control who has access to their script.
 
 |Manage_access_button|
 
