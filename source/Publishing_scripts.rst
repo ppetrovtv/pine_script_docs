@@ -11,7 +11,7 @@ Users who write scripts and wish to share them with others can publish them. If 
 Public vs private scripts
 -------------------------
 
-You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to choose if you publish your script in *open source*, *protected* or *invite-only* mode.
+You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to publish your script in *open source*, *protected* or *invite-only* mode.
 
 When you publish a script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
