@@ -80,9 +80,9 @@ How to publish a script
 #. Open the Pine Editor: |Publishing_scripts-01-Editor_button|
 #. Click the *Publish Script* button: |Publishing_scripts-02-Publish_button|
 #. Copy your description in the field below the script's title.
-#. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source.|Publishing_scripts-03-Mode|
-#. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags.|Publishing_scripts-04-Category|
-#. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private scritp, so we have clicked on the lock icon to select a private publication.|Publishing_scripts-05-Lock|
+#. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source. |Publishing_scripts-03-Mode|
+#. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-04-Category|
+#. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private scritp, so we have clicked on the lock icon to select a private publication. |Publishing_scripts-05-Lock|
 #. Select the *Publish Private/Public Script* button: |Publishing_scripts-06-Publish|
 
 
