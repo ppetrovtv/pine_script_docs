@@ -87,13 +87,6 @@ How to publish a script
 #. A confirmation page appears. For public scripts you will have 15 minutes to make edits or cancel the publication. There is no delay for private scripts. |Publishing_scripts-07-Edit|
 
 
-All your scripts published in managed access mode are shown in a
-separate section of the Indicators window:
-
-|Invite_only_tab|
-
-
-
 How to update a script
 ----------------------
 
