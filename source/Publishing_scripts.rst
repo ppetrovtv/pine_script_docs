@@ -76,7 +76,7 @@ How to publish a script
 To publish an *open source* Pine script:
 
 #. Prepare your description offline.
-#. Prepare your chart. Load your script on the chart and remove other scripts and drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
+#. Prepare your chart. Load your script on the chart and remove other scripts or drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
 #. Load your code in the Pine Editor if it isn't already.
 #. Open the Pine Script Editor: |Publishing_scripts-01-Editor_button|
 #. Click the *Publish Script* button: |Publishing_scripts-02-Publish_button|
