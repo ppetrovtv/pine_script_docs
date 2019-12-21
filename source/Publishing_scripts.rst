@@ -77,8 +77,8 @@ How to publish a script
 #. Prepare your description offline. When you publish a new public script, you have a 15-minute window to make changes to your description after you click the *Publish Public Script* button.
 #. Prepare your chart. Load your script on the chart and remove other scripts or drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
 #. Load your code in the Pine Editor if it isn't already.
-#. Open the Pine Editor: |Publishing_scripts-01-Editor_button|
-#. Click the *Publish Script* button: |Publishing_scripts-02-Publish_button|
+#. Open the Pine Editor: |Publishing_scripts-01-EditorButton|
+#. Click the *Publish Script* button: |Publishing_scripts-02-PublishButton|
 #. Copy your description in the field below the script's title.
 #. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source. |Publishing_scripts-03-Mode|
 #. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-04-Category|
@@ -90,14 +90,20 @@ How to publish a script
 How to update a script
 ----------------------
 
+#. Before updating
+#. Once in the Publish window, select the *Update Existing Script* button. |Publishing_scripts-10-UpdateExistingScript|
+#. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
 
-.. |Publishing_scripts-01-Editor_button| image:: images/Publishing_scripts-01-Editor_button.png
-.. |Publishing_scripts-02-Publish_button| image:: images/Publishing_scripts-02-Publish_button.png
+.. |Publishing_scripts-01-EditorButton| image:: images/Publishing_scripts-01-EditorButton.png
+.. |Publishing_scripts-02-PublishButton| image:: images/Publishing_scripts-02-PublishButton.png
 .. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
 .. |Publishing_scripts-04-Category| image:: images/Publishing_scripts-04-Category.png
 .. |Publishing_scripts-05-Lock| image:: images/Publishing_scripts-05-Lock.png
 .. |Publishing_scripts-06-Publish| image:: images/Publishing_scripts-06-Publish.png
 .. |Publishing_scripts-07-Edit| image:: images/Publishing_scripts-07-Edit.png
+
+.. |Publishing_scripts-10-UpdateExistingScript| image:: images/Publishing_scripts-10-UpdateExistingScript.png
+.. |Publishing_scripts-11-PublishNewVersion| image:: images/Publishing_scripts-11-PublishNewVersion.png
 
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
