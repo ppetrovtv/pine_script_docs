@@ -90,8 +90,9 @@ How to publish a script
 How to update a script
 ----------------------
 
-#. Before updating
-#. Once in the Publish window, select the *Update Existing Script* button. |Publishing_scripts-10-UpdateExistingScript|
+#. Before updating your script, prepare your chart the same way you would for a new publication, as the current chart will update the one that appears in your script's page. The chart published whith your first publication of the script will remain on the script's widget.
+#. As you would for a new publication, laod your script in the Editor and click the *Publish Script* button.
+#. Once in the *Publish Script* window, select the *Update Existing Script* button. The select the script to update from the *Choose script* dropdown menu. Enter your release notes to be published with the update. |Publishing_scripts-10-UpdateExistingScript|
 #. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
 
 .. |Publishing_scripts-01-EditorButton| image:: images/Publishing_scripts-01-EditorButton.png
