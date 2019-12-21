@@ -84,6 +84,7 @@ How to publish a script
 #. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-04-Category|
 #. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private scritp, so we have clicked on the lock icon to select a private publication. |Publishing_scripts-05-Lock|
 #. Select the *Publish Private/Public Script* button: |Publishing_scripts-06-Publish|
+#. A confirmation page appears. For public scripts you will have 15 minutes to make edits or cancel the publication. There is no delay for private scripts. |Publishing_scripts-07-Edit|
 
 
 All your scripts published in managed access mode are shown in a
@@ -103,6 +104,7 @@ How to update a script
 .. |Publishing_scripts-04-Category| image:: images/Publishing_scripts-04-Category.png
 .. |Publishing_scripts-05-Lock| image:: images/Publishing_scripts-05-Lock.png
 .. |Publishing_scripts-06-Publish| image:: images/Publishing_scripts-06-Publish.png
+.. |Publishing_scripts-07-Edit| image:: images/Publishing_scripts-07-Edit.png
 
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
