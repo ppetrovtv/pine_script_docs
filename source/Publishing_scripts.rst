@@ -80,35 +80,11 @@ How to publish a script
 #. Open the Pine Editor: |Publishing_scripts-01-Editor_button|
 #. Click the *Publish Script* button: |Publishing_scripts-02-Publish_button|
 #. Copy your description in the field below the script's title.
-#. Select the publication mode you want for your script: Open, Protected or Invite-Only.|Publishing_scripts-03-Mode|
-#. Select the *Publish New Script* button: |Publish_script_new|
-#. Enter the script's title, tags (optional) and description.
-#. Click the *Publish Script* button.
+#. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source.|Publishing_scripts-03-Mode|
+#. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags.|Publishing_scripts-04-Category|
+#. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private scritp, so we have clicked on the lock icon to select a private publication.|Publishing_scripts-05-Lock|
+#. Select the *Publish Private/Public Script* button: |Publishing_scripts-06-Publish|
 
-
-
-To publish a script using protected mode, simply choose *Protected* prior to
-publishing from the script publication window:
-
-|Protected_script_new|
-
-or authors who want to protect their IP or share
-with only a few select people. Authors who whish to sell access to their scripts
-must arrange for off-site payment and then use TradingView's *Manage Access* feature to
-provide access to customers.
-
-To publish a script using the managed access mode, simply choose the *Invite Only* option prior to publishing
-from the script's publication window.
-Only users you specifically add will then be able to use your script.
-
-|Invite_only_script_new|
-
-
-Invite-only indicators are visible in the :doc:`Public_Library`,
-but nobody can add them to a chart without
-explicit permission from the author, and only the author can see the script's
-source code. Users may view, comment and favorite the script.
-TradingView does not take a percentage of revenue from script sales.
 
 All your scripts published in managed access mode are shown in a
 separate section of the Indicators window:
@@ -124,9 +100,9 @@ How to update a script
 .. |Publishing_scripts-01-Editor_button| image:: images/Publishing_scripts-01-Editor_button.png
 .. |Publishing_scripts-02-Publish_button| image:: images/Publishing_scripts-02-Publish_button.png
 .. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
-.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
-.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
-.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
+.. |Publishing_scripts-04-Category| image:: images/Publishing_scripts-04-Category.png
+.. |Publishing_scripts-05-Lock| image:: images/Publishing_scripts-05-Lock.png
+.. |Publishing_scripts-06-Publish| image:: images/Publishing_scripts-06-Publish.png
 
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
