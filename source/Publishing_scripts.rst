@@ -16,7 +16,7 @@ You can share scripts with other users in two ways: **publicly** or **privately*
 When you publish a script
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Your script's name is determined by the ``title` parameter's value in the script's ``study`` or ``strategy`` declaration statement.
+- Your script's name is determined by the ``title`` parameter's value in the script's ``study`` or ``strategy`` declaration statement.
 - Your script must have a description explaining what your script does and how to use it.
 - The chart published with you script is the one in use when you publish, including any other scripts or drawings on it.
 - Once published, you will not be able to modify the script's original description.
