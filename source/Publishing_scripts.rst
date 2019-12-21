@@ -68,7 +68,7 @@ Invite-only scripts are the only type of public scripts for which paid access is
 
 On their invite-only script's page, authors will see a *Manage Access* button. The *Manage Access* window allows authors to control who has access to their script.
 
-|Manage_access_button|
+|Publishing_scripts-00-ManageAccess|
 
 
 How to publish a script
@@ -95,6 +95,7 @@ How to update a script
 #. Once in the *Publish Script* window, select the *Update Existing Script* button. Then select the script to update from the *Choose script* dropdown menu and enter your release notes to be published with the update. |Publishing_scripts-10-UpdateExistingScript|
 #. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
 
+.. |Publishing_scripts-00-ManageAccess| image:: images/Publishing_scripts-00-ManageAccess.png
 .. |Publishing_scripts-01-EditorButton| image:: images/Publishing_scripts-01-EditorButton.png
 .. |Publishing_scripts-02-PublishButton| image:: images/Publishing_scripts-02-PublishButton.png
 .. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
