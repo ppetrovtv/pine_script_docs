@@ -74,13 +74,13 @@ On their invite-only script's page, authors will see a *Manage Access* button. T
 How to publish a script
 -----------------------
 
-To publish an *open source* Pine script:
-
-#. Prepare your description offline.
+#. Prepare your description offline. When you publish a new public script, you have a 15-minute window to make changes to your description after you click the *Publish Public Script* button.
 #. Prepare your chart. Load your script on the chart and remove other scripts or drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
 #. Load your code in the Pine Editor if it isn't already.
 #. Open the Pine Editor: |Publishing_scripts-01-Editor_button|
 #. Click the *Publish Script* button: |Publishing_scripts-02-Publish_button|
+#. Copy your description in the field below the script's title.
+#. Select the publication mode you want for your script: Open, Protected or Invite-Only.|Publishing_scripts-03-Mode|
 #. Select the *Publish New Script* button: |Publish_script_new|
 #. Enter the script's title, tags (optional) and description.
 #. Click the *Publish Script* button.
@@ -123,6 +123,10 @@ How to update a script
 
 .. |Publishing_scripts-01-Editor_button| image:: images/Publishing_scripts-01-Editor_button.png
 .. |Publishing_scripts-02-Publish_button| image:: images/Publishing_scripts-02-Publish_button.png
+.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
+.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
+.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
+.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
 
 .. |Pine_editor| image:: images/Pine_editor.png
 .. |Publish_script_button| image:: images/Publish_script_button.png
