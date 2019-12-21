@@ -60,9 +60,9 @@ The code of protected scripts is hidden from view and no one but its author can 
 Invite-only
 ^^^^^^^^^^^
 
-The invite-only publishing mode protects both the script's code and its accecss. The script's publisher must explicitly grant access to each user of an invite-only script. This mode is useful to authors who want to control who can access their script. It can be used by script vendors providing paid access to their scripts. This feature is only available to Premium accounts. Special House Rules apply to invite-only publications, as well as to script vendors.
+The invite-only publishing mode protects both the script's code and its access. The script's publisher must explicitly grant access to each user of an invite-only script. This mode is useful to authors who want to control who can access their script. It can be used by script vendors providing paid access to their scripts. This feature is only available to Premium accounts. Special House Rules apply to invite-only publications, as well as to script vendors.
 
-TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors, and do not involve TradingView.
+TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors; they do not involve TradingView.
 
 Invite-only scripts are the only type of public scripts for which paid access is allowed on TradingView.
 
@@ -77,8 +77,7 @@ How to publish a script
 #. Prepare your description offline. When you publish a new public script, you have a 15-minute window to make changes to your description after you click the *Publish Public Script* button.
 #. Prepare your chart. Load your script on the chart and remove other scripts or drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
 #. Load your code in the Pine Editor if it isn't already.
-#. Open the Pine Editor: |Publishing_scripts-01-EditorButton|
-#. Click the *Publish Script* button: |Publishing_scripts-02-PublishButton|
+#. In the Pine Editor, click the *Publish Script* button: |Publishing_scripts-02-PublishButton|
 #. Copy your description in the field below the script's title.
 #. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source. |Publishing_scripts-03-Mode|
 #. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-04-Category|
@@ -96,7 +95,6 @@ How to update a script
 #. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
 
 .. |Publishing_scripts-00-ManageAccess| image:: images/Publishing_scripts-00-ManageAccess.png
-.. |Publishing_scripts-01-EditorButton| image:: images/Publishing_scripts-01-EditorButton.png
 .. |Publishing_scripts-02-PublishButton| image:: images/Publishing_scripts-02-PublishButton.png
 .. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
 .. |Publishing_scripts-04-Category| image:: images/Publishing_scripts-04-Category.png
@@ -106,12 +104,4 @@ How to update a script
 
 .. |Publishing_scripts-10-UpdateExistingScript| image:: images/Publishing_scripts-10-UpdateExistingScript.png
 .. |Publishing_scripts-11-PublishNewVersion| image:: images/Publishing_scripts-11-PublishNewVersion.png
-
-.. |Pine_editor| image:: images/Pine_editor.png
-.. |Publish_script_button| image:: images/Publish_script_button.png
-.. |Publish_script_new| image:: images/Publish_script_new.png
-.. |Protected_script_new| image:: images/Protected_script_new.png
-.. |Invite_only_script_new| image:: images/Invite_only_script_new.png
-.. |Manage_access_button| image:: images/Manage_access_button.png
-.. |Invite_only_tab| image:: images/Invite_only_tab.png
 
