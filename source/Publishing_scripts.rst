@@ -19,7 +19,6 @@ When you publish a script
 - Your script's name is determined by the ``title`` parameter's value in the script's ``study`` or ``strategy`` declaration statement.
 - Your script must have a description explaining what your script does and how to use it.
 - The chart published with you script is the one in use when you publish, including any other scripts or drawings on it.
-- Once published, you will not be able to modify the script's original description.
 - The script's code can later be updated. Each update can include *release notes* which will appear, dated, under your original description.
 - Scripts can be liked, shared, commented on or reported by other users.
 - Your published scripts appear under the *Scripts* tab of your user profile.
@@ -29,7 +28,7 @@ Public scripts
 ^^^^^^^^^^^^^^
 
 - Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community.
-- Cannot be deleted.
+- Cannot be deleted and their original description cannot be modified.
 - Must comply with our `script publishing House Rules <https://www.tradingview.com/house-rules/#scripts>`__ and are subject to moderation.
 - Are accessible through the search functions for scripts.
 
@@ -37,8 +36,9 @@ Private scripts
 ^^^^^^^^^^^^^^^
 
 - Are only published on your user profile's *Scripts* tab. If you want to share them with other users, use the script's url.
-- Can be identified with the "X" icon in the top right of their widget, which is used to delete a private script.
+- Can be identified with the "X" icon in the top right of their widget, which is used to delete them.
 - Are not moderated.
+- Can be updated and their original description can be modified.
 - Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
 - Are not accessible through the search functions for scripts.
 
