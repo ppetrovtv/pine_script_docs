@@ -29,10 +29,13 @@ Copying a script from the Public to your Personal Library
 
 To copy a script, use one of the two following methods:
 
-#. Click the star next to the needed script in the Indicators window: |Add_to_Personal_Library|
+1. Click the star next to the needed script in the Indicators window: 
 
-#. Open the needed script from the `Scripts <https://www.tradingview.com/script/>`__ section
-   and click the *Add to Favorite Scripts* button: |Add_to_Personal_Library_2|
+|Add_to_Personal_Library|
+
+2. Open the needed script from the `Scripts <https://www.tradingview.com/script/>`__ section
+   and click the *Add to Favorite Scripts* button:  
+|Add_to_Personal_Library_2|
 
 The script will be added to your Favorites section in the Indicators
 window, where you can easily find it when needed:
@@ -49,15 +52,19 @@ Editing a script from the Public Library
 
 To edit a script from the Public Library:
 
-#. Open the script (the script will be unavailable for editing and
-   will be colored lighter than normal): |Open_the_script|
+1. Open the script (the script will be unavailable for editing and
+   will be colored lighter than normal): 
+|Open_the_script|
 
-#. Click on the *Save As...* button, enter the desired name and save a copy in your
-   personal library: |Save_as|
+2. Click on the *Make a Copy...* button, enter the desired name and save a copy in your
+   personal library: 
+|Save_as|
 
 
 A saved copy of the script will appear in the list of your scripts in
-the *Indicators* |rarr| *My Scripts* tab: |My_Scripts|
+the *Indicators* |rarr| *My Scripts* tab:
+
+|My_Scripts|
 
 Now you can open and edit the script.
 
@@ -70,11 +77,9 @@ Searching for a script
 
 To search for a script, use the *Search* field in the *Indicators* dialog:
 
-|Search_field|
-
-This will search both your Personal and Public Library at the same time:
-
 |Search|
+
+This will search both your Personal and Public Library at the same time.
 
 You may also search for scripts from the tradingview.com home page
 by first selecting *Scripts* from the *Ticker* dropdown menu and
