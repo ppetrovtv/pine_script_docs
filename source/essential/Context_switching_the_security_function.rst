@@ -132,7 +132,7 @@ This example shows the difference on a *5 minutes* chart::
     b = security(syminfo.tickerid, '60', low, lookahead=barmerge.lookahead_on)
     plot(b, color=color.lime)
 
-.. image:: /appendix/images/V3.png
+.. image:: images/V3.png
 
 The green line on the chart is the *low* price of an hourly bar that is
 requested with *lookahead on*. It's the old behavior of the security
