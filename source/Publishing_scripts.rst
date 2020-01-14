@@ -4,95 +4,104 @@ Publishing scripts
 .. contents:: :local:
     :depth: 2
 
-Users who write their own scripts can publish them in the :doc:`Public_Library` to share their
-scripts with other users. Each published script gets a page with a
-description, screenshot and source code, so users can see what the
-script is about before using it. If you want to protect your
-script's code, you can publish your script using *Protected* or *Invite-Only* modes, which hide
-the source code from other users.
-
-Open source
------------
-
-To publish an *open source* Pine script:
-
-#. Open Pine Script Editor: |Pine_editor|
-#. Open/write the script.
-#. Apply the script to the current chart and arrange the chart the way you want it to appear when it is published with your script.
-#. Click the *Publish Script* button: |Publish_script_button|
-#. Select the *Publish New Script* button: |Publish_script_new|
-#. Enter the script's title, tags (optional) and description.
-#. Click the *Publish Script* button.
-
-The published script will be displayed in the `Public Library <https://www.tradingview.com/script/>`__,
-which is available to all TradingView users. Any registered TradingView user will be able to make a copy of
-your script.
-
-Choosing a licence
-^^^^^^^^^^^^^^^^^^
-
-Choosing to use an open source license is entirely up to you. You are under no
-obligation to do so. If you publish scripts with open source code you
-may choose the license of your choice. You can include the license in
-the comments section of your script (preferably in the beginning). Our
-position on the matter is similar to that of
-`GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
+Users who write scripts and wish to share them with others can publish them. If you write scripts for your own use only, you can save them in the Pine Editor; you do not need to publish them.
 
 
-Protected source
+
+Public vs private scripts
+-------------------------
+
+You can share scripts with other users in two ways: **publicly** or **privately**. Either way you will be able to publish your script in *open source*, *protected* or *invite-only* mode.
+
+When you publish a script
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Your script's name is determined by the ``title`` parameter's value in the script's ``study`` or ``strategy`` declaration statement.
+- Your script must have a description explaining what your script does and how to use it.
+- The chart published with you script is the one in use when you publish, including any other scripts or drawings on it.
+- The script's code can later be updated. Each update can include *release notes* which will appear, dated, under your original description.
+- Scripts can be liked, shared, commented on or reported by other users.
+- Your published scripts appear under the *Scripts* tab of your user profile.
+- A *script widget* and a *script page* are created for your script. The script widget is your script's placeholder showing in lists of scripts. It contains your script's title, chart and the first few lines of your description. When users click on your script widget, the script's page opens. It contains all the information relating to your script. 
+
+Public scripts
+^^^^^^^^^^^^^^
+
+- Are published in TradingView's :doc:`Public_Library` where they become visible to the millions of users in the international TradingView community.
+- Cannot be deleted and their original description cannot be modified.
+- Must comply with our `script publishing House Rules <https://www.tradingview.com/house-rules/#scripts>`__ and are subject to moderation.
+- Are accessible through the search functions for scripts.
+
+Private scripts
+^^^^^^^^^^^^^^^
+
+- Are only published on your user profile's *Scripts* tab. If you want to share them with other users, use the script's url.
+- Can be identified with the "X" icon in the top right of their widget, which is used to delete them.
+- Are not moderated.
+- Can be updated and their original description can be modified.
+- Cannot be linked to or mentioned from public TradingView content (ideas, script descriptions, comments, chats, etc.).
+- Are not accessible through the search functions for scripts.
+
+
+
+Publishing modes
 ----------------
 
-It is possible to publish scripts in *protected source* mode. This is a
-high-demand feature that lets you share knowledge while protecting your
-intellectual property. These scripts are available
-in the :doc:`Public_Library` and any user can use them, but only the
-author can see the source code. Users can view, comment and favorite
-the script. It will also be available in the Public Library section of the
-Indicators dialog box, and any user will be able to add this script to a chart. Only the
-author, however, can view the source code of protected scripts. This is a great
-option for those who want to share a script while protecting its code.
+Open source
+^^^^^^^^^^^
 
-To publish a script using protected mode, simply choose *Protected* prior to
-publishing from the script publication window:
+The Pine code of scripts published in open-source mode is available to all users. Open-source scripts on TradingView use the Mozilla license by default, but you may choose any license you want. You can find information on licensing at `GitHub <https://help.github.com/articles/licensing-a-repository/>`__.
 
-|Protected_script_new|
+Protected
+^^^^^^^^^
 
-Managed access
---------------
+The code of protected scripts is hidden from view and no one but its author can access it. While the script's code is not accessible, protected scripts can be used freely by any user.
 
-Authors can choose to manage who can access their scripts. This is great for
-commercial vendors, or authors who want to protect their IP or share
-with only a few select people. Authors who whish to sell access to their scripts
-must arrange for off-site payment and then use TradingView's *Manage Access* feature to
-provide access to customers.
+Invite-only
+^^^^^^^^^^^
 
-To publish a script using the managed access mode, simply choose the *Invite Only* option prior to publishing
-from the script's publication window.
-Only users you specifically add will then be able to use your script.
+The invite-only publishing mode protects both the script's code and its access. The script's publisher must explicitly grant access to each user of an invite-only script. This mode is useful to authors who want to control who can access their script. It can be used by script vendors providing paid access to their scripts. This feature is only available to Premium accounts. Special House Rules apply to invite-only publications, as well as to script vendors.
 
-|Invite_only_script_new|
+TradingView does not benefit from script sales. Transactions concerning invite-only scripts are strictly between users and vendors; they do not involve TradingView.
 
-On the published script's page, authors will see a *Manage Access* button, where they can add/remove
-users and manage access rights.
+Invite-only scripts are the only type of public scripts for which paid access is allowed on TradingView.
 
-|Manage_access_button|
+On their invite-only script's page, authors will see a *Manage Access* button. The *Manage Access* window allows authors to control who has access to their script.
 
-Invite-only indicators are visible in the :doc:`Public_Library`,
-but nobody can add them to a chart without
-explicit permission from the author, and only the author can see the script's
-source code. Users may view, comment and favorite the script.
-TradingView does not take a percentage of revenue from script sales.
+|Publishing_scripts-1-ManageAccess|
 
-All your scripts published in managed access mode are shown in a
-separate section of the Indicators window:
 
-|Invite_only_tab|
+How to publish a script
+-----------------------
 
-.. |Pine_editor| image:: images/Pine_editor.png
-.. |Publish_script_button| image:: images/Publish_script_button.png
-.. |Publish_script_new| image:: images/Publish_script_new.png
-.. |Protected_script_new| image:: images/Protected_script_new.png
-.. |Invite_only_script_new| image:: images/Invite_only_script_new.png
-.. |Manage_access_button| image:: images/Manage_access_button.png
-.. |Invite_only_tab| image:: images/Invite_only_tab.png
+#. Prepare your description offline. When you publish a new public script, you have a 15-minute window to make changes to your description after you click the *Publish Public Script* button.
+#. Prepare your chart. Load your script on the chart and remove other scripts or drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
+#. Load your code in the Pine Editor if it isn't already.
+#. In the Pine Editor, click the *Publish Script* button: |Publishing_scripts-2-PublishButton|
+#. Copy your description in the field below the script's title.
+#. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source. |Publishing_scripts-3-Mode|
+#. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-4-Category|
+#. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private script, so we have clicked on the lock icon to select a private publication. |Publishing_scripts-5-Lock|
+#. Select the *Publish Private/Public Script* button: |Publishing_scripts-6-Publish|
+#. A confirmation page appears. For public scripts you will have 15 minutes to make edits or cancel the publication. There is no delay for private scripts. |Publishing_scripts-7-Edit|
+
+
+How to update a script
+----------------------
+
+#. Before updating your script, prepare your chart the same way you would for a new publication, as the current chart will update the one that appears in your script's page. The chart published whith your first publication of the script will remain on the script's widget.
+#. As you would for a new publication, load your script in the Editor and click the *Publish Script* button.
+#. Once in the *Publish Script* window, select the *Update Existing Script* button. Then select the script to update from the *Choose script* dropdown menu and enter your release notes to be published with the update. |Publishing_scripts-10-UpdateExistingScript|
+#. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
+
+.. |Publishing_scripts-1-ManageAccess| image:: images/Publishing_scripts-1-ManageAccess.png
+.. |Publishing_scripts-2-PublishButton| image:: images/Publishing_scripts-2-PublishButton.png
+.. |Publishing_scripts-3-Mode| image:: images/Publishing_scripts-3-Mode.png
+.. |Publishing_scripts-4-Category| image:: images/Publishing_scripts-4-Category.png
+.. |Publishing_scripts-5-Lock| image:: images/Publishing_scripts-5-Lock.png
+.. |Publishing_scripts-6-Publish| image:: images/Publishing_scripts-6-Publish.png
+.. |Publishing_scripts-7-Edit| image:: images/Publishing_scripts-7-Edit.png
+
+.. |Publishing_scripts-10-UpdateExistingScript| image:: images/Publishing_scripts-8-UpdateExistingScript.png
+.. |Publishing_scripts-11-PublishNewVersion| image:: images/Publishing_scripts-9-PublishNewVersion.png
 
