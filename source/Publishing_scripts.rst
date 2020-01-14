@@ -68,7 +68,7 @@ Invite-only scripts are the only type of public scripts for which paid access is
 
 On their invite-only script's page, authors will see a *Manage Access* button. The *Manage Access* window allows authors to control who has access to their script.
 
-|Publishing_scripts-00-ManageAccess|
+|Publishing_scripts-1-ManageAccess|
 
 
 How to publish a script
@@ -77,13 +77,13 @@ How to publish a script
 #. Prepare your description offline. When you publish a new public script, you have a 15-minute window to make changes to your description after you click the *Publish Public Script* button.
 #. Prepare your chart. Load your script on the chart and remove other scripts or drawings that won't help users understand your script. Your script's plots should be easy to identify on the chart that will be published with it.
 #. Load your code in the Pine Editor if it isn't already.
-#. In the Pine Editor, click the *Publish Script* button: |Publishing_scripts-02-PublishButton|
+#. In the Pine Editor, click the *Publish Script* button: |Publishing_scripts-2-PublishButton|
 #. Copy your description in the field below the script's title.
-#. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source. |Publishing_scripts-03-Mode|
-#. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-04-Category|
-#. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private scritp, so we have clicked on the lock icon to select a private publication. |Publishing_scripts-05-Lock|
-#. Select the *Publish Private/Public Script* button: |Publishing_scripts-06-Publish|
-#. A confirmation page appears. For public scripts you will have 15 minutes to make edits or cancel the publication. There is no delay for private scripts. |Publishing_scripts-07-Edit|
+#. Select the publication mode you want for your script: Open, Protected or Invite-Only. We have selected *Open* for open source. |Publishing_scripts-3-Mode|
+#. Select the appropriate categories for your script (at least one is mandatory) and enter optional custom tags. |Publishing_scripts-4-Category|
+#. Choose whether you want to publish a public (default) script or a private one. Here we will be publishing a private script, so we have clicked on the lock icon to select a private publication. |Publishing_scripts-5-Lock|
+#. Select the *Publish Private/Public Script* button: |Publishing_scripts-6-Publish|
+#. A confirmation page appears. For public scripts you will have 15 minutes to make edits or cancel the publication. There is no delay for private scripts. |Publishing_scripts-7-Edit|
 
 
 How to update a script
@@ -94,14 +94,14 @@ How to update a script
 #. Once in the *Publish Script* window, select the *Update Existing Script* button. Then select the script to update from the *Choose script* dropdown menu and enter your release notes to be published with the update. |Publishing_scripts-10-UpdateExistingScript|
 #. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
 
-.. |Publishing_scripts-00-ManageAccess| image:: images/Publishing_scripts-00-ManageAccess.png
-.. |Publishing_scripts-02-PublishButton| image:: images/Publishing_scripts-02-PublishButton.png
-.. |Publishing_scripts-03-Mode| image:: images/Publishing_scripts-03-Mode.png
-.. |Publishing_scripts-04-Category| image:: images/Publishing_scripts-04-Category.png
-.. |Publishing_scripts-05-Lock| image:: images/Publishing_scripts-05-Lock.png
-.. |Publishing_scripts-06-Publish| image:: images/Publishing_scripts-06-Publish.png
-.. |Publishing_scripts-07-Edit| image:: images/Publishing_scripts-07-Edit.png
+.. |Publishing_scripts-1-ManageAccess| image:: images/Publishing_scripts-1-ManageAccess.png
+.. |Publishing_scripts-2-PublishButton| image:: images/Publishing_scripts-2-PublishButton.png
+.. |Publishing_scripts-3-Mode| image:: images/Publishing_scripts-3-Mode.png
+.. |Publishing_scripts-4-Category| image:: images/Publishing_scripts-4-Category.png
+.. |Publishing_scripts-5-Lock| image:: images/Publishing_scripts-5-Lock.png
+.. |Publishing_scripts-6-Publish| image:: images/Publishing_scripts-6-Publish.png
+.. |Publishing_scripts-7-Edit| image:: images/Publishing_scripts-7-Edit.png
 
-.. |Publishing_scripts-10-UpdateExistingScript| image:: images/Publishing_scripts-10-UpdateExistingScript.png
-.. |Publishing_scripts-11-PublishNewVersion| image:: images/Publishing_scripts-11-PublishNewVersion.png
+.. |Publishing_scripts-10-UpdateExistingScript| image:: images/Publishing_scripts-8-UpdateExistingScript.png
+.. |Publishing_scripts-11-PublishNewVersion| image:: images/Publishing_scripts-9-PublishNewVersion.png
 
