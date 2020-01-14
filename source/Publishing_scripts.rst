@@ -18,7 +18,7 @@ When you publish a script
 
 - Your script's name is determined by the ``title`` parameter's value in the script's ``study`` or ``strategy`` declaration statement.
 - Your script must have a description explaining what your script does and how to use it.
-- The chart published with you script is the one in use when you publish, including any other scripts or drawings on it.
+- The chart published with your script is the one in use when you publish, including any other scripts or drawings on it.
 - The script's code can later be updated. Each update can include *release notes* which will appear, dated, under your original description.
 - Scripts can be liked, shared, commented on or reported by other users.
 - Your published scripts appear under the *Scripts* tab of your user profile.
@@ -89,7 +89,7 @@ How to publish a script
 How to update a script
 ----------------------
 
-#. Before updating your script, prepare your chart the same way you would for a new publication, as the current chart will update the one that appears in your script's page. The chart published whith your first publication of the script will remain on the script's widget.
+#. Before updating your script, prepare your chart the same way you would for a new publication, as the current chart will update the one that appears in your script's page. The chart published with your first publication of the script will remain on the script's widget.
 #. As you would for a new publication, load your script in the Editor and click the *Publish Script* button.
 #. Once in the *Publish Script* window, select the *Update Existing Script* button. Then select the script to update from the *Choose script* dropdown menu and enter your release notes to be published with the update. |Publishing_scripts-10-UpdateExistingScript|
 #. Click the *Publish New Version* button. |Publishing_scripts-11-PublishNewVersion|
