@@ -35,6 +35,7 @@ To copy a script, use one of the two following methods:
 
 2. Open the needed script from the `Scripts <https://www.tradingview.com/script/>`__ section
    and click the *Add to Favorite Scripts* button:  
+
 |Add_to_Personal_Library_2|
 
 The script will be added to your Favorites section in the Indicators
@@ -54,10 +55,12 @@ To edit a script from the Public Library:
 
 1. Open the script (the script will be unavailable for editing and
    will be colored lighter than normal): 
+
 |Open_the_script|
 
 2. Click on the *Make a Copy...* button, enter the desired name and save a copy in your
    personal library: 
+
 |Save_as|
 
 
