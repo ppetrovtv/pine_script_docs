@@ -6,6 +6,18 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+January 2020
+--------------------------
+* New built-in variables were added:
+
+  * ``iii`` - Intraday Intensity Index
+  * ``wvad`` - Williams Variable Accumulation/Distribution
+  * ``wad`` - Williams Accumulation/Distribution
+  * ``obv`` - On Balance Volume
+  * ``pvt`` - Price-Volume Trend
+  * ``nvi`` - Negative Volume Index 
+  * ``pvi`` - Positive Volume Index
+
 December 2019
 --------------------------
 * Warning messages were added.
