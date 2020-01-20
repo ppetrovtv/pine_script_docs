@@ -20,13 +20,13 @@ January 2020
   
 * New parameters were added for strategy.close:
 
-  * ``qty`` - number of contracts/shares/lots/units to exit
-  * ``qty_percent`` - defines the percentage of entered contracts/shares/lots/units to exit
-  * ``comment`` - commentary to the order
+  * ``qty`` -  the number of contracts/shares/lots/units to exit a trade with
+  * ``qty_percent`` - defines the percentage of entered contracts/shares/lots/units to exit a trade with
+  * ``comment`` - addtional notes on the order
   
 * New parameter was added for strategy.close_all:
 
-  * ``comment`` - commentary to the order
+  * ``comment`` - addtional notes on the order
 December 2019
 --------------------------
 * Warning messages were added.
