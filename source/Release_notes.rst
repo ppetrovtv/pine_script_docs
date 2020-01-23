@@ -24,7 +24,7 @@ January 2020
   * ``qty_percent`` - defines the percentage of entered contracts/shares/lots/units to exit a trade with
   * ``comment`` - addtional notes on the order
     
-* New parameter was added for strategy.close_all::
+* New parameter was added for strategy.close_all:
 
   * ``comment`` - addtional notes on the order
 
