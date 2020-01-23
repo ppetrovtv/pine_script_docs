@@ -8,7 +8,7 @@ This page contains release notes of notable changes in Pine Script v4.
 
 January 2020
 --------------------------
-* New built-in variables were added:
+* New built-in variables were added::
   
   * ``iii`` - Intraday Intensity Index
   * ``wvad`` - Williams Variable Accumulation/Distribution
@@ -18,13 +18,13 @@ January 2020
   * ``nvi`` - Negative Volume Index 
   * ``pvi`` - Positive Volume Index
   
-* New parameters were added for strategy.close:
+* New parameters were added for strategy.close::
 
   * ``qty`` -  the number of contracts/shares/lots/units to exit a trade with
   * ``qty_percent`` - defines the percentage of entered contracts/shares/lots/units to exit a trade with
   * ``comment`` - addtional notes on the order
   
-* New parameter was added for strategy.close_all:
+* New parameter was added for strategy.close_all::
 
   * ``comment`` - addtional notes on the order
 December 2019
