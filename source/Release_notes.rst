@@ -6,12 +6,38 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+January 2020
+--------------------------
+  
+New built-in variables were added:
+
+
+* ``iii`` - Intraday Intensity Index
+* ``wvad`` - Williams Variable Accumulation/Distribution
+* ``wad`` - Williams Accumulation/Distribution
+* ``obv`` - On Balance Volume
+* ``pvt`` - Price-Volume Trend
+* ``nvi`` - Negative Volume Index 
+* ``pvi`` - Positive Volume Index
+   
+New parameters were added for strategy.close:
+
+
+* ``qty`` -  the number of contracts/shares/lots/units to exit a trade with
+* ``qty_percent`` - defines the percentage of entered contracts/shares/lots/units to exit a trade with
+* ``comment`` - addtional notes on the order
+    
+New parameter was added for strategy.close_all:
+
+
+* ``comment`` - addtional notes on the order
+
 December 2019
 --------------------------
 * Warning messages were added.
 
   For example, if you don't specify exit parameters for ``strategy.exit`` - ``profit``, ``limit``, ``loss``, ``stop`` or one of the following pairs: ``trail_offset`` and ``trail_price`` / ``trail_points`` - you will see a warning message in the console in the Pine editor.
-* Increased the maximum number of arguments in max, min, avg functions. Now you can use up to ten arguments in these functions.  
+* Increased the maximum number of arguments in ``max``, ``min``, ``avg`` functions. Now you can use up to ten arguments in these functions.  
 October 2019
 --------------------------
 * ``plotchar`` function now supports most of the Unicode symbols::
