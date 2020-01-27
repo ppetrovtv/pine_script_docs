@@ -56,15 +56,13 @@ to the trade session of the IBM symbol. These are examples of trade session
 specifications:
 
 0000-0000
-   A complete 24-hour session beginning at midnight.
-
-1700-1700
-   A complete 24-hour session beginning at 17:00.
+   A monday to friday 24-hour session beginning at midnight.
 
 0900-1600,1700-2000
    A session that begins at 9:00, breaks from 16:00 to 17:00 and continues until 20:00.
+   Applies to Monday through Friday.
 
-2000-1630
+2000-1630:1234567
    An overnight session that begins at 20:00 and ends at
    16:30 the next day.
 
@@ -82,9 +80,10 @@ specifications:
 0000-0000:23456
    Same as previous example, but only Monday to Friday.
 
-1700-1700:12345
+1700-1700:23456
    An *overnight session*. Monday session starts
    Sunday at 17:00 and ends Monday at 17:00. Applies to Monday through Friday.
+   Equivalent to 1700-1700
 
 1000-1001:26
    A weird session that lasts only one minute on
