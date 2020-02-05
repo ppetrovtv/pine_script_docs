@@ -15,6 +15,16 @@ For the functions ``plot``, ``plotshape``, ``plotchar``, ``plotbar``, ``plotcand
 * ``display.none`` - the plot is not displayed
 * ``display.all`` - the plot is displayed (Default)
 
+The ``textalign`` argument was added to the ``label.new`` function along with the ``label.set_textalign`` function. Using those, you can control the alignment of the label's text::
+
+    //@version=4
+    study("My Script", overlay = true)
+    var l = label.new(bar_index, high, text="Right\n aligned\n text", textalign=text.align_right)
+    label.set_xy(l, bar_index, high)
+
+.. image:: images/Label_text_align.png
+
+
 January 2020
 --------------------------
   
@@ -47,6 +57,7 @@ December 2019
 
   For example, if you don't specify exit parameters for ``strategy.exit`` - ``profit``, ``limit``, ``loss``, ``stop`` or one of the following pairs: ``trail_offset`` and ``trail_price`` / ``trail_points`` - you will see a warning message in the console in the Pine editor.
 * Increased the maximum number of arguments in ``max``, ``min``, ``avg`` functions. Now you can use up to ten arguments in these functions.  
+
 October 2019
 --------------------------
 * ``plotchar`` function now supports most of the Unicode symbols::
