@@ -19,8 +19,8 @@ The ``textalign`` argument was added to the ``label.new`` function along with th
 
     //@version=4
     study("My Script", overlay = true)
-    l = label.new(bar_index, high, text="Right\n aligned\n text", textalign=text.align_right)
-    label.delete(l[1])
+    var l = label.new(bar_index, high, text="Right\n aligned\n text", textalign=text.align_right)
+    label.set_xy(l, bar_index, high)
 
 .. image:: images/Label_text_align.png
 
