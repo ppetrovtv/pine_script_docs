@@ -8,12 +8,12 @@ This page contains release notes of notable changes in Pine Script v4.
 
 February 2020
 --------------------------
-* The default transparency parameter for the plot, plotshape, and plotchar functions is now 0%.
+* The default ``transparency`` parameter for the ``plot``, ``plotshape``, and ``plotchar`` functions is now 0%.
 
-* For the functions plot, plotshape, plotchar, plotbar, plotcandle, plotarrow, you can set the display parameter, which controls the display of the plot. The following values can be assigned to it:
+* For the functions ``plot``, ``plotshape``, ``plotchar``, ``plotbar``, ``plotcandle``, ``plotarrow``, you can set the ``display`` parameter, which controls the display of the plot. The following values can be assigned to it:
 
- * display.none - the plot is not displayed
- * display.all - the plot is displayed (Default)
+  * ``display.none`` - the plot is not displayed
+  * ``display.all`` - the plot is displayed (Default)
 
 January 2020
 --------------------------
