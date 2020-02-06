@@ -8,21 +8,21 @@ This page contains release notes of notable changes in Pine Script v4.
 
 February 2020
 --------------------------
-The default ``transparency`` parameter for the ``plot``, ``plotshape``, and ``plotchar`` functions is now 0%.
+* The default ``transparency`` parameter for the ``plot``, ``plotshape``, and ``plotchar`` functions is now 0%.
 
-For the functions ``plot``, ``plotshape``, ``plotchar``, ``plotbar``, ``plotcandle``, ``plotarrow``, you can set the ``display`` parameter, which controls the display of the plot. The following values can be assigned to it:
+* For the functions ``plot``, ``plotshape``, ``plotchar``, ``plotbar``, ``plotcandle``, ``plotarrow``, you can set the ``display`` parameter, which controls the display of the plot. The following values can be assigned to it:
 
-* ``display.none`` - the plot is not displayed
-* ``display.all`` - the plot is displayed (Default)
+  * ``display.none`` - the plot is not displayed
+  * ``display.all`` - the plot is displayed (Default)
 
-The ``textalign`` argument was added to the ``label.new`` function along with the ``label.set_textalign`` function. Using those, you can control the alignment of the label's text::
+* The ``textalign`` argument was added to the ``label.new`` function along with the ``label.set_textalign`` function. Using those, you can control the alignment of the label's text::
 
     //@version=4
     study("My Script", overlay = true)
     var l = label.new(bar_index, high, text="Right\n aligned\n text", textalign=text.align_right)
     label.set_xy(l, bar_index, high)
 
-.. image:: images/Label_text_align.png
+  .. image:: images/Label_text_align.png
 
 
 January 2020
