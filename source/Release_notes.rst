@@ -8,7 +8,9 @@ This page contains release notes of notable changes in Pine Script v4.
 
 February 2020
 --------------------------
+
 * New Pine indicator VWAP Anchored was added. Now you can specify the time period: Session, Month, Week, Year.
+
 * Fixed a problem with calculating ``percentrank`` function. Now it can return a zero value, which did not happen before due to an incorrect calculation.
 
 * The default ``transparency`` parameter for the ``plot``, ``plotshape``, and ``plotchar`` functions is now 0%.
@@ -17,6 +19,16 @@ February 2020
 
   * ``display.none`` - the plot is not displayed
   * ``display.all`` - the plot is displayed (Default)
+
+* The ``textalign`` argument was added to the ``label.new`` function along with the ``label.set_textalign`` function. Using those, you can control the alignment of the label's text::
+
+    //@version=4
+    study("My Script", overlay = true)
+    var l = label.new(bar_index, high, text="Right\n aligned\n text", textalign=text.align_right)
+    label.set_xy(l, bar_index, high)
+
+  .. image:: images/Label_text_align.png
+
 
 January 2020
 --------------------------
@@ -32,17 +44,17 @@ New built-in variables were added:
 * ``nvi`` - Negative Volume Index 
 * ``pvi`` - Positive Volume Index
    
-New parameters were added for strategy.close:
+New parameters were added for ``strategy.close``:
 
 
 * ``qty`` -  the number of contracts/shares/lots/units to exit a trade with
 * ``qty_percent`` - defines the percentage of entered contracts/shares/lots/units to exit a trade with
 * ``comment`` - addtional notes on the order
     
-New parameter was added for strategy.close_all:
+New parameter was added for ``strategy.close_all``:
 
 
-* ``comment`` - addtional notes on the order
+* ``comment`` - additional notes on the order
 
 December 2019
 --------------------------
@@ -50,6 +62,7 @@ December 2019
 
   For example, if you don't specify exit parameters for ``strategy.exit`` - ``profit``, ``limit``, ``loss``, ``stop`` or one of the following pairs: ``trail_offset`` and ``trail_price`` / ``trail_points`` - you will see a warning message in the console in the Pine editor.
 * Increased the maximum number of arguments in ``max``, ``min``, ``avg`` functions. Now you can use up to ten arguments in these functions.  
+
 October 2019
 --------------------------
 * ``plotchar`` function now supports most of the Unicode symbols::
