@@ -8,6 +8,7 @@ This page contains release notes of notable changes in Pine Script v4.
 
 February 2020
 --------------------------
+* New Pine indicator VWAP Anchored was added. Now you can specify the time period: Session, Month, Week, Year.
 * Fixed a problem with calculating ``percentrank`` function. Now it can return a zero value, which did not happen before due to an incorrect calculation.
 
 * The default ``transparency`` parameter for the ``plot``, ``plotshape``, and ``plotchar`` functions is now 0%.
