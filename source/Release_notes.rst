@@ -6,6 +6,23 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+March 2020
+--------------------------
+  
+New built-in functions were added:
+
+
+* ``cmo`` - Chande Momentum Oscillator
+* ``mfi`` - Money Flow Index
+* ``bb`` - Bollinger Bands
+* ``bbw`` - Bollinger Bands Width
+* ``kc`` - Keltner Channels
+* ``kcw`` - Keltner Channels Width 
+* ``dmi`` - DMI/ADX
+* ``wpr`` - Williams % R 
+* ``hma`` - Hull Moving Average
+* ``supertrend`` - SuperTrend
+
 February 2020
 --------------------------
 * Fixed a problem with calculating ``percentrank`` function. Now it can return a zero value, which did not happen before due to an incorrect calculation.
