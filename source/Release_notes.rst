@@ -9,21 +9,20 @@ This page contains release notes of notable changes in Pine Script v4.
 March 2020
 --------------------------
   
-New built-in functions were added:
+* New built-in functions were added:
 
+  * ``cmo`` - Chande Momentum Oscillator
+  * ``mfi`` - Money Flow Index
+  * ``bb`` - Bollinger Bands
+  * ``bbw`` - Bollinger Bands Width
+  * ``kc`` - Keltner Channels
+  * ``kcw`` - Keltner Channels Width 
+  * ``dmi`` - DMI/ADX
+  * ``wpr`` - Williams % R 
+  * ``hma`` - Hull Moving Average
+  * ``supertrend`` - SuperTrend
 
-* ``cmo`` - Chande Momentum Oscillator
-* ``mfi`` - Money Flow Index
-* ``bb`` - Bollinger Bands
-* ``bbw`` - Bollinger Bands Width
-* ``kc`` - Keltner Channels
-* ``kcw`` - Keltner Channels Width 
-* ``dmi`` - DMI/ADX
-* ``wpr`` - Williams % R 
-* ``hma`` - Hull Moving Average
-* ``supertrend`` - SuperTrend
-
-Added a detailed description of all the fields in the `Strategy Tester Report <https://www.tradingview.com/chart/?solution=43000561856/>`__
+* Added a detailed description of all the fields in the `Strategy Tester Report <https://www.tradingview.com/chart/?solution=43000561856/>`__
 
 
 February 2020
