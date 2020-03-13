@@ -23,6 +23,7 @@ March 2020
   * ``supertrend`` - SuperTrend
 
 
+
 * Added a detailed description of all the fields in the `Strategy Tester Report <https://www.tradingview.com/chart/?solution=43000561856/>`__
 
 
