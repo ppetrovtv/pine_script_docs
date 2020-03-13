@@ -9,7 +9,8 @@ This page contains release notes of notable changes in Pine Script v3.
 
 March 2020
 --------------------------
-Added a detailed description of all the fields in the [Strategy Tester Report](https://www.tradingview.com/chart/?solution=43000561856)
+Added a detailed description of all the fields in the `Strategy Tester Report <https://www.tradingview.com/chart/?solution=43000561856>`
+
 
 October 2019
 --------------------------
