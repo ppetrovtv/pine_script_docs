@@ -21,13 +21,10 @@ New built-in functions were added:
 * ``wpr`` - Williams % R 
 * ``hma`` - Hull Moving Average
 * ``supertrend`` - SuperTrend
+* ``financial`` - Request financial series for symbol
 
 
 Added a detailed description of all the fields in the `Strategy Tester Report <https://www.tradingview.com/chart/?solution=43000561856/>`__
-
-New built-in function was added:
-
-* ``financial`` - Request financial series for symbol
 
 
 February 2020
