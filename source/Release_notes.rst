@@ -11,7 +11,7 @@ March 2020
 
 New function was added:
 
-* ``fianancial`` - request financial data for symbol
+* ``fianancial`` - request financial data for a symbol
 
 
 New functions for common indicators were added:
