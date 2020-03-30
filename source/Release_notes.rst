@@ -8,8 +8,13 @@ This page contains release notes of notable changes in Pine Script v4.
 
 March 2020
 --------------------------
-  
-New built-in functions were added:
+
+New function was added:
+
+* ``fianancial`` - request financial data for a symbol
+
+
+New functions for common indicators were added:
 
 * ``cmo`` - Chande Momentum Oscillator
 * ``mfi`` - Money Flow Index
