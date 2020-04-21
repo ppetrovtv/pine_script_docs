@@ -6,6 +6,12 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+April 2020
+--------------------------
+New function was added:
+
+* ``quandl`` - request quandl data for a symbol
+
 March 2020
 --------------------------
 
