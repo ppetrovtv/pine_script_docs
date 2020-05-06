@@ -19,10 +19,6 @@ New function was added:
 
 * ``quandl`` - request quandl data for a symbol
 
-The behavior of ``security`` function has changed:
-
-* the ``expression`` parameter can be series or tuple 
-
 
 March 2020
 --------------------------
