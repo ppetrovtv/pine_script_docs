@@ -12,6 +12,10 @@ The behavior of ``security`` function has changed:
 
 * the ``expression`` parameter can be series or tuple 
 
+New parameter was added for ``study`` function:
+
+* ``resolution`` - custom resolution of the study, which defines study input and behavior like a study body in the security context
+
 
 April 2020
 --------------------------
@@ -19,9 +23,6 @@ New function was added:
 
 * ``quandl`` - request quandl data for a symbol
 
-New parameter was added for study function:
-
-* ``resolution`` - custom resolution of the study, which defines study input and behavior like a study body in the security context
 
 March 2020
 --------------------------
