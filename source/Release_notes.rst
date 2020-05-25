@@ -8,6 +8,9 @@ This page contains release notes of notable changes in Pine Script v4.
 
 May 2020
 --------------------------
+
+* else if statement was added
+
 The behavior of ``security`` function has changed:
 
 * the ``expression`` parameter can be series or tuple 
