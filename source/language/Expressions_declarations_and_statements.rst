@@ -140,10 +140,10 @@ General code form:
         ...
         <var_decl_thenN>
     else if [optional block]
-        var_decl_else0
-        var_decl_else1
-        …
-        var_decl_elseN
+        <var_decl_else0>
+        <var_decl_else1>
+        ...
+        <var_decl_elseN>
     else
         <var_decl_else0>
         <var_decl_else1>
