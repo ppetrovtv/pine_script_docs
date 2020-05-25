@@ -192,7 +192,7 @@ Example::
     // If current close > current open, then x = close.
     // Otherwise the x = na.
     
-It is possible to use either multiple “else if” blocks or none at all.
+It is possible to use either multiple *else if* blocks or none at all.
 
 Example::
 
