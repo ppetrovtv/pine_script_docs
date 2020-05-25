@@ -203,7 +203,7 @@ Example::
     else
         open
         
-The *then*, *else if and *else* blocks are shifted by four spaces [#tabs]_. ``if`` statements can
+The *then*, *else if* and *else* blocks are shifted by four spaces [#tabs]_. ``if`` statements can
 be nested by adding four more spaces::
 
     x = if close > open
