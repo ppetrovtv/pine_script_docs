@@ -15,10 +15,6 @@ The behavior of ``security`` function has changed:
 
 * the ``expression`` parameter can be series or tuple 
 
-New parameter was added for ``study`` function:
-
-* ``resolution`` - custom resolution of the study, which defines study input and behavior like a study body in the security context
-
 
 April 2020
 --------------------------
