@@ -8,13 +8,10 @@ This page contains release notes of notable changes in Pine Script v4.
 
 May 2020
 --------------------------
-The behavior of ``security`` function has changed:
 
-* the ``expression`` parameter can be series or tuple 
+* else if statement was added
 
-New parameter was added for ``study`` function:
-
-* ``resolution`` - custom resolution of the study, which defines study input and behavior like a study body in the security context
+* The behavior of ``security`` function has changed: the ``expression`` parameter can be series or tuple 
 
 
 April 2020
