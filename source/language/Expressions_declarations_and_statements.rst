@@ -182,7 +182,7 @@ Example::
         "open"
 
 It is possible to omit the *else* block. In this case, if the ``condition``
-is false, an *empty* value (``na``,``false``, or ``""``) will be assigned to the
+is false, an *empty* value (``na``, ``false``, or ``""``) will be assigned to the
 ``var_declarationX`` variable.
 
 Example::
