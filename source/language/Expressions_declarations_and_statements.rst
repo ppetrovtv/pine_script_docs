@@ -139,7 +139,11 @@ General code form:
         <var_decl_then1>
         ...
         <var_decl_thenN>
-        <return_expression_then>
+    else if [optional block]
+        var_decl_else0
+        var_decl_else1
+        …
+        var_decl_elseN
     else
         <var_decl_else0>
         <var_decl_else1>
@@ -178,7 +182,7 @@ Example::
         "open"
 
 It is possible to omit the *else* block. In this case, if the ``condition``
-is false, an *empty* value (``na``, or ``false``, or ``""``) will be assigned to the
+is false, an *empty* value (``na``,``false``, or ``""``) will be assigned to the
 ``var_declarationX`` variable.
 
 Example::
@@ -187,9 +191,20 @@ Example::
         close
     // If current close > current open, then x = close.
     // Otherwise the x = na.
+    
+It is possible to use either multiple “else if” blocks or none at all.
 
-The *then* and *else* blocks are shifted by 4 spaces [#tabs]_. ``if`` statements can
-be nested by adding 4 more spaces::
+Example::
+
+    x = if open > close
+        5
+    else if high > low
+        close
+    else
+        open
+        
+The *then*, *else if and *else* blocks are shifted by four spaces [#tabs]_. ``if`` statements can
+be nested by adding four more spaces::
 
     x = if close > open
         b = if close > close[1]
