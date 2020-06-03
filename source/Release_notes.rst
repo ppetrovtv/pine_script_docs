@@ -11,7 +11,7 @@ May 2020
 
 * Find and Replace was added to Pine Editor. To use this, press CTRL+F (find) or CTRL+H (find and replace).
 
-.. image:: images/findrepl1.png
+.. image:: images/FindReplace.jpg
 
 * ``timezone`` argument was added for time functions. Now you can specify timezone for ``second``, ``minute``, ``hour``, ``year``, ``month``, ``dayofmonth``, ``dayofweek`` functions::
 
