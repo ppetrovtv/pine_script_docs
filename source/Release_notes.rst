@@ -6,7 +6,7 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
-May 2020
+June 2020
 --------------------------
 
 * Find and Replace was added to Pine Editor. To use this, press CTRL+F (find) or CTRL+H (find and replace).
@@ -20,6 +20,10 @@ May 2020
     plot(hour(1591012800000, "GMT+1"))
 
 * ``syminfo.basecurrency`` variable was added. Returns the base currency code of the current symbol. For EURUSD symbol returns EUR.
+
+May 2020
+--------------------------
+
 * ``else if`` statement was added
 
 * The behavior of ``security`` function has changed: the ``expression`` parameter can be series or tuple 
