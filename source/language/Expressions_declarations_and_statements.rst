@@ -91,10 +91,10 @@ Examples with type modifiers and var keyword::
 Example, illustrating the effect of ``var`` keyword::
 
     // Creates a new label object on every bar:
-    label lb = label.new(bar_index, close, title="Hello, World!")
+    label lb = label.new(bar_index, close, text="Hello, World!")
 
     // Creates a label object only on the first bar in history:
-    var label lb = label.new(bar_index, close, title="Hello, World!")
+    var label lb = label.new(bar_index, close, text="Hello, World!")
 
 
 .. _variable_assignment:

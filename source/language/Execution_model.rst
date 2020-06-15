@@ -59,7 +59,7 @@ When the realtime bar closes, the script executes a last time. As usual, variabl
 
 To summarize the realtime bar process:
 
-    * A script executes **at the open of the realtime bad and then once per update**.
+    * A script executes **at the open of the realtime bar and then once per update**.
     * Variables are rolled back **before every realtime update**.
     * Variables are committed **once at the closing bar update**.
 
