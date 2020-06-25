@@ -9,6 +9,15 @@ This page contains release notes of notable changes in Pine Script v4.
 June 2020
 --------------------------
 
+* Added an ability to create `alerts on strategies <https://www.tradingview.com/chart/?solution=43000481368>`__.
+
+* A new function `line.get_price <https://www.tradingview.com/pine-script-reference/v4/#fun_line{dot}get_price>`__ can be used to determine the price level at which the line is located on a certain bar.
+
+* New `label styles <https://www.tradingview.com/pine-script-reference/v4/#fun_label{dot}new>`__ allow you to position the label pointer in any direction.
+
+.. image:: images/new_label_styles.png
+
+
 * Find and Replace was added to Pine Editor. To use this, press CTRL+F (find) or CTRL+H (find and replace).
 
 .. image:: images/FindReplace.jpg
