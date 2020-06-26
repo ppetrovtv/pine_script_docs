@@ -15,6 +15,8 @@ June 2020
     study("My Script", overlay=true)
     l=label.new(bar_index, close, tooltip="tooltip1", style=label.style_arrowdown, yloc=yloc.abovebar)
     label.set_tooltip(l, "tooltip2")
+    
+.. image:: images/Tooltip.png
 
 * Added an ability to create `alerts on strategies <https://www.tradingview.com/chart/?solution=43000481368>`__.
 
