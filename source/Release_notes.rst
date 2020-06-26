@@ -9,7 +9,12 @@ This page contains release notes of notable changes in Pine Script v4.
 June 2020
 --------------------------
 
-* The ``tooltip`` argument was added to the label.new function along with the label.set_tooltip function.
+* The ``tooltip`` argument was added to the ``label.new`` function along with the ``label.set_tooltip`` function::
+
+    //@version=4
+    study("My Script", overlay=true)
+    l=label.new(bar_index, close, tooltip="tooltip1", style=label.style_arrowdown, yloc=yloc.abovebar)
+    label.set_tooltip(l, "tooltip2")
 
 * Added an ability to create `alerts on strategies <https://www.tradingview.com/chart/?solution=43000481368>`__.
 
