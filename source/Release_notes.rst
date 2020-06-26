@@ -13,8 +13,9 @@ June 2020
 
     //@version=4
     study("My Script", overlay=true)
-    l=label.new(bar_index, close, tooltip="tooltip1", style=label.style_arrowdown, yloc=yloc.abovebar)
-    label.set_tooltip(l, "tooltip2")
+    var l=label.new(bar_index, close, yloc=yloc.abovebar, text="Label")
+    label.set_x(l,bar_index)
+    label.set_tooltip(l, "Label Tooltip")
     
 .. image:: images/Tooltip.png
 
