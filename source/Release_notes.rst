@@ -9,6 +9,10 @@ This page contains release notes of notable changes in Pine Script v4.
 June 2020
 --------------------------
 
+* New ``resolution`` was added to the ``study`` function. Now you can add MTF functionality to scripts and decide the timeframe you want the indicator to run on. 
+
+.. image:: images/Mtfp.png
+
 * The ``tooltip`` argument was added to the ``label.new`` function along with the ``label.set_tooltip`` function::
 
     //@version=4
