@@ -13,6 +13,8 @@ June 2020
 
 .. image:: images/Mtf.png
 
+Please note that you need to reapply the indicator in order for the `resolution` parameter to appear.
+
 * The ``tooltip`` argument was added to the ``label.new`` function along with the ``label.set_tooltip`` function::
 
     //@version=4
