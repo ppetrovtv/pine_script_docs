@@ -306,6 +306,8 @@ A special type that applies to an array id. It defines the type of the elements 
 - ``bool[]``
 - ``color[]``
 
+There is only one form of the array type in Pine: series.
+
 void
 ----
 
