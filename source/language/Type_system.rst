@@ -296,6 +296,16 @@ type *hline*, represented as a horizontal line. These objects can be
 passed to the `fill <https://www.tradingview.com/pine-script-reference/v4/#fun_fill>`__
 function to color the area in between them.
 
+array
+-----
+
+A special type that applies to an array id. It defines the type of the elements contained in the array and is constructed by appending the ``[]`` modifier to one of the four fundamental types allowed in arrays:
+
+- ``int[]``
+- ``float[]``
+- ``bool[]``
+- ``color[]``
+
 void
 ----
 
