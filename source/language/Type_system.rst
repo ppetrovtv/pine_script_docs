@@ -13,7 +13,7 @@ All of these types exist in several **forms**. There are 5 forms of types:
 The Pine compiler distinguishes
 between a *literal bool* type, an *input bool* type, a *series bool* type and so on.
 
-There is also a *void* type, a *na* (not available) value and a compound *tuple* type.
+There is also an *array* type, a *void* type, a *na* (not available) value and a compound *tuple* type.
 
 Type forms
 ----------
