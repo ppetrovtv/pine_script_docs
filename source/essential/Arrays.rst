@@ -114,8 +114,10 @@ Manipulating arrays
 
 
 
-Runtime errors
+Error handling
 --------------
+
+When using arrays, the programmer must take special care to avoid runtime errors, which can be caused by a number of factors.
 
 
 
