@@ -48,9 +48,11 @@ which declares an empty array of *float* values with an array id named ``prices`
     float[] prices = na
 
 This declaration also creates an array containing zero *float* elements, 
-but this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``::
+but this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``.
+Additionally, because the ``var`` keyword is used in the declaration, the array is only initialized on the first bar,
+so its values will propagate across bars::
 
-    prices = array.new_float(0)
+    var prices = array.new_float(0)
 
 Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
 
