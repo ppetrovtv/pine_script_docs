@@ -36,9 +36,10 @@ We will also extend the meaning of *array* to include array *id's*, for the sake
 Declaring arrays
 ----------------
 
-The following syntax is used to declare arrays::
+The following syntax can be used to declare arrays::
 
     <type>[] <identifier> = <expression>
+    var <type>[] <identifier> = <expression>
 
 The ``[]`` modifier is appended to the type name when declaring arrays. However, since type-specific functions are used to create an array,
 the ``<type>[]`` part of the declaration is redundant, except if you initialize the array id to ``na``, as in this example, 
