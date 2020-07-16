@@ -10,7 +10,9 @@ Introduction
 ------------
 
 Arrays can be used to store multiple values in one data structure. Think of them as a better way to handle cases where you would
-otherwise need a set of variables named ``price00``, ``price01`` and ``price02``.
+otherwise need a set of variables named ``price00``, ``price01`` and ``price02``. Arrays are an advanced feature used for scripts 
+requiring intricate data-handling. If you are a beginning Pine programmer, you may consider studying other, more accessible Pine features 
+before you tackle arrays.
 
 Pine arrays are one-dimensional. All elements of any given array are of the same type, which can be *int*, *float*, *bool* or *color*, always of *series* form. 
 Arrays are referenced using an array *id*, similar to label and line id's. 
