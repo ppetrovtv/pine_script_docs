@@ -49,8 +49,7 @@ which declares an empty array of *float* values with an array id named ``prices`
 
     float[] prices = na
 
-When declaring an array and the ``<expression>`` is not ``na``, it must be one of the ``array.new_<type>()`` functions. This declaration also creates an array containing zero *float* elements, 
-but this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``.
+When declaring an array and the ``<expression>`` is not ``na``, it must be one of the ``array.new_<type>()`` functions. The following example also creates an array containing zero *float* elements, but this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``.
 Additionally, because the ``var`` keyword is used in the declaration, the array is only initialized on the first bar,
 so its values will propagate across bars::
 
