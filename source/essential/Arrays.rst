@@ -57,8 +57,10 @@ so its values will propagate across bars::
 
 Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
 
-You can also initialize array elements when declaring an array. The following declaration creates and array id named ``prices``.
-The array is created with two elements, each initialized with the value of the ``close`` built-in variable. When no ``::
+You can also initialize array elements when declaring an array using the ``initial_value=`` parameter. 
+When no argument is supplied for ``initial_value=`` the array elements are initialized to ``na``.
+The following declaration creates and array id named ``prices``.
+The array is created with two elements, each initialized with the value of the value of the ``close`` built-in variable on that bar::
 
     prices = array.new_float(2, close)
 
