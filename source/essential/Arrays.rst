@@ -49,7 +49,10 @@ which declares an empty array of *float* values with an array id named ``prices`
 
     float[] prices = na
 
-When declaring an array and the ``<expression>`` is not ``na``, it must be one of the ``array.new_<type>()`` functions. The following example also creates an array containing zero *float* elements, but this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``.
+When declaring an array and the ``<expression>`` is not ``na``, it must be one of the ``array.new_<type>(size, initial_value)`` functions. 
+The arguments of both the ``size=`` and ``initial_value=`` parameters can be *series*, so you can dynamically size and initialize arrays.
+The following example also creates an array containing zero *float* elements, 
+but this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``.
 Additionally, because the ``var`` keyword is used in the declaration, the array is only initialized on the first bar,
 so its values will propagate across bars::
 
@@ -57,8 +60,8 @@ so its values will propagate across bars::
 
 Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
 
-You can also initialize array elements when declaring an array using the ``initial_value=`` parameter. 
-When no argument is supplied for ``initial_value=`` the array elements are initialized to ``na``.
+When declaring an array, you can initialize all elements in the array using the ``initial_value=`` parameter. 
+When no argument is supplied for ``initial_value=``, the array elements are initialized to ``na``.
 The following declaration creates and array id named ``prices``.
 The array is created with two elements, each initialized with the value of the value of the ``close`` built-in variable on that bar::
 
