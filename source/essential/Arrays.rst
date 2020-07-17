@@ -77,7 +77,7 @@ As is the case whenever an array index is used in your code, it is imperative th
 the array's size, minus one (because array indices start at zero). You can obtain the size of an array by using the 
 ``array.size(id)`` function.
 
-The following example uses ``array.set()` to initialize an array of colors to instances of one base color using different transparency levels. 
+The following example uses ``array.set()`` to initialize an array of colors to instances of one base color using different transparency levels. 
 It then fetches the proper array element to use it in a ``bgcolor()`` call::
 
     //@version=4
@@ -104,14 +104,17 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
     plotchar(lastHiBar, "lastHiBar", "", location.top, size = size.tiny)
     plotchar(fillNo, "fillNo", "", location.top, size = size.tiny)
 
-Writing a value to an array elements is done using ``array.set(id, index, value)``. These are all valid examples::
+The ``array.fill(id, value, index_from, index_to)`` function can be used to fill contiguous sets of array elements with a value. 
+Used without the last two optional parameters, the function fills the whole array, so::
 
+    a = array.new_float(10, close)
 
-``array.size()``
-``array.get()``
-``array.set()``
-``array.fill()``
+and
 
+    a = array.new_float(10)
+    array.fill(a, close)
+
+are equivalent.
 
 
 Inserting and removing array elements
