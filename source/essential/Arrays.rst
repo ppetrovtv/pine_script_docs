@@ -125,9 +125,40 @@ always from the top. Pine arrays can be used as a stack, in which case you will 
 
 ``array.pop(prices)`` will remove the end element from the ``prices`` array, return its value and decrease the array's size by one.
 
-[[Need a code example]]::
+See how the functions are used here to remember successive lows in rallies::
 
-    code
+    //@version=4
+    study("Lows from new highs", "", true)
+    var lows = array.new_float(0)
+    flushHighs = false
+    
+    // Pop an element from the stack when `_cond` is true.
+    f_array_pop(_id, _cond) => _cond and array.size(_id) > 0 ? array.pop(_id) : float(na)
+    
+    if rising(high, 1)
+        // Consecutive high; push a new low on the stack.
+        array.push(lows, low)
+        // Force the return type of this `if` block to be the same as that of the next block.
+        bool(na)
+    else if array.size(lows) >= 4 or low < array.min(lows)
+        // We have at least 4 lows or price has breached the lowest low;
+        // sort lows and set flag indicating we will plot and flush the levels.
+        array.sort(lows, order.ascending)
+        flushHighs := true
+    
+    // If needed, plot and flush lows.
+    lowLevel = f_array_pop(lows, flushHighs)
+    plot(lowLevel, "Low 1", low > lowLevel ? color.silver : color.fuchsia, 2, plot.style_linebr)
+    lowLevel := f_array_pop(lows, flushHighs)
+    plot(lowLevel, "Low 2", low > lowLevel ? color.silver : color.fuchsia, 3, plot.style_linebr)
+    lowLevel := f_array_pop(lows, flushHighs)
+    plot(lowLevel, "Low 3", low > lowLevel ? color.silver : color.fuchsia, 4, plot.style_linebr)
+    lowLevel := f_array_pop(lows, flushHighs)
+    plot(lowLevel, "Low 4", low > lowLevel ? color.silver : color.fuchsia, 5, plot.style_linebr)
+    
+    if flushHighs
+        // Clear remaining levels after the last 4 have been plotted.
+        array.clear(lows)
 
 
 
