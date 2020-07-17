@@ -109,7 +109,7 @@ Used without the last two optional parameters, the function fills the whole arra
 
     a = array.new_float(10, close)
 
-and
+and:
 
     a = array.new_float(10)
     array.fill(a, close)
