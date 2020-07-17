@@ -72,7 +72,13 @@ The array is created with two elements, each initialized with the value of the v
 Reading and writing array values
 --------------------------------
 
-Let's see how we can initialize and read array elements::
+Values can be written to individual array elements using ``array.set(id, index, value)``, and read using ``array.get(id, index)``.
+As is the case whenever an array index is used in your code, it is imperative that the index never be greater than 
+the array's size, minus one (because array indices start at zero). You can obtain the size of an array by using the 
+``array.size(id)`` function.
+
+The following example uses ``array.set()` to initialize an array of colors to instances of one base color using different transparency levels. 
+It then fetches the proper array element to use it in a ``bgcolor()`` call::
 
     //@version=4
     study("array.set()", "", true)
