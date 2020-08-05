@@ -121,6 +121,8 @@ Inserting and removing array elements
 -------------------------------------
 ``array.insert()``
 ``array.remove()``
+``array.shift()``
+``array.unshift()``
 ``array.clear()``
 
 
@@ -170,21 +172,44 @@ See how the functions are used here to remember successive lows in rallies::
         array.clear(lows)
 
 
+Using an array as a queue
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Queues are FIFO (first in, first out) constructions. They behave somewhat like cars at a red light. New cars come in the line from the end, and the first car to leave will be the first one that arrived to the red light. In the following code example, we will be starting with an empty queue. We will add new values to the end of the array and when we remove a value we will always remove the one at index zero. We can use ``array.push()`` to append new values at the end of the array, and we will be using ``array.remove()`` with an index of zero to remove the array's first element when we need to de-queue and element.
+
+
+
 
 Calculations on arrays
 -------------------
-``array.min()``  
-``array.max()``  
-``array.sum()``  
+``array.avg()``
+``array.min()``
+``array.max()``
+``array.median()``
+``array.mode()``
+``array.sum()``
+``array.standardize()``
+``array.stdev()``
+``array.variance()``
+``array.covariance()``
 
 
 
 Manipulating arrays
 -------------------
-``array.sort()``
-``array.copy()``
-``array.slice()``
 ``array.concat()``
+``array.copy()``
+``array.reverse()``
+``array.slice()``
+``array.sort()``
+
+
+
+Searching arrays
+-------------------
+``array.includes()``
+``array.indexof()``
+``array.lastindexof()``
 
 
 
