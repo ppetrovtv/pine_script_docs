@@ -177,6 +177,24 @@ Using an array as a queue
 
 Queues are FIFO (first in, first out) constructions. They behave somewhat like cars at a red light. New cars come in the line from the end, and the first car to leave will be the first one that arrived to the red light. In the following code example, we will be starting with an empty queue. We will add new values to the end of the array and when we remove a value we will always remove the one at index zero. We can use ``array.push()`` to append new values at the end of the array, and we will be using ``array.remove()`` with an index of zero to remove the array's first element when we need to de-queue and element.
 
+    //@version=4
+    study("Queue example: Show last n High Pivots", "", true)
+    i_pivotCount = input(10)
+    i_pivotLegs  = input(3)
+    
+    pivotBars = array.new_int(0)
+    label pLabel = na
+     
+    pHi = pivothigh(i_pivotLegs, i_pivotLegs)
+    if not na(pHi)
+        // New pivot found; append the bar_index of the new pivot to the end of the array.
+        array.push(pivotBars, bar_index - i_pivotLegs)
+        if array.size(pivotBars) > i_pivotCount
+            // The queue was already full; remove its oldest element,
+            // using it to delete the oldest label in the queue.
+            label.delete(pLabel[bar_index - array.remove(pivotBars, 0)])
+            
+        pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi))
 
 
 
@@ -225,12 +243,11 @@ Copying
 You can copy an array using ``array.copy()``. Here we copy the array ``a`` to a new array named ``_b``::
 
     //@version=4
-    study("array.copy example")
+    study("`array.copy()`")
     a = array.new_float(0)
     array.push(a, 1)
     array.push(a, 2)
     if barstate.islast
-        // Convert our 2 arrays to strings prior to concatenation.
         _b = array.copy(a)
         array.push(_b, 3)
         label.new(bar_index, 0, "a: " + tostring(a) + "\n_b: " + tostring(_b))
