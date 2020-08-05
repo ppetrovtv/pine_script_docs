@@ -222,7 +222,7 @@ Concatenation
 Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns an array id, which can be assigned to a new array if needed::
 
     //@version=4
-    study("array.concat example")
+    study("`array.concat()`")
     a = array.new_float(0)
     b = array.new_float(0)
     array.push(a, 1)
@@ -258,7 +258,22 @@ From thereon, both variables would point to the same array, so using either one 
 Sorting
 ^^^^^^^
 
-Arrays can be sorted in either ascending or descending order using ``array.sort()``.
+Arrays can be sorted in either ascending or descending order using ``array.sort()``. The ``order`` parameter is optional and default to ``order.ascending``::
+
+    //@version=4
+    study("`array.sort()`")
+    a = array.new_float(0)
+    array.push(a, 3)
+    array.push(a, 1)
+    array.push(a, 2)
+    b = array.new_float(0)
+    array.push(b, 3)
+    array.push(b, 1)
+    if barstate.islast
+        array.sort(close > open ? a : b, close > open ? order.ascending : order.descending)
+        label.new(bar_index, 0, "a: " + tostring(a) + "\n\n")
+        label.new(bar_index, 0, "b: " + tostring(b))
+
 
 
 ``array.reverse()``
