@@ -219,7 +219,7 @@ Manipulating arrays
 Concatenation
 ^^^^^^^^^^^^^
 
-Two arrays can be merged—or concatenated—using ``array.concat()``. When arraus are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns an array id, which can be assigned to a new array if needed::
+Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns an array id, which can be assigned to a new array if needed::
 
     //@version=4
     study("array.concat example")
