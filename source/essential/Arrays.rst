@@ -258,7 +258,7 @@ From thereon, both variables would point to the same array, so using either one 
 Sorting
 ^^^^^^^
 
-Arrays can be sorted in either ascending or descending order using ``array.sort()``. The ``order`` parameter is optional and default to ``order.ascending``::
+Arrays can be sorted in either ascending or descending order using ``array.sort()``. The ``order`` parameter is optional and defaults to ``order.ascending``::
 
     //@version=4
     study("`array.sort()`")
@@ -274,10 +274,41 @@ Arrays can be sorted in either ascending or descending order using ``array.sort(
         label.new(bar_index, 0, "a: " + tostring(a) + "\n\n")
         label.new(bar_index, 0, "b: " + tostring(b))
 
+Reversing
+^^^^^^^^^
 
+Use ``array.reverse()`` to reverse an array::
 
-``array.reverse()``
-``array.slice()``
+    //@version=4
+    study("`array.reverse()`")
+    a = array.new_float(0)
+    array.push(a, 1)
+    array.push(a, 2)
+    array.push(a, 3)
+    if barstate.islast
+        array.reverse(a)
+        label.new(bar_index, 0, "a: " + tostring(a) + "\n\n")
+
+Slicing
+^^^^^^^
+
+Slicing an array creates a shadow of a subset of that array. Once the shadow is created using ``array.slice()``, operations on the shadow are also mirrored on the original array. You slice by specifying ``index_from`` and ``index_to`` array indices. The ``index_to`` argument must be one greater than the end of the subset you want to shadow, 
+so as in the example here, to shadow the subset from index 1 to 2 from array ``a``, you need to use ``_shadowOfA = array.slice(a, 1, 3)``::
+
+    //@version=4
+    study("`array.slice()`")
+    a = array.new_float(0)
+    array.push(a, 0)
+    array.push(a, 1)
+    array.push(a, 2)
+    array.push(a, 3)
+    if barstate.islast
+        // Create a shadow of elements at index 1 and 2 from array `a`.
+        _shadowOfA = array.slice(a, 1, 3)
+        label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\n_shadowOfA: " + tostring(_shadowOfA))
+        // Add a new element at the end of the shadow array, thus also affecting the original array `a`.
+        array.push(_shadowOfA, 4)
+        label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\n_shadowOfA: " + tostring(_shadowOfA), style = label.style_label_up)
 
 
 
