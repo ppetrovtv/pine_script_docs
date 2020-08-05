@@ -173,9 +173,9 @@ See how the functions are used here to remember successive lows in rallies::
 
 Calculations on arrays
 -------------------
-``array.min()``
-``array.max()``
-``array.sum()``
+``array.min()``  
+``array.max()``  
+``array.sum()``  
 
 
 
