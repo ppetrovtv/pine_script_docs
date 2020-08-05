@@ -197,8 +197,34 @@ Calculations on arrays
 
 Manipulating arrays
 -------------------
-``array.concat()``
-``array.copy()``
+
+Concatenation
+^^^^^^^^^^^^^
+
+Two arrays can be merged—or concatenated—using ``array.concat()``. When arraus are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns an array id, which can be assigned to a new array if needed::
+
+```
+//@version=4
+study("array.concat example")
+a = array.new_float(0)
+b = array.new_float(0)
+array.push(a, 1)
+array.push(a, 2)
+array.push(b, 3)
+array.push(b, 4)
+if barstate.islast
+    // Save the state of our 2 arrays to strings prior to concatenation.
+    aBefore = tostring(a)
+    bBefore = tostring(b)
+    c = array.concat(a, b)
+    label.new(bar_index, 0, "BEFORE\na: " + aBefore + "\nb: " + bBefore + "\nAFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(c))
+```
+
+Copying
+^^^^^^^
+
+You can copy an array using ``array.copy()``. Here we copy the array `a` to a new array named `_b`
+
 ``array.reverse()``
 ``array.slice()``
 ``array.sort()``
