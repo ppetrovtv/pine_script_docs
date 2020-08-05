@@ -293,7 +293,7 @@ Slicing
 ^^^^^^^
 
 Slicing an array creates a shadow of a subset of that array. Once the shadow is created using ``array.slice()``, operations on the shadow are also mirrored on the original array. You slice by specifying ``index_from`` and ``index_to`` array indices. The ``index_to`` argument must be one greater than the end of the subset you want to shadow, 
-so as in the example here, to shadow the subset from index 1 to 2 from array ``a``, you need to use ``_shadowOfA = array.slice(a, 1, 3)``::
+so as in the example here, to shadow the subset from index 1 to 2 of array ``a``, you need to use ``_shadowOfA = array.slice(a, 1, 3)``::
 
     //@version=4
     study("`array.slice()`")
