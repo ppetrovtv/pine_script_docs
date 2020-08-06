@@ -438,7 +438,10 @@ has exceeded the allowed time. You will need to simplify your code to remedy the
 Cannot modify an array when its id is `na`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an array id is initialized to ``na``, operations on it are not allowed. This code will throw the error::
+When an array id is initialized to ``na``, operations on it are not allowed, since no array exists. 
+All that exists at that point is an array variable containing the ``na`` value rather that a valid array id pointing to an existing array. 
+Note that an array created with no elements in it, as you do when you use ``a = array.new_int(0)``, still has a valid id. 
+This code will throw the error we are discussing::
 
     //@version=4
     study("Out of bounds index")
@@ -449,6 +452,10 @@ When an array id is initialized to ``na``, operations on it are not allowed. Thi
 To avoid it, create an array with size zero using::
 
     int[] a = array.new_int(0)
+
+or::
+
+    a = array.new_int(0)
 
 
 Array is too large. Maximum size is 100000
