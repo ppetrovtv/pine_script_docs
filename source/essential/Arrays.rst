@@ -266,7 +266,7 @@ Manipulating arrays
 Concatenation
 ^^^^^^^^^^^^^
 
-Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns an array id, which can be assigned to a new array if needed::
+Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns the array id of the first array::
 
     //@version=4
     study("`array.concat()`")
@@ -277,11 +277,10 @@ Two arrays can be merged—or concatenated—using ``array.concat()``. When arra
     array.push(b, 3)
     array.push(b, 4)
     if barstate.islast
-        // Convert our 2 arrays to strings prior to concatenation.
-        aBefore = tostring(a)
-        bBefore = tostring(b)
-        c = array.concat(a, b)
-        label.new(bar_index, 0, "BEFORE\na: " + aBefore + "\nb: " + bBefore + "\nAFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(c))
+        label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\nb: " + tostring(b))
+        _c = array.concat(a, b)
+        array.push(_c, 5)
+        label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(_c), style = label.style_label_up)
 
 
 Copying
