@@ -67,7 +67,7 @@ There is currently no way to initialize array elements with different values, wh
 Reading and writing array values
 --------------------------------
 
-Values can be written to individual array elements using ``array.set(id, index, value)``, and read using ``array.get(id, index)``.
+Values can be written to existing individual array elements using ``array.set(id, index, value)``, and read using ``array.get(id, index)``.
 As is the case whenever an array index is used in your code, it is imperative that the index never be greater than 
 the array's size, minus one (because array indices start at zero). You can obtain the size of an array by using the 
 ``array.size(id)`` function.
@@ -100,7 +100,7 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
     plotchar(fillNo, "fillNo", "", location.top, size = size.tiny)
 
 Another technique that can be used to initialize the elements in an array is to declare the array with a zero size, and then populate it using ``array.push()`` 
-to append new elements to the end of the array. This code is functionally identical to the initialization section from the preceding script::
+to append **new** elements to the end of the array. This code is functionally identical to the initialization section from the preceding script::
 
     var c_fills = array.new_color(0)
     // Initialize the array elements with progressively lighter shades of the fill color.
