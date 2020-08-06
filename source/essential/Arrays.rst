@@ -497,7 +497,18 @@ Slice is out of bounds of the parent array
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This message occurs whenever the parent array's size is modified in such a way that it makes the shallow copy 
-created by a slice outside the boundaries of the parent array.
+created by a slice point outside the boundaries of the parent array. This code will reproduce it because after creating a slice 
+from index 3 to 4, so of the last two elements of our five-element parent array, we remove the parent's first element, 
+making its size four and its last index 3. From that moment on, the shallow copy which is still poiting to the "window" at 
+the parent array's indices 3 to 4, is pointing out of the parent array's boundaries::
+
+    //@version=4
+    study("Slice out of bounds")
+    a = array.new_float(5, 0)
+    b = array.slice(a, 3, 5)
+    array.remove(a, 0)
+    c = array.indexof(b, 2)
+    plot(c)
 
 .
 .
