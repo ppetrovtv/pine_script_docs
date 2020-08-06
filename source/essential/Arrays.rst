@@ -326,11 +326,17 @@ Error handling
 When using arrays, the programmer must take special care to avoid runtime errors, which can be caused by a number of factors.
 
 Index " + index + " out of bounds, array size is " + size
+
 Can not modify na array
-Reaching maximum size of the array. Maximum size is 100000
+
+Reaching maximum size of the array. Maximum size is 100000 (Array is too large. Maximum size is 100000)
+
 Cannot create an array with a negative size
+
 Can not call pop() if array is empty
+
 Index 'from' should be less than index 'to'
+
 Index out of bounds
 
 
