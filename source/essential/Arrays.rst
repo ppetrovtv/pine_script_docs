@@ -433,17 +433,23 @@ Calculation takes too long to execute (> 20000 ms)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-**Cannot modify an array when its id is `na`**
+Cannot modify an array when its id is `na`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Array is too large. Maximum size is 100000**
+Array is too large. Maximum size is 100000
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Cannot create an array with a negative size**
+Cannot create an array with a negative size
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Cannot call `pop()` if array is empty**
+Cannot call `pop()` if array is empty
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Index 'from' should be less than index 'to'**
+Index 'from' should be less than index 'to'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Index is out of bounds**
+Index is out of bounds
+^^^^^^^^^^^^^^^^^^^^^^
 
 
 ═══════════════════════ JUNK ═════════════════════════
