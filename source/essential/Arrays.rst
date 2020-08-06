@@ -99,8 +99,8 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
     plotchar(lastHiBar, "lastHiBar", "", location.top, size = size.tiny)
     plotchar(fillNo, "fillNo", "", location.top, size = size.tiny)
 
-Another technique that can be used to fill an array is to declare it with a zero size and then populate it using ``array.push()`` 
-to append new elements to the end of the array. This code is functionally identical to the preceding script's equivalent section::
+Another technique that can be used to initialize the elements in an array is to declare the array with a zero size, and then populate it using ``array.push()`` 
+to append new elements to the end of the array. This code is functionally identical to the initialization section from the preceding script::
 
     var c_fills = array.new_color(0)
     // Initialize the array elements with progressively lighter shades of the fill color.
