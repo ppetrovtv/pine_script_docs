@@ -112,8 +112,8 @@ and::
 are equivalent.
 
 
-Scope of arrays
----------------
+Scope
+-----
 
 Arrays can be declared in a script's global scope, as well as in the local scope of a function or an ``if`` branch.
 One major distinction between Pine arrays and variables declared in the global scope is that global arrays can be modified from within the local scope of a function.
