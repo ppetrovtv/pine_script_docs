@@ -328,7 +328,7 @@ When using arrays, the programmer must take special care to avoid runtime errors
 
 Index " + index + " out of bounds, array size is " + size ► Index " + index + " is out of bounds. Array size is " + size
 
-Can not modify na array ► Cannot modify a `na` array
+Can not modify na array ► Cannot modify an array when its id is `na`
 
 Reaching maximum size of the array. Maximum size is 100000 ► Array is too large. Maximum size is 100000
 
