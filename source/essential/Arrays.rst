@@ -121,7 +121,14 @@ and::
     a = array.new_float(10)
     array.fill(a, close)
 
-are equivalent.
+are equivalent, but::
+
+    a = array.new_float(10)
+    array.fill(a, close, 1, 2)
+
+only fills the second and third element of the array with ``close``. 
+The remaining elements will hold the ``na`` value, as no intialization value was provided when the array was declared.
+
 
 
 Scope
