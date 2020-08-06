@@ -16,7 +16,7 @@ before you tackle arrays.
 
 Pine arrays are one-dimensional. All elements of any given array are of the same type, which can be *int*, *float*, *bool* or *color*, always of *series* form. 
 Arrays are referenced using an array *id*, similar to label and line id's. 
-As with other Pine variables, the history-referencing operator can be used to refer to past instances of an array when it is used with the array's id. 
+As with other Pine variables, the history-referencing operator can be used with array id's to refer to past instances of an array. 
 Pine does not use an indexing operator to reference individual array elements;
 instead, functions like ``array.get()`` and ``array.set()`` are used to read and write values of array elements. 
 Array values can be used in all Pine expressions and functions where a *series* value is allowed.
@@ -325,6 +325,13 @@ Error handling
 
 When using arrays, the programmer must take special care to avoid runtime errors, which can be caused by a number of factors.
 
+Index " + index + " out of bounds, array size is " + size
+Can not modify na array
+Reaching maximum size of the array. Maximum size is 100000
+Cannot create an array with a negative size
+Can not call pop() if array is empty
+Index 'from' should be less than index 'to'
+Index out of bounds
 
 
 ═══════════════════════ JUNK ═════════════════════════
