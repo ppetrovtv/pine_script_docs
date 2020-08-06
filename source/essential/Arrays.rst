@@ -266,20 +266,21 @@ Manipulating arrays
 Concatenation
 ^^^^^^^^^^^^^
 
-Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are merged, the second array is appended to the end of the first, so the first array is modified while the second one remains intact. The function returns the array id of the first array::
+Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are merged, the second array is appended to the end of the first, 
+so the first array is modified while the second one remains intact. The function returns the array id of the first array::
 
     //@version=4
     study("`array.concat()`")
     a = array.new_float(0)
     b = array.new_float(0)
+    array.push(a, 0)
     array.push(a, 1)
-    array.push(a, 2)
+    array.push(b, 2)
     array.push(b, 3)
-    array.push(b, 4)
     if barstate.islast
         label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\nb: " + tostring(b))
         _c = array.concat(a, b)
-        array.push(_c, 5)
+        array.push(_c, 4)
         label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(_c), style = label.style_label_up)
 
 
@@ -291,11 +292,11 @@ You can copy an array using ``array.copy()``. Here we copy the array ``a`` to a 
     //@version=4
     study("`array.copy()`")
     a = array.new_float(0)
+    array.push(a, 0)
     array.push(a, 1)
-    array.push(a, 2)
     if barstate.islast
         _b = array.copy(a)
-        array.push(_b, 3)
+        array.push(_b, 2)
         label.new(bar_index, 0, "a: " + tostring(a) + "\n_b: " + tostring(_b))
 
 Note that simply using ``_b = a`` in the previous example would not have copied the array, but only its id. 
@@ -304,21 +305,24 @@ From thereon, both variables would point to the same array, so using either one 
 Sorting
 ^^^^^^^
 
-Arrays can be sorted in either ascending or descending order using ``array.sort()``. The ``order`` parameter is optional and defaults to ``order.ascending``::
+Arrays can be sorted in either ascending or descending order using ``array.sort()``. The ``order`` parameter is optional and defaults to ``order.ascending``. 
+It is of form *series*, so can be determined at runtime, as is done here. Note that which array is sorted is also determined at runtime::
 
     //@version=4
     study("`array.sort()`")
     a = array.new_float(0)
-    array.push(a, 3)
-    array.push(a, 1)
-    array.push(a, 2)
     b = array.new_float(0)
+    array.push(a, 2)
+    array.push(a, 0)
+    array.push(a, 1)
+    array.push(b, 4)
     array.push(b, 3)
-    array.push(b, 1)
+    array.push(b, 5)
     if barstate.islast
-        array.sort(close > open ? a : b, close > open ? order.ascending : order.descending)
-        label.new(bar_index, 0, "a: " + tostring(a) + "\n\n")
-        label.new(bar_index, 0, "b: " + tostring(b))
+        _barUp = close > open
+        array.sort(_barUp ? a : b, _barUp ? order.ascending : order.descending)
+        label.new(bar_index, 0, "a " + (_barUp ? "is sorted ▲: " : ": ") + tostring(a) + "\n\n")
+        label.new(bar_index, 0, "b " + (_barUp ? ": " : "is sorted ▼: ") + tostring(b))
 
 Reversing
 ^^^^^^^^^
@@ -328,9 +332,9 @@ Use ``array.reverse()`` to reverse an array::
     //@version=4
     study("`array.reverse()`")
     a = array.new_float(0)
+    array.push(a, 0)
     array.push(a, 1)
     array.push(a, 2)
-    array.push(a, 3)
     if barstate.islast
         array.reverse(a)
         label.new(bar_index, 0, "a: " + tostring(a) + "\n\n")
@@ -359,10 +363,27 @@ so as in the example here, to shadow the subset from index 1 to 2 of array ``a``
 
 
 Searching arrays
--------------------
-``array.includes()``
-``array.indexof()``
-``array.lastindexof()``
+----------------
+
+We can test if a value is part of an array with the ``array.includes()`` function, which returns true if the element is found.
+We can find the first occurrence of a value in an array by using the ``array.indexof()`` function. The first occurence is the one with the lowest index.
+We can also find the last occurrence of a value with ``array.lastindexof()``::
+
+    //@version=4
+    study("Searching in arrays")
+    _value = input(1)
+    a = array.new_float(0)
+    array.push(a, 0)
+    array.push(a, 1)
+    array.push(a, 2)
+    array.push(a, 1)
+    if barstate.islast
+        _valueFound      = array.includes(a, _value)
+        _firstIndexFound = array.indexof(a, _value)
+        _lastIndexFound  = array.lastindexof(a, _value)
+        label.new(bar_index, 0, "a: " + tostring(a) + 
+          "\nFirst " + tostring(_value) + (_firstIndexFound != -1 ? " value was found at index: " + tostring(_firstIndexFound) : " value was not found.") +
+          "\nLast " + tostring(_value)  + (_lastIndexFound  != -1 ? " value was found at index: " + tostring(_lastIndexFound) : " value was not found."))
 
 
 
