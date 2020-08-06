@@ -396,23 +396,53 @@ when you save a script. Refer to the Pine Reference Manual when in doubt regardi
 Scripts using arrays can also throw **runtime** errors, which appear in place of the indicator's name on charts. 
 We discuss those runtime errors in this section.
 
-**Index " + index + " is out of bounds. Array size is " + size**
+**Index xx is out of bounds. Array size is yy**
 
-When using arrays, programmers must take special care to avoid runtime errors, which can be caused by a number of factors.
+This will most probably be the most frequent error you encounter. It will happen when you reference an inexistent array index. 
+The "xx" value will be the value of the faulty index you tried to use, and "yy" will be the size of the array. 
+Recall that array indices start at zero—not one—and end at the array's size, minus one. An array of size 3's last valid index is thus ``2``.
+
+To avoid this error, you must make provisions in your code logic to prevent using an index lying outside the array's index boundaries. 
+This code will generate the error because the last index we use in the loop is outside the valid index range for the array::
+
+    //@version=4
+    study("Out of bounds index")
+    a = array.new_float(3)
+    for _i = 1 to 3
+        array.set(a, _i, _i)
+    plot(array.pop(a))
+
+The correct ``for`` statement is::
+
+    for _i = 0 to 2
+
+When you size arrays dynamically using a field in your script's *Settings/Inputs" tab, protect the boundaries of that value using 
+``input()``'s ``minval`` and ``maxval`` parameters::
+
+    //@version=4
+    study("Protected array size")
+    i_size = input(10, "Array size", minval = 1, maxval = 100000)
+    a = array.new_float(i_size)
+    for _i = 0 to i_size - 1
+        array.set(a, _i, _i)
+    plot(array.size(a))
+
+
+**Calculation takes too long to execute (> 20000 ms)**
 
 
 
-Cannot modify an array when its id is `na`
+**Cannot modify an array when its id is `na`**
 
-Array is too large. Maximum size is 100000
+**Array is too large. Maximum size is 100000**
 
-Cannot create an array with a negative size
+**Cannot create an array with a negative size**
 
-Cannot call `pop()` if array is empty
+**Cannot call `pop()` if array is empty**
 
-Index 'from' should be less than index 'to'
+**Index 'from' should be less than index 'to'**
 
-Index is out of bounds
+**Index is out of bounds**
 
 
 ═══════════════════════ JUNK ═════════════════════════
