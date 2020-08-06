@@ -14,7 +14,7 @@ otherwise need a set of variables named ``price00``, ``price01`` and ``price02``
 requiring intricate data-handling. If you are a beginning Pine programmer, you may consider studying other, more accessible Pine features 
 before you tackle arrays.
 
-Pine arrays are one-dimensional. All elements of any given array are of the same type, which can be *int*, *float*, *bool* or *color*, always of *series* form. 
+Pine arrays are one-dimensional. All elements of an array are of the same type, which can be *int*, *float*, *bool* or *color*, always of *series* form. 
 Arrays are referenced using an array *id*, similar to label and line id's. 
 As with other Pine variables, the history-referencing operator can be used with array id's to refer to past instances of an array. 
 Pine does not use an indexing operator to reference individual array elements;
