@@ -342,8 +342,11 @@ Use ``array.reverse()`` to reverse an array::
 Slicing
 ^^^^^^^
 
-Slicing an array creates a shadow of a subset of that array. Once the shadow is created using ``array.slice()``, operations on the shadow are also mirrored on the original array. You slice by specifying ``index_from`` and ``index_to`` array indices. The ``index_to`` argument must be one greater than the end of the subset you want to slice. 
-In this example, to slice the subset from index 1 to 2 of array ``a``, we need to use ``_sliceOfA = array.slice(a, 1, 3)``::
+Slicing an array using ``array.slice()`` creates a shallow copy of a subset of the array. 
+Once the shallow copy is created, operations on the copy are mirrored on the original, parent array. 
+You determine the size of the subset to slice using the ``index_from`` and ``index_to`` parameters. 
+The ``index_to`` argument must be one greater than the end of the subset you want to slice. 
+In this example, to slice the subset from index 1 to 2 of array ``a``, we must use ``_sliceOfA = array.slice(a, 1, 3)``::
 
     //@version=4
     study("`array.slice()`")
