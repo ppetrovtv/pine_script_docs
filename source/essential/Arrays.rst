@@ -19,7 +19,7 @@ Arrays are referenced using an array *id*, similar to label and line id's.
 As with other Pine variables, the history-referencing operator can be used with array id's to refer to past instances of an array. 
 Pine does not use an indexing operator to reference individual array elements;
 instead, functions like ``array.get()`` and ``array.set()`` are used to read and write values of array elements. 
-Array values can be used in all Pine expressions and functions where a *series* value is allowed.
+Array values can be used in all Pine expressions and functions where a value of *series* form is allowed.
 
 Elements within an array are referred to using an *index*, which starts at 0 and extends to the number or elements in the array, minus one.
 Arrays in Pine can be sized dynamically, so the number of elements in the array can be modified within one iteration of the script on a bar,
