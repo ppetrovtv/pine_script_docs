@@ -342,8 +342,8 @@ Use ``array.reverse()`` to reverse an array::
 Slicing
 ^^^^^^^
 
-Slicing an array creates a shadow of a subset of that array. Once the shadow is created using ``array.slice()``, operations on the shadow are also mirrored on the original array. You slice by specifying ``index_from`` and ``index_to`` array indices. The ``index_to`` argument must be one greater than the end of the subset you want to shadow, 
-so as in the example here, to shadow the subset from index 1 to 2 of array ``a``, you need to use ``_shadowOfA = array.slice(a, 1, 3)``::
+Slicing an array creates a shadow of a subset of that array. Once the shadow is created using ``array.slice()``, operations on the shadow are also mirrored on the original array. You slice by specifying ``index_from`` and ``index_to`` array indices. The ``index_to`` argument must be one greater than the end of the subset you want to slice. 
+In this example, to slice the subset from index 1 to 2 of array ``a``, we need to use ``_sliceOfA = array.slice(a, 1, 3)``::
 
     //@version=4
     study("`array.slice()`")
@@ -354,11 +354,11 @@ so as in the example here, to shadow the subset from index 1 to 2 of array ``a``
     array.push(a, 3)
     if barstate.islast
         // Create a shadow of elements at index 1 and 2 from array `a`.
-        _shadowOfA = array.slice(a, 1, 3)
-        label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\n_shadowOfA: " + tostring(_shadowOfA))
+        _sliceOfA = array.slice(a, 1, 3)
+        label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\n_sliceOfA: " + tostring(_sliceOfA))
         // Add a new element at the end of the shadow array, thus also affecting the original array `a`.
-        array.push(_shadowOfA, 4)
-        label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\n_shadowOfA: " + tostring(_shadowOfA), style = label.style_label_up)
+        array.push(_sliceOfA, 4)
+        label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\n_sliceOfA: " + tostring(_sliceOfA), style = label.style_label_up)
 
 
 
