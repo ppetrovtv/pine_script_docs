@@ -440,7 +440,7 @@ Cannot modify an array when its id is `na`
 
 When an array id is initialized to ``na``, operations on it are not allowed, since no array exists. 
 All that exists at that point is an array variable containing the ``na`` value rather that a valid array id pointing to an existing array. 
-Note that an array created with no elements in it, as you do when you use ``a = array.new_int(0)``, still has a valid id. 
+Note that an array created with no elements in it, as you do when you use ``a = array.new_int(0)``, has a valid id nonetheless. 
 This code will throw the error we are discussing::
 
     //@version=4
@@ -461,14 +461,22 @@ or::
 Array is too large. Maximum size is 100000
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This error will appear if your code attempts to declare an array with a size greater than 100,000. 
+It will also occur if, while dynamically appending elements to an array, a new element would increase the array's size past the maximum.
+
 Cannot create an array with a negative size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Cannot call `pop()` if array is empty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+As ``array.pop()`` removes an array's last element, it cannot be called if the array is empty.
+
 Index 'from' should be less than index 'to'
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When two indices are used in functions like ``array.slice()``, the first index must always be smaller than the second one.
 
 Index is out of bounds
 ^^^^^^^^^^^^^^^^^^^^^^
