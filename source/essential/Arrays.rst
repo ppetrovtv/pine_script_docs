@@ -23,12 +23,7 @@ Array values can be used in all Pine expressions and functions where a *series* 
 
 Elements within an array are referred to using an *index*, which starts at 0 and extends to the number or elements in the array, minus one.
 Arrays in Pine can be sized dynamically, so the number of elements in the array can be modified within one iteration of the script on a bar,
-and vary across bars. Multiple arrays can be used by the same script. The size of arrays is limited by the runtime resources required for the script,
-which are evaluated dynamically, so there are no hard-limits.
-
-Arrays can be declared in a script's global scope, or in local scopes such as function and ``if`` block scopes.
-One major distinction between global scope arrays and variables in Pine is that global scope arrays can be modified from within local scopes.
-A Pine function, for example, can thus modify an array declared in the script's global scope. 
+and vary across bars. Multiple arrays can be used by the same script. The size of arrays is limited to 100,000 but multiple arrays of maximum size can be used in one script.
 
 .. note:: We will use "beginning" of an array to designate index 0, and "end" of an array to designate the array's element with the highest index value. 
 We will also extend the meaning of *array* to include array *id's*, for the sake of brevity.
@@ -115,6 +110,34 @@ and::
     array.fill(a, close)
 
 are equivalent.
+
+
+Scope of arrays
+---------------
+
+Arrays can be declared in a script's global scope, or in local scopes such as function and ``if`` branch scopes.
+One major distinction between global scope arrays and variables in Pine is that global scope arrays can be modified from within the local scope of a function.
+A Pine function, for example, can thus modify an array declared in the script's global scope. This new capability can be used to implement 
+global variables that can be both read and written to from within any function in the script. We use it here to calculate progressively 
+lower or higher levels::
+
+    //@version=4
+    study("Stepped lows", "", true)
+    i_factor = 1 + (input(-2., "Step %") / 100)
+    // Use the lowest average OHLC in last 50 bars from 10 bars back as the our base level.
+    level = array.new_float(1, lowest(ohlc4, 50)[10])
+    
+    f_nextLevel(_val) =>
+        _newLevel = array.get(level, 0) * _val
+        // Write new level to the global array so it can be used as the base in the next call to the `f_nextLevel()`.
+        array.set(level, 0, _newLevel)
+        _newLevel
+    
+    plot(f_nextLevel(1))
+    plot(f_nextLevel(i_factor))
+    plot(f_nextLevel(i_factor))
+    plot(f_nextLevel(i_factor))
+
 
 
 Inserting and removing array elements
