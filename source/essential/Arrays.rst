@@ -493,10 +493,11 @@ Index 'from' should be less than index 'to'
 
 When two indices are used in functions like ``array.slice()``, the first index must always be smaller than the second one.
 
-Index is out of bounds
-^^^^^^^^^^^^^^^^^^^^^^
+Slice is out of bounds of the parent array
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-XXX: Need info on this one.
+This message occurs whenever the parent array's size is modified in such a way that it makes the shallow copy 
+created by a slice outside the boundaries of the parent array.
 
 .
 .
