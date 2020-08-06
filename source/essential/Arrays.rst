@@ -67,7 +67,7 @@ The array is created with two elements, each initialized with the value of the v
 
     prices = array.new_float(2, close)
 
-
+There is currently no way to initialize array elements with different values, whether upon declaration or post-declaration, using a single function call. One is planned for the near future.
 
 Reading and writing array values
 --------------------------------
