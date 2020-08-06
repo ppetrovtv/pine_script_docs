@@ -326,19 +326,19 @@ Error handling
 When using arrays, the programmer must take special care to avoid runtime errors, which can be caused by a number of factors.
 
 
-Index " + index + " out of bounds, array size is " + size ► Index " + index + " is out of bounds. Array size is " + size
+Index " + index + " is out of bounds. Array size is " + size
 
-Can not modify na array ► Cannot modify an array when its id is `na`
+Cannot modify an array when its id is `na`
 
-Reaching maximum size of the array. Maximum size is 100000 ► Array is too large. Maximum size is 100000
+Array is too large. Maximum size is 100000
 
 Cannot create an array with a negative size
 
-Can not call pop() if array is empty ► Cannot call `pop()` if array is empty
+Cannot call `pop()` if array is empty
 
 Index 'from' should be less than index 'to'
 
-Index out of bounds ► Index is out of bounds
+Index is out of bounds
 
 
 ═══════════════════════ JUNK ═════════════════════════
