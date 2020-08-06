@@ -417,7 +417,7 @@ The correct ``for`` statement is::
 
     for _i = 0 to 2
 
-When you size arrays dynamically using a field in your script's *Settings/Inputs" tab, protect the boundaries of that value using 
+When you size arrays dynamically using a field in your script's *Settings/Inputs* tab, protect the boundaries of that value using 
 ``input()``'s ``minval`` and ``maxval`` parameters::
 
     //@version=4
