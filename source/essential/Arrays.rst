@@ -390,10 +390,18 @@ We can also find the last occurrence of a value with ``array.lastindexof()``::
 Error handling
 --------------
 
-When using arrays, the programmer must take special care to avoid runtime errors, which can be caused by a number of factors.
+Malformed ``array.*()`` call syntax in Pine scripts will cause the usual **compiler** error messages to appear in Pine Editor's console at the bottom of the window, 
+when you save a script. Refer to the Pine Reference Manual when in doubt regarding the exact syntax of function calls.
 
+Scripts using arrays can also throw **runtime** errors, which appear in place of the indicator's name on charts. 
+We discuss those runtime errors in this section.
 
 Index " + index + " is out of bounds. Array size is " + size
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+When using arrays, programmers must take special care to avoid runtime errors, which can be caused by a number of factors.
+
+
 
 Cannot modify an array when its id is `na`
 
