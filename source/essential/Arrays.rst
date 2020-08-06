@@ -99,6 +99,17 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
     plotchar(lastHiBar, "lastHiBar", "", location.top, size = size.tiny)
     plotchar(fillNo, "fillNo", "", location.top, size = size.tiny)
 
+Another technique that can be used to fill an array is to declare it with a zero size and then populate it using ``array.push()`` 
+to append new elements to the end of the array. This code is functionally identical to the preceding script's equivalent section::
+
+    var c_fills = array.new_color(0)
+    // Initialize the array elements with progressively lighter shades of the fill color.
+    array.push(c_fills, color.new(c_fillColor, 70))
+    array.push(c_fills, color.new(c_fillColor, 75))
+    array.push(c_fills, color.new(c_fillColor, 80))
+    array.push(c_fills, color.new(c_fillColor, 85))
+    array.push(c_fills, color.new(c_fillColor, 90))
+
 The ``array.fill(id, value, index_from, index_to)`` function can be used to fill contiguous sets of array elements with a value. 
 Used without the last two optional parameters, the function fills the whole array, so::
 
