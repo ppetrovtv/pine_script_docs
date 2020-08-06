@@ -432,8 +432,9 @@ When you size arrays dynamically using a field in your script's *Settings/Inputs
 xx: Calculation takes too long to execute (> 20000 ms)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you use large arrays and loop through them, your script may generate this error. It tells you that your script's total runtime on the dataset 
-has exceeded the allowed time. You will need to simplify your code to remedy the error, most probably by reducing the amount of time your code spends in loops.
+If you use large arrays and loop through them, your script may generate this error. 
+It tells you that your script's total runtime on the dataset has exceeded the alloted 20-second time period. 
+You will need to simplify your code to remedy the error, most probably by reducing the amount of time your code spends in loops.
 
 Cannot modify an array when its id is `na`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
