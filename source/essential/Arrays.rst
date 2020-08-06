@@ -337,7 +337,7 @@ Use ``array.reverse()`` to reverse an array::
     array.push(a, 2)
     if barstate.islast
         array.reverse(a)
-        label.new(bar_index, 0, "a: " + tostring(a) + "\n\n")
+        label.new(bar_index, 0, "a: " + tostring(a))
 
 Slicing
 ^^^^^^^
@@ -429,12 +429,16 @@ When you size arrays dynamically using a field in your script's *Settings/Inputs
     plot(array.size(a))
 
 
-Calculation takes too long to execute (> 20000 ms)
+xx: Calculation takes too long to execute (> 20000 ms)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+If you use large arrays and loop through them, your script may generate this error. It tells you that your script's total runtime on the dataset 
+has exceeded the allowed time. You will need to simplify your code to remedy the error, most probably by reducing the amount of time your code spends in loops.
 
 Cannot modify an array when its id is `na`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When an array id is initialized to ``na``, operations on it are not allowed.
 
 Array is too large. Maximum size is 100000
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
