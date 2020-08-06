@@ -468,6 +468,7 @@ It will also occur if, while dynamically appending elements to an array, a new e
 Cannot create an array with a negative size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+We haven't found any use for arrays of negative size yet. If you ever do, we may allow them.
 
 Cannot call `pop()` if array is empty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
