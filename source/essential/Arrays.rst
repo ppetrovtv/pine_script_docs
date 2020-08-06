@@ -40,7 +40,8 @@ The following syntax can be used to declare arrays::
 
 The ``[]`` modifier is appended to the type name when declaring arrays. However, since type-specific functions are used to create an array,
 the ``<type>[]`` part of the declaration is redundant, except if you initialize the array id to ``na``, as in this example, 
-which declares an empty array of *float* values with an array id named ``prices``::
+which declares an array variable named ``prices``. The variable will be used to designate a yet undefined array containing *float* values, 
+as for the moment, the array variable contains no valid array id, its value being ``na``::
 
     float[] prices = na
 
