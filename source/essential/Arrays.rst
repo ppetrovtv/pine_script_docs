@@ -258,7 +258,7 @@ Calculations on arrays
 ``array.variance()``
 ``array.covariance()``
 
-
+XXX: Mention the fact that ops on arrays containing ``na`` values don't return ``na``.
 
 Manipulating arrays
 -------------------
