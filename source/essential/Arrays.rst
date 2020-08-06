@@ -483,6 +483,13 @@ When two indices are used in functions like ``array.slice()``, the first index m
 Index is out of bounds
 ^^^^^^^^^^^^^^^^^^^^^^
 
+XXX: Need info on this one.
+
+.
+.
+.
+.
+.
 
 ═══════════════════════ JUNK ═════════════════════════
 
