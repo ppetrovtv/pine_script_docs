@@ -115,7 +115,7 @@ are equivalent.
 Scope of arrays
 ---------------
 
-Arrays can be declared in a script's global scope, or in local scopes such as function and ``if`` branch scopes.
+Arrays can be declared in a script's global scope, or in the local scope of a function or an ``if`` branch.
 One major distinction between global scope arrays and variables in Pine is that global scope arrays can be modified from within the local scope of a function.
 A Pine function, for example, can thus modify an array declared in the script's global scope. This new capability can be used to implement 
 global variables that can be both read and written to from within any function in the script. We use it here to calculate progressively 
