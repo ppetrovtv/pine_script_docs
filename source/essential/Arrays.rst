@@ -219,7 +219,8 @@ Using an array as a queue
 Queues are FIFO (first in, first out) constructions. They behave somewhat like cars arriving at a red light. 
 New cars are queued at the end of the line, and the first car to leave will be the first one that arrived to the red light. 
 In the following code example, we will be starting with an empty queue. 
-We will add new values to the end of the array and when we remove a value we will always remove the one at index zero. 
+We will add new values to the end of the array. When we remove a value from the queue, we will remove the oldest value, 
+which is always sitting at the beginning of the array, at index zero. 
 We can use ``array.push()`` to append new values at the end of the array, 
 and we will be using ``array.remove()`` with an index of zero to remove the array's first element when we need to de-queue and element::
 
