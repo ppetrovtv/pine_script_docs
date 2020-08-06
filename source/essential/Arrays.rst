@@ -342,11 +342,20 @@ Use ``array.reverse()`` to reverse an array::
 Slicing
 ^^^^^^^
 
-Slicing an array using ``array.slice()`` creates a shallow copy of a subset of the array. 
-Once the shallow copy is created, operations on the copy are mirrored on the original, parent array. 
+Slicing an array using ``array.slice()`` creates a shallow copy of a subset of the parent array. 
 You determine the size of the subset to slice using the ``index_from`` and ``index_to`` parameters. 
 The ``index_to`` argument must be one greater than the end of the subset you want to slice. 
-In this example, to slice the subset from index 1 to 2 of array ``a``, we must use ``_sliceOfA = array.slice(a, 1, 3)``::
+
+The shallow copy created by the slice acts like a window on the parent array's content. 
+The indices used for the slice define the window's position and size over the parent array. 
+If, as in the example below, a slice is created from the first three elements of an array (indices 0 to 2),
+then regardless of changes made to the parent array, and as long as it contains at least three elements, 
+the shallow copy will always contain the parent array's first three elements.
+
+Additionally, once the shallow copy is created, operations on the copy are mirrored on the parent array. 
+Adding an element to the end of the shallow copy, as is done in the following example, 
+will widen the window by one element and also insert that element in the parent array at index 3.
+In this example, to slice the subset from index 0 to index 2 of array ``a``, we must use ``_sliceOfA = array.slice(a, 0, 3)``::
 
     //@version=4
     study("`array.slice()`")
@@ -357,12 +366,13 @@ In this example, to slice the subset from index 1 to 2 of array ``a``, we must u
     array.push(a, 3)
     if barstate.islast
         // Create a shadow of elements at index 1 and 2 from array `a`.
-        _sliceOfA = array.slice(a, 1, 3)
+        _sliceOfA = array.slice(a, 0, 3)
         label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\n_sliceOfA: " + tostring(_sliceOfA))
-        // Add a new element at the end of the shadow array, thus also affecting the original array `a`.
+        // Remove first element of parent array `a`.
+        array.remove(a, 0)
+        // Add a new element at the end of the shallow copy, thus also affecting the original array `a`.
         array.push(_sliceOfA, 4)
         label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\n_sliceOfA: " + tostring(_sliceOfA), style = label.style_label_up)
-
 
 
 Searching arrays
