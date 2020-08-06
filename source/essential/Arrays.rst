@@ -121,7 +121,7 @@ This new capability can be used to implement global variables that can be both r
 We use it here to calculate progressively lower or higher levels::
 
     //@version=4
-    study("Stepped lows", "", true)
+    study("Bands", "", true)
     i_factor = 1 + (input(-2., "Step %") / 100)
     // Use the lowest average OHLC in last 50 bars from 10 bars back as the our base level.
     level = array.new_float(1, lowest(ohlc4, 50)[10])
