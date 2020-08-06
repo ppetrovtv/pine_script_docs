@@ -396,7 +396,8 @@ when you save a script. Refer to the Pine Reference Manual when in doubt regardi
 Scripts using arrays can also throw **runtime** errors, which appear in place of the indicator's name on charts. 
 We discuss those runtime errors in this section.
 
-**Index xx is out of bounds. Array size is yy**
+Index xx is out of bounds. Array size is yy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This will most probably be the most frequent error you encounter. It will happen when you reference an inexistent array index. 
 The "xx" value will be the value of the faulty index you tried to use, and "yy" will be the size of the array. 
@@ -428,8 +429,8 @@ When you size arrays dynamically using a field in your script's *Settings/Inputs
     plot(array.size(a))
 
 
-**Calculation takes too long to execute (> 20000 ms)**
-
+Calculation takes too long to execute (> 20000 ms)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 **Cannot modify an array when its id is `na`**
