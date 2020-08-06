@@ -438,7 +438,18 @@ has exceeded the allowed time. You will need to simplify your code to remedy the
 Cannot modify an array when its id is `na`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an array id is initialized to ``na``, operations on it are not allowed.
+When an array id is initialized to ``na``, operations on it are not allowed. This code will throw the error::
+
+    //@version=4
+    study("Out of bounds index")
+    int[] a = na
+    array.push(a, 111)
+    label.new(bar_index, 0, "a: " + tostring(a))
+
+To avoid it, create an array with size zero using::
+
+    int[] a = array.new_int(0)
+
 
 Array is too large. Maximum size is 100000
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
