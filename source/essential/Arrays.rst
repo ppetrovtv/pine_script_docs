@@ -148,7 +148,7 @@ We use it here to calculate progressively lower or higher levels::
     
     f_nextLevel(_val) =>
         _newLevel = array.get(level, 0) * _val
-        // Write new level to the global array so it can be used as the base in the next call to the `f_nextLevel()`.
+        // Write new level to the global array so it can be used as the base in the next call to this function.
         array.set(level, 0, _newLevel)
         _newLevel
     
