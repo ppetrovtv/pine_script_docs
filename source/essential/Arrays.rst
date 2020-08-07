@@ -124,9 +124,10 @@ and::
 are equivalent, but::
 
     a = array.new_float(10)
-    array.fill(a, close, 1, 2)
+    array.fill(a, close, 1, 3)
 
 only fills the second and third element of the array with ``close``. 
+Note how ``array.fill()``'s last parameter, ``index_to``, needs to be one greater than the last index to be filled. 
 The remaining elements will hold the ``na`` value, as no intialization value was provided when the array was declared.
 
 
