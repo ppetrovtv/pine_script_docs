@@ -16,7 +16,6 @@ before you tackle arrays.
 
 Pine arrays are one-dimensional. All elements of an array are of the same type, which can be *int*, *float*, *bool* or *color*, always of *series* form. 
 Arrays are referenced using an array *id*, similar to label and line id's. 
-As with other Pine variables, the ``[ ]`` history-referencing operator can be used with array id's to refer to past instances of an array on previous bars. 
 Pine does not use an indexing operator to reference individual array elements;
 instead, functions like ``array.get()`` and ``array.set()`` are used to read and write values of array elements. 
 Array values can be used in all Pine expressions and functions where a value of *series* form is allowed.
