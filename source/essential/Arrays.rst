@@ -99,7 +99,7 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
     plotchar(lastHiBar, "lastHiBar", "", location.top, size = size.tiny)
     plotchar(fillNo, "fillNo", "", location.top, size = size.tiny)
 
-Another technique that can be used to initialize the elements in an array is to declare the array with a zero size, and then populate it using ``array.push()`` 
+Another technique that can be used to initialize the elements in an array is to declare the array with size zero, and then populate it using ``array.push()`` 
 to append **new** elements to the end of the array, increasing the size of the array by one at each call. 
 This code is functionally identical to the initialization section from the preceding script. Note that we do not use ``var`` to declare the array in this case.
 If we did, the set of pushes would add 5 new elements to the array on each bar, since the array would propagate over successive bars::
