@@ -240,7 +240,7 @@ and we will be using ``array.remove()`` with an index of zero to remove the arra
         if array.size(pivotBars) > i_pivotCount
             // The queue was already full; remove its oldest element,
             // using it to delete the oldest label in the queue.
-            label.delete(pLabel[bar_index - array.remove(pivotBars, 0)])
+            label.delete(pLabel[bar_index - array.shift(pivotBars)])
             
         pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi))
 
@@ -477,10 +477,10 @@ Cannot create an array with a negative size
 
 We haven't found any use for arrays of negative size yet, but if you ever do, we may allow them )
 
-Cannot call `pop()` if array is empty
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cannot use `pop()` or `shift()` if array is empty.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As ``array.pop()`` removes an array's last element, it cannot be called if the array is empty.
+This error will occur if ``array.pop()`` or ``array.shift()`` are called to remove an element from an empty array.
 
 Index 'from' should be less than index 'to'
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
