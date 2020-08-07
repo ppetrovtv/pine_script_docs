@@ -136,7 +136,7 @@ Scope
 -----
 
 Arrays can be declared in a script's global scope, as well as in the local scope of a function or an ``if`` branch.
-One major distinction between Pine arrays and variables declared in the global scope is that global arrays can be modified from within the local scope of a function.
+One major distinction between Pine arrays and variables declared in the global scope, is that global arrays can be modified from within the local scope of a function.
 This new capability can be used to implement global variables that can be both read and set from within any function in the script. 
 We use it here to calculate progressively lower or higher levels::
 
