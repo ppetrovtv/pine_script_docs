@@ -226,7 +226,7 @@ In the following code example, we will be starting with an empty queue.
 We will add new values to the end of the array. When we remove a value from the queue, we will remove the oldest value, 
 which is always sitting at the beginning of the array, at index zero. 
 We can use ``array.push()`` to append new values at the end of the array, 
-and we will be using ``array.remove()`` with an index of zero to remove the array's first element when we need to de-queue and element::
+and we will be using ``array.shift()`` to remove the array's first element when we need to de-queue and element::
 
     //@version=4
     study("Queue example: Show last n High Pivots", "", true)
