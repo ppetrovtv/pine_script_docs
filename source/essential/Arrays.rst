@@ -99,6 +99,8 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
     plotchar(lastHiBar, "lastHiBar", "", location.top, size = size.tiny)
     plotchar(fillNo, "fillNo", "", location.top, size = size.tiny)
 
+|Arrays-ReadingAndWriting-DistanceFromHigh.png|
+
 Another technique that can be used to initialize the elements in an array is to declare the array with size zero, and then populate it using ``array.push()`` 
 to append **new** elements to the end of the array, increasing the size of the array by one at each call. 
 The following code is functionally identical to the initialization section from the preceding script. Note that we do not use ``var`` to declare the array in this case.
@@ -509,6 +511,9 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
     array.remove(a, 0)
     c = array.indexof(b, 2)
     plot(c)
+
+.. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: images/Arrays-ReadingAndWriting-DistanceFromHigh.png
+
 
 .
 .
