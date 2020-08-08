@@ -355,7 +355,7 @@ Calculations on arrays
 
 While series variables can be viewed as a horizontal set of values stretching back in time, Pine's one-dimensional arrays can be viewed as vertical structures 
 residing on each bar. As an array's set of elements is not a series, Pine's usual mathematical functions are not allowed on them. Special-purpose functions must be used 
-to operate on all of array's values.
+to operate on all of an array's values.
 
 ``array.avg()``
 ``array.min()``
