@@ -76,10 +76,9 @@ The following example uses ``array.set()`` to initialize an array of colors to i
 It then fetches the proper array element to use it in a ``bgcolor()`` call::
 
     //@version=4
-    study("array.set()", "", true)
+    study("Distance from high", "", true)
     i_lookBack = input(100)
     c_fillColor = color.green
-    // Declare our array of fill colors (initial value of all elements is `na`).
     var c_fills = array.new_color(5)
     // Initialize the array elements with progressively lighter shades of the fill color.
     array.set(c_fills, 0, color.new(c_fillColor, 70))
@@ -186,9 +185,9 @@ See how the functions are used here to remember successive lows in rallies::
     //@version=4
     study("Lows from new highs", "", true)
     var lows = array.new_float(0)
-    flushHighs = false
+    flushLows = false
     
-    // Pop an element from the stack when `_cond` is true.
+    // Remove last element from the stack when `_cond` is true.
     f_array_pop(_id, _cond) => _cond and array.size(_id) > 0 ? array.pop(_id) : float(na)
     
     if rising(high, 1)
@@ -200,22 +199,23 @@ See how the functions are used here to remember successive lows in rallies::
         // We have at least 4 lows or price has breached the lowest low;
         // sort lows and set flag indicating we will plot and flush the levels.
         array.sort(lows, order.ascending)
-        flushHighs := true
+        flushLows := true
     
     // If needed, plot and flush lows.
-    lowLevel = f_array_pop(lows, flushHighs)
-    plot(lowLevel, "Low 1", low > lowLevel ? color.silver : color.fuchsia, 2, plot.style_linebr)
-    lowLevel := f_array_pop(lows, flushHighs)
-    plot(lowLevel, "Low 2", low > lowLevel ? color.silver : color.fuchsia, 3, plot.style_linebr)
-    lowLevel := f_array_pop(lows, flushHighs)
-    plot(lowLevel, "Low 3", low > lowLevel ? color.silver : color.fuchsia, 4, plot.style_linebr)
-    lowLevel := f_array_pop(lows, flushHighs)
-    plot(lowLevel, "Low 4", low > lowLevel ? color.silver : color.fuchsia, 5, plot.style_linebr)
+    lowLevel = f_array_pop(lows, flushLows)
+    plot(lowLevel, "Low 1", low > lowLevel ? color.silver : color.purple, 2, plot.style_linebr)
+    lowLevel := f_array_pop(lows, flushLows)
+    plot(lowLevel, "Low 2", low > lowLevel ? color.silver : color.purple, 3, plot.style_linebr)
+    lowLevel := f_array_pop(lows, flushLows)
+    plot(lowLevel, "Low 3", low > lowLevel ? color.silver : color.purple, 4, plot.style_linebr)
+    lowLevel := f_array_pop(lows, flushLows)
+    plot(lowLevel, "Low 4", low > lowLevel ? color.silver : color.purple, 5, plot.style_linebr)
     
-    if flushHighs
+    if flushLows
         // Clear remaining levels after the last 4 have been plotted.
         array.clear(lows)
 
+|Arrays-ReadingAndWriting-DistanceFromHigh.png|
 
 Using an array as a queue
 ^^^^^^^^^^^^^^^^^^^^^^^^^
