@@ -307,7 +307,7 @@ You can copy an array using ``array.copy()``. Here we copy the array ``a`` to a 
     if barstate.islast
         _b = array.copy(a)
         array.push(_b, 2)
-        label.new(bar_index, 0, "a: " + tostring(a) + "\n_b: " + tostring(_b))
+        label.new(bar_index, 0, "a: " + tostring(a) + "\n_b: " + tostring(_b), size = size.large)
 
 Note that simply using ``_b = a`` in the previous example would not have copied the array, but only its id. 
 From thereon, both variables would point to the same array, so using either one would affect the same array.
