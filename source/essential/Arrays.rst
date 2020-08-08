@@ -186,13 +186,13 @@ Inserting and removing array elements
 Inserting
 ^^^^^^^^^
 
-Two functions can be used to insert new elements in an array.
+Three functions can be used to insert new elements in an array.
 
 ``array.unshift()`` inserts a new element at the beginning of an array, at index zero, 
 and shifts any existing elements right by one.
 
 ``array.insert()`` can insert a new element at any position in the array. Its ``index=`` parameter is the index where the new element will be added. 
-The element existing at the index used in the function call and all others to its right are shifted one place to the right::
+The element existing at the index used in the function call and any others to its right are shifted one place to the right::
 
     //@version=4
     study("`array.insert()`")
@@ -204,13 +204,21 @@ The element existing at the index used in the function call and all others to it
         array.insert(a, 2, 999)    
         label.new(bar_index, 0, "AFTER\na: " + tostring(a), style = label.style_label_up, size = size.large)
 
+``array.push()`` will add a new element at the end of an array.
+
+
 Removing
 ^^^^^^^^
 
-Three functions can be used 
-``array.remove()``
-``array.shift()``
-``array.clear()``
+Four functions can be used to remove elements from an array. The first three will return the value of the removed element.
+
+``array.remove()`` removes the element at the ``index=`` value used, and returns that element's value.
+
+``array.shift()`` removes the first element from an array and returns its value.
+
+``array.pop()`` removes the last element of an array and returns its value.
+
+``array.clear()`` will remove all elements in the array.
 
 
 Using an array as a stack
