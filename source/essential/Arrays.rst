@@ -47,7 +47,7 @@ but no array is created by this declaration yet. For the moment, the array varia
 When declaring an array and the ``<expression>`` is not ``na``, one of the ``array.new_<type>(size, initial_value)`` functions must be used. 
 The arguments of both the ``size=`` and ``initial_value=`` parameters can be *series*, to allow dynamic sizing and initialization of array elements.
 The following example creates an array containing zero *float* elements, 
-and this time, the array id returned by the ``array.new_float(0)`` function is assigned to ``prices``.
+and this time, the array id returned by the ``array.new_float(0)`` function is assigned to ``prices``::
 
     prices = array.new_float(0)
 
