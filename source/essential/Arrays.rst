@@ -292,6 +292,7 @@ so the first array is modified while the second one remains intact. The function
         array.push(_c, 4)
         label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(_c), style = label.style_label_up)
 
+|Arrays-ManipulatingArrays-Concat.png|
 
 Copying
 ^^^^^^^
@@ -521,4 +522,5 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 
 .. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
+.. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
 
