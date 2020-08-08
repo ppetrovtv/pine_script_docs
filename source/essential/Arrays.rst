@@ -478,10 +478,15 @@ Cannot create an array with a negative size
 
 We haven't found any use for arrays of negative size yet, but if you ever do, we may allow them )
 
-Cannot use `pop()` or `shift()` if array is empty.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cannot use `shift()` if array is empty.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This error will occur if ``array.pop()`` or ``array.shift()`` are called to remove an element from an empty array.
+This error will occur if ``array.shift()`` is called to remove the first element of an empty array.
+
+Cannot use `pop()` if array is empty.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This error will occur if ``array.pop()`` is called to remove the last element of an empty array.
 
 Index 'from' should be less than index 'to'
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
