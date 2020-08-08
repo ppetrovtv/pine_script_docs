@@ -426,8 +426,9 @@ It is of form *series*, so can be determined at runtime, as is done here. Note t
     if barstate.islast
         _barUp = close > open
         array.sort(_barUp ? a : b, _barUp ? order.ascending : order.descending)
-        label.new(bar_index, 0, "a " + (_barUp ? "is sorted ▲: " : ": ") + tostring(a) + "\n\n")
-        label.new(bar_index, 0, "b " + (_barUp ? ": " : "is sorted ▼: ") + tostring(b))
+        label.new(bar_index, 0, 
+          "a " + (_barUp ? "is sorted ▲: " : ": ") + tostring(a) + 
+          "\n\nb " + (_barUp ? ": " : "is sorted ▼: ") + tostring(b), size = size.large)
 
 |Arrays-ManipulatingArrays-Sort.png|
 
