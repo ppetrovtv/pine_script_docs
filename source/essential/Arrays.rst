@@ -228,24 +228,29 @@ which is always sitting at the beginning of the array, at index zero.
 We can use ``array.push()`` to append new values at the end of the array, 
 and we will be using ``array.shift()`` to remove the array's first element when we need to de-queue and element::
 
-    //@version=4
-    study("Queue example: Show last n High Pivots", "", true)
-    i_pivotCount = input(10)
-    i_pivotLegs  = input(3)
-    
-    pivotBars = array.new_int(0)
-    label pLabel = na
-     
-    pHi = pivothigh(i_pivotLegs, i_pivotLegs)
-    if not na(pHi)
-        // New pivot found; append the bar_index of the new pivot to the end of the array.
-        array.push(pivotBars, bar_index - i_pivotLegs)
-        if array.size(pivotBars) > i_pivotCount
-            // The queue was already full; remove its oldest element,
-            // using it to delete the oldest label in the queue.
-            label.delete(pLabel[bar_index - array.shift(pivotBars)])
-            
-        pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi))
+//@version=4
+study("Show last n High Pivots", "", true)
+i_pivotCount = input(10)
+i_pivotLegs  = input(3)
+
+f_tickFormat() =>
+    _s = tostring(syminfo.mintick)
+    _s := str.replace_all(_s, "25", "00")
+    _s := str.replace_all(_s, "5",  "0")
+    _s := str.replace_all(_s, "1",  "0")
+
+var pivotBars = array.new_int(0)
+label pLabel = na
+pHi = pivothigh(i_pivotLegs, i_pivotLegs)
+if not na(pHi)
+    // New pivot found; append the bar_index of the new pivot to the end of the array.
+    array.push(pivotBars, bar_index - i_pivotLegs)
+    if array.size(pivotBars) > i_pivotCount
+        // The queue was already full; remove its oldest element,
+        // using it to delete the oldest label in the queue.
+        label.delete(pLabel[bar_index - array.shift(pivotBars)])
+        
+    pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi, f_tickFormat()))
 
 
 
