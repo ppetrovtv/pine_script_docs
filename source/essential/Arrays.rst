@@ -484,6 +484,7 @@ In this example, to slice the subset from index 0 to index 2 of array ``a``, we 
         array.push(_sliceOfA, 4)
         label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\n_sliceOfA: " + tostring(_sliceOfA), style = label.style_label_up)
 
+|Arrays-ManipulatingArrays-Slice.png|
 
 Searching arrays
 ----------------
@@ -628,4 +629,5 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
 .. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
 .. |Arrays-ManipulatingArrays-Sort.png| image:: ../images/Arrays-ManipulatingArrays-Sort.png
+.. |Arrays-ManipulatingArrays-Slice.png| image:: ../images/Arrays-ManipulatingArrays-Slice.png
 
