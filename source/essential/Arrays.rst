@@ -429,6 +429,8 @@ It is of form *series*, so can be determined at runtime, as is done here. Note t
         label.new(bar_index, 0, "a " + (_barUp ? "is sorted ▲: " : ": ") + tostring(a) + "\n\n")
         label.new(bar_index, 0, "b " + (_barUp ? ": " : "is sorted ▼: ") + tostring(b))
 
+|Arrays-ManipulatingArrays-Sort.png|
+
 Reversing
 ^^^^^^^^^
 
@@ -616,9 +618,10 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 
 
 .. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
+.. |Arrays-HistoryReferencing.png| image:: ../images/Arrays-HistoryReferencing.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
+.. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
 .. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
 .. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
-.. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
-.. |Arrays-HistoryReferencing.png| image:: ../images/Arrays-HistoryReferencing.png
+.. |Arrays-ManipulatingArrays-Sort.png| image:: ../images/Arrays-ManipulatingArrays-Sort.png
 
