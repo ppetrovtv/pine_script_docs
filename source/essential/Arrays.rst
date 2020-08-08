@@ -180,6 +180,46 @@ We use it here to calculate progressively lower or higher levels::
 
 
 
+History referencing
+-------------------
+
+Past instances of array elements can be referenced using Pine's ``[ ]`` history-referencing operator. Arrays ids, however cannot. 
+In the following example, we fetch the previous bar's ``close`` value in two, equivalent ways. The first method used for ``previousClose1`` 
+uses the previous bar's instance of the array's only element. The second method used for ``previousClose2`` is the usual way Pine coders would go about it::
+
+    //@version=4
+    study("History referencing")
+    a = array.new_float(1)
+    array.set(a, 0, close)
+    previousClose1 = array.get(a, 0)[1]
+    previousClose2 = close[1]
+    plot(previousClose1, "previousClose1", color.gray, 6)
+    plot(previousClose2, "previousClose2", color.white, 2)
+
+Note that since historical instances of an array id's cannot be referenced, the following code is not allowed::
+
+    previousClose1 = array.get(a[1], 0)
+
+Because the history of array elements is preserved, Pine's functions can use them, as they normally are used on series. 
+In the following example, we add two, equivalent calculations of a moving average::
+
+    //@version=4
+    study("History referencing")
+    a = array.new_float(1)
+    array.set(a, 0, close)
+
+    previousClose1 = array.get(a, 0)[1]
+    previousClose2 = close[1]
+    plot(previousClose1, "previousClose1", color.gray, 6)
+    plot(previousClose2, "previousClose2", color.white, 2)
+
+    ma1 = sma(array.get(a, 0), 20)
+    ma2 = sma(close, 20)
+    plot(ma1, "ma1", color.aqua, 6)
+    plot(ma2, "ma2", color.white, 2)
+
+|Arrays-HistoryReferencing.png|
+
 Inserting and removing array elements
 -------------------------------------
 
@@ -580,4 +620,5 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
 .. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
 .. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
+.. |Arrays-HistoryReferencing.png| image:: ../images/Arrays-HistoryReferencing.png
 
