@@ -47,11 +47,9 @@ but no array is created by this declaration yet. For the moment, the array varia
 When declaring an array and the ``<expression>`` is not ``na``, one of the ``array.new_<type>(size, initial_value)`` functions must be used. 
 The arguments of both the ``size=`` and ``initial_value=`` parameters can be *series*, to allow dynamic sizing and initialization of array elements.
 The following example creates an array containing zero *float* elements, 
-and this time the array id returned by the ``array.new_float(0)`` function call is assigned to ``prices``.
-Additionally, because the ``var`` keyword is used in the declaration, the array is only initialized on the first bar,
-so its values will propagate across bars::
+and this time, the array id returned by the ``array.new_float(0)`` function is assigned to ``prices``.
 
-    var prices = array.new_float(0)
+    prices = array.new_float(0)
 
 Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
 
@@ -63,6 +61,27 @@ The array is created with two elements, each initialized with the value of the v
     prices = array.new_float(2, close)
 
 There is currently no way to initialize array elements with different values, whether upon declaration or post-declaration, using a single function call. One is planned for the near future.
+
+Using the 'var' keyword
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``var`` keyword can be used when declaring arrays. It works just as it does for other variables; it causes the declaration to only 
+be executed on the first iteration of the script on the dataset's bar at ``bar_index`` zero. Because the array is never re-initialized on subsequent bars, 
+its value will persist across bars, as the script iterates on them.
+
+When an array declaration is done using ``var`` and a new value is pushed at its end on each bar, the array will grow by one on each bar and be of size ``bar_index`` plus one (bar_index starts at zero) by the time the script executes on the last bar, as this code will do::
+
+    //@version=4
+    study("Using `var`")
+    var a = array.new_float(0)
+    array.push(a, close)
+    if barstate.islast
+        label.new(bar_index, 0, "Array size: " + tostring(array.size(a)) + "\nbar_index: " + tostring(bar_index), size = size.large)
+
+The same code without the ``var`` keyword would re-declare the array on each bar. After execution of the ``array.push()`` call, 
+the array would thus be of size one on all the dataset's bars.
+
+
 
 Reading and writing array values
 --------------------------------
