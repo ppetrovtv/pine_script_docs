@@ -244,7 +244,7 @@ See how the functions are used here to remember successive lows in rallies::
     f_array_pop(_id, _cond) => _cond and array.size(_id) > 0 ? array.pop(_id) : float(na)
     
     if rising(high, 1)
-        // Consecutive high; push a new low on the stack.
+        // Rising highs; push a new low on the stack.
         array.push(lows, low)
         // Force the return type of this `if` block to be the same as that of the next block.
         bool(na)
