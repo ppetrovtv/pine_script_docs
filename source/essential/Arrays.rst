@@ -178,6 +178,8 @@ We use it here to calculate progressively lower or higher levels::
     plot(f_nextLevel(i_factor))
     plot(f_nextLevel(i_factor))
 
+|Arrays-Scope-Bands.png|
+
 
 
 History referencing
@@ -620,6 +622,7 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 
 .. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
 .. |Arrays-HistoryReferencing.png| image:: ../images/Arrays-HistoryReferencing.png
+.. |Arrays-Scope-Bands.png| image:: ../images/Arrays-Scope-Bands.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
 .. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
 .. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
