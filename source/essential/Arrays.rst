@@ -312,6 +312,8 @@ You can copy an array using ``array.copy()``. Here we copy the array ``a`` to a 
 Note that simply using ``_b = a`` in the previous example would not have copied the array, but only its id. 
 From thereon, both variables would point to the same array, so using either one would affect the same array.
 
+|Arrays-ManipulatingArrays-Copy.png|
+
 Sorting
 ^^^^^^^
 
@@ -523,4 +525,6 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
 .. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
+.. |Arrays-ManipulatingArrays-Copy.png| image:: ../Arrays-ManipulatingArrays-Copy.png
+
 
