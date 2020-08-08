@@ -182,10 +182,34 @@ We use it here to calculate progressively lower or higher levels::
 
 Inserting and removing array elements
 -------------------------------------
-``array.insert()``
+
+Inserting
+^^^^^^^^^
+
+Two functions can be used to insert new elements in an array.
+
+``array.unshift()`` inserts a new element at the beginning of an array, at index zero, 
+and shifts any existing elements right by one.
+
+``array.insert()`` can insert a new element at any position in the array. Its ``index=`` parameter is the index where the new element will be added. 
+The element existing at the index used in the function call and all others to its right are shifted one place to the right::
+
+    //@version=4
+    study("`array.insert()`")
+    a = array.new_float(5, 0)
+    for _i = 0 to 4
+        array.set(a, _i, _i + 1)
+    if barstate.islast
+        label.new(bar_index, 0, "BEFORE\na: " + tostring(a), size = size.large)
+        array.insert(a, 2, 999)    
+        label.new(bar_index, 0, "AFTER\na: " + tostring(a), style = label.style_label_up, size = size.large)
+
+Removing
+^^^^^^^^
+
+Three functions can be used 
 ``array.remove()``
 ``array.shift()``
-``array.unshift()``
 ``array.clear()``
 
 
