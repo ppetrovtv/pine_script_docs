@@ -518,8 +518,7 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 
 ═══════════════════════ JUNK ═════════════════════════
 
-xx: Calculation takes too long to execute (> 20000 ms)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**xx: Calculation takes too long to execute (> 20000 ms)**
 
 If you use large arrays and loop through them, your script may generate this error. 
 It tells you that your script's total runtime on the dataset has exceeded the alloted 20-second time period. 
