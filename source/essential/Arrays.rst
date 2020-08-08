@@ -351,7 +351,12 @@ and we will be using ``array.shift()`` to remove the array's first element when 
 
 
 Calculations on arrays
--------------------
+----------------------
+
+While series variables can be viewed as a horizontal set of values stretching back in time, Pine's one-dimensional arrays can be viewed as vertical structures 
+residing on each bar. As an array's set of elements is not a series, Pine's usual mathematical functions are not allowed on them. Special-purpose functions must be used 
+to operate on all of array's values.
+
 ``array.avg()``
 ``array.min()``
 ``array.max()``
@@ -363,7 +368,10 @@ Calculations on arrays
 ``array.variance()``
 ``array.covariance()``
 
-XXX: Mention the fact that ops on arrays containing ``na`` values don't return ``na``.
+.. note:: Contrary to the usual mathematical functions in Pine, those used on arrays do not return ``na`` when one or more values they 
+calculate on have ``na`` values.
+
+
 
 Manipulating arrays
 -------------------
