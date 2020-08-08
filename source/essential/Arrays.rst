@@ -287,10 +287,10 @@ so the first array is modified while the second one remains intact. The function
     array.push(b, 2)
     array.push(b, 3)
     if barstate.islast
-        label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\nb: " + tostring(b))
+        label.new(bar_index, 0, "BEFORE\na: " + tostring(a) + "\nb: " + tostring(b), size = size.large)
         _c = array.concat(a, b)
         array.push(_c, 4)
-        label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(_c), style = label.style_label_up)
+        label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(_c), style = label.style_label_up, size = size.large)
 
 |Arrays-ManipulatingArrays-Concat.png|
 
