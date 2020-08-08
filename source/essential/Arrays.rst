@@ -418,7 +418,7 @@ This will most probably be the most frequent error you encounter. It will happen
 The "xx" value will be the value of the faulty index you tried to use, and "yy" will be the size of the array. 
 Recall that array indices start at zero—not one—and end at the array's size, minus one. An array of size 3's last valid index is thus ``2``.
 
-To avoid this error, you must make provisions in your code logic to prevent using an index lying outside the array's index boundaries. 
+To avoid this error, you must make provisions in your code logic to prevent using an index lying outside of the array's index boundaries. 
 This code will generate the error because the last index we use in the loop is outside the valid index range for the array::
 
     //@version=4
