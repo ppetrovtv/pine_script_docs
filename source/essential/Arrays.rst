@@ -215,7 +215,7 @@ See how the functions are used here to remember successive lows in rallies::
         // Clear remaining levels after the last 4 have been plotted.
         array.clear(lows)
 
-|Arrays-ReadingAndWriting-DistanceFromHigh.png|
+|Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png|
 
 Using an array as a queue
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -515,3 +515,5 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 
 
 .. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
+.. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
+
