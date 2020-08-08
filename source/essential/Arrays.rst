@@ -514,4 +514,4 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 
 
 
-.. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: images/Arrays-ReadingAndWriting-DistanceFromHigh.png
+.. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
