@@ -525,6 +525,6 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-ReadingAndWriting-DistanceFromHigh.png| image:: ../images/Arrays-ReadingAndWriting-DistanceFromHigh.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
 .. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
-.. |Arrays-ManipulatingArrays-Copy.png| image:: ../Arrays-ManipulatingArrays-Copy.png
+.. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
 
 
