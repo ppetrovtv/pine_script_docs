@@ -45,7 +45,7 @@ but no array is created by this declaration yet. For the moment, the array varia
     float[] prices = na
 
 When declaring an array and the ``<expression>`` is not ``na``, one of the ``array.new_<type>(size, initial_value)`` functions must be used. 
-The arguments of both the ``size=`` and ``initial_value=`` parameters can be *series*, to allow dynamic sizing and initialization of array elements.
+The arguments of both the ``size`` and ``initial_value`` parameters can be *series*, to allow dynamic sizing and initialization of array elements.
 The following example creates an array containing zero *float* elements, 
 and this time, the array id returned by the ``array.new_float(0)`` function is assigned to ``prices``::
 
@@ -53,8 +53,8 @@ and this time, the array id returned by the ``array.new_float(0)`` function is a
 
 Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
 
-When declaring an array, you can initialize all elements in the array using the ``initial_value=`` parameter. 
-When no argument is supplied for ``initial_value=``, the array elements are initialized to ``na``.
+When declaring an array, you can initialize all elements in the array using the ``initial_value`` parameter. 
+When no argument is supplied for ``initial_value``, the array elements are initialized to ``na``.
 The following declaration creates and array id named ``prices``.
 The array is created with two elements, each initialized with the value of the value of the ``close`` built-in variable on that bar::
 
@@ -236,7 +236,7 @@ Three functions can be used to insert new elements in an array.
 ``array.unshift()`` inserts a new element at the beginning of an array, at index zero, 
 and shifts any existing elements right by one.
 
-``array.insert()`` can insert a new element at any position in the array. Its ``index=`` parameter is the index where the new element will be added. 
+``array.insert()`` can insert a new element at any position in the array. Its ``index`` parameter is the index where the new element will be added. 
 The element existing at the index used in the function call and any others to its right are shifted one place to the right::
 
     //@version=4
@@ -259,7 +259,7 @@ Removing
 
 Four functions can be used to remove elements from an array. The first three will return the value of the removed element.
 
-``array.remove()`` removes the element at the ``index=`` value used, and returns that element's value.
+``array.remove()`` removes the element at the ``index`` value used, and returns that element's value.
 
 ``array.shift()`` removes the first element from an array and returns its value.
 
