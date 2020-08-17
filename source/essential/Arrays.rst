@@ -56,11 +56,12 @@ Similar array creation functions exist for the other types of array elements: ``
 When declaring an array, you can initialize all elements in the array using the ``initial_value`` parameter. 
 When no argument is supplied for ``initial_value``, the array elements are initialized to ``na``.
 The following declaration creates and array id named ``prices``.
-The array is created with two elements, each initialized with the value of the value of the ``close`` built-in variable on that bar::
+The array is created with two elements, each initialized with the value of the ``close`` built-in variable on that bar::
 
     prices = array.new_float(2, close)
 
-There is currently no way to initialize array elements with different values, whether upon declaration or post-declaration, using a single function call. One is planned for the near future.
+There is currently no way to initialize array elements with different values, whether upon declaration or post-declaration, using a single function call. 
+One is planned for the near future.
 
 Using the 'var' keyword
 ^^^^^^^^^^^^^^^^^^^^^^^
