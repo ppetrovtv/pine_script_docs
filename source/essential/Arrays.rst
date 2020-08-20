@@ -51,7 +51,10 @@ function call is assigned to ``prices``::
 
     prices = array.new_float(0)
 
-Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
+Similar array creation functions exist for the other types of array elements: 
+`array.new_int() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_int>`__,
+`array.new_bool() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_bool>`__ and 
+`array.new_color() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_color>`__.
 
 When declaring an array, you can initialize all elements in the array using the ``initial_value`` parameter. 
 When no argument is supplied for ``initial_value``, the array elements are initialized to ``na``.
