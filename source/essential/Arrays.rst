@@ -24,8 +24,7 @@ Elements within an array are referred to using an *index*, which starts at 0 and
 Arrays in Pine can be sized dynamically, so the number of elements in the array can be modified within one iteration of the script on a bar,
 and vary across bars. Multiple arrays can be used by the same script. The size of arrays is limited to 100,000 but multiple arrays of maximum size can be used in one script.
 
-.. note:: We will use "beginning" of an array to designate index 0, and "end" of an array to designate the array's element with the highest index value. 
-We will also extend the meaning of *array* to include array *id's*, for the sake of brevity.
+.. note:: We will use "beginning" of an array to designate index 0, and "end" of an array to designate the array's element with the highest index value. We will also extend the meaning of *array* to include array *id's*, for the sake of brevity.
 
 
 
@@ -47,11 +46,15 @@ but no array is created by this declaration yet. For the moment, the array varia
 When declaring an array and the ``<expression>`` is not ``na``, one of the ``array.new_<type>(size, initial_value)`` functions must be used. 
 The arguments of both the ``size`` and ``initial_value`` parameters can be *series*, to allow dynamic sizing and initialization of array elements.
 The following example creates an array containing zero *float* elements, 
-and this time, the array id returned by the ``array.new_float(0)`` function is assigned to ``prices``::
+and this time, the array id returned by the `array.new_float() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_float>`__
+function call is assigned to ``prices``::
 
     prices = array.new_float(0)
 
-Similar array creation functions exist for the other types of array elements: ``array.new_int()``, ``array.new_bool()`` and ``array.new_color()``.
+Similar array creation functions exist for the other types of array elements: 
+`array.new_int() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_int>`__,
+`array.new_bool() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_bool>`__ and 
+`array.new_color() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}new_color>`__.
 
 When declaring an array, you can initialize all elements in the array using the ``initial_value`` parameter. 
 When no argument is supplied for ``initial_value``, the array elements are initialized to ``na``.
