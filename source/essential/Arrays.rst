@@ -225,7 +225,7 @@ For ``previousClose2`` we use the history-referencing operator to fetch the prev
     plot(previousClose2, "previousClose2", color.white, 2)
 
 In the following example we add two, equivalent calculations of a moving average to our previous code example. 
-For ``ma1`` we use `sma()`[ ] <https://www.tradingview.com/pine-script-reference/v4/#fun_sma>`__ 
+For ``ma1`` we use `sma() <https://www.tradingview.com/pine-script-reference/v4/#fun_sma>`__ 
 on the series of values returned by the ``array.get(a, 0)`` function call on each bar. 
 Since at this point in the script the call returns the current bar's ``close``, 
 that is the value used for the average's calculation. 
