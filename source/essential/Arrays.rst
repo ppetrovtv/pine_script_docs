@@ -17,12 +17,13 @@ before you tackle arrays.
 Pine arrays are one-dimensional. All elements of an array are of the same type, which can be *int*, *float*, *bool* or *color*, always of *series* form. 
 Arrays are referenced using an array *id*, similar to label and line id's. 
 Pine does not use an indexing operator to reference individual array elements;
-instead, functions like ``array.get()`` and ``array.set()`` are used to read and write values of array elements. 
+instead, functions like `array.get() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}get>`__ 
+and `array.set() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}set>`__ are used to read and write values of array elements. 
 Array values can be used in all Pine expressions and functions where a value of *series* form is allowed.
 
 Elements within an array are referred to using an *index*, which starts at 0 and extends to the number or elements in the array, minus one.
 Arrays in Pine can be sized dynamically, so the number of elements in the array can be modified within one iteration of the script on a bar,
-and vary across bars. Multiple arrays can be used by the same script. The size of arrays is limited to 100,000 but multiple arrays of maximum size can be used in one script.
+and vary across bars. Multiple arrays can be used in the same script. The size of arrays is limited to 100,000.
 
 .. note:: We will use "beginning" of an array to designate index 0, and "end" of an array to designate the array's element with the highest index value. We will also extend the meaning of *array* to include array *id's*, for the sake of brevity.
 
@@ -63,13 +64,14 @@ The array is created with two elements, each initialized with the value of the `
 
     prices = array.new_float(2, close)
 
-There is currently no way to initialize array elements with different values, whether upon declaration or post-declaration, using a single function call. 
-One is planned for the near future.
+There is currently no way to initialize multiple array elements with different values in one statement, 
+whether upon declaration or post-declaration. One is planned in the near future.
 
 Using the 'var' keyword
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``var`` keyword can be used when declaring arrays. It works just as it does for other variables; it causes the declaration to only 
+The `var <https://www.tradingview.com/pine-script-reference/v4/#op_var>`__ keyword can be used when declaring arrays. 
+It works just as it does for other variables; it causes the declaration to only 
 be executed on the first iteration of the script on the dataset's bar at ``bar_index`` zero. Because the array is never re-initialized on subsequent bars, 
 its value will persist across bars, as the script iterates on them.
 
@@ -90,13 +92,16 @@ the array would thus be of size one on all the dataset's bars.
 Reading and writing array values
 --------------------------------
 
-Values can be written to existing individual array elements using ``array.set(id, index, value)``, and read using ``array.get(id, index)``.
+Values can be written to existing individual array elements using 
+`array.set(id, index, value) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}set>`__, 
+and read using `array.get(id, index) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}get>`__.
 As is the case whenever an array index is used in your code, it is imperative that the index never be greater than 
 the array's size, minus one (because array indices start at zero). You can obtain the size of an array by using the 
-``array.size(id)`` function.
+`array.size(id) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}size>`__ function.
 
-The following example uses ``array.set()`` to initialize an array of colors to instances of one base color using different transparency levels. 
-It then fetches the proper array element to use it in a ``bgcolor()`` call::
+The following example uses `array.set() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}set>`__ 
+to initialize an array of colors to instances of one base color using different transparency levels. 
+It then fetches the proper array element to use it in a `bgcolor() <https://www.tradingview.com/pine-script-reference/v4/#fun_bgcolor>`__ call::
 
     //@version=4
     study("Distance from high", "", true)
@@ -123,7 +128,8 @@ It then fetches the proper array element to use it in a ``bgcolor()`` call::
 
 |Arrays-ReadingAndWriting-DistanceFromHigh.png|
 
-Another technique that can be used to initialize the elements in an array is to declare the array with size zero, and then populate it using ``array.push()`` 
+Another technique that can be used to initialize the elements in an array is to declare the array with size zero, and then populate it using 
+`array.push() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}push>`__ 
 to append **new** elements to the end of the array, increasing the size of the array by one at each call. 
 The following code is functionally identical to the initialization section from the preceding script. Note that we do not use ``var`` to declare the array in this case.
 If we did, the set of pushes would add 5 new elements to the array on each bar, since the array would propagate over successive bars::
@@ -136,8 +142,8 @@ If we did, the set of pushes would add 5 new elements to the array on each bar, 
     array.push(c_fills, color.new(c_fillColor, 85))
     array.push(c_fills, color.new(c_fillColor, 90))
 
-The ``array.fill(id, value, index_from, index_to)`` function can be used to fill contiguous sets of array elements with a value. 
-Used without the last two optional parameters, the function fills the whole array, so::
+The `array.fill(id, value, index_from, index_to) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}fill>`__ function 
+can be used to fill contiguous sets of array elements with a value. Used without the last two optional parameters, the function fills the whole array, so::
 
     a = array.new_float(10, close)
 
@@ -151,8 +157,9 @@ are equivalent, but::
     a = array.new_float(10)
     array.fill(a, close, 1, 3)
 
-only fills the second and third element of the array with ``close``. 
-Note how ``array.fill()``'s last parameter, ``index_to``, needs to be one greater than the last index to be filled. 
+only fills the second and third elements (at index 1 and 2) of the array with ``close``. 
+Note how `array.fill() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}fill>`__'s 
+last parameter, ``index_to``, needs to be one greater than the last index to be filled. 
 The remaining elements will hold the ``na`` value, as no intialization value was provided when the array was declared.
 
 
@@ -189,32 +196,45 @@ We use it here to calculate progressively lower or higher levels::
 History referencing
 -------------------
 
-Past instances of array elements can be referenced using Pine's ``[ ]`` history-referencing operator because they are series. 
-Arrays ids, however, are not series. Their historical values cannot be referenced. 
-In the following example, we fetch the previous bar's ``close`` value in two, equivalent ways. The first method used for ``previousClose1`` 
-uses the previous bar's instance of the array's element. The second method used for ``previousClose2`` is the usual way Pine coders would go about it::
+Past instances of array id's or elements cannot be referenced directly using Pine's 
+`[ ] <https://www.tradingview.com/pine-script-reference/v4/#op_[]>`__ 
+history-referencing operator. 
+One **cannot** write: ``array.get(a[1], 0)`` to fetch the value of the array's first element on the previous bar.
+
+In Pine, however, each call to a function leaves behind a series trail of function results on previous bars. 
+This series can in turn be used when working with arrays. One can thus write: ``ma = sma(array.get(a, 0), 20)`` to calculate 
+the simple moving average of the value returned by the ``array.get(a, 0)`` call on the last 20 bars.
+
+To illustrate this, let's first see how we can fetch the previous bar's ``close`` value in two, equivalent ways. 
+For ``previousClose1`` we use the result of the ``array.get(a, 0)`` function call on the previous bar. 
+Since on the previous bar the array's only element was initialized to that bar's ``close`` (as it is on every bar), 
+referring to ``array.get(a, 0)[1]`` returns that bar's ``close``, i.e., the value of the ``array.get(a, 0)`` call on the previous bar.
+
+For ``previousClose2`` we use the history-referencing operator to fetch the previous bar's ``close`` in normal Pine fashion::
 
     //@version=4
     study("History referencing")
+    // Re-declare the array on each bar.
     a = array.new_float(1)
+    // Set the value of its only element to `close`.
     array.set(a, 0, close)
+
     previousClose1 = array.get(a, 0)[1]
     previousClose2 = close[1]
     plot(previousClose1, "previousClose1", color.gray, 6)
     plot(previousClose2, "previousClose2", color.white, 2)
 
-Note that since an array id's  historical values cannot be referenced, the following code is not allowed::
-
-    previousClose1 = array.get(a[1], 0)
-
-Array elements being series, Pine's functions will operate on them as they ususally do with series variables.
-In the following example we add two, equivalent calculations of a moving average to our previous code example::
+In the following example we add two, equivalent calculations of a moving average to our previous code example. 
+For ``ma1`` we use `sma() <https://www.tradingview.com/pine-script-reference/v4/#fun_sma>`__ 
+on the series of values returned by the ``array.get(a, 0)`` function call on each bar. 
+Since at this point in the script the call returns the current bar's ``close``, 
+that is the value used for the average's calculation. 
+We evaluate ``ma2`` using the usual way we would calculate a simple average in Pine::
 
     //@version=4
     study("History referencing")
     a = array.new_float(1)
     array.set(a, 0, close)
-
     previousClose1 = array.get(a, 0)[1]
     previousClose2 = close[1]
     plot(previousClose1, "previousClose1", color.gray, 6)
@@ -222,8 +242,17 @@ In the following example we add two, equivalent calculations of a moving average
 
     ma1 = sma(array.get(a, 0), 20)
     ma2 = sma(close, 20)
-    plot(ma1, "ma1", color.aqua, 6)
-    plot(ma2, "ma2", color.white, 2)
+    plot(ma1, "MA 1", color.aqua, 6)
+    plot(ma2, "MA 2", color.white, 2)
+
+    // Last set having no impact.
+    array.set(a, 0, 10.0)
+
+Notice the last line of this script. It illustrates how even if we set the value of the array's element 
+to ``10.0`` at the end of the script, resulting in the final value for the element being committed as ``10.0`` 
+on the bar's last execution of the script, the earlier call to ``array.get(a, 0)`` nonetheless returned the ``close`` value 
+because that was the value of the array element at that point in the script. 
+The series value of the function call will thus be each bar's ``close`` value.
 
 |Arrays-HistoryReferencing.png|
 
@@ -237,10 +266,11 @@ Inserting
 
 Three functions can be used to insert new elements in an array.
 
-``array.unshift()`` inserts a new element at the beginning of an array, at index zero, 
-and shifts any existing elements right by one.
+`array.unshift() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}unshift>`__ 
+inserts a new element at the beginning of an array, at index zero, and shifts any existing elements right by one.
 
-``array.insert()`` can insert a new element at any position in the array. Its ``index`` parameter is the index where the new element will be added. 
+`array.insert() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}insert>`__ 
+can insert a new element at any position in the array. Its ``index`` parameter is the index where the new element will be added. 
 The element existing at the index used in the function call and any others to its right are shifted one place to the right::
 
     //@version=4
@@ -255,7 +285,8 @@ The element existing at the index used in the function call and any others to it
 
 |Arrays-InsertingAndRemovingArrayElements-Insert.png|
 
-``array.push()`` will add a new element at the end of an array.
+`array.push() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}push>`__ 
+will add a new element at the end of an array.
 
 
 Removing
@@ -263,20 +294,27 @@ Removing
 
 Four functions can be used to remove elements from an array. The first three will return the value of the removed element.
 
-``array.remove()`` removes the element at the ``index`` value used, and returns that element's value.
+`array.remove() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}remove>`__ 
+removes the element at the ``index`` value used, and returns that element's value.
 
-``array.shift()`` removes the first element from an array and returns its value.
+`array.shift() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}shift>`__ 
+removes the first element from an array and returns its value.
 
-``array.pop()`` removes the last element of an array and returns its value.
+`array.pop() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}pop>`__ 
+removes the last element of an array and returns its value.
 
-``array.clear()`` will remove all elements in the array.
+`array.clear() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}clear>`__ 
+will remove all elements in the array.
 
 
 Using an array as a stack
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stacks are LIFO (last in, first out) constructions. They behave somewhat like a vertical pile of books to which books can only be added or removed one at a time,
-always from the top. Pine arrays can be used as a stack, in which case you will use the ``array.push()`` and ``array.pop()`` functions to add and remove elements at the end of the array.
+always from the top. Pine arrays can be used as a stack, in which case you will use the 
+`array.push() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}push>`__ and 
+`array.pop() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}pop>`__ 
+functions to add and remove elements at the end of the array.
 
 ``array.push(prices, close)`` will add a new element to the end of the ``prices`` array, increasing the array's size by one.
 
@@ -327,14 +365,23 @@ New cars are queued at the end of the line, and the first car to leave will be t
 In the following code example, we will be starting with an empty queue. 
 We will add new values to the end of the array. When we remove a value from the queue, we will remove the oldest value, 
 which is always sitting at the beginning of the array, at index zero. 
-We can use ``array.push()`` to append new values at the end of the array, 
-and we will be using ``array.shift()`` to remove the array's first element when we need to de-queue and element::
+We can use `array.push() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}push>`__ 
+to append new values at the end of the array, and we will be using 
+`array.shift() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}shift>`__ 
+to remove the array's first element when we need to de-queue and element.
+
+Our next script will be plotting labels on recent high pivots while allowing the trader to limit the quantity of labels displayed. 
+In order to achieve this, every time we encounter a new pivot, we will use our queue to save the ``bar_index`` 
+of the bar where the pivot is found and its new label created. This way, when an old label needs to be deleted, 
+we will be able to know the bar number where it was created and derive an offset to refer to the corresponding 
+historical value of the the label id::
 
     //@version=4
-    study("Show last n High Pivots", "", true)
-    i_pivotCount = input(10)
-    i_pivotLegs  = input(3)
+    study("Show Last n High Pivots", "", true)
+    i_pivotCount = input(5, "How many pivots to show", minval = 0, maxval = 50)
+    i_pivotLegs  = input(3, "Pivot legs", minval = 1, maxval = 5)
 
+    // Format price to tick precision.
     f_tickFormat() =>
         _s = tostring(syminfo.mintick)
         _s := str.replace_all(_s, "25", "00")
@@ -343,17 +390,28 @@ and we will be using ``array.shift()`` to remove the array's first element when 
 
     var pivotBars = array.new_int(0)
     label pLabel = na
+    // Explicitly define the historical buffer size of label id.
+    max_bars_back(pLabel, 1000)
+
     pHi = pivothigh(i_pivotLegs, i_pivotLegs)
     if not na(pHi)
         // New pivot found; append the bar_index of the new pivot to the end of the array.
-        array.push(pivotBars, bar_index - i_pivotLegs)
+        array.push(pivotBars, bar_index)
         if array.size(pivotBars) > i_pivotCount
             // The queue was already full; remove its oldest element,
-            // using it to delete the oldest label in the queue.
+            // using its value to also delete the oldest label in the queue.
             label.delete(pLabel[bar_index - array.shift(pivotBars)])
+        // Plot the new pivot's label `i_pivotLegs` bars back.
+        pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi, f_tickFormat()), textcolor = color.white)
 
-        pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi, f_tickFormat()))
+Note that we explicitly define the historical buffer size for the ``pLabel`` variable using ``max_bars_back(pLabel, 1000)``, 
+otherwise the script will be referring to historical values which have not been buffered and throw a runtime error. 
+Using the `max_bars_back() <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ 
+function to do so, rather than the ``max_bars_back`` parameter in our 
+`study() <https://www.tradingview.com/pine-script-reference/v4/#fun_study>`__ 
+declaration statement, will increase the amount of memory available for other script logic.
 
+|Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png|
 
 
 Calculations on arrays
@@ -361,11 +419,23 @@ Calculations on arrays
 
 While series variables can be viewed as a horizontal set of values stretching back in time, Pine's one-dimensional arrays can be viewed as vertical structures 
 residing on each bar. As an array's set of elements is not a series, Pine's usual mathematical functions are not allowed on them. Special-purpose functions must be used 
-to operate on all of an array's values. The available functions are: ``array.avg()``, ``array.min()``, ``array.max()``, ``array.median()``, ``array.mode()``, ``array.standardize()``, ``array.stdev()``, ``array.sum()``, ``array.variance()``, ``array.covariance()``.
+to operate on all of an array's values. The available functions are: 
+`array.avg() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}avg>`__, 
+`array.min() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}min>`__, 
+`array.max() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}max>`__, 
+`array.median() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}median>`__, 
+`array.mode() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}mode>`__, 
+`array.standardize() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}standardize>`__, 
+`array.stdev() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}stdev>`__, 
+`array.sum() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}sum>`__, 
+`array.variance() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}variance>`__, 
+`array.covariance() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}covariance>`__.
 
-Note that contrary to the usual mathematical functions in Pine, those used on arrays do not return ``na`` when one or more values they 
-calculate on have ``na`` values.
+Note that contrary to the usual mathematical functions in Pine, those used on arrays do not return ``na`` when some of the values they 
+calculate on have ``na`` values. There are a few exceptions to this rule:
 
+    * When all array elements have ``na`` value or the array contains no elements, ``na`` is returned. ``array.standardize()`` however, will return an empty array.
+    * ``array.mode()`` will return ``na`` when no mode is found.
 
 
 Manipulating arrays
@@ -374,7 +444,8 @@ Manipulating arrays
 Concatenation
 ^^^^^^^^^^^^^
 
-Two arrays can be merged—or concatenated—using ``array.concat()``. When arrays are concatenated, the second array is appended to the end of the first, 
+Two arrays can be merged—or concatenated—using `array.concat() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}concat>`__. 
+When arrays are concatenated, the second array is appended to the end of the first, 
 so the first array is modified while the second one remains intact. The function returns the array id of the first array::
 
     //@version=4
@@ -396,7 +467,8 @@ so the first array is modified while the second one remains intact. The function
 Copying
 ^^^^^^^
 
-You can copy an array using ``array.copy()``. Here we copy the array ``a`` to a new array named ``_b``::
+You can copy an array using `array.copy() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}copy>`__. 
+Here we copy the array ``a`` to a new array named ``_b``::
 
     //@version=4
     study("`array.copy()`")
@@ -416,8 +488,10 @@ From thereon, both variables would point to the same array, so using either one 
 Sorting
 ^^^^^^^
 
-Arrays can be sorted in either ascending or descending order using ``array.sort()``. The ``order`` parameter is optional and defaults to ``order.ascending``. 
-It is of form *series*, so can be determined at runtime, as is done here. Note that which array is sorted is also determined at runtime::
+Arrays can be sorted in either ascending or descending order using `array.sort() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}sort>`__. 
+The ``order`` parameter is optional and defaults to `order.ascending <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}order.ascending>`__. 
+As all ``array.*()`` function arguments, it is of form *series*, so can be determined at runtime, as is done here. 
+Note that in the example, which array is sorted is also determined at runtime::
 
     //@version=4
     study("`array.sort()`")
@@ -433,8 +507,8 @@ It is of form *series*, so can be determined at runtime, as is done here. Note t
         _barUp = close > open
         array.sort(_barUp ? a : b, _barUp ? order.ascending : order.descending)
         label.new(bar_index, 0, 
-          "a " + (_barUp ? "is sorted ▲: " : ": ") + tostring(a) + 
-          "\n\nb " + (_barUp ? ": " : "is sorted ▼: ") + tostring(b), size = size.large)
+          "a " + (_barUp ? "is sorted ▲: "   : "is not sorted: ") + tostring(a) + "\n\n" +
+          "b " + (_barUp ? "is not sorted: " : "is sorted ▼: ")   + tostring(b), size = size.large)
 
 |Arrays-ManipulatingArrays-Sort.png|
 
@@ -456,7 +530,8 @@ Use ``array.reverse()`` to reverse an array::
 Slicing
 ^^^^^^^
 
-Slicing an array using ``array.slice()`` creates a shallow copy of a subset of the parent array. 
+Slicing an array using `array.slice() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}slice>`__ 
+creates a shallow copy of a subset of the parent array. 
 You determine the size of the subset to slice using the ``index_from`` and ``index_to`` parameters. 
 The ``index_to`` argument must be one greater than the end of the subset you want to slice. 
 
@@ -493,9 +568,14 @@ In this example, to slice the subset from index 0 to index 2 of array ``a``, we 
 Searching arrays
 ----------------
 
-We can test if a value is part of an array with the ``array.includes()`` function, which returns true if the element is found.
-We can find the first occurrence of a value in an array by using the ``array.indexof()`` function. The first occurence is the one with the lowest index.
-We can also find the last occurrence of a value with ``array.lastindexof()``::
+We can test if a value is part of an array with the 
+`array.includes() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}includes>`__ function, 
+which returns true if the element is found.
+We can find the first occurrence of a value in an array by using the 
+`array.indexof() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}indexof>`__ function. 
+The first occurence is the one with the lowest index.
+We can also find the last occurrence of a value with 
+`array.lastindexof() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}lastindexof>`__::
 
     //@version=4
     study("Searching in arrays")
@@ -519,7 +599,8 @@ Error handling
 --------------
 
 Malformed ``array.*()`` call syntax in Pine scripts will cause the usual **compiler** error messages to appear in Pine Editor's console, at the bottom of the window, 
-when you save a script. Refer to the Pine Reference Manual when in doubt regarding the exact syntax of function calls.
+when you save a script. Refer to the `Pine Reference Manual <https://www.tradingview.com/pine-script-reference/v4/>`__ 
+when in doubt regarding the exact syntax of function calls.
 
 Scripts using arrays can also throw **runtime** errors, which appear in place of the indicator's name on charts. 
 We discuss those runtime errors in this section.
@@ -546,7 +627,7 @@ The correct ``for`` statement is::
     for _i = 0 to 2
 
 When you size arrays dynamically using a field in your script's *Settings/Inputs* tab, protect the boundaries of that value using 
-``input()``'s ``minval`` and ``maxval`` parameters::
+`input() <https://www.tradingview.com/pine-script-reference/v4/#fun_input>`__'s ``minval`` and ``maxval`` parameters::
 
     //@version=4
     study("Protected array size")
@@ -594,17 +675,20 @@ We haven't found any use for arrays of negative size yet, but if you ever do, we
 Cannot use `shift()` if array is empty.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This error will occur if ``array.shift()`` is called to remove the first element of an empty array.
+This error will occur if `array.shift() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}shift>`__ 
+is called to remove the first element of an empty array.
 
 Cannot use `pop()` if array is empty.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This error will occur if ``array.pop()`` is called to remove the last element of an empty array.
+This error will occur if `array.pop() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}pop>`__ 
+is called to remove the last element of an empty array.
 
 Index 'from' should be less than index 'to'
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When two indices are used in functions like ``array.slice()``, the first index must always be smaller than the second one.
+When two indices are used in functions such as `array.slice() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}slice>`__, 
+the first index must always be smaller than the second one.
 
 Slice is out of bounds of the parent array
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -629,6 +713,7 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-HistoryReferencing.png| image:: ../images/Arrays-HistoryReferencing.png
 .. |Arrays-Scope-Bands.png| image:: ../images/Arrays-Scope-Bands.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
+.. |Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png
 .. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
 .. |Arrays-ManipulatingArrays-Concat2.png| image:: ../images/Arrays-ManipulatingArrays-Concat2.png
 .. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
