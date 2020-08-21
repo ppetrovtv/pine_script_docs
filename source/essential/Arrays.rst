@@ -368,7 +368,13 @@ which is always sitting at the beginning of the array, at index zero.
 We can use `array.push() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}push>`__ 
 to append new values at the end of the array, and we will be using 
 `array.shift() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}shift>`__ 
-to remove the array's first element when we need to de-queue and element::
+to remove the array's first element when we need to de-queue and element.
+
+Our script will be showing only a user-selected quantity of most recent high pivot labels. 
+In order to achieve this, every time we encounter a new pivot, we will use our queue to save the ``bar_index`` 
+of the bar where the pivot is found and its new label created. This way, when an old label needs to be deleted, 
+we will be able to know the bar number where it was created and derive an offset to refer to the corresponding 
+historical value of the the label id::
 
     //@version=4
     study("Show Last n High Pivots", "", true)
@@ -397,6 +403,13 @@ to remove the array's first element when we need to de-queue and element::
             label.delete(pLabel[bar_index - array.shift(pivotBars)])
         // Plot the new pivot's label `i_pivotLegs` bars back.
         pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi, f_tickFormat()), textcolor = color.white)
+
+Note that we explicitly define the historical buffer size for the ``pLabel`` variable using ``max_bars_back(pLabel, 1000)``, 
+otherwise the script will be referring to historical values which have not been buffered and throw a runtime error. 
+Using the `max_bars_back() <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ 
+function to do so, rather than the `max_bars_back` parameter in our 
+`study() <https://www.tradingview.com/pine-script-reference/v4/#fun_study>`__ 
+declaration statement, will increase the amount of memory available for other script logic.
 
 |Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png|
 
