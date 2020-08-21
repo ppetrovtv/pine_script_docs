@@ -407,7 +407,7 @@ historical value of the the label id::
 Note that we explicitly define the historical buffer size for the ``pLabel`` variable using ``max_bars_back(pLabel, 1000)``, 
 otherwise the script will be referring to historical values which have not been buffered and throw a runtime error. 
 Using the `max_bars_back() <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ 
-function to do so, rather than the `max_bars_back` parameter in our 
+function to do so, rather than the ``max_bars_back`` parameter in our 
 `study() <https://www.tradingview.com/pine-script-reference/v4/#fun_study>`__ 
 declaration statement, will increase the amount of memory available for other script logic.
 
