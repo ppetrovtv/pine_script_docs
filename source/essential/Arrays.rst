@@ -196,24 +196,33 @@ We use it here to calculate progressively lower or higher levels::
 History referencing
 -------------------
 
-Past instances of array elements can be referenced using Pine's `[ ] <https://www.tradingview.com/pine-script-reference/v4/#op_[]>`__ 
-history-referencing operator because they are series. 
-Arrays ids, however, are not series. Their historical values cannot be referenced. 
-In the following example, we fetch the previous bar's ``close`` value in two, equivalent ways. The first method used for ``previousClose1`` 
-uses the previous bar's instance of the array's element. The second method used for ``previousClose2`` is the usual way Pine coders would go about it::
+Past instances of array id's or elements cannot directly be referenced using Pine's `[ ] <https://www.tradingview.com/pine-script-reference/v4/#op_[]>`__ 
+history-referencing operator. One **cannot** write: ``array.get(a[1], 0)`` to fetch the value of the array's first element on the previous bar.
+
+Whenever a function is called in Pine, however, it leaves behind a series trail of function results on previous bars, 
+which can in turn be used when working with arrays. One can thus write: ``ma = sma(array.get(a, 0), 20)`` to calculate 
+the simple moving average of the last 20 values of the values returned by the ``array.get(a, 0)`` call on previous bars.
+
+To illustrate this, the following example shows how we can fetch the previous bar's ``close`` value in two, equivalent ways. 
+For ``previousClose1`` we use the result of the ``array.get(a, 0)`` function call on the previous bar. 
+Since on the previous bar the array's only element was initialized to the bar's ``close`` (as it is on every bar), 
+referring to ``array.get(a, 0)[1]`` returns that bar's ``close``, i.e., the value of the ``array.get(a, 0)`` call on the previous bar.
+
+For ``previousClose2`` we use the history-referencing operator to fetch the previous bar's ``close`` in normal Pine fashion::
 
     //@version=4
     study("History referencing")
+    // Re-declare the array on each bar.
     a = array.new_float(1)
+    // Set the value of its only element to `close`.
     array.set(a, 0, close)
+    // Fetch the value resulting from the call to `array.get(a, 0)` on the previous bar.
+    // Since at this point the value of the array element is `close`,
+    // that returns the value of `close` on the previous bar.
     previousClose1 = array.get(a, 0)[1]
     previousClose2 = close[1]
     plot(previousClose1, "previousClose1", color.gray, 6)
     plot(previousClose2, "previousClose2", color.white, 2)
-
-Note that since an array id's  historical values cannot be referenced, the following code is not allowed::
-
-    previousClose1 = array.get(a[1], 0)
 
 Array elements being series, Pine's functions will operate on them as they ususally do with series variables.
 In the following example we add two, equivalent calculations of a moving average to our previous code example::
@@ -222,16 +231,25 @@ In the following example we add two, equivalent calculations of a moving average
     study("History referencing")
     a = array.new_float(1)
     array.set(a, 0, close)
-
     previousClose1 = array.get(a, 0)[1]
     previousClose2 = close[1]
     plot(previousClose1, "previousClose1", color.gray, 6)
     plot(previousClose2, "previousClose2", color.white, 2)
 
+    // While neither the array id `a` nor the array's only element are series,
+    // The call to `array.get()` leaves a series trail behind, so its value
+    // can be used as an argument to the `sma()` call.
     ma1 = sma(array.get(a, 0), 20)
     ma2 = sma(close, 20)
-    plot(ma1, "ma1", color.aqua, 6)
-    plot(ma2, "ma2", color.white, 2)
+    plot(ma1, "MA 1", color.aqua, 6)
+    plot(ma2, "MA 2", color.white, 2)
+
+    // This illustrates how even if we set the array's element to 10.0
+    // at this point in the script, and its value is thus committed to 10.0 for this bar,
+    // the earlier reference to the value of the `array.get()` call on the previous bar 
+    // used to set the `previousClose1` variable will nonethelesse return 
+    // the close of the previous bar.
+    array.set(a, 0, 10.0)
 
 |Arrays-HistoryReferencing.png|
 
