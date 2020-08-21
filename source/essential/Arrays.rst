@@ -218,16 +218,18 @@ For ``previousClose2`` we use the history-referencing operator to fetch the prev
     a = array.new_float(1)
     // Set the value of its only element to `close`.
     array.set(a, 0, close)
-    // Fetch the value resulting from the call to `array.get(a, 0)` on the previous bar.
-    // Since at this point the value of the array element is `close`,
-    // that returns the value of `close` on the previous bar.
+
     previousClose1 = array.get(a, 0)[1]
     previousClose2 = close[1]
     plot(previousClose1, "previousClose1", color.gray, 6)
     plot(previousClose2, "previousClose2", color.white, 2)
 
-Array elements being series, Pine's functions will operate on them as they ususally do with series variables.
-In the following example we add two, equivalent calculations of a moving average to our previous code example::
+In the following example we add two, equivalent calculations of a moving average to our previous code example. 
+For ``ma1`` we use `sma()`[ ] <https://www.tradingview.com/pine-script-reference/v4/#fun_sma>`__ 
+on the series of values returned by the ``array.get(a, 0)`` function call on each bar. 
+Since at this point in the script the call returns the current bar's ``close``, 
+that is the value used for the average's calculation. 
+We evaluate ``ma2`` using the usual way we would calculate a simple average in Pine::
 
     //@version=4
     study("History referencing")
@@ -238,20 +240,19 @@ In the following example we add two, equivalent calculations of a moving average
     plot(previousClose1, "previousClose1", color.gray, 6)
     plot(previousClose2, "previousClose2", color.white, 2)
 
-    // While neither the array id `a` nor the array's only element are series,
-    // The call to `array.get()` leaves a series trail behind, so its value
-    // can be used as an argument to the `sma()` call.
     ma1 = sma(array.get(a, 0), 20)
     ma2 = sma(close, 20)
     plot(ma1, "MA 1", color.aqua, 6)
     plot(ma2, "MA 2", color.white, 2)
 
-    // This illustrates how even if we set the array's element to 10.0
-    // at this point in the script, and its value is thus committed to 10.0 for this bar,
-    // the earlier reference to the value of the `array.get()` call on the previous bar 
-    // used to set the `previousClose1` variable will nonethelesse return 
-    // the close of the previous bar.
+    // Last set having no impact.
     array.set(a, 0, 10.0)
+
+Notice the last line of this script. It illustrates how even if we set the value of the array's element 
+to ``10.0`` at the end of the script, resulting in the final value for the element being committed as ``10.0`` 
+on the bar's last execution of the script, the earlier call to ``array.get(a, 0)`` nonetheless returned the ``close`` value 
+because that was the value of the array element at that point in the script. 
+The series value of the function call will thus be each bar's ``close`` value.
 
 |Arrays-HistoryReferencing.png|
 
