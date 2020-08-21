@@ -507,8 +507,8 @@ Note that in the example, which array is sorted is also determined at runtime::
         _barUp = close > open
         array.sort(_barUp ? a : b, _barUp ? order.ascending : order.descending)
         label.new(bar_index, 0, 
-          "a " + (_barUp ? "is sorted ▲: " : ": ") + tostring(a) + 
-          "\n\nb " + (_barUp ? ": " : "is sorted ▼: ") + tostring(b), size = size.large)
+          "a " + (_barUp ? "is sorted ▲: "   : "is not sorted: ") + tostring(a) + "\n\n" +
+          "b " + (_barUp ? "is not sorted: " : "is sorted ▼: ")   + tostring(b), size = size.large)
 
 |Arrays-ManipulatingArrays-Sort.png|
 
