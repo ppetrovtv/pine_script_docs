@@ -371,10 +371,11 @@ to append new values at the end of the array, and we will be using
 to remove the array's first element when we need to de-queue and element::
 
     //@version=4
-    study("Show last n High Pivots", "", true)
-    i_pivotCount = input(10)
-    i_pivotLegs  = input(3)
+    study("Show Last n High Pivots", "", true)
+    i_pivotCount = input(5, "How many pivots to show", minval = 0, maxval = 50)
+    i_pivotLegs  = input(3, "Pivot legs", minval = 1, maxval = 5)
 
+    // Format price to tick precision.
     f_tickFormat() =>
         _s = tostring(syminfo.mintick)
         _s := str.replace_all(_s, "25", "00")
@@ -383,17 +384,21 @@ to remove the array's first element when we need to de-queue and element::
 
     var pivotBars = array.new_int(0)
     label pLabel = na
+    // Explicitly define the historical buffer size of label id.
+    max_bars_back(pLabel, 1000)
+
     pHi = pivothigh(i_pivotLegs, i_pivotLegs)
     if not na(pHi)
         // New pivot found; append the bar_index of the new pivot to the end of the array.
-        array.push(pivotBars, bar_index - i_pivotLegs)
+        array.push(pivotBars, bar_index)
         if array.size(pivotBars) > i_pivotCount
             // The queue was already full; remove its oldest element,
-            // using it to delete the oldest label in the queue.
+            // using its value to also delete the oldest label in the queue.
             label.delete(pLabel[bar_index - array.shift(pivotBars)])
+        // Plot the new pivot's label `i_pivotLegs` bars back.
+        pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi, f_tickFormat()), textcolor = color.white)
 
-        pLabel := label.new(bar_index[i_pivotLegs], pHi, tostring(pHi, f_tickFormat()))
-
+|Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png|
 
 
 Calculations on arrays
@@ -693,6 +698,7 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-HistoryReferencing.png| image:: ../images/Arrays-HistoryReferencing.png
 .. |Arrays-Scope-Bands.png| image:: ../images/Arrays-Scope-Bands.png
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
+.. |Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png
 .. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
 .. |Arrays-ManipulatingArrays-Concat2.png| image:: ../images/Arrays-ManipulatingArrays-Concat2.png
 .. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
