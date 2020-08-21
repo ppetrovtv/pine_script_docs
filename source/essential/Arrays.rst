@@ -196,8 +196,10 @@ We use it here to calculate progressively lower or higher levels::
 History referencing
 -------------------
 
-Past instances of array id's or elements cannot directly be referenced using Pine's `[ ] <https://www.tradingview.com/pine-script-reference/v4/#op_[]>`__ 
-history-referencing operator. One **cannot** write: ``array.get(a[1], 0)`` to fetch the value of the array's first element on the previous bar.
+Past instances of array id's or elements cannot be referenced directly using Pine's 
+`[ ] <https://www.tradingview.com/pine-script-reference/v4/#op_[]>`__ 
+history-referencing operator. 
+One **cannot** write: ``array.get(a[1], 0)`` to fetch the value of the array's first element on the previous bar.
 
 Whenever a function is called in Pine, however, it leaves behind a series trail of function results on previous bars, 
 which can in turn be used when working with arrays. One can thus write: ``ma = sma(array.get(a, 0), 20)`` to calculate 
