@@ -431,9 +431,11 @@ to operate on all of an array's values. The available functions are:
 `array.variance() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}variance>`__, 
 `array.covariance() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}covariance>`__.
 
-Note that contrary to the usual mathematical functions in Pine, those used on arrays do not return ``na`` when one or more values they 
-calculate on have ``na`` values.
+Note that contrary to the usual mathematical functions in Pine, those used on arrays do not return ``na`` when some of the values they 
+calculate on have ``na`` values. There are a few exceptions to this rule:
 
+    * When all array elements have `na` value or the array contains no elements, `na` is returned. ``array.standardize()`` however, will return an empty array.
+    * ``array.mode()`` will return `na` when no mode is found.
 
 
 Manipulating arrays
