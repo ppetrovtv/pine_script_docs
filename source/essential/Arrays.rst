@@ -23,7 +23,7 @@ Array values can be used in all Pine expressions and functions where a value of 
 
 Elements within an array are referred to using an *index*, which starts at 0 and extends to the number or elements in the array, minus one.
 Arrays in Pine can be sized dynamically, so the number of elements in the array can be modified within one iteration of the script on a bar,
-and vary across bars. Multiple arrays can be used by the same script. The size of arrays is limited to 100,000 but multiple arrays of maximum size can be used in one script.
+and vary across bars. Multiple arrays can be used in the same script. The size of arrays is limited to 100,000.
 
 .. note:: We will use "beginning" of an array to designate index 0, and "end" of an array to designate the array's element with the highest index value. We will also extend the meaning of *array* to include array *id's*, for the sake of brevity.
 
@@ -64,8 +64,8 @@ The array is created with two elements, each initialized with the value of the `
 
     prices = array.new_float(2, close)
 
-There is currently no way to initialize array elements with different values, whether upon declaration or post-declaration, using a single function call. 
-One is planned for the near future.
+There is currently no way to initialize multiple array elements with different values in one statement, 
+whether upon declaration or post-declaration. One is planned in the near future.
 
 Using the 'var' keyword
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,7 +92,8 @@ the array would thus be of size one on all the dataset's bars.
 Reading and writing array values
 --------------------------------
 
-Values can be written to existing individual array elements using `array.set(id, index, value) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}set>`__, 
+Values can be written to existing individual array elements using 
+`array.set(id, index, value) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}set>`__, 
 and read using `array.get(id, index) <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}get>`__.
 As is the case whenever an array index is used in your code, it is imperative that the index never be greater than 
 the array's size, minus one (because array indices start at zero). You can obtain the size of an array by using the 
@@ -156,7 +157,7 @@ are equivalent, but::
     a = array.new_float(10)
     array.fill(a, close, 1, 3)
 
-only fills the second and third element of the array with ``close``. 
+only fills the second and third elements (at index 1 and 2) of the array with ``close``. 
 Note how `array.fill() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}fill>`__'s 
 last parameter, ``index_to``, needs to be one greater than the last index to be filled. 
 The remaining elements will hold the ``na`` value, as no intialization value was provided when the array was declared.
