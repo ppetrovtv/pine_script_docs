@@ -203,7 +203,7 @@ One **cannot** write: ``array.get(a[1], 0)`` to fetch the value of the array's f
 
 In Pine, however, each call to a function leaves behind a series trail of function results on previous bars. 
 This series can in turn be used when working with arrays. One can thus write: ``ma = sma(array.get(a, 0), 20)`` to calculate 
-the simple moving average of the last 20 values of the values returned by the ``array.get(a, 0)`` call on previous bars.
+the simple moving average of the value returned by the ``array.get(a, 0)`` call on the last 20 bars.
 
 To illustrate this, let's first see how we can fetch the previous bar's ``close`` value in two, equivalent ways. 
 For ``previousClose1`` we use the result of the ``array.get(a, 0)`` function call on the previous bar. 
