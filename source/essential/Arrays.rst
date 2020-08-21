@@ -196,7 +196,8 @@ We use it here to calculate progressively lower or higher levels::
 History referencing
 -------------------
 
-Past instances of array elements can be referenced using Pine's ``[ ]`` history-referencing operator because they are series. 
+Past instances of array elements can be referenced using Pine's `[] <https://www.tradingview.com/pine-script-reference/v4/#op_[]>`__ 
+history-referencing operator because they are series. 
 Arrays ids, however, are not series. Their historical values cannot be referenced. 
 In the following example, we fetch the previous bar's ``close`` value in two, equivalent ways. The first method used for ``previousClose1`` 
 uses the previous bar's instance of the array's element. The second method used for ``previousClose2`` is the usual way Pine coders would go about it::
