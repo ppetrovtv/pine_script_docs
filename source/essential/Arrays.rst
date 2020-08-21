@@ -201,13 +201,13 @@ Past instances of array id's or elements cannot be referenced directly using Pin
 history-referencing operator. 
 One **cannot** write: ``array.get(a[1], 0)`` to fetch the value of the array's first element on the previous bar.
 
-Whenever a function is called in Pine, however, it leaves behind a series trail of function results on previous bars, 
-which can in turn be used when working with arrays. One can thus write: ``ma = sma(array.get(a, 0), 20)`` to calculate 
+In Pine, however, each call to a function leaves behind a series trail of function results on previous bars. 
+This series can in turn be used when working with arrays. One can thus write: ``ma = sma(array.get(a, 0), 20)`` to calculate 
 the simple moving average of the last 20 values of the values returned by the ``array.get(a, 0)`` call on previous bars.
 
-To illustrate this, the following example shows how we can fetch the previous bar's ``close`` value in two, equivalent ways. 
+To illustrate this, let's first see how we can fetch the previous bar's ``close`` value in two, equivalent ways. 
 For ``previousClose1`` we use the result of the ``array.get(a, 0)`` function call on the previous bar. 
-Since on the previous bar the array's only element was initialized to the bar's ``close`` (as it is on every bar), 
+Since on the previous bar the array's only element was initialized to that bar's ``close`` (as it is on every bar), 
 referring to ``array.get(a, 0)[1]`` returns that bar's ``close``, i.e., the value of the ``array.get(a, 0)`` call on the previous bar.
 
 For ``previousClose2`` we use the history-referencing operator to fetch the previous bar's ``close`` in normal Pine fashion::
