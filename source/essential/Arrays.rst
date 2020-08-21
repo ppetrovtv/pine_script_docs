@@ -370,7 +370,7 @@ to append new values at the end of the array, and we will be using
 `array.shift() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}shift>`__ 
 to remove the array's first element when we need to de-queue and element.
 
-Our script will be showing only a user-selected quantity of most recent high pivot labels. 
+Our next script will be plotting labels on recent high pivots while allowing the trader to limit the quantity of labels displayed. 
 In order to achieve this, every time we encounter a new pivot, we will use our queue to save the ``bar_index`` 
 of the bar where the pivot is found and its new label created. This way, when an old label needs to be deleted, 
 we will be able to know the bar number where it was created and derive an offset to refer to the corresponding 
