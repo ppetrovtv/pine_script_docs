@@ -409,7 +409,7 @@ otherwise the script will be referring to historical values which have not been 
 Using the `max_bars_back() <https://www.tradingview.com/pine-script-reference/v4/#fun_max_bars_back>`__ 
 function to do so, rather than the ``max_bars_back`` parameter in our 
 `study() <https://www.tradingview.com/pine-script-reference/v4/#fun_study>`__ 
-declaration statement, will increase the amount of memory available for other script logic.
+declaration statement, will decrease the amount of memory available for other script logic.
 
 |Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png|
 
