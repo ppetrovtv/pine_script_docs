@@ -462,7 +462,7 @@ so the first array is modified while the second one remains intact. The function
         array.push(_c, 4)
         label.new(bar_index, 0, "AFTER\na: " + tostring(a) + "\nb: " + tostring(b) + "\nc: " + tostring(_c), style = label.style_label_up, size = size.large)
 
-|Arrays-ManipulatingArrays-Concat2.png|
+|Arrays-ManipulatingArrays-Concat.png|
 
 Copying
 ^^^^^^^
@@ -715,7 +715,7 @@ the parent array's indices 3 to 4, is pointing out of the parent array's boundar
 .. |Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-LowsFromNewHighs.png
 .. |Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-ShowLastnHighPivots.png
 .. |Arrays-InsertingAndRemovingArrayElements-Insert.png| image:: ../images/Arrays-InsertingAndRemovingArrayElements-Insert.png
-.. |Arrays-ManipulatingArrays-Concat2.png| image:: ../images/Arrays-ManipulatingArrays-Concat2.png
+.. |Arrays-ManipulatingArrays-Concat.png| image:: ../images/Arrays-ManipulatingArrays-Concat.png
 .. |Arrays-ManipulatingArrays-Copy.png| image:: ../images/Arrays-ManipulatingArrays-Copy.png
 .. |Arrays-ManipulatingArrays-Sort.png| image:: ../images/Arrays-ManipulatingArrays-Sort.png
 .. |Arrays-ManipulatingArrays-Slice.png| image:: ../images/Arrays-ManipulatingArrays-Slice.png
