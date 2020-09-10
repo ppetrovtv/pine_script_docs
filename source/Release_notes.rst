@@ -6,6 +6,43 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+September 2020
+--------------------------
+
+The following functions can now take a series as a length parameter:
+
+* `alma <https://www.tradingview.com/pine-script-reference/v4/#fun_alma>`__
+* `change <https://www.tradingview.com/pine-script-reference/v4/#fun_change>`__
+* `highest <https://www.tradingview.com/pine-script-reference/v4/#fun_highest>`__
+* `highestbars <https://www.tradingview.com/pine-script-reference/v4/#fun_highestbars>`__
+* `linreg <https://www.tradingview.com/pine-script-reference/v4/#fun_linreg>`__
+* `lowest <https://www.tradingview.com/pine-script-reference/v4/#fun_lowest>`__
+* `lowestbars <https://www.tradingview.com/pine-script-reference/v4/#fun_lowestbars>`__
+* `mom <https://www.tradingview.com/pine-script-reference/v4/#fun_mom>`__
+* `sma <https://www.tradingview.com/pine-script-reference/v4/#fun_sma>`__
+* `sum <https://www.tradingview.com/pine-script-reference/v4/#fun_sum>`__
+* `vwma <https://www.tradingview.com/pine-script-reference/v4/#fun_vwma>`__
+* `wma <https://www.tradingview.com/pine-script-reference/v4/#fun_wma>`__
+
+Added support for arrays and functions for working with them. Now you can use a powerful new array feature to build custom datasets. Read more on the `array manual <https://www.tradingview.com/pine-script-docs/en/v4/essential/Arrays.html>`__ page::
+
+    //@version=4
+    study("My Script")
+    a = array.new_float(0)
+    for i = 0 to 5
+        array.push(a, close[i] - open[i])
+    plot(array.get(a, 4))
+
+August 2020
+--------------------------
+
+* Optimized Pine Scripts compilation time. Now scripts compiled from 1.5 to 2 times as fast as they did before the optimization.
+
+July 2020
+--------------------------
+
+* Minor bug fixes and improvements.
+
 June 2020
 --------------------------
 
