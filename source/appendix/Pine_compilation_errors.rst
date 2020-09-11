@@ -188,7 +188,7 @@ In order to help Pine with detection, you should add the ``max_bars_back``
 parameter to the script's ``study`` or ``strategy`` function::
 
     //@version=3
-    study("Requires max_bars_back", max_bars_back=3000)
+    study("Requires max_bars_back", max_bars_back=20)
     test = 0.0
     if n > 1000
         test := roc(close, 20)
@@ -199,7 +199,7 @@ expression out of the conditional branch, in which case the ``max_bars_back``
 parameter is not required::
 
     //@version=3
-    study("Requires max_bars_back")
+    study("My Script")
     test = 0.0
     roc20 = roc(close, 20)
     if n > 1000
