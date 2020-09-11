@@ -9,7 +9,7 @@ This page contains release notes of notable changes in Pine Script v4.
 September 2020
 --------------------------
 
-The following functions can now take a series as a length parameter:
+The following functions can now take a series as a length parameter. Learn more about this feature in our `blog <https://www.tradingview.com/blog/en/pine-functions-support-dynamic-length-arguments-20554/>`_:
 
 * `alma <https://www.tradingview.com/pine-script-reference/v4/#fun_alma>`__
 * `change <https://www.tradingview.com/pine-script-reference/v4/#fun_change>`__
@@ -34,7 +34,7 @@ The following functions can now take a series as a length parameter:
     dynSma = sma(close, int(dynLen))
     plot(dynSma)
 
-Added support for arrays and functions for working with them. Now you can use a powerful new array feature to build custom datasets. Read more on the `array manual <https://www.tradingview.com/pine-script-docs/en/v4/essential/Arrays.html>`__ page::
+Added support for arrays and functions for working with them. Now you can use a powerful new array feature to build custom datasets. Read more on the `array manual <https://www.tradingview.com/pine-script-docs/en/v4/essential/Arrays.html>`__ page and in our `blog <https://www.tradingview.com/blog/en/arrays-are-now-available-in-pine-script-20052/>`_::
 
     //@version=4
     study("My Script")
