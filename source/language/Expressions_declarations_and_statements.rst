@@ -372,7 +372,7 @@ example:
 
     //@version=3
     study("RMA in for loop")
-    sum = 0
+    sum = 0.0
     for i = 1 to 2
         sum := sum + rma(close, i)
     plot(sum)
