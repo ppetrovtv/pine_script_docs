@@ -24,6 +24,16 @@ The following functions can now take a series as a length parameter:
 * `vwma <https://www.tradingview.com/pine-script-reference/v4/#fun_vwma>`__
 * `wma <https://www.tradingview.com/pine-script-reference/v4/#fun_wma>`__
 
+::
+
+    //@version=4
+    study("My Script", overlay = true)
+    length = input(10, "Length", input.integer, minval = 1, maxval = 100)
+    avgBar = avg(highestbars(length), lowestbars(length))
+    float dynLen = nz(abs(avgBar) + 1, length)
+    dynSma = sma(close, int(dynLen))
+    plot(dynSma)
+
 Added support for arrays and functions for working with them. Now you can use a powerful new array feature to build custom datasets. Read more on the `array manual <https://www.tradingview.com/pine-script-docs/en/v4/essential/Arrays.html>`__ page::
 
     //@version=4
@@ -36,7 +46,7 @@ Added support for arrays and functions for working with them. Now you can use a 
 August 2020
 --------------------------
 
-* Optimized Pine Scripts compilation time. Now scripts compiled from 1.5 to 2 times as fast as they did before the optimization.
+* Optimized Pine Scripts compilation time. Now scripts compile from 1.5 to 2 times as fast as they did before the optimization.
 
 July 2020
 --------------------------
