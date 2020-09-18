@@ -9,6 +9,28 @@ This page contains release notes of notable changes in Pine Script v4.
 September 2020
 --------------------------
 
+Added support for ``input.color`` to the ``input()`` function. Now you can provide script users with color selection through the script’s "Settings/Inputs" tab with the same color widget used throughout the TradingView user interface. Learn more about this feature in our `blog <https://www.tradingview.com/blog/en/create-color-inputs-in-pine-20751/>`_:
+
+::
+
+    //@version=4
+    study("My Script", overlay = true)
+    color c_labelColor = input(color.green, "Main Color", input.color)
+    var l = label.new(bar_index, close, yloc = yloc.abovebar, text = "Colored label")
+    label.set_x(l, bar_index)
+    label.set_color(l, c_labelColor)
+    
+.. image:: images/input_color.png
+
+Added support for arrays and functions for working with them. You can now use the powerful new array feature to build custom datasets. See our `User Manual page on arrays <https://www.tradingview.com/pine-script-docs/en/v4/essential/Arrays.html>`__ and our `blog <https://www.tradingview.com/blog/en/arrays-are-now-available-in-pine-script-20052/>`_::
+
+    //@version=4
+    study("My Script")
+    a = array.new_float(0)
+    for i = 0 to 5
+        array.push(a, close[i] - open[i])
+    plot(array.get(a, 4))
+
 The following functions now accept a series length parameter. Learn more about this feature in our `blog <https://www.tradingview.com/blog/en/pine-functions-support-dynamic-length-arguments-20554/>`_:
 
 * `alma <https://www.tradingview.com/pine-script-reference/v4/#fun_alma>`__
@@ -33,15 +55,6 @@ The following functions now accept a series length parameter. Learn more about t
     float dynLen = nz(abs(avgBar) + 1, length)
     dynSma = sma(close, int(dynLen))
     plot(dynSma)
-
-Added support for arrays and functions for working with them. You can now use the powerful new array feature to build custom datasets. See our `User Manual page on arrays <https://www.tradingview.com/pine-script-docs/en/v4/essential/Arrays.html>`__ page and in our `blog <https://www.tradingview.com/blog/en/arrays-are-now-available-in-pine-script-20052/>`_::
-
-    //@version=4
-    study("My Script")
-    a = array.new_float(0)
-    for i = 0 to 5
-        array.push(a, close[i] - open[i])
-    plot(array.get(a, 4))
 
 August 2020
 --------------------------
