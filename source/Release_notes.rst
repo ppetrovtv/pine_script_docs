@@ -6,6 +6,13 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+October 2020
+--------------------------
+
+The behavior of ``rising`` and ``falling`` functions have changed. For example, ``rising(close,3)`` is now calculated as following::
+
+    close[0] > close[1] and close[1] > close[2] and close[2] > close[3]
+    
 September 2020
 --------------------------
 
