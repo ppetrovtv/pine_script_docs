@@ -6,6 +6,13 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+November 2020
+--------------------------
+
+New function was added:
+
+* ``array.range`` - return the difference between the min and max values in the array.
+
 October 2020
 --------------------------
 
@@ -133,7 +140,7 @@ March 2020
 
 New function was added:
 
-* ``fianancial`` - request financial data for a symbol
+* ``financial`` - request financial data for a symbol
 
 
 New functions for common indicators were added:
