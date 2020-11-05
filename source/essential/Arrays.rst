@@ -430,6 +430,7 @@ to operate on all of an array's values. The available functions are:
 `array.sum() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}sum>`__, 
 `array.variance() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}variance>`__, 
 `array.covariance() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}covariance>`__.
+`array.range() <https://www.tradingview.com/pine-script-reference/v4/#fun_array{dot}range>`__.
 
 Note that contrary to the usual mathematical functions in Pine, those used on arrays do not return ``na`` when some of the values they 
 calculate on have ``na`` values. There are a few exceptions to this rule:
