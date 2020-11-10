@@ -11,6 +11,8 @@ November 2020
 
 New function was added:
 
+* New ``max_labels_count`` and ``max_lines_count`` parameters were added to the study and strategy functions. Now you can manage the number of lines and labels by setting values for these parameters from 1 to 500.
+
 * ``array.range`` - return the difference between the min and max values in the array.
 
 October 2020
