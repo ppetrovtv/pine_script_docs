@@ -693,7 +693,7 @@ Scrolling the chart left, one will see there are no drawings after approximately
 
 .. image:: images/drawings_total_number_limit.png
 
-You can change the drawing limit to a value in range from 1 to 500 using the max_lines_count and max_labels_count parameters for the study and strategy functions:
+You can change the drawing limit to a value in range from 1 to 500 using the max_lines_count and max_labels_count parameters for the study and strategy functions::
 
     //@version=4
     study("My Script", overlay=true, max_labels_count=100)
