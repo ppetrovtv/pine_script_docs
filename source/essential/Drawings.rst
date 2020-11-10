@@ -704,8 +704,7 @@ You can change the drawing limit to a value in range from 1 to 500 using the max
 Additional securities
 ^^^^^^^^^^^^^^^^^^^^^
 
-Pine code sometimes uses additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function. Drawing functions can only be used in the main symbol's context. :doc:`/language/Execution_model`
-
+Pine code sometimes uses additional symbols and/or timeframes with the :doc:`security <Context_switching_the_security_function>` function. Drawing functions can only be used in the main symbol's context.
 
 max_bars_back of time
 ^^^^^^^^^^^^^^^^^^^^^
