@@ -6,6 +6,20 @@ Release notes
 
 This page contains release notes of notable changes in Pine Script v4.
 
+December 2020
+--------------------------
+
+New array types were added:
+
+* ``array.new_line``
+* ``array.new_label``
+* ``array.new_string``
+
+New functions were added:
+
+* ``array.join`` - concatenates all of the elements in the array into a string and separates these elements with the specified separator.
+* ``str.split`` - splits a string at a given substring separator.
+
 November 2020
 --------------------------
 
