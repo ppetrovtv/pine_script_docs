@@ -489,6 +489,23 @@ From thereon, both variables would point to the same array, so using either one 
 
 |Arrays-ManipulatingArrays-Copy.png|
 
+Joining
+^^^^^^^^^
+
+Use ``array.join`` to concatenate all of the elements in the array into a string and separate these elements with the specified separator::
+
+    //@version=4
+    study("")
+    v1 = array.new_string(10, "test")
+    v2 = array.new_string(10, "test")
+    array.push(v2, "test1")
+    v3 = array.new_float(5, 5)
+    v4 = array.new_int(5, 5)
+    l1 = label.new(bar_index, close, array.join(v1))
+    l2 = label.new(bar_index, close, array.join(v2, ","))
+    l3 = label.new(bar_index, close, array.join(v3, ","))
+    l4 = label.new(bar_index, close, array.join(v4, ","))
+
 Sorting
 ^^^^^^^
 
@@ -515,23 +532,6 @@ Note that in the example, which array is sorted is also determined at runtime::
           "b " + (_barUp ? "is not sorted: " : "is sorted ▼: ")   + tostring(b), size = size.large)
 
 |Arrays-ManipulatingArrays-Sort.png|
-
-Joining
-^^^^^^^^^
-
-Use array.join to concatenate all of the elements in the array into a string and separate these elements with the specified separator::
-
-    //@version=4
-    study("")
-    v1 = array.new_string(10, "test")
-    v2 = array.new_string(10, "test")
-    array.push(v2, "test1")
-    v3 = array.new_float(5, 5)
-    v4 = array.new_int(5, 5)
-    l1 = label.new(bar_index, close, array.join(v1))
-    l2 = label.new(bar_index, close, array.join(v2, ","))
-    l3 = label.new(bar_index, close, array.join(v3, ","))
-    l4 = label.new(bar_index, close, array.join(v4, ","))
 
 Reversing
 ^^^^^^^^^
