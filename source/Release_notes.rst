@@ -16,6 +16,7 @@ New array types were added:
 * ``array.new_string``
 
 New functions were added:
+
 * ``str.length`` - returns number of chars in source string.
 * ``array.join`` - concatenates all of the elements in the array into a string and separates these elements with the specified separator.
 * ``str.split`` - splits a string at a given substring separator.
